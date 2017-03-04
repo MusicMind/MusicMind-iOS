@@ -45,6 +45,10 @@ class ViewController: UIViewController {
         })
     }
     
+    @IBAction func showCameraButtonPressed(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
