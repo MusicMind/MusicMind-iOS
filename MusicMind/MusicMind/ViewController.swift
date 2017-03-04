@@ -7,9 +7,25 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    // TODO: Disable button if email || password fields are nil. Use textFieldDelegate to check everytime keypress.
+    
+    @IBAction func attemptSignIn(_ sender: Any) {
+        FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
+            if error == nil {
+                self.view.backgroundColor = .green
+            } else {
+                self.view.backgroundColor = .red
+            }
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

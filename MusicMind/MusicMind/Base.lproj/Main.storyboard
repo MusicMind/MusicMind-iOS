@@ -37,6 +37,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1G-xK-vGs">
                                 <rect key="frame" x="16" y="104" width="47" height="30"/>
                                 <state key="normal" title="Sign in"/>
+                                <connections>
+                                    <action selector="attemptSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVU-DV-bqE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,6 +54,10 @@
                             <constraint firstItem="kCw-jG-ZqY" firstAttribute="top" secondItem="8Is-GU-swc" secondAttribute="bottom" constant="8" id="wTo-Z8-9dz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="8Is-GU-swc" id="M5t-8G-Fxv"/>
+                        <outlet property="passwordField" destination="kCw-jG-ZqY" id="4u3-91-2SV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
