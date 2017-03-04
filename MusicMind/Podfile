@@ -8,7 +8,7 @@ target 'MusicMind' do
   # Pods for MusicMind
 
   pod 'Firebase/Core'
-
+  pod 'Firebase/Auth'
 
   target 'MusicMindTests' do
     inherit! :search_paths
