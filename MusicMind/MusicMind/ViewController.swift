@@ -19,15 +19,35 @@ class ViewController: UIViewController {
     @IBAction func attemptSignIn(_ sender: Any) {
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             if error == nil {
+                
+                print(user?.uid)
+                
                 self.view.backgroundColor = .green
             } else {
+                
+                print(error.debugDescription)
+                
                 self.view.backgroundColor = .red
+            }
+        })
+    }
+    
+    @IBAction func attemptSignUp(_ sender: Any) {
+        FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
+            if error == nil {
+                self.view.backgroundColor = .blue
+                
+                print(user?.uid)
+                
+            } else {
+                self.view.backgroundColor = UIColor.brown
             }
         })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
