@@ -6,21 +6,13 @@
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
 
-//
-//  ViewController.swift
-//  CameraView
-//
-//  Created by Angel Contreras on 2/28/17.
-//  Copyright © 2017 Angel Contreras. All rights reserved.
-//
-
 import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController {
     
     @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var switchCameraButton: UIButton!
+//    @IBOutlet weak var switchCameraButton: UIButton!
     
     var captureSession = AVCaptureSession()
     var sessionOutput = AVCapturePhotoOutput()
@@ -38,26 +30,6 @@ class CameraViewController: UIViewController {
         setupCameraView()
 
     }
-    
-    @IBAction func takePictureButtonPressed(_ sender: Any) {
-        
-        
-    }
-    
-    @IBAction func switchCameraButtonPressed(_ sender: Any) {
-        switch currentDirection {
-        case .front:
-            setupCameraView(with: .back)
-            currentDirection = .back
-            break
-        case .back:
-            setupCameraView(with: .front)
-            currentDirection = .front
-            break
-        }
-        
-    }
-    
     
 }
 
@@ -87,7 +59,7 @@ extension CameraViewController {
                             videoPreviewLayer.connection.videoOrientation = .portrait
                             
                             cameraView.layer.addSublayer(videoPreviewLayer)
-                            cameraView.addSubview(switchCameraButton)
+//                            cameraView.addSubview(switchCameraButton)
                             
                             videoPreviewLayer.position = CGPoint(x: self.cameraView.frame.width / 2, y: self.cameraView.frame.height / 2)
                             videoPreviewLayer.bounds = cameraView.frame
@@ -100,8 +72,6 @@ extension CameraViewController {
                 }
             }
         }
-        
     }
-    
 }
 

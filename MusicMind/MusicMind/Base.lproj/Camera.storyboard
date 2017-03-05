@@ -12,7 +12,7 @@
         <!--Camera View Controller-->
         <scene sceneID="pmW-aq-Qff">
             <objects>
-                <viewController id="sBF-OT-sPe" customClass="CameraViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" id="sBF-OT-sPe" customClass="CameraViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ofh-2X-jA0"/>
                         <viewControllerLayoutGuide type="bottom" id="4pY-0G-RuD"/>
@@ -23,6 +23,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2Q-BA-tgI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
+                                        <rect key="frame" x="321" y="23" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
