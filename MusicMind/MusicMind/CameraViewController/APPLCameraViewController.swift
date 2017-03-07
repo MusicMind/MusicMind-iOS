@@ -17,7 +17,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		super.viewDidLoad()
 		
 		// Disable UI. The UI is enabled if and only if the session starts running.
-		cameraButton.isEnabled = false
+		_cameraButton.isEnabled = false
 		recordButton.isEnabled = false
 		photoButton.isEnabled = false
 		livePhotoModeButton.isEnabled = false
@@ -163,7 +163,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	
 	var videoDeviceInput: AVCaptureDeviceInput!
 	
-	@IBOutlet private weak var _previewView: PreviewView!
+    weak var _previewView: PreviewView!
 	
 	// Call this on the session queue.
 	private func configureSession() {
@@ -366,14 +366,14 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	
 	// MARK: Device Configuration
 	
-	@IBOutlet private weak var cameraButton: UIButton!
+    weak var _cameraButton: UIButton!
 	
 	@IBOutlet private weak var cameraUnavailableLabel: UILabel!
 	
-	private let videoDeviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera, .builtInDuoCamera], mediaType: AVMediaTypeVideo, position: .unspecified)!
+	private let videoDeviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera, .builtInDualCamera], mediaType: AVMediaTypeVideo, position: .unspecified)!
 	
-	@IBAction private func changeCamera(_ cameraButton: UIButton) {
-		cameraButton.isEnabled = false
+	func changeCamera() {
+		_cameraButton.isEnabled = false
 		recordButton.isEnabled = false
 		photoButton.isEnabled = false
 		livePhotoModeButton.isEnabled = false
@@ -450,7 +450,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			}
 			
 			DispatchQueue.main.async { [unowned self] in
-				self.cameraButton.isEnabled = true
+				self._cameraButton.isEnabled = true
 				self.recordButton.isEnabled = self.movieFileOutput != nil
 				self.photoButton.isEnabled = true
 				self.livePhotoModeButton.isEnabled = true
@@ -621,7 +621,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	
 	@IBOutlet private weak var resumeButton: UIButton!
 	
-	@IBAction private func toggleMovieRecording(_ recordButton: UIButton) {
+	func toggleMovieRecording() {
 		guard let movieFileOutput = self.movieFileOutput else {
 			return
 		}
@@ -632,7 +632,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		
 			See the AVCaptureFileOutputRecordingDelegate methods.
 		*/
-		cameraButton.isEnabled = false
+		_cameraButton.isEnabled = false
 		recordButton.isEnabled = false
 		captureModeControl.isEnabled = false
 		
@@ -748,7 +748,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		// Enable the Camera and Record buttons to let the user switch camera and start another recording.
 		DispatchQueue.main.async { [unowned self] in
 			// Only enable the ability to change camera if the device has more than one camera.
-			self.cameraButton.isEnabled = self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1
+			self._cameraButton.isEnabled = self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1
 			self.recordButton.isEnabled = true
 			self.captureModeControl.isEnabled = true
 			self.recordButton.setTitle(NSLocalizedString("Record", comment: "Recording button record title"), for: [])
@@ -791,7 +791,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			
 			DispatchQueue.main.async { [unowned self] in
 				// Only enable the ability to change camera if the device has more than one camera.
-				self.cameraButton.isEnabled = isSessionRunning && self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1
+				self._cameraButton.isEnabled = isSessionRunning && self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1
 				self.recordButton.isEnabled = isSessionRunning && self.movieFileOutput != nil
 				self.photoButton.isEnabled = isSessionRunning
 				self.captureModeControl.isEnabled = isSessionRunning
