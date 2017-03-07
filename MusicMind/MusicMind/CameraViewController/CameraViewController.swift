@@ -13,10 +13,12 @@ class CameraViewController: APPLCameraViewController {
     
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
     
     override func viewDidLoad() {
-        self._previewView = previewView
-        self._cameraButton = cameraButton
+        _previewView = previewView
+        _cameraButton = cameraButton
+        _recordButton = recordButton
         super.viewDidLoad()
     }
     
@@ -29,7 +31,7 @@ class CameraViewController: APPLCameraViewController {
         self.changeCamera()
     }
     @IBAction func recordButtonPressed(_ sender: Any) {
-        
+        self.toggleMovieRecording()
     }
 }
 
