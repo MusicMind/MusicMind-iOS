@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBF-OT-sPe">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E154a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBF-OT-sPe">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,24 +19,29 @@
                         <viewControllerLayoutGuide type="bottom" id="4pY-0G-RuD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fk2-94-Jwe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2Q-BA-tgI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
-                                        <rect key="frame" x="321" y="23" width="47" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Swtich"/>
-                                    </button>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgu-2x-EGW">
+                                <rect key="frame" x="28" y="20" width="125" height="30"/>
+                                <state key="normal" title="Back to Messages"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
+                                <rect key="frame" x="339" y="20" width="47" height="30"/>
+                                <state key="normal" title="Switch"/>
+                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Mr-6q-0aJ">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="PFp-Vf-ETC"/>
+                                    <barButtonItem title="Library" id="PFp-Vf-ETC"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e2Z-IK-9jf"/>
+                                    <barButtonItem title="Photo" id="yjD-sq-9ed"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hNR-pc-z6A"/>
+                                    <barButtonItem title="Video" id="1NL-Lw-DDj"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -44,10 +50,14 @@
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="top" secondItem="Fk2-94-Jwe" secondAttribute="top" id="2Qa-Vz-o4c"/>
                             <constraint firstAttribute="trailing" secondItem="p2Q-BA-tgI" secondAttribute="trailing" id="3Jj-ov-8XS"/>
                             <constraint firstAttribute="trailing" secondItem="3Mr-6q-0aJ" secondAttribute="trailing" id="IwO-Su-H4A"/>
+                            <constraint firstItem="hgu-2x-EGW" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" id="OQS-ma-Xlj"/>
                             <constraint firstItem="3Mr-6q-0aJ" firstAttribute="top" secondItem="p2Q-BA-tgI" secondAttribute="bottom" id="Q6G-Tr-f1i"/>
+                            <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" id="QR0-Rg-uFX"/>
                             <constraint firstItem="3Mr-6q-0aJ" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leading" id="TXy-cU-DeW"/>
                             <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="3Mr-6q-0aJ" secondAttribute="bottom" id="Z6G-0M-gGU"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leading" id="a4f-oW-7W0"/>
+                            <constraint firstItem="hgu-2x-EGW" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="8" id="f27-Pg-jD7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="8" id="r0N-28-aJ1"/>
                         </constraints>
                     </view>
                     <connections>

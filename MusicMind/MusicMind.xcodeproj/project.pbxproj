@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3DCBAE1E6E1F9F00AADAB8 /* AAPLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBAD1E6E1F9F00AADAB8 /* AAPLCameraViewController.m */; };
 		0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* Camera.storyboard */; };
 		0FD0257A1E6B51A900E59E95 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD025791E6B51A900E59E95 /* CameraViewController.swift */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
@@ -43,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F3DCBAB1E6E1F9F00AADAB8 /* MusicMind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicMind-Bridging-Header.h"; sourceTree = "<group>"; };
+		0F3DCBAC1E6E1F9F00AADAB8 /* AAPLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraViewController.h; sourceTree = "<group>"; };
+		0F3DCBAD1E6E1F9F00AADAB8 /* AAPLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCameraViewController.m; sourceTree = "<group>"; };
 		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		0FD025791E6B51A900E59E95 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = CameraViewController/CameraViewController.swift; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,8 +104,11 @@
 		0FD0256F1E6B4BD500E59E95 /* Camera View */ = {
 			isa = PBXGroup;
 			children = (
+				0F3DCBAC1E6E1F9F00AADAB8 /* AAPLCameraViewController.h */,
+				0F3DCBAD1E6E1F9F00AADAB8 /* AAPLCameraViewController.m */,
 				0FD025791E6B51A900E59E95 /* CameraViewController.swift */,
 				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
+				0F3DCBAB1E6E1F9F00AADAB8 /* MusicMind-Bridging-Header.h */,
 			);
 			name = "Camera View";
 			sourceTree = "<group>";
@@ -262,6 +269,7 @@
 					DE429F7D1E661BB20050E719 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = GQMN9RP4XE;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					DE429F911E661BB20050E719 = {
@@ -473,6 +481,7 @@
 				DE429F841E661BB20050E719 /* ViewController.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				0FD0257A1E6B51A900E59E95 /* CameraViewController.swift in Sources */,
+				0F3DCBAE1E6E1F9F00AADAB8 /* AAPLCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,11 +642,14 @@
 			baseConfigurationReference = 9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GQMN9RP4XE;
 				INFOPLIST_FILE = MusicMind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicmindcompany;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -647,11 +659,13 @@
 			baseConfigurationReference = 1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = GQMN9RP4XE;
 				INFOPLIST_FILE = MusicMind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicmindcompany;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
