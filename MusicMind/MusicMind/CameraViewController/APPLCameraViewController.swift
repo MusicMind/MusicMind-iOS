@@ -24,7 +24,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		captureModeControl.isEnabled = false
 		
 		// Set up the video preview view.
-		previewView.session = session
+		_previewView.session = session
 		
 		/*
 			Check video authorization status. Video access is required and audio
@@ -135,7 +135,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 		super.viewWillTransition(to: size, with: coordinator)
 		
-		if let videoPreviewLayerConnection = previewView.videoPreviewLayer.connection {
+		if let videoPreviewLayerConnection = _previewView.videoPreviewLayer.connection {
 			let deviceOrientation = UIDevice.current.orientation
 			guard let newVideoOrientation = deviceOrientation.videoOrientation, deviceOrientation.isPortrait || deviceOrientation.isLandscape else {
 				return
@@ -163,7 +163,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	
 	var videoDeviceInput: AVCaptureDeviceInput!
 	
-	@IBOutlet private weak var previewView: PreviewView!
+	@IBOutlet private weak var _previewView: PreviewView!
 	
 	// Call this on the session queue.
 	private func configureSession() {
@@ -184,7 +184,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			var defaultVideoDevice: AVCaptureDevice?
 			
 			// Choose the back dual camera if available, otherwise default to a wide angle camera.
-			if let dualCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInDuoCamera, mediaType: AVMediaTypeVideo, position: .back) {
+			if let dualCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInDualCamera, mediaType: AVMediaTypeVideo, position: .back) {
 				defaultVideoDevice = dualCameraDevice
 			}
 			else if let backCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .back) {
@@ -221,7 +221,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 						}
 					}
 					
-					self.previewView.videoPreviewLayer.connection.videoOrientation = initialVideoOrientation
+					self._previewView.videoPreviewLayer.connection.videoOrientation = initialVideoOrientation
 				}
 			}
 			else {
@@ -460,7 +460,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	}
 	
 	@IBAction private func focusAndExposeTap(_ gestureRecognizer: UITapGestureRecognizer) {
-		let devicePoint = self.previewView.videoPreviewLayer.captureDevicePointOfInterest(for: gestureRecognizer.location(in: gestureRecognizer.view))
+		let devicePoint = self._previewView.videoPreviewLayer.captureDevicePointOfInterest(for: gestureRecognizer.location(in: gestureRecognizer.view))
 		focus(with: .autoFocus, exposureMode: .autoExpose, at: devicePoint, monitorSubjectAreaChange: true)
 	}
 	
@@ -508,7 +508,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			entering the session queue. We do this to ensure UI elements are accessed on
 			the main thread and session configuration is done on the session queue.
 		*/
-		let videoPreviewLayerOrientation = previewView.videoPreviewLayer.connection.videoOrientation
+		let videoPreviewLayerOrientation = _previewView.videoPreviewLayer.connection.videoOrientation
 		
 		sessionQueue.async {
 			// Update the photo output's connection to match the video orientation of the video preview layer.
@@ -532,9 +532,9 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			// Use a separate object for the photo capture delegate to isolate each capture life cycle.
 			let photoCaptureDelegate = PhotoCaptureDelegate(with: photoSettings, willCapturePhotoAnimation: {
 					DispatchQueue.main.async { [unowned self] in
-						self.previewView.videoPreviewLayer.opacity = 0
+						self._previewView.videoPreviewLayer.opacity = 0
 						UIView.animate(withDuration: 0.25) { [unowned self] in
-							self.previewView.videoPreviewLayer.opacity = 1
+							self._previewView.videoPreviewLayer.opacity = 1
 						}
 					}
 				}, capturingLivePhoto: { capturing in
@@ -641,7 +641,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			before entering the session queue. We do this to ensure UI elements are
 			accessed on the main thread and session configuration is done on the session queue.
 		*/
-		let videoPreviewLayerOrientation = previewView.videoPreviewLayer.connection.videoOrientation
+		let videoPreviewLayerOrientation = _previewView.videoPreviewLayer.connection.videoOrientation
 		
 		sessionQueue.async { [unowned self] in
 			if !movieFileOutput.isRecording {

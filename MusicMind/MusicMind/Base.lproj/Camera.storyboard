@@ -61,7 +61,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraView" destination="p2Q-BA-tgI" id="lbn-aD-boW"/>
+                        <outlet property="previewView" destination="p2Q-BA-tgI" id="HHd-Ld-LqL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHQ-cp-EhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
