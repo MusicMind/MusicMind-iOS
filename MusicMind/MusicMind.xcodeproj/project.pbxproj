@@ -125,8 +125,8 @@
 		0FD0256F1E6B4BD500E59E95 /* Camera View */ = {
 			isa = PBXGroup;
 			children = (
-				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
 				0F3DCBAF1E6E21F400AADAB8 /* View */,
+				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
 				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
 				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
 			);

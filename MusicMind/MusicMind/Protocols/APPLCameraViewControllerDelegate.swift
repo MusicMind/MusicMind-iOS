@@ -11,4 +11,8 @@ import Foundation
 protocol APPLCameraViewControllerDelegate: class {
     func shouldEnableRecordUI(enabled: Bool)
     func shouldEnableCameraUI(enabled: Bool)
+    
+    // For future use when we would like to show that there is a recording in progress
+    func canStartRecording()
+    func recordingHasStarted()
 }

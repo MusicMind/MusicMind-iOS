@@ -671,7 +671,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		// Enable the Record button to let the user stop the recording.
 		DispatchQueue.main.async { [unowned self] in
             self.delegate?.shouldEnableRecordUI(enabled: true)
-			self._recordButton.setTitle(NSLocalizedString("Stop", comment: "Recording button stop title"), for: [])
+			self.delegate?.recordingHasStarted()
 		}
 	}
 	
@@ -745,7 +745,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			// Only enable the ability to change camera if the device has more than one camera.
             self.delegate?.shouldEnableRecordUI(enabled: true)
             self.delegate?.shouldEnableCameraUI(enabled: self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1)
-			self._recordButton.setTitle(NSLocalizedString("Record", comment: "Recording button record title"), for: [])
+			self.delegate?.canStartRecording()
 		}
 	}
 	

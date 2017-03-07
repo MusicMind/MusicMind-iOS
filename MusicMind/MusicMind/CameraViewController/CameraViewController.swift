@@ -16,10 +16,11 @@ class CameraViewController: APPLCameraViewController {
     @IBOutlet weak var recordButton: UIButton!
     
     override func viewDidLoad() {
+        delegate = self
         _previewView = previewView
-        _cameraButton = cameraButton
-        _recordButton = recordButton
         super.viewDidLoad()
+        
+        
     }
     
     
@@ -32,6 +33,24 @@ class CameraViewController: APPLCameraViewController {
     }
     @IBAction func recordButtonPressed(_ sender: Any) {
         self.toggleMovieRecording()
+    }
+}
+
+extension CameraViewController: APPLCameraViewControllerDelegate{
+    func shouldEnableCameraUI(enabled: Bool) {
+        cameraButton.isEnabled = enabled
+    }
+    
+    func shouldEnableRecordUI(enabled: Bool) {
+        recordButton.isEnabled = enabled
+    }
+    
+    func recordingHasStarted() {
+        
+    }
+    
+    func canStartRecording() {
+        
     }
 }
 
