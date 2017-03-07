@@ -11,14 +11,18 @@ import AVFoundation
 import Photos
 
 class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
+    
+    weak var delegate: APPLCameraViewControllerDelegate?
+    
 	// MARK: View Controller Life Cycle
 	
     override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		// Disable UI. The UI is enabled if and only if the session starts running.
-		_cameraButton.isEnabled = false
-		_recordButton.isEnabled = false
+        self.delegate?.shouldEnableCameraUI(enabled: false)
+        self.delegate?.shouldEnableRecordUI(enabled: false)
+
 //		photoButton.isEnabled = false
 //		livePhotoModeButton.isEnabled = false
 		
@@ -308,7 +312,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	
 	@IBAction private func toggleCaptureMode(_ captureModeControl: UISegmentedControl) {
 		if captureModeControl.selectedSegmentIndex == CaptureMode.photo.rawValue {
-			_recordButton.isEnabled = false
+            self.delegate?.shouldEnableRecordUI(enabled: false)
 			
 			sessionQueue.async { [unowned self] in
 				/*
@@ -354,8 +358,8 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 					self.movieFileOutput = movieFileOutput
 					
 					DispatchQueue.main.async { [unowned self] in
-						self._recordButton.isEnabled = true
-					}
+                        self.delegate?.shouldEnableRecordUI(enabled: true)
+                    }
 				}
 			}
 		}
@@ -363,15 +367,14 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	
 	// MARK: Device Configuration
 	
-    weak var _cameraButton: UIButton!
 	
 	@IBOutlet private weak var cameraUnavailableLabel: UILabel!
 	
 	private let videoDeviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera, .builtInDualCamera], mediaType: AVMediaTypeVideo, position: .unspecified)!
 	
 	func changeCamera() {
-		_cameraButton.isEnabled = false
-		_recordButton.isEnabled = false
+        self.delegate?.shouldEnableCameraUI(enabled: false)
+        self.delegate?.shouldEnableRecordUI(enabled: false)
 		photoButton.isEnabled = false
 		livePhotoModeButton.isEnabled = false
 		
@@ -446,8 +449,8 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			}
 			
 			DispatchQueue.main.async { [unowned self] in
-				self._cameraButton.isEnabled = true
-				self._recordButton.isEnabled = self.movieFileOutput != nil
+                self.delegate?.shouldEnableCameraUI(enabled: true)
+                self.delegate?.shouldEnableRecordUI(enabled: self.movieFileOutput != nil)
 				self.photoButton.isEnabled = true
 				self.livePhotoModeButton.isEnabled = true
 			}
@@ -611,9 +614,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	private var movieFileOutput: AVCaptureMovieFileOutput? = nil
 	
 	private var backgroundRecordingID: UIBackgroundTaskIdentifier? = nil
-	
-	weak var _recordButton: UIButton!
-	
+		
 	@IBOutlet private weak var resumeButton: UIButton!
 	
 	func toggleMovieRecording() {
@@ -627,8 +628,8 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		
 			See the AVCaptureFileOutputRecordingDelegate methods.
 		*/
-		_cameraButton.isEnabled = false
-		_recordButton.isEnabled = false
+        self.delegate?.shouldEnableCameraUI(enabled: false)
+        self.delegate?.shouldEnableRecordUI(enabled: false)
 		
 		/*
 			Retrieve the video preview layer's video orientation on the main queue
@@ -669,7 +670,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
 		// Enable the Record button to let the user stop the recording.
 		DispatchQueue.main.async { [unowned self] in
-			self._recordButton.isEnabled = true
+            self.delegate?.shouldEnableRecordUI(enabled: true)
 			self._recordButton.setTitle(NSLocalizedString("Stop", comment: "Recording button stop title"), for: [])
 		}
 	}
@@ -742,8 +743,8 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		// Enable the Camera and Record buttons to let the user switch camera and start another recording.
 		DispatchQueue.main.async { [unowned self] in
 			// Only enable the ability to change camera if the device has more than one camera.
-			self._cameraButton.isEnabled = self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1
-			self._recordButton.isEnabled = true
+            self.delegate?.shouldEnableRecordUI(enabled: true)
+            self.delegate?.shouldEnableCameraUI(enabled: self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1)
 			self._recordButton.setTitle(NSLocalizedString("Record", comment: "Recording button record title"), for: [])
 		}
 	}
@@ -784,8 +785,8 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			
 			DispatchQueue.main.async { [unowned self] in
 				// Only enable the ability to change camera if the device has more than one camera.
-				self._cameraButton.isEnabled = isSessionRunning && self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1
-				self._recordButton.isEnabled = isSessionRunning && self.movieFileOutput != nil
+				self.delegate?.shouldEnableCameraUI(enabled: isSessionRunning && self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1)
+				self.delegate?.shouldEnableRecordUI(enabled: isSessionRunning && self.movieFileOutput != nil)
 				self.photoButton.isEnabled = isSessionRunning
 				self.livePhotoModeButton.isEnabled = isSessionRunning && isLivePhotoCaptureEnabled
 				self.livePhotoModeButton.isHidden = !(isSessionRunning && isLivePhotoCaptureSupported)
@@ -930,3 +931,5 @@ extension AVCaptureDeviceDiscoverySession {
 		return uniqueDevicePositions.count
 	}
 }
+
+

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol APPLCameraViewControllerDelegate: class {
+    func shouldEnableRecordUI(enabled: Bool)
+    func shouldEnableCameraUI(enabled: Bool)
+}
