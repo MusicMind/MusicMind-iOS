@@ -78,6 +78,11 @@ extension CameraViewController: APPLCameraViewControllerDelegate{
     func canStartRecording() {
         
     }
+    
+    func didFinishRecordingToOutputFileAt(ouputUrl: URL) {
+        // Post to Firebase
+        
+    }
 }
 
 // MARK: - Photo Capture Delegate Functions

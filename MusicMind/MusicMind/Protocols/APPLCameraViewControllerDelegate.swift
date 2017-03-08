@@ -15,4 +15,5 @@ protocol APPLCameraViewControllerDelegate: class {
     // For future use when we would like to show that there is a recording in progress
     func canStartRecording()
     func recordingHasStarted()
+    func didFinishRecordingToOutputFileAt(ouputUrl: URL)
 }

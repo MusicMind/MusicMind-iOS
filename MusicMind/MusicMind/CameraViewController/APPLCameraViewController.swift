@@ -667,6 +667,11 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			Note: Since we use a unique file path for each recording, a new recording will
 			not overwrite a recording currently being saved.
 		*/
+        
+        //Keep in mind this is happening in a background thread
+        self.delegate?.didFinishRecordingToOutputFileAt(ouputUrl: outputFileURL)
+        
+        
 		func cleanup() {
 			let path = outputFileURL.path
             if FileManager.default.fileExists(atPath: path) {
