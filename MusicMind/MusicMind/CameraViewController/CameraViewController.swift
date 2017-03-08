@@ -14,15 +14,14 @@ class CameraViewController: APPLCameraViewController {
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var photoToolBarItem: UIBarButtonItem!
+    @IBOutlet weak var videoToolBarItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         delegate = self
         _previewView = previewView
         super.viewDidLoad()
-        
-        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,6 +32,20 @@ class CameraViewController: APPLCameraViewController {
     }
     @IBAction func recordButtonPressed(_ sender: Any) {
         self.toggleMovieRecording()
+    }
+    
+    
+    @IBAction func photoToolBarButtonPressed(_ sender: Any) {
+        toggleCaptureMode(.photo)
+        photoToolBarItem.tintColor = UIColor.black
+        videoToolBarItem.tintColor = UIColor.blue
+        
+    }
+    
+    @IBAction func videoToolBarItemPressed(_ sender: Any) {
+        toggleCaptureMode(.movie)
+        photoToolBarItem.tintColor = UIColor.blue
+        videoToolBarItem.tintColor = UIColor.black
     }
 }
 

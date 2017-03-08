@@ -300,14 +300,15 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		}
 	}
 	
-	private enum CaptureMode: Int {
+    enum CaptureMode: Int {
 		case photo = 0
 		case movie = 1
 	}
 	
-	func toggleCaptureMode(_ captureModeControl: UISegmentedControl) {
-		if captureModeControl.selectedSegmentIndex == CaptureMode.photo.rawValue {
-            self.delegate?.shouldEnableRecordUI(enabled: false)
+    /// capture mode 0 is for photos, and 1 is for movies
+	func toggleCaptureMode(_ captureMode: CaptureMode) {
+		if captureMode == .photo {
+            self.delegate?.shouldEnableRecordUI(enabled: true)
 			
 			sessionQueue.async { [unowned self] in
 				/*
@@ -331,7 +332,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 				}
 			}
 		}
-		else if captureModeControl.selectedSegmentIndex == CaptureMode.movie.rawValue
+		else if captureMode == .movie
 		{
 			sessionQueue.async { [unowned self] in
  				let movieFileOutput = AVCaptureMovieFileOutput()
