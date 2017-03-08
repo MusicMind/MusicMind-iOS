@@ -17,6 +17,8 @@ class CameraViewController: APPLCameraViewController {
     @IBOutlet weak var photoToolBarItem: UIBarButtonItem!
     @IBOutlet weak var videoToolBarItem: UIBarButtonItem!
     
+    var isRecording: Bool = false
+    
     override func viewDidLoad() {
         delegate = self
         _previewView = previewView
@@ -32,11 +34,21 @@ class CameraViewController: APPLCameraViewController {
     }
     @IBAction func recordButtonPressed(_ sender: Any) {
         self.toggleMovieRecording()
+        isRecording = !isRecording
+        
+        if isRecording {
+            recordButton.setTitle("stop recording", for: .normal)
+        } else {
+            recordButton.setTitle("Record Video", for: .normal)
+        }
+        
     }
     
     
     @IBAction func photoToolBarButtonPressed(_ sender: Any) {
         toggleCaptureMode(.photo)
+        recordButton.setTitle("Take Photo", for: .normal)
+        
         photoToolBarItem.tintColor = UIColor.black
         videoToolBarItem.tintColor = UIColor.blue
         
@@ -44,6 +56,7 @@ class CameraViewController: APPLCameraViewController {
     
     @IBAction func videoToolBarItemPressed(_ sender: Any) {
         toggleCaptureMode(.movie)
+        recordButton.setTitle("Record Video", for: .normal)
         photoToolBarItem.tintColor = UIColor.blue
         videoToolBarItem.tintColor = UIColor.black
     }
