@@ -62,6 +62,8 @@ class CameraViewController: APPLCameraViewController {
     }
 }
 
+
+// MARK: - APPLCameraViewControllerDelegate
 extension CameraViewController: APPLCameraViewControllerDelegate{
     func shouldEnableCameraUI(enabled: Bool) {
         cameraButton.isEnabled = enabled
@@ -79,14 +81,10 @@ extension CameraViewController: APPLCameraViewControllerDelegate{
         
     }
     
+    // MARK: - Post to firebase
     func didFinishRecordingToOutputFileAt(ouputUrl: URL) {
         // Post to Firebase
         
     }
 }
-
-// MARK: - Photo Capture Delegate Functions
-//extension CameraViewController: PhotoCaptureDelegate {
-//    
-//}
 
