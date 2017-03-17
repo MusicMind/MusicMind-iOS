@@ -13,6 +13,7 @@
 		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
 		0F476E101E7CA052002F4776 /* CameraOverlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F476E0E1E7CA052002F4776 /* CameraOverlay.storyboard */; };
 		0F476E121E7CA49D002F4776 /* CameraOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F476E111E7CA49D002F4776 /* CameraOverlayViewController.swift */; };
+		0F476E141E7CAECC002F4776 /* CameraOverlayViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F476E131E7CAECC002F4776 /* CameraOverlayViewController + collectionViewHelper.swift */; };
 		0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */; };
 		0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* Camera.storyboard */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
@@ -55,6 +56,7 @@
 		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		0F476E0F1E7CA052002F4776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CameraOverlay.storyboard; sourceTree = "<group>"; };
 		0F476E111E7CA49D002F4776 /* CameraOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraOverlayViewController.swift; path = CameraOverlayViewController/CameraOverlayViewController.swift; sourceTree = "<group>"; };
+		0F476E131E7CAECC002F4776 /* CameraOverlayViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CameraOverlayViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
 		0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APPLCameraViewControllerDelegate.swift; path = Protocols/APPLCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				0F476E0E1E7CA052002F4776 /* CameraOverlay.storyboard */,
 				0F476E111E7CA49D002F4776 /* CameraOverlayViewController.swift */,
+				0F476E131E7CAECC002F4776 /* CameraOverlayViewController + collectionViewHelper.swift */,
 			);
 			name = "Camera Overlay View";
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				0F476E121E7CA49D002F4776 /* CameraOverlayViewController.swift in Sources */,
 				0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */,
 				0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */,
+				0F476E141E7CAECC002F4776 /* CameraOverlayViewController + collectionViewHelper.swift in Sources */,
 				DE429F841E661BB20050E719 /* ViewController.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
