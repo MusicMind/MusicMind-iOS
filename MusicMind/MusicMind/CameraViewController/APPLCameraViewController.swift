@@ -669,7 +669,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		*/
         
         //Keep in mind this is happening in a background thread
-        self.delegate?.didFinishRecordingToOutputFileAt(ouputUrl: outputFileURL)
+        self.delegate?.didFinishRecordingToOutputFileAt(outputUrl: outputFileURL)
         
         
 		func cleanup() {

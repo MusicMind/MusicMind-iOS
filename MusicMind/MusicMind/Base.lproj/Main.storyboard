@@ -81,5 +81,47 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
+        <!--Send To Friend View Controller-->
+        <scene sceneID="zqh-8W-aCm">
+            <objects>
+                <viewController storyboardIdentifier="SendToFriend" id="rjO-J1-7pe" customClass="SendToFriendViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="akX-Ym-4Ea"/>
+                        <viewControllerLayoutGuide type="bottom" id="rBv-9P-IGp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kyD-c1-SRp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAc-0K-Sf3">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="goBackToCamera:" destination="rjO-J1-7pe" eventType="touchUpInside" id="8h6-hM-ubk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo9-nB-CyP">
+                                <rect key="frame" x="166" y="69" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="UAc-0K-Sf3" secondAttribute="leading" id="7ev-tB-7Co"/>
+                            <constraint firstItem="yo9-nB-CyP" firstAttribute="top" secondItem="akX-Ym-4Ea" secondAttribute="bottom" constant="49" id="FeN-9E-edL"/>
+                            <constraint firstItem="yo9-nB-CyP" firstAttribute="centerX" secondItem="kyD-c1-SRp" secondAttribute="centerX" id="mco-uP-xct"/>
+                            <constraint firstItem="UAc-0K-Sf3" firstAttribute="top" secondItem="akX-Ym-4Ea" secondAttribute="bottom" id="xjv-pi-PS5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="urlLabel" destination="yo9-nB-CyP" id="mXu-1o-tgN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgQ-4D-G4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="814"/>
+        </scene>
     </scenes>
 </document>
