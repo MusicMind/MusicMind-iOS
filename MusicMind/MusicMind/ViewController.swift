@@ -21,6 +21,7 @@ class ViewController: UIViewController {
             if error == nil {
                 
                 print(user?.uid)
+                self.performSegue(withIdentifier: "toSpotifyLogin", sender: self)
                 
                 self.view.backgroundColor = .green
             } else {
@@ -45,6 +46,12 @@ class ViewController: UIViewController {
         })
     }
     
+    @IBAction func showCameraButtonPressed(_ sender: Any) {
+        // Show the camera view controller
+        let cameraViewController = UIStoryboard(name: "Camera", bundle: nil).instantiateViewController(withIdentifier: "CameraViewController")
+        self.present(cameraViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,7 +62,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 

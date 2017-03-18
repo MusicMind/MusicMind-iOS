@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
+		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
+		0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */; };
+		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
+		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
+		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
+		0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */; };
+		0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* Camera.storyboard */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		3A02DC27C18A24237A9598AB /* Pods_MusicMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */; };
-		86E1998A1E7B63E50071F50C /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E199881E7B63E50071F50C /* SpotifyAudioPlayback.framework */; };
-		86E1998B1E7B63E50071F50C /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E199891E7B63E50071F50C /* SpotifyAuthentication.framework */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
+		86E199931E7CC7AD0071F50C /* SpotifyAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E199921E7CC7AD0071F50C /* SpotifyAuthViewController.swift */; };
 		C6D985DE1040B1B497A0397F /* Pods_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E998B4E494A2D660BB680CF /* Pods_MusicMindTests.framework */; };
 		DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F811E661BB20050E719 /* AppDelegate.swift */; };
 		DE429F841E661BB20050E719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F831E661BB20050E719 /* ViewController.swift */; };
@@ -44,15 +51,22 @@
 
 /* Begin PBXFileReference section */
 		097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
+		0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = CameraViewController/CameraViewController.swift; sourceTree = "<group>"; };
+		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
+		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
+		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
+		0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APPLCameraViewControllerDelegate.swift; path = Protocols/APPLCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
+		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		2E998B4E494A2D660BB680CF /* Pods_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F09403DC710C15E979D2C8 /* Pods-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMindTests/Pods-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		43C3ADAD2F7337DFBD1894BF /* Pods-MusicMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMindTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMindTests/Pods-MusicMindTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80EF3CD0EE3B408C321A5E5E /* Pods-MusicMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMindUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMindUITests/Pods-MusicMindUITests.release.xcconfig"; sourceTree = "<group>"; };
-		86E199881E7B63E50071F50C /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
-		86E199891E7B63E50071F50C /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		86E1998C1E7B64070071F50C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		86E1998E1E7B683F0071F50C /* MusicMind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicMind-Bridging-Header.h"; sourceTree = "<group>"; };
+		86E199921E7CC7AD0071F50C /* SpotifyAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyAuthViewController.swift; sourceTree = "<group>"; };
+		86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MusicMind-Bridging-Header.h"; sourceTree = "<group>"; };
 		9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
 		CE436F3A13088C34C7891AAB /* Pods-MusicMindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMindUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMindUITests/Pods-MusicMindUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE429F7E1E661BB20050E719 /* MusicMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +93,8 @@
 			files = (
 				86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */,
 				2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */,
-				86E1998B1E7B63E50071F50C /* SpotifyAuthentication.framework in Frameworks */,
-				86E1998A1E7B63E50071F50C /* SpotifyAudioPlayback.framework in Frameworks */,
+				0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */,
+				0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,11 +117,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3DCBAF1E6E21F400AADAB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0F3DCBB41E6E227300AADAB8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */,
+				0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		0FD0256F1E6B4BD500E59E95 /* Camera View */ = {
+			isa = PBXGroup;
+			children = (
+				0F3DCBAF1E6E21F400AADAB8 /* View */,
+				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
+				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
+				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
+			);
+			name = "Camera View";
+			sourceTree = "<group>";
+		};
 		6411FC252D5E1FC5BDF80FA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				86E1998C1E7B64070071F50C /* AVFoundation.framework */,
 				F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */,
+				0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */,
+				0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */,
 				2E998B4E494A2D660BB680CF /* Pods_MusicMindTests.framework */,
 				097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */,
 			);
@@ -153,15 +197,16 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
-				86E199881E7B63E50071F50C /* SpotifyAudioPlayback.framework */,
-				86E199891E7B63E50071F50C /* SpotifyAuthentication.framework */,
+				0F3DCBB41E6E227300AADAB8 /* Protocols */,
+				0FD0256F1E6B4BD500E59E95 /* Camera View */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DE429F831E661BB20050E719 /* ViewController.swift */,
 				DE429F851E661BB20050E719 /* Main.storyboard */,
 				DE429F881E661BB20050E719 /* Assets.xcassets */,
 				DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */,
 				DE429F8D1E661BB20050E719 /* Info.plist */,
-				86E1998E1E7B683F0071F50C /* MusicMind-Bridging-Header.h */,
+				86E199921E7CC7AD0071F50C /* SpotifyAuthViewController.swift */,
+				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 			);
 			path = MusicMind;
 			sourceTree = "<group>";
@@ -261,6 +306,7 @@
 				TargetAttributes = {
 					DE429F7D1E661BB20050E719 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GQMN9RP4XE;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -305,6 +351,7 @@
 				DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */,
 				DE429F891E661BB20050E719 /* Assets.xcassets in Resources */,
 				DE429F871E661BB20050E719 /* Main.storyboard in Resources */,
+				0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,8 +516,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */,
+				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
+				0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */,
+				86E199931E7CC7AD0071F50C /* SpotifyAuthViewController.swift in Sources */,
+				0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */,
 				DE429F841E661BB20050E719 /* ViewController.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
+				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +559,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0FD025701E6B4D2C00E59E95 /* Camera.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FD025711E6B4D2C00E59E95 /* Base */,
+			);
+			name = Camera.storyboard;
+			sourceTree = "<group>";
+		};
 		DE429F851E661BB20050E719 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -624,15 +685,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = GQMN9RP4XE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MusicMind",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MusicMind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicmindcompany;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -644,15 +707,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = GQMN9RP4XE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MusicMind",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MusicMind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.musicmindcompany;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
