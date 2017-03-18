@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SpotifyAuthViewController.swift
 //  MusicMind
 //
 //  Created by Ryan Boyd on 3/17/17.
