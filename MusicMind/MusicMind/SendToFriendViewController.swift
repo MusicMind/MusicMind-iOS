@@ -18,6 +18,28 @@ class SendToFriendViewController: UIViewController {
     
     @IBAction func attemptUpload(_ sender: Any) {
         self.progressBar.isHidden = false
+        
+        let storageRef = FIRStorage.storage().reference()
+        
+        let uploadMetadata = FIRStorageMetadata()
+        uploadMetadata.contentType = "video/mov"
+        
+        let uploadTask = storageRef.putFile(urlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
+            if error == nil {
+                print("Upload successful. Metadata: \(metadata)")
+            } else {
+                print("There was an error: \(error!.localizedDescription)")
+            }
+        }
+        
+        uploadTask.observe(.progress) { [weak self] (snapshot) in
+            guard let strongSelf = self else { return }
+            
+            guard let progress = snapshot.progress else { return }
+            
+            strongSelf.progressBar.progress = Float(progress.fractionCompleted)
+            
+        }
     }
     
     @IBAction func goBackToCamera(_ sender: Any) {
