@@ -38,5 +38,19 @@ class User: NSObject {
             }
         }
     }
+    
+    var firebaseUserPassword: String? {
+        get {
+            
+            return keychain.get(KeychainKey.firebaseUserPassword.rawValue)
+        }
+        set {
+            if let unwrappedNewValue = newValue {
+                keychain.set(unwrappedNewValue, forKey: KeychainKey.firebaseUserPassword.rawValue)
+            } else {
+                keychain.delete(KeychainKey.firebaseUserPassword.rawValue)
+            }
+        }
+    }
 
 }
