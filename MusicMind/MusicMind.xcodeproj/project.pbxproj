@@ -242,10 +242,10 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
+				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE64942F1E7CE71B003D92D0 /* SpotifyAuth */,
 				DE6494251E7CE670003D92D0 /* SignIn */,
 				DE09EC6A1E7CDF81005B237A /* SendToFriend */,
-				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				0FD0256F1E6B4BD500E59E95 /* Camera View */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DE429F881E661BB20050E719 /* Assets.xcassets */,
@@ -369,7 +369,7 @@
 				TargetAttributes = {
 					DE429F7D1E661BB20050E719 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GQMN9RP4XE;
+						DevelopmentTeam = B2HHR6H4K6;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -777,7 +777,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = GQMN9RP4XE;
+				DEVELOPMENT_TEAM = B2HHR6H4K6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -799,7 +799,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = GQMN9RP4XE;
+				DEVELOPMENT_TEAM = B2HHR6H4K6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
