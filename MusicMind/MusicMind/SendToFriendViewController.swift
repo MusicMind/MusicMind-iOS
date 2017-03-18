@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class SendToFriendViewController: UIViewController {
     
     var urlOfVideo: URL?
 
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var urlLabel: UILabel!
+    
+    @IBAction func attemptUpload(_ sender: Any) {
+        self.progressBar.isHidden = false
+    }
     
     @IBAction func goBackToCamera(_ sender: Any) {
         // Show the camera view controller
@@ -22,9 +28,12 @@ class SendToFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.progressBar.isHidden = true
 
         if let url = urlOfVideo {
             urlLabel.text = url.absoluteString
+            print(url.absoluteString)
         }
         
         // Do any additional setup after loading the view.
