@@ -11,13 +11,16 @@ import UIKit
 extension CameraOverlayViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return emogiImagesArray.count
+        return emojiImagesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emojiCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emojiCell", for: indexPath) as? EmojiCollectionViewCell
         
-        return cell
+        let emojiImage = emojiImagesArray[indexPath.row]
+        cell?.updateWith(image: emojiImage)
+        
+        return cell ?? EmojiCollectionViewCell()
         
     }
 }
