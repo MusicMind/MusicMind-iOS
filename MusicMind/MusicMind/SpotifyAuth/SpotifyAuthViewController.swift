@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SpotifyAuthViewController.swift
 //  MusicMind
 //
 //  Created by Ryan Boyd on 3/17/17.
@@ -30,6 +30,12 @@ class SpotifyAuthViewController: UIViewController {
         }
 
         
+    }
+    
+    @IBAction func openCameraView(_ sender: Any) {
+        let cameraViewController = UIStoryboard(name: "Camera", bundle: nil).instantiateViewController(withIdentifier: "CameraViewController")
+        self.present(cameraViewController, animated: true, completion: nil)
+
     }
 
     override func viewDidLoad() {

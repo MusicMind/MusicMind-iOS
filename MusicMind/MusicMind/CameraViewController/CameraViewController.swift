@@ -64,7 +64,7 @@ class CameraViewController: APPLCameraViewController {
 
 
 // MARK: - APPLCameraViewControllerDelegate
-extension CameraViewController: APPLCameraViewControllerDelegate{
+extension CameraViewController: APPLCameraViewControllerDelegate {
     func shouldEnableCameraUI(enabled: Bool) {
         cameraButton.isEnabled = enabled
     }
@@ -82,8 +82,13 @@ extension CameraViewController: APPLCameraViewControllerDelegate{
     }
     
     // MARK: - Post to firebase
-    func didFinishRecordingToOutputFileAt(ouputUrl: URL) {
-        // Post to Firebase
+    func didFinishRecordingToOutputFileAt(outputUrl: URL) {
+        // Show the camera view controller
+        let sendToFriendViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
+        
+        sendToFriendViewController.urlOfVideo = outputUrl
+        
+        self.present(sendToFriendViewController, animated: true, completion: nil)
         
     }
 }
