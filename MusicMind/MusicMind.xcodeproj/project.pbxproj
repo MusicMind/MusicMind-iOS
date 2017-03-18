@@ -25,7 +25,7 @@
 		DE1471F81E7CBF3D000C45E6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		DE1471F91E7CBF3E000C45E6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F811E661BB20050E719 /* AppDelegate.swift */; };
-		DE429F841E661BB20050E719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F831E661BB20050E719 /* ViewController.swift */; };
+		DE429F841E661BB20050E719 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F831E661BB20050E719 /* SignInViewController.swift */; };
 		DE429F871E661BB20050E719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F851E661BB20050E719 /* Main.storyboard */; };
 		DE429F891E661BB20050E719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE429F881E661BB20050E719 /* Assets.xcassets */; };
 		DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */; };
@@ -77,7 +77,7 @@
 		DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendToFriendViewController.swift; path = SendToFriend/SendToFriendViewController.swift; sourceTree = "<group>"; };
 		DE429F7E1E661BB20050E719 /* MusicMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE429F811E661BB20050E719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE429F831E661BB20050E719 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE429F831E661BB20050E719 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		DE429F861E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE429F881E661BB20050E719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE429F8B1E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				0FD0256F1E6B4BD500E59E95 /* Camera View */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
-				DE429F831E661BB20050E719 /* ViewController.swift */,
+				DE429F831E661BB20050E719 /* SignInViewController.swift */,
 				DE429F851E661BB20050E719 /* Main.storyboard */,
 				DE429F881E661BB20050E719 /* Assets.xcassets */,
 				DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */,
@@ -540,7 +540,7 @@
 				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
 				0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */,
 				0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */,
-				DE429F841E661BB20050E719 /* ViewController.swift in Sources */,
+				DE429F841E661BB20050E719 /* SignInViewController.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
