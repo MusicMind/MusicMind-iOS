@@ -14,7 +14,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -82,8 +82,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="8Is-GU-swc" id="M5t-8G-Fxv"/>
-                        <outlet property="passwordField" destination="kCw-jG-ZqY" id="4u3-91-2SV"/>
+                        <outlet property="emailField" destination="8Is-GU-swc" id="FAg-qy-Li6"/>
+                        <outlet property="passwordField" destination="kCw-jG-ZqY" id="hv8-bF-AM4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
