@@ -164,7 +164,7 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
-		0FD0256F1E6B4BD500E59E95 /* Camera View */ = {
+		0FD0256F1E6B4BD500E59E95 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
 				0F3DCBAF1E6E21F400AADAB8 /* View */,
@@ -172,7 +172,7 @@
 				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
 				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
 			);
-			name = "Camera View";
+			name = Camera;
 			sourceTree = "<group>";
 		};
 		6411FC252D5E1FC5BDF80FA6 /* Frameworks */ = {
@@ -246,7 +246,7 @@
 				DE64942F1E7CE71B003D92D0 /* SpotifyAuth */,
 				DE6494251E7CE670003D92D0 /* SignIn */,
 				DE09EC6A1E7CDF81005B237A /* SendToFriend */,
-				0FD0256F1E6B4BD500E59E95 /* Camera View */,
+				0FD0256F1E6B4BD500E59E95 /* Camera */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DE429F881E661BB20050E719 /* Assets.xcassets */,
 				DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */,
