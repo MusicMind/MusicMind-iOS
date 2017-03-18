@@ -36,7 +36,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emojiCell" id="4ns-0O-u7b">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emojiCell" id="4ns-0O-u7b" customClass="EmojiCollectionViewCell" customModule="MusicMind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="21.5" width="57" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -49,6 +49,9 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="emojiImageView" destination="P1k-CR-M5B" id="bXD-Hy-9T7"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
