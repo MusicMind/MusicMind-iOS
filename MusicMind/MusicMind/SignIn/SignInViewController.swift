@@ -21,12 +21,11 @@ class SignInViewController: UIViewController {
             if error == nil {
                 
                 print(user?.uid)
-                self.performSegue(withIdentifier: "toSpotifyLogin", sender: self)
                 
                 self.view.backgroundColor = .green
                 
-                let cameraViewController = UIStoryboard(name: "Camera", bundle: nil).instantiateViewController(withIdentifier: "CameraViewController")
-                self.present(cameraViewController, animated: true, completion: nil)
+                let spotifyAuthViewController = UIStoryboard(name: "SpotifyAuth", bundle: nil).instantiateViewController(withIdentifier: "SpotifyAuthViewController")
+                self.present(spotifyAuthViewController, animated: true, completion: nil)
             } else {
                 
                 print(error.debugDescription)
