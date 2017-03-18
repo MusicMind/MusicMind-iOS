@@ -14,6 +14,8 @@ class CameraOverlayViewController: UIViewController {
     
     let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "happyFace"), #imageLiteral(resourceName: "sunglassesFace"), #imageLiteral(resourceName: "nerdFace"),#imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
     
+    var videoURL: URL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
