@@ -21,6 +21,7 @@ class ViewController: UIViewController {
             if error == nil {
                 
                 print(user?.uid)
+                self.performSegue(withIdentifier: "toSpotifyLogin", sender: self)
                 
                 self.view.backgroundColor = .green
             } else {
@@ -61,7 +62,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 
