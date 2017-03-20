@@ -17,10 +17,14 @@ class SignInViewController: UIViewController {
     // TODO: Disable button if email || password fields are nil. Use textFieldDelegate to check everytime keypress.
     
     @IBAction func attemptSignIn(_ sender: Any) {
+        
+        user.firebaseUserEmail = emailField.text!
+        user.firebaseUserPassword = passwordField.text!
+
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             if error == nil {
                 
-                print(user?.uid)
+//                print(user?.uid)
                 
                 self.view.backgroundColor = .green
                 
@@ -37,6 +41,14 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let email = user.firebaseUserEmail {
+            emailField.text = email
+        }
+        
+        if let password = user.firebaseUserPassword {
+            passwordField.text = password
+        }
         
         // Do any additional setup after loading the view, typically from a nib.
     }

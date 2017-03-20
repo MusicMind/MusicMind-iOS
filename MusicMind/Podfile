@@ -10,12 +10,14 @@ target 'MusicMind' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'KeychainSwift'
 
   target 'MusicMindTests' do
     
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
+    pod 'KeychainSwift'
   end
 
   target 'MusicMindUITests' do
@@ -23,6 +25,7 @@ target 'MusicMind' do
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
+    pod 'KeychainSwift'
   end
 
 
