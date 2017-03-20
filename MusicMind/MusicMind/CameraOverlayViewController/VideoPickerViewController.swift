@@ -100,5 +100,10 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
             videoAssetOrientation_ = .down;
         }
+        
+        // add instructions
+        mainInstructions.layerInstructions = [videoLayerInstruction]
+        
+        let mainCompositionInst = AVMutableComposition()
     }
 }
