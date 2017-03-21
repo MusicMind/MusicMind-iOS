@@ -31,10 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("*** Auth error \(error)")
                     return
                 }
-                //TODO store session in UserDefaults
-                
-                print(session?.accessToken)
-                print(session?.canonicalUsername)
+                user.spotifyToken = session?.accessToken
+                let story = UIStoryboard.init(name: "SpotifyAuth", bundle: nil)
+                let tabView = story.instantiateViewController(withIdentifier: "tabView")
+                self.window?.rootViewController = tabView
                 
             })
         }

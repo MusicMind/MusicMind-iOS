@@ -52,5 +52,7 @@ class User: NSObject {
             }
         }
     }
+    
+    var spotifyToken: String?
 
 }

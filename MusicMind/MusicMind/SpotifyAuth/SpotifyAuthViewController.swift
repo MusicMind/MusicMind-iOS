@@ -14,13 +14,19 @@ class SpotifyAuthViewController: UIViewController {
         if let auth = SPTAuth.defaultInstance() {
             auth.clientID = "85374bf3879843d6a7b6fd4e62030d97"
             auth.redirectURL = URL(string: "musicmind://returnAfterLogin")
-            auth.sessionUserDefaultsKey = "currentKey"
             auth.requestedScopes = [SPTAuthStreamingScope]
             
+            //TODO rethink this first conditional
             if auth.session != nil {
                 //TODO Store session in UserDefaults
                 print(auth.session.accessToken)
+                
+                if !auth.session.isValid(){
+                    print("session not valid")
+                }
+
                 print(auth.session.canonicalUsername)
+                self.performSegue(withIdentifier: "toSpotifyView", sender: self)
             }
             else {
                 if let spotifyUrl = auth.spotifyWebAuthenticationURL() {
