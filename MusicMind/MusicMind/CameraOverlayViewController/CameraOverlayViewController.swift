@@ -26,6 +26,7 @@ class CameraOverlayViewController: VideoPickerViewController{
         delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,7 +38,7 @@ class CameraOverlayViewController: VideoPickerViewController{
         let playerItem = AVPlayerItem(url: url)
         
         videoPlayer = AVPlayer(playerItem: playerItem)
-        
+        videoPlayer.actionAtItemEnd = .none
         let videoLayer = AVPlayerLayer(player: videoPlayer)
         videoLayer.frame = recordedVideoView.bounds
         recordedVideoView.layer.addSublayer(videoLayer)
@@ -46,7 +47,13 @@ class CameraOverlayViewController: VideoPickerViewController{
         videoPlayer.play()
     }
     
+    func replayVideo(){
+        videoPlayer.seek(to: kCMTimeZero)
+        videoPlayer.play()
+    }
+    
 }
+
 
 // // MARK: - Video Picker View Controller Subclass and Delegate
 extension CameraOverlayViewController: VideoPickerViewControllerDelegate{
