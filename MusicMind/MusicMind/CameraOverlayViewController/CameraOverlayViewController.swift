@@ -10,27 +10,30 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class CameraOverlayViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationBarDelegate {
+class CameraOverlayViewController: VideoPickerViewController{
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var recordedVideoView: VideoContainerView!
 
     var videoPlayer: AVPlayer!
-    var videoAsset: AVAsset?
+    
+    var videoLoaded = false
     
     let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "happyFace"), #imageLiteral(resourceName: "sunglassesFace"), #imageLiteral(resourceName: "nerdFace"),#imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if videoLoaded == false {
+            videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
+        }
+    }
     func startPlayingVideoWith(_ url: URL){
-        print(url)
-        print(FileManager.default.fileExists(atPath: url.path))
         let playerItem = AVPlayerItem(url: url)
         
         videoPlayer = AVPlayer(playerItem: playerItem)
@@ -41,8 +44,16 @@ class CameraOverlayViewController: UIViewController, UIImagePickerControllerDele
         recordedVideoView.playerLayer = videoLayer
         
         videoPlayer.play()
-        print(url)
     }
     
 }
 
+// // MARK: - Video Picker View Controller Subclass and Delegate
+extension CameraOverlayViewController: VideoPickerViewControllerDelegate{
+    
+    func didFinishPickingVideoWith(url: URL) {
+        DispatchQueue.main.async {
+            self.startPlayingVideoWith(url)
+        }
+    }
+}

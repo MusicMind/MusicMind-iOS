@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1322A61E81DB390089EF2D /* VideoPickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1322A51E81DB390089EF2D /* VideoPickerViewControllerDelegate.swift */; };
 		0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */; };
 		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F1322A51E81DB390089EF2D /* VideoPickerViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewControllerDelegate.swift; path = Protocols/VideoPickerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = CameraViewController/CameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		0F3DCBB41E6E227300AADAB8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				0F1322A51E81DB390089EF2D /* VideoPickerViewControllerDelegate.swift */,
 				0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */,
 				0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */,
 			);
@@ -139,10 +142,10 @@
 			children = (
 				0F476E0E1E7CA052002F4776 /* CameraOverlay.storyboard */,
 				0FEC6A431E7CBB4A0029C192 /* EmojiCollectionViewCell.swift */,
-				0F476E111E7CA49D002F4776 /* CameraOverlayViewController.swift */,
 				0F48C3231E7DEF71003FA4A4 /* VideoPickerViewController.swift */,
-				0FEC6A411E7CBA9A0029C192 /* CameraOverlayViewController + collectionViewHelper.swift */,
 				0F48C3211E7DE370003FA4A4 /* VideoContainerView.swift */,
+				0F476E111E7CA49D002F4776 /* CameraOverlayViewController.swift */,
+				0FEC6A411E7CBA9A0029C192 /* CameraOverlayViewController + collectionViewHelper.swift */,
 			);
 			name = "Camera Overlay View";
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				0FEC6A441E7CBB4A0029C192 /* EmojiCollectionViewCell.swift in Sources */,
 				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
 				0FEC6A421E7CBA9A0029C192 /* CameraOverlayViewController + collectionViewHelper.swift in Sources */,
+				0F1322A61E81DB390089EF2D /* VideoPickerViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,6 +20,8 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     var videoAsset: AVAsset?
     
+    weak var delegate: VideoPickerViewControllerDelegate?
+    
     func startMediaBroswerFrom(viewController: UIViewController?, using delegate: Any?) -> Bool{
         
         // some validation
@@ -44,8 +46,14 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         // dismiss image picker
         self.dismiss(animated: true, completion: nil)
         
+        let url = info[UIImagePickerControllerMediaURL] as! URL
+        
         // handle video selection
-        self.videoAsset = AVAsset(url: info[UIImagePickerControllerMediaURL] as! URL)
+        self.videoAsset = AVAsset(url: url)
+        
+        // delegate
+        self.delegate?.didFinishPickingVideoWith(url: url)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
