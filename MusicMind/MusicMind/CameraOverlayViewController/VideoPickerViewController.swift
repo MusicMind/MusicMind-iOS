@@ -104,7 +104,7 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         // add instructions
         mainInstructions.layerInstructions = [videoLayerInstruction]
         
-        let mainCompositionInst = AVMutableComposition()
+        let mainCompositionInst = AVMutableVideoComposition()
         
         var naturalSize = CGSize()
         if (isVideoAssetPortrait){
@@ -117,5 +117,13 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         var renderHeight: CGFloat!
         renderwidth = naturalSize.width
         renderHeight = naturalSize.height
+        mainCompositionInst.renderSize = CGSize(width: renderwidth, height: renderHeight)
+        mainCompositionInst.instructions = [mainInstructions]
+        mainCompositionInst.frameDuration = CMTimeMake(1, 30)
+        
+        self.applyVideoEffectsTo(composition: mainCompositionInst, size: naturalSize)
+        
+        
+        
     }
 }
