@@ -7,19 +7,31 @@ target 'MusicMind' do
 
   # Pods for MusicMind
 
-#  pod 'Firebase/Core'
-#  pod 'Firebase/Auth'
-#  pod 'Firebase/Storage'
-#  pod 'KeychainSwift'
-#  pod 'Alamofire'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'KeychainSwift'
+  pod 'Alamofire'
 
   target 'MusicMindTests' do
-    
+      
+      pod 'Firebase/Core'
+      pod 'Firebase/Auth'
+      pod 'Firebase/Storage'
+      pod 'KeychainSwift'
+      pod 'Alamofire'
+
 
   end
 
   target 'MusicMindUITests' do
     
+    
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+    pod 'KeychainSwift'
+    pod 'Alamofire'
 
   end
 
