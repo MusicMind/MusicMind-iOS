@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FIRApp.configure()
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if SPTAuth.defaultInstance().canHandle(url) {
+            SPTAuth.defaultInstance().handleAuthCallback(withTriggeredAuthURL: url, callback: {
+                (error, session) in
+                if error != nil {
+                    print("*** Auth error \(error)")
+                    return
+                }
+                user.spotifyToken = session?.accessToken
+                let story = UIStoryboard.init(name: "SpotifyAuth", bundle: nil)
+                let tabView = story.instantiateViewController(withIdentifier: "tabView")
+                self.window?.rootViewController = tabView
+                
+            })
+        }
+        
+                return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
