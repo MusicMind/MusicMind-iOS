@@ -82,28 +82,40 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         // create an AVMutableVideoCompostionLayerInstruction for the video track and fix the orientation
         let videoLayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
         let videoAssetTrack: AVAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo).first!
-        var videoAssetOrientation_ = UIImageOrientation.up
-        var isVideoAssetPortrait_ = false
+        var videoAssetOrientation = UIImageOrientation.up
+        var isVideoAssetPortrait = false
         let videoTransform =  videoAssetTrack.preferredTransform
         
         if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
-            videoAssetOrientation_ = .right;
-            isVideoAssetPortrait_ = true;
+            videoAssetOrientation = .right;
+            isVideoAssetPortrait = true;
         }
         if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
-            videoAssetOrientation_ =  .left;
-            isVideoAssetPortrait_ = true;
+            videoAssetOrientation =  .left;
+            isVideoAssetPortrait = true;
         }
         if (videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0) {
-            videoAssetOrientation_ =  .up;
+            videoAssetOrientation =  .up;
         }
         if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
-            videoAssetOrientation_ = .down;
+            videoAssetOrientation = .down;
         }
         
         // add instructions
         mainInstructions.layerInstructions = [videoLayerInstruction]
         
         let mainCompositionInst = AVMutableComposition()
+        
+        var naturalSize = CGSize()
+        if (isVideoAssetPortrait){
+            naturalSize = CGSize(width: videoAssetTrack.naturalSize.height, height: videoAssetTrack.naturalSize.width)
+        } else {
+            naturalSize = videoAssetTrack.naturalSize
+        }
+        
+        var renderwidth: CGFloat!
+        var renderHeight: CGFloat!
+        renderwidth = naturalSize.width
+        renderHeight = naturalSize.height
     }
 }
