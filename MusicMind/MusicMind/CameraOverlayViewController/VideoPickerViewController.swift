@@ -160,16 +160,25 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
                         let creationRequest = PHAssetCreationRequest.forAsset()
                         creationRequest.addResource(with: .video, fileURL: outputURL!, options: options)
                     }, completionHandler: { (success, error) in
-                        if !success {
-                            print("Could not save movie to photo libary: \(error)")
+                        DispatchQueue.main.async {
+                            if !success {
+                                let alertController = UIAlertController(title: "Video Failed", message: "Video Saving Failed", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                                alertController.addAction(okAction)
+                                self.present(alertController, animated: true, completion: nil)
+                                
+                            } else {
+                                let alertController = UIAlertController(title: "Video Saved", message: "Saved To Photo Album", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                                alertController.addAction(okAction)
+                                self.present(alertController, animated: true, completion: nil)
+                            }
                         }
                     })
                 }
             })
         }
         
-        DispatchQueue.main.async {
-            // UI changes or present a new view controller
-        }
+        
     }
 }
