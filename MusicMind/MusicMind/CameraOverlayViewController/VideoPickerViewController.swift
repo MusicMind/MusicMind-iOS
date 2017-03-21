@@ -53,14 +53,16 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func applyVideoEffectsTo(composition: AVMutableVideoComposition, size: CGSize){
-        
+        // to be override by the subclass
     }
     
     func videoOutput(){
         // early exit if there is no video file selected
         guard let videoAsset = self.videoAsset else  {
-            let alert = UIAlertView(title: "Error", message: "Please choose a video", delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
+            let alertController = UIAlertController(title: "Error", message: "Please choose a video", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         
