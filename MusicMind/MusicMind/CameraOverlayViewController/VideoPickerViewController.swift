@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import MobileCoreServices
+import Photos
 
 class VideoPickerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -123,7 +124,52 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         
         self.applyVideoEffectsTo(composition: mainCompositionInst, size: naturalSize)
         
+        // get path
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let url: URL?
+        let documentsDirectory = paths.first
+        let stringFormat = String(format: "%@%d%@", "MusicMindVideo-", arc4random() % 1000, ".mov")
+        let myPathDocs = documentsDirectory?.appending(stringFormat)
         
+        url = URL(fileURLWithPath: myPathDocs!)
+
+        // create exporter
+        let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
+        exporter?.outputURL = url
+        exporter?.outputFileType = AVFileTypeQuickTimeMovie
+        exporter?.shouldOptimizeForNetworkUse = true
+        exporter?.videoComposition = mainCompositionInst
+        exporter?.exportAsynchronously {
+            DispatchQueue.main.async {
+                self.exportDidFinish(exporter)
+            }
+        }
         
+    }
+    
+    func exportDidFinish(_ session: AVAssetExportSession?){
+        if session?.status == AVAssetExportSessionStatus.completed {
+            let outputURL = session?.outputURL
+            // must check for authorization status
+            PHPhotoLibrary.requestAuthorization({ (status) in
+                if status == .authorized {
+                    // saving the movie file to the photo library
+                    PHPhotoLibrary.shared().performChanges({ 
+                        let options = PHAssetResourceCreationOptions()
+                        options.shouldMoveFile = true
+                        let creationRequest = PHAssetCreationRequest.forAsset()
+                        creationRequest.addResource(with: .video, fileURL: outputURL!, options: options)
+                    }, completionHandler: { (success, error) in
+                        if !success {
+                            print("Could not save movie to photo libary: \(error)")
+                        }
+                    })
+                }
+            })
+        }
+        
+        DispatchQueue.main.async {
+            // UI changes or present a new view controller
+        }
     }
 }
