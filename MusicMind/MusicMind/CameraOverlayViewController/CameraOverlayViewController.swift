@@ -26,6 +26,7 @@ class CameraOverlayViewController: VideoPickerViewController{
         delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer)
     }
     
@@ -48,6 +49,7 @@ class CameraOverlayViewController: VideoPickerViewController{
     }
     
     func replayVideo(){
+        // seek back to zero and play
         videoPlayer.seek(to: kCMTimeZero)
         videoPlayer.play()
     }
