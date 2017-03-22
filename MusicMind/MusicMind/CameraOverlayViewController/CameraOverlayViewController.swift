@@ -16,7 +16,7 @@ class CameraOverlayViewController: VideoPickerViewController{
     @IBOutlet weak var recordedVideoView: VideoContainerView!
 
     var videoPlayer: AVPlayer!
-    var stickersAdded: [UIView] = []
+    var stickersAdded: [UIImageView] = []
     var videoLoaded = false
     
     let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "happyFace"), #imageLiteral(resourceName: "sunglassesFace"), #imageLiteral(resourceName: "nerdFace"),#imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
@@ -54,10 +54,32 @@ class CameraOverlayViewController: VideoPickerViewController{
         videoPlayer.play()
     }
     
+    override func applyVideoEffectsTo(composition: AVMutableVideoComposition, size: CGSize) {
+        let parentLayer = CALayer()
+        let videoLayer = CALayer()
+        parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        videoLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        
+        parentLayer.addSublayer(videoLayer)
+        stickersAdded.forEach { (imageView) in
+            let stickerLayer = CALayer()
+            stickerLayer.contents = imageView.image
+            stickerLayer.frame = imageView.frame
+            stickerLayer.masksToBounds = true
+            parentLayer.addSublayer(stickerLayer)
+        }
+        
+        composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+    }
+    
+    
+    @IBAction func exportButtonPressed(_ sender: Any) {
+        self.videoOutput()
+    }
 }
 
 
-// // MARK: - Video Picker View Controller Subclass and Delegate
+// MARK: - Video Picker View Controller Subclass and Delegate
 extension CameraOverlayViewController: VideoPickerViewControllerDelegate{
     
     func didFinishPickingVideoWith(url: URL) {

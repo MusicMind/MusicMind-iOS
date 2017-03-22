@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import MobileCoreServices
 import Photos
+import AVKit
 
 class VideoPickerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -78,7 +79,7 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         let mixComposition = AVMutableComposition()
         
         //video track
-        let videoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
+        let videoTrack: AVMutableCompositionTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
         
         do{
             try videoTrack.insertTimeRange((CMTimeRangeMake(kCMTimeZero, videoAsset.duration)), of: (videoAsset.tracks(withMediaType: AVMediaTypeVideo).first)!, at: kCMTimeZero)
@@ -91,7 +92,7 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         mainInstructions.timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
         
         // create an AVMutableVideoCompostionLayerInstruction for the video track and fix the orientation
-        let videoLayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
+        let videoLayerInstruction = AVMutableVideoCompositionLayerInstruction()
         let videoAssetTrack: AVAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo).first!
         var videoAssetOrientation = UIImageOrientation.up
         var isVideoAssetPortrait = false
@@ -111,6 +112,9 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
             videoAssetOrientation = .down;
         }
+        
+        videoLayerInstruction.setTransform(videoAsset.preferredTransform, at: kCMTimeZero)
+        videoLayerInstruction.setOpacity(0.0, at: (self.videoAsset?.duration)!)
         
         // add instructions
         mainInstructions.layerInstructions = [videoLayerInstruction]
@@ -139,9 +143,16 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         let url: URL?
         let documentsDirectory = paths.first
         let stringFormat = String(format: "%@%d%@", "MusicMindVideo-", arc4random() % 1000, ".mov")
+        print(stringFormat)
         let myPathDocs = documentsDirectory?.appending(stringFormat)
         
         url = URL(fileURLWithPath: myPathDocs!)
+        let videoPlayerVC = AVPlayerViewController()
+        let playerItem = AVPlayerItem(url: url!)
+        videoPlayerVC.player = AVPlayer(playerItem: playerItem)
+        self.present(videoPlayerVC, animated: true) { 
+            videoPlayerVC.player?.play()
+        }
 
         // create exporter
         let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
@@ -158,7 +169,8 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func exportDidFinish(_ session: AVAssetExportSession?){
-        if session?.status == AVAssetExportSessionStatus.completed {
+        print(session?.status == AVAssetExportSessionStatus.completed)
+//        if session?.status == AVAssetExportSessionStatus.completed {
             let outputURL = session?.outputURL
             // must check for authorization status
             PHPhotoLibrary.requestAuthorization({ (status) in
@@ -187,7 +199,7 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
                     })
                 }
             })
-        }
+//        }
         
         
     }
