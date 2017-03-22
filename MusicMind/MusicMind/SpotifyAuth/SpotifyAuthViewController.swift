@@ -44,6 +44,11 @@ class SpotifyAuthViewController: UIViewController {
 
     }
 
+    @IBAction func openSendToFriend(_ sender: Any) {
+        let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend")
+        self.present(sendToFriendViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
