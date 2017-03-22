@@ -55,16 +55,19 @@ class CameraOverlayViewController: VideoPickerViewController{
     }
     
     override func applyVideoEffectsTo(composition: AVMutableVideoComposition, size: CGSize) {
+        let rect = UIView(frame: CGRect(origin: CGPoint.zero, size: size))
         let parentLayer = CALayer()
         let videoLayer = CALayer()
         parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         videoLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        print(parentLayer.frame)
+        
         
         parentLayer.addSublayer(videoLayer)
         stickersAdded.forEach { (imageView) in
             let stickerLayer = CALayer()
-            stickerLayer.contents = imageView.image
-            stickerLayer.frame = imageView.frame
+            stickerLayer.contents = imageView.image?.cgImage
+            stickerLayer.frame = CGRect(origin: imageView.frame.origin, size: CGSize(width: 110, height: 110))
             stickerLayer.masksToBounds = true
             parentLayer.addSublayer(stickerLayer)
         }

@@ -92,47 +92,35 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         mainInstructions.timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
         
         // create an AVMutableVideoCompostionLayerInstruction for the video track and fix the orientation
-        let videoLayerInstruction = AVMutableVideoCompositionLayerInstruction()
+        let videoLayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
         let videoAssetTrack: AVAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo).first!
-        var videoAssetOrientation = UIImageOrientation.up
         var isVideoAssetPortrait = false
         let videoTransform =  videoAssetTrack.preferredTransform
         
+        // portrait
         if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
-            videoAssetOrientation = .right;
-            isVideoAssetPortrait = true;
+            isVideoAssetPortrait = true
         }
+        // portriat up side down
         if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
-            videoAssetOrientation =  .left;
-            isVideoAssetPortrait = true;
-        }
-        if (videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0) {
-            videoAssetOrientation =  .up;
-        }
-        if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
-            videoAssetOrientation = .down;
+            isVideoAssetPortrait = true
         }
         
         videoLayerInstruction.setTransform(videoAsset.preferredTransform, at: kCMTimeZero)
         videoLayerInstruction.setOpacity(0.0, at: (self.videoAsset?.duration)!)
         
         // add instructions
-        mainInstructions.layerInstructions = [videoLayerInstruction]
+        mainInstructions.layerInstructions = NSArray(object: videoLayerInstruction) as! [AVVideoCompositionLayerInstruction]
         
         let mainCompositionInst = AVMutableVideoComposition()
         
-        var naturalSize = CGSize()
+        var naturalSize = videoAssetTrack.naturalSize
+        
         if (isVideoAssetPortrait){
             naturalSize = CGSize(width: videoAssetTrack.naturalSize.height, height: videoAssetTrack.naturalSize.width)
-        } else {
-            naturalSize = videoAssetTrack.naturalSize
         }
         
-        var renderwidth: CGFloat!
-        var renderHeight: CGFloat!
-        renderwidth = naturalSize.width
-        renderHeight = naturalSize.height
-        mainCompositionInst.renderSize = CGSize(width: renderwidth, height: renderHeight)
+        mainCompositionInst.renderSize = naturalSize
         mainCompositionInst.instructions = [mainInstructions]
         mainCompositionInst.frameDuration = CMTimeMake(1, 30)
         
@@ -142,27 +130,30 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let url: URL?
         let documentsDirectory = paths.first
-        let stringFormat = String(format: "%@%d%@", "MusicMindVideo-", arc4random() % 1000, ".mov")
+        let stringFormat = String(format: "/%@%d%@", "MusicMindVideo-", arc4random() % 1000, ".mov")
         print(stringFormat)
         let myPathDocs = documentsDirectory?.appending(stringFormat)
-        
+        print("My pathDocs: \(myPathDocs!)")
         url = URL(fileURLWithPath: myPathDocs!)
-        let videoPlayerVC = AVPlayerViewController()
-        let playerItem = AVPlayerItem(url: url!)
-        videoPlayerVC.player = AVPlayer(playerItem: playerItem)
-        self.present(videoPlayerVC, animated: true) { 
-            videoPlayerVC.player?.play()
-        }
+        
 
         // create exporter
         let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
-        exporter?.outputURL = url
-        exporter?.outputFileType = AVFileTypeQuickTimeMovie
-        exporter?.shouldOptimizeForNetworkUse = true
-        exporter?.videoComposition = mainCompositionInst
-        exporter?.exportAsynchronously {
+        exporter!.outputURL = url
+        exporter!.outputFileType = AVFileTypeQuickTimeMovie
+        exporter!.shouldOptimizeForNetworkUse = true
+        exporter!.videoComposition = mainCompositionInst
+        exporter!.exportAsynchronously {
             DispatchQueue.main.async {
+                
+                let videoPlayerVC = AVPlayerViewController()
+                let playerItem = AVPlayerItem(url: url!)
+                videoPlayerVC.player = AVPlayer(playerItem: playerItem)
+                self.present(videoPlayerVC, animated: true) {
+                    videoPlayerVC.player?.play()
+                }
                 self.exportDidFinish(exporter)
+
             }
         }
         
