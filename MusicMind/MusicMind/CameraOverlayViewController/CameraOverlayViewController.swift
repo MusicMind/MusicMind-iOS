@@ -16,7 +16,7 @@ class CameraOverlayViewController: VideoPickerViewController{
     @IBOutlet weak var recordedVideoView: VideoContainerView!
 
     var videoPlayer: AVPlayer!
-    
+    var stickersAdded: [UIView] = []
     var videoLoaded = false
     
     let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "happyFace"), #imageLiteral(resourceName: "sunglassesFace"), #imageLiteral(resourceName: "nerdFace"),#imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
