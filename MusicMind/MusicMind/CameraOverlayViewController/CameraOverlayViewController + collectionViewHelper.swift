@@ -23,4 +23,15 @@ extension CameraOverlayViewController: UICollectionViewDelegate, UICollectionVie
         return cell ?? EmojiCollectionViewCell()
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // steps to add emoji to overlay layer
+        /*
+         1. add image view of emoji with pan gesture to move it around
+         2. add all emojis to a collection to loop through
+         3a. add videolayer to the parent layer
+         3b. add each layer of each emoji in the collection to the parent layer
+         4. flat the layers
+         */
+    }
 }
