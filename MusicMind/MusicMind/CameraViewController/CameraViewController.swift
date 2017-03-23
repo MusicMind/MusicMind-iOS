@@ -84,12 +84,12 @@ extension CameraViewController: APPLCameraViewControllerDelegate {
     // MARK: - Post to firebase
     func didFinishRecordingToOutputFileAt(outputUrl: URL) {
         // Show the camera view controller
-        let sendToFriendViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
-        
-        sendToFriendViewController.urlOfVideo = outputUrl
-        
-        self.present(sendToFriendViewController, animated: true, completion: nil)
-        
+//        let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
+//        
+//        sendToFriendViewController.urlOfVideo = outputUrl
+//        
+//        self.present(sendToFriendViewController, animated: true, completion: nil)
+//        
     }
 }
 

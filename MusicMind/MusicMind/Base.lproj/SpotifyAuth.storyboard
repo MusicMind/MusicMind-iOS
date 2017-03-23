@@ -38,10 +38,19 @@
                                     <action selector="openCameraView:" destination="Wl3-wP-4q5" eventType="touchUpInside" id="eTp-iH-LS5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlo-4y-ukb">
+                                <rect key="frame" x="120" y="587" width="134" height="30"/>
+                                <state key="normal" title="Skip to upload view"/>
+                                <connections>
+                                    <action selector="openSendToFriend:" destination="Wl3-wP-4q5" eventType="touchUpInside" id="V4T-Ha-4TH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LFk-Eh-Rxb" firstAttribute="centerX" secondItem="9B4-QP-DjW" secondAttribute="centerX" id="5Pd-C3-JZg"/>
+                            <constraint firstItem="LFk-Eh-Rxb" firstAttribute="top" secondItem="Xlo-4y-ukb" secondAttribute="bottom" id="Lvd-eS-Q5y"/>
+                            <constraint firstItem="Xlo-4y-ukb" firstAttribute="centerX" secondItem="9B4-QP-DjW" secondAttribute="centerX" id="V4Q-2c-3pE"/>
                             <constraint firstItem="Sct-eq-TZG" firstAttribute="top" secondItem="LFk-Eh-Rxb" secondAttribute="bottom" constant="20" id="eGB-dF-NOy"/>
                         </constraints>
                     </view>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MobileCoreServices
 
 class SendToFriendViewController: UIViewController {
     
@@ -16,17 +17,22 @@ class SendToFriendViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var urlLabel: UILabel!
     
-    @IBAction func attemptUpload(_ sender: Any) {
+    func attemptUpload(_ sender: Any) {
         self.progressBar.isHidden = false
         
-        let storageRef = FIRStorage.storage().reference()
+        let storageRef = FIRStorage.storage().reference(withPath: "videos/test1.mov")
         
         let uploadMetadata = FIRStorageMetadata()
-        uploadMetadata.contentType = "video/mov"
+        
+        uploadMetadata.contentType = "video/quicktime"
         
         let uploadTask = storageRef.putFile(urlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
             if error == nil {
                 print("Upload successful. Metadata: \(metadata)")
+                
+                let downloadURL = metadata?.downloadURL()
+                
+                print(downloadURL?.absoluteString)
             } else {
                 print("There was an error: \(error!.localizedDescription)")
             }
@@ -46,6 +52,15 @@ class SendToFriendViewController: UIViewController {
         // Show the camera view controller
         let cameraViewController = UIStoryboard(name: "Camera", bundle: nil).instantiateViewController(withIdentifier: "CameraViewController")
         self.present(cameraViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func selectFromLibrary(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = [kUTTypeMovie as String]
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -77,4 +92,28 @@ class SendToFriendViewController: UIViewController {
     }
     */
 
+}
+
+extension SendToFriendViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let mediaType: String = info[UIImagePickerControllerMediaType] as? String else {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        if mediaType == (kUTTypeMovie as String) {
+            if let movieURL = info[UIImagePickerControllerMediaURL] as? URL {
+                urlOfVideo = movieURL
+                attemptUpload(self)
+            }
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
