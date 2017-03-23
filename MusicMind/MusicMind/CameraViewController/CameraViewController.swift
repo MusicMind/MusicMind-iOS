@@ -19,6 +19,12 @@ class CameraViewController: APPLCameraViewController {
     
     var isRecording: Bool = false
     
+    @IBAction func openSendToFriend(_ sender: Any) {
+        let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
+        
+        self.present(sendToFriendViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         delegate = self
         _previewView = previewView
