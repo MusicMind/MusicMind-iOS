@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera Overlay View Controller-->
+        <!--Stickers View Controller-->
         <scene sceneID="aeF-vs-t3w">
             <objects>
-                <viewController storyboardIdentifier="StickersViewController" id="Fvl-8P-Phq" customClass="CameraOverlayViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StickersViewController" id="Fvl-8P-Phq" customClass="StickersViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rp4-Hb-fMw"/>
                         <viewControllerLayoutGuide type="bottom" id="Rqd-eC-9KP"/>
@@ -55,7 +55,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happyFace" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-CR-M5B">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-CR-M5B">
                                                     <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -93,6 +93,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="happyFace" width="80" height="80"/>
+        <image name="happy" width="160" height="160"/>
     </resources>
 </document>

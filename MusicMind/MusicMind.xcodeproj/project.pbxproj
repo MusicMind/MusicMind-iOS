@@ -21,6 +21,7 @@
 		0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */; };
 		0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */; };
 		0FF4B6221E8394E600EEAE8C /* Stickers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* Stickers.storyboard */; };
+		0FF4B6241E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6231E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift */; };
 		27E5158447BB2AEC1D499639 /* Pods_MusicMind_MusicMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B61F615E231AD98737EC03 /* Pods_MusicMind_MusicMindUITests.framework */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		3A02DC27C18A24237A9598AB /* Pods_MusicMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */; };
@@ -95,6 +96,7 @@
 		0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoContainerView.swift; path = Stickers/VideoContainerView.swift; sourceTree = "<group>"; };
 		0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewController.swift; path = Stickers/VideoPickerViewController.swift; sourceTree = "<group>"; };
 		0FF4B6211E8394E600EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stickers.storyboard; sourceTree = "<group>"; };
+		0FF4B6231E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewControllerDelegate.swift; path = Protocols/VideoPickerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1ACF4B55173218734EBD947B /* Pods-MusicMind-MusicMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindUITests/Pods-MusicMind-MusicMindUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		2E998B4E494A2D660BB680CF /* Pods_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */,
+				0FF4B6231E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift */,
 				0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */,
 			);
 			name = Protocols;
@@ -408,7 +411,7 @@
 				TargetAttributes = {
 					DE429F7D1E661BB20050E719 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = B2HHR6H4K6;
+						DevelopmentTeam = GQMN9RP4XE;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -636,6 +639,7 @@
 				0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */,
 				0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */,
 				0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */,
+				0FF4B6241E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift in Sources */,
 				0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
@@ -843,7 +847,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = B2HHR6H4K6;
+				DEVELOPMENT_TEAM = GQMN9RP4XE;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -866,7 +870,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = B2HHR6H4K6;
+				DEVELOPMENT_TEAM = GQMN9RP4XE;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
