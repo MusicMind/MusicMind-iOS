@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -152,25 +152,6 @@
             </objects>
             <point key="canvasLocation" x="966" y="1833"/>
         </scene>
-        <!--Camera-->
-        <scene sceneID="Lwg-wS-SbL">
-            <objects>
-                <viewController id="yPO-tJ-NdS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vmy-L7-rxo"/>
-                        <viewControllerLayoutGuide type="bottom" id="IfZ-59-H2F"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5IL-6Z-yLM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="XBZ-Zn-QLt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="52G-7X-QJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1878" y="1833"/>
-        </scene>
         <!--Spotify Table View Controller-->
         <scene sceneID="VZm-Ye-Day">
             <objects>
@@ -229,7 +210,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="0ng-3u-2NH" kind="relationship" relationship="viewControllers" id="2l1-c2-wRx"/>
-                        <segue destination="yPO-tJ-NdS" kind="relationship" relationship="viewControllers" id="aBx-2n-eTN"/>
+                        <segue destination="O9U-uL-0D6" kind="relationship" relationship="viewControllers" id="aBx-2n-eTN"/>
                         <segue destination="Ke0-WZ-3h9" kind="relationship" relationship="viewControllers" id="4cP-b1-E0J"/>
                     </connections>
                 </tabBarController>
@@ -255,6 +236,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q79-q4-H4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.5999999999999" y="1054.7226386806597"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="UTi-vD-Y1w">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Camera" id="O9U-uL-0D6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="SCU-gN-G32"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZw-dL-dak" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="1545"/>
         </scene>
     </scenes>
 </document>
