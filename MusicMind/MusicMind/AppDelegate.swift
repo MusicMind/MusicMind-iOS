@@ -22,6 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if SPTAuth.defaultInstance().canHandle(url) {
+            SPTAuth.defaultInstance().handleAuthCallback(withTriggeredAuthURL: url, callback: {
+                (error, session) in
+                if error != nil {
+                    print("*** Auth error \(error)")
+                    return
+                }
+                user.spotifyToken = session?.accessToken
+                let story = UIStoryboard.init(name: "SpotifyAuth", bundle: nil)
+                let tabView = story.instantiateViewController(withIdentifier: "tabView")
+                self.window?.rootViewController = tabView
+                
+            })
+        }
+        
+                return false
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

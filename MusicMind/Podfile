@@ -9,15 +9,30 @@ target 'MusicMind' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'KeychainSwift'
+  pod 'Alamofire'
 
   target 'MusicMindTests' do
-    inherit! :search_paths
-    # Pods for testing
+      
+      pod 'Firebase/Core'
+      pod 'Firebase/Auth'
+      pod 'Firebase/Storage'
+      pod 'KeychainSwift'
+      pod 'Alamofire'
+
+
   end
 
   target 'MusicMindUITests' do
-    inherit! :search_paths
-    # Pods for testing
+    
+    
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+    pod 'KeychainSwift'
+    pod 'Alamofire'
+
   end
 
 
