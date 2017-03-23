@@ -174,18 +174,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cpe-9Q-DM8" id="5YQ-gC-9nj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H97-XU-fe4">
-                                            <rect key="frame" x="15" y="25" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="24" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DMa-hz-4cn">
-                                            <rect key="frame" x="15" y="45.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="15" y="45" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -221,6 +221,7 @@
                         <segue destination="0ng-3u-2NH" kind="relationship" relationship="viewControllers" id="2l1-c2-wRx"/>
                         <segue destination="O9U-uL-0D6" kind="relationship" relationship="viewControllers" id="aBx-2n-eTN"/>
                         <segue destination="Ke0-WZ-3h9" kind="relationship" relationship="viewControllers" id="4cP-b1-E0J"/>
+                        <segue destination="IW5-h9-tRd" kind="relationship" relationship="viewControllers" id="20b-MJ-UCk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBU-gt-cQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,6 +256,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZw-dL-dak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1732" y="1545"/>
+        </scene>
+        <!--Stickers-->
+        <scene sceneID="1Yp-QO-Iy5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Stickers" id="IW5-h9-tRd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wE7-G4-2ia"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tQ-35-C2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2042" y="1521"/>
         </scene>
     </scenes>
 </document>
