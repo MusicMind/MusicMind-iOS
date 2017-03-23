@@ -13,9 +13,17 @@ import MobileCoreServices
 class SendToFriendViewController: UIViewController {
     
     var urlOfVideo: URL?
+    var downloadURLString: String?
 
+    @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var urlLabel: UILabel!
+    
+    @IBAction func copyDownloadUrlToClipboard(_ sender: Any) {
+        if let urlString = self.downloadURLString {
+            UIPasteboard.general.string = urlString
+        }
+    }
     
     func attemptUpload(_ sender: Any) {
         self.progressBar.isHidden = false
@@ -32,7 +40,12 @@ class SendToFriendViewController: UIViewController {
                 
                 let downloadURL = metadata?.downloadURL()
                 
-                print(downloadURL?.absoluteString)
+                print(downloadURL!.absoluteString)
+                
+                self.textFieldForDownloadURL.text = downloadURL!.absoluteString
+                
+                self.downloadURLString = downloadURL!.absoluteString
+                
             } else {
                 print("There was an error: \(error!.localizedDescription)")
             }
