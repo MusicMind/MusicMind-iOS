@@ -209,3 +209,10 @@ class SpotifyTableViewController: UITableViewController, UISearchBarDelegate, SP
     */
 
 }
+
+extension SpotifyTableViewController: UITextViewDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        self.view.endEditing(true)
+        searchBar.resignFirstResponder()
+    }
+}
