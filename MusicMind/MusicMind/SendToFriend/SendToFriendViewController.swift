@@ -17,7 +17,7 @@ class SendToFriendViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var urlLabel: UILabel!
     
-    @IBAction func attemptUpload(_ sender: Any) {
+    func attemptUpload(_ sender: Any) {
         self.progressBar.isHidden = false
         
         let storageRef = FIRStorage.storage().reference(withPath: "videos/test1.mov")
@@ -29,6 +29,10 @@ class SendToFriendViewController: UIViewController {
         let uploadTask = storageRef.putFile(urlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
             if error == nil {
                 print("Upload successful. Metadata: \(metadata)")
+                
+                let downloadURL = metadata?.downloadURL()
+                
+                print(downloadURL?.absoluteString)
             } else {
                 print("There was an error: \(error!.localizedDescription)")
             }
