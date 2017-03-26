@@ -26,7 +26,7 @@ class StickersViewController: VideoPickerViewController{
         delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+                
         NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer)
     }
     
