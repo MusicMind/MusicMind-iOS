@@ -28,12 +28,16 @@ class SendToFriendViewController: UIViewController {
     func attemptUpload(_ sender: Any) {
         self.progressBar.isHidden = false
         
-        let storageRef = FIRStorage.storage().reference(withPath: "videos/test1.mov")
+        //  Store Current Date
+        let currentDateTime = Date()
+        let time = String(currentDateTime.timeIntervalSinceReferenceDate)
         
+        //  Store Naming Convention
+        let storageRef = FIRStorage.storage().reference(withPath: "videos/test"+time+".mov")
         let uploadMetadata = FIRStorageMetadata()
-        
         uploadMetadata.contentType = "video/quicktime"
         
+        //  Store URL
         let uploadTask = storageRef.putFile(urlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
             if error == nil {
                 print("Upload successful. Metadata: \(metadata)")
