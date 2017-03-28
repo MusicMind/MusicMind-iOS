@@ -855,7 +855,7 @@
 				);
 				INFOPLIST_FILE = MusicMind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.musicmindcompany;
+				PRODUCT_BUNDLE_IDENTIFIER = com.musicmind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
@@ -878,7 +878,7 @@
 				);
 				INFOPLIST_FILE = MusicMind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.musicmindcompany;
+				PRODUCT_BUNDLE_IDENTIFIER = com.musicmind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
