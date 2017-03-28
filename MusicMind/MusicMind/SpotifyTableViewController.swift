@@ -14,22 +14,36 @@ class SpotifyTableViewController: UITableViewController, UISearchBarDelegate, SP
     var arr = [String:Any]()
     var arrCount: Int = 0
     var audioPlayer: SPTAudioStreamingController?
+    var isSongPlaying: Bool?
+    let searchBar = UISearchBar()
     
     func createSearchBar(){
-        let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.sizeToFit()
         searchBar.frame.size.width = self.view.frame.size.width - 160
         searchBar.placeholder = "search"
         let searchItem = UIBarButtonItem(customView: searchBar)
         self.navigationItem.leftBarButtonItem = searchItem
+        //searchBar.enablesReturnKeyAutomatically = true
+        searchBar.showsSearchResultsButton = true
+
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
     func createAudioPlayer(){
         self.audioPlayer = SPTAudioStreamingController.sharedInstance()
         self.audioPlayer?.playbackDelegate = self
         self.audioPlayer?.delegate = self
-        try! self.audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
+        do {
+            try self.audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
+        }
+        catch {
+            print("Audio Player already started")
+        }
+        
         self.audioPlayer!.login(withAccessToken: user.spotifyToken)
     }
     
@@ -161,6 +175,49 @@ class SpotifyTableViewController: UITableViewController, UISearchBarDelegate, SP
         }
 
     }
+    
+    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didChangePlaybackStatus isPlaying: Bool) {
+        print(isPlaying)
+        self.isSongPlaying = isPlaying
+        
+    }
+    
+    func onPlayPress(){
+        if let isPlaying = self.isSongPlaying {
+            if isPlaying {
+                self.audioPlayer?.setIsPlaying(false, callback: { error in
+                    if error != nil {
+                        print(error)
+                    }
+                })
+            }
+            else {
+                self.audioPlayer?.setIsPlaying(true, callback: { error in
+                    if error != nil {
+                        print(error)
+                    }
+                })
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 80))
+        footerView.backgroundColor = UIColor.black
+        print(UIScreen.main.bounds.width)
+        print(UIScreen.main.bounds.midX)
+        print(UIScreen.main.bounds.maxX)
+        let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width/3, y: 0, width: 150, height: 50))
+        button.setTitle("Play/Pause", for: .normal)
+        button.addTarget(self, action: #selector(SpotifyTableViewController.onPlayPress), for: .touchUpInside)
+        footerView.addSubview(button)
+        
+        return footerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 80.0
+    }
 
 
     /*
@@ -207,12 +264,17 @@ class SpotifyTableViewController: UITableViewController, UISearchBarDelegate, SP
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 
 }
 
-extension SpotifyTableViewController: UITextViewDelegate {
+
+/* extension SpotifyTableViewController: UITextViewDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 //        self.view.endEditing(true)
         searchBar.resignFirstResponder()
     }
-}
+} */
