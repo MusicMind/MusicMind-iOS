@@ -235,7 +235,10 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6L-Er-kKZ">
                                         <rect key="frame" x="0.0" y="53.5" width="243" height="30"/>
-                                        <state key="normal" title="Athenticate and Finish"/>
+                                        <state key="normal" title="Authenticate"/>
+                                        <connections>
+                                            <segue destination="jXN-sj-A5H" kind="show" id="FAn-HK-eNW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -259,6 +262,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAR-Rp-dhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2631" y="108"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="g7j-Z7-L5y">
+            <objects>
+                <viewController id="jXN-sj-A5H" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="opP-8E-D6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="hQ2-r5-e7h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hof-Q9-QAq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HyU-23-w6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3604" y="109"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rag-B8-Xbz">
