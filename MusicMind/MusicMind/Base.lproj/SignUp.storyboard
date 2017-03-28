@@ -74,7 +74,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign Up &amp; Accept"/>
                                 <connections>
-                                    <segue destination="FBA-98-8r4" kind="show" id="zaP-66-Brj"/>
+                                    <segue destination="FBA-98-8r4" kind="show" identifier="toBDay" id="zaP-66-Brj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,7 +152,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="0we-Yj-j3x" kind="show" id="XYM-2p-AjF"/>
+                                    <segue destination="0we-Yj-j3x" kind="show" identifier="toMobile" id="XYM-2p-AjF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -237,7 +237,7 @@
                                         <rect key="frame" x="0.0" y="53.5" width="243" height="30"/>
                                         <state key="normal" title="Authenticate"/>
                                         <connections>
-                                            <segue destination="jXN-sj-A5H" kind="show" id="FAn-HK-eNW"/>
+                                            <segue destination="jXN-sj-A5H" kind="show" identifier="toEmailPassword" id="FAn-HK-eNW"/>
                                         </connections>
                                     </button>
                                 </subviews>
