@@ -7,28 +7,33 @@
 //
 
 import UIKit
+import SinchVerification
 
 class ValidationCodeEntryViewController: UIViewController {
 
+    var verification: Verification!
+    
     @IBOutlet weak var pinTextField: UITextField!
     @IBOutlet weak var verifyButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     
     @IBAction func attemptToVerify(_ sender: Any) {
+        statusLabel.text = "Checking..."
         
+        verification.verify(pinTextField.text!) { (success, error) in
+            if success {
+                statusLabel.text = "Verified!"
+            } else {
+                print(error.debugDescription)
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        statusLabel.text = nil
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

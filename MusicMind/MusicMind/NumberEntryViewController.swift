@@ -28,7 +28,7 @@ class NumberEntryViewController: UIViewController {
                 print("success")
                 self.performSegue(withIdentifier: "enterPin", sender: sender)
             } else {
-                print(error)
+                print(error.debugDescription)
             }
 
         }
@@ -42,9 +42,11 @@ class NumberEntryViewController: UIViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "enterPin" {
+            let vc = segue.destination as! ValidationCodeEntryViewController
+            
+            vc.verification = self.verification
+        }
     }
 }
