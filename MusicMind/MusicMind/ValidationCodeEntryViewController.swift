@@ -10,6 +10,14 @@ import UIKit
 
 class ValidationCodeEntryViewController: UIViewController {
 
+    @IBOutlet weak var pinTextField: UITextField!
+    @IBOutlet weak var verifyButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    
+    @IBAction func attemptToVerify(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

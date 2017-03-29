@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="469.60000000000002" y="147.97601199400302"/>
         </scene>
-        <!--View Controller-->
+        <!--Validation Code Entry View Controller-->
         <scene sceneID="9oV-2C-1D6">
             <objects>
-                <viewController id="AUQ-0I-7AI" sceneMemberID="viewController">
+                <viewController id="AUQ-0I-7AI" customClass="ValidationCodeEntryViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wAr-dX-Dug"/>
                         <viewControllerLayoutGuide type="bottom" id="Jhv-mO-NsK"/>
@@ -131,6 +131,9 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="attemptToVerify:" destination="AUQ-0I-7AI" eventType="touchUpInside" id="JIj-62-nDI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lww-Vs-s1I">
                                 <rect key="frame" x="165.5" y="283" width="44" height="18"/>
@@ -153,6 +156,11 @@
                             <constraint firstItem="HyJ-nG-oeY" firstAttribute="centerX" secondItem="cyW-EV-ENE" secondAttribute="centerX" id="xDd-g4-cFN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pinTextField" destination="V4c-Hd-HX7" id="DsC-sb-klg"/>
+                        <outlet property="statusLabel" destination="lww-Vs-s1I" id="Qss-8Y-hhe"/>
+                        <outlet property="verifyButton" destination="r0v-Ya-sue" id="tXy-gl-IFy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAH-Dn-Px6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
