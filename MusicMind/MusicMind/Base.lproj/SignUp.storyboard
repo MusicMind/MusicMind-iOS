@@ -74,8 +74,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign Up &amp; Accept"/>
                                 <connections>
-                                    <action selector="signUpButtonPressed:" destination="FFF-wN-J1E" eventType="touchUpInside" id="XgS-iK-RDX"/>
-                                    <segue destination="FBA-98-8r4" kind="show" identifier="toBDay" id="zaP-66-Brj"/>
+                                    <segue destination="FBA-98-8r4" kind="show" id="buy-m0-rnE"/>
                                 </connections>
                             </button>
                         </subviews>

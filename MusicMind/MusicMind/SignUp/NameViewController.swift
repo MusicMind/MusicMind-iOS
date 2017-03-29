@@ -22,13 +22,6 @@ class NameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func signUpButtonPressed(_ sender: Any) {
-        guard let firstName = firstNameTextField.text, !firstName.isEmpty,
-            let lastName = lastNameTextField.text, !lastName.isEmpty else { return }
-        
-        
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let firstName = firstNameTextField.text, !firstName.isEmpty,
             let lastName = lastNameTextField.text, !lastName.isEmpty else {
@@ -54,7 +47,7 @@ class NameViewController: UIViewController {
 
 extension NameViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
+        //TODO: disable the signUpButton until there is text in the both first name and last name textfield.
         return true
     }
 }
