@@ -65,6 +65,9 @@
 		DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
 		DEF5E4E71E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
 		DEF5E4E81E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
+		DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
+		DEF5E4EB1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
+		DEF5E4EC1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +142,7 @@
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEBF26EF1E7DA22800CB13E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
+		DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberEntryViewController.swift; sourceTree = "<group>"; };
 		EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -349,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */,
+				DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */,
 			);
 			name = "SMS Validation";
 			sourceTree = "<group>";
@@ -671,6 +676,7 @@
 			files = (
 				0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */,
 				DE6494311E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
+				DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				86E199A21E7F10030071F50C /* SpotifyTableViewController.swift in Sources */,
 				0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */,
 				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
@@ -694,6 +700,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF5E4EB1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				DE09EC6D1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494321E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEBF26F11E7DA22800CB13E1 /* User.swift in Sources */,
@@ -707,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF5E4EC1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				DE09EC6E1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494331E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEBF26F21E7DA22800CB13E1 /* User.swift in Sources */,
