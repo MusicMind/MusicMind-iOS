@@ -289,7 +289,6 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
-				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
 				DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */,
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE64942F1E7CE71B003D92D0 /* SpotifyAuth */,
@@ -297,6 +296,7 @@
 				DE09EC6A1E7CDF81005B237A /* SendToFriend */,
 				0FD0256F1E6B4BD500E59E95 /* Camera */,
 				0FF4B6151E83930000EEAE8C /* Stickers */,
+				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DE429F881E661BB20050E719 /* Assets.xcassets */,
 				DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */,
