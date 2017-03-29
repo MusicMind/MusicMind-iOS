@@ -55,7 +55,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-sZ-AWv">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-sZ-AWv">
                                         <rect key="frame" x="0.0" y="18.5" width="243" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -105,6 +105,7 @@
                     <connections>
                         <outlet property="firstNameTextField" destination="wjX-K6-gYV" id="R40-o7-UJI"/>
                         <outlet property="lastNameTextField" destination="gaf-sZ-AWv" id="Ane-AP-ZhQ"/>
+                        <outlet property="signUpButton" destination="GAg-yy-FxI" id="ISF-RR-49w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZJ-Ky-7wg" userLabel="First Responder" sceneMemberID="firstResponder"/>

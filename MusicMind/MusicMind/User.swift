@@ -54,5 +54,15 @@ class User: NSObject {
     }
     
     var spotifyToken: String?
+    
+    var firstName: String?
+    
+    var lastName: String?
+    
+    var birthday: Date?
+    
+    var dictionaryRepresentation: [String: Any] {
+        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": self.birthday]
+    }
 
 }

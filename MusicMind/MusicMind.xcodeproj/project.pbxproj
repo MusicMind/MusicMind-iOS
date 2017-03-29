@@ -24,6 +24,7 @@
 		0FF4B6241E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6231E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift */; };
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
 		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
+		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
 		27E5158447BB2AEC1D499639 /* Pods_MusicMind_MusicMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B61F615E231AD98737EC03 /* Pods_MusicMind_MusicMindUITests.framework */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		3A02DC27C18A24237A9598AB /* Pods_MusicMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */; };
@@ -101,6 +102,7 @@
 		0FF4B6231E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewControllerDelegate.swift; path = Protocols/VideoPickerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0FF4B6291E8AD8D700EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameViewController.swift; path = SignUp/NameViewController.swift; sourceTree = "<group>"; };
+		0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BirthdayViewController.swift; path = SignUp/BirthdayViewController.swift; sourceTree = "<group>"; };
 		1ACF4B55173218734EBD947B /* Pods-MusicMind-MusicMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindUITests/Pods-MusicMind-MusicMindUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		2E998B4E494A2D660BB680CF /* Pods_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +224,7 @@
 			children = (
 				0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */,
 				0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */,
+				0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */,
 			);
 			name = "Sign Up";
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				DE6494311E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				86E199A21E7F10030071F50C /* SpotifyTableViewController.swift in Sources */,
 				0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */,
+				0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */,
 				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
 				0FF4B61B1E83946100EEAE8C /* StickersViewController.swift in Sources */,
 				0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */,

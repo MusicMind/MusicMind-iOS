@@ -8,34 +8,53 @@
 
 import UIKit
 
-class NameViewController: UITabBarController {
-
+class NameViewController: UIViewController {
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.firstNameTextField.delegate = self
+        self.lastNameTextField.delegate = self
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
+        guard let firstName = firstNameTextField.text, !firstName.isEmpty,
+            let lastName = lastNameTextField.text, !lastName.isEmpty else { return }
+        
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        guard let firstName = firstNameTextField.text, !firstName.isEmpty,
+            let lastName = lastNameTextField.text, !lastName.isEmpty else {
+                let alertController = UIAlertController(title: "Invalid", message: "Empty first or last name detected. Please enter complete make sure both fields are filled.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+        }
+        
+        let newUser = User()
+        newUser.firstName = firstName
+        newUser.lastName = lastName
+        
+        if segue.identifier == "toBday",
+            let destinationViewController = segue.destination as? BirthdayViewController {
+            
+            destinationViewController.newUser = newUser
+        }
     }
-    */
+    
+}
 
+extension NameViewController: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        return true
+    }
 }
