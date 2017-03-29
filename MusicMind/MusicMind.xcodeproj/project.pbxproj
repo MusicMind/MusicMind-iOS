@@ -55,6 +55,7 @@
 		DE6494361E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6494341E7CE756003D92D0 /* SpotifyAuth.storyboard */; };
 		DE6494371E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6494341E7CE756003D92D0 /* SpotifyAuth.storyboard */; };
 		DE6494381E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6494341E7CE756003D92D0 /* SpotifyAuth.storyboard */; };
+		DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
@@ -130,6 +131,8 @@
 		DE64942B1E7CE6F0003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SendToFriend.storyboard; sourceTree = "<group>"; };
 		DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyAuthViewController.swift; path = SpotifyAuth/SpotifyAuthViewController.swift; sourceTree = "<group>"; };
 		DE6494351E7CE756003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SpotifyAuth.storyboard; sourceTree = "<group>"; };
+		DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicMind.entitlements; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEBF26EF1E7DA22800CB13E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 			files = (
 				86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */,
 				0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */,
+				DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */,
 				0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */,
 				2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */,
 			);
@@ -216,6 +220,7 @@
 		6411FC252D5E1FC5BDF80FA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */,
 				0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */,
 				0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */,
 				86E1998C1E7B64070071F50C /* AVFoundation.framework */,
@@ -280,6 +285,7 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
+				DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */,
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE64942F1E7CE71B003D92D0 /* SpotifyAuth */,
 				DE6494251E7CE670003D92D0 /* SignIn */,
@@ -411,9 +417,26 @@
 				TargetAttributes = {
 					DE429F7D1E661BB20050E719 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ME39XBR8NY;
+						DevelopmentTeam = B2HHR6H4K6;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					DE429F911E661BB20050E719 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -847,7 +870,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = ME39XBR8NY;
+				CODE_SIGN_ENTITLEMENTS = MusicMind/MusicMind.entitlements;
+				DEVELOPMENT_TEAM = B2HHR6H4K6;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -855,7 +879,7 @@
 				);
 				INFOPLIST_FILE = MusicMind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.musicmindcompany;
+				PRODUCT_BUNDLE_IDENTIFIER = com.musicmind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
@@ -870,7 +894,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = ME39XBR8NY;
+				CODE_SIGN_ENTITLEMENTS = MusicMind/MusicMind.entitlements;
+				DEVELOPMENT_TEAM = B2HHR6H4K6;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -878,7 +903,7 @@
 				);
 				INFOPLIST_FILE = MusicMind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.musicmindcompany;
+				PRODUCT_BUNDLE_IDENTIFIER = com.musicmind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
