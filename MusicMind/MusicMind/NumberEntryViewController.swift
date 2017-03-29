@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SinchVerification
 
 class NumberEntryViewController: UIViewController {
     
     @IBOutlet weak var numberEntryTextField: UITextField!
     @IBOutlet weak var getCodeButton: UIButton!
+    
+    // MARK: - IBActions
     
     @IBAction func attemptValidation(_ sender: Any) {
         
