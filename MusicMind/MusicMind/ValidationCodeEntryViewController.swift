@@ -22,7 +22,7 @@ class ValidationCodeEntryViewController: UIViewController {
         
         verification.verify(pinTextField.text!) { (success, error) in
             if success {
-                statusLabel.text = "Verified!"
+                self.statusLabel.text = "Verified!"
             } else {
                 print(error.debugDescription)
             }
