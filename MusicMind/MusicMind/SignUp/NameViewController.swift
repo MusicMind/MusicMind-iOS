@@ -25,7 +25,7 @@ class NameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let firstName = firstNameTextField.text, !firstName.isEmpty,
             let lastName = lastNameTextField.text, !lastName.isEmpty else {
-                let alertController = UIAlertController(title: "Invalid", message: "Empty first or last name detected. Please enter complete make sure both fields are filled.", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Invalid", message: "Empty first or last name detected. Please make sure both fields are filled.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
