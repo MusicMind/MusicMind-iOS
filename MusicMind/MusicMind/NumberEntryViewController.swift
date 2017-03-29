@@ -26,7 +26,7 @@ class NumberEntryViewController: UIViewController {
         verification.initiate { (result, error) in
             if result.success {
                 print("success")
-//                self.performSegueWithIdentifier("enterPin", sender: sender);
+                self.performSegue(withIdentifier: "enterPin", sender: sender)
             } else {
                 print(error)
             }
