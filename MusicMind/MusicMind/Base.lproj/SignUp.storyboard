@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Name View Controller-->
         <scene sceneID="HI4-Yc-516">
             <objects>
-                <viewController id="FFF-wN-J1E" sceneMemberID="viewController">
+                <viewController id="FFF-wN-J1E" customClass="NameViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yXF-Oq-qdd"/>
                         <viewControllerLayoutGuide type="bottom" id="bOQ-DX-95z"/>
@@ -74,6 +74,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign Up &amp; Accept"/>
                                 <connections>
+                                    <action selector="signUpButtonPressed:" destination="FFF-wN-J1E" eventType="touchUpInside" id="XgS-iK-RDX"/>
                                     <segue destination="FBA-98-8r4" kind="show" identifier="toBDay" id="zaP-66-Brj"/>
                                 </connections>
                             </button>
@@ -101,6 +102,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1I9-dt-10Z"/>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="wjX-K6-gYV" id="R40-o7-UJI"/>
+                        <outlet property="lastNameTextField" destination="gaf-sZ-AWv" id="Ane-AP-ZhQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZJ-Ky-7wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
