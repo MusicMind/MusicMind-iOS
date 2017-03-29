@@ -11,13 +11,27 @@ import SinchVerification
 
 class NumberEntryViewController: UIViewController {
     
+    var verification: Verification!
+    var sinchApplicationKey = "a7047f26-664e-47e5-abf8-02013452c9d4"
+    
     @IBOutlet weak var numberEntryTextField: UITextField!
     @IBOutlet weak var getCodeButton: UIButton!
     
     // MARK: - IBActions
     
     @IBAction func attemptValidation(_ sender: Any) {
-        
+        verification =
+            SMSVerification(sinchApplicationKey,
+                            phoneNumber: numberEntryTextField.text!)
+        verification.initiate { (result, error) in
+            if result.success {
+                print("success")
+//                self.performSegueWithIdentifier("enterPin", sender: sender);
+            } else {
+                print(error)
+            }
+
+        }
     }
     
     // MARK: - VC Lifecycle
