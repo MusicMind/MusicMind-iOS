@@ -58,6 +58,9 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="attemptValidation:" destination="ecz-WD-awb" eventType="touchUpInside" id="8gK-Cf-XEU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,6 +79,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i33-HJ-ny0"/>
+                    <connections>
+                        <outlet property="getCodeButton" destination="ovv-Nf-LIi" id="fB1-od-uFs"/>
+                        <outlet property="numberEntryTextField" destination="dh6-Kj-3tG" id="ed8-XL-Ay2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7s-tl-wIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
