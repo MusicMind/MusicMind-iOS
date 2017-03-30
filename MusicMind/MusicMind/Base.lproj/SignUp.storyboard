@@ -133,13 +133,13 @@
                                 <rect key="frame" x="66" y="199.5" width="243" height="37.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="BIRTHDAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY1-MT-26b">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="12"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="243" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-2y-LCk">
-                                        <rect key="frame" x="0.0" y="17" width="243" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-2y-LCk">
+                                        <rect key="frame" x="0.0" y="5" width="243" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -151,13 +151,15 @@
                                 <date key="date" timeIntervalSinceReferenceDate="512419420.14237797">
                                     <!--2017-03-28 18:43:40 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerValueChange:" destination="FBA-98-8r4" eventType="valueChanged" id="1nO-6R-eEZ"/>
+                                </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-3l-sgn">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-3l-sgn">
                                 <rect key="frame" x="128" y="357" width="119" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <action selector="continueButtonPressed:" destination="FBA-98-8r4" eventType="touchUpInside" id="eeq-rO-oW5"/>
                                     <segue destination="0we-Yj-j3x" kind="show" identifier="toMobile" id="XYM-2p-AjF"/>
                                 </connections>
                             </button>

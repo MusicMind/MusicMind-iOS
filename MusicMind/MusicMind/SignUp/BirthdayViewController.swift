@@ -16,19 +16,31 @@ class BirthdayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     var newUser: User?
     
-    @IBAction func continueButtonPressed(_ sender: Any) {
+    
+    @IBAction func datePickerValueChange(_ sender: Any) {
+        
+        continueButton.isEnabled = true
+        
+        let dateFormatter: DateFormatter = {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .none
+            return dateFormatter
+        }()
+        birthdayLabel.text = dateFormatter.string(from: datePicker.date)
         
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
+        let birthDate = datePicker.date
+        let calendar = Calendar.current
+        let unitFlags = 
+        let dateComponents = Calendar().dateComponents(u, from: <#T##Date#>, to: <#T##Date#>
     }
 
 }
