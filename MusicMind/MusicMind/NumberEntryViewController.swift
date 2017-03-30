@@ -42,11 +42,28 @@ class NumberEntryViewController: UIViewController {
         
         formatter = TextFieldPhoneNumberFormatter()
         formatter.textField = numberEntryTextField
+        numberEntryTextField.placeholder = "test"
         
         formatter.onTextFieldTextDidChange = { (textField: UITextField) -> () in
             
-            self.getCodeButton.isEnabled = false
+            let blankColor = UIColor.clear
+            let looksGoodColor = UIColor(red: 0.9, green: 1.0, blue: 0.9, alpha: 1.0)
+            let looksBadColor = UIColor(red: 1.0, green: 0.9, blue: 0.9, alpha: 1.0)
             
+            func update(buttonEnabled: Bool, textFieldColor: UIColor) {
+                self.getCodeButton.isEnabled = buttonEnabled
+                textField.backgroundColor = textFieldColor
+            }
+            
+            if let phoneNumberText = textField.text {
+                if SharedPhoneNumberUtil().isPossibleNumber(phoneNumberText, fromRegion: "US").possible {
+                    update(buttonEnabled: true, textFieldColor: looksGoodColor)
+                } else {
+                    update(buttonEnabled: false, textFieldColor: looksBadColor)
+                }
+            } else {
+                update(buttonEnabled: false, textFieldColor: blankColor)
+            }
 /* Example:
             - (void)onTextFieldTextDidChange:(UITextField *)textField {
                 void (^update)(BOOL, UIColor *) = ^(BOOL enabled, UIColor *color) {
