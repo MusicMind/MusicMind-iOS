@@ -35,6 +35,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - KeychainSwift (7.0.0)
+  - SinchVerification-Swift (2.0.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Storage
   - KeychainSwift
+  - SinchVerification-Swift
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -54,7 +56,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   KeychainSwift: b6947435dd78cc442c64a84ae648dd0e871cf448
+  SinchVerification-Swift: 567aaf9cb29c55a115faecb6016fea25a7f37688
 
-PODFILE CHECKSUM: f12be7a037a685ebf49fa3a1d30eb18d97f1b563
+PODFILE CHECKSUM: bd7da67de3d74c594c3d23de9e05cc7c19cb1ca8
 
 COCOAPODS: 1.2.0.beta.1
