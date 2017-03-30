@@ -10,6 +10,10 @@ import UIKit
 
 class BirthdayViewController: UIViewController {
 
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var continueButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,15 +22,13 @@ class BirthdayViewController: UIViewController {
 
     var newUser: User?
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func continueButtonPressed(_ sender: Any) {
+        
     }
-    */
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    }
 
 }

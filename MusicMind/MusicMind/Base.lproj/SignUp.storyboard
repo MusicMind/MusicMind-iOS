@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="860" y="109.29535232383809"/>
         </scene>
-        <!--View Controller-->
+        <!--Birthday View Controller-->
         <scene sceneID="gyX-GI-MPY">
             <objects>
-                <viewController id="FBA-98-8r4" sceneMemberID="viewController">
+                <viewController id="FBA-98-8r4" customClass="BirthdayViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ONg-fz-CnZ"/>
                         <viewControllerLayoutGuide type="bottom" id="blS-5h-ymr"/>
@@ -157,6 +157,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+                                    <action selector="continueButtonPressed:" destination="FBA-98-8r4" eventType="touchUpInside" id="eeq-rO-oW5"/>
                                     <segue destination="0we-Yj-j3x" kind="show" identifier="toMobile" id="XYM-2p-AjF"/>
                                 </connections>
                             </button>
@@ -179,6 +180,11 @@
                             <constraint firstItem="3zR-CQ-fN6" firstAttribute="top" secondItem="ONg-fz-CnZ" secondAttribute="bottom" constant="83" id="yPL-Zx-JRC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="birthdayLabel" destination="czB-2y-LCk" id="DC2-rC-w7C"/>
+                        <outlet property="continueButton" destination="vMa-3l-sgn" id="OR4-cd-LQT"/>
+                        <outlet property="datePicker" destination="bGb-0z-uwG" id="mDS-3H-BKc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0N3-lu-odl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
