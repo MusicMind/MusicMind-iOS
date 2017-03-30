@@ -13,6 +13,7 @@ class NumberEntryViewController: UIViewController {
     
     var verification: Verification!
     var sinchApplicationKey = "a7047f26-664e-47e5-abf8-02013452c9d4"
+    private var formatter: TextFieldPhoneNumberFormatter!
     
     @IBOutlet weak var numberEntryTextField: UITextField!
     @IBOutlet weak var getCodeButton: UIButton!
@@ -38,6 +39,35 @@ class NumberEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        formatter = TextFieldPhoneNumberFormatter()
+        formatter.textField = numberEntryTextField
+        
+        formatter.onTextFieldTextDidChange = { (textField: UITextField) -> () in
+            
+            self.getCodeButton.isEnabled = false
+            
+/* Example:
+            - (void)onTextFieldTextDidChange:(UITextField *)textField {
+                void (^update)(BOOL, UIColor *) = ^(BOOL enabled, UIColor *color) {
+                    self.verifyButton.enabled = enabled;
+                    textField.backgroundColor = color;
+                };
+                
+                if (textField.text.length == 0) {
+                    update(NO, [UIColor clearColor]);
+                } else if ([SINPhoneNumberUtil() isPossibleNumber:textField.text fromRegion:self.isoCountryCode error:nil]) {
+                    update(YES, colorForPossiblePhoneNumber());
+                } else {
+                    update(NO, colorForNotPossiblePhoneNumber());
+                }
+            }
+*/
+            
+            
+            
+            
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
