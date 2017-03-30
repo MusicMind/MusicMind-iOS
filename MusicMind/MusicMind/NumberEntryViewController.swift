@@ -23,7 +23,7 @@ class NumberEntryViewController: UIViewController {
     @IBAction func attemptValidation(_ sender: Any) {
         verification =
             SMSVerification(sinchApplicationKey,
-                            phoneNumber: numberEntryTextField.text!)
+                            phoneNumber: "+1\(numberEntryTextField.text!)")
         verification.initiate { (result, error) in
             if result.success {
                 print("success")
@@ -39,7 +39,7 @@ class NumberEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         formatter = TextFieldPhoneNumberFormatter()
         formatter.textField = numberEntryTextField
         
