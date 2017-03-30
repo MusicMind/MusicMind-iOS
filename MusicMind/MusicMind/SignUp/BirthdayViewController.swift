@@ -53,7 +53,11 @@ class BirthdayViewController: UIViewController {
         }
         
         if segue.identifier == "toMobile",
-            let 
+            let mobileViewController = segue.destination as? MobileViewController {
+            
+            newUser?.birthday = birthDate
+            mobileViewController.newUser = newUser
+        }
         
     }
 
