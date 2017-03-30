@@ -39,8 +39,22 @@ class BirthdayViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let birthDate = datePicker.date
         let calendar = Calendar.current
-        let unitFlags = 
-        let dateComponents = Calendar().dateComponents(u, from: <#T##Date#>, to: <#T##Date#>
+        let ageComponents = calendar.dateComponents([.year], from: birthDate, to: Date())
+        let age = ageComponents.year!
+        
+        // MARK: - Age Restriction
+        if age < 18 {
+            let alerController = UIAlertController(title: "Age Restriction", message: "Must be 18 years or older.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alerController.addAction(okAction)
+            self.present(alerController, animated: true, completion: { 
+                return
+            })
+        }
+        
+        if segue.identifier == "toMobile",
+            let 
+        
     }
 
 }
