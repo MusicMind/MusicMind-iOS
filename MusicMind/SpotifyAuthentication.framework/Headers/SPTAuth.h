@@ -94,6 +94,11 @@ typedef void (^SPTAuthCallback)(NSError *error, SPTSession *session);
 ///----------------------------
 
 /**
+ allowNativeLogin
+ */
+@property (readwrite) BOOL allowNativeLogin;
+
+/**
  Your client ID.
  */
 @property (strong, readwrite) NSString *clientID;
