@@ -43,6 +43,9 @@
 		DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */; };
 		DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F961E661BB20050E719 /* MusicMindTests.swift */; };
 		DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429FA11E661BB20050E719 /* MusicMindUITests.swift */; };
+		DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
+		DE487E031E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
+		DE487E041E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
 		DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE49052F1E6A3E5700F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE4905301E6A3E5800F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
@@ -136,6 +139,7 @@
 		DE429F9D1E661BB20050E719 /* MusicMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE429FA11E661BB20050E719 /* MusicMindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMindUITests.swift; sourceTree = "<group>"; };
 		DE429FA31E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = SignIn/SignInViewController.swift; sourceTree = "<group>"; };
 		DE64942B1E7CE6F0003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SendToFriend.storyboard; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
+				DE487E051E8D6A3C0025B514 /* Extensions */,
 				DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */,
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE64942F1E7CE71B003D92D0 /* SpotifyAuth */,
@@ -332,6 +337,14 @@
 				DE429FA31E661BB20050E719 /* Info.plist */,
 			);
 			path = MusicMindUITests;
+			sourceTree = "<group>";
+		};
+		DE487E051E8D6A3C0025B514 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		DE6494251E7CE670003D92D0 /* SignIn */ = {
@@ -692,6 +705,7 @@
 				0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */,
 				0FF4B6241E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift in Sources */,
 				0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */,
+				DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494271E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
@@ -713,6 +727,7 @@
 				DEBF26F11E7DA22800CB13E1 /* User.swift in Sources */,
 				DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */,
 				DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */,
+				DE487E031E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE6494281E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,6 +743,7 @@
 				DEBF26F21E7DA22800CB13E1 /* User.swift in Sources */,
 				DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */,
 				DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */,
+				DE487E041E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE6494291E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

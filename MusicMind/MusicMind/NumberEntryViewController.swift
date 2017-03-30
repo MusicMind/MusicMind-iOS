@@ -40,6 +40,8 @@ class NumberEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         formatter = TextFieldPhoneNumberFormatter()
         formatter.textField = numberEntryTextField
         numberEntryTextField.placeholder = "test"
