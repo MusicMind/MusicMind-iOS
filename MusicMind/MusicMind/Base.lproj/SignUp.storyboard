@@ -160,7 +160,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="0we-Yj-j3x" kind="show" identifier="toMobile" id="XYM-2p-AjF"/>
+                                    <segue destination="jXN-sj-A5H" kind="show" identifier="toEmailPassword" id="ebo-yM-miY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -249,9 +249,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6L-Er-kKZ">
                                         <rect key="frame" x="0.0" y="53.5" width="243" height="30"/>
                                         <state key="normal" title="Authenticate"/>
-                                        <connections>
-                                            <segue destination="jXN-sj-A5H" kind="show" identifier="toEmailPassword" id="FAn-HK-eNW"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -274,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAR-Rp-dhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2631" y="108"/>
+            <point key="canvasLocation" x="3665" y="109"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="g7j-Z7-L5y">
@@ -342,7 +339,10 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwA-7d-g6e">
                                 <rect key="frame" x="108" y="343" width="159" height="30"/>
-                                <state key="normal" title="Finish &amp; SIgn Up"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="0we-Yj-j3x" kind="show" identifier="toMobile" id="pqG-w7-xdR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyU-23-w6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3552.8000000000002" y="106.59670164917542"/>
+            <point key="canvasLocation" x="2668" y="109"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rag-B8-Xbz">
