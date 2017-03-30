@@ -40,7 +40,7 @@ class NumberEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        getCodeButton.setBackgroundColor(color: .red, forState: .disabled)
         
         formatter = TextFieldPhoneNumberFormatter()
         formatter.textField = numberEntryTextField

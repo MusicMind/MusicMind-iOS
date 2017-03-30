@@ -6,23 +6,29 @@
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
 
+// Thanks to https://github.com/acani/UIButtonBackgroundColor
+
 import UIKit
 
 extension UIButton {
-    public func setBackgroundColor(color: UIColor?, forState state: UIControlState) {
-        guard let color = color else { return setBackgroundImage(nil, forState: state) }
-        setBackgroundImage(UIImage.imageColored(color), forState: state)
+    public func setBackgroundColor(color: UIColor, forState state: UIControlState) {
+        
+        let saveCornerRadius = layer.cornerRadius
+        
+        setBackgroundImage(UIImage.imageColored(color: color), for: state)
+        
+        layer.cornerRadius = saveCornerRadius
     }
 }
 
 extension UIImage {
     public class func imageColored(color: UIColor) -> UIImage! {
-        let onePixel = 1 / UIScreen.mainScreen().scale
+        let onePixel = 1 / UIScreen.main.scale
         let rect = CGRect(x: 0, y: 0, width: onePixel, height: onePixel)
-        UIGraphicsBeginImageContextWithOptions(rect.size, CGColorGetAlpha(color.CGColor) == 1, 0)
+        UIGraphicsBeginImageContextWithOptions(rect.size, color.cgColor.alpha == 1, 0)
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context!.setFillColor( color.cgColor)
+        context!.fill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
