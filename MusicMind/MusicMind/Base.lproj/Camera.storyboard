@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBF-OT-sPe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBF-OT-sPe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2Q-BA-tgI" customClass="PreviewView" customModule="MusicMind" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-1a-G3m">
+                                        <rect key="frame" x="297" y="100" width="49" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="Vr9-cL-adR"/>
+                                            <constraint firstAttribute="height" constant="38" id="crA-xQ-V14"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <state key="normal" title="Aa">
+                                            <color key="titleColor" red="0.89021088564037487" green="0.88591034996095286" blue="0.894511421319797" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Pkb-1a-G3m" secondAttribute="trailing" constant="29" id="afw-SX-VE5"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gle-1b-udU">
                                 <rect key="frame" x="163" y="534" width="49" height="30"/>
@@ -81,6 +97,7 @@
                             <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="3Mr-6q-0aJ" secondAttribute="bottom" id="Z6G-0M-gGU"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leading" id="a4f-oW-7W0"/>
                             <constraint firstItem="hgu-2x-EGW" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="8" id="f27-Pg-jD7"/>
+                            <constraint firstItem="Pkb-1a-G3m" firstAttribute="top" secondItem="UFk-iX-4OX" secondAttribute="bottom" constant="50" id="hrJ-67-rA0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="8" id="r0N-28-aJ1"/>
                         </constraints>
                     </view>
