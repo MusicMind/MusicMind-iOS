@@ -79,6 +79,8 @@ class SpotifyTableViewController: UITableViewController, UISearchBarDelegate, SP
         self.createSearchBar()
         self.createAudioPlayer()
         
+        self.hideKeyboardWhenTappedAround()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

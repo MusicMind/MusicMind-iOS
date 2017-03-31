@@ -49,6 +49,9 @@
 		DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE49052F1E6A3E5700F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE4905301E6A3E5800F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
+		DE5A33E41E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A33E31E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
+		DE5A33E51E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A33E31E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
+		DE5A33E61E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A33E31E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
 		DE6494271E7CE6CC003D92D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */; };
 		DE6494281E7CE6CC003D92D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */; };
 		DE6494291E7CE6CC003D92D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */; };
@@ -141,6 +144,7 @@
 		DE429FA31E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE5A33E31E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
 		DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = SignIn/SignInViewController.swift; sourceTree = "<group>"; };
 		DE64942B1E7CE6F0003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SendToFriend.storyboard; sourceTree = "<group>"; };
 		DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyAuthViewController.swift; path = SpotifyAuth/SpotifyAuthViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 		DE487E051E8D6A3C0025B514 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DE5A33E31E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift */,
 				DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */,
 			);
 			name = Extensions;
@@ -705,6 +710,7 @@
 				0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */,
 				0FF4B6241E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift in Sources */,
 				0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */,
+				DE5A33E41E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
@@ -721,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF5E4EB1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
+				DE5A33E51E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				DE357AC41E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DE09EC6D1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494321E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
@@ -737,6 +744,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF5E4EC1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
+				DE5A33E61E8DD7250032134E /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				DE357AC51E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DE09EC6E1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494331E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
