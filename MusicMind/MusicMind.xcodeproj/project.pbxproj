@@ -77,6 +77,9 @@
 		DEF869A71E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */; };
 		DEF869A81E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */; };
 		DEF869A91E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */; };
+		DEF869AC1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF869AA1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard */; };
+		DEF869AD1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF869AA1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard */; };
+		DEF869AE1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF869AA1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +158,7 @@
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
 		DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberEntryViewController.swift; sourceTree = "<group>"; };
 		DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextOverlayCreationViewController.swift; sourceTree = "<group>"; };
+		DEF869AB1E8F1E3F00BDC348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TextOverlayCreation.storyboard; sourceTree = "<group>"; };
 		EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -217,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */,
+				DEF869AA1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard */,
 				0F3DCBAF1E6E21F400AADAB8 /* View */,
 				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
 				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
@@ -527,6 +532,7 @@
 				0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */,
 				DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
 				DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
+				DEF869AC1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +544,7 @@
 				DE49052F1E6A3E5700F65C2B /* GoogleService-Info.plist in Resources */,
 				DEF5E4E71E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE64942D1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
+				DEF869AD1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +556,7 @@
 				DE4905301E6A3E5800F65C2B /* GoogleService-Info.plist in Resources */,
 				DEF5E4E81E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE64942E1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
+				DEF869AE1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +834,14 @@
 				DEF5E4E51E8C2CC200FF9E37 /* Base */,
 			);
 			name = "SMS Validation.storyboard";
+			sourceTree = "<group>";
+		};
+		DEF869AA1E8F1E3F00BDC348 /* TextOverlayCreation.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEF869AB1E8F1E3F00BDC348 /* Base */,
+			);
+			name = TextOverlayCreation.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
