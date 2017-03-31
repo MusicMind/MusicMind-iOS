@@ -12,7 +12,7 @@
         <!--Text Overlay Creation View Controller-->
         <scene sceneID="0hM-VS-Upj">
             <objects>
-                <viewController id="P74-iB-tj2" customClass="TextOverlayCreationViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="textOverlay" id="P74-iB-tj2" customClass="TextOverlayCreationViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7U3-lp-zbj"/>
                         <viewControllerLayoutGuide type="bottom" id="1nV-DD-Bie"/>
