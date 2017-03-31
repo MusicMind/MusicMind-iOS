@@ -35,6 +35,9 @@
                                         <state key="normal" title="Aa">
                                             <color key="titleColor" red="0.89021088564037487" green="0.88591034996095286" blue="0.894511421319797" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="textOverlay:" destination="sBF-OT-sPe" eventType="touchUpInside" id="aNw-5L-jkm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

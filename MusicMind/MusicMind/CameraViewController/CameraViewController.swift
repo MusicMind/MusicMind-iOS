@@ -19,6 +19,10 @@ class CameraViewController: APPLCameraViewController {
     
     var isRecording: Bool = false
     
+    @IBAction func textOverlay(_ sender: Any) {
+        
+    }
+    
     @IBAction func openSendToFriend(_ sender: Any) {
         let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
         
