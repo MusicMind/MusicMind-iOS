@@ -74,6 +74,9 @@
 		DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
 		DEF5E4EB1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
 		DEF5E4EC1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
+		DEF869A71E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */; };
+		DEF869A81E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */; };
+		DEF869A91E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +154,7 @@
 		DEBF26EF1E7DA22800CB13E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
 		DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberEntryViewController.swift; sourceTree = "<group>"; };
+		DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextOverlayCreationViewController.swift; sourceTree = "<group>"; };
 		EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -212,6 +216,7 @@
 		0FD0256F1E6B4BD500E59E95 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				DEF869A61E8F1CD400BDC348 /* TextOverlayCreationViewController.swift */,
 				0F3DCBAF1E6E21F400AADAB8 /* View */,
 				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
 				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
@@ -693,6 +698,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */,
+				DEF869A71E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */,
 				DE6494311E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				86E199A21E7F10030071F50C /* SpotifyTableViewController.swift in Sources */,
@@ -725,6 +731,7 @@
 				DE09EC6D1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494321E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEBF26F11E7DA22800CB13E1 /* User.swift in Sources */,
+				DEF869A81E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */,
 				DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */,
 				DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				DE487E031E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
@@ -741,6 +748,7 @@
 				DE09EC6E1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494331E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEBF26F21E7DA22800CB13E1 /* User.swift in Sources */,
+				DEF869A91E8F1CD400BDC348 /* TextOverlayCreationViewController.swift in Sources */,
 				DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */,
 				DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				DE487E041E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
