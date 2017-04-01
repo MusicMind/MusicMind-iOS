@@ -10,6 +10,8 @@ import UIKit
 
 class TextOverlayCreationViewController: UIViewController {
 
+    var cameraVC: CameraViewController!
+    
     @IBAction func done(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

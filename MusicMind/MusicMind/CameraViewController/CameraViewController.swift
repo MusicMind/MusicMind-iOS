@@ -21,13 +21,15 @@ class CameraViewController: APPLCameraViewController {
     
     @IBAction func textOverlay(_ sender: Any) {
         let vc = UIStoryboard(name: "TextOverlayCreation", bundle: nil).instantiateViewController(withIdentifier: "textOverlay") as! TextOverlayCreationViewController
-        
+                
         self.present(vc, animated: true, completion: nil)
 
     }
     
     @IBAction func openSendToFriend(_ sender: Any) {
         let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
+        
+        self.modalPresentationStyle = UIModalPresentationStyle.currentContext
         
         self.present(sendToFriendViewController, animated: true, completion: nil)
     }
@@ -72,6 +74,17 @@ class CameraViewController: APPLCameraViewController {
         recordButton.setTitle("Record Video", for: .normal)
         photoToolBarItem.tintColor = UIColor.blue
         videoToolBarItem.tintColor = UIColor.black
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "textOverlay" {
+            let vc = segue.destination as! TextOverlayCreationViewController
+            
+            vc.cameraVC = self
+            vc.modalPresentationStyle = UIModalPresentationStyle.custom
+            
+        }
+        
     }
 }
 
