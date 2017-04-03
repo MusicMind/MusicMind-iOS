@@ -18,7 +18,6 @@ class EmailPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordConfirmationTextField.delegate = self
     }
 
 
@@ -38,6 +37,9 @@ class EmailPasswordViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return
         }
+        
+        newUser.firebaseUserEmail = email
+        newUser.firebaseUserPassword = password
         
         
     }

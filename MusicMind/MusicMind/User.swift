@@ -61,6 +61,8 @@ class User: NSObject {
     
     var birthday: Date?
     
+    var firebaseUUID: String?
+    
     var dictionaryRepresentation: [String: Any] {
         return ["firstName": self.firstName, "lastName": self.lastName, "birthday": self.birthday]
     }
