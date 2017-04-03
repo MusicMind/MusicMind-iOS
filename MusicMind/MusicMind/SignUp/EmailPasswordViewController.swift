@@ -18,6 +18,7 @@ class EmailPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordConfirmationTextField.delegate = self
     }
 
 
@@ -38,6 +39,13 @@ class EmailPasswordViewController: UIViewController {
                 return
         }
         
+        
     }
 
+}
+
+extension EmailPasswordViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        <#code#>
+    }
 }
