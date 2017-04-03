@@ -273,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="3665" y="109"/>
         </scene>
-        <!--View Controller-->
+        <!--Email Password View Controller-->
         <scene sceneID="g7j-Z7-L5y">
             <objects>
-                <viewController id="jXN-sj-A5H" sceneMemberID="viewController">
+                <viewController id="jXN-sj-A5H" customClass="EmailPasswordViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="opP-8E-D6V"/>
                         <viewControllerLayoutGuide type="bottom" id="hQ2-r5-e7h"/>
@@ -364,6 +364,11 @@
                             <constraint firstItem="YZH-dZ-J2m" firstAttribute="leading" secondItem="hof-Q9-QAq" secondAttribute="leadingMargin" constant="50" id="y5x-9h-iCp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="dOE-b5-JIb" id="1VX-k8-uRY"/>
+                        <outlet property="passwordConfirmationTextField" destination="FfP-34-yIV" id="BgT-QB-ofs"/>
+                        <outlet property="passwordTextField" destination="9dl-x0-YAf" id="Imp-qV-hg7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyU-23-w6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
