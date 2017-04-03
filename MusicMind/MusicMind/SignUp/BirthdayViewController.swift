@@ -52,11 +52,11 @@ class BirthdayViewController: UIViewController {
             })
         }
         
-        if segue.identifier == "toMobile",
-            let mobileViewController = segue.destination as? MobileViewController {
+        if segue.identifier == "toEmailPassword",
+            let emailPasswordViewController = segue.destination as? EmailPasswordViewController {
             
             newUser?.birthday = birthDate
-            mobileViewController.newUser = newUser
+            emailPasswordViewController.newUser = newUser
         }
         
     }

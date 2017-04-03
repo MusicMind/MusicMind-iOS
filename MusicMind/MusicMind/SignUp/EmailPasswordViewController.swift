@@ -19,6 +19,7 @@ class EmailPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(newUser)
     }
 
 
@@ -37,12 +38,13 @@ class EmailPasswordViewController: UIViewController {
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
                 return
+            
         }
         
         newUser.firebaseUserEmail = email
         newUser.firebaseUserPassword = password
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: email, password: passwordTextField.text!, completion: { (user, error) in
             newUser.firebaseUUID = user?.uid
         })
         
