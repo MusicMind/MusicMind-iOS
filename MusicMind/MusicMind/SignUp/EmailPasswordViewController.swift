@@ -44,18 +44,3 @@ class EmailPasswordViewController: UIViewController {
 
 }
 
-extension EmailPasswordViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let password = self.passwordTextField.text else { return true }
-        
-        if string == password{
-            textField.backgroundColor = UIColor.green
-            self.passwordTextField.backgroundColor = UIColor.green
-        } else {
-            textField.backgroundColor = UIColor.red
-            self.passwordTextField.backgroundColor = UIColor.red
-        }
-        
-        return true
-    }
-}
