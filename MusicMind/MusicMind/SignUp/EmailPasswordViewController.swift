@@ -20,14 +20,24 @@ class EmailPasswordViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        guard let newUser = self.newUser,
+            let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let confirmedPassword = passwordConfirmationTextField.text,
+            password == confirmedPassword else {
+                let alertController = UIAlertController(title: "Error", message: "Please make sure all fields are filled and passwords match.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+                    self.passwordTextField.text = nil
+                    self.passwordConfirmationTextField.text = nil
+                })
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+        }
+        
     }
-    */
 
 }
