@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class EmailPasswordViewController: UIViewController {
     
@@ -41,6 +42,9 @@ class EmailPasswordViewController: UIViewController {
         newUser.firebaseUserEmail = email
         newUser.firebaseUserPassword = password
         
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+            newUser.firebaseUUID = user?.uid
+        })
         
     }
 
