@@ -217,14 +217,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F3DCBAF1E6E21F400AADAB8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		0F3DCBB41E6E227300AADAB8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +230,7 @@
 		0FD0256F1E6B4BD500E59E95 /* Camera capture */ = {
 			isa = PBXGroup;
 			children = (
-				0F3DCBAF1E6E21F400AADAB8 /* View */,
+				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
 				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
 				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
 				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
