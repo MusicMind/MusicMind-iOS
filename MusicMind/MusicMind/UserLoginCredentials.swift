@@ -9,7 +9,7 @@
 import UIKit
 import KeychainSwift
 
-class User: NSObject {
+class UserLoginCredentials: NSObject {
     
     private let keychain: KeychainSwift!
     
@@ -52,7 +52,5 @@ class User: NSObject {
             }
         }
     }
-    
-    var spotifyToken: String?
 
 }

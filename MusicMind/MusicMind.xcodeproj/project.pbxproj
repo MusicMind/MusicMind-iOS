@@ -58,9 +58,9 @@
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
-		DEBF26F01E7DA22800CB13E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* User.swift */; };
-		DEBF26F11E7DA22800CB13E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* User.swift */; };
-		DEBF26F21E7DA22800CB13E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* User.swift */; };
+		DEBF26F01E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */; };
+		DEBF26F11E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */; };
+		DEBF26F21E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +131,7 @@
 		DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyAuthViewController.swift; path = SpotifyAuth/SpotifyAuthViewController.swift; sourceTree = "<group>"; };
 		DE6494351E7CE756003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SpotifyAuth.storyboard; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		DEBF26EF1E7DA22800CB13E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
 		EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -292,7 +292,7 @@
 				DE429F8D1E661BB20050E719 /* Info.plist */,
 				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
-				DEBF26EF1E7DA22800CB13E1 /* User.swift */,
+				DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */,
 			);
 			path = MusicMind;
 			sourceTree = "<group>";
@@ -647,7 +647,7 @@
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
-				DEBF26F01E7DA22800CB13E1 /* User.swift in Sources */,
+				DEBF26F01E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,7 +657,7 @@
 			files = (
 				DE09EC6D1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494321E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
-				DEBF26F11E7DA22800CB13E1 /* User.swift in Sources */,
+				DEBF26F11E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */,
 				DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */,
 				DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				DE6494281E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
@@ -670,7 +670,7 @@
 			files = (
 				DE09EC6E1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494331E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
-				DEBF26F21E7DA22800CB13E1 /* User.swift in Sources */,
+				DEBF26F21E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */,
 				DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */,
 				DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				DE6494291E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
