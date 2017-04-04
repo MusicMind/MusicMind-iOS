@@ -43,7 +43,7 @@
 		DE357AC41E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE357AC21E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift */; };
 		DE357AC51E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE357AC21E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift */; };
 		DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F811E661BB20050E719 /* AppDelegate.swift */; };
-		DE429F871E661BB20050E719 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F851E661BB20050E719 /* SignIn.storyboard */; };
+		DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F851E661BB20050E719 /* LogIn.storyboard */; };
 		DE429F891E661BB20050E719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE429F881E661BB20050E719 /* Assets.xcassets */; };
 		DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */; };
 		DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F961E661BB20050E719 /* MusicMindTests.swift */; };
@@ -54,9 +54,9 @@
 		DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE49052F1E6A3E5700F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE4905301E6A3E5800F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
-		DE6494271E7CE6CC003D92D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */; };
-		DE6494281E7CE6CC003D92D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */; };
-		DE6494291E7CE6CC003D92D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */; };
+		DE6494271E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
+		DE6494281E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
+		DE6494291E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
 		DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */; };
 		DE64942D1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */; };
 		DE64942E1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */; };
@@ -139,7 +139,7 @@
 		DE357AC21E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationCodeEntryViewController.swift; sourceTree = "<group>"; };
 		DE429F7E1E661BB20050E719 /* MusicMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE429F811E661BB20050E719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE429F861E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignIn.storyboard; sourceTree = "<group>"; };
+		DE429F861E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
 		DE429F881E661BB20050E719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE429F8B1E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE429F8D1E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		DE429FA31E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = SignIn/SignInViewController.swift; sourceTree = "<group>"; };
+		DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = SignIn/LogInViewController.swift; sourceTree = "<group>"; };
 		DE64942B1E7CE6F0003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SendToFriend.storyboard; sourceTree = "<group>"; };
 		DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyAuthViewController.swift; path = SpotifyAuth/SpotifyAuthViewController.swift; sourceTree = "<group>"; };
 		DE6494351E7CE756003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SpotifyAuth.storyboard; sourceTree = "<group>"; };
@@ -327,7 +327,7 @@
 				DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */,
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE64942F1E7CE71B003D92D0 /* SpotifyAuth */,
-				DE6494251E7CE670003D92D0 /* SignIn */,
+				DE6494251E7CE670003D92D0 /* Log in */,
 				DE09EC6A1E7CDF81005B237A /* SendToFriend */,
 				0FD0256F1E6B4BD500E59E95 /* Camera */,
 				0FF4B6151E83930000EEAE8C /* Stickers */,
@@ -370,13 +370,13 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		DE6494251E7CE670003D92D0 /* SignIn */ = {
+		DE6494251E7CE670003D92D0 /* Log in */ = {
 			isa = PBXGroup;
 			children = (
-				DE6494261E7CE6CC003D92D0 /* SignInViewController.swift */,
-				DE429F851E661BB20050E719 /* SignIn.storyboard */,
+				DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */,
+				DE429F851E661BB20050E719 /* LogIn.storyboard */,
 			);
-			name = SignIn;
+			name = "Log in";
 			sourceTree = "<group>";
 		};
 		DE64942F1E7CE71B003D92D0 /* SpotifyAuth */ = {
@@ -542,7 +542,7 @@
 				0FF4B6221E8394E600EEAE8C /* Stickers.storyboard in Resources */,
 				DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */,
 				DE429F891E661BB20050E719 /* Assets.xcassets in Resources */,
-				DE429F871E661BB20050E719 /* SignIn.storyboard in Resources */,
+				DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */,
 				0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */,
 				DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
 				DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
@@ -735,7 +735,7 @@
 				DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
-				DE6494271E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
+				DE6494271E7CE6CC003D92D0 /* LogInViewController.swift in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
@@ -756,7 +756,7 @@
 				DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */,
 				DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				DE487E031E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
-				DE6494281E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
+				DE6494281E7CE6CC003D92D0 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,7 +772,7 @@
 				DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */,
 				DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				DE487E041E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
-				DE6494291E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
+				DE6494291E7CE6CC003D92D0 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,12 +816,12 @@
 			name = SignUp.storyboard;
 			sourceTree = "<group>";
 		};
-		DE429F851E661BB20050E719 /* SignIn.storyboard */ = {
+		DE429F851E661BB20050E719 /* LogIn.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DE429F861E661BB20050E719 /* Base */,
 			);
-			name = SignIn.storyboard;
+			name = LogIn.storyboard;
 			sourceTree = "<group>";
 		};
 		DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */ = {

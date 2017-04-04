@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  LogInViewController.swift
 //  MusicMind
 //
 //  Created by Wesley Van der Klomp on 2/28/17.
@@ -9,14 +9,14 @@
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController {
+class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     // TODO: Disable button if email || password fields are nil. Use textFieldDelegate to check everytime keypress.
     
-    @IBAction func attemptSignIn(_ sender: Any) {
+    @IBAction func attemptLogIn(_ sender: Any) {
         
         user.firebaseUserEmail = emailField.text!
         user.firebaseUserPassword = passwordField.text!
