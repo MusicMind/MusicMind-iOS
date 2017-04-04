@@ -79,6 +79,12 @@
 		DE860DEC1E93618900393B03 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEA1E93618900393B03 /* Welcome.storyboard */; };
 		DE860DED1E93618900393B03 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEA1E93618900393B03 /* Welcome.storyboard */; };
 		DE860DEE1E93618900393B03 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEA1E93618900393B03 /* Welcome.storyboard */; };
+		DE860DF11E93626D00393B03 /* MusicSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */; };
+		DE860DF21E93626D00393B03 /* MusicSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */; };
+		DE860DF31E93626D00393B03 /* MusicSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */; };
+		DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */; };
+		DE860DF61E93630C00393B03 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */; };
+		DE860DF71E93630C00393B03 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
@@ -173,6 +179,8 @@
 		DE860DE21E93602400393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ForgotPassword.storyboard; sourceTree = "<group>"; };
 		DE860DE61E93617700393B03 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DE860DEB1E93618900393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Welcome.storyboard; sourceTree = "<group>"; };
+		DE860DF01E93626D00393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MusicSearch.storyboard; sourceTree = "<group>"; };
+		DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEBF26EF1E7DA22800CB13E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
@@ -393,8 +401,8 @@
 		DE64942F1E7CE71B003D92D0 /* Spotify log in */ = {
 			isa = PBXGroup;
 			children = (
-				DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */,
 				86E199A11E7F10030071F50C /* SpotifyTableViewController.swift */,
+				DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */,
 				DE6494341E7CE756003D92D0 /* SpotifyAuth.storyboard */,
 			);
 			name = "Spotify log in";
@@ -403,6 +411,8 @@
 		DE860DDA1E935EAB00393B03 /* Music search */ = {
 			isa = PBXGroup;
 			children = (
+				DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */,
+				DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */,
 			);
 			name = "Music search";
 			sourceTree = "<group>";
@@ -581,6 +591,7 @@
 				DE429F891E661BB20050E719 /* Assets.xcassets in Resources */,
 				DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */,
 				0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */,
+				DE860DF11E93626D00393B03 /* MusicSearch.storyboard in Resources */,
 				DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
 				DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */,
@@ -592,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE6494371E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */,
+				DE860DF21E93626D00393B03 /* MusicSearch.storyboard in Resources */,
 				DE49052F1E6A3E5700F65C2B /* GoogleService-Info.plist in Resources */,
 				DE860DE41E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 				DEF5E4E71E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
@@ -605,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE6494381E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */,
+				DE860DF31E93626D00393B03 /* MusicSearch.storyboard in Resources */,
 				DE4905301E6A3E5800F65C2B /* GoogleService-Info.plist in Resources */,
 				DE860DE51E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 				DEF5E4E81E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
@@ -762,6 +775,7 @@
 				0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */,
 				0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */,
 				0FF4B6301E8D818400EEAE8C /* MobileViewController.swift in Sources */,
+				DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */,
 				DE6494311E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				86E199A21E7F10030071F50C /* SpotifyTableViewController.swift in Sources */,
@@ -796,6 +810,7 @@
 				DE357AC41E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DE860DE81E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				DE09EC6D1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
+				DE860DF61E93630C00393B03 /* MusicSearchViewController.swift in Sources */,
 				DE6494321E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEBF26F11E7DA22800CB13E1 /* User.swift in Sources */,
 				DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */,
@@ -814,6 +829,7 @@
 				DE357AC51E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DE860DE91E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				DE09EC6E1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
+				DE860DF71E93630C00393B03 /* MusicSearchViewController.swift in Sources */,
 				DE6494331E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEBF26F21E7DA22800CB13E1 /* User.swift in Sources */,
 				DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */,
@@ -910,6 +926,14 @@
 				DE860DEB1E93618900393B03 /* Base */,
 			);
 			name = Welcome.storyboard;
+			sourceTree = "<group>";
+		};
+		DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE860DF01E93626D00393B03 /* Base */,
+			);
+			name = MusicSearch.storyboard;
 			sourceTree = "<group>";
 		};
 		DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */ = {
