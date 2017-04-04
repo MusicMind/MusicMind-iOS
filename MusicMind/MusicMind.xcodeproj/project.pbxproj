@@ -20,7 +20,7 @@
 		0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */; };
 		0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */; };
 		0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */; };
-		0FF4B6221E8394E600EEAE8C /* Stickers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* Stickers.storyboard */; };
+		0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */; };
 		0FF4B6241E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6231E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift */; };
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
 		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
@@ -131,7 +131,7 @@
 		0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StickersViewController + collectionViewHelper.swift"; path = "Stickers/StickersViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
 		0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoContainerView.swift; path = Stickers/VideoContainerView.swift; sourceTree = "<group>"; };
 		0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewController.swift; path = Stickers/VideoPickerViewController.swift; sourceTree = "<group>"; };
-		0FF4B6211E8394E600EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stickers.storyboard; sourceTree = "<group>"; };
+		0FF4B6211E8394E600EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PostProcessing.storyboard; sourceTree = "<group>"; };
 		0FF4B6231E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewControllerDelegate.swift; path = Protocols/VideoPickerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0FF4B6291E8AD8D700EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameViewController.swift; path = SignUp/NameViewController.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		0FF4B6151E83930000EEAE8C /* Post processing */ = {
 			isa = PBXGroup;
 			children = (
-				0FF4B6201E8394E600EEAE8C /* Stickers.storyboard */,
+				0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */,
 				0FF4B6161E83946100EEAE8C /* StickersViewController.swift */,
 				0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */,
 				0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */,
@@ -593,7 +593,7 @@
 				DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */,
 				DE6494361E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */,
 				0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */,
-				0FF4B6221E8394E600EEAE8C /* Stickers.storyboard in Resources */,
+				0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */,
 				DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */,
 				DE860DEC1E93618900393B03 /* Welcome.storyboard in Resources */,
 				DE429F891E661BB20050E719 /* Assets.xcassets in Resources */,
@@ -872,12 +872,12 @@
 			name = Camera.storyboard;
 			sourceTree = "<group>";
 		};
-		0FF4B6201E8394E600EEAE8C /* Stickers.storyboard */ = {
+		0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0FF4B6211E8394E600EEAE8C /* Base */,
 			);
-			name = Stickers.storyboard;
+			name = PostProcessing.storyboard;
 			sourceTree = "<group>";
 		};
 		0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */ = {
