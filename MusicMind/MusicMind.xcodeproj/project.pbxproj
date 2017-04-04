@@ -73,6 +73,12 @@
 		DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DE11E93602400393B03 /* ForgotPassword.storyboard */; };
 		DE860DE41E93602400393B03 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DE11E93602400393B03 /* ForgotPassword.storyboard */; };
 		DE860DE51E93602400393B03 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DE11E93602400393B03 /* ForgotPassword.storyboard */; };
+		DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DE61E93617700393B03 /* WelcomeViewController.swift */; };
+		DE860DE81E93617700393B03 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DE61E93617700393B03 /* WelcomeViewController.swift */; };
+		DE860DE91E93617700393B03 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DE61E93617700393B03 /* WelcomeViewController.swift */; };
+		DE860DEC1E93618900393B03 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEA1E93618900393B03 /* Welcome.storyboard */; };
+		DE860DED1E93618900393B03 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEA1E93618900393B03 /* Welcome.storyboard */; };
+		DE860DEE1E93618900393B03 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEA1E93618900393B03 /* Welcome.storyboard */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
@@ -165,6 +171,8 @@
 		DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicMind.entitlements; sourceTree = "<group>"; };
 		DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		DE860DE21E93602400393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ForgotPassword.storyboard; sourceTree = "<group>"; };
+		DE860DE61E93617700393B03 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		DE860DEB1E93618900393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Welcome.storyboard; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEBF26EF1E7DA22800CB13E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
@@ -410,6 +418,8 @@
 		DE860DDB1E935F1B00393B03 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				DE860DE61E93617700393B03 /* WelcomeViewController.swift */,
+				DE860DEA1E93618900393B03 /* Welcome.storyboard */,
 			);
 			name = Welcome;
 			sourceTree = "<group>";
@@ -575,6 +585,7 @@
 				0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */,
 				0FF4B6221E8394E600EEAE8C /* Stickers.storyboard in Resources */,
 				DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */,
+				DE860DEC1E93618900393B03 /* Welcome.storyboard in Resources */,
 				DE429F891E661BB20050E719 /* Assets.xcassets in Resources */,
 				DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */,
 				0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */,
@@ -593,6 +604,7 @@
 				DE860DE41E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 				DEF5E4E71E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE64942D1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
+				DE860DED1E93618900393B03 /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +617,7 @@
 				DE860DE51E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 				DEF5E4E81E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE64942E1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
+				DE860DEE1E93618900393B03 /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +766,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */,
 				0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */,
 				0FF4B6301E8D818400EEAE8C /* MobileViewController.swift in Sources */,
@@ -788,6 +802,7 @@
 			files = (
 				DEF5E4EB1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				DE357AC41E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
+				DE860DE81E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				DE09EC6D1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494321E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEBF26F11E7DA22800CB13E1 /* User.swift in Sources */,
@@ -805,6 +820,7 @@
 			files = (
 				DEF5E4EC1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				DE357AC51E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
+				DE860DE91E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				DE09EC6E1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494331E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEBF26F21E7DA22800CB13E1 /* User.swift in Sources */,
@@ -894,6 +910,14 @@
 				DE860DE21E93602400393B03 /* Base */,
 			);
 			name = ForgotPassword.storyboard;
+			sourceTree = "<group>";
+		};
+		DE860DEA1E93618900393B03 /* Welcome.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE860DEB1E93618900393B03 /* Base */,
+			);
+			name = Welcome.storyboard;
 			sourceTree = "<group>";
 		};
 		DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */ = {
