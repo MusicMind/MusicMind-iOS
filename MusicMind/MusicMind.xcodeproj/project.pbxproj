@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */; };
 		0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */; };
 		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
@@ -102,6 +103,7 @@
 		097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
+		0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
 		0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = CameraViewController/CameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				DEBF26EF1E7DA22800CB13E1 /* User.swift */,
+				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
 			);
 			path = MusicMind;
 			sourceTree = "<group>";
@@ -476,7 +479,7 @@
 				TargetAttributes = {
 					DE429F7D1E661BB20050E719 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7UJ4ETS6X9;
+						DevelopmentTeam = GQMN9RP4XE;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -739,6 +742,7 @@
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
+				0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */,
 				0FF4B6321E8D8C6100EEAE8C /* EmailPasswordViewController.swift in Sources */,
 				DEBF26F01E7DA22800CB13E1 /* User.swift in Sources */,
 			);
@@ -963,7 +967,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MusicMind/MusicMind.entitlements;
-				DEVELOPMENT_TEAM = 7UJ4ETS6X9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GQMN9RP4XE;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -987,7 +992,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MusicMind/MusicMind.entitlements;
-				DEVELOPMENT_TEAM = 7UJ4ETS6X9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GQMN9RP4XE;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

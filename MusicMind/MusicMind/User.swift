@@ -2,70 +2,72 @@
 //  User.swift
 //  MusicMind
 //
-//  Created by Wesley Van der Klomp on 3/18/17.
+//  Created by Angel Contreras on 4/3/17.
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
+import Foundation
 
-import UIKit
-import KeychainSwift
-
-class User: NSObject {
+struct User{
     
-    private let keychain: KeychainSwift!
-    
-    /// Constant keys for accessing values in keychain
-    private enum KeychainKey: String {
-        case firebaseUserEmail = "MMEmail"
-        case firebaseUserPassword = "MMPassword"
-
+    private enum UserDefaultsKeys: String {
+        case firstNameKey = "MMFirstName"
+        case lastNameKey = "MMLastName"
+        case birthdayKey = "MMBirthday"
+        case firebaseUUIDKey = "MMFirebaseUUIDKey"
+        case mobileNumberKey = "MMMobileNumber"
     }
     
-    override init() {
-        keychain = KeychainSwift()
-
-        super.init()
-    }
-
-    var firebaseUserEmail: String? {
-        get {
-            
-            return keychain.get(KeychainKey.firebaseUserEmail.rawValue)
-        }
-        set {            
-            if let unwrappedNewValue = newValue {
-                keychain.set(unwrappedNewValue, forKey: KeychainKey.firebaseUserEmail.rawValue)
-            } else {
-                keychain.delete(KeychainKey.firebaseUserEmail.rawValue)
-            }
-        }
-    }
-    
-    var firebaseUserPassword: String? {
-        get {
-            
-            return keychain.get(KeychainKey.firebaseUserPassword.rawValue)
+    var firstName: String?{
+        get{
+            return UserDefaults.standard.object(forKey: UserDefaultsKeys.firstNameKey.rawValue) as? String
         }
         set {
-            if let unwrappedNewValue = newValue {
-                keychain.set(unwrappedNewValue, forKey: KeychainKey.firebaseUserPassword.rawValue)
-            } else {
-                keychain.delete(KeychainKey.firebaseUserPassword.rawValue)
-            }
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.firstNameKey.rawValue)
         }
+    }
+    
+    
+    var lastName: String?{
+        get{
+            return UserDefaults.standard.object(forKey: UserDefaultsKeys.lastNameKey.rawValue) as? String
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.lastNameKey.rawValue)
+        }
+    }
+    
+    var birthday: Date?{
+        get{
+            return UserDefaults.standard.object(forKey: UserDefaultsKeys.birthdayKey.rawValue) as? Date
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.birthdayKey.rawValue)
+        }
+    }
+    
+    var firebaseUUID: String? {
+        get{
+            return UserDefaults.standard.object(forKey: UserDefaultsKeys.firebaseUUIDKey.rawValue) as? String
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.firebaseUUIDKey.rawValue)
+        }
+    }
+    
+    var mobileNumber: String? {
+        get{
+            return UserDefaults.standard.object(forKey: UserDefaultsKeys.mobileNumberKey.rawValue) as? String
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.mobileNumberKey.rawValue)
+        }
+    }
+    
+    
+    var dictionaryRepresentation: [String:Any?]{
+        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": self.birthday]
     }
     
     var spotifyToken: String?
     
-    var firstName: String?
-    
-    var lastName: String?
-    
-    var birthday: Date?
-    
-    var firebaseUUID: String?
-    
-    var dictionaryRepresentation: [String: Any] {
-        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": self.birthday]
-    }
-
 }

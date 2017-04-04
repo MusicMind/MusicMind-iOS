@@ -15,7 +15,7 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     
-    var newUser: User?
+    var newUser = User()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,7 @@ class EmailPasswordViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let newUser = self.newUser,
-            let email = emailTextField.text,
+        guard let email = emailTextField.text,
             let password = passwordTextField.text,
             let confirmedPassword = passwordConfirmationTextField.text,
             password == confirmedPassword else {
@@ -41,11 +40,11 @@ class EmailPasswordViewController: UIViewController {
             
         }
         
-        newUser.firebaseUserEmail = email
-        newUser.firebaseUserPassword = password
+        userLoginCredentials.firebaseUserEmail = email
+        userLoginCredentials.firebaseUserPassword = password
         
         FIRAuth.auth()?.createUser(withEmail: email, password: passwordTextField.text!, completion: { (user, error) in
-            newUser.firebaseUUID = user?.uid
+            self.newUser.firebaseUUID = user?.uid
         })
         
     }
