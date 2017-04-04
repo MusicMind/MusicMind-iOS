@@ -1,5 +1,5 @@
 //
-//  StickersViewController + collectionViewHelper.swift
+//  PostProcessingViewController + collectionViewHelper.swift
 //  MusicMind
 //
 //  Created by Angel Contreras on 3/17/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension StickersViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PostProcessingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return emojiImagesArray.count
@@ -49,7 +49,7 @@ extension StickersViewController: UICollectionViewDelegate, UICollectionViewData
 }
 
 // MARK: - Gesture Recognizer Methods
-extension StickersViewController{
+extension PostProcessingViewController {
     func detectPan(recognizer: UIPanGestureRecognizer){
         let translation = recognizer.translation(in: self.view)
         if let view = recognizer.view {

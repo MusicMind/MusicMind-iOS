@@ -14,7 +14,7 @@
         <!--Stickers-->
         <scene sceneID="aeF-vs-t3w">
             <objects>
-                <viewController storyboardIdentifier="StickersViewController" id="Fvl-8P-Phq" customClass="StickersViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostProcessingViewController" id="Fvl-8P-Phq" customClass="PostProcessingViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rp4-Hb-fMw"/>
                         <viewControllerLayoutGuide type="bottom" id="Rqd-eC-9KP"/>

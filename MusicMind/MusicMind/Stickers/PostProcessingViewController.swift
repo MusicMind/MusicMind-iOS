@@ -1,5 +1,5 @@
 //
-//  StickersViewController.swift
+//  PostProcessingViewController.swift
 //  MusicMind
 //
 //  Created by Angel Contreras on 3/17/17.
@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class StickersViewController: VideoPickerViewController{
+class PostProcessingViewController: VideoPickerViewController{
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var recordedVideoView: VideoContainerView!
@@ -83,7 +83,7 @@ class StickersViewController: VideoPickerViewController{
 
 
 // MARK: - Video Picker View Controller Subclass and Delegate
-extension StickersViewController: VideoPickerViewControllerDelegate{
+extension PostProcessingViewController: VideoPickerViewControllerDelegate{
     
     func didFinishPickingVideoWith(url: URL) {
         DispatchQueue.main.async {
