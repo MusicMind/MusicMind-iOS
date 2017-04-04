@@ -42,6 +42,8 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         if let email = user.firebaseUserEmail {
             emailField.text = email
         }
@@ -52,11 +54,15 @@ class LogInViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        if isMovingFromParentViewController {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
     }
+
     
 }
 
