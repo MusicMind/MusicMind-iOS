@@ -22,12 +22,9 @@ class WelcomeViewControllerTests: XCTestCase {
         
         welcomeVC = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
         
-//        welcomeVC = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController") as! MusicMind.WelcomeViewController
+        UIApplication.shared.keyWindow!.rootViewController = welcomeVC
         
-//        UIApplication.shared.keyWindow!.rootViewController = welcomeVC
-        
-//        XCTAssertNotNil(welcomeVC.view)
-        
+        XCTAssertNotNil(welcomeVC.view)    
     }
     
     override func tearDown() {
