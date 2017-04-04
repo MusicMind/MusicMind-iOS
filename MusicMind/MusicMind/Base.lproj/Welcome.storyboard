@@ -12,7 +12,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="3je-rS-zSC">
             <objects>
-                <viewController id="qMk-1A-lJ4" customClass="WelcomeViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="qMk-1A-lJ4" customClass="WelcomeViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wDs-a0-ltO"/>
                         <viewControllerLayoutGuide type="bottom" id="8kR-2B-4rh"/>
