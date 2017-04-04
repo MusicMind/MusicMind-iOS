@@ -67,6 +67,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dVE-mw-Lf5"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvQ-hJ-2vA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
