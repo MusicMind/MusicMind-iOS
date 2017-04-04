@@ -150,7 +150,7 @@
 		DE429FA11E661BB20050E719 /* MusicMindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMindUITests.swift; sourceTree = "<group>"; };
 		DE429FA31E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
-		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = SignIn/LogInViewController.swift; sourceTree = "<group>"; };
 		DE64942B1E7CE6F0003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SendToFriend.storyboard; sourceTree = "<group>"; };
 		DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyAuthViewController.swift; path = SpotifyAuth/SpotifyAuthViewController.swift; sourceTree = "<group>"; };
@@ -300,7 +300,6 @@
 		DE429F751E661BB20050E719 = {
 			isa = PBXGroup;
 			children = (
-				DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */,
 				DE429F801E661BB20050E719 /* MusicMind */,
 				DE429F951E661BB20050E719 /* MusicMindTests */,
 				DE429FA01E661BB20050E719 /* MusicMindUITests */,
@@ -323,22 +322,27 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
+				0F3DCBB41E6E227300AADAB8 /* Protocols */,
+				DE487E051E8D6A3C0025B514 /* Extensions */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				DEBF26EF1E7DA22800CB13E1 /* User.swift */,
-				0F3DCBB41E6E227300AADAB8 /* Protocols */,
-				DE487E051E8D6A3C0025B514 /* Extensions */,
+				DE860DDB1E935F1B00393B03 /* Welcome */,
+				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
 				DE6494251E7CE670003D92D0 /* Log in */,
-				DE09EC6A1E7CDF81005B237A /* Send to friend */,
+				DE860DDC1E935F6D00393B03 /* Forgot password */,
 				0FD0256F1E6B4BD500E59E95 /* Camera capture */,
+				DE860DDA1E935EAB00393B03 /* Music search */,
 				0FF4B6151E83930000EEAE8C /* Post processing */,
-				DE64942F1E7CE71B003D92D0 /* Spotify log in */,
-				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
+				DE09EC6A1E7CDF81005B237A /* Send to friend */,
 				DE429F881E661BB20050E719 /* Assets.xcassets */,
 				DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */,
 				DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */,
 				DE429F8D1E661BB20050E719 /* Info.plist */,
+				DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */,
 				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
+				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
+				DE64942F1E7CE71B003D92D0 /* Spotify log in */,
 			);
 			path = MusicMind;
 			sourceTree = "<group>";
@@ -372,7 +376,6 @@
 		DE6494251E7CE670003D92D0 /* Log in */ = {
 			isa = PBXGroup;
 			children = (
-				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
 				DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */,
 				DE429F851E661BB20050E719 /* LogIn.storyboard */,
 			);
@@ -387,6 +390,27 @@
 				DE6494341E7CE756003D92D0 /* SpotifyAuth.storyboard */,
 			);
 			name = "Spotify log in";
+			sourceTree = "<group>";
+		};
+		DE860DDA1E935EAB00393B03 /* Music search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Music search";
+			sourceTree = "<group>";
+		};
+		DE860DDB1E935F1B00393B03 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		DE860DDC1E935F6D00393B03 /* Forgot password */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Forgot password";
 			sourceTree = "<group>";
 		};
 		DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */ = {
