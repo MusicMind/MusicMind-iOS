@@ -247,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="1957.5999999999999" y="1054.7226386806597"/>
         </scene>
-        <!--Camera-->
+        <!--CameraCapture-->
         <scene sceneID="UTi-vD-Y1w">
             <objects>
-                <viewControllerPlaceholder storyboardName="Camera" id="O9U-uL-0D6" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CameraCapture" id="O9U-uL-0D6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="SCU-gN-G32"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZw-dL-dak" userLabel="First Responder" sceneMemberID="firstResponder"/>

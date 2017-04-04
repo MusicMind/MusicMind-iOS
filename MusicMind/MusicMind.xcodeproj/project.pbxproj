@@ -54,6 +54,7 @@
 		DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE49052F1E6A3E5700F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE4905301E6A3E5800F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
+		DE503AD81E94349200124BFA /* WelcomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */; };
 		DE6494271E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
 		DE6494281E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
 		DE6494291E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
@@ -169,6 +170,7 @@
 		DE429FA31E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllerTests.swift; sourceTree = "<group>"; };
 		DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = SignIn/LogInViewController.swift; sourceTree = "<group>"; };
 		DE64942B1E7CE6F0003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SendToFriend.storyboard; sourceTree = "<group>"; };
 		DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotifyAuthViewController.swift; path = SpotifyAuth/SpotifyAuthViewController.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 		DE429F951E661BB20050E719 /* MusicMindTests */ = {
 			isa = PBXGroup;
 			children = (
+				DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */,
 				DE429F961E661BB20050E719 /* MusicMindTests.swift */,
 				DE429F981E661BB20050E719 /* Info.plist */,
 			);
@@ -826,6 +829,7 @@
 				DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				DE487E031E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE6494281E7CE6CC003D92D0 /* LogInViewController.swift in Sources */,
+				DE503AD81E94349200124BFA /* WelcomeViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
