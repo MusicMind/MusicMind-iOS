@@ -70,6 +70,9 @@
 		DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */; };
 		DE860DDF1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */; };
 		DE860DE01E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */; };
+		DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DE11E93602400393B03 /* ForgotPassword.storyboard */; };
+		DE860DE41E93602400393B03 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DE11E93602400393B03 /* ForgotPassword.storyboard */; };
+		DE860DE51E93602400393B03 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DE11E93602400393B03 /* ForgotPassword.storyboard */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
@@ -161,6 +164,7 @@
 		DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicMind.entitlements; sourceTree = "<group>"; };
 		DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		DE860DE21E93602400393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ForgotPassword.storyboard; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEBF26EF1E7DA22800CB13E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
@@ -414,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */,
+				DE860DE11E93602400393B03 /* ForgotPassword.storyboard */,
 			);
 			name = "Forgot password";
 			sourceTree = "<group>";
@@ -575,6 +580,7 @@
 				0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */,
 				DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
 				DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
+				DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +590,7 @@
 			files = (
 				DE6494371E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */,
 				DE49052F1E6A3E5700F65C2B /* GoogleService-Info.plist in Resources */,
+				DE860DE41E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 				DEF5E4E71E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE64942D1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
 			);
@@ -595,6 +602,7 @@
 			files = (
 				DE6494381E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */,
 				DE4905301E6A3E5800F65C2B /* GoogleService-Info.plist in Resources */,
+				DE860DE51E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 				DEF5E4E81E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE64942E1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
 			);
@@ -878,6 +886,14 @@
 				DE6494351E7CE756003D92D0 /* Base */,
 			);
 			name = SpotifyAuth.storyboard;
+			sourceTree = "<group>";
+		};
+		DE860DE11E93602400393B03 /* ForgotPassword.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE860DE21E93602400393B03 /* Base */,
+			);
+			name = ForgotPassword.storyboard;
 			sourceTree = "<group>";
 		};
 		DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */ = {
