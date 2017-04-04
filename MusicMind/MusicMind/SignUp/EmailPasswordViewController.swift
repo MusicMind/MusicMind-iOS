@@ -19,7 +19,7 @@ class EmailPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(newUser)
+        print(newUser.dictionaryRepresentation)
     }
 
 

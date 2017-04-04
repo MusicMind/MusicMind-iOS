@@ -53,12 +53,7 @@ class BirthdayViewController: UIViewController {
             })
         }
         
-        if segue.identifier == "toEmailPassword",
-            let emailPasswordViewController = segue.destination as? EmailPasswordViewController {
-            
-            newUser.birthday = birthDate
-            emailPasswordViewController.newUser = newUser
-        }
+        newUser.birthday = birthDate
         
     }
 
