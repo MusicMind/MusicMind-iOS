@@ -13,7 +13,7 @@
         <!--Camera-->
         <scene sceneID="pmW-aq-Qff">
             <objects>
-                <viewController storyboardIdentifier="CameraViewController" id="sBF-OT-sPe" customClass="CameraViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraCaptureViewController" id="sBF-OT-sPe" customClass="CameraCaptureViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ofh-2X-jA0"/>
                         <viewControllerLayoutGuide type="bottom" id="4pY-0G-RuD"/>
