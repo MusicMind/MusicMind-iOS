@@ -44,6 +44,7 @@ class LogInViewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
+        // Check if user already has saved info
         if let email = user.firebaseUserEmail {
             emailField.text = email
         }

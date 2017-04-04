@@ -13,7 +13,15 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Hide navigation bar
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        // Navigation bar styling
+        let transparentImage = UIImage.imageColored(color: UIColor.clear)
+        
+        self.navigationController?.navigationBar.setBackgroundImage(transparentImage, for: .default)
+        self.navigationController?.navigationBar.shadowImage = transparentImage
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
