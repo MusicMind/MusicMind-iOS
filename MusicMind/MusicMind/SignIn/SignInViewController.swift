@@ -18,8 +18,8 @@ class SignInViewController: UIViewController {
     
     @IBAction func attemptSignIn(_ sender: Any) {
         
-        user.firebaseUserEmail = emailField.text!
-        user.firebaseUserPassword = passwordField.text!
+        userLoginCredentials.firebaseUserEmail = emailField.text!
+        userLoginCredentials.firebaseUserPassword = passwordField.text!
 
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             if error == nil {
@@ -42,11 +42,11 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let email = user.firebaseUserEmail {
+        if let email = userLoginCredentials.firebaseUserEmail {
             emailField.text = email
         }
         
-        if let password = user.firebaseUserPassword {
+        if let password = userLoginCredentials.firebaseUserPassword {
             passwordField.text = password
         }
         
