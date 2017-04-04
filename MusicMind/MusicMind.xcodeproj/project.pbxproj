@@ -55,6 +55,10 @@
 		DE49052F1E6A3E5700F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE4905301E6A3E5800F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE503AD81E94349200124BFA /* WelcomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */; };
+		DE503AD91E94368B00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
+		DE503ADA1E94368C00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
+		DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
+		DE503ADC1E94368F00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
 		DE6494271E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
 		DE6494281E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
 		DE6494291E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
@@ -208,7 +212,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */,
 				DE1471F81E7CBF3D000C45E6 /* Pods_MusicMind.framework in Frameworks */,
+				DE503AD91E94368B00124BFA /* SpotifyAudioPlayback.framework in Frameworks */,
 				C6D985DE1040B1B497A0397F /* Pods_MusicMindTests.framework in Frameworks */,
 				4F44271C069334AC36D8D7E2 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */,
 			);
@@ -218,7 +224,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE503ADC1E94368F00124BFA /* SpotifyAuthentication.framework in Frameworks */,
 				DE1471F91E7CBF3E000C45E6 /* Pods_MusicMind.framework in Frameworks */,
+				DE503ADA1E94368C00124BFA /* SpotifyAudioPlayback.framework in Frameworks */,
 				3A02DC27C18A24237A9598AB /* Pods_MusicMindUITests.framework in Frameworks */,
 				27E5158447BB2AEC1D499639 /* Pods_MusicMind_MusicMindUITests.framework in Frameworks */,
 			);
@@ -1109,6 +1117,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MusicMindTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MusicMind.MusicMindTests;
@@ -1124,6 +1136,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MusicMindTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MusicMind.MusicMindTests;
@@ -1138,6 +1154,10 @@
 			baseConfigurationReference = 30608B570D6B30E9CE895F60 /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MusicMindUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MusicMind.MusicMindUITests;
@@ -1152,6 +1172,10 @@
 			baseConfigurationReference = 1ACF4B55173218734EBD947B /* Pods-MusicMind-MusicMindUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MusicMindUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MusicMind.MusicMindUITests;

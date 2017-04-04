@@ -13,7 +13,7 @@ class WelcomeViewControllerTests: XCTestCase {
     var a = 1
     
     override class func setUp() {
-        self.a = 2
+//        self.a = 2
     }
     
     override func setUp() {
