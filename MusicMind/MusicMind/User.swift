@@ -52,4 +52,6 @@ struct User{
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.firebaseUUIDKey.rawValue)
         }
     }
+    
+    var spotifyToken: String?
 }
