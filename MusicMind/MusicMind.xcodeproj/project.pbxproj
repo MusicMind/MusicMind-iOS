@@ -14,7 +14,7 @@
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
 		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
 		0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */; };
-		0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* Camera.storyboard */; };
+		0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */; };
 		0FF4B61B1E83946100EEAE8C /* PostProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */; };
 		0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */; };
 		0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */; };
@@ -125,7 +125,7 @@
 		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
 		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APPLCameraViewControllerDelegate.swift; path = Protocols/APPLCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
-		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
+		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CameraCapture.storyboard; sourceTree = "<group>"; };
 		0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostProcessingViewController.swift; path = Stickers/PostProcessingViewController.swift; sourceTree = "<group>"; };
 		0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiCollectionViewCell.swift; path = Stickers/EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StickersViewController + collectionViewHelper.swift"; path = "Stickers/StickersViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 		0FD0256F1E6B4BD500E59E95 /* Camera capture */ = {
 			isa = PBXGroup;
 			children = (
-				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
+				0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */,
 				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
 				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
 				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
@@ -598,7 +598,7 @@
 				DE860DEC1E93618900393B03 /* Welcome.storyboard in Resources */,
 				DE429F891E661BB20050E719 /* Assets.xcassets in Resources */,
 				DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */,
-				0FD025721E6B4D2C00E59E95 /* Camera.storyboard in Resources */,
+				0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */,
 				DE860DF11E93626D00393B03 /* MusicSearch.storyboard in Resources */,
 				DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
 				DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
@@ -864,12 +864,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0FD025701E6B4D2C00E59E95 /* Camera.storyboard */ = {
+		0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0FD025711E6B4D2C00E59E95 /* Base */,
 			);
-			name = Camera.storyboard;
+			name = CameraCapture.storyboard;
 			sourceTree = "<group>";
 		};
 		0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */ = {
