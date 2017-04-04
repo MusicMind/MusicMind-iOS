@@ -230,8 +230,8 @@
 		0FD0256F1E6B4BD500E59E95 /* Camera capture */ = {
 			isa = PBXGroup;
 			children = (
-				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
 				0FD025701E6B4D2C00E59E95 /* Camera.storyboard */,
+				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
 				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
 				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
 			);
@@ -299,8 +299,8 @@
 		DE09EC6A1E7CDF81005B237A /* Send to friend */ = {
 			isa = PBXGroup;
 			children = (
-				DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */,
 				DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */,
+				DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */,
 			);
 			name = "Send to friend";
 			sourceTree = "<group>";
@@ -384,8 +384,8 @@
 		DE6494251E7CE670003D92D0 /* Log in */ = {
 			isa = PBXGroup;
 			children = (
-				DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */,
 				DE429F851E661BB20050E719 /* LogIn.storyboard */,
+				DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */,
 			);
 			name = "Log in";
 			sourceTree = "<group>";
@@ -410,8 +410,8 @@
 		DE860DDB1E935F1B00393B03 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				DE860DE61E93617700393B03 /* WelcomeViewController.swift */,
 				DE860DEA1E93618900393B03 /* Welcome.storyboard */,
+				DE860DE61E93617700393B03 /* WelcomeViewController.swift */,
 			);
 			name = Welcome;
 			sourceTree = "<group>";
@@ -419,8 +419,8 @@
 		DE860DDC1E935F6D00393B03 /* Forgot password */ = {
 			isa = PBXGroup;
 			children = (
-				DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */,
 				DE860DE11E93602400393B03 /* ForgotPassword.storyboard */,
+				DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */,
 			);
 			name = "Forgot password";
 			sourceTree = "<group>";
