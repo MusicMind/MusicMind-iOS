@@ -12,6 +12,7 @@
 		0F1DE25A1E9327C60032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
 		0F1DE25C1E941BDF0032A49A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE25B1E941BDF0032A49A /* UserTests.swift */; };
 		0F1DE25D1E941C000032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
+		0F1DE2611E9423330032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2601E9423330032A49A /* UserLoginCredentials.swift */; };
 		0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */; };
 		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
@@ -73,19 +74,12 @@
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26ED1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
-		DEBF26F01E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */; };
-		DEBF26F11E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */; };
-		DEBF26F21E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */; };
-		DEBF26F01E7DA22800CB13E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* User.swift */; };
-		DEBF26F11E7DA22800CB13E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* User.swift */; };
-		DEBF26F21E7DA22800CB13E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EF1E7DA22800CB13E1 /* User.swift */; };
 		DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
 		DEF5E4E71E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
 		DEF5E4E81E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
 		DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
 		DEF5E4EB1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
 		DEF5E4EC1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +105,7 @@
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		0F1DE2591E9327C60032A49A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F1DE25B1E941BDF0032A49A /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		0F1DE2601E9423330032A49A /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
 		0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = CameraViewController/CameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
@@ -167,10 +162,6 @@
 		DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicMind.entitlements; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-
-		DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
-
-		DEBF26EF1E7DA22800CB13E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
 		DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberEntryViewController.swift; sourceTree = "<group>"; };
 		EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -351,7 +342,7 @@
 				DE429F8D1E661BB20050E719 /* Info.plist */,
 				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
-				DEBF26EF1E7DA22800CB13E1 /* UserLoginCredentials.swift */,
+				0F1DE2601E9423330032A49A /* UserLoginCredentials.swift */,
 				0F1DE2591E9327C60032A49A /* User.swift */,
 			);
 			path = MusicMind;
@@ -751,13 +742,11 @@
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494271E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
+				0F1DE2611E9423330032A49A /* UserLoginCredentials.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
-				DEBF26F01E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
-
 				0FF4B6321E8D8C6100EEAE8C /* EmailPasswordViewController.swift in Sources */,
-				DEBF26F01E7DA22800CB13E1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,7 +758,6 @@
 				DE357AC41E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DE09EC6D1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494321E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
-				DEBF26F11E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */,
 				0F1DE25C1E941BDF0032A49A /* UserTests.swift in Sources */,
 				0F1DE25D1E941C000032A49A /* User.swift in Sources */,
 				DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */,
@@ -787,7 +775,6 @@
 				DE357AC51E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DE09EC6E1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DE6494331E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
-				DEBF26F21E7DA22800CB13E1 /* UserLoginCredentials.swift in Sources */,
 				DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */,
 				DEBF26EE1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				DE487E041E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,

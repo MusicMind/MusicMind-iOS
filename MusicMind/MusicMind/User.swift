@@ -10,14 +10,13 @@ import Foundation
 
 struct User{
     
-    private enum UserDefaultsKeys: String{
+    private enum UserDefaultsKeys: String {
         case firstNameKey = "MMFirstName"
         case lastNameKey = "MMLastName"
         case birthdayKey = "MMBirthday"
-        case firebaseUUIDKey = "MMFirbaseUUID"
+        case firebaseUUIDKey = "MMFirebaseUUIDKey"
     }
     
-<<<<<<< HEAD
     var firstName: String?{
         get{
             return UserDefaults.standard.object(forKey: UserDefaultsKeys.firstNameKey.rawValue) as? String
@@ -25,14 +24,8 @@ struct User{
         set {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.firstNameKey.rawValue)
         }
-=======
-    /// Constant keys for accessing values in keychain
-    private enum KeychainKey: String {
-        case firebaseUserEmail = "MMEmail"
-        case firebaseUserPassword = "MMPassword"
-
->>>>>>> origin/Issue-52-Sign-Up-Screen
     }
+    
     
     var lastName: String?{
         get{
@@ -62,20 +55,5 @@ struct User{
     }
     
     var spotifyToken: String?
-<<<<<<< HEAD
-=======
     
-    var firstName: String?
-    
-    var lastName: String?
-    
-    var birthday: Date?
-    
-    var firebaseUUID: String?
-    
-    var dictionaryRepresentation: [String: Any] {
-        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": self.birthday]
-    }
-
->>>>>>> origin/Issue-52-Sign-Up-Screen
 }

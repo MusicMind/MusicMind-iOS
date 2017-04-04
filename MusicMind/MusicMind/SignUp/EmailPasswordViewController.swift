@@ -25,7 +25,7 @@ class EmailPasswordViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let newUser = self.newUser,
+        guard var newUser = self.newUser,
             let email = emailTextField.text,
             let password = passwordTextField.text,
             let confirmedPassword = passwordConfirmationTextField.text,
@@ -41,8 +41,8 @@ class EmailPasswordViewController: UIViewController {
             
         }
         
-        newUser.firebaseUserEmail = email
-        newUser.firebaseUserPassword = password
+        userLoginCredentials.firebaseUserEmail = email
+        userLoginCredentials.firebaseUserPassword = password
         
         FIRAuth.auth()?.createUser(withEmail: email, password: passwordTextField.text!, completion: { (user, error) in
             newUser.firebaseUUID = user?.uid
