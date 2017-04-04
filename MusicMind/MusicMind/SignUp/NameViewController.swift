@@ -34,13 +34,13 @@ class NameViewController: UIViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let user = appDelegate.user
-        user.firstName = firstName
-        user.lastName = lastName
+//        user.firstName = firstName
+//        user.lastName = lastName
         
         if segue.identifier == "toBday",
             let birthdayViewController = segue.destination as? BirthdayViewController {
             
-            birthdayViewController.newUser = user
+//            birthdayViewController.newUser = user
         }
     }
     

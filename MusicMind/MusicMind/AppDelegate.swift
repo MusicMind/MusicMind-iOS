@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("*** Auth error \(error)")
                     return
                 }
-                user.spotifyToken = session?.accessToken
+//                user.spotifyToken = session?.accessToken
                 let story = UIStoryboard.init(name: "SpotifyAuth", bundle: nil)
                 let tabView = story.instantiateViewController(withIdentifier: "tabView")
                 self.window?.rootViewController = tabView
