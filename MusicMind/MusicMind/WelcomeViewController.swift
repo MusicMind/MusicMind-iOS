@@ -18,10 +18,12 @@ class WelcomeViewController: UIViewController {
         
         // Navigation bar styling
         let transparentImage = UIImage.imageColored(color: UIColor.clear)
+        let navBar = self.navigationController?.navigationBar
+        navBar?.setBackgroundImage(transparentImage, for: .default)
+        navBar?.shadowImage = transparentImage
+        navBar?.isTranslucent = true
+        navBar?.tintColor = secondaryTextColor
         
-        self.navigationController?.navigationBar.setBackgroundImage(transparentImage, for: .default)
-        self.navigationController?.navigationBar.shadowImage = transparentImage
-        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
