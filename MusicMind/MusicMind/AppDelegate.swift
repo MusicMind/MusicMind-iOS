@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var user: user!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("*** Auth error \(error)")
                     return
                 }
-                user.spotifyToken = session?.accessToken
+//                user.spotifyToken = session?.accessToken
                 let story = UIStoryboard.init(name: "SpotifyAuth", bundle: nil)
                 let tabView = story.instantiateViewController(withIdentifier: "tabView")
                 self.window?.rootViewController = tabView
