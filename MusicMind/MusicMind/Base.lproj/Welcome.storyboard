@@ -20,12 +20,53 @@
                     <view key="view" contentMode="scaleToFill" id="sQ0-Da-Ruy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusicMind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30y-Hv-ovd">
+                                <rect key="frame" x="77" y="89" width="220" height="59"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="43"/>
+                                <color key="textColor" red="0.91765149111675126" green="0.78091309202451009" blue="0.43022236520957929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1J-mf-Sp8">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <color key="backgroundColor" red="0.73760308159722221" green="0.30284288194444442" blue="0.25670030381944442" alpha="0.50454837328767121" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="EQ0-Yx-F5k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" red="0.91765149109999999" green="0.78091309200000003" blue="0.43022236520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb4-vX-dcq">
+                                <rect key="frame" x="0.0" y="527" width="375" height="70"/>
+                                <color key="backgroundColor" red="0.73760308159999999" green="0.30284288190000003" blue="0.25670030379999997" alpha="0.81916202910000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="aCF-ru-qlw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" red="0.91765149109999999" green="0.78091309200000003" blue="0.43022236520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18004441624365486" green="0.17958096352498656" blue="0.1693313781183404" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Bb4-vX-dcq" firstAttribute="width" secondItem="sQ0-Da-Ruy" secondAttribute="width" id="8bE-7A-dki"/>
+                            <constraint firstItem="l1J-mf-Sp8" firstAttribute="centerX" secondItem="sQ0-Da-Ruy" secondAttribute="centerX" id="DF2-2m-NbE"/>
+                            <constraint firstItem="30y-Hv-ovd" firstAttribute="centerX" secondItem="sQ0-Da-Ruy" secondAttribute="centerX" id="T8q-ci-DdN"/>
+                            <constraint firstItem="l1J-mf-Sp8" firstAttribute="top" secondItem="Bb4-vX-dcq" secondAttribute="bottom" id="Wol-Wx-Eaj"/>
+                            <constraint firstItem="8kR-2B-4rh" firstAttribute="top" secondItem="l1J-mf-Sp8" secondAttribute="bottom" id="XfL-5q-ahZ"/>
+                            <constraint firstItem="l1J-mf-Sp8" firstAttribute="width" secondItem="sQ0-Da-Ruy" secondAttribute="width" id="b76-w9-S91"/>
+                            <constraint firstItem="Bb4-vX-dcq" firstAttribute="centerX" secondItem="sQ0-Da-Ruy" secondAttribute="centerX" id="bmf-7e-NyY"/>
+                            <constraint firstItem="30y-Hv-ovd" firstAttribute="top" secondItem="wDs-a0-ltO" secondAttribute="bottom" constant="69" id="krd-nG-4oG"/>
+                            <constraint firstItem="Bb4-vX-dcq" firstAttribute="width" secondItem="l1J-mf-Sp8" secondAttribute="width" id="q5z-m6-OA3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RvQ-hJ-2vA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="92"/>
+            <point key="canvasLocation" x="84" y="91.304347826086968"/>
         </scene>
     </scenes>
 </document>
