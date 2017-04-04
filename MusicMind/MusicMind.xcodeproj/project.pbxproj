@@ -219,7 +219,7 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
-		0FD0256F1E6B4BD500E59E95 /* Camera */ = {
+		0FD0256F1E6B4BD500E59E95 /* Camera capture */ = {
 			isa = PBXGroup;
 			children = (
 				0F3DCBAF1E6E21F400AADAB8 /* View */,
@@ -227,10 +227,10 @@
 				0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */,
 				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
 			);
-			name = Camera;
+			name = "Camera capture";
 			sourceTree = "<group>";
 		};
-		0FF4B6151E83930000EEAE8C /* Stickers */ = {
+		0FF4B6151E83930000EEAE8C /* Post processing */ = {
 			isa = PBXGroup;
 			children = (
 				0FF4B6201E8394E600EEAE8C /* Stickers.storyboard */,
@@ -240,7 +240,7 @@
 				0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */,
 				0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */,
 			);
-			name = Stickers;
+			name = "Post processing";
 			sourceTree = "<group>";
 		};
 		0FF4B6251E8AD7F300EEAE8C /* Sign Up */ = {
@@ -288,13 +288,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		DE09EC6A1E7CDF81005B237A /* SendToFriend */ = {
+		DE09EC6A1E7CDF81005B237A /* Send to friend */ = {
 			isa = PBXGroup;
 			children = (
 				DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */,
 				DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */,
 			);
-			name = SendToFriend;
+			name = "Send to friend";
 			sourceTree = "<group>";
 		};
 		DE429F751E661BB20050E719 = {
@@ -323,23 +323,22 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
-				DE487E051E8D6A3C0025B514 /* Extensions */,
-				DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */,
-				0F3DCBB41E6E227300AADAB8 /* Protocols */,
-				DE64942F1E7CE71B003D92D0 /* SpotifyAuth */,
-				DE6494251E7CE670003D92D0 /* Log in */,
-				DE09EC6A1E7CDF81005B237A /* SendToFriend */,
-				0FD0256F1E6B4BD500E59E95 /* Camera */,
-				0FF4B6151E83930000EEAE8C /* Stickers */,
-				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
-				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
-				DE429F881E661BB20050E719 /* Assets.xcassets */,
-				DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */,
-				DE429F8D1E661BB20050E719 /* Info.plist */,
-				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				DEBF26EF1E7DA22800CB13E1 /* User.swift */,
+				0F3DCBB41E6E227300AADAB8 /* Protocols */,
+				DE487E051E8D6A3C0025B514 /* Extensions */,
+				DE6494251E7CE670003D92D0 /* Log in */,
+				DE09EC6A1E7CDF81005B237A /* Send to friend */,
+				0FD0256F1E6B4BD500E59E95 /* Camera capture */,
+				0FF4B6151E83930000EEAE8C /* Post processing */,
+				DE64942F1E7CE71B003D92D0 /* Spotify log in */,
+				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
+				DE429F881E661BB20050E719 /* Assets.xcassets */,
+				DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */,
+				DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */,
+				DE429F8D1E661BB20050E719 /* Info.plist */,
+				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 			);
 			path = MusicMind;
 			sourceTree = "<group>";
@@ -373,20 +372,21 @@
 		DE6494251E7CE670003D92D0 /* Log in */ = {
 			isa = PBXGroup;
 			children = (
+				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
 				DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */,
 				DE429F851E661BB20050E719 /* LogIn.storyboard */,
 			);
 			name = "Log in";
 			sourceTree = "<group>";
 		};
-		DE64942F1E7CE71B003D92D0 /* SpotifyAuth */ = {
+		DE64942F1E7CE71B003D92D0 /* Spotify log in */ = {
 			isa = PBXGroup;
 			children = (
 				DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */,
 				86E199A11E7F10030071F50C /* SpotifyTableViewController.swift */,
 				DE6494341E7CE756003D92D0 /* SpotifyAuth.storyboard */,
 			);
-			name = SpotifyAuth;
+			name = "Spotify log in";
 			sourceTree = "<group>";
 		};
 		DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */ = {
