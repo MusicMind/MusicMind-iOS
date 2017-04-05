@@ -8,15 +8,16 @@
 
 import UIKit
 import AVFoundation
+import RecordButton
 
 class CameraCaptureViewController: APPLCameraViewController {
     
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var photoToolBarItem: UIBarButtonItem!
     @IBOutlet weak var videoToolBarItem: UIBarButtonItem!
     
+    var recordButton: RecordButton!
     var isRecording: Bool = false
     
     func openSendToFriend(_ sender: Any) {

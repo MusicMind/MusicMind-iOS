@@ -26,13 +26,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gle-1b-udU" customClass="RecordButton">
-                                <rect key="frame" x="163" y="534" width="49" height="30"/>
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="recordButtonPressed:" destination="sBF-OT-sPe" eventType="touchUpInside" id="czN-gu-rDN"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
                                 <rect key="frame" x="321" y="20" width="30" height="28"/>
                                 <state key="normal" image="Flip camera"/>
@@ -65,8 +58,6 @@
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="top" secondItem="Fk2-94-Jwe" secondAttribute="top" id="2Qa-Vz-o4c"/>
                             <constraint firstAttribute="trailing" secondItem="p2Q-BA-tgI" secondAttribute="trailing" id="3Jj-ov-8XS"/>
                             <constraint firstAttribute="trailing" secondItem="3Mr-6q-0aJ" secondAttribute="trailing" id="IwO-Su-H4A"/>
-                            <constraint firstItem="3Mr-6q-0aJ" firstAttribute="top" secondItem="Gle-1b-udU" secondAttribute="bottom" constant="10" id="JbN-yV-sLP"/>
-                            <constraint firstItem="Gle-1b-udU" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="Lls-pa-2yr"/>
                             <constraint firstItem="3Mr-6q-0aJ" firstAttribute="top" secondItem="p2Q-BA-tgI" secondAttribute="bottom" id="Q6G-Tr-f1i"/>
                             <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" id="QR0-Rg-uFX"/>
                             <constraint firstItem="3Mr-6q-0aJ" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leading" id="TXy-cU-DeW"/>
@@ -81,7 +72,6 @@
                         <outlet property="cameraButton" destination="UFk-iX-4OX" id="BZs-HR-AkD"/>
                         <outlet property="photoToolBarItem" destination="cr5-Uf-kSd" id="Gii-XG-oFo"/>
                         <outlet property="previewView" destination="p2Q-BA-tgI" id="Jyh-DP-HwO"/>
-                        <outlet property="recordButton" destination="Gle-1b-udU" id="04P-M9-50I"/>
                         <outlet property="videoToolBarItem" destination="1NL-Lw-DDj" id="6YN-6b-v8d"/>
                     </connections>
                 </viewController>
