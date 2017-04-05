@@ -14,6 +14,7 @@ class CameraCaptureViewController: APPLCameraViewController {
     
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var recordButtonContainer: UIView!
     
     var recordButton: RecordButton!
     
@@ -24,16 +25,19 @@ class CameraCaptureViewController: APPLCameraViewController {
         toggleCaptureMode(.movie)
         
         recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
-        recordButton.center = self.view.center
+        
+        recordButton.center = recordButtonContainer.center
+        
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
         
         recordButton.addTarget(self, action: #selector(self.startRecording), for: .touchDown)
-//        recordButton.addTarget(self, action: #selector(self.stop), for: UIControlEvents.touchUpInside)
-//
-        recordButton.center.x = self.view.center.x
+        recordButton.addTarget(self, action: #selector(self.stopRecording), for: UIControlEvents.touchUpInside)
+        recordButton.addTarget(self, action: #selector(self.stopRecording), for: UIControlEvents.touchDragExit)
         
-        view.addSubview(recordButton)
+        recordButton.buttonColor = UIColor.white
+        
+        self.view.addSubview(recordButton)
         
         super.viewDidLoad()
     }
@@ -44,6 +48,10 @@ class CameraCaptureViewController: APPLCameraViewController {
     
     func startRecording() {
 //        self.toggleMovieRecording()
+    }
+    
+    func stopRecording() {
+        
     }
     
     func openSendToFriend(_ sender: Any) {
