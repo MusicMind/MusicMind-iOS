@@ -14,8 +14,6 @@ class CameraCaptureViewController: APPLCameraViewController {
     
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var photoToolBarItem: UIBarButtonItem!
-    @IBOutlet weak var videoToolBarItem: UIBarButtonItem!
     
     var recordButton: RecordButton!
     var isRecording: Bool = false
@@ -29,16 +27,37 @@ class CameraCaptureViewController: APPLCameraViewController {
     override func viewDidLoad() {
         delegate = self
         _previewView = previewView
+        
+        toggleCaptureMode(.movie)
+        
+        
+        
+        
+        
+        recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
+        recordButton.center = self.view.center
+        recordButton.progressColor = .red
+        recordButton.closeWhenFinished = true
+        
+//        recordButton.addTarget(self, action: #selector(ViewController.record), for: .touchDown)
+//        recordButton.addTarget(self, action: #selector(ViewController.stop), for: UIControlEvents.touchUpInside)
+//        
+        recordButton.center.x = self.view.center.x
+        
+        view.addSubview(recordButton)
+        
+        
+        
+        
+        
+        
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     @IBAction func toggleCameraPressed(_ sender: Any) {
         self.changeCamera()
     }
+    
     @IBAction func recordButtonPressed(_ sender: Any) {
         self.toggleMovieRecording()
         isRecording = !isRecording
@@ -49,23 +68,6 @@ class CameraCaptureViewController: APPLCameraViewController {
             recordButton.setTitle("Record Video", for: .normal)
         }
         
-    }
-    
-    
-    @IBAction func photoToolBarButtonPressed(_ sender: Any) {
-        toggleCaptureMode(.photo)
-        recordButton.setTitle("Take Photo", for: .normal)
-        
-        photoToolBarItem.tintColor = UIColor.black
-        videoToolBarItem.tintColor = UIColor.blue
-        
-    }
-    
-    @IBAction func videoToolBarItemPressed(_ sender: Any) {
-        toggleCaptureMode(.movie)
-        recordButton.setTitle("Record Video", for: .normal)
-        photoToolBarItem.tintColor = UIColor.blue
-        videoToolBarItem.tintColor = UIColor.black
     }
 }
 

@@ -23,15 +23,11 @@ class LogInViewController: UIViewController {
 
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             if error == nil {
-                
-//                print(user?.uid)
-                
                 self.view.backgroundColor = .green
                 
                 let spotifyAuthViewController = UIStoryboard(name: "CameraCapture", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureViewController")
                 self.present(spotifyAuthViewController, animated: true, completion: nil)
             } else {
-                
                 print(error.debugDescription)
                 
                 self.view.backgroundColor = .red
@@ -51,8 +47,6 @@ class LogInViewController: UIViewController {
         if let password = userLoginCredentials.firebaseUserPassword {
             passwordField.text = password
         }
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillDisappear(_ animated: Bool) {

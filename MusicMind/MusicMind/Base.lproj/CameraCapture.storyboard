@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2Q-BA-tgI" customClass="PreviewView" customModule="MusicMind" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
@@ -33,35 +33,13 @@
                                     <action selector="toggleCameraPressed:" destination="sBF-OT-sPe" eventType="touchUpInside" id="4ep-t3-p8b"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Mr-6q-0aJ">
-                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem title="Library" id="PFp-Vf-ETC"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e2Z-IK-9jf"/>
-                                    <barButtonItem title="Photo" id="cr5-Uf-kSd">
-                                        <connections>
-                                            <action selector="photoToolBarButtonPressed:" destination="sBF-OT-sPe" id="aNL-0g-O3e"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hNR-pc-z6A"/>
-                                    <barButtonItem title="Video" id="1NL-Lw-DDj">
-                                        <connections>
-                                            <action selector="videoToolBarItemPressed:" destination="sBF-OT-sPe" id="mHN-0i-Rdj"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="tintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="top" secondItem="Fk2-94-Jwe" secondAttribute="top" id="2Qa-Vz-o4c"/>
                             <constraint firstAttribute="trailing" secondItem="p2Q-BA-tgI" secondAttribute="trailing" id="3Jj-ov-8XS"/>
-                            <constraint firstAttribute="trailing" secondItem="3Mr-6q-0aJ" secondAttribute="trailing" id="IwO-Su-H4A"/>
-                            <constraint firstItem="3Mr-6q-0aJ" firstAttribute="top" secondItem="p2Q-BA-tgI" secondAttribute="bottom" id="Q6G-Tr-f1i"/>
                             <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" id="QR0-Rg-uFX"/>
-                            <constraint firstItem="3Mr-6q-0aJ" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leading" id="TXy-cU-DeW"/>
-                            <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="3Mr-6q-0aJ" secondAttribute="bottom" id="Z6G-0M-gGU"/>
+                            <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="p2Q-BA-tgI" secondAttribute="bottom" id="W5i-Be-Tj7"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leading" id="a4f-oW-7W0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="8" id="r0N-28-aJ1"/>
                         </constraints>
@@ -70,9 +48,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraButton" destination="UFk-iX-4OX" id="BZs-HR-AkD"/>
-                        <outlet property="photoToolBarItem" destination="cr5-Uf-kSd" id="Gii-XG-oFo"/>
                         <outlet property="previewView" destination="p2Q-BA-tgI" id="Jyh-DP-HwO"/>
-                        <outlet property="videoToolBarItem" destination="1NL-Lw-DDj" id="6YN-6b-v8d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHQ-cp-EhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
