@@ -44,6 +44,8 @@ class EmailPasswordViewController: UIViewController {
         userLoginCredentials.firebaseUserPassword = password
         
         FIRAuth.auth()?.createUser(withEmail: email, password: passwordTextField.text!, completion: { (user, error) in
+            //TODO: handle error 17001 when the user already exists in firebase
+                    
             self.newUser.firebaseUUID = user?.uid
         })
         
