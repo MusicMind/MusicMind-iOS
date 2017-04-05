@@ -14,9 +14,6 @@
 		0F1DE25C1E941BDF0032A49A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE25B1E941BDF0032A49A /* UserTests.swift */; };
 		0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */; };
 		0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2641E9491260032A49A /* FirebaseDataService.swift */; };
-		0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */; };
-		0F1DE25D1E941C000032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
-		0F1DE2611E9423330032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2601E9423330032A49A /* UserLoginCredentials.swift */; };
 		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
 		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
@@ -32,9 +29,7 @@
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
 		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
 		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
-		27E5158447BB2AEC1D499639 /* Pods_MusicMind_MusicMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B61F615E231AD98737EC03 /* Pods_MusicMind_MusicMindUITests.framework */; };
-		0FF4B6301E8D818400EEAE8C /* MobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62F1E8D818400EEAE8C /* MobileViewController.swift */; };
-		0FF4B6321E8D8C6100EEAE8C /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6311E8D8C6100EEAE8C /* EmailPasswordViewController.swift */; };
+		0FF4B6301E8D818400EEAE8C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
 		86E199A21E7F10030071F50C /* SpotifyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E199A11E7F10030071F50C /* SpotifyTableViewController.swift */; };
@@ -57,7 +52,6 @@
 		DE503ADA1E94368C00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
 		DE503ADC1E94368F00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
-		DE6494271E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
 		DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */; };
 		DE6494311E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */; };
 		DE6494361E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6494341E7CE756003D92D0 /* SpotifyAuth.storyboard */; };
@@ -101,8 +95,6 @@
 		0F1DE25B1E941BDF0032A49A /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
 		0F1DE2641E9491260032A49A /* FirebaseDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDataService.swift; sourceTree = "<group>"; };
-		0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = CameraViewController/CameraViewController.swift; sourceTree = "<group>"; };
-		0F1DE2601E9423330032A49A /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
 		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
 		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
@@ -516,6 +508,7 @@
 				TargetAttributes = {
 					DE429F7D1E661BB20050E719 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7UJ4ETS6X9;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -754,7 +747,7 @@
 				0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */,
 				0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */,
 				DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */,
-				0FF4B6301E8D818400EEAE8C /* MobileViewController.swift in Sources */,
+				0FF4B6301E8D818400EEAE8C /* (null) in Sources */,
 				DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */,
 				DE6494311E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
@@ -776,11 +769,8 @@
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */,
-				DE6494271E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
-				DE6494271E7CE6CC003D92D0 /* LogInViewController.swift in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
-				0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */,
 				0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
 			);
