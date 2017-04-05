@@ -21,6 +21,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
+        
+        /* Example from another app I built of how I changed the initial screen depending on if user has already logged in
+         
+         
+        // Check if user already signed in, and if so skip to arrived timeline.
+        if activeUser.loginStatus == .signedInAndAuthenticated {
+            
+            log.verbose("Found a token. Skipping sign in step.")
+            
+            log.verbose("Creating storyboard and setting ArrivedTimeline to initial view controller.")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let ArrivedTimelineView = storyboard.instantiateViewController(withIdentifier: "arrived")
+            self.window?.rootViewController = ArrivedTimelineView
+            
+            
+            //            try! activeUser.registerForPush() // don't need to handle throw because already checked above.
+        } else {
+            log.warning("Not signed in and authenticated.")
+            
+            if activeUser.loginStatus == LoginStatus.signedInButNotAuthenticated {
+                log.verbose("Found an email. Skipping to arrived timeline and displaying emailNotVerifiedView.")
+                log.verbose("Creating storyboard and setting ArrivedTimeline to initial view controller.")
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let ArrivedTimelineView = storyboard.instantiateViewController(withIdentifier: "arrived")
+                
+                self.window?.rootViewController = ArrivedTimelineView
+            }
+        }
+         
+         
+        */
+        
+        
+        
         return true
     }
     

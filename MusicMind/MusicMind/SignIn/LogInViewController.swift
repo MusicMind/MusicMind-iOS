@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  LogInViewController.swift
 //  MusicMind
 //
 //  Created by Wesley Van der Klomp on 2/28/17.
@@ -9,14 +9,14 @@
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController {
+class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     // TODO: Disable button if email || password fields are nil. Use textFieldDelegate to check everytime keypress.
     
-    @IBAction func attemptSignIn(_ sender: Any) {
+    @IBAction func attemptLogIn(_ sender: Any) {
         
         userLoginCredentials.firebaseUserEmail = emailField.text!
         userLoginCredentials.firebaseUserPassword = passwordField.text!
@@ -42,6 +42,8 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         if let email = userLoginCredentials.firebaseUserEmail {
             emailField.text = email
         }
@@ -52,11 +54,15 @@ class SignInViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        if isMovingFromParentViewController {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
     }
+
     
 }
 

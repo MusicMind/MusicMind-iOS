@@ -1,5 +1,5 @@
 //
-//  CameraViewController.swift
+//  CameraCaptureViewController.swift
 //  MusicMind
 //
 //  Created by Angel Contreras on 2/28/17.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class CameraViewController: APPLCameraViewController {
+class CameraCaptureViewController: APPLCameraViewController {
     
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var cameraButton: UIButton!
@@ -70,7 +70,7 @@ class CameraViewController: APPLCameraViewController {
 
 
 // MARK: - APPLCameraViewControllerDelegate
-extension CameraViewController: APPLCameraViewControllerDelegate {
+extension CameraCaptureViewController: APPLCameraViewControllerDelegate {
     func shouldEnableCameraUI(enabled: Bool) {
         cameraButton.isEnabled = enabled
     }

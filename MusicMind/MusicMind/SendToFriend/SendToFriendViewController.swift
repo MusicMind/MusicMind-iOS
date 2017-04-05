@@ -67,7 +67,7 @@ class SendToFriendViewController: UIViewController {
     
     @IBAction func goBackToCamera(_ sender: Any) {
         // Show the camera view controller
-        let cameraViewController = UIStoryboard(name: "Camera", bundle: nil).instantiateViewController(withIdentifier: "CameraViewController")
+        let cameraViewController = UIStoryboard(name: "CameraCapture", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureViewController")
         self.present(cameraViewController, animated: true, completion: nil)
     }
     

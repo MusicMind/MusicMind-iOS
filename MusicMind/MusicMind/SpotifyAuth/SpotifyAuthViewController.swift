@@ -39,7 +39,7 @@ class SpotifyAuthViewController: UIViewController {
     }
     
     @IBAction func openCameraView(_ sender: Any) {
-        let cameraViewController = UIStoryboard(name: "Camera", bundle: nil).instantiateViewController(withIdentifier: "CameraViewController")
+        let cameraViewController = UIStoryboard(name: "CameraCapture", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureViewController")
         self.present(cameraViewController, animated: true, completion: nil)
 
     }

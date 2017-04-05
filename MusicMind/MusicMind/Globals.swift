@@ -12,3 +12,6 @@ import Foundation
 
 let userLoginCredentials = UserLoginCredentials()
 let user = User()
+
+
+let secondaryTextColor = UIColor(red: 189/255, green: 162/255, blue: 90/255, alpha: 1)
