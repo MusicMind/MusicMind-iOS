@@ -16,7 +16,6 @@ class CameraCaptureViewController: APPLCameraViewController {
     @IBOutlet weak var cameraButton: UIButton!
     
     var recordButton: RecordButton!
-    var isRecording: Bool = false
     
     override func viewDidLoad() {
         delegate = self
@@ -45,8 +44,6 @@ class CameraCaptureViewController: APPLCameraViewController {
     
     func startRecording() {
 //        self.toggleMovieRecording()
-        
-//        isRecording = !isRecording
     }
     
     func openSendToFriend(_ sender: Any) {
