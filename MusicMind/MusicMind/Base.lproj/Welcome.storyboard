@@ -31,7 +31,7 @@
                                     <color key="titleColor" red="1" green="0.93672004689999999" blue="0.57952663240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aoY-k7-L9a" kind="show" id="FUq-Co-eug"/>
+                                    <segue destination="YgY-G8-W3p" kind="show" id="1LT-UW-fSy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb4-vX-dcq">
@@ -72,13 +72,13 @@
             </objects>
             <point key="canvasLocation" x="1023.2" y="91.304347826086968"/>
         </scene>
-        <!--LogIn-->
-        <scene sceneID="Lsb-q1-wyv">
+        <!--LogInViewController-->
+        <scene sceneID="vSU-0e-MMr">
             <objects>
-                <viewControllerPlaceholder storyboardName="LogIn" id="aoY-k7-L9a" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="chb-fI-qQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="LogIn" referencedIdentifier="LogInViewController" id="YgY-G8-W3p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BbH-uO-GK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580.8" y="150.22488755622189"/>
+            <point key="canvasLocation" x="1931" y="192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jpo-ab-dr3">
