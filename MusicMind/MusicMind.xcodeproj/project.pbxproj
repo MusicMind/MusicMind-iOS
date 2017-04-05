@@ -10,6 +10,7 @@
 		0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */; };
+		0F1DE2651E9491260032A49A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2641E9491260032A49A /* UserController.swift */; };
 		0F3DCBBD1E6E26BB00AADAB8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */; };
 		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
@@ -103,6 +104,7 @@
 		0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
+		0F1DE2641E9491260032A49A /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		0F3DCBBC1E6E26BB00AADAB8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = CameraViewController/CameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				DEBF26EF1E7DA22800CB13E1 /* User.swift */,
+				0F1DE2641E9491260032A49A /* UserController.swift */,
 				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
 			);
 			path = MusicMind;
@@ -734,6 +737,7 @@
 				DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
+				0F1DE2651E9491260032A49A /* UserController.swift in Sources */,
 				DE6494271E7CE6CC003D92D0 /* SignInViewController.swift in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
