@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class EmailPasswordViewController: UIViewController {
     
@@ -48,6 +49,8 @@ class EmailPasswordViewController: UIViewController {
                     
             self.newUser.firebaseUUID = user?.uid
         })
+        
+        
         
     }
 

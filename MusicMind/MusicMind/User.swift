@@ -69,5 +69,5 @@ struct User{
     }
     
     var spotifyToken: String?
-    
+
 }
