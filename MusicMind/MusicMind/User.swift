@@ -65,7 +65,9 @@ struct User{
     
     
     var dictionaryRepresentation: [String:Any?]{
-        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": self.birthday, "mobileNum": self.mobileNumber]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": dateFormatter.string(from: self.birthday!), "mobileNum": self.mobileNumber]
     }
     
     var spotifyToken: String?

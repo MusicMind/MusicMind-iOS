@@ -22,6 +22,10 @@ class NameViewController: UIViewController {
         self.firstNameTextField.delegate = self
         self.lastNameTextField.delegate = self
         // Do any additional setup after loading the view.
+        
+        //DELETE
+        firstNameTextField.text = "Angel"
+        lastNameTextField.text = "Contreras"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

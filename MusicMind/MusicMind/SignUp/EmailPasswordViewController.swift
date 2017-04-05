@@ -17,15 +17,18 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     
     var newUser = User()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(newUser.dictionaryRepresentation)
+        
+        //DELETE
+        emailTextField.text = "angel@contrerasangel.com"
+        passwordTextField.text = "hello123"
+        passwordConfirmationTextField.text = "hello123"
     }
-
-
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    @IBAction func continueButtonPressed(_ sender: Any) {
         guard let email = emailTextField.text,
             let password = passwordTextField.text,
             let confirmedPassword = passwordConfirmationTextField.text,
@@ -38,22 +41,25 @@ class EmailPasswordViewController: UIViewController {
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
                 return
-            
         }
         
         userLoginCredentials.firebaseUserEmail = email
         userLoginCredentials.firebaseUserPassword = password
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: passwordTextField.text!, completion: { (user, error) in
-            //TODO: handle error 17001 when the user already exists in firebase
-                    
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+            //TODO: handle error 17001 when the user exists in fire base
+            
             self.newUser.firebaseUUID = user?.uid
+            FirebaseDataService.sharedController.createFirebaseDB(user: self.newUser)
         })
-        
-        let database = FIRDatabase.database().reference()
-        let userDatabase = database.child("UUID")
-    }
 
+    }
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
     
 }
 
