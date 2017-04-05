@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -174,18 +174,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cpe-9Q-DM8" id="5YQ-gC-9nj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H97-XU-fe4">
-                                            <rect key="frame" x="15" y="24" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="25" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DMa-hz-4cn">
-                                            <rect key="frame" x="15" y="45" width="44" height="15"/>
+                                            <rect key="frame" x="15" y="45.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -247,20 +247,20 @@
             </objects>
             <point key="canvasLocation" x="1957.5999999999999" y="1054.7226386806597"/>
         </scene>
-        <!--Camera-->
+        <!--CameraCapture-->
         <scene sceneID="UTi-vD-Y1w">
             <objects>
-                <viewControllerPlaceholder storyboardName="Camera" id="O9U-uL-0D6" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CameraCapture" id="O9U-uL-0D6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="SCU-gN-G32"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZw-dL-dak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1732" y="1545"/>
         </scene>
-        <!--Stickers-->
+        <!--PostProcessing-->
         <scene sceneID="1Yp-QO-Iy5">
             <objects>
-                <viewControllerPlaceholder storyboardName="Stickers" id="IW5-h9-tRd" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="PostProcessing" id="IW5-h9-tRd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="wE7-G4-2ia"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tQ-35-C2A" userLabel="First Responder" sceneMemberID="firstResponder"/>

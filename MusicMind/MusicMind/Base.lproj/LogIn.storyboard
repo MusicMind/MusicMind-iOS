@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,18 +36,25 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1G-xK-vGs">
-                                <rect key="frame" x="164" y="238" width="47" height="30"/>
-                                <state key="normal" title="Sign in"/>
+                                <rect key="frame" x="167" y="238" width="42" height="30"/>
+                                <state key="normal" title="Log in"/>
                                 <connections>
-                                    <action selector="attemptSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVU-DV-bqE"/>
+                                    <action selector="attemptLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jqm-ta-f1y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign into your MusicMind account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTZ-Cd-i1B">
-                                <rect key="frame" x="58" y="57" width="259" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log into your MusicMind account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTZ-Cd-i1B">
+                                <rect key="frame" x="60.5" y="57" width="254" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8C-yW-s17">
+                                <rect key="frame" x="130" y="289" width="115" height="30"/>
+                                <state key="normal" title="Forgot password"/>
+                                <connections>
+                                    <segue destination="vX9-lh-jN2" kind="show" id="Mwo-GG-tMH"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFs-U1-zUt">
                                 <rect key="frame" x="307" y="104" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
@@ -61,12 +68,14 @@
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="cG4-B4-N9e" secondAttribute="leading" id="0m0-8v-VzO"/>
                             <constraint firstItem="S1G-xK-vGs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3iu-Ey-Uza"/>
+                            <constraint firstItem="K8C-yW-s17" firstAttribute="top" secondItem="S1G-xK-vGs" secondAttribute="bottom" constant="21" id="4fI-eb-wcg"/>
                             <constraint firstItem="CFs-U1-zUt" firstAttribute="top" secondItem="kCw-jG-ZqY" secondAttribute="bottom" constant="8" id="Nzr-XE-jKs"/>
                             <constraint firstAttribute="leadingMargin" secondItem="8Is-GU-swc" secondAttribute="leading" id="OIe-e7-Z57"/>
                             <constraint firstAttribute="leadingMargin" secondItem="kCw-jG-ZqY" secondAttribute="leading" id="QAq-Hd-A2j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Is-GU-swc" secondAttribute="trailing" id="QXg-Ps-eJd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kCw-jG-ZqY" secondAttribute="trailing" id="S1T-QG-B2Q"/>
                             <constraint firstItem="S1G-xK-vGs" firstAttribute="top" secondItem="kCw-jG-ZqY" secondAttribute="bottom" constant="50" id="eOF-md-3dF"/>
+                            <constraint firstItem="K8C-yW-s17" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f88-Zm-5cs"/>
                             <constraint firstItem="8Is-GU-swc" firstAttribute="top" secondItem="MTZ-Cd-i1B" secondAttribute="bottom" constant="42" id="fIN-Jl-J6c"/>
                             <constraint firstItem="MTZ-Cd-i1B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fia-ih-bgr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CFs-U1-zUt" secondAttribute="trailing" id="ge0-2V-MUl"/>
@@ -89,6 +98,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--ForgotPassword-->
+        <scene sceneID="pdG-NV-acd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ForgotPassword" id="vX9-lh-jN2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFy-Kd-nbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="192"/>
         </scene>
     </scenes>
 </document>
