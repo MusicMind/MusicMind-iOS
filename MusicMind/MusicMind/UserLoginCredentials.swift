@@ -5,6 +5,7 @@
 //  Created by Wesley Van der Klomp on 3/18/17.
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
+
 import UIKit
 import KeychainSwift
 
@@ -20,16 +21,18 @@ class UserLoginCredentials: NSObject {
     
     override init() {
         keychain = KeychainSwift()
-        
+
         super.init()
     }
-    
+
+
     var firebaseUserEmail: String? {
         get {
             
             return keychain.get(KeychainKey.firebaseUserEmail.rawValue)
         }
-        set {
+        set {            
+
             if let unwrappedNewValue = newValue {
                 keychain.set(unwrappedNewValue, forKey: KeychainKey.firebaseUserEmail.rawValue)
             } else {
@@ -51,5 +54,4 @@ class UserLoginCredentials: NSObject {
             }
         }
     }
-    
 }
