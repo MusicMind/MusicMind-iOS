@@ -65,7 +65,7 @@ struct User{
     
     
     var dictionaryRepresentation: [String:Any?]{
-        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": self.birthday]
+        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": self.birthday, "mobileNum": self.mobileNumber]
     }
     
     var spotifyToken: String?
