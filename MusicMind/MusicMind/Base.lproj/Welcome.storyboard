@@ -21,15 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusicMind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30y-Hv-ovd">
-                                <rect key="frame" x="77" y="133" width="220" height="59"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="43"/>
-                                <color key="textColor" red="1" green="0.93672004685057708" blue="0.57952663236736268" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1J-mf-Sp8">
                                 <rect key="frame" x="0.0" y="597" width="375" height="70"/>
-                                <color key="backgroundColor" red="0.76068765862944165" green="0.37138313345116292" blue="0.50225857760176384" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="EQ0-Yx-F5k"/>
                                 </constraints>
@@ -43,35 +36,33 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb4-vX-dcq">
                                 <rect key="frame" x="0.0" y="527" width="375" height="70"/>
-                                <color key="backgroundColor" red="0.87058823529411766" green="0.42272302691230224" blue="0.56544390589620364" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.93672004689999999" blue="0.57952663240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="aCF-ru-qlw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <state key="normal" title="Sign up">
-                                    <color key="titleColor" red="1" green="0.93672004689999999" blue="0.57952663240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😎🤘" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTh-hI-DgL">
-                                <rect key="frame" x="157" y="292" width="60" height="41"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                <rect key="frame" x="127" y="292.5" width="120" height="82"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="60"/>
                                 <color key="textColor" red="1" green="0.93672004689999999" blue="0.57952663240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.039215686274509803" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="pTh-hI-DgL" firstAttribute="centerX" secondItem="30y-Hv-ovd" secondAttribute="centerX" id="06p-mW-NBi"/>
-                            <constraint firstItem="pTh-hI-DgL" firstAttribute="top" secondItem="30y-Hv-ovd" secondAttribute="bottom" constant="100" id="0fL-K5-Gy0"/>
                             <constraint firstItem="Bb4-vX-dcq" firstAttribute="width" secondItem="sQ0-Da-Ruy" secondAttribute="width" id="8bE-7A-dki"/>
+                            <constraint firstItem="pTh-hI-DgL" firstAttribute="centerY" secondItem="sQ0-Da-Ruy" secondAttribute="centerY" id="9Es-OR-TCD"/>
                             <constraint firstItem="l1J-mf-Sp8" firstAttribute="centerX" secondItem="sQ0-Da-Ruy" secondAttribute="centerX" id="DF2-2m-NbE"/>
-                            <constraint firstItem="30y-Hv-ovd" firstAttribute="centerX" secondItem="sQ0-Da-Ruy" secondAttribute="centerX" id="T8q-ci-DdN"/>
                             <constraint firstItem="l1J-mf-Sp8" firstAttribute="top" secondItem="Bb4-vX-dcq" secondAttribute="bottom" id="Wol-Wx-Eaj"/>
                             <constraint firstItem="8kR-2B-4rh" firstAttribute="top" secondItem="l1J-mf-Sp8" secondAttribute="bottom" id="XfL-5q-ahZ"/>
                             <constraint firstItem="l1J-mf-Sp8" firstAttribute="width" secondItem="sQ0-Da-Ruy" secondAttribute="width" id="b76-w9-S91"/>
                             <constraint firstItem="Bb4-vX-dcq" firstAttribute="centerX" secondItem="sQ0-Da-Ruy" secondAttribute="centerX" id="bmf-7e-NyY"/>
-                            <constraint firstItem="30y-Hv-ovd" firstAttribute="top" secondItem="wDs-a0-ltO" secondAttribute="bottom" constant="69" id="krd-nG-4oG"/>
                             <constraint firstItem="Bb4-vX-dcq" firstAttribute="width" secondItem="l1J-mf-Sp8" secondAttribute="width" id="q5z-m6-OA3"/>
+                            <constraint firstItem="pTh-hI-DgL" firstAttribute="centerX" secondItem="sQ0-Da-Ruy" secondAttribute="centerX" id="sCU-at-voa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dVE-mw-Lf5"/>
