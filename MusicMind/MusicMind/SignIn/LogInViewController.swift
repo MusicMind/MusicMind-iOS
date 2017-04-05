@@ -18,8 +18,8 @@ class LogInViewController: UIViewController {
     
     @IBAction func attemptLogIn(_ sender: Any) {
         
-        user.firebaseUserEmail = emailField.text!
-        user.firebaseUserPassword = passwordField.text!
+        userLoginCredentials.firebaseUserEmail = emailField.text!
+        userLoginCredentials.firebaseUserPassword = passwordField.text!
 
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             if error == nil {
@@ -44,12 +44,11 @@ class LogInViewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
-        // Check if user already has saved info
-        if let email = user.firebaseUserEmail {
+        if let email = userLoginCredentials.firebaseUserEmail {
             emailField.text = email
         }
         
-        if let password = user.firebaseUserPassword {
+        if let password = userLoginCredentials.firebaseUserPassword {
             passwordField.text = password
         }
         

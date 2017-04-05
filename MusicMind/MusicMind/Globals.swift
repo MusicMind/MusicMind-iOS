@@ -10,6 +10,7 @@ import Foundation
 
 // Yes, these are globals. Yes, global state is the root of all evil. Yes, I'm doing it anyway.
 
+let userLoginCredentials = UserLoginCredentials()
 let user = User()
 
 
