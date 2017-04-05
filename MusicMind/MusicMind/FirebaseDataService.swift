@@ -1,5 +1,5 @@
 //
-//  UserController.swift
+//  FirebaseDataService.swift
 //  MusicMind
 //
 //  Created by Angel Contreras on 4/4/17.
