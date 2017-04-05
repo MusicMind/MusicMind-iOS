@@ -28,7 +28,7 @@ class LogInViewController: UIViewController {
                 
                 self.view.backgroundColor = .green
                 
-                let spotifyAuthViewController = UIStoryboard(name: "SpotifyAuth", bundle: nil).instantiateViewController(withIdentifier: "SpotifyAuth")
+                let spotifyAuthViewController = UIStoryboard(name: "CameraCapture", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureViewController")
                 self.present(spotifyAuthViewController, animated: true, completion: nil)
             } else {
                 
