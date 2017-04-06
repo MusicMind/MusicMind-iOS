@@ -22,10 +22,6 @@ class EmailPasswordViewController: UIViewController {
         super.viewDidLoad()
         print(newUser.dictionaryRepresentation)
         
-        //DELETE
-        emailTextField.text = "angel@contrerasangel.com"
-        passwordTextField.text = "hello123"
-        passwordConfirmationTextField.text = "hello123"
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
@@ -50,7 +46,7 @@ class EmailPasswordViewController: UIViewController {
             //TODO: handle error 17001 when the user exists in fire base
             
             self.newUser.firebaseUUID = user?.uid
-            FirebaseDataService.sharedController.createFirebaseDB(user: self.newUser)
+            FirebaseDataService.shared.addUserToUserList(self.newUser)
         })
 
     }
