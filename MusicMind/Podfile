@@ -13,7 +13,6 @@ target 'MusicMind' do
   pod 'KeychainSwift'
   pod 'Alamofire'
   pod 'SinchVerification-Swift'
-  pod 'Firebase/Database'
 
   target 'MusicMindTests' do
       

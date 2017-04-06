@@ -16,15 +16,9 @@ class BirthdayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(newUser)
-        
-        //DELETE
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        datePicker.date = dateFormatter.date(from: "1991-01-23")!
     }
 
-    var newUser = User()
+    var newUser: User?
     
     
     @IBAction func datePickerValueChange(_ sender: Any) {
@@ -58,7 +52,12 @@ class BirthdayViewController: UIViewController {
             })
         }
         
-        newUser.birthday = birthDate
+        if segue.identifier == "toEmailPassword",
+            let emailPasswordViewController = segue.destination as? EmailPasswordViewController {
+            
+            newUser?.birthday = birthDate
+            emailPasswordViewController.newUser = newUser
+        }
         
     }
 

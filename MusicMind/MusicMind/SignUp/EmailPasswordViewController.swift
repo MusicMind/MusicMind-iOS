@@ -8,7 +8,6 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseDatabase
 
 class EmailPasswordViewController: UIViewController {
     
@@ -16,20 +15,17 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     
-    var newUser = User()
-    
+    var newUser: User?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(newUser.dictionaryRepresentation)
-        
-        //DELETE
-        emailTextField.text = "angel@contrerasangel.com"
-        passwordTextField.text = "hello123"
-        passwordConfirmationTextField.text = "hello123"
     }
-    
-    @IBAction func continueButtonPressed(_ sender: Any) {
-        guard let email = emailTextField.text,
+
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard var newUser = self.newUser,
+            let email = emailTextField.text,
             let password = passwordTextField.text,
             let confirmedPassword = passwordConfirmationTextField.text,
             password == confirmedPassword else {
@@ -41,25 +37,17 @@ class EmailPasswordViewController: UIViewController {
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
                 return
+            
         }
         
         userLoginCredentials.firebaseUserEmail = email
         userLoginCredentials.firebaseUserPassword = password
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            //TODO: handle error 17001 when the user exists in fire base
-            
-            self.newUser.firebaseUUID = user?.uid
-            FirebaseDataService.sharedController.createFirebaseDB(user: self.newUser)
+        FIRAuth.auth()?.createUser(withEmail: email, password: passwordTextField.text!, completion: { (user, error) in
+            newUser.firebaseUUID = user?.uid
         })
-
-    }
-    
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
-    
+
 }
 

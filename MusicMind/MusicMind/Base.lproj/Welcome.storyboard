@@ -31,7 +31,7 @@
                                     <color key="titleColor" red="1" green="0.93672004689999999" blue="0.57952663240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YgY-G8-W3p" kind="show" id="1LT-UW-fSy"/>
+                                    <segue destination="aoY-k7-L9a" kind="show" id="FUq-Co-eug"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bb4-vX-dcq">
@@ -44,9 +44,6 @@
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <segue destination="sEc-TV-srv" kind="show" id="Lza-fG-M8C"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😎🤘" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTh-hI-DgL">
                                 <rect key="frame" x="127" y="292.5" width="120" height="82"/>
@@ -75,21 +72,13 @@
             </objects>
             <point key="canvasLocation" x="1023.2" y="91.304347826086968"/>
         </scene>
-        <!--LogInViewController-->
-        <scene sceneID="vSU-0e-MMr">
+        <!--LogIn-->
+        <scene sceneID="Lsb-q1-wyv">
             <objects>
-                <viewControllerPlaceholder storyboardName="LogIn" referencedIdentifier="LogInViewController" id="YgY-G8-W3p" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BbH-uO-GK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="LogIn" id="aoY-k7-L9a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chb-fI-qQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1931" y="192"/>
-        </scene>
-        <!--SignUp-->
-        <scene sceneID="fAu-0m-5f2">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SignUp" id="sEc-TV-srv" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lTm-1L-1j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1902" y="288"/>
+            <point key="canvasLocation" x="1580.8" y="150.22488755622189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jpo-ab-dr3">
