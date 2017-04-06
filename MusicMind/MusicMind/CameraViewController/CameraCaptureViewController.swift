@@ -47,7 +47,7 @@ class CameraCaptureViewController: APPLCameraViewController {
     }
     
     func startRecording() {
-//        self.toggleMovieRecording()
+        self.toggleMovieRecording()
     }
     
     func stopRecording() {
