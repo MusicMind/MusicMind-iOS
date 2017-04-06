@@ -5,7 +5,6 @@
 //  Created by Angel Contreras on 4/3/17.
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
-
 import Foundation
 
 struct User{
@@ -15,6 +14,7 @@ struct User{
         case lastNameKey = "MMLastName"
         case birthdayKey = "MMBirthday"
         case firebaseUUIDKey = "MMFirebaseUUIDKey"
+        case mobileNumberKey = "MMMobileNumber"
     }
     
     var firstName: String?{
@@ -54,6 +54,22 @@ struct User{
         }
     }
     
-    var spotifyToken: String?
+    var mobileNumber: String? {
+        get{
+            return UserDefaults.standard.object(forKey: UserDefaultsKeys.mobileNumberKey.rawValue) as? String
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.mobileNumberKey.rawValue)
+        }
+    }
     
+    
+    var dictionaryRepresentation: [String:Any?]{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": dateFormatter.string(from: self.birthday!), "mobileNum": self.mobileNumber]
+    }
+    
+    var spotifyToken: String?
+
 }
