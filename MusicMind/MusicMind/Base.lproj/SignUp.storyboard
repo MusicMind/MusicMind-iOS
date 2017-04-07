@@ -201,13 +201,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email and Password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgo-wn-xqo">
-                                <rect key="frame" x="66" y="99" width="243" height="27.5"/>
+                                <rect key="frame" x="66" y="55" width="243" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-mA-WbP">
-                                <rect key="frame" x="66" y="151.5" width="243" height="48.5"/>
+                                <rect key="frame" x="66" y="107.5" width="243" height="48.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfs-9A-1Gf">
                                         <rect key="frame" x="0.0" y="0.0" width="243" height="13.5"/>
@@ -224,7 +224,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YZH-dZ-J2m">
-                                <rect key="frame" x="66" y="210" width="243" height="102"/>
+                                <rect key="frame" x="66" y="166" width="243" height="102"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR8-CR-OOK">
                                         <rect key="frame" x="0.0" y="0.0" width="243" height="13.5"/>
@@ -253,10 +253,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAS-uE-1cX">
-                                <rect key="frame" x="108" y="342" width="159" height="30"/>
+                                <rect key="frame" x="108" y="298" width="159" height="30"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <action selector="continueButtonPressed:" destination="jXN-sj-A5H" eventType="touchUpInside" id="lc4-W1-x5o"/>
+                                    <segue destination="YDg-42-WDY" kind="show" id="13g-ab-txW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -288,6 +289,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyU-23-w6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2668" y="109"/>
+        </scene>
+        <!--CameraCaptureViewController-->
+        <scene sceneID="giV-Vk-sef">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CameraCapture" referencedIdentifier="CameraCaptureViewController" id="YDg-42-WDY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3v8-1d-jba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3419" y="110"/>
         </scene>
     </scenes>
 </document>
