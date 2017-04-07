@@ -192,82 +192,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email and Password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgo-wn-xqo">
-                                <rect key="frame" x="66" y="55" width="243" height="27.5"/>
+                                <rect key="frame" x="85.5" y="55" width="204.5" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.93672004689999999" blue="0.57952663240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-mA-WbP">
-                                <rect key="frame" x="66" y="107.5" width="243" height="48.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="YZH-dZ-J2m">
+                                <rect key="frame" x="0.0" y="112.5" width="375" height="290"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfs-9A-1Gf">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="13.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dOE-b5-JIb">
-                                        <rect key="frame" x="0.0" y="18.5" width="243" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dOE-b5-JIb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <color key="backgroundColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="zoy-Mz-01U"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YZH-dZ-J2m">
-                                <rect key="frame" x="66" y="166" width="243" height="102"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR8-CR-OOK">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="13.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dl-x0-YAf">
-                                        <rect key="frame" x="0.0" y="18.5" width="243" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dl-x0-YAf">
+                                        <rect key="frame" x="0.0" y="80" width="375" height="50"/>
+                                        <color key="backgroundColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="fuB-5N-SDb"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONFIRM PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0e-he-49j">
-                                        <rect key="frame" x="0.0" y="53.5" width="243" height="13.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfP-34-yIV">
-                                        <rect key="frame" x="0.0" y="72" width="243" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfP-34-yIV">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="50"/>
+                                        <color key="backgroundColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MzO-4X-Efi"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAS-uE-1cX">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.93672004689999999" blue="0.57952663240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8pH-Lq-jnE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continueButtonPressed:" destination="jXN-sj-A5H" eventType="touchUpInside" id="lc4-W1-x5o"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAS-uE-1cX">
-                                <rect key="frame" x="108" y="298" width="159" height="30"/>
-                                <state key="normal" title="Continue"/>
-                                <connections>
-                                    <action selector="continueButtonPressed:" destination="jXN-sj-A5H" eventType="touchUpInside" id="lc4-W1-x5o"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="EAS-uE-1cX" firstAttribute="leading" secondItem="hof-Q9-QAq" secondAttribute="leadingMargin" constant="92" id="23u-Ld-Z9d"/>
-                            <constraint firstItem="MPI-mA-WbP" firstAttribute="centerX" secondItem="hof-Q9-QAq" secondAttribute="centerX" id="3wT-2b-Uth"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vgo-wn-xqo" secondAttribute="trailing" constant="50" id="4cm-8w-EUu"/>
-                            <constraint firstItem="EAS-uE-1cX" firstAttribute="top" secondItem="YZH-dZ-J2m" secondAttribute="bottom" constant="30" id="6g1-Ee-okn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MPI-mA-WbP" secondAttribute="trailing" constant="50" id="7vL-uw-6w5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YZH-dZ-J2m" secondAttribute="trailing" constant="50" id="AYP-4O-5CR"/>
                             <constraint firstItem="vgo-wn-xqo" firstAttribute="top" secondItem="opP-8E-D6V" secondAttribute="bottom" constant="35" id="E0H-aN-xOW"/>
-                            <constraint firstItem="vgo-wn-xqo" firstAttribute="leading" secondItem="hof-Q9-QAq" secondAttribute="leadingMargin" constant="50" id="Hab-gi-9Kw"/>
+                            <constraint firstItem="YZH-dZ-J2m" firstAttribute="width" secondItem="hof-Q9-QAq" secondAttribute="width" id="ILW-6u-lCa"/>
                             <constraint firstItem="vgo-wn-xqo" firstAttribute="centerX" secondItem="hof-Q9-QAq" secondAttribute="centerX" id="OJi-9x-vAh"/>
-                            <constraint firstItem="MPI-mA-WbP" firstAttribute="leading" secondItem="hof-Q9-QAq" secondAttribute="leadingMargin" constant="50" id="Oyw-9V-VVI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EAS-uE-1cX" secondAttribute="trailing" constant="92" id="Pyz-Ik-Z4r"/>
-                            <constraint firstItem="MPI-mA-WbP" firstAttribute="top" secondItem="vgo-wn-xqo" secondAttribute="bottom" constant="25" id="QX1-wq-cMu"/>
                             <constraint firstItem="YZH-dZ-J2m" firstAttribute="centerX" secondItem="hof-Q9-QAq" secondAttribute="centerX" id="ar4-ID-Wxe"/>
-                            <constraint firstItem="YZH-dZ-J2m" firstAttribute="top" secondItem="MPI-mA-WbP" secondAttribute="bottom" constant="10" id="u46-pP-VV2"/>
-                            <constraint firstItem="YZH-dZ-J2m" firstAttribute="leading" secondItem="hof-Q9-QAq" secondAttribute="leadingMargin" constant="50" id="y5x-9h-iCp"/>
+                            <constraint firstItem="YZH-dZ-J2m" firstAttribute="top" secondItem="vgo-wn-xqo" secondAttribute="bottom" constant="30" id="cWQ-hI-J1v"/>
                         </constraints>
                     </view>
                     <connections>
