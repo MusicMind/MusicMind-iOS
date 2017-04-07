@@ -19,13 +19,13 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPhone Spotlight iOS 7,9@2x.png",
+      "filename" : "iPhone Spotlight iOS 5,6 & Settings-1.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPhone Spotlight iOS 7,9@3x-1.png",
+      "filename" : "iPhone Spotlight iOS 5,6 & Settings@3x-1.png",
       "scale" : "3x"
     },
     {
@@ -141,15 +141,13 @@
       "scale" : "2x"
     },
     {
-      "size" : "60x60",
       "idiom" : "car",
-      "filename" : "iPhone App Icon iOS 7,9@2x.png",
+      "size" : "60x60",
       "scale" : "2x"
     },
     {
-      "size" : "60x60",
       "idiom" : "car",
-      "filename" : "iPhone App Icon iOS 7,9@3x.png",
+      "size" : "60x60",
       "scale" : "3x"
     },
     {
@@ -169,14 +167,12 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "iPad Settings@2x.png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "iPhone Spotlight iOS 5,6 & Settings@3x.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },
