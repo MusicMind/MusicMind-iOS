@@ -25,29 +25,34 @@ class EmailPasswordViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        guard let email = emailTextField.text,
-            let password = passwordTextField.text,
-            let confirmedPassword = passwordConfirmationTextField.text,
-            password == confirmedPassword else {
-                let alertController = UIAlertController(title: "Error", message: "Please make sure all fields are filled and passwords match.", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
-                    self.passwordTextField.text = nil
-                    self.passwordConfirmationTextField.text = nil
-                })
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-                return
-        }
+//        guard let email = emailTextField.text,
+//            let password = passwordTextField.text,
+//            let confirmedPassword = passwordConfirmationTextField.text,
+//            password == confirmedPassword else {
+//                let alertController = UIAlertController(title: "Error", message: "Please make sure all fields are filled and passwords match.", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+//                    self.passwordTextField.text = nil
+//                    self.passwordConfirmationTextField.text = nil
+//                })
+//                alertController.addAction(okAction)
+//                self.present(alertController, animated: true, completion: nil)
+//                return
+//        }
+//        
+//        userLoginCredentials.firebaseUserEmail = email
+//        userLoginCredentials.firebaseUserPassword = password
+//        
+//        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+//            //TODO: handle error 17001 when the user exists in fire base
+//            
+//            self.newUser.firebaseUUID = user?.uid
+//            FirebaseDataService.shared.addUserToUserList(self.newUser)
+//        })
         
-        userLoginCredentials.firebaseUserEmail = email
-        userLoginCredentials.firebaseUserPassword = password
+        let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
+        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
+        present(vc!, animated: true, completion: nil)
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            //TODO: handle error 17001 when the user exists in fire base
-            
-            self.newUser.firebaseUUID = user?.uid
-            FirebaseDataService.shared.addUserToUserList(self.newUser)
-        })
 
     }
     

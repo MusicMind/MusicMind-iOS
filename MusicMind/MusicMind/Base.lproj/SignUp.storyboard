@@ -70,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAg-yy-FxI">
-                                <rect key="frame" x="112" y="352.5" width="150" height="35"/>
+                                <rect key="frame" x="112" y="222.5" width="150" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign Up &amp; Accept"/>
                                 <connections>
@@ -82,7 +82,7 @@
                         <constraints>
                             <constraint firstItem="7TC-PR-uip" firstAttribute="top" secondItem="4FC-ht-vxQ" secondAttribute="bottom" constant="15" id="7Pg-D4-eFN"/>
                             <constraint firstItem="7HA-Yj-jAe" firstAttribute="centerX" secondItem="jee-Yb-mpD" secondAttribute="centerX" id="8M5-YR-eCf"/>
-                            <constraint firstItem="GAg-yy-FxI" firstAttribute="top" secondItem="bbM-GX-JvJ" secondAttribute="bottom" constant="150" id="9QZ-Rl-nO8"/>
+                            <constraint firstItem="GAg-yy-FxI" firstAttribute="top" secondItem="bbM-GX-JvJ" secondAttribute="bottom" constant="20" id="9QZ-Rl-nO8"/>
                             <constraint firstItem="4FC-ht-vxQ" firstAttribute="top" secondItem="7HA-Yj-jAe" secondAttribute="bottom" constant="25" id="CtC-Aq-5PG"/>
                             <constraint firstItem="7HA-Yj-jAe" firstAttribute="leading" secondItem="jee-Yb-mpD" secondAttribute="leadingMargin" constant="50" id="HMw-gx-Nae"/>
                             <constraint firstItem="bbM-GX-JvJ" firstAttribute="centerX" secondItem="jee-Yb-mpD" secondAttribute="centerX" id="JzE-mJ-PhS"/>
@@ -257,7 +257,6 @@
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <action selector="continueButtonPressed:" destination="jXN-sj-A5H" eventType="touchUpInside" id="lc4-W1-x5o"/>
-                                    <segue destination="YDg-42-WDY" kind="show" id="13g-ab-txW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -289,14 +288,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyU-23-w6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2668" y="109"/>
-        </scene>
-        <!--CameraCaptureViewController-->
-        <scene sceneID="giV-Vk-sef">
-            <objects>
-                <viewControllerPlaceholder storyboardName="CameraCapture" referencedIdentifier="CameraCaptureViewController" id="YDg-42-WDY" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3v8-1d-jba" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3419" y="110"/>
         </scene>
     </scenes>
 </document>
