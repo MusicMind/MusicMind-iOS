@@ -124,28 +124,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When's your birthday?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zR-CQ-fN6">
-                                <rect key="frame" x="66" y="103" width="243" height="27.5"/>
+                                <rect key="frame" x="72.5" y="103" width="230" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="S1L-f9-s0T">
-                                <rect key="frame" x="66" y="155.5" width="243" height="96.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="BIRTHDAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY1-MT-26b">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-2y-LCk">
-                                        <rect key="frame" x="0.0" y="5" width="243" height="91.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="BIRTHDAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY1-MT-26b">
+                                <rect key="frame" x="161" y="158" width="53.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czB-2y-LCk">
+                                <rect key="frame" x="66" y="184" width="243" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="kl0-YX-Dzf"/>
+                                    <constraint firstAttribute="height" constant="30" id="o62-UQ-6Ri"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-0z-uwG">
                                 <rect key="frame" x="0.0" y="420" width="375" height="247"/>
                                 <date key="date" timeIntervalSinceReferenceDate="512419420.14237797">
@@ -155,41 +154,39 @@
                                     <action selector="datePickerValueChange:" destination="FBA-98-8r4" eventType="valueChanged" id="1nO-6R-eEZ"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-3l-sgn">
-                                <rect key="frame" x="153" y="332" width="69" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp4-vA-dcf">
+                                <rect key="frame" x="156.5" y="293" width="62" height="30"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="jXN-sj-A5H" kind="show" identifier="toEmailPassword" id="ebo-yM-miY"/>
+                                    <segue destination="jXN-sj-A5H" kind="show" id="FDn-u7-8Iq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bGb-0z-uwG" firstAttribute="top" secondItem="vMa-3l-sgn" secondAttribute="bottom" constant="55" id="7G6-e5-cyx"/>
-                            <constraint firstItem="S1L-f9-s0T" firstAttribute="leading" secondItem="jEL-bm-pqp" secondAttribute="leadingMargin" constant="50" id="9b4-IU-Vc7"/>
+                            <constraint firstItem="3zR-CQ-fN6" firstAttribute="centerX" secondItem="jEL-bm-pqp" secondAttribute="centerX" id="9K2-0a-OJ0"/>
+                            <constraint firstItem="Zp4-vA-dcf" firstAttribute="centerX" secondItem="jEL-bm-pqp" secondAttribute="centerX" id="A5m-OL-psi"/>
                             <constraint firstItem="blS-5h-ymr" firstAttribute="top" secondItem="bGb-0z-uwG" secondAttribute="bottom" id="JsM-mS-uTG"/>
-                            <constraint firstItem="vMa-3l-sgn" firstAttribute="top" secondItem="S1L-f9-s0T" secondAttribute="bottom" constant="80" id="P3C-UA-x3Z"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="S1L-f9-s0T" secondAttribute="trailing" constant="50" id="Uds-gN-ahv"/>
-                            <constraint firstItem="S1L-f9-s0T" firstAttribute="top" secondItem="3zR-CQ-fN6" secondAttribute="bottom" constant="25" id="Ulu-f9-m7D"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3zR-CQ-fN6" secondAttribute="trailing" constant="50" id="eSC-CV-b63"/>
+                            <constraint firstItem="Zp4-vA-dcf" firstAttribute="top" secondItem="czB-2y-LCk" secondAttribute="bottom" constant="79" id="Jvs-y4-Z0e"/>
+                            <constraint firstItem="czB-2y-LCk" firstAttribute="centerX" secondItem="jEL-bm-pqp" secondAttribute="centerX" id="SFD-PZ-NSt"/>
+                            <constraint firstItem="bY1-MT-26b" firstAttribute="centerX" secondItem="jEL-bm-pqp" secondAttribute="centerX" id="VkX-OD-6f5"/>
+                            <constraint firstItem="bY1-MT-26b" firstAttribute="top" secondItem="3zR-CQ-fN6" secondAttribute="bottom" constant="27.5" id="Vxw-ym-Z41"/>
                             <constraint firstItem="bGb-0z-uwG" firstAttribute="leading" secondItem="jEL-bm-pqp" secondAttribute="leading" id="iKk-tD-Gsi"/>
                             <constraint firstItem="bGb-0z-uwG" firstAttribute="height" secondItem="jEL-bm-pqp" secondAttribute="height" multiplier="0.37" id="pMk-dU-OJS"/>
-                            <constraint firstItem="3zR-CQ-fN6" firstAttribute="leading" secondItem="jEL-bm-pqp" secondAttribute="leadingMargin" constant="50" id="vHg-rj-AjB"/>
                             <constraint firstAttribute="trailing" secondItem="bGb-0z-uwG" secondAttribute="trailing" id="xUx-PQ-GJ3"/>
                             <constraint firstItem="3zR-CQ-fN6" firstAttribute="top" secondItem="ONg-fz-CnZ" secondAttribute="bottom" constant="83" id="yPL-Zx-JRC"/>
-                            <constraint firstItem="vMa-3l-sgn" firstAttribute="centerX" secondItem="jEL-bm-pqp" secondAttribute="centerX" id="zqc-8H-SP5"/>
+                            <constraint firstItem="czB-2y-LCk" firstAttribute="top" secondItem="bY1-MT-26b" secondAttribute="bottom" constant="12.5" id="yY2-oq-xKV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="birthdayLabel" destination="czB-2y-LCk" id="DC2-rC-w7C"/>
-                        <outlet property="continueButton" destination="vMa-3l-sgn" id="OR4-cd-LQT"/>
+                        <outlet property="continueButton" destination="Zp4-vA-dcf" id="wRs-Q7-PMX"/>
                         <outlet property="datePicker" destination="bGb-0z-uwG" id="mDS-3H-BKc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0N3-lu-odl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="108.39580209895054"/>
+            <point key="canvasLocation" x="1721" y="83"/>
         </scene>
         <!--Email Password View Controller-->
         <scene sceneID="g7j-Z7-L5y">
