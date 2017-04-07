@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0N3-lu-odl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720.8" y="82.3088455772114"/>
+            <point key="canvasLocation" x="1638" y="108"/>
         </scene>
         <!--Email Password View Controller-->
         <scene sceneID="g7j-Z7-L5y">
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyU-23-w6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="109"/>
+            <point key="canvasLocation" x="2418" y="107"/>
         </scene>
     </scenes>
 </document>
