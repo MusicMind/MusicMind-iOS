@@ -19,10 +19,10 @@ class NameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
         self.firstNameTextField.delegate = self
         self.lastNameTextField.delegate = self
-        // Do any additional setup after loading the view.
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
