@@ -17,7 +17,8 @@ class BirthdayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(newUser)
-
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     var newUser = User()

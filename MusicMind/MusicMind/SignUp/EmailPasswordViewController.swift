@@ -22,6 +22,8 @@ class EmailPasswordViewController: UIViewController {
         super.viewDidLoad()
         
         print(newUser.dictionaryRepresentation)
+        
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {

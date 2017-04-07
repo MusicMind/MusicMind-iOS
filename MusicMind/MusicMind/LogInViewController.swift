@@ -52,7 +52,7 @@ class LogInViewController: UIViewController {
             passwordField.text = password
         }
         
-        // Do any additional setup after loading the view, typically from a nib.
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
