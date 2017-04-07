@@ -20,8 +20,8 @@ class EmailPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(newUser.dictionaryRepresentation)
         
+        print(newUser.dictionaryRepresentation)
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
@@ -39,6 +39,7 @@ class EmailPasswordViewController: UIViewController {
                 return
         }
         
+        // Save log in info to keychain
         userLoginCredentials.firebaseUserEmail = email
         userLoginCredentials.firebaseUserPassword = password
         
@@ -50,14 +51,10 @@ class EmailPasswordViewController: UIViewController {
             weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
             self.present(vc!, animated: true, completion: nil)
             
-            
+            // Post new user to firebase
             self.newUser.firebaseUUID = user?.uid
             FirebaseDataService.shared.addUserToUserList(self.newUser)
         })
-        
-
-        
-
     }
     
     

@@ -17,7 +17,7 @@ struct User{
         case mobileNumberKey = "MMMobileNumber"
     }
     
-    var firstName: String?{
+    var firstName: String? {
         get{
             return UserDefaults.standard.object(forKey: UserDefaultsKeys.firstNameKey.rawValue) as? String
         }
@@ -27,7 +27,7 @@ struct User{
     }
     
     
-    var lastName: String?{
+    var lastName: String? {
         get{
             return UserDefaults.standard.object(forKey: UserDefaultsKeys.lastNameKey.rawValue) as? String
         }
@@ -36,7 +36,7 @@ struct User{
         }
     }
     
-    var birthday: Date?{
+    var birthday: Date? {
         get{
             return UserDefaults.standard.object(forKey: UserDefaultsKeys.birthdayKey.rawValue) as? Date
         }
@@ -64,7 +64,7 @@ struct User{
     }
     
     
-    var dictionaryRepresentation: [String:Any?]{
+    var dictionaryRepresentation: [String:Any?] {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return ["firstName": self.firstName, "lastName": self.lastName, "birthday": dateFormatter.string(from: self.birthday!), "mobileNum": self.mobileNumber]
