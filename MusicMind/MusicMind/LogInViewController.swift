@@ -74,7 +74,7 @@ extension LogInViewController: UITextFieldDelegate {
         if textField == emailField {
             passwordField.becomeFirstResponder()
         } else {
-            goToCameraCapture()
+            attemptLogIn(self)
         }
         
         return true
