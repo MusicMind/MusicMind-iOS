@@ -23,13 +23,9 @@ class LogInViewController: UIViewController {
 
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             if error == nil {
-                
-//                print(user?.uid)
-                
                 self.view.backgroundColor = .green
                 
-                let spotifyAuthViewController = UIStoryboard(name: "CameraCapture", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureViewController")
-                self.present(spotifyAuthViewController, animated: true, completion: nil)
+                self.goToCameraCapture()
             } else {
                 
                 print(error.debugDescription)
@@ -41,6 +37,9 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailField.delegate = self
+        passwordField.delegate = self
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
@@ -62,7 +61,22 @@ class LogInViewController: UIViewController {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
         }
     }
-
     
+    func goToCameraCapture() {
+        let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
+        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
+        self.present(vc!, animated: true, completion: nil)
+    }
 }
 
+extension LogInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailField {
+            passwordField.becomeFirstResponder()
+        } else {
+            goToCameraCapture()
+        }
+        
+        return true
+    }
+}

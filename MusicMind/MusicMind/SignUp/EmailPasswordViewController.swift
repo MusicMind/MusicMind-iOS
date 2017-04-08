@@ -71,7 +71,6 @@ class EmailPasswordViewController: UIViewController {
         weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
         self.present(vc!, animated: true, completion: nil)
     }
-    
 }
 
 extension EmailPasswordViewController: UITextFieldDelegate {
