@@ -66,6 +66,7 @@
 		DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC96E261E957BCD00660262 /* LogInViewController.swift */; };
+		DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
 		DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
 		DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
 /* End PBXBuildFile section */
@@ -158,6 +159,7 @@
 		DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageColored.swift"; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEC96E261E957BCD00660262 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
 		DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberEntryViewController.swift; sourceTree = "<group>"; };
 		EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			children = (
 				DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */,
 				DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */,
+				DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -770,6 +773,7 @@
 				DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
+				DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,

@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="1931" y="192"/>
         </scene>
-        <!--SignUp-->
+        <!--nameViewController-->
         <scene sceneID="fAu-0m-5f2">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignUp" id="sEc-TV-srv" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SignUp" referencedIdentifier="nameViewController" id="sEc-TV-srv" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTm-1L-1j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1902" y="288"/>

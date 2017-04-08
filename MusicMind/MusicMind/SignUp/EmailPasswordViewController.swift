@@ -20,8 +20,14 @@ class EmailPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        passwordConfirmationTextField.delegate = self
+        
         print(newUser.dictionaryRepresentation)
         
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
@@ -39,16 +45,19 @@ class EmailPasswordViewController: UIViewController {
                 return
         }
         
+        // Save log in info to keychain
         userLoginCredentials.firebaseUserEmail = email
         userLoginCredentials.firebaseUserPassword = password
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             //TODO: handle error 17001 when the user exists in fire base
             
+            self.goToCameraCapture()
+            
+            // Post new user to firebase
             self.newUser.firebaseUUID = user?.uid
             FirebaseDataService.shared.addUserToUserList(self.newUser)
         })
-
     }
     
     
@@ -57,5 +66,23 @@ class EmailPasswordViewController: UIViewController {
         
     }
     
+    func goToCameraCapture() {
+        let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
+        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
+        self.present(vc!, animated: true, completion: nil)
+    }
 }
 
+extension EmailPasswordViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            passwordConfirmationTextField.becomeFirstResponder()
+        } else {
+            goToCameraCapture()
+        }
+        
+        return true
+    }
+}
