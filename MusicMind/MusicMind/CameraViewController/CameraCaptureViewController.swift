@@ -18,14 +18,24 @@ class CameraCaptureViewController: UIViewController {
     
     var recordButton: RecordButton!
     
+    // AV Foundation Capture objects
+    let session = AVCaptureSession()
+    var camera: AVCaptureDevice?
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var cameraCaptureOutput: AVCaptureVideoDataOutput?
+
+    
     override func viewDidLoad() {
+
+        setupCaptureSession()
+        
         
         // Set up the record button
         recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
         
         recordButton.center = recordButtonContainer.center
         
-        recordButton.buttonColor = .green
+        recordButton.buttonColor = .white
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
         
@@ -37,6 +47,32 @@ class CameraCaptureViewController: UIViewController {
         self.view.addSubview(recordButton)
         
         super.viewDidLoad()
+    }
+    
+    func setupCaptureSession() {
+        session.sessionPreset = AVCaptureSessionPresetHigh
+        
+        camera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        
+        do {
+            let cameraCaptureInput = try AVCaptureDeviceInput(device: camera)
+            
+            cameraCaptureOutput = AVCaptureVideoDataOutput()
+            
+            session.addInput(cameraCaptureInput)
+            session.addOutput(cameraCaptureOutput)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        cameraPreviewLayer?.frame = previewView.bounds
+        cameraPreviewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
+        
+        previewView.layer.addSublayer(cameraPreviewLayer!)
+        
+        session.startRunning()
     }
     
     @IBAction func toggleCameraPressed(_ sender: Any) {
