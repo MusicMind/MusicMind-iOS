@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import RecordButton
 
-class CameraCaptureViewController: APPLCameraViewController {
+class CameraCaptureViewController: UIViewController {
     
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var cameraButton: UIButton!
@@ -19,15 +19,13 @@ class CameraCaptureViewController: APPLCameraViewController {
     var recordButton: RecordButton!
     
     override func viewDidLoad() {
-        delegate = self
-        _previewView = previewView
         
-        toggleCaptureMode(.movie)
-        
+        // Set up the record button
         recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
         
         recordButton.center = recordButtonContainer.center
         
+        recordButton.buttonColor = .green
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
         
@@ -35,7 +33,6 @@ class CameraCaptureViewController: APPLCameraViewController {
         recordButton.addTarget(self, action: #selector(self.stopRecording), for: UIControlEvents.touchUpInside)
         recordButton.addTarget(self, action: #selector(self.stopRecording), for: UIControlEvents.touchDragExit)
         
-        recordButton.buttonColor = UIColor.white
         
         self.view.addSubview(recordButton)
         
@@ -43,11 +40,12 @@ class CameraCaptureViewController: APPLCameraViewController {
     }
     
     @IBAction func toggleCameraPressed(_ sender: Any) {
-        self.changeCamera()
+        
     }
     
     func startRecording() {
-        self.toggleMovieRecording()
+
+        
     }
     
     func stopRecording() {
@@ -58,37 +56,6 @@ class CameraCaptureViewController: APPLCameraViewController {
         let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
         
         self.present(sendToFriendViewController, animated: true, completion: nil)
-    }
-}
-
-
-// MARK: - APPLCameraViewControllerDelegate
-extension CameraCaptureViewController: APPLCameraViewControllerDelegate {
-    func shouldEnableCameraUI(enabled: Bool) {
-        cameraButton.isEnabled = enabled
-    }
-    
-    func shouldEnableRecordUI(enabled: Bool) {
-        recordButton.isEnabled = enabled
-    }
-    
-    func recordingHasStarted() {
-        
-    }
-    
-    func canStartRecording() {
-        
-    }
-    
-    // MARK: - Post to firebase
-    func didFinishRecordingToOutputFileAt(outputUrl: URL) {
-        // Show the camera view controller
-//        let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
-//        
-//        sendToFriendViewController.urlOfVideo = outputUrl
-//        
-//        self.present(sendToFriendViewController, animated: true, completion: nil)
-//        
     }
 }
 
