@@ -12,8 +12,7 @@ import RecordButton
 
 class CameraCaptureViewController: UIViewController {
     
-    @IBOutlet weak var previewView: PreviewView!
-    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var cameraPreviewView: PreviewView!
     @IBOutlet weak var recordButtonContainer: UIView!
     
     var recordButton: RecordButton!
@@ -39,9 +38,9 @@ class CameraCaptureViewController: UIViewController {
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
         
-        recordButton.addTarget(self, action: #selector(self.startRecording), for: .touchDown)
-        recordButton.addTarget(self, action: #selector(self.stopRecording), for: UIControlEvents.touchUpInside)
-        recordButton.addTarget(self, action: #selector(self.stopRecording), for: UIControlEvents.touchDragExit)
+        recordButton.addTarget(self, action: #selector(self.startRecordingVideo), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchUpInside)
+        recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchDragExit)
         
         
         self.view.addSubview(recordButton)
@@ -67,24 +66,23 @@ class CameraCaptureViewController: UIViewController {
         
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        cameraPreviewLayer?.frame = previewView.bounds
+        cameraPreviewLayer?.frame = cameraPreviewView.bounds
         cameraPreviewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
         
-        previewView.layer.addSublayer(cameraPreviewLayer!)
+        cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
         
         session.startRunning()
     }
     
-    @IBAction func toggleCameraPressed(_ sender: Any) {
+    @IBAction func flipCameras(_ sender: Any) {
         
     }
     
-    func startRecording() {
-
+    func startRecordingVideo() {
         
     }
     
-    func stopRecording() {
+    func stopRecordingVideo() {
         
     }
     
