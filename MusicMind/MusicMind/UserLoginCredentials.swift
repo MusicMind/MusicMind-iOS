@@ -25,12 +25,14 @@ class UserLoginCredentials: NSObject {
         super.init()
     }
 
+
     var firebaseUserEmail: String? {
         get {
             
             return keychain.get(KeychainKey.firebaseUserEmail.rawValue)
         }
         set {            
+
             if let unwrappedNewValue = newValue {
                 keychain.set(unwrappedNewValue, forKey: KeychainKey.firebaseUserEmail.rawValue)
             } else {
@@ -52,5 +54,4 @@ class UserLoginCredentials: NSObject {
             }
         }
     }
-
 }

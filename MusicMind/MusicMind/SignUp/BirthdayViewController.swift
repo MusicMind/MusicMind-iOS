@@ -16,9 +16,12 @@ class BirthdayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(newUser)
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
-    var newUser: User?
+    var newUser = User()
     
     
     @IBAction func datePickerValueChange(_ sender: Any) {
@@ -52,12 +55,7 @@ class BirthdayViewController: UIViewController {
             })
         }
         
-        if segue.identifier == "toEmailPassword",
-            let emailPasswordViewController = segue.destination as? EmailPasswordViewController {
-            
-            newUser?.birthday = birthDate
-            emailPasswordViewController.newUser = newUser
-        }
+        newUser.birthday = birthDate
         
     }
 

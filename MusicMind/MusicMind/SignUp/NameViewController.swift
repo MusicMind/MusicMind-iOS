@@ -14,12 +14,17 @@ class NameViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
+    var newUser = User()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
         self.firstNameTextField.delegate = self
         self.lastNameTextField.delegate = self
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,23 +37,26 @@ class NameViewController: UIViewController {
                 return
         }
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let user = appDelegate.user
-//        user.firstName = firstName
-//        user.lastName = lastName
-        
-        if segue.identifier == "toBday",
-            let birthdayViewController = segue.destination as? BirthdayViewController {
-            
-//            birthdayViewController.newUser = user
-        }
+        newUser.firstName = firstName
+        newUser.lastName = lastName
     }
     
 }
 
-extension NameViewController: UITextFieldDelegate{
+extension NameViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         //TODO: disable the signUpButton until there is text in the both first name and last name textfield.
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == firstNameTextField {
+            lastNameTextField.becomeFirstResponder()
+        } else {
+            performSegue(withIdentifier: "goToBirthdayVC", sender: self)
+        }
+        
         return true
     }
 }
