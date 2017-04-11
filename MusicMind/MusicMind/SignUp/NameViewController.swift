@@ -34,7 +34,7 @@ class NameViewController: UIViewController {
         self.lastNameTextField.layer.borderWidth = 1
         self.lastNameTextField.layer.cornerRadius = self.firstNameTextField.frame.size.height/2
         
-        self.signUpButton.backgroundColor = UIColor.init(colorLiteralRed: 255/255.0, green: 0/255.0, blue: 138/255.0, alpha:1)
+        self.signUpButton.backgroundColor = UIColor.init(colorLiteralRed: 240/255.0, green: 10/255.0, blue: 136/255.0, alpha:1)
         self.signUpButton.titleLabel?.textColor = UIColor.white
         self.signUpButton.layer.cornerRadius = self.firstNameTextField.frame.size.height/2
         

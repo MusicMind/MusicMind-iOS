@@ -246,8 +246,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="9dl-x0-YAf" secondAttribute="trailing" constant="5" id="2Vd-tl-Nvi"/>
                                     <constraint firstAttribute="trailing" secondItem="FfP-34-yIV" secondAttribute="trailing" constant="5" id="3zs-Na-n0v"/>
-                                    <constraint firstItem="EAS-uE-1cX" firstAttribute="leading" secondItem="YZH-dZ-J2m" secondAttribute="leading" constant="30" id="6Uu-Ed-6AB"/>
-                                    <constraint firstAttribute="trailing" secondItem="EAS-uE-1cX" secondAttribute="trailing" constant="30" id="PPE-vS-RVY"/>
+                                    <constraint firstItem="EAS-uE-1cX" firstAttribute="leading" secondItem="YZH-dZ-J2m" secondAttribute="leading" constant="40" id="6Uu-Ed-6AB"/>
+                                    <constraint firstAttribute="trailing" secondItem="EAS-uE-1cX" secondAttribute="trailing" constant="40" id="PPE-vS-RVY"/>
                                     <constraint firstItem="dOE-b5-JIb" firstAttribute="leading" secondItem="YZH-dZ-J2m" secondAttribute="leading" constant="5" id="QZ3-g7-nI4"/>
                                     <constraint firstItem="FfP-34-yIV" firstAttribute="leading" secondItem="YZH-dZ-J2m" secondAttribute="leading" constant="5" id="U3v-Yd-ggP"/>
                                     <constraint firstItem="9dl-x0-YAf" firstAttribute="leading" secondItem="YZH-dZ-J2m" secondAttribute="leading" constant="5" id="gdG-0q-naU"/>
