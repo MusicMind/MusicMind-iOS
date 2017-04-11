@@ -15,6 +15,7 @@ final class CameraCaptureViewController: UIViewController {
     
     @IBOutlet private weak var cameraPreviewView: PreviewView!
     @IBOutlet private weak var recordButtonContainer: UIView!
+    @IBOutlet weak var libraryButton: UIButton!
     private var recordButton: RecordButton!
     private let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
     
@@ -26,6 +27,8 @@ final class CameraCaptureViewController: UIViewController {
         setupCaptureSession()
         
         setupNavigationBar(theme: .light)
+        
+        libraryButton.center = CGPoint(x: recordButtonContainer.center.x - 110, y: recordButtonContainer.center.y)
         
         // Set up the record button
         recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
