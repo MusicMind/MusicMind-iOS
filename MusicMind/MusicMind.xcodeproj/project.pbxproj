@@ -12,10 +12,10 @@
 		0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */; };
 		0F1DE25A1E9327C60032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
 		0F1DE25C1E941BDF0032A49A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE25B1E941BDF0032A49A /* UserTests.swift */; };
+		0F1DE25D1E941C000032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
+		0F1DE2611E9423330032A49A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */; };
 		0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2641E9491260032A49A /* FirebaseDataService.swift */; };
-		0F1DE25D1E941C000032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
-		0F1DE2611E9423330032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2601E9423330032A49A /* UserLoginCredentials.swift */; };
 		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
 		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
@@ -32,8 +32,7 @@
 		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
 		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
 		0FF4B6301E8D818400EEAE8C /* (null) in Sources */ = {isa = PBXBuildFile; };
-		0FF4B6301E8D818400EEAE8C /* MobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62F1E8D818400EEAE8C /* MobileViewController.swift */; };
-		0FF4B6321E8D8C6100EEAE8C /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6311E8D8C6100EEAE8C /* EmailPasswordViewController.swift */; };
+		0FF4B6321E8D8C6100EEAE8C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		13B8212CFD3774E4DC2E8009 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
@@ -57,7 +56,7 @@
 		DE503ADA1E94368C00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
 		DE503ADC1E94368F00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
-		DE6494271E7CE6CC003D92D0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */; };
+		DE6494271E7CE6CC003D92D0 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */; };
 		DE6494311E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6494301E7CE741003D92D0 /* SpotifyAuthViewController.swift */; };
 		DE6494361E7CE756003D92D0 /* SpotifyAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6494341E7CE756003D92D0 /* SpotifyAuth.storyboard */; };
@@ -225,9 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */,
-				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
 				DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */,
-				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
 			);
 			name = "Camera capture";
 			sourceTree = "<group>";
@@ -252,8 +249,6 @@
 				0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */,
 				0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */,
 				0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */,
-				0FF4B6311E8D8C6100EEAE8C /* EmailPasswordViewController.swift */,
-				0FF4B62F1E8D818400EEAE8C /* MobileViewController.swift */,
 			);
 			name = "Sign Up";
 			sourceTree = "<group>";
@@ -300,6 +295,15 @@
 			name = "Send to friend";
 			sourceTree = "<group>";
 		};
+		DE379D5D1E9D479B003C921F /* Old CameraCapture stuff */ = {
+			isa = PBXGroup;
+			children = (
+				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
+				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
+			);
+			name = "Old CameraCapture stuff";
+			sourceTree = "<group>";
+		};
 		DE429F751E661BB20050E719 = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +332,10 @@
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE487E051E8D6A3C0025B514 /* Extensions */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
+				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
+				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
+				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
+				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
 				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
 				DE6494251E7CE670003D92D0 /* Log in */,
@@ -343,11 +351,6 @@
 				DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */,
 				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 				DE860DF81E9363C200393B03 /* Old or not in use */,
-				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
-				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
-				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
-				0F1DE2601E9423330032A49A /* UserLoginCredentials.swift */,
-				0F1DE2591E9327C60032A49A /* User.swift */,
 			);
 			path = MusicMind;
 			sourceTree = "<group>";
@@ -387,7 +390,6 @@
 			children = (
 				DE429F851E661BB20050E719 /* LogIn.storyboard */,
 				DEC96E261E957BCD00660262 /* LogInViewController.swift */,
-				DE6494261E7CE6CC003D92D0 /* LogInViewController.swift */,
 			);
 			name = "Log in";
 			sourceTree = "<group>";
@@ -432,6 +434,7 @@
 		DE860DF81E9363C200393B03 /* Old or not in use */ = {
 			isa = PBXGroup;
 			children = (
+				DE379D5D1E9D479B003C921F /* Old CameraCapture stuff */,
 				DE64942F1E7CE71B003D92D0 /* Spotify log in */,
 				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
 			);
@@ -765,7 +768,7 @@
 				0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */,
 				DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */,
 				0FF4B6301E8D818400EEAE8C /* (null) in Sources */,
-				0FF4B6301E8D818400EEAE8C /* MobileViewController.swift in Sources */,
+				0FF4B6301E8D818400EEAE8C /* (null) in Sources */,
 				DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */,
 				DE6494311E7CE741003D92D0 /* SpotifyAuthViewController.swift in Sources */,
 				DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
@@ -789,13 +792,13 @@
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */,
-				DE6494271E7CE6CC003D92D0 /* LogInViewController.swift in Sources */,
+				DE6494271E7CE6CC003D92D0 /* (null) in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
-				0F1DE2611E9423330032A49A /* UserLoginCredentials.swift in Sources */,
+				0F1DE2611E9423330032A49A /* (null) in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
-				0FF4B6321E8D8C6100EEAE8C /* EmailPasswordViewController.swift in Sources */,
+				0FF4B6321E8D8C6100EEAE8C /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
