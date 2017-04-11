@@ -45,19 +45,32 @@ class EmailPasswordViewController: UIViewController {
                 return
         }
         
-        // Save log in info to keychain
-        userLoginCredentials.firebaseUserEmail = email
-        userLoginCredentials.firebaseUserPassword = password
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            //TODO: handle error 17001 when the user exists in fire base
+        EmailVerifier.isValid(email: email) { (valid) in
+            // Save log in info to keychain
+            if !valid {
+                let alertController = UIAlertController(title: "Invalid Email", message: "Please make sure email does not have any special character", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+                    self.passwordTextField.text = nil
+                    self.passwordConfirmationTextField.text = nil
+                })
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
             
-            self.goToCameraCapture()
+            userLoginCredentials.firebaseUserEmail = email
+            userLoginCredentials.firebaseUserPassword = password
             
-            // Post new user to firebase
-            self.newUser.firebaseUUID = user?.uid
-            FirebaseDataService.shared.addUserToUserList(self.newUser)
-        })
+            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                //TODO: handle error 17001 when the user exists in fire base
+                
+                self.goToCameraCapture()
+                
+                // Post new user to firebase
+                self.newUser.firebaseUUID = user?.uid
+                FirebaseDataService.shared.addUserToUserList(self.newUser)
+            })
+        }
     }
     
     
