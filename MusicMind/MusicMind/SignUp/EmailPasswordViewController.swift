@@ -26,6 +26,8 @@ class EmailPasswordViewController: UIViewController {
         passwordTextField.delegate = self
         passwordConfirmationTextField.delegate = self
         
+        self.continueButton.layer.cornerRadius = self.continueButton.frame.height/2
+        
         self.emailTextField.layer.borderColor = UIColor.lightGray.cgColor
         self.emailTextField.layer.borderWidth = 1
         self.emailTextField.layer.cornerRadius = self.emailTextField.frame.size.height/2
