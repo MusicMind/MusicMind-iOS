@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import RecordButton
+import MobileCoreServices
 
 final class CameraCaptureViewController: UIViewController {
     
@@ -105,6 +106,16 @@ final class CameraCaptureViewController: UIViewController {
         
         self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
     }
+    
+    @IBAction func presentSelectFromLibraryViewController(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = [kUTTypeMovie as String]
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
 }
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
     
@@ -112,6 +123,10 @@ extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
         navigateToSendToFriendViewController(self)
     }
 
+}
+
+extension CameraCaptureViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
 }
 
 
