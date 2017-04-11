@@ -10,6 +10,8 @@ import Foundation
 
 extension UIViewController {
     func setupNavigationBar(theme: NavigationBarTheme) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+
         let tintColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         let transparentImage = UIImage.imageColored(color: UIColor.clear)
         let navBar = self.navigationController?.navigationBar

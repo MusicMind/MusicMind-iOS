@@ -20,6 +20,8 @@ final class CameraCaptureViewController: UIViewController {
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         setupCaptureSession()
         
         setupNavigationBar(theme: .light)
@@ -34,8 +36,6 @@ final class CameraCaptureViewController: UIViewController {
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchUpInside)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchDragExit)
         self.view.addSubview(recordButton)
-        
-        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

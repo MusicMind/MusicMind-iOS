@@ -37,10 +37,10 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar(theme: .light)
+        
         emailField.delegate = self
         passwordField.delegate = self
-        
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         if let email = userLoginCredentials.firebaseUserEmail {
             emailField.text = email
@@ -55,10 +55,6 @@ class LogInViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        
-        if isMovingFromParentViewController {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-        }
     }
     
     func goToCameraCapture() {
