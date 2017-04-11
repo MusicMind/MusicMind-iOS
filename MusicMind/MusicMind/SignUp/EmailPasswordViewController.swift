@@ -31,6 +31,21 @@ class EmailPasswordViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
+    }
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    func goToCameraCapture() {
+        let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
+        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
+    func createNewUser(){
         guard let email = emailTextField.text,
             let password = passwordTextField.text,
             let confirmedPassword = passwordConfirmationTextField.text,
@@ -45,72 +60,47 @@ class EmailPasswordViewController: UIViewController {
                 return
         }
         
-        EmailVerifier.isValid(email: email) { (valid) in
+        // Save log in info to keychain
+        userLoginCredentials.firebaseUserEmail = email
+        userLoginCredentials.firebaseUserPassword = password
+        
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+            //TODO: handle error 17001 when the user exists in fire base
             
-            if !valid {
-                let alertController = UIAlertController(title: "Invalid Email", message: "Please make sure email does not have any special character", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
-                    self.passwordTextField.text = nil
-                    self.passwordConfirmationTextField.text = nil
-                })
+            func presentErrorWith(string: String){
+                let alertController = UIAlertController(title: "Firebase Error", message: "Error Code: \(string)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-                return
+                self.present(alertController, animated: true, completion: {
+                    return
+                })
             }
             
-            // Save log in info to keychain
-            userLoginCredentials.firebaseUserEmail = email
-            userLoginCredentials.firebaseUserPassword = password
-            
-            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-                //TODO: handle error 17001 when the user exists in fire base
-                
-                func presentErrorWith(string: String){
-                    let alertController = UIAlertController(title: "Firebase Error", message: "Error Code: \(string)", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(okAction)
-                    self.present(alertController, animated: true, completion: {
-                        return
-                    })
-                }
-                
-                if let error = error {
-                    if let errorCode = FIRAuthErrorCode(rawValue: (error._code)){
-                        switch errorCode{
-                        case .errorCodeInvalidEmail:
-                            presentErrorWith(string: "Invalid Email")
-                        case .errorCodeWeakPassword:
-                            presentErrorWith(string: "Password too weak")
-                        case .errorCodeEmailAlreadyInUse:
-                            presentErrorWith(string: "Email already in use")
-                        default:
-                            print(errorCode.rawValue)
-                        }
+            if let error = error {
+                if let errorCode = FIRAuthErrorCode(rawValue: (error._code)){
+                    switch errorCode{
+                    case .errorCodeInvalidEmail:
+                        presentErrorWith(string: "Invalid Email")
+                    case .errorCodeWeakPassword:
+                        presentErrorWith(string: "Password too weak")
+                    case .errorCodeEmailAlreadyInUse:
+                        presentErrorWith(string: "Email already in use")
+                    default:
+                        print(errorCode.rawValue)
                     }
                 }
-                
-                self.goToCameraCapture()
-                
-                // Post new user to firebase
-                self.newUser.firebaseUUID = user?.uid
-                
-                if self.newUser.firebaseUUID != nil {
-                    FirebaseDataService.shared.addUserToUserList(self.newUser)
-                }
-            })
-        }
-    }
-    
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            }
+            
+            self.goToCameraCapture()
+            
+            // Post new user to firebase
+            self.newUser.firebaseUUID = user?.uid
+            
+            if self.newUser.firebaseUUID != nil {
+                FirebaseDataService.shared.addUserToUserList(self.newUser)
+            }
+        })
         
-    }
-    
-    func goToCameraCapture() {
-        let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
-        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
-        self.present(vc!, animated: true, completion: nil)
     }
 }
 
