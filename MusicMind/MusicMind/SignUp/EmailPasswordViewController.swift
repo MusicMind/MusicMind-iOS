@@ -15,6 +15,7 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     
     var newUser = User()
     
@@ -24,6 +25,19 @@ class EmailPasswordViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordConfirmationTextField.delegate = self
+        
+        self.emailTextField.layer.borderColor = UIColor.lightGray.cgColor
+        self.emailTextField.layer.borderWidth = 1
+        self.emailTextField.layer.cornerRadius = self.emailTextField.frame.size.height/2
+        
+        self.passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
+        self.passwordTextField.layer.borderWidth = 1
+        self.passwordTextField.layer.cornerRadius = self.passwordTextField.frame.size.height/2
+        
+        self.passwordConfirmationTextField.layer.borderColor = UIColor.lightGray.cgColor
+        self.passwordConfirmationTextField.layer.borderWidth = 1
+        self.passwordConfirmationTextField.layer.cornerRadius = self.passwordConfirmationTextField.frame.size.height/2
+        
         
         print(newUser.dictionaryRepresentation)
         

@@ -25,6 +25,20 @@ class NameViewController: UIViewController {
 
         self.firstNameTextField.delegate = self
         self.lastNameTextField.delegate = self
+        
+        self.firstNameTextField.layer.borderColor = UIColor.lightGray.cgColor
+        self.firstNameTextField.layer.borderWidth = 1
+        self.firstNameTextField.layer.cornerRadius = self.firstNameTextField.frame.size.height/2
+    
+        self.lastNameTextField.layer.borderColor = UIColor.lightGray.cgColor
+        self.lastNameTextField.layer.borderWidth = 1
+        self.lastNameTextField.layer.cornerRadius = self.firstNameTextField.frame.size.height/2
+        
+        self.signUpButton.backgroundColor = UIColor.init(colorLiteralRed: 255/255.0, green: 0/255.0, blue: 138/255.0, alpha:1)
+        self.signUpButton.titleLabel?.textColor = UIColor.white
+        self.signUpButton.layer.cornerRadius = self.firstNameTextField.frame.size.height/2
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-sZ-AWv">
-                                <rect key="frame" x="0.0" y="183" width="375" height="50"/>
+                                <rect key="frame" x="5" y="183" width="365" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="raE-t0-xkV"/>
                                 </constraints>
@@ -45,20 +45,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAg-yy-FxI">
-                                <rect key="frame" x="0.0" y="287" width="375" height="50"/>
+                                <rect key="frame" x="56" y="287" width="263" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.53981655839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UZs-nl-c5b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Accept &amp; Continue">
-                                    <color key="titleColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="FBA-98-8r4" kind="show" identifier="goToBirthdayVC" id="buy-m0-rnE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjX-K6-gYV">
-                                <rect key="frame" x="0.0" y="113" width="375" height="50"/>
+                                <rect key="frame" x="5" y="113" width="365" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BYj-Gn-3Pr"/>
                                 </constraints>
@@ -69,20 +70,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wjX-K6-gYV" firstAttribute="leading" secondItem="jee-Yb-mpD" secondAttribute="leading" constant="5" id="1Qp-FC-Z8d"/>
+                            <constraint firstItem="GAg-yy-FxI" firstAttribute="leading" secondItem="jee-Yb-mpD" secondAttribute="leadingMargin" constant="40" id="30m-YM-ZgM"/>
                             <constraint firstItem="gaf-sZ-AWv" firstAttribute="centerX" secondItem="wjX-K6-gYV" secondAttribute="centerX" id="815-Jd-ALM"/>
                             <constraint firstItem="7HA-Yj-jAe" firstAttribute="centerX" secondItem="jee-Yb-mpD" secondAttribute="centerX" id="8M5-YR-eCf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wjX-K6-gYV" secondAttribute="trailing" constant="5" id="8cb-b8-1KI"/>
                             <constraint firstItem="GAg-yy-FxI" firstAttribute="top" secondItem="bbM-GX-JvJ" secondAttribute="bottom" constant="30" id="9QZ-Rl-nO8"/>
                             <constraint firstItem="bbM-GX-JvJ" firstAttribute="top" secondItem="gaf-sZ-AWv" secondAttribute="bottom" constant="10" id="JG3-rl-GE6"/>
-                            <constraint firstItem="wjX-K6-gYV" firstAttribute="width" secondItem="jee-Yb-mpD" secondAttribute="width" id="Jb2-7n-UIi"/>
                             <constraint firstItem="bbM-GX-JvJ" firstAttribute="centerX" secondItem="jee-Yb-mpD" secondAttribute="centerX" id="JzE-mJ-PhS"/>
+                            <constraint firstItem="gaf-sZ-AWv" firstAttribute="leading" secondItem="jee-Yb-mpD" secondAttribute="leading" constant="5" id="LjF-t5-dax"/>
+                            <constraint firstAttribute="trailing" secondItem="gaf-sZ-AWv" secondAttribute="trailing" constant="5" id="PBn-HN-Ycb"/>
                             <constraint firstItem="gaf-sZ-AWv" firstAttribute="top" secondItem="wjX-K6-gYV" secondAttribute="bottom" constant="20" id="U1T-z9-DDV"/>
                             <constraint firstItem="7HA-Yj-jAe" firstAttribute="top" secondItem="yXF-Oq-qdd" secondAttribute="bottom" constant="30" id="Zk5-Ji-Nal"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GAg-yy-FxI" secondAttribute="trailing" constant="40" id="cOh-99-XGL"/>
                             <constraint firstItem="GAg-yy-FxI" firstAttribute="centerX" secondItem="jee-Yb-mpD" secondAttribute="centerX" id="gxf-Gh-pUU"/>
                             <constraint firstItem="wjX-K6-gYV" firstAttribute="centerX" secondItem="jee-Yb-mpD" secondAttribute="centerX" id="jQl-Wa-l36"/>
-                            <constraint firstItem="gaf-sZ-AWv" firstAttribute="width" secondItem="jee-Yb-mpD" secondAttribute="width" id="kLM-sm-d57"/>
                             <constraint firstItem="wjX-K6-gYV" firstAttribute="top" secondItem="7HA-Yj-jAe" secondAttribute="bottom" constant="30" id="mzL-xb-gdB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bbM-GX-JvJ" secondAttribute="trailing" constant="50" id="rbx-yV-UTh"/>
-                            <constraint firstItem="GAg-yy-FxI" firstAttribute="width" secondItem="jee-Yb-mpD" secondAttribute="width" id="tAg-Q2-38S"/>
                             <constraint firstItem="bbM-GX-JvJ" firstAttribute="leading" secondItem="jee-Yb-mpD" secondAttribute="leadingMargin" constant="50" id="y0v-dc-qWf"/>
                         </constraints>
                     </view>
@@ -239,6 +243,10 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="EAS-uE-1cX" firstAttribute="leading" secondItem="YZH-dZ-J2m" secondAttribute="leading" constant="30" id="6Uu-Ed-6AB"/>
+                                    <constraint firstAttribute="trailing" secondItem="EAS-uE-1cX" secondAttribute="trailing" constant="30" id="PPE-vS-RVY"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -251,6 +259,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueButton" destination="EAS-uE-1cX" id="18q-z5-bB4"/>
                         <outlet property="emailTextField" destination="dOE-b5-JIb" id="1VX-k8-uRY"/>
                         <outlet property="passwordConfirmationTextField" destination="FfP-34-yIV" id="BgT-QB-ofs"/>
                         <outlet property="passwordTextField" destination="9dl-x0-YAf" id="Imp-qV-hg7"/>
