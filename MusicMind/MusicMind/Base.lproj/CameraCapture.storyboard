@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5S-mR-bBx" userLabel="RecordButtonContainerView">
-                                        <rect key="frame" x="137" y="510" width="100" height="100"/>
+                                        <rect key="frame" x="137" y="537" width="100" height="100"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="MkA-XQ-FW5"/>
@@ -36,12 +36,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="w5S-mR-bBx" secondAttribute="bottom" constant="57" id="PQQ-65-YG3"/>
+                                    <constraint firstAttribute="bottom" secondItem="w5S-mR-bBx" secondAttribute="bottom" constant="30" id="PQQ-65-YG3"/>
                                     <constraint firstItem="w5S-mR-bBx" firstAttribute="centerX" secondItem="p2Q-BA-tgI" secondAttribute="centerX" id="TAL-oS-iPk"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
-                                <rect key="frame" x="321" y="74" width="30" height="28"/>
+                                <rect key="frame" x="316" y="87" width="30" height="28"/>
                                 <state key="normal" image="Flip camera"/>
                                 <connections>
                                     <action selector="flipCameras:" destination="sBF-OT-sPe" eventType="touchUpInside" id="otq-49-243"/>
@@ -51,20 +51,22 @@
                                 <rect key="frame" x="159" y="315" width="57" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Library">
                                     <color key="titleColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="presentSelectFromLibraryViewController:" destination="sBF-OT-sPe" eventType="touchUpInside" id="PgJ-hw-ALn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="10" id="QR0-Rg-uFX"/>
+                            <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="QR0-Rg-uFX"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="RDB-b0-Lfb"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerY" secondItem="Fk2-94-Jwe" secondAttribute="centerY" id="TMm-tF-teb"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="width" secondItem="Fk2-94-Jwe" secondAttribute="width" id="ami-Eg-e8J"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="8" id="r0N-28-aJ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="13" id="r0N-28-aJ1"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="height" secondItem="Fk2-94-Jwe" secondAttribute="height" id="zyO-gK-gYf"/>
                         </constraints>
                     </view>

@@ -129,6 +129,8 @@ extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
 }
 
 extension CameraCaptureViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+
     
 }
 
