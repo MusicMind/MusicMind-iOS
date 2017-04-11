@@ -58,11 +58,10 @@ final class CameraCaptureViewController: UIViewController {
     let session = AVCaptureSession()
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     var cameraCaptureOutput: AVCaptureMovieFileOutput?
+    let cameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
 
     func setupCaptureSession() {
         session.sessionPreset = AVCaptureSessionPresetHigh
-        
-        let cameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
             let cameraInput = try AVCaptureDeviceInput(device: cameraDevice)
@@ -88,12 +87,15 @@ final class CameraCaptureViewController: UIViewController {
     // MARK: - Camera interaction
     
     @IBAction func flipCameras(_ sender: Any) {
+        session.beginConfiguration()
         
-        let discoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInDualCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.unspecified)
         
-        print(discoverySession!.devices.description)
-        
-//        camera = AVCaptureDevice.defaultDevice(withDeviceType: AVCaptureDeviceType.builtInDualCamera, mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
+        let devices = AVCaptureDevice.devices()
+
+//        let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: <#T##[AVCaptureDeviceType]!#>, mediaType: <#T##String!#>, position: <#T##AVCaptureDevicePosition#>)
+
+
+        session.commitConfiguration()
     }
     
     func startRecordingVideo() {
