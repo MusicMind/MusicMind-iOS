@@ -17,7 +17,7 @@ final class CameraCaptureViewController: UIViewController {
     @IBOutlet private weak var recordButtonContainer: UIView!
     @IBOutlet weak var libraryButton: UIButton!
     private var recordButton: RecordButton!
-    private let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
+    fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
     
     // MARK: - View Controller Lifecycle
     
@@ -102,10 +102,10 @@ final class CameraCaptureViewController: UIViewController {
     
     // MARK: - Navigation
     
-    fileprivate func navigateToSendToFriendViewController(_ sender: Any) {
+    fileprivate func navigateToSendToFriendViewController(movieURL: URL) {
         let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriendViewController") as! SendToFriendViewController
         
-        sendToFriendViewController.urlOfVideo = newMovieFileUrl
+        sendToFriendViewController.urlOfVideo = movieURL
         
         self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
     }
@@ -123,14 +123,20 @@ final class CameraCaptureViewController: UIViewController {
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
-        navigateToSendToFriendViewController(self)
+        navigateToSendToFriendViewController(movieURL: newMovieFileUrl)
     }
 
 }
 
 extension CameraCaptureViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let urlForMovie = info[UIImagePickerControllerMediaURL] as? URL {
+            navigateToSendToFriendViewController(movieURL: urlForMovie)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
     
 }
 
