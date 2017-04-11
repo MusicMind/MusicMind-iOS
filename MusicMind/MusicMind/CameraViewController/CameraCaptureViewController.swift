@@ -15,19 +15,21 @@ final class CameraCaptureViewController: UIViewController {
     
     @IBOutlet private weak var cameraPreviewView: PreviewView!
     @IBOutlet private weak var recordButtonContainer: UIView!
-    @IBOutlet weak var libraryButton: UIButton!
+    @IBOutlet private weak var libraryButton: UIButton!
     private var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
+    
     
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Setups
         setupCaptureSession()
-        
         setupNavigationBar(theme: .light)
         
+        // Position the library button
         libraryButton.center = CGPoint(x: recordButtonContainer.center.x - 110, y: recordButtonContainer.center.y)
         
         // Set up the record button
@@ -82,6 +84,8 @@ final class CameraCaptureViewController: UIViewController {
         
         session.startRunning()
     }
+    
+    // MARK: - Camera interaction
     
     @IBAction func flipCameras(_ sender: Any) {
         
