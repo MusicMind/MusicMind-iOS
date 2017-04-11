@@ -20,30 +20,21 @@ class CameraCaptureViewController: UIViewController {
     
     // AV Foundation Capture objects
     let session = AVCaptureSession()
-    var camera: AVCaptureDevice?
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     var cameraCaptureOutput: AVCaptureMovieFileOutput?
 
-    
     override func viewDidLoad() {
-
         setupCaptureSession()
-        
         
         // Set up the record button
         recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
-        
         recordButton.center = recordButtonContainer.center
-        
         recordButton.buttonColor = .white
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
-        
         recordButton.addTarget(self, action: #selector(self.startRecordingVideo), for: .touchDown)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchUpInside)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchDragExit)
-        
-        
         self.view.addSubview(recordButton)
         
         super.viewDidLoad()
@@ -52,14 +43,14 @@ class CameraCaptureViewController: UIViewController {
     func setupCaptureSession() {
         session.sessionPreset = AVCaptureSessionPresetHigh
         
-        camera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let cameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
-            let cameraCaptureInput = try AVCaptureDeviceInput(device: camera)
+            let cameraInput = try AVCaptureDeviceInput(device: cameraDevice)
             
             cameraCaptureOutput = AVCaptureMovieFileOutput()
             
-            session.addInput(cameraCaptureInput)
+            session.addInput(cameraInput)
             session.addOutput(cameraCaptureOutput)
         } catch {
             print(error.localizedDescription)
@@ -76,11 +67,15 @@ class CameraCaptureViewController: UIViewController {
     }
     
     @IBAction func flipCameras(_ sender: Any) {
-
+        
+        let discoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInDualCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.unspecified)
+        
+        print(discoverySession?.devices.description)
+        
+//        camera = AVCaptureDevice.defaultDevice(withDeviceType: AVCaptureDeviceType.builtInDualCamera, mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
     }
     
     func startRecordingVideo() {
-
         cameraCaptureOutput?.startRecording(toOutputFileURL: newMovieFileUrl, recordingDelegate: self)
     }
     
