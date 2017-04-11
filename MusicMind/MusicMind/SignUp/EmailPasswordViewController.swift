@@ -46,7 +46,7 @@ class EmailPasswordViewController: UIViewController {
         }
         
         EmailVerifier.isValid(email: email) { (valid) in
-            // Save log in info to keychain
+            
             if !valid {
                 let alertController = UIAlertController(title: "Invalid Email", message: "Please make sure email does not have any special character", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
@@ -58,16 +58,35 @@ class EmailPasswordViewController: UIViewController {
                 return
             }
             
+            // Save log in info to keychain
             userLoginCredentials.firebaseUserEmail = email
             userLoginCredentials.firebaseUserPassword = password
             
             FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                 //TODO: handle error 17001 when the user exists in fire base
                 
+                if let errorCode = FIRAuthErrorCode(rawValue: error!._code){
+                    let alertController = UIAlertController(title: "Firebase Error", message: "Error Code: \(errorCode.rawValue)", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(okAction)
+                    print("ERROR IS \(errorCode.rawValue)")
+                    switch errorCode{
+                    case .errorCodeInvalidEmail:
+                        self.present(alertController, animated: true, completion: { return })
+                    case .errorCodeWeakPassword:
+                        self.present(alertController, animated: true, completion: { return })
+                    case .errorCodeEmailAlreadyInUse:
+                        self.present(alertController, animated: true, completion: { return })
+                    default:
+                        print(errorCode.rawValue)
+                    }
+                }
+                
                 self.goToCameraCapture()
                 
                 // Post new user to firebase
                 self.newUser.firebaseUUID = user?.uid
+                
                 FirebaseDataService.shared.addUserToUserList(self.newUser)
             })
         }
