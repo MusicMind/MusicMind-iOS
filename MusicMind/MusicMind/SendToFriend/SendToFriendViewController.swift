@@ -10,10 +10,10 @@ import UIKit
 import Firebase
 import MobileCoreServices
 
-class SendToFriendViewController: UIViewController {
+final class SendToFriendViewController: UIViewController {
     
     var urlOfVideo: URL?
-    var downloadURLString: String?
+    private var downloadURLString: String?
 
     @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
@@ -40,8 +40,6 @@ class SendToFriendViewController: UIViewController {
         //  Store URL
         let uploadTask = storageRef.putFile(urlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
             if error == nil {
-                print("Upload successful. Metadata: \(metadata)")
-                
                 let downloadURL = metadata?.downloadURL()
                 
                 print(downloadURL!.absoluteString)
@@ -89,26 +87,8 @@ class SendToFriendViewController: UIViewController {
             urlLabel.text = url.absoluteString
             print(url.absoluteString)
         }
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SendToFriendViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

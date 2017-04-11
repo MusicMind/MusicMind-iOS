@@ -10,19 +10,15 @@ import UIKit
 import AVFoundation
 import RecordButton
 
-class CameraCaptureViewController: UIViewController {
+final class CameraCaptureViewController: UIViewController {
     
-    @IBOutlet weak var cameraPreviewView: PreviewView!
-    @IBOutlet weak var recordButtonContainer: UIView!
-    var recordButton: RecordButton!
+    @IBOutlet private weak var cameraPreviewView: PreviewView!
+    @IBOutlet private weak var recordButtonContainer: UIView!
+    private var recordButton: RecordButton!
+    private let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
     
-    let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
+    // MARK: - View Controller Lifecycle
     
-    // AV Foundation Capture objects
-    let session = AVCaptureSession()
-    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
-    var cameraCaptureOutput: AVCaptureMovieFileOutput?
-
     override func viewDidLoad() {
         setupCaptureSession()
         
@@ -44,6 +40,12 @@ class CameraCaptureViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // MARK: - AV Capturing
+    
+    let session = AVCaptureSession()
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var cameraCaptureOutput: AVCaptureMovieFileOutput?
+
     func setupCaptureSession() {
         session.sessionPreset = AVCaptureSessionPresetHigh
         
@@ -87,13 +89,16 @@ class CameraCaptureViewController: UIViewController {
         cameraCaptureOutput?.stopRecording()
     }
     
+    // MARK: - Navigation
+    
     fileprivate func navigateToSendToFriendViewController(_ sender: Any) {
-        let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
+        let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriendViewController") as! SendToFriendViewController
+        
+//        sendToFriendViewController.urlOfVideo
         
         self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
     }
 }
-
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
