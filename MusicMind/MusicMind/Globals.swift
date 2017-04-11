@@ -14,4 +14,8 @@ let userLoginCredentials = UserLoginCredentials()
 let user = User()
 
 
-let secondaryTextColor = UIColor(red: 255/255, green: 239/255, blue: 148/255, alpha: 1)
+
+enum NavigationBarTheme {
+    case light
+    case dark
+}

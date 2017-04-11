@@ -67,6 +67,7 @@
 		DE860DEC1E93618900393B03 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEA1E93618900393B03 /* Welcome.storyboard */; };
 		DE860DF11E93626D00393B03 /* MusicSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */; };
 		DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */; };
+		DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8EE3AF1E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift */; };
 		DEA2A7A21E946B0700D78E23 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */; };
 		DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
@@ -161,6 +162,7 @@
 		DE860DEB1E93618900393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Welcome.storyboard; sourceTree = "<group>"; };
 		DE860DF01E93626D00393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MusicSearch.storyboard; sourceTree = "<group>"; };
 		DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
+		DE8EE3AF1E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+setupNavigationBarWithTheme.swift"; sourceTree = "<group>"; };
 		DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraCaptureViewController.swift; path = CameraViewController/CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageColored.swift"; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */,
 				DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */,
 				DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
+				DE8EE3AF1E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
 				0FF4B6321E8D8C6100EEAE8C /* (null) in Sources */,
+				DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

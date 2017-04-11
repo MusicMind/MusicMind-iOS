@@ -22,13 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRy-Br-JZ9">
-                                <rect key="frame" x="16" y="20" width="67" height="30"/>
-                                <state key="normal" title="&lt; Camera"/>
-                                <connections>
-                                    <action selector="goBackToCamera:" destination="Jec-zz-Xld" eventType="touchUpInside" id="0JR-fc-kxX"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnH-UI-DRv">
                                 <rect key="frame" x="166" y="69" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -76,9 +69,7 @@
                             <constraint firstItem="XPR-tH-H9h" firstAttribute="top" secondItem="SnH-UI-DRv" secondAttribute="bottom" constant="58" id="BOd-v9-8Ss"/>
                             <constraint firstItem="SnH-UI-DRv" firstAttribute="centerX" secondItem="qnJ-tZ-yTf" secondAttribute="centerX" id="Hjy-TQ-CBX"/>
                             <constraint firstItem="XPR-tH-H9h" firstAttribute="centerX" secondItem="qnJ-tZ-yTf" secondAttribute="centerX" id="Hzk-EG-GAO"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="nRy-Br-JZ9" secondAttribute="leading" id="L8M-zC-tHm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oQc-us-pM0" secondAttribute="trailing" id="OSo-T4-ioB"/>
-                            <constraint firstItem="nRy-Br-JZ9" firstAttribute="top" secondItem="UZR-ac-ZeE" secondAttribute="bottom" id="YSZ-gc-OFq"/>
                             <constraint firstItem="bCM-11-mxe" firstAttribute="centerX" secondItem="qnJ-tZ-yTf" secondAttribute="centerX" constant="3.5" id="ZaV-4l-rzg"/>
                             <constraint firstAttribute="leadingMargin" secondItem="oQc-us-pM0" secondAttribute="leading" id="da0-5u-iOE"/>
                             <constraint firstItem="Wk5-1u-3Af" firstAttribute="centerX" secondItem="qnJ-tZ-yTf" secondAttribute="centerX" id="iBA-9z-k1U"/>

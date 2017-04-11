@@ -14,10 +14,32 @@ final class SendToFriendViewController: UIViewController {
     
     var urlOfVideo: URL?
     private var downloadURLString: String?
-
     @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var urlLabel: UILabel!
+    
+    // MARK: - View Controller Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        if let unwrappedNavigationController = navigationController {
+//            unwrappedNavigationController.navigationBar.isHidden = false
+//        }
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        
+        
+        self.progressBar.isHidden = true
+        
+        if let url = urlOfVideo {
+            urlLabel.text = url.absoluteString
+            print(url.absoluteString)
+        }
+    }
+    
+    
     
     @IBAction func copyDownloadUrlToClipboard(_ sender: Any) {
         if let urlString = self.downloadURLString {
@@ -63,12 +85,6 @@ final class SendToFriendViewController: UIViewController {
         }
     }
     
-    @IBAction func goBackToCamera(_ sender: Any) {
-        // Show the camera view controller
-        let cameraViewController = UIStoryboard(name: "CameraCapture", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureViewController")
-        self.present(cameraViewController, animated: true, completion: nil)
-    }
-    
     @IBAction func selectFromLibrary(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -78,16 +94,6 @@ final class SendToFriendViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.progressBar.isHidden = true
-
-        if let url = urlOfVideo {
-            urlLabel.text = url.absoluteString
-            print(url.absoluteString)
-        }
-    }
     
 }
 

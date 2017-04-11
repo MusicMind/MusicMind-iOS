@@ -22,9 +22,7 @@ final class CameraCaptureViewController: UIViewController {
     override func viewDidLoad() {
         setupCaptureSession()
         
-        if let unwrappedNavigationController = navigationController {
-            unwrappedNavigationController.navigationBar.isHidden = true
-        }
+        setupNavigationBar(theme: .light)
         
         // Set up the record button
         recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
@@ -38,6 +36,10 @@ final class CameraCaptureViewController: UIViewController {
         self.view.addSubview(recordButton)
         
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - AV Capturing
