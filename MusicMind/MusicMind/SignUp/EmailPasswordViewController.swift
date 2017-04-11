@@ -65,18 +65,23 @@ class EmailPasswordViewController: UIViewController {
             FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                 //TODO: handle error 17001 when the user exists in fire base
                 
-                if let errorCode = FIRAuthErrorCode(rawValue: error!._code){
-                    let alertController = UIAlertController(title: "Firebase Error", message: "Error Code: \(errorCode.rawValue)", preferredStyle: .alert)
+                func presentErrorWith(string: String){
+                    let alertController = UIAlertController(title: "Firebase Error", message: "Error Code: \(string)", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(okAction)
-                    print("ERROR IS \(errorCode.rawValue)")
+                    self.present(alertController, animated: true, completion: { 
+                        return
+                    })
+                }
+                
+                if let errorCode = FIRAuthErrorCode(rawValue: error!._code){
                     switch errorCode{
                     case .errorCodeInvalidEmail:
-                        self.present(alertController, animated: true, completion: { return })
+                        presentErrorWith(string: "Invalid Email")
                     case .errorCodeWeakPassword:
-                        self.present(alertController, animated: true, completion: { return })
+                        presentErrorWith(string: "Password too weak")
                     case .errorCodeEmailAlreadyInUse:
-                        self.present(alertController, animated: true, completion: { return })
+                        presentErrorWith(string: "Email already in use")
                     default:
                         print(errorCode.rawValue)
                     }
@@ -87,7 +92,9 @@ class EmailPasswordViewController: UIViewController {
                 // Post new user to firebase
                 self.newUser.firebaseUUID = user?.uid
                 
-                FirebaseDataService.shared.addUserToUserList(self.newUser)
+                if self.newUser.firebaseUUID != nil {
+                    FirebaseDataService.shared.addUserToUserList(self.newUser)
+                }
             })
         }
     }
