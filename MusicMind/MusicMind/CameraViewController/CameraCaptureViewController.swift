@@ -87,7 +87,7 @@ class CameraCaptureViewController: UIViewController {
         cameraCaptureOutput?.stopRecording()
     }
     
-    fileprivate func openSendToFriend(_ sender: Any) {
+    fileprivate func navigateToSendToFriendViewController(_ sender: Any) {
         let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
         
         self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
@@ -97,7 +97,7 @@ class CameraCaptureViewController: UIViewController {
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
-        openSendToFriend(self)
+        navigateToSendToFriendViewController(self)
     }
 
 }
