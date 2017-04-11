@@ -31,12 +31,12 @@ class EmailPasswordViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
+        createNewUser()
     }
     
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
     }
     
     func goToCameraCapture() {
@@ -111,7 +111,7 @@ extension EmailPasswordViewController: UITextFieldDelegate {
         } else if textField == passwordTextField {
             passwordConfirmationTextField.becomeFirstResponder()
         } else {
-            goToCameraCapture()
+            createNewUser()
         }
         
         return true
