@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBF-OT-sPe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vS2-12-OvP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera-->
+        <!--Camera Capture View Controller-->
         <scene sceneID="pmW-aq-Qff">
             <objects>
                 <viewController storyboardIdentifier="CameraCaptureViewController" id="sBF-OT-sPe" customClass="CameraCaptureViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
-                                <rect key="frame" x="321" y="30" width="30" height="28"/>
+                                <rect key="frame" x="321" y="74" width="30" height="28"/>
                                 <state key="normal" image="Flip camera"/>
                                 <connections>
                                     <action selector="flipCameras:" destination="sBF-OT-sPe" eventType="touchUpInside" id="otq-49-243"/>
@@ -58,7 +58,7 @@
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="height" secondItem="Fk2-94-Jwe" secondAttribute="height" id="zyO-gK-gYf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="rmX-B7-GC3"/>
+                    <navigationItem key="navigationItem" id="abx-js-koV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraPreviewView" destination="p2Q-BA-tgI" id="WHu-pH-iuI"/>
@@ -66,6 +66,25 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHQ-cp-EhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="10.344827586206897"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="5BW-Lr-jx8">
+            <objects>
+                <navigationController storyboardIdentifier="CameraCaptureNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vS2-12-OvP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Camera" id="rmX-B7-GC3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ioD-qg-TJA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sBF-OT-sPe" kind="relationship" relationship="rootViewController" id="Znn-Jj-k3U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWL-xj-7hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16.800000000000001" y="10.344827586206897"/>
         </scene>

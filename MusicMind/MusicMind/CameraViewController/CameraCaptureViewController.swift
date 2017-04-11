@@ -26,6 +26,10 @@ class CameraCaptureViewController: UIViewController {
     override func viewDidLoad() {
         setupCaptureSession()
         
+        if let unwrappedNavigationController = navigationController {
+            unwrappedNavigationController.navigationBar.isHidden = true
+        }
+        
         // Set up the record button
         recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
         recordButton.center = recordButtonContainer.center
@@ -70,7 +74,7 @@ class CameraCaptureViewController: UIViewController {
         
         let discoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInDualCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.unspecified)
         
-        print(discoverySession?.devices.description)
+        print(discoverySession!.devices.description)
         
 //        camera = AVCaptureDevice.defaultDevice(withDeviceType: AVCaptureDeviceType.builtInDualCamera, mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
     }
@@ -83,21 +87,19 @@ class CameraCaptureViewController: UIViewController {
         cameraCaptureOutput?.stopRecording()
     }
     
-    func openSendToFriend(_ sender: Any) {
+    fileprivate func openSendToFriend(_ sender: Any) {
         let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriend") as! SendToFriendViewController
         
-        self.present(sendToFriendViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
     }
 }
 
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
-    func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
-        // code
-    }
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
-        // code
+        openSendToFriend(self)
     }
+
 }
 
 

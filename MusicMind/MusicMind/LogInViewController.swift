@@ -63,8 +63,9 @@ class LogInViewController: UIViewController {
     
     func goToCameraCapture() {
         let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
-        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
-        self.present(vc!, animated: true, completion: nil)
+        weak var cameraCaptureNavigationController = storyboard.instantiateViewController(withIdentifier: "CameraCaptureNavigationController")
+        
+        self.present(cameraCaptureNavigationController!, animated: true, completion: nil)
     }
 }
 
