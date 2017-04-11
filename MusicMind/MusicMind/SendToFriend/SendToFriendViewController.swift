@@ -23,14 +23,6 @@ final class SendToFriendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let unwrappedNavigationController = navigationController {
-//            unwrappedNavigationController.navigationBar.isHidden = false
-//        }
-        
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        
-        
-        
         self.progressBar.isHidden = true
         
         if let url = urlOfVideo {
@@ -39,7 +31,9 @@ final class SendToFriendViewController: UIViewController {
         }
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar(theme: .light)
+    }
     
     @IBAction func copyDownloadUrlToClipboard(_ sender: Any) {
         if let urlString = self.downloadURLString {

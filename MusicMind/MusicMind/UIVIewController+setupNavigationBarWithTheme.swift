@@ -18,5 +18,9 @@ extension UIViewController {
         navBar?.shadowImage = transparentImage
         navBar?.isTranslucent = true
         navBar?.tintColor = tintColor
+        
+        // And show status bar
+        UIApplication.shared.statusBarStyle = .default
+        UIApplication.shared.isStatusBarHidden = false
     }
 }

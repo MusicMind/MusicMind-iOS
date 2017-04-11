@@ -42,6 +42,11 @@ final class CameraCaptureViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    
     // MARK: - AV Capturing
     
     let session = AVCaptureSession()
