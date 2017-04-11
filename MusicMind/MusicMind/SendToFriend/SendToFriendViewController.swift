@@ -41,7 +41,7 @@ final class SendToFriendViewController: UIViewController {
         }
     }
     
-    func attemptUpload(_ sender: Any) {
+    @IBAction func attemptUpload(_ sender: Any) {
         self.progressBar.isHidden = false
         
         //  Store Current Date

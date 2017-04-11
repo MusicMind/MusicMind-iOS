@@ -101,7 +101,7 @@ final class CameraCaptureViewController: UIViewController {
     fileprivate func navigateToSendToFriendViewController(_ sender: Any) {
         let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriendViewController") as! SendToFriendViewController
         
-//        sendToFriendViewController.urlOfVideo
+        sendToFriendViewController.urlOfVideo = newMovieFileUrl
         
         self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
     }

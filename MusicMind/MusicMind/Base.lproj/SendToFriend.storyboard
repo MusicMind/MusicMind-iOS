@@ -60,6 +60,13 @@
                                     <action selector="copyDownloadUrlToClipboard:" destination="Jec-zz-Xld" eventType="touchUpInside" id="0vp-Yc-X1C"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnO-Fu-dSm">
+                                <rect key="frame" x="134" y="411" width="106" height="30"/>
+                                <state key="normal" title="Attempt upload"/>
+                                <connections>
+                                    <action selector="attemptUpload:" destination="Jec-zz-Xld" eventType="touchUpInside" id="ayQ-eI-G1u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -67,6 +74,7 @@
                             <constraint firstItem="oQc-us-pM0" firstAttribute="top" secondItem="bCM-11-mxe" secondAttribute="bottom" constant="19" id="4sK-bI-Ici"/>
                             <constraint firstItem="Wk5-1u-3Af" firstAttribute="top" secondItem="oQc-us-pM0" secondAttribute="bottom" constant="8" id="BBh-Aa-vMk"/>
                             <constraint firstItem="XPR-tH-H9h" firstAttribute="top" secondItem="SnH-UI-DRv" secondAttribute="bottom" constant="58" id="BOd-v9-8Ss"/>
+                            <constraint firstItem="mnO-Fu-dSm" firstAttribute="top" secondItem="Wk5-1u-3Af" secondAttribute="bottom" constant="56" id="DyO-IF-LRV"/>
                             <constraint firstItem="SnH-UI-DRv" firstAttribute="centerX" secondItem="qnJ-tZ-yTf" secondAttribute="centerX" id="Hjy-TQ-CBX"/>
                             <constraint firstItem="XPR-tH-H9h" firstAttribute="centerX" secondItem="qnJ-tZ-yTf" secondAttribute="centerX" id="Hzk-EG-GAO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oQc-us-pM0" secondAttribute="trailing" id="OSo-T4-ioB"/>
@@ -76,6 +84,7 @@
                             <constraint firstItem="bCM-11-mxe" firstAttribute="top" secondItem="XPR-tH-H9h" secondAttribute="bottom" constant="69" id="l3G-nd-c1I"/>
                             <constraint firstItem="SnH-UI-DRv" firstAttribute="top" secondItem="UZR-ac-ZeE" secondAttribute="bottom" constant="49" id="mOU-2h-Zoq"/>
                             <constraint firstItem="aCI-ub-6qU" firstAttribute="centerX" secondItem="qnJ-tZ-yTf" secondAttribute="centerX" id="o46-1H-xYi"/>
+                            <constraint firstItem="mnO-Fu-dSm" firstAttribute="centerX" secondItem="qnJ-tZ-yTf" secondAttribute="centerX" id="zwH-dK-bkh"/>
                         </constraints>
                     </view>
                     <connections>
