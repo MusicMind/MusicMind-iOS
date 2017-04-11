@@ -69,21 +69,23 @@ class EmailPasswordViewController: UIViewController {
                     let alertController = UIAlertController(title: "Firebase Error", message: "Error Code: \(string)", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(okAction)
-                    self.present(alertController, animated: true, completion: { 
+                    self.present(alertController, animated: true, completion: {
                         return
                     })
                 }
                 
-                if let errorCode = FIRAuthErrorCode(rawValue: error!._code){
-                    switch errorCode{
-                    case .errorCodeInvalidEmail:
-                        presentErrorWith(string: "Invalid Email")
-                    case .errorCodeWeakPassword:
-                        presentErrorWith(string: "Password too weak")
-                    case .errorCodeEmailAlreadyInUse:
-                        presentErrorWith(string: "Email already in use")
-                    default:
-                        print(errorCode.rawValue)
+                if let error = error {
+                    if let errorCode = FIRAuthErrorCode(rawValue: (error._code)){
+                        switch errorCode{
+                        case .errorCodeInvalidEmail:
+                            presentErrorWith(string: "Invalid Email")
+                        case .errorCodeWeakPassword:
+                            presentErrorWith(string: "Password too weak")
+                        case .errorCodeEmailAlreadyInUse:
+                            presentErrorWith(string: "Email already in use")
+                        default:
+                            print(errorCode.rawValue)
+                        }
                     }
                 }
                 
