@@ -148,7 +148,7 @@ final class CameraCaptureViewController: UIViewController {
     
     func recordingInProgressUpdater() {
         
-        let maxDuration = CGFloat(5) // Max duration of the recordButton
+        let maxDuration = CGFloat(14.9) // Max duration of the recordButton
         
         recordingProgressFraction = recordingProgressFraction + (CGFloat(0.05) / maxDuration)
         recordButton.setProgress(recordingProgressFraction)
