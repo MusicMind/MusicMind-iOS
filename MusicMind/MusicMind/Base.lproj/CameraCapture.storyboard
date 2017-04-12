@@ -70,6 +70,9 @@
                                     <constraint firstAttribute="width" constant="30" id="hNv-gc-0ne"/>
                                 </constraints>
                                 <state key="normal" title="Music" image="MusicIcon"/>
+                                <connections>
+                                    <segue destination="Gop-j7-Dp8" kind="show" id="Cw2-3Y-gyY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,6 +98,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHQ-cp-EhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="956" y="10.344827586206897"/>
+        </scene>
+        <!--MusicSearchViewController-->
+        <scene sceneID="rLm-ku-44B">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MusicSearch" referencedIdentifier="MusicSearchViewController" id="Gop-j7-Dp8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0uL-lC-cFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="-123"/>
         </scene>
         <!--Camera-->
         <scene sceneID="5BW-Lr-jx8">

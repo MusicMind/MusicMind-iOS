@@ -12,7 +12,7 @@
         <!--Music Search View Controller-->
         <scene sceneID="dx4-EQ-IBM">
             <objects>
-                <tableViewController id="gIU-A6-6yc" customClass="MusicSearchViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MusicSearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gIU-A6-6yc" customClass="MusicSearchViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="b19-MF-zdT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,24 +55,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cC1-Zd-hQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3836" y="1054.7226386806597"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="wcy-uS-Oa6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MpD-Id-R7O" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zzy-k4-fVC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gIU-A6-6yc" kind="relationship" relationship="rootViewController" id="ZnH-e9-oq0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="clx-nW-piA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2896.8000000000002" y="1054.7226386806597"/>
         </scene>
     </scenes>
 </document>

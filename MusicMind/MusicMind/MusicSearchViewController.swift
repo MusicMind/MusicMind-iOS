@@ -79,6 +79,8 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPT
         self.createSearchBar()
         self.createAudioPlayer()
         
+        setupNavigationBar(theme: .light)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
