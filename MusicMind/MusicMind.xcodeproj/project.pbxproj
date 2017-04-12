@@ -19,6 +19,7 @@
 		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
 		0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */; };
 		0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */; };
+		0FDEC0991E9C565800C5642E /* EmailVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEC0981E9C565800C5642E /* EmailVerifier.swift */; };
 		0FF4B61B1E83946100EEAE8C /* PostProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */; };
 		0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */; };
 		0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */; };
@@ -102,6 +103,7 @@
 		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APPLCameraViewControllerDelegate.swift; path = Protocols/APPLCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CameraCapture.storyboard; sourceTree = "<group>"; };
+		0FDEC0981E9C565800C5642E /* EmailVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifier.swift; sourceTree = "<group>"; };
 		0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostProcessingViewController.swift; path = Stickers/PostProcessingViewController.swift; sourceTree = "<group>"; };
 		0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiCollectionViewCell.swift; path = Stickers/EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StickersViewController + collectionViewHelper.swift"; path = "Stickers/StickersViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				DE860DF81E9363C200393B03 /* Old or not in use */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
+				0FDEC0981E9C565800C5642E /* EmailVerifier.swift */,
 				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
 				0F1DE2591E9327C60032A49A /* User.swift */,
 			);
@@ -766,6 +769,7 @@
 				0FF4B61B1E83946100EEAE8C /* PostProcessingViewController.swift in Sources */,
 				DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */,
 				0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */,
+				0FDEC0991E9C565800C5642E /* EmailVerifier.swift in Sources */,
 				0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */,
 				0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */,
 				0FF4B6241E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift in Sources */,

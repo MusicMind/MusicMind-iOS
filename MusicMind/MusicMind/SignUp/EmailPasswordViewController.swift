@@ -31,6 +31,21 @@ class EmailPasswordViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
+        createNewUser()
+    }
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
+    func goToCameraCapture() {
+        let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
+        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
+    func createNewUser(){
         guard let email = emailTextField.text,
             let password = passwordTextField.text,
             let confirmedPassword = passwordConfirmationTextField.text,
@@ -52,24 +67,40 @@ class EmailPasswordViewController: UIViewController {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             //TODO: handle error 17001 when the user exists in fire base
             
+            func presentErrorWith(string: String){
+                let alertController = UIAlertController(title: "Firebase Error", message: "Error Code: \(string)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: {
+                    return
+                })
+            }
+            
+            if let error = error {
+                if let errorCode = FIRAuthErrorCode(rawValue: (error._code)){
+                    switch errorCode{
+                    case .errorCodeInvalidEmail:
+                        presentErrorWith(string: "Invalid Email")
+                    case .errorCodeWeakPassword:
+                        presentErrorWith(string: "Password too weak")
+                    case .errorCodeEmailAlreadyInUse:
+                        presentErrorWith(string: "Email already in use")
+                    default:
+                        print(errorCode.rawValue)
+                    }
+                }
+            }
+            
             self.goToCameraCapture()
             
             // Post new user to firebase
             self.newUser.firebaseUUID = user?.uid
-            FirebaseDataService.shared.addUserToUserList(self.newUser)
+            
+            if self.newUser.firebaseUUID != nil {
+                FirebaseDataService.shared.addUserToUserList(self.newUser)
+            }
         })
-    }
-    
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-    }
-    
-    func goToCameraCapture() {
-        let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
-        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
-        self.present(vc!, animated: true, completion: nil)
     }
 }
 
@@ -80,7 +111,7 @@ extension EmailPasswordViewController: UITextFieldDelegate {
         } else if textField == passwordTextField {
             passwordConfirmationTextField.becomeFirstResponder()
         } else {
-            goToCameraCapture()
+            createNewUser()
         }
         
         return true
