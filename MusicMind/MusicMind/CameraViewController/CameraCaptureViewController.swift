@@ -58,21 +58,46 @@ final class CameraCaptureViewController: UIViewController {
     let session = AVCaptureSession()
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     var cameraCaptureOutput: AVCaptureMovieFileOutput?
-    let cameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+    var backCameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) // default is always back camera
+    var backCameraInput: AVCaptureDeviceInput?
+    var frontCameraDevice: AVCaptureDevice?
+    var frontCameraInput: AVCaptureDeviceInput?
 
     func setupCaptureSession() {
         session.sessionPreset = AVCaptureSessionPresetHigh
         
+        // Get front camera device and inputs
+        let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
+        
+        let devices = deviceDiscoverySession?.devices
+        
+        if let unwrappedDevices = devices {
+            if !unwrappedDevices.isEmpty {
+                frontCameraDevice = unwrappedDevices[0]
+                
+                if frontCameraDevice != nil {
+                    do {
+                        frontCameraInput = try AVCaptureDeviceInput(device: frontCameraDevice)
+                        
+                        // Setup session with input
+                        session.addInput(frontCameraInput)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            
+        }
+        
+        // Get back camera input ready
         do {
-            let cameraInput = try AVCaptureDeviceInput(device: cameraDevice)
-            
-            cameraCaptureOutput = AVCaptureMovieFileOutput()
-            
-            session.addInput(cameraInput)
-            session.addOutput(cameraCaptureOutput)
+            backCameraInput = try AVCaptureDeviceInput(device: backCameraDevice)
         } catch {
             print(error.localizedDescription)
         }
+        
+        cameraCaptureOutput = AVCaptureMovieFileOutput()
+        session.addOutput(cameraCaptureOutput)
         
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
@@ -89,12 +114,9 @@ final class CameraCaptureViewController: UIViewController {
     @IBAction func flipCameras(_ sender: Any) {
         session.beginConfiguration()
         
-        
-        let devices = AVCaptureDevice.devices()
-
-//        let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: <#T##[AVCaptureDeviceType]!#>, mediaType: <#T##String!#>, position: <#T##AVCaptureDevicePosition#>)
-
-
+//        session.removeInput(backCameraInput)
+//        session.addInput(frontCameraInput)
+  
         session.commitConfiguration()
     }
     
