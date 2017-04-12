@@ -55,6 +55,12 @@ final class CameraCaptureViewController: UIViewController {
     
     // MARK: - AV Capturing
     
+    enum CurrentCamera {
+        case front
+        case back
+    }
+    
+    var currentCamera = CurrentCamera.front
     let session = AVCaptureSession()
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     var cameraCaptureOutput: AVCaptureMovieFileOutput?
@@ -78,9 +84,6 @@ final class CameraCaptureViewController: UIViewController {
                 if frontCameraDevice != nil {
                     do {
                         frontCameraInput = try AVCaptureDeviceInput(device: frontCameraDevice)
-                        
-                        // Setup session with input
-                        session.addInput(frontCameraInput)
                     } catch {
                         print(error.localizedDescription)
                     }
@@ -96,6 +99,16 @@ final class CameraCaptureViewController: UIViewController {
             print(error.localizedDescription)
         }
         
+        // Add camera input to session
+        if frontCameraInput != nil && backCameraInput != nil {
+            switch currentCamera {
+            case .front:
+                session.addInput(frontCameraInput)
+            case .back:
+                session.addInput(backCameraInput)
+            }
+        }
+
         cameraCaptureOutput = AVCaptureMovieFileOutput()
         session.addOutput(cameraCaptureOutput)
         
@@ -114,9 +127,19 @@ final class CameraCaptureViewController: UIViewController {
     @IBAction func flipCameras(_ sender: Any) {
         session.beginConfiguration()
         
-//        session.removeInput(backCameraInput)
-//        session.addInput(frontCameraInput)
-  
+        if frontCameraInput != nil && backCameraInput != nil {
+            switch currentCamera {
+            case .back:
+                session.removeInput(backCameraInput)
+                session.addInput(frontCameraInput)
+                currentCamera = .front
+            case .front:
+                session.removeInput(frontCameraInput)
+                session.addInput(backCameraInput)
+                currentCamera = .back
+            }
+        }
+        
         session.commitConfiguration()
     }
     
