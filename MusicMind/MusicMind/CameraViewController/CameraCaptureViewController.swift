@@ -124,6 +124,9 @@ final class CameraCaptureViewController: UIViewController {
     
     // MARK: - Camera interaction
     
+    private var recordingProgressTimer: Timer!
+    var recordingProgressFraction: CGFloat! = 0
+    
     @IBAction func flipCameras(_ sender: Any) {
         session.beginConfiguration()
         
@@ -143,12 +146,35 @@ final class CameraCaptureViewController: UIViewController {
         session.commitConfiguration()
     }
     
+    func recordingInProgressUpdater() {
+        
+        let maxDuration = CGFloat(5) // Max duration of the recordButton
+        
+        recordingProgressFraction = recordingProgressFraction + (CGFloat(0.05) / maxDuration)
+        recordButton.setProgress(recordingProgressFraction)
+        
+        if recordingProgressFraction >= 1 {
+            stopRecordingVideo()
+        }
+        
+    }
+    
     func startRecordingVideo() {
+        recordingProgressFraction = 0.0
+        recordButton.setProgress(recordingProgressFraction)
+        
         cameraCaptureOutput?.startRecording(toOutputFileURL: newMovieFileUrl, recordingDelegate: self)
+        
+        recordingProgressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.recordingInProgressUpdater), userInfo: nil, repeats: true)
     }
     
     func stopRecordingVideo() {
         cameraCaptureOutput?.stopRecording()
+        
+        self.recordingProgressTimer.invalidate()
+        recordingProgressFraction = 0.0
+        recordButton.setProgress(recordingProgressFraction)
+        recordButton.buttonState = .idle
     }
     
     // MARK: - Navigation
