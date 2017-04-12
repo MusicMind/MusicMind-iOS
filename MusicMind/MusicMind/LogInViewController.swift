@@ -13,7 +13,8 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     // TODO: Disable button if email || password fields are nil. Use textFieldDelegate to check everytime keypress.
     
     @IBAction func attemptLogIn(_ sender: Any) {
@@ -40,6 +41,20 @@ class LogInViewController: UIViewController {
         
         emailField.delegate = self
         passwordField.delegate = self
+        
+        self.emailField.layer.borderWidth = 1
+        self.emailField.layer.borderColor = UIColor.lightGray.cgColor
+        self.emailField.layer.cornerRadius = self.emailField.frame.height/2
+        
+        self.passwordField.layer.borderWidth = 1
+        self.passwordField.layer.borderColor = UIColor.lightGray.cgColor
+        self.passwordField.layer.cornerRadius = self.emailField.frame.height/2
+        
+        self.logInButton.layer.cornerRadius = self.logInButton.frame.height/2
+        
+        self.forgotPasswordButton.layer.cornerRadius = self.forgotPasswordButton.frame.height/2
+        self.forgotPasswordButton.layer.borderWidth = 1
+        self.forgotPasswordButton.layer.borderColor = UIColor.init(colorLiteralRed: 240/255.0, green: 10/255.0, blue: 136/255.0, alpha: 1).cgColor
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         

@@ -22,7 +22,8 @@ class WelcomeViewController: UIViewController {
         navBar?.setBackgroundImage(transparentImage, for: .default)
         navBar?.shadowImage = transparentImage
         navBar?.isTranslucent = true
-        navBar?.tintColor = secondaryTextColor
+       // navBar?.tintColor = secondaryTextColor
+        navBar?.tintColor = UIColor.init(colorLiteralRed: 240/255.0, green: 10/255.0, blue: 136/255.0, alpha:1)
         
     }
     
