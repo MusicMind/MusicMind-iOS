@@ -68,16 +68,18 @@ final class CameraCaptureViewController: UIViewController {
     var backCameraInput: AVCaptureDeviceInput?
     var frontCameraDevice: AVCaptureDevice?
     var frontCameraInput: AVCaptureDeviceInput?
+    var microphoneAudioDevice: AVCaptureDevice?
+    var microphoneAudioInput: AVCaptureDeviceInput?
 
     func setupCaptureSession() {
         session.sessionPreset = AVCaptureSessionPresetHigh
         
         // Get front camera device and inputs
-        let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
+        let cameraDeviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
         
-        let devices = deviceDiscoverySession?.devices
+        let cameraDevices = cameraDeviceDiscoverySession?.devices
         
-        if let unwrappedDevices = devices {
+        if let unwrappedDevices = cameraDevices {
             if !unwrappedDevices.isEmpty {
                 frontCameraDevice = unwrappedDevices[0]
                 
@@ -91,6 +93,29 @@ final class CameraCaptureViewController: UIViewController {
             }
             
         }
+        
+        // Get microphone devices
+
+        let microphoneDeviceDiscoberySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInMicrophone], mediaType: AVMediaTypeAudio, position: AVCaptureDevicePosition.unspecified)
+        
+        let microphoneDevices = microphoneDeviceDiscoberySession?.devices
+        
+        if let unwrappedMicrophoneDevices = microphoneDevices {
+            if !unwrappedMicrophoneDevices.isEmpty {
+                microphoneAudioDevice = unwrappedMicrophoneDevices[0]
+                
+                do {
+                    try microphoneAudioInput = AVCaptureDeviceInput(device: microphoneAudioDevice)
+                    
+                    if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
+                        session.addInput(unwrappedMicrophoneAudioInput)
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
         
         // Get back camera input ready
         do {
