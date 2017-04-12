@@ -41,8 +41,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
-                                <rect key="frame" x="316" y="87" width="30" height="28"/>
-                                <state key="normal" image="Flip camera"/>
+                                <rect key="frame" x="316" y="87" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Dt-be-tH0"/>
+                                    <constraint firstAttribute="width" constant="30" id="GPl-n8-pcn"/>
+                                </constraints>
+                                <state key="normal" title="Flip camera" image="Flip camera"/>
                                 <connections>
                                     <action selector="flipCameras:" destination="sBF-OT-sPe" eventType="touchUpInside" id="otq-49-243"/>
                                 </connections>
@@ -59,13 +63,23 @@
                                     <action selector="presentSelectFromLibraryViewController:" destination="sBF-OT-sPe" eventType="touchUpInside" id="PgJ-hw-ALn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn">
+                                <rect key="frame" x="29" y="87" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cBG-3D-FGF"/>
+                                    <constraint firstAttribute="width" constant="30" id="hNv-gc-0ne"/>
+                                </constraints>
+                                <state key="normal" title="Music" image="MusicIcon"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="THY-bH-VVn" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="13" id="4jW-6A-SB5"/>
                             <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="QR0-Rg-uFX"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="RDB-b0-Lfb"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerY" secondItem="Fk2-94-Jwe" secondAttribute="centerY" id="TMm-tF-teb"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="width" secondItem="Fk2-94-Jwe" secondAttribute="width" id="ami-Eg-e8J"/>
+                            <constraint firstItem="THY-bH-VVn" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="eGm-U8-7l9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="13" id="r0N-28-aJ1"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="height" secondItem="Fk2-94-Jwe" secondAttribute="height" id="zyO-gK-gYf"/>
                         </constraints>
@@ -104,5 +118,6 @@
     </scenes>
     <resources>
         <image name="Flip camera" width="30" height="28"/>
+        <image name="MusicIcon" width="46" height="42"/>
     </resources>
 </document>
