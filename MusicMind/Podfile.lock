@@ -40,6 +40,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - KeychainSwift (7.0.0)
+  - RecordButton (1.0.2)
   - SinchVerification-Swift (2.0.3)
 
 DEPENDENCIES:
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - KeychainSwift
+  - RecordButton
   - SinchVerification-Swift
 
 SPEC CHECKSUMS:
@@ -63,8 +65,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   KeychainSwift: b6947435dd78cc442c64a84ae648dd0e871cf448
+  RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
   SinchVerification-Swift: 567aaf9cb29c55a115faecb6016fea25a7f37688
 
-PODFILE CHECKSUM: 0c9fd1bba37e31ffa3dadb596b5ba5b265bbe293
+PODFILE CHECKSUM: 9097014f9db39181f25f3d180cca801d2ac2628d
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.0.beta.1

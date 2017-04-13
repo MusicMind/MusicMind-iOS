@@ -19,9 +19,9 @@ class NameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hideKeyboardWhenTappedAround()
+        setupNavigationBar(theme: .light)
         
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.hideKeyboardWhenTappedAround()
 
         self.firstNameTextField.delegate = self
         self.lastNameTextField.delegate = self

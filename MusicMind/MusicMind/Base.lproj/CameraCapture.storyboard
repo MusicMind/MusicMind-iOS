@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sBF-OT-sPe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vS2-12-OvP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera-->
+        <!--Camera Capture View Controller-->
         <scene sceneID="pmW-aq-Qff">
             <objects>
                 <viewController storyboardIdentifier="CameraCaptureViewController" id="sBF-OT-sPe" customClass="CameraCaptureViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,80 +23,101 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2Q-BA-tgI" customClass="PreviewView" customModule="MusicMind" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5S-mR-bBx" userLabel="RecordButtonContainerView">
+                                        <rect key="frame" x="137" y="537" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="MkA-XQ-FW5"/>
+                                            <constraint firstAttribute="height" constant="100" id="hX6-nK-1hq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="w5S-mR-bBx" secondAttribute="bottom" constant="30" id="PQQ-65-YG3"/>
+                                    <constraint firstItem="w5S-mR-bBx" firstAttribute="centerX" secondItem="p2Q-BA-tgI" secondAttribute="centerX" id="TAL-oS-iPk"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gle-1b-udU">
-                                <rect key="frame" x="163" y="534" width="49" height="30"/>
-                                <state key="normal" title="Record"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
+                                <rect key="frame" x="316" y="87" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Dt-be-tH0"/>
+                                    <constraint firstAttribute="width" constant="30" id="GPl-n8-pcn"/>
+                                </constraints>
+                                <state key="normal" title="Flip camera" image="Flip camera"/>
                                 <connections>
-                                    <action selector="recordButtonPressed:" destination="sBF-OT-sPe" eventType="touchUpInside" id="czN-gu-rDN"/>
+                                    <action selector="flipCameras:" destination="sBF-OT-sPe" eventType="touchUpInside" id="otq-49-243"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgu-2x-EGW">
-                                <rect key="frame" x="24" y="20" width="139" height="30"/>
-                                <state key="normal" title="Go to upload screen"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC">
+                                <rect key="frame" x="159" y="315" width="57" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Library">
+                                    <color key="titleColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="openSendToFriend:" destination="sBF-OT-sPe" eventType="touchUpInside" id="h3F-8n-bH2"/>
+                                    <action selector="presentSelectFromLibraryViewController:" destination="sBF-OT-sPe" eventType="touchUpInside" id="PgJ-hw-ALn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
-                                <rect key="frame" x="297" y="20" width="54" height="30"/>
-                                <state key="normal" title="Camera"/>
-                                <connections>
-                                    <action selector="toggleCameraPressed:" destination="sBF-OT-sPe" eventType="touchUpInside" id="4ep-t3-p8b"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn">
+                                <rect key="frame" x="29" y="87" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cBG-3D-FGF"/>
+                                    <constraint firstAttribute="width" constant="30" id="hNv-gc-0ne"/>
+                                </constraints>
+                                <state key="normal" title="Music" image="MusicIcon"/>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Mr-6q-0aJ">
-                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem title="Library" id="PFp-Vf-ETC"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e2Z-IK-9jf"/>
-                                    <barButtonItem title="Photo" id="cr5-Uf-kSd">
-                                        <connections>
-                                            <action selector="photoToolBarButtonPressed:" destination="sBF-OT-sPe" id="aNL-0g-O3e"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hNR-pc-z6A"/>
-                                    <barButtonItem title="Video" id="1NL-Lw-DDj">
-                                        <connections>
-                                            <action selector="videoToolBarItemPressed:" destination="sBF-OT-sPe" id="mHN-0i-Rdj"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="tintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p2Q-BA-tgI" firstAttribute="top" secondItem="Fk2-94-Jwe" secondAttribute="top" id="2Qa-Vz-o4c"/>
-                            <constraint firstAttribute="trailing" secondItem="p2Q-BA-tgI" secondAttribute="trailing" id="3Jj-ov-8XS"/>
-                            <constraint firstAttribute="trailing" secondItem="3Mr-6q-0aJ" secondAttribute="trailing" id="IwO-Su-H4A"/>
-                            <constraint firstItem="3Mr-6q-0aJ" firstAttribute="top" secondItem="Gle-1b-udU" secondAttribute="bottom" constant="10" id="JbN-yV-sLP"/>
-                            <constraint firstItem="Gle-1b-udU" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="Lls-pa-2yr"/>
-                            <constraint firstItem="hgu-2x-EGW" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" id="OQS-ma-Xlj"/>
-                            <constraint firstItem="3Mr-6q-0aJ" firstAttribute="top" secondItem="p2Q-BA-tgI" secondAttribute="bottom" id="Q6G-Tr-f1i"/>
-                            <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" id="QR0-Rg-uFX"/>
-                            <constraint firstItem="3Mr-6q-0aJ" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leading" id="TXy-cU-DeW"/>
-                            <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="3Mr-6q-0aJ" secondAttribute="bottom" id="Z6G-0M-gGU"/>
-                            <constraint firstItem="p2Q-BA-tgI" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leading" id="a4f-oW-7W0"/>
-                            <constraint firstItem="hgu-2x-EGW" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="8" id="f27-Pg-jD7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="8" id="r0N-28-aJ1"/>
+                            <constraint firstItem="THY-bH-VVn" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="13" id="4jW-6A-SB5"/>
+                            <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="QR0-Rg-uFX"/>
+                            <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="RDB-b0-Lfb"/>
+                            <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerY" secondItem="Fk2-94-Jwe" secondAttribute="centerY" id="TMm-tF-teb"/>
+                            <constraint firstItem="p2Q-BA-tgI" firstAttribute="width" secondItem="Fk2-94-Jwe" secondAttribute="width" id="ami-Eg-e8J"/>
+                            <constraint firstItem="THY-bH-VVn" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="eGm-U8-7l9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="13" id="r0N-28-aJ1"/>
+                            <constraint firstItem="p2Q-BA-tgI" firstAttribute="height" secondItem="Fk2-94-Jwe" secondAttribute="height" id="zyO-gK-gYf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="rmX-B7-GC3"/>
+                    <navigationItem key="navigationItem" id="abx-js-koV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="cameraButton" destination="UFk-iX-4OX" id="BZs-HR-AkD"/>
-                        <outlet property="photoToolBarItem" destination="cr5-Uf-kSd" id="Gii-XG-oFo"/>
-                        <outlet property="previewView" destination="p2Q-BA-tgI" id="Jyh-DP-HwO"/>
-                        <outlet property="recordButton" destination="Gle-1b-udU" id="04P-M9-50I"/>
-                        <outlet property="videoToolBarItem" destination="1NL-Lw-DDj" id="6YN-6b-v8d"/>
+                        <outlet property="cameraPreviewView" destination="p2Q-BA-tgI" id="WHu-pH-iuI"/>
+                        <outlet property="libraryButton" destination="8uN-dK-thC" id="mua-I4-hqr"/>
+                        <outlet property="recordButtonContainer" destination="w5S-mR-bBx" id="sfu-ip-E31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHQ-cp-EhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="956" y="10.344827586206897"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="5BW-Lr-jx8">
+            <objects>
+                <navigationController storyboardIdentifier="CameraCaptureNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vS2-12-OvP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Camera" id="rmX-B7-GC3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ioD-qg-TJA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sBF-OT-sPe" kind="relationship" relationship="rootViewController" id="Znn-Jj-k3U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWL-xj-7hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="16.800000000000001" y="10.344827586206897"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Flip camera" width="30" height="28"/>
+        <image name="MusicIcon" width="46" height="42"/>
+    </resources>
 </document>

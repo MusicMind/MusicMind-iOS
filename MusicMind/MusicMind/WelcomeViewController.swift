@@ -8,25 +8,15 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Hide navigation bar
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        // Navigation bar styling
-        let transparentImage = UIImage.imageColored(color: UIColor.clear)
-        let navBar = self.navigationController?.navigationBar
-        navBar?.setBackgroundImage(transparentImage, for: .default)
-        navBar?.shadowImage = transparentImage
-        navBar?.isTranslucent = true
-        navBar?.tintColor = secondaryTextColor
-        
+        setupNavigationBar(theme: .light)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }

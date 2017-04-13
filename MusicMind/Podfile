@@ -14,6 +14,7 @@ target 'MusicMind' do
   pod 'Alamofire'
   pod 'SinchVerification-Swift'
   pod 'Firebase/Database'
+  pod 'RecordButton'
 
   target 'MusicMindTests' do
       

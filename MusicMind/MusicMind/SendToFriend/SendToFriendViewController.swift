@@ -10,14 +10,30 @@ import UIKit
 import Firebase
 import MobileCoreServices
 
-class SendToFriendViewController: UIViewController {
+final class SendToFriendViewController: UIViewController {
     
     var urlOfVideo: URL?
-    var downloadURLString: String?
-
+    private var downloadURLString: String?
     @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var urlLabel: UILabel!
+    
+    // MARK: - View Controller Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.progressBar.isHidden = true
+        
+        if let url = urlOfVideo {
+            urlLabel.text = url.absoluteString
+            print(url.absoluteString)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar(theme: .light)
+    }
     
     @IBAction func copyDownloadUrlToClipboard(_ sender: Any) {
         if let urlString = self.downloadURLString {
@@ -25,7 +41,7 @@ class SendToFriendViewController: UIViewController {
         }
     }
     
-    func attemptUpload(_ sender: Any) {
+    @IBAction func attemptUpload(_ sender: Any) {
         self.progressBar.isHidden = false
         
         //  Store Current Date
@@ -40,8 +56,6 @@ class SendToFriendViewController: UIViewController {
         //  Store URL
         let uploadTask = storageRef.putFile(urlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
             if error == nil {
-                print("Upload successful. Metadata: \(metadata)")
-                
                 let downloadURL = metadata?.downloadURL()
                 
                 print(downloadURL!.absoluteString)
@@ -65,12 +79,6 @@ class SendToFriendViewController: UIViewController {
         }
     }
     
-    @IBAction func goBackToCamera(_ sender: Any) {
-        // Show the camera view controller
-        let cameraViewController = UIStoryboard(name: "CameraCapture", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureViewController")
-        self.present(cameraViewController, animated: true, completion: nil)
-    }
-    
     @IBAction func selectFromLibrary(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -80,35 +88,7 @@ class SendToFriendViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.progressBar.isHidden = true
-
-        if let url = urlOfVideo {
-            urlLabel.text = url.absoluteString
-            print(url.absoluteString)
-        }
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SendToFriendViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

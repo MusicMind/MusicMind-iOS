@@ -27,7 +27,6 @@ class LogInViewController: UIViewController {
                 
                 self.goToCameraCapture()
             } else {
-                
                 print(error.debugDescription)
                 
                 self.view.backgroundColor = .red
@@ -38,10 +37,10 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar(theme: .light)
+        
         emailField.delegate = self
         passwordField.delegate = self
-        
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         if let email = userLoginCredentials.firebaseUserEmail {
             emailField.text = email
@@ -56,16 +55,13 @@ class LogInViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        
-        if isMovingFromParentViewController {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-        }
     }
     
     func goToCameraCapture() {
         let storyboard = UIStoryboard.init(name: "CameraCapture", bundle: nil)
-        weak var vc = storyboard.instantiateViewController(withIdentifier: "CameraCaptureViewController")
-        self.present(vc!, animated: true, completion: nil)
+        weak var cameraCaptureNavigationController = storyboard.instantiateViewController(withIdentifier: "CameraCaptureNavigationController")
+        
+        self.present(cameraCaptureNavigationController!, animated: true, completion: nil)
     }
 }
 
