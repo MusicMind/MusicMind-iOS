@@ -23,10 +23,11 @@ class MusicSearchViewController: UITableViewController {
         super.viewDidLoad()
         
         // Setups
-        searchBar.delegate = self
         createAudioPlayer()
         setupNavigationBar(theme: .light)
         hideKeyboardWhenTappedAround()
+        searchBar.delegate = self
+        searchBar.keyboardAppearance = .dark
     }
 
     
