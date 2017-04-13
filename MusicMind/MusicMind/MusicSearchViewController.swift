@@ -11,7 +11,7 @@ import Alamofire
 
 class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
     
-    var arr = [String:Any]()
+    var searchResults = [String:Any]()
     var arrCount: Int = 0
     var audioPlayer: SPTAudioStreamingController?
     
@@ -68,23 +68,27 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
             
             if let json = response.result.value {
                 print("JSON: \(json)")
+
                 if let dict = self.convertStringToDictionary(text: json ) {
-                    self.arr = dict
-                    if let tracks = self.arr["tracks"] as? [String: Any] {
+                    self.searchResults = dict
+                
+                    if let tracks = self.searchResults["tracks"] as? [String: Any] {
+                    
                         if let items = tracks["items"] as? [[String: Any]] {
                             self.arrCount = items.count
+                        
                         }
+                        
                     }
-                    debugPrint(self.arr)
+                    
+                    debugPrint(self.searchResults)
+                    
                     self.tableView?.reloadData()
-                    //debugPrint((self.arr["tracks"] as! [String: AnyObject])["items"] as! [String: AnyObject])
                 }
             }
         }
     }
     
-    
-
 }
 
 extension MusicSearchViewController: UITextViewDelegate {
@@ -121,13 +125,13 @@ extension MusicSearchViewController {
     // MARK: - Table view delegate 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let tracks = self.arr["tracks"] as? [String: Any] {
+        if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
                 if let index = items[indexPath.row] as? [String: Any] {
                     let trackURI = index["uri"] as? String
                     self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
                         if (error != nil) {
-                            print(error)
+                            print(error?.localizedDescription)
                             return;
                         }})
                     
@@ -141,12 +145,10 @@ extension MusicSearchViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.arrCount
     }
     
@@ -154,16 +156,13 @@ extension MusicSearchViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        //Configure the cell...
-        if let tracks = self.arr["tracks"] as? [String: Any] {
+        if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
                 if let index = items[indexPath.row] as? [String: Any] {
                     
                     cell.textLabel?.text = index["name"] as? String
                     
                     if let album = index["album"] as? [String: Any] {
-                        
-                        //cell.textLabel?.text = album["name"] as? String
                         
                         if let artist = album["artists"] as? [[String: Any]] {
                             cell.detailTextLabel?.text = artist[0]["name"] as? String
@@ -188,5 +187,4 @@ extension MusicSearchViewController {
         return cell
     }
 
-    
 }
