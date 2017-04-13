@@ -57,6 +57,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="oVD-Mv-c7k"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="QLr-ZC-8dY" id="2BH-iN-kkd"/>
                         <outlet property="searchDisplayController" destination="vHo-gP-ELz" id="qSI-7A-Kuc"/>
                     </connections>
                 </tableViewController>

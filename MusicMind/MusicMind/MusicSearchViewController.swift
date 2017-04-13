@@ -14,6 +14,8 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
     var audioPlayer: SPTAudioStreamingController?
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     // MARK: - View controller lifecycle
     
@@ -21,7 +23,7 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         // Setups
-        createSearchBar()
+//        createSearchBar()
         createAudioPlayer()
         setupNavigationBar(theme: .light)
         hideKeyboardWhenTappedAround()
@@ -29,17 +31,17 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
 
     
     // MARK: - Setups and helper methods
-    private func createSearchBar() {
-        let searchBar = UISearchBar()
-        searchBar.delegate = self
-        searchBar.sizeToFit()
-        searchBar.frame.size.width = self.view.frame.size.width - 160
-        searchBar.placeholder = "search"
-        
-        let searchItem = UIBarButtonItem(customView: searchBar)
-        
-        navigationItem.leftBarButtonItem = searchItem
-    }
+//    private func createSearchBar() {
+//        let searchBar = UISearchBar()
+//        searchBar.delegate = self
+//        searchBar.sizeToFit()
+//        searchBar.frame.size.width = self.view.frame.size.width - 160
+//        searchBar.placeholder = "search"
+//        
+//        let searchItem = UIBarButtonItem(customView: searchBar)
+//        
+//        navigationItem.leftBarButtonItem = searchItem
+//    }
     
     private func createAudioPlayer() {
         audioPlayer = SPTAudioStreamingController.sharedInstance()
