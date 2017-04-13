@@ -9,13 +9,26 @@
 import UIKit
 import Alamofire
 
-class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate {
+class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
     
     var arr = [String:Any]()
     var arrCount: Int = 0
     var audioPlayer: SPTAudioStreamingController?
     
-    func createSearchBar(){
+    // MARK: - View controller lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Setups
+        createSearchBar()
+        createAudioPlayer()
+        setupNavigationBar(theme: .light)
+    }
+
+    
+    // MARK: - Setups and helper methods
+    private func createSearchBar() {
         let searchBar = UISearchBar()
         searchBar.delegate = self
         searchBar.sizeToFit()
@@ -25,7 +38,7 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPT
         self.navigationItem.leftBarButtonItem = searchItem
     }
     
-    func createAudioPlayer(){
+    private func createAudioPlayer() {
         self.audioPlayer = SPTAudioStreamingController.sharedInstance()
         self.audioPlayer?.playbackDelegate = self
         self.audioPlayer?.delegate = self
@@ -43,6 +56,9 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPT
         }
         return nil
     }
+    
+    
+    // MARK: - Search bar
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
@@ -67,21 +83,60 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPT
         }
     }
     
+    
+
+}
+
+extension MusicSearchViewController: UITextViewDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+}
+
+extension MusicSearchViewController: SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate {
+    
+    
+    // MARK: - Audio steaming
+    
     func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
         print(audioStreaming)
     }
+    
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didReceiveError error: Error!) {
         print(error)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Setups
-        createSearchBar()
-        createAudioPlayer()
-        setupNavigationBar(theme: .light)
+    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: String!) {
+        print(trackUri)
     }
+
+}
+
+/// Table view delegate and data source methods
+extension MusicSearchViewController {
+    
+    
+    // MARK: - Table view delegate 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let tracks = self.arr["tracks"] as? [String: Any] {
+            if let items = tracks["items"] as? [[String: Any]] {
+                if let index = items[indexPath.row] as? [String: Any] {
+                    let trackURI = index["uri"] as? String
+                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
+                        if (error != nil) {
+                            print(error)
+                            return;
+                        }})
+                    
+                }
+            }
+        }
+        
+    }
+    
     
     // MARK: - Table view data source
     
@@ -132,33 +187,6 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPT
         
         return cell
     }
-    
-    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: String!) {
-        print(trackUri)
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let tracks = self.arr["tracks"] as? [String: Any] {
-            if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
-                    let trackURI = index["uri"] as? String
-                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
-                        if (error != nil) {
-                            print(error)
-                            return;
-                        }})
-                    
-                }
-            }
-        }
-        
-    }
-    
-}
 
-extension MusicSearchViewController: UITextViewDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //        self.view.endEditing(true)
-        searchBar.resignFirstResponder()
-    }
+    
 }
