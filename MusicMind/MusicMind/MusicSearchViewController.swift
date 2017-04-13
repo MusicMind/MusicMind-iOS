@@ -11,7 +11,7 @@ import Alamofire
 
 class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
     
-    var searchResults = [String:Any]()
+    var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
     var audioPlayer: SPTAudioStreamingController?
     
@@ -24,6 +24,7 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
         createSearchBar()
         createAudioPlayer()
         setupNavigationBar(theme: .light)
+        hideKeyboardWhenTappedAround()
     }
 
     
