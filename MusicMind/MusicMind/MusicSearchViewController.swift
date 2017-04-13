@@ -12,7 +12,7 @@ import Alamofire
 class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
     
     var searchResults = [String:Any]()
-    var arrCount: Int = 0
+    var totalNumberOfSongFromResults: Int = 0
     var audioPlayer: SPTAudioStreamingController?
     
     // MARK: - View controller lifecycle
@@ -34,16 +34,20 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
         searchBar.sizeToFit()
         searchBar.frame.size.width = self.view.frame.size.width - 160
         searchBar.placeholder = "search"
+        
         let searchItem = UIBarButtonItem(customView: searchBar)
-        self.navigationItem.leftBarButtonItem = searchItem
+        
+        navigationItem.leftBarButtonItem = searchItem
     }
     
     private func createAudioPlayer() {
-        self.audioPlayer = SPTAudioStreamingController.sharedInstance()
-        self.audioPlayer?.playbackDelegate = self
-        self.audioPlayer?.delegate = self
-        try! self.audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
-        self.audioPlayer!.login(withAccessToken: user.spotifyToken)
+        audioPlayer = SPTAudioStreamingController.sharedInstance()
+        
+        audioPlayer?.playbackDelegate = self
+        audioPlayer?.delegate = self
+        try! audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
+        
+        audioPlayer!.login(withAccessToken: user.spotifyToken)
     }
     
     func convertStringToDictionary(text: String) -> [String:Any]? {
@@ -70,12 +74,14 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
                 print("JSON: \(json)")
 
                 if let dict = self.convertStringToDictionary(text: json ) {
+                    
                     self.searchResults = dict
                 
                     if let tracks = self.searchResults["tracks"] as? [String: Any] {
                     
                         if let items = tracks["items"] as? [[String: Any]] {
-                            self.arrCount = items.count
+                    
+                            self.totalNumberOfSongFromResults = items.count
                         
                         }
                         
@@ -149,7 +155,7 @@ extension MusicSearchViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arrCount
+        return totalNumberOfSongFromResults
     }
     
     
