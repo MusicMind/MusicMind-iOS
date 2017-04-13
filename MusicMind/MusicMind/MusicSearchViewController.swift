@@ -9,13 +9,13 @@
 import UIKit
 import Alamofire
 
-class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
+class MusicSearchViewController: UITableViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
     var audioPlayer: SPTAudioStreamingController?
     @IBOutlet weak var searchBar: UISearchBar!
-    
+
     
     // MARK: - View controller lifecycle
     
@@ -23,25 +23,14 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         // Setups
-//        createSearchBar()
+        searchBar.delegate = self
         createAudioPlayer()
         setupNavigationBar(theme: .light)
         hideKeyboardWhenTappedAround()
     }
 
     
-    // MARK: - Setups and helper methods
-//    private func createSearchBar() {
-//        let searchBar = UISearchBar()
-//        searchBar.delegate = self
-//        searchBar.sizeToFit()
-//        searchBar.frame.size.width = self.view.frame.size.width - 160
-//        searchBar.placeholder = "search"
-//        
-//        let searchItem = UIBarButtonItem(customView: searchBar)
-//        
-//        navigationItem.leftBarButtonItem = searchItem
-//    }
+    // MARK: - Setups and helpers
     
     private func createAudioPlayer() {
         audioPlayer = SPTAudioStreamingController.sharedInstance()
@@ -64,8 +53,9 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
         return nil
     }
     
-    
-    // MARK: - Search bar
+}
+
+extension MusicSearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
@@ -75,17 +65,17 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate {
             
             if let json = response.result.value {
                 print("JSON: \(json)")
-
+                
                 if let dict = self.convertStringToDictionary(text: json ) {
                     
                     self.searchResults = dict
-                
+                    
                     if let tracks = self.searchResults["tracks"] as? [String: Any] {
-                    
-                        if let items = tracks["items"] as? [[String: Any]] {
-                    
-                            self.totalNumberOfSongFromResults = items.count
                         
+                        if let items = tracks["items"] as? [[String: Any]] {
+                            
+                            self.totalNumberOfSongFromResults = items.count
+                            
                         }
                         
                     }
