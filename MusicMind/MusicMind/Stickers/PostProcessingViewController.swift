@@ -71,9 +71,6 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         // handle video selection
         self.videoAsset = AVAsset(url: url)
         
-        // delegate
-        self.delegate?.didFinishPickingVideoWith(url: url)
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
