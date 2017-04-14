@@ -68,7 +68,7 @@
 		DEA2A7A21E946B0700D78E23 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */; };
 		DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */; };
 		DEBB98A31EA047A000C050D5 /* CameraCaptureNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB98A21EA047A000C050D5 /* CameraCaptureNavigationController.swift */; };
-		DEBB98A51EA04EBE00C050D5 /* CameraCaptureViewControllerTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB98A41EA04EBE00C050D5 /* CameraCaptureViewControllerTransitionAnimator.swift */; };
+		DEBB98A51EA04EBE00C050D5 /* CameraCapturePushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB98A41EA04EBE00C050D5 /* CameraCapturePushAnimator.swift */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC96E261E957BCD00660262 /* LogInViewController.swift */; };
 		DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
@@ -166,7 +166,7 @@
 		DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraCaptureViewController.swift; path = CameraViewController/CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageColored.swift"; sourceTree = "<group>"; };
 		DEBB98A21EA047A000C050D5 /* CameraCaptureNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureNavigationController.swift; sourceTree = "<group>"; };
-		DEBB98A41EA04EBE00C050D5 /* CameraCaptureViewControllerTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewControllerTransitionAnimator.swift; sourceTree = "<group>"; };
+		DEBB98A41EA04EBE00C050D5 /* CameraCapturePushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCapturePushAnimator.swift; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEC96E261E957BCD00660262 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 				0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */,
 				DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */,
 				DEBB98A21EA047A000C050D5 /* CameraCaptureNavigationController.swift */,
-				DEBB98A41EA04EBE00C050D5 /* CameraCaptureViewControllerTransitionAnimator.swift */,
+				DEBB98A41EA04EBE00C050D5 /* CameraCapturePushAnimator.swift */,
 			);
 			name = "Camera capture";
 			sourceTree = "<group>";
@@ -784,7 +784,7 @@
 				0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */,
 				0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */,
 				DE357AC31E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
-				DEBB98A51EA04EBE00C050D5 /* CameraCaptureViewControllerTransitionAnimator.swift in Sources */,
+				DEBB98A51EA04EBE00C050D5 /* CameraCapturePushAnimator.swift in Sources */,
 				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
 				DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */,
 				DEBB98A31EA047A000C050D5 /* CameraCaptureNavigationController.swift in Sources */,

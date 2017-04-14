@@ -1,5 +1,5 @@
 //
-//  CameraCaptureViewControllerTransitionAnimator.swift
+//  CameraCapturePushAnimator.swift
 //  MusicMind
 //
 //  Created by Wesley Van der Klomp on 4/13/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CameraCaptureViewControllerTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class CameraCapturePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         let duration = Double(1.0)
@@ -20,6 +20,9 @@ class CameraCaptureViewControllerTransitionAnimator: NSObject, UIViewControllerA
      
         let toViewController = transitionContext.viewController(forKey: .to)
         let fromViewController = transitionContext.viewController(forKey: .from)
+        let toView = transitionContext.view(forKey: .to)
+        let fromView = transitionContext.view(forKey: .from)
+        let isPresenting = toViewController?.presentingViewController == fromViewController
         
         let containerView = transitionContext.containerView
         

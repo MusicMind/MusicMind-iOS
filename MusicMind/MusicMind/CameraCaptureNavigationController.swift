@@ -10,7 +10,7 @@ import UIKit
 
 class CameraCaptureNavigationController: UINavigationController {
     
-    let cameraCaptureViewControllerTransitionAnimator = CameraCaptureViewControllerTransitionAnimator()
+    let pushAnimator = CameraCapturePushAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,12 @@ extension CameraCaptureNavigationController: UINavigationControllerDelegate {
                     animationControllerFor operation: UINavigationControllerOperation,
                                          from fromVC: UIViewController,
                                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return cameraCaptureViewControllerTransitionAnimator
+        
+        if operation == UINavigationControllerOperation.push {
+            return pushAnimator
+        } else {
+            return pushAnimator
+        }
     }
     
 }
