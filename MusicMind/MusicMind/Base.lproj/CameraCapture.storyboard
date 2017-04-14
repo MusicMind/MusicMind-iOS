@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1591" y="-123"/>
         </scene>
-        <!--Camera-->
+        <!--Camera Capture Navigation Controller-->
         <scene sceneID="5BW-Lr-jx8">
             <objects>
-                <navigationController storyboardIdentifier="CameraCaptureNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vS2-12-OvP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CameraCaptureNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vS2-12-OvP" userLabel="Camera Capture Navigation Controller" customClass="CameraCaptureNavigationController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Camera" id="rmX-B7-GC3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ioD-qg-TJA">
