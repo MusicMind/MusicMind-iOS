@@ -13,7 +13,7 @@ class MusicSearchViewController: UITableViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
-    var audioPlayer: SPTAudioStreamingController?
+    weak var audioPlayer: SPTAudioStreamingController?
     @IBOutlet weak var searchBar: UISearchBar!
 
     
@@ -38,9 +38,14 @@ class MusicSearchViewController: UITableViewController {
         
         audioPlayer?.playbackDelegate = self
         audioPlayer?.delegate = self
-        try! audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
         
-        audioPlayer!.login(withAccessToken: user.spotifyToken)
+        do {
+            try audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        audioPlayer?.login(withAccessToken: user.spotifyToken)
     }
     
     func convertStringToDictionary(text: String) -> [String:Any]? {
@@ -53,7 +58,6 @@ class MusicSearchViewController: UITableViewController {
         }
         return nil
     }
-    
 }
 
 extension MusicSearchViewController: UISearchBarDelegate {

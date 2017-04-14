@@ -13,8 +13,6 @@ import Foundation
 let userLoginCredentials = UserLoginCredentials()
 let user = User()
 
-
-
 enum NavigationBarTheme {
     case light
     case dark
