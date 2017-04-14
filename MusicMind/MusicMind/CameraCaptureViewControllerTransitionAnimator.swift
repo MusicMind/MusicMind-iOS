@@ -8,7 +8,18 @@
 
 import Foundation
 
-class CameraCaptureViewControllerTransitionAnimator: NSObjectProtocol, UIViewControllerAnimatedTransitioning {
+class CameraCaptureViewControllerTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        let duration = Double(1.0)
+        
+        return duration
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+     
+        let toViewController = transitionContext.
+       
+    }
     
 }

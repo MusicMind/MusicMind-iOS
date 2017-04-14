@@ -26,12 +26,7 @@ extension CameraCaptureNavigationController: UINavigationControllerDelegate {
                     animationControllerFor operation: UINavigationControllerOperation,
                                          from fromVC: UIViewController,
                                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        if operation == .push {
-            return cameraCaptureViewControllerTransitionAnimator
-        } else if operation == .pop {
-            return cameraCaptureViewControllerTransitionAnimator
-        }
+        return cameraCaptureViewControllerTransitionAnimator
     }
     
 }
