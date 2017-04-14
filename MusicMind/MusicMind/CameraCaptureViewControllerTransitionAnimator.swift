@@ -18,8 +18,15 @@ class CameraCaptureViewControllerTransitionAnimator: NSObject, UIViewControllerA
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
      
-        let toViewController = transitionContext.
-       
+        let toViewController = transitionContext.viewController(forKey: .to)
+        let fromViewController = transitionContext.viewController(forKey: .from)
+        
+        let containerView = transitionContext.containerView
+        
+        containerView.addSubview((toViewController?.view)!)
+        
+        transitionContext.completeTransition(true)
+        
     }
     
 }
