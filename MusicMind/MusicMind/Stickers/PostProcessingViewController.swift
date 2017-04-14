@@ -25,7 +25,6 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
                 
@@ -39,8 +38,6 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
     var videoAsset: AVAsset?
-    
-    weak var delegate: VideoPickerViewControllerDelegate?
     
     func startMediaBroswerFrom(viewController: UIViewController?, using delegate: Any?) -> Bool{
         
@@ -252,13 +249,3 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
 }
 
-
-// MARK: - Video Picker View Controller Subclass and Delegate
-extension PostProcessingViewController: VideoPickerViewControllerDelegate{
-    
-    func didFinishPickingVideoWith(url: URL) {
-        DispatchQueue.main.async {
-            self.startPlayingVideoWith(url)
-        }
-    }
-}
