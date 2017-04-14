@@ -30,7 +30,7 @@ extension CameraCaptureNavigationController: UINavigationControllerDelegate {
         if operation == UINavigationControllerOperation.push {
             return pushAnimator
         } else {
-            return pushAnimator
+            return pushAnimator // obviously will change when I get around to making a pop animator
         }
     }
     

@@ -26,9 +26,17 @@ class CameraCapturePushAnimator: NSObject, UIViewControllerAnimatedTransitioning
         
         let containerView = transitionContext.containerView
         
-        containerView.addSubview((toViewController?.view)!)
+        if let toView = toView {
+            containerView.addSubview(toView)
+        }
         
-        transitionContext.completeTransition(true)
+        toView?.alpha = 0
+        
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: { 
+            toView?.alpha = 1
+        }) { (finished) in
+            transitionContext.completeTransition(true)
+        }
         
     }
     
