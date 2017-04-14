@@ -6,7 +6,7 @@
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
@@ -41,10 +41,10 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
     }
     
 }
-extension NavigateLeftInteractiveAnimator: UIViewControllerInteractiveTransitioning {
-    
-    func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-        // code
-    }
-    
-}
+//extension NavigateLeftInteractiveAnimator: UIViewControllerInteractiveTransitioning {
+//    
+//    func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+//        transitionContext.finishInteractiveTransition()
+//    }
+//    
+//}

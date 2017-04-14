@@ -11,6 +11,7 @@ import UIKit
 class CameraCaptureNavigationController: UINavigationController {
     
     let pushAnimator = NavigateLeftInteractiveAnimator()
+    let interactionController = UIPercentDrivenInteractiveTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ extension CameraCaptureNavigationController: UINavigationControllerDelegate {
     }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return pushAnimator
+        return interactionController
     }
     
 }

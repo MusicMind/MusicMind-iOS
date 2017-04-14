@@ -44,6 +44,7 @@
 		DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */; };
 		DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F961E661BB20050E719 /* MusicMindTests.swift */; };
 		DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429FA11E661BB20050E719 /* MusicMindUITests.swift */; };
+		DE438A691EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */; };
 		DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
 		DE487E031E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
 		DE487E041E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
@@ -147,6 +148,7 @@
 		DE429F9D1E661BB20050E719 /* MusicMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE429FA11E661BB20050E719 /* MusicMindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMindUITests.swift; sourceTree = "<group>"; };
 		DE429FA31E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigateLeftTransitionInteractionController.swift; sourceTree = "<group>"; };
 		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllerTests.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */,
 				DEBB98A21EA047A000C050D5 /* CameraCaptureNavigationController.swift */,
 				DEBB98A41EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift */,
+				DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */,
 			);
 			name = "Camera capture";
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */,
 				0FF4B6241E83966200EEAE8C /* VideoPickerViewControllerDelegate.swift in Sources */,
 				0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */,
+				DE438A691EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift in Sources */,
 				DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
