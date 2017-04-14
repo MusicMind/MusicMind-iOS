@@ -1,5 +1,5 @@
 //
-//  CameraCapturePushAnimator.swift
+//  NavigateLeftInteractiveAnimator.swift
 //  MusicMind
 //
 //  Created by Wesley Van der Klomp on 4/13/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CameraCapturePushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         let duration = Double(1.0)
@@ -41,7 +41,7 @@ class CameraCapturePushAnimator: NSObject, UIViewControllerAnimatedTransitioning
     }
     
 }
-extension CameraCapturePushAnimator: UIViewControllerInteractiveTransitioning {
+extension NavigateLeftInteractiveAnimator: UIViewControllerInteractiveTransitioning {
     
     func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
         // code

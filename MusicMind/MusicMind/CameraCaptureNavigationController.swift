@@ -10,7 +10,7 @@ import UIKit
 
 class CameraCaptureNavigationController: UINavigationController {
     
-    let pushAnimator = CameraCapturePushAnimator()
+    let pushAnimator = NavigateLeftInteractiveAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
