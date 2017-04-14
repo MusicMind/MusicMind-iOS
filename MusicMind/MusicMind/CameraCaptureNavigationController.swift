@@ -34,4 +34,8 @@ extension CameraCaptureNavigationController: UINavigationControllerDelegate {
         }
     }
     
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return pushAnimator
+    }
+    
 }

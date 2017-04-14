@@ -41,3 +41,10 @@ class CameraCapturePushAnimator: NSObject, UIViewControllerAnimatedTransitioning
     }
     
 }
+extension CameraCapturePushAnimator: UIViewControllerInteractiveTransitioning {
+    
+    func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        // code
+    }
+    
+}
