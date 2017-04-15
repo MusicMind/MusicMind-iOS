@@ -10,13 +10,27 @@ import UIKit
 
 class CameraCaptureNavigationController: UINavigationController {
     
-    let pushAnimator = NavigateLeftInteractiveAnimator()
-    let interactionController = UIPercentDrivenInteractiveTransition()
+    let animator = NavigateLeftInteractiveAnimator()
+    
+    let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(interactiveTransitionRecognizerAction(sender:)))
+    
+    var interactionController: NavigateLeftTransitionInteractionController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interactionController = NavigateLeftTransitionInteractionController(gestureRecognizer: edgeGesture, edgeForDragging: UIRectEdge.left)
+        
         delegate = self
+    }
+    
+    func interactiveTransitionRecognizerAction(sender: UIScreenEdgePanGestureRecognizer) {
+        if sender.state == .began {
+            if location.x >  CGRectGetMidX(view.bounds) {
+                navigationControllerDelegate.interactionController = [[UIPercentDrivenInteractiveTransition alloc] init];
+                [self performSegueWithIdentifier:PushSegueIdentifier sender:self];
+            }
+        }
     }
     
 }
@@ -27,12 +41,7 @@ extension CameraCaptureNavigationController: UINavigationControllerDelegate {
                     animationControllerFor operation: UINavigationControllerOperation,
                                          from fromVC: UIViewController,
                                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        if operation == UINavigationControllerOperation.push {
-            return pushAnimator
-        } else {
-            return pushAnimator // obviously will change when I get around to making a pop animator
-        }
+        return animator
     }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
