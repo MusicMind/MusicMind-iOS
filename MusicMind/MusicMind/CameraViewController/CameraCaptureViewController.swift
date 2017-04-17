@@ -33,7 +33,6 @@ final class CameraCaptureViewController: UIViewController {
                 
             view.addGestureRecognizer(edgeGesture)
         }
-
         
         // Setups
         setupCaptureSession()

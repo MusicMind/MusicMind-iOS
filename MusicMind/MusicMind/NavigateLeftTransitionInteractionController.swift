@@ -10,6 +10,8 @@ import UIKit
 
 class NavigateLeftTransitionInteractionController: UIPercentDrivenInteractiveTransition {
     
+    var transitionContext: UIViewControllerContextTransitioning?
+    
     func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
         switch sender.state {
         case .began:
@@ -37,8 +39,37 @@ class NavigateLeftTransitionInteractionController: UIPercentDrivenInteractiveTra
         }
     }
     
+    override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        // Saving the transition context for later
+        self.transitionContext = transitionContext
+        
+        super.startInteractiveTransition(transitionContext)
+    }
+    
     private func percentForEdgePan(gesture: UIScreenEdgePanGestureRecognizer) -> CGFloat {
-        return 1.0
+        // Because view controllers will be sliding on and off screen as part
+        // of the animation, we want to base our calculations in the coordinate
+        // space of the view that will not be moving: the containerView of the
+        // transition context.
+        let transitionContainerView = transitionContext?.containerView
+
+        let locationInSourceView = gesture.location(in: transitionContainerView)
+        
+        // Figure out what percentage we've gone.
+        guard let width = transitionContainerView?.bounds.width else { return 0 }
+        guard let height = transitionContainerView?.bounds.height else { return 0 }
+        
+        // Return an appropriate percentage based on which edge we're dragging from.
+//        if self.edge
+        let edge = gesture.edges
+    
+        if edge == .right {
+            return (width - locationInSourceView.x) / width
+        } else if edge == .left {
+            return locationInSourceView.x / width
+        } else {
+            return 0.0
+        }
     }
     
     //    //| ----------------------------------------------------------------------------
