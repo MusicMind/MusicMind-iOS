@@ -12,24 +12,14 @@ class CameraCaptureNavigationController: UINavigationController {
     
     let animator = NavigateLeftInteractiveAnimator()
     
-//    var edgeGesture: UIScreenEdgePanGestureRecognizer?
-    
     var interactionController = NavigateLeftTransitionInteractionController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // Setup gesture recognizer
-//        edgeGesture = UIScreenEdgePanGestureRecognizer(target: interactionController, action: #selector(NavigateLeftTransitionInteractionController.edgeGestureAction(sender:)))
-//        
-//        if let edgeGesture = edgeGesture {
-//            edgeGesture.edges = UIRectEdge.left
-//            
-//            view.addGestureRecognizer(edgeGesture)
-//        }
-        
         delegate = self
     }
+    
 }
 
 extension CameraCaptureNavigationController: UINavigationControllerDelegate {
