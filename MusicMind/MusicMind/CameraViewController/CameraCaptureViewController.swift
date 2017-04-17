@@ -18,13 +18,23 @@ final class CameraCaptureViewController: UIViewController {
     @IBOutlet private weak var libraryButton: UIButton!
     private var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
-    
+
     
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup gesture recognizer
+        if let navigationController = navigationController as? CameraCaptureNavigationController {
+            let edgeGesture = UIScreenEdgePanGestureRecognizer(target: navigationController.interactionController, action: #selector(NavigateLeftTransitionInteractionController.edgeGestureAction(sender:)))
+            
+            edgeGesture.edges = UIRectEdge.left
+                
+            view.addGestureRecognizer(edgeGesture)
+        }
 
+        
         // Setups
         setupCaptureSession()
         setupNavigationBar(theme: .light)
