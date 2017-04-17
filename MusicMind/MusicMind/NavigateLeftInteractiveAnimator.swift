@@ -30,7 +30,13 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
         
         let containerView = transitionContext.containerView
         
-        let isPresenting = (toViewController.presentingViewController == fromViewController)
+        var isPresenting = true
+        
+        if toViewController is MusicSearchViewController {
+            isPresenting = true
+        } else if toViewController is CameraCaptureViewController {
+            isPresenting = false
+        }
         
         var offset: CGVector!
         if let targetEdge = targetEdge {
