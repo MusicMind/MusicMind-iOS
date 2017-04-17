@@ -71,7 +71,7 @@
                                 </constraints>
                                 <state key="normal" title="Music" image="MusicIcon"/>
                                 <connections>
-                                    <segue destination="Gop-j7-Dp8" kind="show" id="Cw2-3Y-gyY"/>
+                                    <segue destination="Gop-j7-Dp8" kind="show" identifier="showMusicSearchViewContoller" id="Cw2-3Y-gyY"/>
                                 </connections>
                             </button>
                         </subviews>
