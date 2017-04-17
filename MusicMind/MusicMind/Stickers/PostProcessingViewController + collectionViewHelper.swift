@@ -11,13 +11,13 @@ import UIKit
 extension PostProcessingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return emojiImagesArray.count
+        return assets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emojiCell", for: indexPath) as? EmojiCollectionViewCell
         
-        let emojiImage = emojiImagesArray[indexPath.row]
+        let emojiImage = assets[indexPath.row]
         cell?.updateWith(image: emojiImage)
         
         return cell ?? EmojiCollectionViewCell()

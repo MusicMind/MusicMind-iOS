@@ -22,7 +22,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     var videoLoaded = false
     var isHidden = false
     
-    let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "cool"), #imageLiteral(resourceName: "happy"), #imageLiteral(resourceName: "nerd"), #imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
+    let assets: [UIImage] = [#imageLiteral(resourceName: "guitar") ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
