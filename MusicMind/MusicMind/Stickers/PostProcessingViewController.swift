@@ -20,6 +20,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     var videoPlayer: AVPlayer!
     var stickersAdded: [UIImageView] = []
     var videoLoaded = false
+    var isHidden = false
     
     let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "cool"), #imageLiteral(resourceName: "happy"), #imageLiteral(resourceName: "nerd"), #imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
     
@@ -244,7 +245,20 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func emojiButtonPressed(_ sender: Any) {
-        
+        let startingFrame = CGRect(origin: CGPoint(x: 0, y: collectionView.frame.origin.y) , size: collectionView.frame.size)
+        let hiddenFrame = CGRect(origin: CGPoint(x: collectionView.frame.width, y: collectionView.frame.origin.y) , size: collectionView.frame.size)
+        UIView.animate(withDuration: 0.4, animations: { 
+            if self.isHidden {
+                self.collectionView.frame = startingFrame
+                self.collectionView.alpha = 1.0
+            } else {
+                self.collectionView.frame = hiddenFrame
+                self.collectionView.alpha = 0.0
+            }
+            
+        }) { (_) in
+            self.isHidden = !self.isHidden
+        }
     }
     
     @IBAction func exportButtonPressed(_ sender: Any) {
