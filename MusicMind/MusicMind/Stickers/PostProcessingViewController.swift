@@ -69,6 +69,8 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         // handle video selection
         self.videoAsset = AVAsset(url: url)
         
+        self.startPlayingVideoWith(url)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -163,7 +165,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
                     videoPlayerVC.player?.play()
                 }
                 self.exportDidFinish(exporter)
-                
+
             }
         }
         
