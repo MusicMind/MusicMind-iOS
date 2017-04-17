@@ -243,6 +243,9 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
     }
     
+    @IBAction func emojiButtonPressed(_ sender: Any) {
+        
+    }
     
     @IBAction func exportButtonPressed(_ sender: Any) {
         self.videoOutput()
