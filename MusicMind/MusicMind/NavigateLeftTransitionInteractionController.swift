@@ -8,10 +8,7 @@
 
 import UIKit
 
-//class NavigateLeftTransitionInteractionController: UIPercentDrivenInteractiveTransition {
-//    
-//    init(gestureRecognizer: UIScreenEdgePanGestureRecognizer, edgeForDragging: UIRectEdge) {
-//
-//    }
-//    
-//}
+class NavigateLeftTransitionInteractionController: UIPercentDrivenInteractiveTransition {
+    
+
+}

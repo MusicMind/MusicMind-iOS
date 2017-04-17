@@ -14,20 +14,18 @@ class CameraCaptureNavigationController: UINavigationController {
     
     var edgeGesture: UIScreenEdgePanGestureRecognizer?
     
-    var interactionController: UIPercentDrivenInteractiveTransition?
+    var interactionController = NavigateLeftTransitionInteractionController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup gesture recognizer
-        edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgeGestureAction(sender:)))
+        edgeGesture = UIScreenEdgePanGestureRecognizer(target: interactionController, action: #selector(edgeGestureAction(sender:)))
         
         if let edgeGesture = edgeGesture {
             edgeGesture.edges = UIRectEdge.left
             
             view.addGestureRecognizer(edgeGesture)
-            
-            interactionController = UIPercentDrivenInteractiveTransition()
         }
         
         delegate = self
@@ -37,24 +35,27 @@ class CameraCaptureNavigationController: UINavigationController {
         switch sender.state {
         case .began:
             print("began")
-//            performSegue(withIdentifier: showMusicSearchViewContoller, sender: self)
+            
+            // if top most VC in stack is MusicSearchVC
+                // pop MusicSearchVC off of stack
+            // else if currentVC is CameraCaptureVC && user selected the music button
+                // performSegue(withIdentifier: showMusicSearchViewContoller, sender: self)
 
-            // this is where we'd perform a segue
         case .cancelled:
             print("cancelled")
         case .changed:
             print("changed")
             
             if let edgeGesture = edgeGesture{
-                interactionController?.update(percentForEdgePan(gesture: edgeGesture))
+                interactionController.update(percentForEdgePan(gesture: edgeGesture))
             }
             
         case .ended:
             print("ended")
-            interactionController?.finish()
+            interactionController.finish()
         case .failed:
             print("failed")
-            interactionController?.cancel()
+            interactionController.cancel()
         case .possible:
             print("possible")
         }
