@@ -30,6 +30,14 @@ class NavigateLeftTransitionInteractionController: UIPercentDrivenInteractiveTra
         case .ended:
             print("ended")
             self.finish()
+            // Dragging has finished.
+            // Complete or cancel, depending on how far we've dragged.
+            if percentForEdgePan(gesture: sender) >= 0.5 {
+                finish()
+            } else {
+                cancel()
+            }
+            break
         case .failed:
             print("failed")
             self.cancel()
