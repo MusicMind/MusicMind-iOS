@@ -87,10 +87,3 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
     }
     
 }
-//extension NavigateLeftInteractiveAnimator: UIViewControllerInteractiveTransitioning {
-//    
-//    func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-//        transitionContext.finishInteractiveTransition()
-//    }
-//    
-//}
