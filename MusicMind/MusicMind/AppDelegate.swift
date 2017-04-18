@@ -68,9 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     return
                 }
 //                user.spotifyToken = session?.accessToken
-                let story = UIStoryboard.init(name: "SpotifyAuth", bundle: nil)
-                let tabView = story.instantiateViewController(withIdentifier: "tabView")
-                self.window?.rootViewController = tabView
+//                let story = UIStoryboard.init(name: "SpotifyAuth", bundle: nil)
+//                let tabView = story.instantiateViewController(withIdentifier: "tabView")
+//                self.window?.rootViewController = tabView
                 
             })
         }
