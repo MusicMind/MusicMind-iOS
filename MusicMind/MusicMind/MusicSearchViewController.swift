@@ -171,7 +171,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
         
     }
     
-    
+
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
