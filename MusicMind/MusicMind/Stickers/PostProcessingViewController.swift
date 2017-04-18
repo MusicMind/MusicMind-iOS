@@ -124,7 +124,19 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         instructions.layerInstructions = [layerInstructions]
         layerComposition.instructions = [instructions]
         
-        self.applyVideoEffectsTo(composition: layerComposition, size: size)
+        self.applyLayersToVideo(composition: layerComposition, size: size)
+        
+        // get path
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let url: URL?
+        let documentsDirectory = paths.first
+        let stringFormat = String(format: "/%@%d%@", "MusicMindVideo-", arc4random() % 1000, ".mov")
+        print(stringFormat)
+        let myPathDocs = documentsDirectory?.appending(stringFormat)
+        print("My pathDocs: \(myPathDocs!)")
+        url = URL(fileURLWithPath: myPathDocs!)
+        
+        
         
     }
     
@@ -189,7 +201,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         mainCompositionInst.instructions = [mainInstructions]
         mainCompositionInst.frameDuration = CMTimeMake(1, 30)
         
-        self.applyVideoEffectsTo(composition: mainCompositionInst, size: naturalSize)
+//        self.applyVideoEffectsTo(composition: mainCompositionInst, size: naturalSize)
         
         // get path
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
