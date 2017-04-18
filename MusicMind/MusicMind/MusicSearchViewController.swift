@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class MusicSearchViewController: UITableViewController {
+class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
@@ -42,6 +42,10 @@ class MusicSearchViewController: UITableViewController {
 ////            backbutton.
 //            navbar.pushItem(backbutton!, animated: true)
 //        }
+    }
+    
+    @IBAction func done(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 //    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
@@ -113,7 +117,7 @@ extension MusicSearchViewController: UISearchBarDelegate {
                     
                     debugPrint(self.searchResults)
                     
-                    self.tableView?.reloadData()
+//                    self.tableView?.reloadData()
                 }
             }
         }
@@ -148,73 +152,73 @@ extension MusicSearchViewController: SPTAudioStreamingPlaybackDelegate, SPTAudio
 
 }
 
-/// Table view delegate and data source methods
-extension MusicSearchViewController {
-    
-    
-    // MARK: - Table view delegate 
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let tracks = self.searchResults["tracks"] as? [String: Any] {
-            if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
-                    let trackURI = index["uri"] as? String
-                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
-                        if (error != nil) {
-                            print(error?.localizedDescription)
-                            return;
-                        }})
-                    
-                }
-            }
-        }
-        
-    }
-    
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return totalNumberOfSongFromResults
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        if let tracks = self.searchResults["tracks"] as? [String: Any] {
-            if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
-                    
-                    cell.textLabel?.text = index["name"] as? String
-                    
-                    if let album = index["album"] as? [String: Any] {
-                        
-                        if let artist = album["artists"] as? [[String: Any]] {
-                            cell.detailTextLabel?.text = artist[0]["name"] as? String
-                            print(artist[0]["name"] as? String)
-                        }
-                        
-                        if let image = album["images"] as? [[String: Any]]{
-                            if let smallImage = image[2] as? [String: Any]{
-                                let urlString = smallImage["url"] as? String
-                                if let url  = NSURL(string: urlString!){
-                                    if let data = NSData(contentsOf: url as URL){
-                                        cell.imageView?.image = UIImage(data: data as Data)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        return cell
-    }
-
-}
+///// Table view delegate and data source methods
+//extension MusicSearchViewController {
+//    
+//    
+//    // MARK: - Table view delegate 
+//    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let tracks = self.searchResults["tracks"] as? [String: Any] {
+//            if let items = tracks["items"] as? [[String: Any]] {
+//                if let index = items[indexPath.row] as? [String: Any] {
+//                    let trackURI = index["uri"] as? String
+//                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
+//                        if (error != nil) {
+//                            print(error?.localizedDescription)
+//                            return;
+//                        }})
+//                    
+//                }
+//            }
+//        }
+//        
+//    }
+//    
+//    
+//    // MARK: - Table view data source
+//    
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return totalNumberOfSongFromResults
+//    }
+//    
+//    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        
+//        if let tracks = self.searchResults["tracks"] as? [String: Any] {
+//            if let items = tracks["items"] as? [[String: Any]] {
+//                if let index = items[indexPath.row] as? [String: Any] {
+//                    
+//                    cell.textLabel?.text = index["name"] as? String
+//                    
+//                    if let album = index["album"] as? [String: Any] {
+//                        
+//                        if let artist = album["artists"] as? [[String: Any]] {
+//                            cell.detailTextLabel?.text = artist[0]["name"] as? String
+//                            print(artist[0]["name"] as? String)
+//                        }
+//                        
+//                        if let image = album["images"] as? [[String: Any]]{
+//                            if let smallImage = image[2] as? [String: Any]{
+//                                let urlString = smallImage["url"] as? String
+//                                if let url  = NSURL(string: urlString!){
+//                                    if let data = NSData(contentsOf: url as URL){
+//                                        cell.imageView?.image = UIImage(data: data as Data)
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        
+//        return cell
+//    }
+//
+//}
