@@ -15,7 +15,6 @@ class MusicSearchViewController: UITableViewController {
     var totalNumberOfSongFromResults: Int = 0
     weak var audioPlayer: SPTAudioStreamingController?
     @IBOutlet weak var searchBar: UISearchBar!
-
     
     // MARK: - View controller lifecycle
     
