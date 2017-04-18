@@ -41,6 +41,49 @@ class MusicSearchViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        presentSpotifyLoginAlert()
+    }
+    
+    func presentSpotifyLoginAlert() {
+        let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let login = UIAlertAction(title: "Go to Spotify", style: .default) { (alertAction) in
+            self.loginToSpotify()
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(login)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func loginToSpotify() {
+        if let auth = SPTAuth.defaultInstance() {
+            auth.clientID = "3b7f66602b9c45b78f4aa55de8efd046"
+            auth.redirectURL = URL(string: "musicmind://returnAfterSpotify")
+            auth.requestedScopes = [SPTAuthStreamingScope]
+            
+            //TODO rethink this first conditional
+            if auth.session != nil {
+                //TODO Store session in UserDefaults
+                print(auth.session.accessToken)
+                
+                if !auth.session.isValid(){
+                    print("session not valid")
+                }
+                
+                print(auth.session.canonicalUsername)
+            }
+            else {
+                if let spotifyUrl = auth.spotifyWebAuthenticationURL() {
+                    UIApplication.shared.open(spotifyUrl, options: [:])
+                }
+            }
+        }
+    }
+    
     
     @IBAction func done(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
