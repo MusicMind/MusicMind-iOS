@@ -119,7 +119,12 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         
         let instructions = AVMutableVideoCompositionInstruction()
         instructions.timeRange = CMTimeRangeMake(kCMTimeZero, compostion.duration)
-        let videoTrack = compostion.tracks(withMediaType: AVMediaTypeVideo)[0] as AVAssetTrack
+        let videoTrackFromCompostion = compostion.tracks(withMediaType: AVMediaTypeVideo)[0] as AVAssetTrack
+        let layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrackFromCompostion)
+        instructions.layerInstructions = [layerInstructions]
+        layerComposition.instructions = [instructions]
+        
+        self.applyVideoEffectsTo(composition: layerComposition, size: size)
         
     }
     
@@ -274,7 +279,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         videoPlayer.play()
     }
     
-    func applyVideoEffectsTo(composition: AVMutableVideoComposition, size: CGSize) {
+    func applyLayersToVideo(composition: AVMutableVideoComposition, size: CGSize) {
         let parentLayer = CALayer()
         let videoLayer = CALayer()
         parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
