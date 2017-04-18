@@ -15,6 +15,7 @@ target 'MusicMind' do
   pod 'SinchVerification-Swift'
   pod 'Firebase/Database'
   pod 'RecordButton'
+  pod 'Firebase/DynamicLinks'
 
   target 'MusicMindTests' do
       
