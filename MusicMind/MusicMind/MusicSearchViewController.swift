@@ -43,7 +43,7 @@ class MusicSearchViewController: UIViewController {
     func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
         switch sender.state {
         case .began:
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         default:
             // pass down for the interaction controller to handle the rest of these cases
             break
