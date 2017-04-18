@@ -37,36 +37,20 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
         } else if toViewController is CameraCaptureViewController {
             goingToMusicSearch = false
         }
+
+        let offToLeftSideFrame = CGRect(x: -1 * fromFrame.width, y: 0, width: fromFrame.width, height: fromFrame.height)
+        let onScreenFrame = CGRect(x: 0, y: 0, width: fromFrame.width, height: fromFrame.height)
+        let offToRightSideFrame = CGRect(x: fromFrame.width, y: 0, width: fromFrame.width, height: fromFrame.height)
         
-//        var offset: CGVector!
-//        if let targetEdge = targetEdge {
-//            switch targetEdge {
-//            case UIRectEdge.left:
-//                offset = CGVector(dx: 1.0, dy: 0.0)
-//            case UIRectEdge.right:
-//                offset = CGVector(dx: -1.0, dy: 0.0)
-//            default:
-//                offset = CGVector(dx: 0.0, dy: 0.0)
-//            }
-//        }
-        
-        let offToLeftSideFrame = CGRect(x: -1 * fromView.frame.width, y: 0, width: fromView.frame.width, height: fromView.frame.height)
-        let onScreenFrame = CGRect(x: 0, y: 0, width: fromView.frame.width, height: fromView.frame.height)
-        let offToRightSideFrame = CGRect(x: fromView.frame.width, y: 0, width: fromView.frame.width, height: fromView.frame.height)
+        containerView.addSubview(toView)
         
         if goingToMusicSearch {
             // For a presentation, the toView starts off-screen and slides in.
             fromView.frame = onScreenFrame // cam
             toView.frame = offToLeftSideFrame // music
-
-            
-            // addSubview places it's argument at the fron of the subview stack. For dismissal animation we want the fromView to slide away, revealing the toView. Therefor we must place the toView under the fromView.
-            containerView.insertSubview(toView, belowSubview: fromView)
         } else {
             fromView.frame = onScreenFrame // music
             toView.frame = offToRightSideFrame // cam
-            
-            containerView.addSubview(toView)
         }
         
         let duration = self.transitionDuration(using: transitionContext)
@@ -79,7 +63,6 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
             } else {
                 fromView.frame = offToLeftSideFrame // music
                 toView.frame = onScreenFrame // came
-
             }
             
         }) { (finished) in
