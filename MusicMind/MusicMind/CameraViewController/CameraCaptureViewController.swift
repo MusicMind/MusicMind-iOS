@@ -18,14 +18,19 @@ final class CameraCaptureViewController: UIViewController {
     @IBOutlet private weak var libraryButton: UIButton!
     private var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
-    
+
     
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Setups
+        
+        // Setup gesture recognizer
+        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
+        edgeGesture.edges = UIRectEdge.left
+        view.addGestureRecognizer(edgeGesture)
+       
+        // Other setups
         setupCaptureSession()
         setupNavigationBar(theme: .light)
         
@@ -50,6 +55,16 @@ final class CameraCaptureViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            performSegue(withIdentifier: "showMusicSearchViewContoller", sender: self)
+        default:
+            // pass down for the interaction controller to handle the rest of these cases
+           break
+        }
     }
     
     
