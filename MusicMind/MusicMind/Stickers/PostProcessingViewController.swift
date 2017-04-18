@@ -113,7 +113,13 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         
         let size = videoTrack.naturalSize
         
+        let layerComposition = AVMutableVideoComposition()
+        layerComposition.frameDuration = CMTimeMake(1, 30)
+        layerComposition.renderSize = size
         
+        let instructions = AVMutableVideoCompositionInstruction()
+        instructions.timeRange = CMTimeRangeMake(kCMTimeZero, compostion.duration)
+        let videoTrack = compostion.tracks(withMediaType: AVMediaTypeVideo)[0] as AVAssetTrack
         
     }
     
