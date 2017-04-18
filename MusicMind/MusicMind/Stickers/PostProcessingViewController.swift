@@ -141,26 +141,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         assetExport.outputFileType = AVFileTypeMPEG4
         assetExport.outputURL = url
         assetExport.exportAsynchronously(completionHandler: {
-            switch assetExport.status {
-            case .completed:
-                print("success")
-                break
-            case .cancelled:
-                print("cancelled")
-                break
-            case .exporting:
-                print("exporting")
-                break
-            case .failed:
-                print("failed: \(String(describing: assetExport.error))")
-                break
-            case .unknown:
-                print("unknown")
-                break
-            case .waiting:
-                print("waiting")
-                break
-            }
+            self.exportDidFinish(assetExport)
         })
     }
     
