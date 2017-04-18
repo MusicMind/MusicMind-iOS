@@ -41,10 +41,22 @@ extension PostProcessingViewController: UICollectionViewDelegate, UICollectionVi
         newImageView.image = emojiImageView?.image
         newImageView.isUserInteractionEnabled = true
         newImageView.frame.origin = self.view.center
-        newImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(detectPan(recognizer:))))
+//        newImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(detectPan(recognizer:))))
         
         self.stickersAdded.append(newImageView)
         self.view.addSubview(newImageView)
+        
+        newImageView.frame = self.view.frame
+        newImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        var constraints = [NSLayoutConstraint]()
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[newImageView]|", options: [], metrics: nil, views: ["newImageView": newImageView])
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[newImageView]|", options: [], metrics: nil, views: ["newImageView": newImageView])
+        
+        NSLayoutConstraint.activate(constraints)
+        
+        view.bringSubview(toFront: assetsButton)
+        view.bringSubview(toFront: exportButton)
     }
 }
 

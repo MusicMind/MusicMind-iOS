@@ -16,6 +16,8 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var recordedVideoView: VideoContainerView!
+    @IBOutlet weak var assetsButton: UIButton!
+    @IBOutlet weak var exportButton: UIButton!
 
     var videoPlayer: AVPlayer!
     var stickersAdded: [UIImageView] = []
@@ -77,6 +79,44 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         self.dismiss(animated: true, completion: nil)
     }
     
+    func videoOutPut(){
+        let compostion = AVMutableComposition()
+        guard let videoAsset = self.videoAsset else  {
+            let alertController = UIAlertController(title: "Error", message: "Please choose a video", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        let track = videoAsset.tracks(withMediaType: AVMediaTypeVideo)
+        let videoTrack: AVAssetTrack = track[0] as AVAssetTrack
+        let timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
+        
+        let compositionVideoTrack: AVMutableCompositionTrack = compostion.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: CMPersistentTrackID())
+        
+        do {
+            try compositionVideoTrack.insertTimeRange(timeRange, of: videoTrack, at: kCMTimeZero)
+            compositionVideoTrack.preferredTransform = videoTrack.preferredTransform // new
+        } catch {
+            print(error)
+        }
+        
+        let compositionAudioTrack: AVMutableCompositionTrack = compostion.addMutableTrack(withMediaType: AVMediaTypeAudio, preferredTrackID: CMPersistentTrackID())
+        for audioTrack in videoAsset.tracks(withMediaType: AVMediaTypeAudio){
+            do {
+                try compositionAudioTrack.insertTimeRange(audioTrack.timeRange, of: audioTrack, at: kCMTimeZero)
+            } catch {
+                print(error)
+            }
+        }
+        
+        let size = videoTrack.naturalSize
+        
+        
+        
+    }
+    
     func videoOutput(){
         // early exit if there is no video file selected
         guard let videoAsset = self.videoAsset else  {
@@ -126,10 +166,12 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         
         let mainCompositionInst = AVMutableVideoComposition()
         
-        var naturalSize = videoAssetTrack.naturalSize
+        var naturalSize: CGSize!
         
         if (isVideoAssetPortrait){
             naturalSize = CGSize(width: videoAssetTrack.naturalSize.height, height: videoAssetTrack.naturalSize.width)
+        } else {
+            naturalSize = videoAssetTrack.naturalSize
         }
         
         mainCompositionInst.renderSize = naturalSize

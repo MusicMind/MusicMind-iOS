@@ -98,7 +98,9 @@
                     <tabBarItem key="tabBarItem" title="Stickers" id="9SM-3J-Tky"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="assetsButton" destination="wYw-Tk-nA6" id="RfK-JG-ZFW"/>
                         <outlet property="collectionView" destination="56W-Wl-gr7" id="MGL-D5-SgQ"/>
+                        <outlet property="exportButton" destination="T1K-Hv-YhA" id="cYR-JS-74T"/>
                         <outlet property="recordedVideoView" destination="WBo-7w-cc2" id="4h0-JA-aHK"/>
                     </connections>
                 </viewController>
