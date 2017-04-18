@@ -79,8 +79,8 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         self.dismiss(animated: true, completion: nil)
     }
     
-    func videoOutPut(){
-        let compostion = AVMutableComposition()
+    func videoOutput(){
+        let composition = AVMutableComposition()
         guard let videoAsset = self.videoAsset else  {
             let alertController = UIAlertController(title: "Error", message: "Please choose a video", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -93,7 +93,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         let videoTrack: AVAssetTrack = track[0] as AVAssetTrack
         let timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
         
-        let compositionVideoTrack: AVMutableCompositionTrack = compostion.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: CMPersistentTrackID())
+        let compositionVideoTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: CMPersistentTrackID())
         
         do {
             try compositionVideoTrack.insertTimeRange(timeRange, of: videoTrack, at: kCMTimeZero)
@@ -102,7 +102,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
             print(error)
         }
         
-        let compositionAudioTrack: AVMutableCompositionTrack = compostion.addMutableTrack(withMediaType: AVMediaTypeAudio, preferredTrackID: CMPersistentTrackID())
+        let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaTypeAudio, preferredTrackID: CMPersistentTrackID())
         for audioTrack in videoAsset.tracks(withMediaType: AVMediaTypeAudio){
             do {
                 try compositionAudioTrack.insertTimeRange(audioTrack.timeRange, of: audioTrack, at: kCMTimeZero)
@@ -118,8 +118,8 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         layerComposition.renderSize = size
         
         let instructions = AVMutableVideoCompositionInstruction()
-        instructions.timeRange = CMTimeRangeMake(kCMTimeZero, compostion.duration)
-        let videoTrackFromCompostion = compostion.tracks(withMediaType: AVMediaTypeVideo)[0] as AVAssetTrack
+        instructions.timeRange = CMTimeRangeMake(kCMTimeZero, composition.duration)
+        let videoTrackFromCompostion = composition.tracks(withMediaType: AVMediaTypeVideo)[0] as AVAssetTrack
         let layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrackFromCompostion)
         instructions.layerInstructions = [layerInstructions]
         layerComposition.instructions = [instructions]
@@ -136,105 +136,129 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         print("My pathDocs: \(myPathDocs!)")
         url = URL(fileURLWithPath: myPathDocs!)
         
-        
-        
+        guard let assetExport = AVAssetExportSession(asset: composition, presetName:AVAssetExportPresetHighestQuality) else {return}
+        assetExport.videoComposition = layerComposition
+        assetExport.outputFileType = AVFileTypeMPEG4
+        assetExport.outputURL = url
+        assetExport.exportAsynchronously(completionHandler: {
+            switch assetExport.status {
+            case .completed:
+                print("success")
+                break
+            case .cancelled:
+                print("cancelled")
+                break
+            case .exporting:
+                print("exporting")
+                break
+            case .failed:
+                print("failed: \(String(describing: assetExport.error))")
+                break
+            case .unknown:
+                print("unknown")
+                break
+            case .waiting:
+                print("waiting")
+                break
+            }
+        })
     }
     
-    func videoOutput(){
-        // early exit if there is no video file selected
-        guard let videoAsset = self.videoAsset else  {
-            let alertController = UIAlertController(title: "Error", message: "Please choose a video", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
-            return
-        }
-        
-        // create avmutablecomposition object. This object will hold the AVMutableCompositionTack instance
-        let mixComposition = AVMutableComposition()
-        
-        //video track
-        let videoTrack: AVMutableCompositionTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
-        
-        do{
-            try videoTrack.insertTimeRange((CMTimeRangeMake(kCMTimeZero, videoAsset.duration)), of: (videoAsset.tracks(withMediaType: AVMediaTypeVideo).first)!, at: kCMTimeZero)
-        } catch {
-            print("error")
-        }
-        
-        // create AVMutableVideoCompositionInstructions
-        let mainInstructions = AVMutableVideoCompositionInstruction()
-        mainInstructions.timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
-        
-        // create an AVMutableVideoCompostionLayerInstruction for the video track and fix the orientation
-        let videoLayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
-        let videoAssetTrack: AVAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo).first!
-        var isVideoAssetPortrait = false
-        let videoTransform =  videoAssetTrack.preferredTransform
-        
-        // portrait
-        if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
-            isVideoAssetPortrait = true
-        }
-        // portriat up side down
-        if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
-            isVideoAssetPortrait = true
-        }
-        
-        videoLayerInstruction.setTransform(videoAsset.preferredTransform, at: kCMTimeZero)
-        videoLayerInstruction.setOpacity(0.0, at: (self.videoAsset?.duration)!)
-        
-        // add instructions
-        mainInstructions.layerInstructions = NSArray(object: videoLayerInstruction) as! [AVVideoCompositionLayerInstruction]
-        
-        let mainCompositionInst = AVMutableVideoComposition()
-        
-        var naturalSize: CGSize!
-        
-        if (isVideoAssetPortrait){
-            naturalSize = CGSize(width: videoAssetTrack.naturalSize.height, height: videoAssetTrack.naturalSize.width)
-        } else {
-            naturalSize = videoAssetTrack.naturalSize
-        }
-        
-        mainCompositionInst.renderSize = naturalSize
-        mainCompositionInst.instructions = [mainInstructions]
-        mainCompositionInst.frameDuration = CMTimeMake(1, 30)
-        
-//        self.applyVideoEffectsTo(composition: mainCompositionInst, size: naturalSize)
-        
-        // get path
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let url: URL?
-        let documentsDirectory = paths.first
-        let stringFormat = String(format: "/%@%d%@", "MusicMindVideo-", arc4random() % 1000, ".mov")
-        print(stringFormat)
-        let myPathDocs = documentsDirectory?.appending(stringFormat)
-        print("My pathDocs: \(myPathDocs!)")
-        url = URL(fileURLWithPath: myPathDocs!)
-        
-        
-        // create exporter
-        let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
-        exporter!.outputURL = url
-        exporter!.outputFileType = AVFileTypeQuickTimeMovie
-        exporter!.shouldOptimizeForNetworkUse = true
-        exporter!.videoComposition = mainCompositionInst
-        exporter!.exportAsynchronously {
-            DispatchQueue.main.async {
-                
-                let videoPlayerVC = AVPlayerViewController()
-                let playerItem = AVPlayerItem(url: url!)
-                videoPlayerVC.player = AVPlayer(playerItem: playerItem)
-                self.present(videoPlayerVC, animated: true) {
-                    videoPlayerVC.player?.play()
-                }
-                self.exportDidFinish(exporter)
-
-            }
-        }
-        
-    }
+//    func videoOutput(){
+//        // early exit if there is no video file selected
+//        guard let videoAsset = self.videoAsset else  {
+//            let alertController = UIAlertController(title: "Error", message: "Please choose a video", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//            alertController.addAction(okAction)
+//            self.present(alertController, animated: true, completion: nil)
+//            return
+//        }
+//        
+//        // create avmutablecomposition object. This object will hold the AVMutableCompositionTack instance
+//        let mixComposition = AVMutableComposition()
+//        
+//        //video track
+//        let videoTrack: AVMutableCompositionTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
+//        
+//        do{
+//            try videoTrack.insertTimeRange((CMTimeRangeMake(kCMTimeZero, videoAsset.duration)), of: (videoAsset.tracks(withMediaType: AVMediaTypeVideo).first)!, at: kCMTimeZero)
+//        } catch {
+//            print("error")
+//        }
+//        
+//        // create AVMutableVideoCompositionInstructions
+//        let mainInstructions = AVMutableVideoCompositionInstruction()
+//        mainInstructions.timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
+//        
+//        // create an AVMutableVideoCompostionLayerInstruction for the video track and fix the orientation
+//        let videoLayerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
+//        let videoAssetTrack: AVAssetTrack = videoAsset.tracks(withMediaType: AVMediaTypeVideo).first!
+//        var isVideoAssetPortrait = false
+//        let videoTransform =  videoAssetTrack.preferredTransform
+//        
+//        // portrait
+//        if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
+//            isVideoAssetPortrait = true
+//        }
+//        // portriat up side down
+//        if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
+//            isVideoAssetPortrait = true
+//        }
+//        
+//        videoLayerInstruction.setTransform(videoAsset.preferredTransform, at: kCMTimeZero)
+//        videoLayerInstruction.setOpacity(0.0, at: (self.videoAsset?.duration)!)
+//        
+//        // add instructions
+//        mainInstructions.layerInstructions = NSArray(object: videoLayerInstruction) as! [AVVideoCompositionLayerInstruction]
+//        
+//        let mainCompositionInst = AVMutableVideoComposition()
+//        
+//        var naturalSize: CGSize!
+//        
+//        if (isVideoAssetPortrait){
+//            naturalSize = CGSize(width: videoAssetTrack.naturalSize.height, height: videoAssetTrack.naturalSize.width)
+//        } else {
+//            naturalSize = videoAssetTrack.naturalSize
+//        }
+//        
+//        mainCompositionInst.renderSize = naturalSize
+//        mainCompositionInst.instructions = [mainInstructions]
+//        mainCompositionInst.frameDuration = CMTimeMake(1, 30)
+//        
+////        self.applyVideoEffectsTo(composition: mainCompositionInst, size: naturalSize)
+//        
+//        // get path
+//        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+//        let url: URL?
+//        let documentsDirectory = paths.first
+//        let stringFormat = String(format: "/%@%d%@", "MusicMindVideo-", arc4random() % 1000, ".mov")
+//        print(stringFormat)
+//        let myPathDocs = documentsDirectory?.appending(stringFormat)
+//        print("My pathDocs: \(myPathDocs!)")
+//        url = URL(fileURLWithPath: myPathDocs!)
+//        
+//        
+//        // create exporter
+//        let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
+//        exporter!.outputURL = url
+//        exporter!.outputFileType = AVFileTypeQuickTimeMovie
+//        exporter!.shouldOptimizeForNetworkUse = true
+//        exporter!.videoComposition = mainCompositionInst
+//        exporter!.exportAsynchronously {
+//            DispatchQueue.main.async {
+//                
+//                let videoPlayerVC = AVPlayerViewController()
+//                let playerItem = AVPlayerItem(url: url!)
+//                videoPlayerVC.player = AVPlayer(playerItem: playerItem)
+//                self.present(videoPlayerVC, animated: true) {
+//                    videoPlayerVC.player?.play()
+//                }
+//                self.exportDidFinish(exporter)
+//
+//            }
+//        }
+//        
+//    }
     
     func exportDidFinish(_ session: AVAssetExportSession?){
         print(session?.status == AVAssetExportSessionStatus.completed)
