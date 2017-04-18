@@ -64,7 +64,7 @@ final class CameraCaptureViewController: UIViewController {
         default:
             // pass down for the interaction controller to handle the rest of these cases
             if let navigationController = navigationController as? CameraCaptureNavigationController {
-                navigationController.animator.targetEdge = UIRectEdge.left
+//                navigationController.animator.targetEdge = UIRectEdge.left
                 navigationController.interactionController.edgeGestureAction(sender: sender)
             }
         }

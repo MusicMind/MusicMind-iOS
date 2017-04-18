@@ -10,10 +10,10 @@ import UIKit
 
 class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    var targetEdge: UIRectEdge?
+//    var targetEdge: UIRectEdge?
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        let duration = Double(1.0)
+        let duration = Double(5.0)
         
         return duration
     }
@@ -30,55 +30,56 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
         
         let containerView = transitionContext.containerView
         
-        var isPresenting = true
+        var goingToMusicSearch = true
         
         if toViewController is MusicSearchViewController {
-            isPresenting = true
+            goingToMusicSearch = true
         } else if toViewController is CameraCaptureViewController {
-            isPresenting = false
+            goingToMusicSearch = false
         }
         
-        var offset: CGVector!
-        if let targetEdge = targetEdge {
-            switch targetEdge {
-            case UIRectEdge.left:
-                offset = CGVector(dx: 1.0, dy: 0.0)
-            case UIRectEdge.right:
-                offset = CGVector(dx: -1.0, dy: 0.0)
-            default:
-                offset = CGVector(dx: 0.0, dy: 0.0)
-            }
-        }
+//        var offset: CGVector!
+//        if let targetEdge = targetEdge {
+//            switch targetEdge {
+//            case UIRectEdge.left:
+//                offset = CGVector(dx: 1.0, dy: 0.0)
+//            case UIRectEdge.right:
+//                offset = CGVector(dx: -1.0, dy: 0.0)
+//            default:
+//                offset = CGVector(dx: 0.0, dy: 0.0)
+//            }
+//        }
         
-        if isPresenting {
+        let offToLeftSideFrame = CGRect(x: -1 * fromView.frame.width, y: 0, width: fromView.frame.width, height: fromView.frame.height)
+        let onScreenFrame = CGRect(x: 0, y: 0, width: fromView.frame.width, height: fromView.frame.height)
+        let offToRightSideFrame = CGRect(x: fromView.frame.width, y: 0, width: fromView.frame.width, height: fromView.frame.height)
+        
+        if goingToMusicSearch {
             // For a presentation, the toView starts off-screen and slides in.
-            fromView.frame = fromFrame
-            toView.frame = toFrame.offsetBy(dx: toFrame.size.width * offset.dx * -1,
-                                             dy: toFrame.size.height * offset.dy * -1)
-        } else {
-            fromView.frame = fromFrame
-            toView.frame = toFrame
-        }
-        
-        // We are responsible for adding the incoming view to the containerView for presentation.
-        if isPresenting {
-            containerView.addSubview(toView)
-        } else {
+            fromView.frame = onScreenFrame // cam
+            toView.frame = offToLeftSideFrame // music
+
+            
             // addSubview places it's argument at the fron of the subview stack. For dismissal animation we want the fromView to slide away, revealing the toView. Therefor we must place the toView under the fromView.
             containerView.insertSubview(toView, belowSubview: fromView)
+        } else {
+            fromView.frame = onScreenFrame // music
+            toView.frame = offToRightSideFrame // cam
+            
+            containerView.addSubview(toView)
         }
         
         let duration = self.transitionDuration(using: transitionContext)
         
         UIView.animate(withDuration: duration, animations: { 
 
-            if isPresenting {
-                toView.frame = fromFrame
+            if goingToMusicSearch {
+                fromView.frame = offToRightSideFrame // cam
+                toView.frame = onScreenFrame // music
             } else {
-                // For dismissal the fromView slides off the screen.
-                
-                fromView.frame = fromFrame.offsetBy(dx: fromFrame.size.width * offset.dx,
-                                                    dy: fromFrame.size.height * offset.dy)
+                fromView.frame = offToLeftSideFrame // music
+                toView.frame = onScreenFrame // came
+
             }
             
         }) { (finished) in

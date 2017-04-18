@@ -33,6 +33,16 @@ class MusicSearchViewController: UITableViewController {
         hideKeyboardWhenTappedAround()
         searchBar.delegate = self
         searchBar.keyboardAppearance = .dark
+        
+//        // Move backbutton to other side
+//        let navbar = self.navigationController?.navigationBar
+//        
+//        if let navbar = navbar {
+//            let backbutton = navbar.backItem
+//            
+////            backbutton.
+//            navbar.pushItem(backbutton!, animated: true)
+//        }
     }
     
     func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
@@ -42,7 +52,7 @@ class MusicSearchViewController: UITableViewController {
         default:
             // pass down for the interaction controller to handle the rest of these cases
             if let navigationController = navigationController as? CameraCaptureNavigationController {
-                navigationController.animator.targetEdge = UIRectEdge.right
+//                navigationController.animator.targetEdge = UIRectEdge.right
                 navigationController.interactionController.edgeGestureAction(sender: sender)
             }
         }
