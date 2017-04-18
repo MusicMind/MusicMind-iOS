@@ -16,6 +16,7 @@ class MusicSearchViewController: UIViewController {
     weak var audioPlayer: SPTAudioStreamingController?
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     
     // MARK: - View controller lifecycle
@@ -40,9 +41,6 @@ class MusicSearchViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     @IBAction func done(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
