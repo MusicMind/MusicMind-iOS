@@ -22,11 +22,11 @@ class MusicSearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup gesture recognizer
-        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
-        edgeGesture.edges = UIRectEdge.right
-        view.addGestureRecognizer(edgeGesture)
-        
+//        // Setup gesture recognizer
+//        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
+//        edgeGesture.edges = UIRectEdge.right
+//        view.addGestureRecognizer(edgeGesture)
+//        
         // Other setups
         createAudioPlayer()
         setupNavigationBar(theme: .light)
@@ -45,18 +45,17 @@ class MusicSearchViewController: UITableViewController {
 //        }
     }
     
-    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
-        switch sender.state {
-        case .began:
-            self.navigationController?.popViewController(animated: true)
-        default:
-            // pass down for the interaction controller to handle the rest of these cases
-            if let navigationController = navigationController as? CameraCaptureNavigationController {
-//                navigationController.animator.targetEdge = UIRectEdge.right
-                navigationController.interactionController.edgeGestureAction(sender: sender)
-            }
-        }
-    }
+//    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
+//        switch sender.state {
+//        case .began:
+//            self.navigationController?.popViewController(animated: true)
+//        default:
+//            // pass down for the interaction controller to handle the rest of these cases
+//            if let navigationController = navigationController as? CameraCaptureNavigationController {
+//                navigationController.interactionController.edgeGestureAction(sender: sender)
+//            }
+//        }
+//    }
 
     
     // MARK: - Setups and helpers

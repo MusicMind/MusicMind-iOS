@@ -25,11 +25,11 @@ final class CameraCaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup gesture recognizer
-        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
-        edgeGesture.edges = UIRectEdge.left
-        view.addGestureRecognizer(edgeGesture)
-        
+//        // Setup gesture recognizer
+//        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
+//        edgeGesture.edges = UIRectEdge.left
+//        view.addGestureRecognizer(edgeGesture)
+       
         // Other setups
         setupCaptureSession()
         setupNavigationBar(theme: .light)
@@ -57,18 +57,18 @@ final class CameraCaptureViewController: UIViewController {
         return true
     }
     
-    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
-        switch sender.state {
-        case .began:
-            performSegue(withIdentifier: "showMusicSearchViewContoller", sender: self)
-        default:
-            // pass down for the interaction controller to handle the rest of these cases
-            if let navigationController = navigationController as? CameraCaptureNavigationController {
-//                navigationController.animator.targetEdge = UIRectEdge.left
-                navigationController.interactionController.edgeGestureAction(sender: sender)
-            }
-        }
-    }
+//    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
+//        switch sender.state {
+//        case .began:
+//            performSegue(withIdentifier: "showMusicSearchViewContoller", sender: self)
+//        default:
+//            // pass down for the interaction controller to handle the rest of these cases
+//            if let navigationController = navigationController as? CameraCaptureNavigationController {
+////                navigationController.animator.targetEdge = UIRectEdge.left
+//                navigationController.interactionController.edgeGestureAction(sender: sender)
+//            }
+//        }
+//    }
     
     
     // MARK: - AV Capturing

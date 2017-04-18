@@ -71,7 +71,7 @@
                                 </constraints>
                                 <state key="normal" title="Music" image="MusicIcon"/>
                                 <connections>
-                                    <segue destination="Gop-j7-Dp8" kind="show" identifier="showMusicSearchViewContoller" id="Cw2-3Y-gyY"/>
+                                    <segue destination="Gop-j7-Dp8" kind="presentation" identifier="showMusicSearchViewContoller" modalTransitionStyle="flipHorizontal" id="Cw2-3Y-gyY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,7 +110,7 @@
         <!--Camera Capture Navigation Controller-->
         <scene sceneID="5BW-Lr-jx8">
             <objects>
-                <navigationController storyboardIdentifier="CameraCaptureNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vS2-12-OvP" userLabel="Camera Capture Navigation Controller" customClass="CameraCaptureNavigationController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CameraCaptureNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vS2-12-OvP" userLabel="Camera Capture Navigation Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Camera" id="rmX-B7-GC3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ioD-qg-TJA">

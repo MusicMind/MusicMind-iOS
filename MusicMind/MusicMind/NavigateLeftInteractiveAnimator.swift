@@ -42,16 +42,19 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
         let onScreenFrame = CGRect(x: 0, y: 0, width: fromFrame.width, height: fromFrame.height)
         let offToRightSideFrame = CGRect(x: fromFrame.width, y: 0, width: fromFrame.width, height: fromFrame.height)
         
-        containerView.addSubview(toView)
         
         if goingToMusicSearch {
             // For a presentation, the toView starts off-screen and slides in.
             fromView.frame = onScreenFrame // cam
             toView.frame = offToLeftSideFrame // music
+            
+            containerView.addSubview(toView)
         } else {
             fromView.frame = onScreenFrame // music
             toView.frame = offToRightSideFrame // cam
         }
+        
+        toView.alpha = 1.0
         
         let duration = self.transitionDuration(using: transitionContext)
         
@@ -63,6 +66,7 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
             } else {
                 fromView.frame = offToLeftSideFrame // music
                 toView.frame = onScreenFrame // came
+                toView.alpha = 1.0
             }
             
         }) { (finished) in
