@@ -15,33 +15,25 @@ class MusicSearchViewController: UIViewController {
     var totalNumberOfSongFromResults: Int = 0
     weak var audioPlayer: SPTAudioStreamingController?
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     // MARK: - View controller lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // Setup gesture recognizer
+        // Setup gesture recognizer
 //        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
 //        edgeGesture.edges = UIRectEdge.right
 //        view.addGestureRecognizer(edgeGesture)
-//        
+     
         // Other setups
         createAudioPlayer()
         setupNavigationBar(theme: .light)
         hideKeyboardWhenTappedAround()
         searchBar.delegate = self
         searchBar.keyboardAppearance = .dark
-        
-//        // Move backbutton to other side
-//        let navbar = self.navigationController?.navigationBar
-//        
-//        if let navbar = navbar {
-//            let backbutton = navbar.backItem
-//            
-////            backbutton.
-//            navbar.pushItem(backbutton!, animated: true)
-//        }
     }
     
     @IBAction func done(_ sender: Any) {
