@@ -15,6 +15,8 @@ struct User{
         case birthdayKey = "MMBirthday"
         case firebaseUUIDKey = "MMFirebaseUUIDKey"
         case mobileNumberKey = "MMMobileNumber"
+        case spotifyToken = "MMSpotifyToken"
+
     }
     
     var firstName: String? {
@@ -63,6 +65,15 @@ struct User{
         }
     }
     
+    var spotifyToken: String? {
+        get{
+            return UserDefaults.standard.object(forKey: UserDefaultsKeys.spotifyToken.rawValue) as? String
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.spotifyToken.rawValue)
+        }
+    }
+
     
     var dictionaryRepresentation: [String:Any?] {
         let dateFormatter = DateFormatter()
