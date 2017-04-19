@@ -29,7 +29,6 @@ class MusicSearchViewController: UIViewController {
      
         // Other setups
         hideKeyboardWhenTappedAround()
-        
         searchBar.keyboardAppearance = .dark
         
         // Set delegates
@@ -54,28 +53,15 @@ class MusicSearchViewController: UIViewController {
             
         }
         let login = UIAlertAction(title: "Go to Spotify", style: .default) { (alertAction) in
-            self.loginToSpotify()
+            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
+                UIApplication.shared.open(spotifyUrl, options: [:])
+            }
         }
         
         alert.addAction(cancel)
         alert.addAction(login)
         
         present(alert, animated: true, completion: nil)
-    }
-    
-    private func loginToSpotify() {
-        
-        if spotifyAuth.session != nil {
-            
-//            SPTAudioStreamingController.sharedInstance().login(withAccessToken: user.spotifyToken!)
-            
-            print(SPTAuth.defaultInstance().session.canonicalUsername)
-        }
-        else {
-            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
-                UIApplication.shared.open(spotifyUrl, options: [:])
-            }
-        }
     }
     
     @IBAction func done(_ sender: Any) {
@@ -87,7 +73,6 @@ class MusicSearchViewController: UIViewController {
         case .began:
             self.dismiss(animated: true, completion: nil)
         default:
-            // pass down for the interaction controller to handle the rest of these cases
             break
         }
     }
