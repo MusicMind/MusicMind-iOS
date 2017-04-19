@@ -111,7 +111,6 @@ class MusicSearchViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-//        audioPlayer?.login(withAccessToken: user.spotifyToken)
     }
     
     func convertStringToDictionary(text: String) -> [String:Any]? {
@@ -201,6 +200,8 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                 let index = items[row]
                 let trackURI = index["uri"] as? String
 
+                audioPlayer?.login(withAccessToken: user.spotifyToken!)
+                
                 self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
                     if (error != nil) {
                         print(error!.localizedDescription)

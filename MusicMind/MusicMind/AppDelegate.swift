@@ -30,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if error != nil {
                     print("*** Auth error \(String(describing: error))")
                     return
+                } else {
+                    var user = User()
+                    user.spotifyToken = session!.accessToken
+                    
+                    print(user.spotifyToken)
                 }
             })
         }
