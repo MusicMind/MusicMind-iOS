@@ -41,13 +41,15 @@ class MusicSearchViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         if SPTAudioStreamingController.sharedInstance().loggedIn {
             print("Yay. User is logged in to spotify.")
-        } else {
+        }
+        else if let token = user.spotifyToken {
+            SPTAudioStreamingController.sharedInstance().login(withAccessToken: token)
+        }
+        else {
             presentSpotifyLoginAlert()
         }
-        
     }
     
     func presentSpotifyLoginAlert() {
@@ -67,7 +69,7 @@ class MusicSearchViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func loginToSpotify() {
+    private func loginToSpotify() {
         SPTAuth.defaultInstance().clientID = "3b7f66602b9c45b78f4aa55de8efd046"
         SPTAuth.defaultInstance().redirectURL = URL(string: "musicmind://returnAfterSpotify")
         SPTAuth.defaultInstance().requestedScopes = [SPTAuthStreamingScope]
@@ -206,28 +208,19 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
-                let row = indexPath.row
-                let index = items[row]
+                let index = items[indexPath.row]
                 let trackURI = index["uri"] as? String
 
-                
-                if SPTAudioStreamingController.sharedInstance().loggedIn {
-                    SPTAudioStreamingController.sharedInstance().playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
-                        if (error != nil) {
-                            print(error!.localizedDescription)
-                            return
-                        }})
-                } else {
-                    print("Not logged in")
+                SPTAudioStreamingController.sharedInstance().playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
+                    error in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        return
+                    }
                 }
-                
-              
             }
         }
-        
     }
-    
-    // UIApplication.shared().open(url, options: [:])
     
 
     // MARK: - Table view data source
