@@ -20,12 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
+        // Setup spotify auth
+        spotifyAuth.sessionUserDefaultsKey = "MMSpotifySession" // Enable automatic saving of the session to defaults
+        spotifyAuth.clientID = "3b7f66602b9c45b78f4aa55de8efd046"
+        spotifyAuth.redirectURL = URL(string: "musicmind://returnAfterSpotify")
+        spotifyAuth.requestedScopes = [SPTAuthStreamingScope]
+        
         return true
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        // Setting this will enable automatic saving of the session to defaults
-        spotifyAuth.sessionUserDefaultsKey = "MMSpotifySession"
+
         
         // Check if this is coming from the Spotify login flow
         if spotifyAuth.canHandle(url) {

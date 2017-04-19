@@ -85,30 +85,18 @@ class MusicSearchViewController: UIViewController {
     }
     
     private func loginToSpotify() {
-//        SPTAuth.defaultInstance().clientID = "3b7f66602b9c45b78f4aa55de8efd046"
-//        SPTAuth.defaultInstance().redirectURL = URL(string: "musicmind://returnAfterSpotify")
-//        SPTAuth.defaultInstance().requestedScopes = [SPTAuthStreamingScope]
-//        
-//        //TODO rethink this first conditional
-//        if SPTAuth.defaultInstance().session != nil {
-//            
-//            //TODO Store session in UserDefaults
-//            print(SPTAuth.defaultInstance().session.accessToken)
-//            
+        
+        if SPTAuth.defaultInstance().session != nil {
+            
 //            SPTAudioStreamingController.sharedInstance().login(withAccessToken: user.spotifyToken!)
-//
-//            
-//            if !SPTAuth.defaultInstance().session.isValid(){
-//                print("session not valid")
-//            }
-//            
-//            print(SPTAuth.defaultInstance().session.canonicalUsername)
-//        }
-//        else {
-//            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
-//                UIApplication.shared.open(spotifyUrl, options: [:])
-//            }
-//        }
+            
+            print(SPTAuth.defaultInstance().session.canonicalUsername)
+        }
+        else {
+            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
+                UIApplication.shared.open(spotifyUrl, options: [:])
+            }
+        }
     }
     
     @IBAction func done(_ sender: Any) {
