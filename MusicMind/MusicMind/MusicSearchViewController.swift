@@ -13,7 +13,6 @@ class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
-    weak var audioPlayer = SPTAudioStreamingController.sharedInstance()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
@@ -42,13 +41,22 @@ class MusicSearchViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        presentSpotifyLoginAlert()
+        
+        if SPTAudioStreamingController.sharedInstance().loggedIn {
+            print("Yay. User is logged in to spotify.")
+        } else {
+            presentSpotifyLoginAlert()
+        }
+        
     }
     
     func presentSpotifyLoginAlert() {
         let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in
+            self.dismiss(animated: true, completion: nil)
+            
+        }
         let login = UIAlertAction(title: "Go to Spotify", style: .default) { (alertAction) in
             self.loginToSpotify()
         }
@@ -60,26 +68,28 @@ class MusicSearchViewController: UIViewController {
     }
     
     func loginToSpotify() {
-        if let auth = SPTAuth.defaultInstance() {
-            auth.clientID = "3b7f66602b9c45b78f4aa55de8efd046"
-            auth.redirectURL = URL(string: "musicmind://returnAfterSpotify")
-            auth.requestedScopes = [SPTAuthStreamingScope]
+        SPTAuth.defaultInstance().clientID = "3b7f66602b9c45b78f4aa55de8efd046"
+        SPTAuth.defaultInstance().redirectURL = URL(string: "musicmind://returnAfterSpotify")
+        SPTAuth.defaultInstance().requestedScopes = [SPTAuthStreamingScope]
+        
+        //TODO rethink this first conditional
+        if SPTAuth.defaultInstance().session != nil {
             
-            //TODO rethink this first conditional
-            if auth.session != nil {
-                //TODO Store session in UserDefaults
-                print(auth.session.accessToken)
-                
-                if !auth.session.isValid(){
-                    print("session not valid")
-                }
-                
-                print(auth.session.canonicalUsername)
+            //TODO Store session in UserDefaults
+            print(SPTAuth.defaultInstance().session.accessToken)
+            
+            SPTAudioStreamingController.sharedInstance().login(withAccessToken: user.spotifyToken!)
+
+            
+            if !SPTAuth.defaultInstance().session.isValid(){
+                print("session not valid")
             }
-            else {
-                if let spotifyUrl = auth.spotifyWebAuthenticationURL() {
-                    UIApplication.shared.open(spotifyUrl, options: [:])
-                }
+            
+            print(SPTAuth.defaultInstance().session.canonicalUsername)
+        }
+        else {
+            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
+                UIApplication.shared.open(spotifyUrl, options: [:])
             }
         }
     }
@@ -102,11 +112,11 @@ class MusicSearchViewController: UIViewController {
     // MARK: - Setups and helpers
     
     private func createAudioPlayer() {
-        audioPlayer?.playbackDelegate = self
-        audioPlayer?.delegate = self
+        SPTAudioStreamingController.sharedInstance().playbackDelegate = self
+        SPTAudioStreamingController.sharedInstance().delegate = self
         
         do {
-            try audioPlayer?.start(withClientId: "3b7f66602b9c45b78f4aa55de8efd046")
+            try SPTAudioStreamingController.sharedInstance().start(withClientId: "3b7f66602b9c45b78f4aa55de8efd046")
         } catch {
             print(error.localizedDescription)
         }
@@ -200,11 +210,9 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                 let index = items[row]
                 let trackURI = index["uri"] as? String
 
-                audioPlayer?.login(withAccessToken: user.spotifyToken!)
                 
-                
-                if (audioPlayer?.loggedIn)! {
-                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
+                if SPTAudioStreamingController.sharedInstance().loggedIn {
+                    SPTAudioStreamingController.sharedInstance().playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
                         if (error != nil) {
                             print(error!.localizedDescription)
                             return
