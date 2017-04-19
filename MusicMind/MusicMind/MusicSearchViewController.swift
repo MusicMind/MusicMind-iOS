@@ -39,21 +39,11 @@ class MusicSearchViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let session = spotifyAuth.session {
-            if session.isValid() {
-                spotifySteamingController.login(withAccessToken: session.accessToken)
-            } else {
-                // the session has expired and we need to refresh it using SPTAuth
-            }
+        if spotifyAuth.session.isValid() && spotifySteamingController.loggedIn {
+            print("All logged in with Spotify and good to go.")
         } else {
             presentSpotifyLoginAlert()
         }
-        
-        
-    
-//        if SPTAudioStreamingController.sharedInstance().loggedIn {
-//            print("Yay. User is logged in to spotify.")
-//        }
     }
     
     private func presentSpotifyLoginAlert() {
