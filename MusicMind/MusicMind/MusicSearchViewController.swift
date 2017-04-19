@@ -180,10 +180,8 @@ extension MusicSearchViewController: UITextViewDelegate {
     
 }
 
+// MARK: - Spotify delegates
 extension MusicSearchViewController: SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate {
-    
-    
-    // MARK: - Audio steaming
     
     func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
         print(audioStreaming)
@@ -199,11 +197,8 @@ extension MusicSearchViewController: SPTAudioStreamingPlaybackDelegate, SPTAudio
 
 }
 
-/// Table view delegate and data source methods
+// MARK: - Table view delegates
 extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
-    // MARK: - Table view delegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
@@ -221,9 +216,6 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
             }
         }
     }
-    
-
-    // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
