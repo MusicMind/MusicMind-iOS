@@ -17,5 +17,3 @@ enum NavigationBarTheme {
     case light
     case dark
 }
-
-var spotifySession = userLoginCredentials.spotifySession
