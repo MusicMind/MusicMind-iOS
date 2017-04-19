@@ -26,12 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         spotifyAuth.redirectURL = URL(string: "musicmind://returnAfterSpotify")
         spotifyAuth.requestedScopes = [SPTAuthStreamingScope]
         
+        do { try spotifySteamingController.start(withClientId: spotifyAuth.clientID) } catch {
+            print(error)
+        }
+        
         return true
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
 
-        
         // Check if this is coming from the Spotify login flow
         if spotifyAuth.canHandle(url) {
             spotifyAuth.handleAuthCallback(withTriggeredAuthURL: url, callback: {
@@ -40,16 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let session = session {
-                    //////////////////////////////////////////////////
-                    
                     if session.isValid() {
-                        print("session is valid")
-                    }
-                    else {
-                        print("nope")
+                        spotifyAuth.session = session
                     }
                 }
-                
             })
             
             return true

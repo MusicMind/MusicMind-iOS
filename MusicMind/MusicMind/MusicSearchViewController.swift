@@ -28,7 +28,7 @@ class MusicSearchViewController: UIViewController {
         view.addGestureRecognizer(edgeGesture)
      
         // Other setups
-        createAudioPlayer()
+//        createAudioPlayer()
         hideKeyboardWhenTappedAround()
         
         searchBar.keyboardAppearance = .dark
@@ -42,7 +42,7 @@ class MusicSearchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if let session = spotifyAuth.session {
             if session.isValid() {
-                
+                spotifySteamingController.login(withAccessToken: session.accessToken)
             } else {
                 // the session has expired and we need to refresh it using SPTAuth
             }
@@ -51,23 +51,13 @@ class MusicSearchViewController: UIViewController {
         }
         
         
-        
-        
-        
-        
-        
+    
 //        if SPTAudioStreamingController.sharedInstance().loggedIn {
 //            print("Yay. User is logged in to spotify.")
 //        }
-//        else if let token = userLoginCredentials.spotifySession {
-//            SPTAudioStreamingController.sharedInstance().login(withAccessToken: token)
-//        }
-//        else {
-//            presentSpotifyLoginAlert()
-//        }
     }
     
-    func presentSpotifyLoginAlert() {
+    private func presentSpotifyLoginAlert() {
         let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in
@@ -86,7 +76,7 @@ class MusicSearchViewController: UIViewController {
     
     private func loginToSpotify() {
         
-        if SPTAuth.defaultInstance().session != nil {
+        if spotifyAuth.session != nil {
             
 //            SPTAudioStreamingController.sharedInstance().login(withAccessToken: user.spotifyToken!)
             
@@ -116,17 +106,17 @@ class MusicSearchViewController: UIViewController {
     
     // MARK: - Setups and helpers
     
-    private func createAudioPlayer() {
-        SPTAudioStreamingController.sharedInstance().playbackDelegate = self
-        SPTAudioStreamingController.sharedInstance().delegate = self
-        
-        do {
-            try SPTAudioStreamingController.sharedInstance().start(withClientId: "3b7f66602b9c45b78f4aa55de8efd046")
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-    }
+//    private func createAudioPlayer() {
+//        spotifySteamingController.playbackDelegate = self
+//        spotifySteamingController.delegate = self
+//        
+//        do {
+//            try spotifySteamingController.start(withClientId: "3b7f66602b9c45b78f4aa55de8efd046")
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//        
+//    }
     
     func convertStringToDictionary(text: String) -> [String:Any]? {
         if let data = text.data(using: .utf8) {
@@ -181,23 +171,6 @@ extension MusicSearchViewController: UITextViewDelegate {
         searchBar.resignFirstResponder()
     }
     
-}
-
-// MARK: - Spotify delegates
-extension MusicSearchViewController: SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate {
-    
-    func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
-        print(audioStreaming)
-    }
-    
-    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didReceiveError error: Error!) {
-        print(error)
-    }
-    
-    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: String!) {
-        print(trackUri)
-    }
-
 }
 
 // MARK: - Table view delegates
