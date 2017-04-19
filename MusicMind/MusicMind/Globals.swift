@@ -12,6 +12,7 @@ import Foundation
 
 let userLoginCredentials = UserLoginCredentials()
 let user = User()
+let spotifyAuth = SPTAuth.defaultInstance()!
 
 enum NavigationBarTheme {
     case light
