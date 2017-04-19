@@ -28,7 +28,6 @@ class MusicSearchViewController: UIViewController {
         view.addGestureRecognizer(edgeGesture)
      
         // Other setups
-//        createAudioPlayer()
         hideKeyboardWhenTappedAround()
         
         searchBar.keyboardAppearance = .dark
@@ -105,18 +104,6 @@ class MusicSearchViewController: UIViewController {
 
     
     // MARK: - Setups and helpers
-    
-//    private func createAudioPlayer() {
-//        spotifySteamingController.playbackDelegate = self
-//        spotifySteamingController.delegate = self
-//        
-//        do {
-//            try spotifySteamingController.start(withClientId: "3b7f66602b9c45b78f4aa55de8efd046")
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        
-//    }
     
     func convertStringToDictionary(text: String) -> [String:Any]? {
         if let data = text.data(using: .utf8) {
