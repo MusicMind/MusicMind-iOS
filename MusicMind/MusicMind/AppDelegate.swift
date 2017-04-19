@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         }
         
-                return false
+        return false
     }
 }
 
