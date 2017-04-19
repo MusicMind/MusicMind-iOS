@@ -17,6 +17,7 @@ class UserLoginCredentials: NSObject {
     private enum KeychainKey: String {
         case firebaseUserEmail = "MMEmail"
         case firebaseUserPassword = "MMPassword"
+        case spotifySession = "MMSpotifySession"
     }
     
     override init() {
@@ -49,6 +50,26 @@ class UserLoginCredentials: NSObject {
                 keychain.set(unwrappedNewValue, forKey: KeychainKey.firebaseUserPassword.rawValue)
             } else {
                 keychain.delete(KeychainKey.firebaseUserPassword.rawValue)
+            }
+        }
+    }
+    
+    var spotifySession: SPTSession? {
+        get {
+            if let archivedSession = keychain.getData(KeychainKey.spotifySession.rawValue) {
+                return NSKeyedUnarchiver.unarchiveObject(with: archivedSession) as? SPTSession
+            }
+            else {
+                return nil
+            }
+        }
+        set {
+            if let session = newValue {
+                let archivedableSession = NSKeyedArchiver.archivedData(withRootObject: session)
+                
+                keychain.set(archivedableSession, forKey: KeychainKey.spotifySession.rawValue)
+            } else {
+                keychain.delete(KeychainKey.spotifySession.rawValue)
             }
         }
     }
