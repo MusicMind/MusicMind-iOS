@@ -36,7 +36,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print(error.localizedDescription)
                 } else if let session = session {
                     //////////////////////////////////////////////////
+                    
+                    if session.isValid() {
+                        print("session is valid")
+                    }
+                    else {
+                        print("nope")
+                    }
                 }
+                
             })
             
             return true
