@@ -202,11 +202,18 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
 
                 audioPlayer?.login(withAccessToken: user.spotifyToken!)
                 
-                self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
-                    if (error != nil) {
-                        print(error!.localizedDescription)
-                        return
-                }})
+                
+                if (audioPlayer?.loggedIn)! {
+                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
+                        if (error != nil) {
+                            print(error!.localizedDescription)
+                            return
+                        }})
+                } else {
+                    print("Not logged in")
+                }
+                
+              
             }
         }
         
