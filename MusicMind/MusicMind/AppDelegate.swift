@@ -24,14 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        if SPTAuth.defaultInstance().canHandle(url) {
-            SPTAuth.defaultInstance().handleAuthCallback(withTriggeredAuthURL: url, callback: {
+        // Setting this will enable automatic saving of the session to defaults
+        spotifyAuth.sessionUserDefaultsKey = "MMSpotifySession"
+        
+        // Check if this is coming from the Spotify login flow
+        if spotifyAuth.canHandle(url) {
+            spotifyAuth.handleAuthCallback(withTriggeredAuthURL: url, callback: {
                 (error, session) in
                 
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let session = session {
-                    userLoginCredentials.spotifySession = session
+                    //////////////////////////////////////////////////
                 }
             })
             
