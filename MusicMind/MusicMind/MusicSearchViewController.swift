@@ -13,7 +13,7 @@ class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
-    weak var audioPlayer: SPTAudioStreamingController?
+    weak var audioPlayer = SPTAudioStreamingController.sharedInstance()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
@@ -103,18 +103,16 @@ class MusicSearchViewController: UIViewController {
     // MARK: - Setups and helpers
     
     private func createAudioPlayer() {
-        audioPlayer = SPTAudioStreamingController.sharedInstance()
-        
         audioPlayer?.playbackDelegate = self
         audioPlayer?.delegate = self
         
         do {
-            try audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
+            try audioPlayer?.start(withClientId: "3b7f66602b9c45b78f4aa55de8efd046")
         } catch {
             print(error.localizedDescription)
         }
         
-        audioPlayer?.login(withAccessToken: user.spotifyToken)
+//        audioPlayer?.login(withAccessToken: user.spotifyToken)
     }
     
     func convertStringToDictionary(text: String) -> [String:Any]? {
@@ -200,20 +198,15 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
-                    let trackID = index["id"] as? String
-                    
-                    print("http://open.spotify.com/track/\(trackID)")
-                    
-                    UIApplication.shared.open(URL(string: "http://open.spotify.com/track/\(trackID!)")!, options: [:], completionHandler: nil)
-                    
-//                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
-//                        if (error != nil) {
-//                            print(error?.localizedDescription)
-//                            return;
-//                        }})
-//                    
-                }
+                let row = indexPath.row
+                let index = items[row]
+                let trackURI = index["uri"] as? String
+
+                self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
+                    if (error != nil) {
+                        print(error!.localizedDescription)
+                        return
+                }})
             }
         }
         
