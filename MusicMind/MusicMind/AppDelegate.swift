@@ -27,16 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if SPTAuth.defaultInstance().canHandle(url) {
             SPTAuth.defaultInstance().handleAuthCallback(withTriggeredAuthURL: url, callback: {
                 (error, session) in
-                if error != nil {
-                    print("*** Auth error \(String(describing: error))")
-                    return
-                } else {
-                    var user = User()
-                    user.spotifyToken = session!.accessToken
-                    
-                    print(user.spotifyToken)
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let session = session {
+                    userLoginCredentials.spotifySession = session
                 }
             })
+            
+            return true
         }
         
         return false
