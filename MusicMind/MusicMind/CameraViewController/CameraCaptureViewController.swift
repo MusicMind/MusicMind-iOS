@@ -16,7 +16,7 @@ final class CameraCaptureViewController: UIViewController {
     @IBOutlet private weak var cameraPreviewView: UIView!
     @IBOutlet private weak var recordButtonContainer: UIView!
     @IBOutlet private weak var libraryButton: UIButton!
-    private var recordButton: RecordButton!
+    @IBOutlet private weak var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
 
     
@@ -35,11 +35,11 @@ final class CameraCaptureViewController: UIViewController {
         setupNavigationBar(theme: .light)
         
         // Position the library button
-        libraryButton.center = CGPoint(x: recordButtonContainer.center.x - 110, y: recordButtonContainer.center.y)
+//        libraryButton.center = CGPoint(x: recordButtonContainer.center.x - 110, y: recordButtonContainer.center.y)
         
         // Set up the record button
-        recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
-        recordButton.center = recordButtonContainer.center
+//        recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
+//        recordButton.center = recordButtonContainer.center
         recordButton.buttonColor = .white
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
@@ -130,7 +130,7 @@ final class CameraCaptureViewController: UIViewController {
                 }
             }
         }
-        
+
         
         // Get back camera input ready
         do {
@@ -152,12 +152,19 @@ final class CameraCaptureViewController: UIViewController {
         cameraCaptureOutput = AVCaptureMovieFileOutput()
         session.addOutput(cameraCaptureOutput)
         
-        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
-        cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        cameraPreviewLayer?.frame = cameraPreviewView.bounds
-        cameraPreviewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
+        if TARGET_OS_SIMULATOR == 1 {
+            print("Running on sim")
+        } else {
+            cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
+            cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+            cameraPreviewLayer?.frame = cameraPreviewView.bounds
+            cameraPreviewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
+            
+            cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
+        }
+    
         
-        cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
+
         
         session.startRunning()
     }

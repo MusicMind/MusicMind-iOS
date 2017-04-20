@@ -24,21 +24,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2Q-BA-tgI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5S-mR-bBx" userLabel="RecordButtonContainerView">
-                                        <rect key="frame" x="137" y="537" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="MkA-XQ-FW5"/>
-                                            <constraint firstAttribute="height" constant="100" id="hX6-nK-1hq"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="w5S-mR-bBx" secondAttribute="bottom" constant="30" id="PQQ-65-YG3"/>
-                                    <constraint firstItem="w5S-mR-bBx" firstAttribute="centerX" secondItem="p2Q-BA-tgI" secondAttribute="centerX" id="TAL-oS-iPk"/>
-                                </constraints>
+                                <color key="backgroundColor" red="0.80784314869999996" green="0.027450980619999999" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
                                 <rect key="frame" x="316" y="87" width="30" height="30"/>
@@ -51,18 +37,14 @@
                                     <action selector="flipCameras:" destination="sBF-OT-sPe" eventType="touchUpInside" id="otq-49-243"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC">
-                                <rect key="frame" x="159" y="315" width="57" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Library">
-                                    <color key="titleColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="presentSelectFromLibraryViewController:" destination="sBF-OT-sPe" eventType="touchUpInside" id="PgJ-hw-ALn"/>
-                                </connections>
-                            </button>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5S-mR-bBx" userLabel="RecordButtonContainerView">
+                                <rect key="frame" x="152" y="538" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="MkA-XQ-FW5"/>
+                                    <constraint firstAttribute="height" constant="70" id="hX6-nK-1hq"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn">
                                 <rect key="frame" x="29" y="87" width="30" height="30"/>
                                 <constraints>
@@ -74,24 +56,55 @@
                                     <segue destination="Gop-j7-Dp8" kind="presentation" identifier="showMusicSearchViewContoller" modalTransitionStyle="flipHorizontal" id="Cw2-3Y-gyY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC">
+                                <rect key="frame" x="37" y="516" width="57" height="37"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Library">
+                                    <color key="titleColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentSelectFromLibraryViewController:" destination="sBF-OT-sPe" eventType="touchUpInside" id="PgJ-hw-ALn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfH-an-nOB" customClass="RecordButton" customModule="RecordButton">
+                                <rect key="frame" x="152.5" y="498" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.53569626135066484" green="1" blue="0.49764684300365181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="PGq-ie-DFF"/>
+                                    <constraint firstAttribute="width" constant="70" id="Sgp-WE-Rt8"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8uN-dK-thC" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="21" id="2nz-W1-sp7"/>
+                            <constraint firstItem="w5S-mR-bBx" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="4hg-XO-Md7"/>
                             <constraint firstItem="THY-bH-VVn" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="13" id="4jW-6A-SB5"/>
+                            <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerY" secondItem="Fk2-94-Jwe" secondAttribute="centerY" id="Evg-Y9-avg"/>
+                            <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="HfH-an-nOB" secondAttribute="bottom" constant="50" id="K0J-7k-byr"/>
                             <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="QR0-Rg-uFX"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="RDB-b0-Lfb"/>
-                            <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerY" secondItem="Fk2-94-Jwe" secondAttribute="centerY" id="TMm-tF-teb"/>
+                            <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="w5S-mR-bBx" secondAttribute="bottom" constant="10" id="Sre-Xi-U3A"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="width" secondItem="Fk2-94-Jwe" secondAttribute="width" id="ami-Eg-e8J"/>
                             <constraint firstItem="THY-bH-VVn" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="eGm-U8-7l9"/>
+                            <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="8uN-dK-thC" secondAttribute="bottom" constant="65" id="kiY-1W-cF6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UFk-iX-4OX" secondAttribute="trailing" constant="13" id="r0N-28-aJ1"/>
+                            <constraint firstItem="HfH-an-nOB" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="vRe-xm-XnQ"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="height" secondItem="Fk2-94-Jwe" secondAttribute="height" id="zyO-gK-gYf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="w5S-mR-bBx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="abx-js-koV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraPreviewView" destination="p2Q-BA-tgI" id="WHu-pH-iuI"/>
                         <outlet property="libraryButton" destination="8uN-dK-thC" id="mua-I4-hqr"/>
+                        <outlet property="recordButton" destination="HfH-an-nOB" id="gZ4-P6-CvG"/>
                         <outlet property="recordButtonContainer" destination="w5S-mR-bBx" id="sfu-ip-E31"/>
                     </connections>
                 </viewController>
@@ -105,7 +118,7 @@
                 <viewControllerPlaceholder storyboardName="MusicSearch" referencedIdentifier="MusicSearchViewController" id="Gop-j7-Dp8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uL-lC-cFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="-123"/>
+            <point key="canvasLocation" x="1659" y="-100"/>
         </scene>
         <!--Camera Capture Navigation Controller-->
         <scene sceneID="5BW-Lr-jx8">
