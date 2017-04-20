@@ -11,7 +11,22 @@ import AVFoundation
 import RecordButton
 import MobileCoreServices
 
+import FirebaseAuth
+
 final class CameraCaptureViewController: UIViewController {
+    
+    @IBAction func logout(_ sender: Any) {
+        do {
+            try FIRAuth.auth()?.signOut()
+            
+            let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+            let welcomeViewController = storyboard.instantiateInitialViewController()
+            
+            UIApplication.shared.keyWindow?.rootViewController = welcomeViewController
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     @IBOutlet private weak var cameraPreviewView: UIView!
     @IBOutlet private weak var libraryButton: UIButton!

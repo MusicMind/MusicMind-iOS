@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
-        if let user = FIRAuth.auth()?.currentUser {
+        if FIRAuth.auth()?.currentUser != nil {
             let storyboard = UIStoryboard(name: "CameraCapture", bundle: nil)
             let welcomeViewController = storyboard.instantiateInitialViewController()
             
@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             self.window?.rootViewController = welcomeViewController
         }
-        
         
 //        // Check if we already have user credentials and if so attempt login automatically
 //        if let email = userLoginCredentials.firebaseUserEmail, let password = userLoginCredentials.firebaseUserPassword {
