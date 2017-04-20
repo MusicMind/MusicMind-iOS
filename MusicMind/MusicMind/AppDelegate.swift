@@ -20,28 +20,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
-        
-        // Check if we already have user credentials and if so attempt login automatically
-        if let email = userLoginCredentials.firebaseUserEmail, let password = userLoginCredentials.firebaseUserPassword {
-            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-                if error == nil {
-                    let storyboard = UIStoryboard(name: "CameraCapture", bundle: nil)
-                    let welcomeViewController = storyboard.instantiateInitialViewController()
-                    
-                    self.window?.rootViewController = welcomeViewController
-                } else {
-                    let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
-                    let welcomeViewController = storyboard.instantiateInitialViewController()
-                    
-                    self.window?.rootViewController = welcomeViewController
-                }
-            })
+        if let user = FIRAuth.auth()?.currentUser {
+            let storyboard = UIStoryboard(name: "CameraCapture", bundle: nil)
+            let welcomeViewController = storyboard.instantiateInitialViewController()
+            
+            self.window?.rootViewController = welcomeViewController
         } else {
             let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
             let welcomeViewController = storyboard.instantiateInitialViewController()
             
             self.window?.rootViewController = welcomeViewController
         }
+        
+        
+//        // Check if we already have user credentials and if so attempt login automatically
+//        if let email = userLoginCredentials.firebaseUserEmail, let password = userLoginCredentials.firebaseUserPassword {
+//            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+//                if error == nil {
+//                    let storyboard = UIStoryboard(name: "CameraCapture", bundle: nil)
+//                    let welcomeViewController = storyboard.instantiateInitialViewController()
+//                    
+//                    self.window?.rootViewController = welcomeViewController
+//                } else {
+//                    let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+//                    let welcomeViewController = storyboard.instantiateInitialViewController()
+//                    
+//                    self.window?.rootViewController = welcomeViewController
+//                }
+//            })
+//        } else {
+//            let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+//            let welcomeViewController = storyboard.instantiateInitialViewController()
+//            
+//            self.window?.rootViewController = welcomeViewController
+//        }
         
         
         // Setup spotify auth
