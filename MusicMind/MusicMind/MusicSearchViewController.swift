@@ -38,10 +38,10 @@ class MusicSearchViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if spotifyAuth.session.isValid() && spotifyStreamingController.loggedIn {
-            print("All logged in with Spotify and good to go.")
-        } else {
+        if spotifyAuth.session == nil {
             presentSpotifyLoginAlert()
+        } else if spotifyAuth.session.isValid() && spotifyStreamingController.loggedIn {
+            print("All logged in with Spotify and good to go.")
         }
     }
     
