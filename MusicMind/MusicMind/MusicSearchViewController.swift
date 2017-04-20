@@ -35,11 +35,24 @@ class MusicSearchViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        spotifyStreamingController.delegate = self
+    }
+    
+    deinit {
+        spotifyStreamingController.delegate = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if spotifyAuth.session.isValid() && spotifySteamingController.loggedIn {
-            print("All logged in with Spotify and good to go.")
+        if let session = spotifyAuth.session {
+            if session.isValid() {
+                if spotifyStreamingController.loggedIn {
+                    print("Already loggedin to spotifyStreamingController")
+                } else {
+                    spotifyStreamingController.login(withAccessToken: session.accessToken)
+                }
+            } else {
+                presentSpotifyLoginAlert()
+            }
         } else {
             presentSpotifyLoginAlert()
         }
@@ -104,17 +117,12 @@ extension MusicSearchViewController: UISearchBarDelegate {
                 print("JSON: \(json)")
                 
                 if let dict = self.convertStringToDictionary(text: json ) {
-                    
                     self.searchResults = dict
                     
                     if let tracks = self.searchResults["tracks"] as? [String: Any] {
-                        
                         if let items = tracks["items"] as? [[String: Any]] {
-                            
                             self.totalNumberOfSongFromResults = items.count
-                            
                         }
-                        
                     }
                     
                     debugPrint(self.searchResults)
@@ -123,6 +131,18 @@ extension MusicSearchViewController: UISearchBarDelegate {
                 }
             }
         }
+    }
+    
+}
+
+extension MusicSearchViewController: SPTAudioStreamingDelegate {
+
+    func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
+        //
+    }
+    
+    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didReceiveError error: Error!) {
+        print("Audio streaming error: \(error.localizedDescription)")
     }
     
 }
@@ -144,7 +164,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                 let index = items[indexPath.row]
                 let trackURI = index["uri"] as? String
 
-                SPTAudioStreamingController.sharedInstance().playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
+                spotifyStreamingController.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
                     error in
                     if error != nil {
                         print(error!.localizedDescription)
@@ -179,7 +199,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                         cell.detailTextLabel?.text = artist[0]["name"] as? String
                     }
                     
-                    if let image = album["images"] as? [[String: Any]]{
+                    if let image = album["images"] as? [[String: Any]] {
                         let smallImage = image[2]
                         let urlString = smallImage["url"] as? String
                         
