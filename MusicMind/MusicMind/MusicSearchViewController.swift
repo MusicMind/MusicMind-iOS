@@ -46,7 +46,7 @@ class MusicSearchViewController: UIViewController {
         if let session = spotifyAuth.session {
             if session.isValid() {
                 if spotifyStreamingController.loggedIn {
-                    // Good to go
+                    print("Already loggedin to spotifyStreamingController")
                 } else {
                     spotifyStreamingController.login(withAccessToken: session.accessToken)
                 }
@@ -117,17 +117,12 @@ extension MusicSearchViewController: UISearchBarDelegate {
                 print("JSON: \(json)")
                 
                 if let dict = self.convertStringToDictionary(text: json ) {
-                    
                     self.searchResults = dict
                     
                     if let tracks = self.searchResults["tracks"] as? [String: Any] {
-                        
                         if let items = tracks["items"] as? [[String: Any]] {
-                            
                             self.totalNumberOfSongFromResults = items.count
-                            
                         }
-                        
                     }
                     
                     debugPrint(self.searchResults)
@@ -147,7 +142,7 @@ extension MusicSearchViewController: SPTAudioStreamingDelegate {
     }
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didReceiveError error: Error!) {
-        //
+        print("Audio streaming error: \(error.localizedDescription)")
     }
     
 }
