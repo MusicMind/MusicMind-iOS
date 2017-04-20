@@ -169,29 +169,29 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
         
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
+                let index = items[indexPath.row]
                     
-                    cell.textLabel?.text = index["name"] as? String
+                cell.textLabel?.text = index["name"] as? String
+                
+                if let album = index["album"] as? [String: Any] {
                     
-                    if let album = index["album"] as? [String: Any] {
+                    if let artist = album["artists"] as? [[String: Any]] {
+                        cell.detailTextLabel?.text = artist[0]["name"] as? String
+                    }
+                    
+                    if let image = album["images"] as? [[String: Any]]{
+                        let smallImage = image[2]
+                        let urlString = smallImage["url"] as? String
                         
-                        if let artist = album["artists"] as? [[String: Any]] {
-                            cell.detailTextLabel?.text = artist[0]["name"] as? String
-                            print(artist[0]["name"] as? String)
-                        }
-                        
-                        if let image = album["images"] as? [[String: Any]]{
-                            if let smallImage = image[2] as? [String: Any]{
-                                let urlString = smallImage["url"] as? String
-                                if let url  = NSURL(string: urlString!){
-                                    if let data = NSData(contentsOf: url as URL){
-                                        cell.imageView?.image = UIImage(data: data as Data)
-                                    }
-                                }
+                        if let url  = NSURL(string: urlString!){
+                            if let data = NSData(contentsOf: url as URL){
+                                cell.imageView?.image = UIImage(data: data as Data)
                             }
                         }
+
                     }
                 }
+
             }
         }
         
