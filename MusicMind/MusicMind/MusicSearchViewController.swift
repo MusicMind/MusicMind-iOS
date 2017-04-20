@@ -144,7 +144,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                 let index = items[indexPath.row]
                 let trackURI = index["uri"] as? String
 
-                SPTAudioStreamingController.sharedInstance().playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
+                spotifyStreamingController.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
                     error in
                     if error != nil {
                         print(error!.localizedDescription)
@@ -179,7 +179,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                         cell.detailTextLabel?.text = artist[0]["name"] as? String
                     }
                     
-                    if let image = album["images"] as? [[String: Any]]{
+                    if let image = album["images"] as? [[String: Any]] {
                         let smallImage = image[2]
                         let urlString = smallImage["url"] as? String
                         
