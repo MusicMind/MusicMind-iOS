@@ -30,16 +30,7 @@ final class CameraCaptureViewController: UIViewController {
         edgeGesture.edges = UIRectEdge.left
         view.addGestureRecognizer(edgeGesture)
        
-        // Other setups
-        setupCaptureSession()
-        setupNavigationBar(theme: .light)
-        
-        // Position the library button
-//        libraryButton.center = CGPoint(x: recordButtonContainer.center.x - 110, y: recordButtonContainer.center.y)
-        
-        // Set up the record button
-//        recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
-//        recordButton.center = recordButtonContainer.center
+        // Setup record button
         recordButton.buttonColor = .white
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
@@ -47,6 +38,10 @@ final class CameraCaptureViewController: UIViewController {
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchUpInside)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchDragExit)
         self.view.addSubview(recordButton)
+        
+        // Other setups
+        setupCaptureSession()
+        setupNavigationBar(theme: .light)
     }
     
     override func viewWillAppear(_ animated: Bool) {
