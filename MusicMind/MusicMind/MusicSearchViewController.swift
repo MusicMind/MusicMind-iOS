@@ -35,13 +35,26 @@ class MusicSearchViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        spotifyStreamingController.delegate = self
+    }
+    
+    deinit {
+        spotifyStreamingController.delegate = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if spotifyAuth.session == nil {
+        if let session = spotifyAuth.session {
+            if session.isValid() {
+                if spotifyStreamingController.loggedIn {
+                    // Good to go
+                } else {
+                    spotifyStreamingController.login(withAccessToken: session.accessToken)
+                }
+            } else {
+                presentSpotifyLoginAlert()
+            }
+        } else {
             presentSpotifyLoginAlert()
-        } else if spotifyAuth.session.isValid() && spotifyStreamingController.loggedIn {
-            print("All logged in with Spotify and good to go.")
         }
     }
     
@@ -123,6 +136,18 @@ extension MusicSearchViewController: UISearchBarDelegate {
                 }
             }
         }
+    }
+    
+}
+
+extension MusicSearchViewController: SPTAudioStreamingDelegate {
+
+    func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
+        //
+    }
+    
+    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didReceiveError error: Error!) {
+        //
     }
     
 }

@@ -55,7 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 } else if let session = session {
                     if session.isValid() {
                         spotifyAuth.session = session
-                        spotifyStreamingController.login(withAccessToken: session.accessToken)
                     }
                 }
             })
