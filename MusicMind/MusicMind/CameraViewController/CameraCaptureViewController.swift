@@ -14,7 +14,6 @@ import MobileCoreServices
 final class CameraCaptureViewController: UIViewController {
     
     @IBOutlet private weak var cameraPreviewView: UIView!
-    @IBOutlet private weak var recordButtonContainer: UIView!
     @IBOutlet private weak var libraryButton: UIButton!
     @IBOutlet private weak var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")

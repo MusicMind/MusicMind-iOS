@@ -37,14 +37,6 @@
                                     <action selector="flipCameras:" destination="sBF-OT-sPe" eventType="touchUpInside" id="otq-49-243"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5S-mR-bBx" userLabel="RecordButtonContainerView">
-                                <rect key="frame" x="152" y="538" width="70" height="70"/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.039215686270000001" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="MkA-XQ-FW5"/>
-                                    <constraint firstAttribute="height" constant="70" id="hX6-nK-1hq"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn">
                                 <rect key="frame" x="29" y="87" width="30" height="30"/>
                                 <constraints>
@@ -79,13 +71,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8uN-dK-thC" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="21" id="2nz-W1-sp7"/>
-                            <constraint firstItem="w5S-mR-bBx" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="4hg-XO-Md7"/>
                             <constraint firstItem="THY-bH-VVn" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="13" id="4jW-6A-SB5"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerY" secondItem="Fk2-94-Jwe" secondAttribute="centerY" id="Evg-Y9-avg"/>
                             <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="HfH-an-nOB" secondAttribute="bottom" constant="50" id="K0J-7k-byr"/>
                             <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="QR0-Rg-uFX"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="RDB-b0-Lfb"/>
-                            <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="w5S-mR-bBx" secondAttribute="bottom" constant="10" id="Sre-Xi-U3A"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="width" secondItem="Fk2-94-Jwe" secondAttribute="width" id="ami-Eg-e8J"/>
                             <constraint firstItem="THY-bH-VVn" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="eGm-U8-7l9"/>
                             <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="8uN-dK-thC" secondAttribute="bottom" constant="65" id="kiY-1W-cF6"/>
@@ -93,11 +83,6 @@
                             <constraint firstItem="HfH-an-nOB" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="vRe-xm-XnQ"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="height" secondItem="Fk2-94-Jwe" secondAttribute="height" id="zyO-gK-gYf"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="w5S-mR-bBx"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="abx-js-koV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -105,7 +90,6 @@
                         <outlet property="cameraPreviewView" destination="p2Q-BA-tgI" id="WHu-pH-iuI"/>
                         <outlet property="libraryButton" destination="8uN-dK-thC" id="mua-I4-hqr"/>
                         <outlet property="recordButton" destination="HfH-an-nOB" id="gZ4-P6-CvG"/>
-                        <outlet property="recordButtonContainer" destination="w5S-mR-bBx" id="sfu-ip-E31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHQ-cp-EhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
