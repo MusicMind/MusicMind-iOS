@@ -297,8 +297,8 @@
 		DE379D5D1E9D479B003C921F /* Old CameraCapture stuff */ = {
 			isa = PBXGroup;
 			children = (
-				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
 				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
+				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
 			);
 			name = "Old CameraCapture stuff";
 			sourceTree = "<group>";

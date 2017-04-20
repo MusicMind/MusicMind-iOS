@@ -13,7 +13,7 @@ import MobileCoreServices
 
 final class CameraCaptureViewController: UIViewController {
     
-    @IBOutlet private weak var cameraPreviewView: PreviewView!
+    @IBOutlet private weak var cameraPreviewView: UIView!
     @IBOutlet private weak var recordButtonContainer: UIView!
     @IBOutlet private weak var libraryButton: UIButton!
     private var recordButton: RecordButton!
