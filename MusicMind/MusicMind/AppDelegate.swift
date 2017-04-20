@@ -27,15 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         spotifyAuth.requestedScopes = [SPTAuthStreamingScope]
         
         do {
-            try spotifySteamingController.start(withClientId: spotifyAuth.clientID)
+            try spotifyStreamingController.start(withClientId: spotifyAuth.clientID)
             
-            spotifySteamingController.setTargetBitrate(SPTBitrate.normal, callback: { (error) in
+            spotifyStreamingController.setTargetBitrate(SPTBitrate.normal, callback: { (error) in
                 if let error = error {
                     print(error.localizedDescription)
                 }
             })
             
-            spotifySteamingController.diskCache = SPTDiskCache(capacity: 5)
+            spotifyStreamingController.diskCache = SPTDiskCache(capacity: 5)
         } catch {
             print(error)
         }
@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 } else if let session = session {
                     if session.isValid() {
                         spotifyAuth.session = session
-                        spotifySteamingController.login(withAccessToken: session.accessToken)
+                        spotifyStreamingController.login(withAccessToken: session.accessToken)
                     }
                 }
             })
