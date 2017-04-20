@@ -26,7 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         spotifyAuth.redirectURL = URL(string: "musicmind://returnAfterSpotify")
         spotifyAuth.requestedScopes = [SPTAuthStreamingScope]
         
-        do { try spotifySteamingController.start(withClientId: spotifyAuth.clientID) } catch {
+        do {
+            try spotifySteamingController.start(withClientId: spotifyAuth.clientID)
+            
+            spotifySteamingController.setTargetBitrate(SPTBitrate.normal, callback: { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            })
+            
+            spotifySteamingController.diskCache = SPTDiskCache(capacity: 5)
+        } catch {
             print(error)
         }
         
