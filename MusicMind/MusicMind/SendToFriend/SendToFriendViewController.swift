@@ -21,12 +21,12 @@ final class SendToFriendViewController: UIViewController {
     @IBAction func activityButtonPressed(_ sender: Any) {
         
         // creating activity
-        let uploadActivity = VideoUploadActivity()
+        let uploadActivity = UploadActivity()
         
         // creating activity view controller
         
         if let localUrlOfVideo = localUrlOfVideo {
-            let activityController = UIActivityViewController(activityItems: [localUrlOfVideo], applicationActivities: nil)
+            let activityController = UIActivityViewController(activityItems: [localUrlOfVideo], applicationActivities: [uploadActivity])
             
             present(activityController, animated: true, completion: nil)
         }
