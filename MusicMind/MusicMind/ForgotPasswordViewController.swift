@@ -12,18 +12,36 @@ import FirebaseAuth
 class ForgotPasswordViewController: UIViewController {
     
     @IBOutlet weak var userForgotEmail: UITextField!
+    @IBOutlet weak var resetButton: UIButton!
+    
+    @IBAction func emailFieldDidChange(_ sender: UITextField) {
+        if let email = sender.text {
+            EmailVerifier.isValid(email: email, completion: { valid in
+                if valid {
+                    resetButton.isEnabled = true
+                    resetButton.isHidden = false
+                } else {
+                    resetButton.isEnabled = false
+                    resetButton.isHidden = true
+                }
+            })
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        
+        resetButton.isEnabled = false
+        resetButton.isHidden = true
     }
 
     @IBAction func didPressGetResetLink(_ sender: UIButton) {
         if let email = userForgotEmail.text {
             FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (error) in
-            if error == nil {
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else  {
 
                 // TODO : - Check email message
                 
@@ -42,26 +60,6 @@ class ForgotPasswordViewController: UIViewController {
             
         })
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-
     }
     
     func goToLogin() {
