@@ -1,5 +1,5 @@
 //
-//  VideoUploadActivity.swift
+//  UploadActivity.swift
 //  MusicMind
 //
 //  Created by Wesley Van der Klomp on 4/21/17.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class VideoUploadActivity: UIActivity {
+class UploadActivity: UIActivity {
     
 }
