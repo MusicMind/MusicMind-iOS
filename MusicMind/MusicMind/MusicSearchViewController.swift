@@ -13,12 +13,10 @@ class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
-    weak var audioPlayer: SPTAudioStreamingController?
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-    
-    
+
     // MARK: - View controller lifecycle
     
     override func viewDidLoad() {
@@ -30,17 +28,54 @@ class MusicSearchViewController: UIViewController {
         view.addGestureRecognizer(edgeGesture)
      
         // Other setups
-        createAudioPlayer()
         hideKeyboardWhenTappedAround()
-        
         searchBar.keyboardAppearance = .dark
         
         // Set delegates
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        spotifyStreamingController.delegate = self
     }
     
+    deinit {
+        spotifyStreamingController.delegate = nil
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let session = spotifyAuth.session {
+            if session.isValid() {
+                if spotifyStreamingController.loggedIn {
+                    print("Already loggedin to spotifyStreamingController")
+                } else {
+                    spotifyStreamingController.login(withAccessToken: session.accessToken)
+                }
+            } else {
+                presentSpotifyLoginAlert()
+            }
+        } else {
+            presentSpotifyLoginAlert()
+        }
+    }
+    
+    private func presentSpotifyLoginAlert() {
+        let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+        let login = UIAlertAction(title: "Go to Spotify", style: .default) { (alertAction) in
+            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
+                UIApplication.shared.open(spotifyUrl, options: [:])
+            }
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(login)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func done(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -51,28 +86,12 @@ class MusicSearchViewController: UIViewController {
         case .began:
             self.dismiss(animated: true, completion: nil)
         default:
-            // pass down for the interaction controller to handle the rest of these cases
             break
         }
     }
 
     
     // MARK: - Setups and helpers
-    
-    private func createAudioPlayer() {
-        audioPlayer = SPTAudioStreamingController.sharedInstance()
-        
-        audioPlayer?.playbackDelegate = self
-        audioPlayer?.delegate = self
-        
-        do {
-            try audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        audioPlayer?.login(withAccessToken: user.spotifyToken)
-    }
     
     func convertStringToDictionary(text: String) -> [String:Any]? {
         if let data = text.data(using: .utf8) {
@@ -98,17 +117,12 @@ extension MusicSearchViewController: UISearchBarDelegate {
                 print("JSON: \(json)")
                 
                 if let dict = self.convertStringToDictionary(text: json ) {
-                    
                     self.searchResults = dict
                     
                     if let tracks = self.searchResults["tracks"] as? [String: Any] {
-                        
                         if let items = tracks["items"] as? [[String: Any]] {
-                            
                             self.totalNumberOfSongFromResults = items.count
-                            
                         }
-                        
                     }
                     
                     debugPrint(self.searchResults)
@@ -121,6 +135,18 @@ extension MusicSearchViewController: UISearchBarDelegate {
     
 }
 
+extension MusicSearchViewController: SPTAudioStreamingDelegate {
+
+    func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
+        //
+    }
+    
+    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didReceiveError error: Error!) {
+        print("Audio streaming error: \(error.localizedDescription)")
+    }
+    
+}
+
 extension MusicSearchViewController: UITextViewDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -129,50 +155,25 @@ extension MusicSearchViewController: UITextViewDelegate {
     
 }
 
-extension MusicSearchViewController: SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate {
-    
-    
-    // MARK: - Audio steaming
-    
-    func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
-        print(audioStreaming)
-    }
-    
-    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didReceiveError error: Error!) {
-        print(error)
-    }
-    
-    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: String!) {
-        print(trackUri)
-    }
-
-}
-
-/// Table view delegate and data source methods
+// MARK: - Table view delegates
 extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
-    // MARK: - Table view delegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
-                    let trackURI = index["uri"] as? String
-                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
-                        if (error != nil) {
-                            print(error?.localizedDescription)
-                            return;
-                        }})
-                    
+                let index = items[indexPath.row]
+                let trackURI = index["uri"] as? String
+
+                spotifyStreamingController.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
+                    error in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        return
+                    }
                 }
             }
         }
-        
     }
-    
-
-    // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -188,29 +189,29 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
         
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
+                let index = items[indexPath.row]
                     
-                    cell.textLabel?.text = index["name"] as? String
+                cell.textLabel?.text = index["name"] as? String
+                
+                if let album = index["album"] as? [String: Any] {
                     
-                    if let album = index["album"] as? [String: Any] {
+                    if let artist = album["artists"] as? [[String: Any]] {
+                        cell.detailTextLabel?.text = artist[0]["name"] as? String
+                    }
+                    
+                    if let image = album["images"] as? [[String: Any]] {
+                        let smallImage = image[2]
+                        let urlString = smallImage["url"] as? String
                         
-                        if let artist = album["artists"] as? [[String: Any]] {
-                            cell.detailTextLabel?.text = artist[0]["name"] as? String
-                            print(artist[0]["name"] as? String)
-                        }
-                        
-                        if let image = album["images"] as? [[String: Any]]{
-                            if let smallImage = image[2] as? [String: Any]{
-                                let urlString = smallImage["url"] as? String
-                                if let url  = NSURL(string: urlString!){
-                                    if let data = NSData(contentsOf: url as URL){
-                                        cell.imageView?.image = UIImage(data: data as Data)
-                                    }
-                                }
+                        if let url  = NSURL(string: urlString!){
+                            if let data = NSData(contentsOf: url as URL){
+                                cell.imageView?.image = UIImage(data: data as Data)
                             }
                         }
+
                     }
                 }
+
             }
         }
         

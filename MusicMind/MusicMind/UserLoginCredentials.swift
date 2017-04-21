@@ -52,5 +52,4 @@ class UserLoginCredentials: NSObject {
             }
         }
     }
-    
 }

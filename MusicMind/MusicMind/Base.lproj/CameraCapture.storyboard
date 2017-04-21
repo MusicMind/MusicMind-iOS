@@ -105,7 +105,7 @@
                 <viewControllerPlaceholder storyboardName="MusicSearch" referencedIdentifier="MusicSearchViewController" id="Gop-j7-Dp8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uL-lC-cFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="-123"/>
+            <point key="canvasLocation" x="1640" y="-64"/>
         </scene>
         <!--Camera Capture Navigation Controller-->
         <scene sceneID="5BW-Lr-jx8">
