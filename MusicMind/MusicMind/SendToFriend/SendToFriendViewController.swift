@@ -16,7 +16,6 @@ final class SendToFriendViewController: UIViewController {
     private var downloadURLString: String?
     @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var urlLabel: UILabel!
     
     @IBAction func activityButtonPressed(_ sender: Any) {
         
@@ -26,19 +25,6 @@ final class SendToFriendViewController: UIViewController {
             present(activityController, animated: true, completion: nil)
         }
 
-    }
-    
-    // MARK: - View Controller Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.progressBar.isHidden = true
-        
-        if let url = urlOfVideo {
-            urlLabel.text = url.absoluteString
-            print(url.absoluteString)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,39 +74,4 @@ final class SendToFriendViewController: UIViewController {
             
         }
     }
-    
-    @IBAction func selectFromLibrary(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.mediaTypes = [kUTTypeMovie as String]
-        imagePicker.delegate = self
-        
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    
-}
-
-extension SendToFriendViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let mediaType: String = info[UIImagePickerControllerMediaType] as? String else {
-            dismiss(animated: true, completion: nil)
-            return
-        }
-        
-        if mediaType == (kUTTypeMovie as String) {
-            if let movieURL = info[UIImagePickerControllerMediaURL] as? URL {
-                urlOfVideo = movieURL
-                attemptUpload(self)
-            }
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
 }
