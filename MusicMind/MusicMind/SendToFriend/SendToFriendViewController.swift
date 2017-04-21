@@ -25,7 +25,11 @@ final class SendToFriendViewController: UIViewController {
             
             present(activityController, animated: true, completion: nil)
         }
-
+//        if let remoteDownloadUrlOfVideo = remoteDownloadUrlOfVideo {
+//            let activityController = UIActivityViewController(activityItems: [remoteDownloadUrlOfVideo], applicationActivities: nil)
+//            
+//            present(activityController, animated: true, completion: nil)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +60,8 @@ final class SendToFriendViewController: UIViewController {
                 let downloadURL = metadata?.downloadURL()
                 
                 print(downloadURL!.absoluteString)
+                
+                self.remoteDownloadUrlOfVideo = downloadURL
                 
                 self.textFieldForDownloadURL.text = downloadURL!.absoluteString
                 
