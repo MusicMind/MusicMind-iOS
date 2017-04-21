@@ -27,15 +27,17 @@ class ForgotPasswordViewController: UIViewController {
 
                 // TODO : - Check email message
                 
-//                let alerController = UIAlertController(title: "MusicMind thanks you", message: "Please check your email", preferredStyle: .alert)
-//                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                alerController.addAction(okAction)
-//                self.present(alerController, animated: true, completion: {
-//                    return
-//                })
+                let alerController = UIAlertController(title: "Email Sent", message: "Please check your inbox 😎", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { action in
+                        self.goToLogin()
+                })
+                
+                alerController.addAction(okAction)
+                
+                self.present(alerController, animated: true, completion: nil)
 
                 
-                self.goToLogin()
             }
             
         })
@@ -63,10 +65,7 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     func goToLogin() {
-        
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        weak var vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-        self.present(vc!, animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
 
