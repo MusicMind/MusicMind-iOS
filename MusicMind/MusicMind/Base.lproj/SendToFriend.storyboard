@@ -37,7 +37,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnO-Fu-dSm">
                                         <rect key="frame" x="0.0" y="40" width="200" height="30"/>
-                                        <state key="normal" title="Upload to firebase"/>
+                                        <state key="normal" title="Upload to MusicMind"/>
                                         <connections>
                                             <action selector="attemptUpload:" destination="Jec-zz-Xld" eventType="touchUpInside" id="ayQ-eI-G1u"/>
                                         </connections>
@@ -53,7 +53,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk5-1u-3Af">
                                         <rect key="frame" x="0.0" y="193" width="200" height="30"/>
-                                        <state key="normal" title="Copy to clipboard"/>
+                                        <state key="normal" title="Copy MusicMind Link"/>
                                         <connections>
                                             <action selector="copyDownloadUrlToClipboard:" destination="Jec-zz-Xld" eventType="touchUpInside" id="0vp-Yc-X1C"/>
                                         </connections>
