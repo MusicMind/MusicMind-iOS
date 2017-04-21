@@ -20,6 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
+        // If user is already signed in skip the onboarding flow
+        if FIRAuth.auth()?.currentUser != nil {
+            let storyboard = UIStoryboard(name: "CameraCapture", bundle: nil)
+            let welcomeViewController = storyboard.instantiateInitialViewController()
+            
+            self.window?.rootViewController = welcomeViewController
+        } else {
+            let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+            let welcomeViewController = storyboard.instantiateInitialViewController()
+            
+            self.window?.rootViewController = welcomeViewController
+        }
+        
         // Setup spotify auth
         spotifyAuth.sessionUserDefaultsKey = "MMSpotifySession" // Enable automatic saving of the session to defaults
         spotifyAuth.clientID = "3b7f66602b9c45b78f4aa55de8efd046"
