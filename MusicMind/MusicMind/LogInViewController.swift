@@ -53,6 +53,10 @@ class LogInViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        passwordField.text = nil
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
     }
