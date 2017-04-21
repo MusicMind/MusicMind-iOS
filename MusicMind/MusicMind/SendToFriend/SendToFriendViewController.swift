@@ -18,6 +18,16 @@ final class SendToFriendViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var urlLabel: UILabel!
     
+    @IBAction func activityButtonPressed(_ sender: Any) {
+        
+        if let urlOfVideo = urlOfVideo {
+            let activityController = UIActivityViewController(activityItems: [urlOfVideo], applicationActivities: nil)
+            
+            present(activityController, animated: true, completion: nil)
+        }
+
+    }
+    
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {

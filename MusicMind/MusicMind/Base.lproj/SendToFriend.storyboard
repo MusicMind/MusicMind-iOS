@@ -68,7 +68,11 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="done" id="7wT-n5-t8p"/>
-                                    <barButtonItem systemItem="action" id="4dm-yo-UHr"/>
+                                    <barButtonItem systemItem="action" id="4dm-yo-UHr">
+                                        <connections>
+                                            <action selector="activityButtonPressed:" destination="Jec-zz-Xld" id="DcS-Uw-Pot"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
