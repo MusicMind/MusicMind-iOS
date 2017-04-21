@@ -21,8 +21,8 @@ class ForgotPasswordViewController: UIViewController {
     }
 
     @IBAction func didPressGetResetLink(_ sender: UIButton) {
-        let email = userForgotEmail.text
-        FIRAuth.auth()?.sendPasswordReset(withEmail: email!, completion: { (error) in
+        if let email = userForgotEmail.text {
+            FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (error) in
             if error == nil {
 
                 // TODO : - Check email message
@@ -37,7 +37,9 @@ class ForgotPasswordViewController: UIViewController {
                 
                 self.goToLogin()
             }
+            
         })
+        }
     }
     
     override func didReceiveMemoryWarning() {
