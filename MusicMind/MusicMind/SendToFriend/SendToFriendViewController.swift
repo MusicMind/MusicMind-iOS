@@ -12,15 +12,16 @@ import MobileCoreServices
 
 final class SendToFriendViewController: UIViewController {
     
-    var urlOfVideo: URL?
+    var localUrlOfVideo: URL?
+    var remoteDownloadUrlOfVideo: URL?
     private var downloadURLString: String?
     @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
     
     @IBAction func activityButtonPressed(_ sender: Any) {
         
-        if let urlOfVideo = urlOfVideo {
-            let activityController = UIActivityViewController(activityItems: [urlOfVideo], applicationActivities: nil)
+        if let localUrlOfVideo = localUrlOfVideo {
+            let activityController = UIActivityViewController(activityItems: [localUrlOfVideo], applicationActivities: nil)
             
             present(activityController, animated: true, completion: nil)
         }
@@ -50,7 +51,7 @@ final class SendToFriendViewController: UIViewController {
         uploadMetadata.contentType = "video/quicktime"
         
         //  Store URL
-        let uploadTask = storageRef.putFile(urlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
+        let uploadTask = storageRef.putFile(localUrlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
             if error == nil {
                 let downloadURL = metadata?.downloadURL()
                 
