@@ -16,6 +16,18 @@ final class CameraCaptureViewController: UIViewController {
     @IBOutlet private weak var cameraPreviewView: UIView!
     @IBOutlet private weak var libraryButton: UIButton!
     @IBOutlet private weak var recordButton: RecordButton!
+    
+    @IBAction func signOutButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard.init(name: "LogIn", bundle: nil)
+        weak var cameraCaptureNavigationController = storyboard.instantiateViewController(withIdentifier: "LogInViewController")
+        
+        self.present(cameraCaptureNavigationController!, animated: true, completion: nil)
+    }
+    
+    func goToLogin() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
 
     
@@ -31,7 +43,7 @@ final class CameraCaptureViewController: UIViewController {
        
         // Setup record button
         recordButton.buttonColor = .white
-        recordButton.progressColor = .green
+        recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
         recordButton.addTarget(self, action: #selector(self.startRecordingVideo), for: .touchDown)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchUpInside)
