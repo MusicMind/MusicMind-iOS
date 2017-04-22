@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vS2-12-OvP">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,15 +19,19 @@
                         <viewControllerLayoutGuide type="bottom" id="4pY-0G-RuD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fk2-94-Jwe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2Q-BA-tgI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="0.80784314869999996" green="0.027450980619999999" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="736" id="jug-ti-MMk"/>
+                                    <constraint firstAttribute="width" constant="414" id="kEu-Xk-eWj"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
-                                <rect key="frame" x="316" y="87" width="30" height="30"/>
+                                <rect key="frame" x="351" y="87" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8Dt-be-tH0"/>
                                     <constraint firstAttribute="width" constant="30" id="GPl-n8-pcn"/>
@@ -38,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn">
-                                <rect key="frame" x="29" y="87" width="30" height="30"/>
+                                <rect key="frame" x="33" y="87" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cBG-3D-FGF"/>
                                     <constraint firstAttribute="width" constant="30" id="hNv-gc-0ne"/>
@@ -49,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC">
-                                <rect key="frame" x="37" y="516" width="57" height="37"/>
+                                <rect key="frame" x="41" y="585" width="57" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Library">
                                     <color key="titleColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -60,20 +64,30 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfH-an-nOB" customClass="RecordButton" customModule="RecordButton">
-                                <rect key="frame" x="152.5" y="498" width="70" height="70"/>
+                                <rect key="frame" x="172" y="567" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.53569626135066484" green="1" blue="0.49764684300365181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="PGq-ie-DFF"/>
                                     <constraint firstAttribute="width" constant="70" id="Sgp-WE-Rt8"/>
                                 </constraints>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCJ-pN-gOa">
+                                <rect key="frame" x="187" y="82" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YlV-61-fYg"/>
+                                    <constraint firstAttribute="width" constant="40" id="uby-RC-5Kp"/>
+                                </constraints>
+                                <state key="normal" title="Sign Out" image="cool"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hCJ-pN-gOa" firstAttribute="centerX" secondItem="HfH-an-nOB" secondAttribute="centerX" id="0N4-9T-rk4"/>
                             <constraint firstItem="8uN-dK-thC" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="21" id="2nz-W1-sp7"/>
                             <constraint firstItem="THY-bH-VVn" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="13" id="4jW-6A-SB5"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerY" secondItem="Fk2-94-Jwe" secondAttribute="centerY" id="Evg-Y9-avg"/>
                             <constraint firstItem="4pY-0G-RuD" firstAttribute="top" secondItem="HfH-an-nOB" secondAttribute="bottom" constant="50" id="K0J-7k-byr"/>
+                            <constraint firstItem="hCJ-pN-gOa" firstAttribute="centerY" secondItem="THY-bH-VVn" secondAttribute="centerY" id="KAN-ig-Q5X"/>
                             <constraint firstItem="UFk-iX-4OX" firstAttribute="top" secondItem="ofh-2X-jA0" secondAttribute="bottom" constant="23" id="QR0-Rg-uFX"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="centerX" secondItem="Fk2-94-Jwe" secondAttribute="centerX" id="RDB-b0-Lfb"/>
                             <constraint firstItem="p2Q-BA-tgI" firstAttribute="width" secondItem="Fk2-94-Jwe" secondAttribute="width" id="ami-Eg-e8J"/>
@@ -94,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHQ-cp-EhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="10.344827586206897"/>
+            <point key="canvasLocation" x="955.07246376811599" y="9.7826086956521738"/>
         </scene>
         <!--MusicSearchViewController-->
         <scene sceneID="rLm-ku-44B">
@@ -127,5 +141,6 @@
     <resources>
         <image name="Flip camera" width="30" height="28"/>
         <image name="MusicIcon" width="46" height="42"/>
+        <image name="cool" width="160" height="160"/>
     </resources>
 </document>

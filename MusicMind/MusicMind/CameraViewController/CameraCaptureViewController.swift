@@ -31,7 +31,7 @@ final class CameraCaptureViewController: UIViewController {
        
         // Setup record button
         recordButton.buttonColor = .white
-        recordButton.progressColor = .red
+        recordButton.progressColor = .green
         recordButton.closeWhenFinished = false
         recordButton.addTarget(self, action: #selector(self.startRecordingVideo), for: .touchDown)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchUpInside)
