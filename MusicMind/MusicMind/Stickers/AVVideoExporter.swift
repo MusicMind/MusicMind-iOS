@@ -10,5 +10,17 @@ import Foundation
 import AVFoundation
 
 class AVVideoExporter{
+    var videoAsset: AVAsset?
+    
+    convenience init(url: URL){
+        let videoAsset = AVAsset(url: url)
+        self.init(videoAsset: videoAsset)
+    }
+    
+    init(videoAsset: AVAsset){
+        self.videoAsset = videoAsset
+    }
+    
+    
     
 }
