@@ -31,6 +31,8 @@ class PostProcessingViewController: VideoPickerViewController {
             startPlayingVideoWith(videoUrl)
         }
         
+        setupNavigationBar(theme: .light)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer)
     }
     
