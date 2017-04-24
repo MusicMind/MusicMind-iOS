@@ -19,22 +19,15 @@ final class SendToFriendViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     
     @IBAction func activityButtonPressed(_ sender: Any) {
-        
         // creating activity
         let uploadActivity = UploadActivity()
         
         // creating activity view controller
-        
         if let localUrlOfVideo = localUrlOfVideo {
             let activityController = UIActivityViewController(activityItems: [localUrlOfVideo], applicationActivities: [uploadActivity])
             
             present(activityController, animated: true, completion: nil)
         }
-//        if let remoteDownloadUrlOfVideo = remoteDownloadUrlOfVideo {
-//            let activityController = UIActivityViewController(activityItems: [remoteDownloadUrlOfVideo], applicationActivities: nil)
-//            
-//            present(activityController, animated: true, completion: nil)
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
