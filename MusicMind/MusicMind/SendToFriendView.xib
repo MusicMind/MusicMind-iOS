@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="copyToClipboardButton" destination="z0S-ow-8vb" id="yXw-Kh-Lbe"/>
                 <outlet property="progressBar" destination="xAb-Zb-gNX" id="6OL-Pm-Kiw"/>
+                <outlet property="statusLabel" destination="3Px-P3-fav" id="yti-Fu-Rum"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ft7-Do-7b2"/>
             </connections>
         </placeholder>

@@ -17,6 +17,7 @@ final class SendToFriendViewController: UIViewController {
     private var downloadURLString: String?
     @IBOutlet private weak var progressBar: UIProgressView!
     @IBOutlet private weak var copyToClipboardButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
     private var remoteDownloadUrlOfVideo: URL? {
         didSet {
             if remoteDownloadUrlOfVideo != nil {
@@ -92,6 +93,8 @@ final class SendToFriendViewController: UIViewController {
                         self.remoteDownloadUrlOfVideo = downloadUrl
                         
                         self.downloadURLString = downloadUrl.absoluteString
+                        
+                        self.statusLabel.setTextWhileKeepingAttributes(string: "Upload complete!")
                     }
                 } else {
                     print("There was an error: \(error!.localizedDescription)")
