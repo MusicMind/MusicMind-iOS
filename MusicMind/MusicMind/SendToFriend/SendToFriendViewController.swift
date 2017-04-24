@@ -13,7 +13,11 @@ import MobileCoreServices
 final class SendToFriendViewController: UIViewController {
     
     var localUrlOfVideo: URL?
-    var remoteDownloadUrlOfVideo: URL? {
+    private var uploadTask: FIRStorageUploadTask?
+    private var downloadURLString: String?
+    @IBOutlet private weak var progressBar: UIProgressView!
+    @IBOutlet private weak var copyToClipboardButton: UIButton!
+    private var remoteDownloadUrlOfVideo: URL? {
         didSet {
             if remoteDownloadUrlOfVideo != nil {
                 copyToClipboardButton.isHidden = false
@@ -23,16 +27,12 @@ final class SendToFriendViewController: UIViewController {
         }
     }
     
-    private var uploadTask: FIRStorageUploadTask?
-    private var downloadURLString: String?
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var copyToClipboardButton: UIButton!
+    
+    // MARK: - IB Actions
     
     @IBAction func activityButtonPressed(_ sender: Any) {
-        // creating activity
         let uploadActivity = UploadActivity()
         
-        // creating activity view controller
         if let localUrlOfVideo = localUrlOfVideo {
             let activityController = UIActivityViewController(activityItems: [localUrlOfVideo], applicationActivities: [uploadActivity])
             
@@ -40,15 +40,6 @@ final class SendToFriendViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        attemptUpload()
-        
-        copyToClipboardButton.isHidden = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setupNavigationBar(theme: .light)
-    }
     
     @IBAction func copyDownloadUrlToClipboard(_ sender: Any) {
         if let urlString = self.downloadURLString {
@@ -73,6 +64,21 @@ final class SendToFriendViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    // MARK: - View controller lifecycle
+    
+    override func viewDidLoad() {
+        attemptUpload()
+        
+        copyToClipboardButton.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar(theme: .light)
+    }
+    
+    
+    // MARK: - Upload handling
     
     func attemptUpload() {
         self.progressBar.isHidden = false
