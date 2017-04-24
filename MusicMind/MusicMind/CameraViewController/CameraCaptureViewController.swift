@@ -220,10 +220,10 @@ final class CameraCaptureViewController: UIViewController {
     
     // MARK: - Navigation
     
-    fileprivate func navigateToSendToFriendViewController(movieURL: URL) {
-        let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriendViewController") as! SendToFriendViewController
+    fileprivate func navigateToPostProcessingViewController(movieURL: URL) {
+        let sendToFriendViewController = UIStoryboard(name: "PostProcessing", bundle: nil).instantiateViewController(withIdentifier: "PostProcessingViewController") as! PostProcessingViewController
         
-        sendToFriendViewController.localUrlOfVideo = movieURL
+//        sendToFriendViewController.localUrlOfVideo = movieURL
         
         self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
     }
@@ -241,7 +241,7 @@ final class CameraCaptureViewController: UIViewController {
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
-        navigateToSendToFriendViewController(movieURL: newMovieFileUrl)
+        navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
     }
 
 }
@@ -250,7 +250,7 @@ extension CameraCaptureViewController: UIImagePickerControllerDelegate, UINaviga
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let urlForMovie = info[UIImagePickerControllerMediaURL] as? URL {
-            navigateToSendToFriendViewController(movieURL: urlForMovie)
+            navigateToPostProcessingViewController(movieURL: urlForMovie)
         }
         
         dismiss(animated: true, completion: nil)
