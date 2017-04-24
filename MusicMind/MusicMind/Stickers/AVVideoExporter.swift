@@ -9,12 +9,17 @@
 import Foundation
 import AVFoundation
 import Photos
+import UIKit
 
 class AVVideoExporter{
     
     var videoAsset: AVAsset?
     
     var composition: AVMutableComposition = AVMutableComposition()
+    
+    var imageViews: [UIImageView] = []
+    
+    weak var viewController: UIViewController?
     
     convenience init(url: URL){
         let videoAsset = AVAsset(url: url)
@@ -30,7 +35,7 @@ class AVVideoExporter{
             let alertController = UIAlertController(title: "Error", message: "Please choose a video", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
+            viewController?.present(alertController, animated: true, completion: nil)
             return
         }
         
@@ -124,7 +129,7 @@ class AVVideoExporter{
         })
     }
     
-    func applyLayersToVideo(composition: AVMutableVideoComposition, size: CGSize, with imageViews: [UIImagesViews]) {
+    func applyLayersToVideo(composition: AVMutableVideoComposition, size: CGSize) {
         let parentLayer = CALayer()
         let videoLayer = CALayer()
         parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
