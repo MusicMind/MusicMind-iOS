@@ -20,6 +20,7 @@ class PostProcessingViewController: VideoPickerViewController {
     var localUrlOfOriginalVideo: URL?
 //    var videoLoaded = false
     
+
     let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "cool"), #imageLiteral(resourceName: "happy"), #imageLiteral(resourceName: "nerd"), #imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
     
     override func viewDidLoad() {
@@ -42,6 +43,20 @@ class PostProcessingViewController: VideoPickerViewController {
 //            videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
 //        }
 //    }
+    
+    @IBAction func activityButtonPressed(_ sender: Any) {
+        // creating activity
+        let uploadActivity = UploadActivity()
+        
+        // creating activity view controller
+        
+        if let localUrlOfOriginalVideo = localUrlOfOriginalVideo {
+            let activityController = UIActivityViewController(activityItems: [localUrlOfOriginalVideo], applicationActivities: [uploadActivity])
+            
+            present(activityController, animated: true, completion: nil)
+        }
+    }
+    
     
     func startPlayingVideoWith(_ url: URL){
         let playerItem = AVPlayerItem(url: url)
