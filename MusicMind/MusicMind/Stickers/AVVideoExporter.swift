@@ -35,7 +35,7 @@ class AVVideoExporter{
             let alertController = UIAlertController(title: "Error", message: "Please choose a video", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(okAction)
-            viewController?.present(alertController, animated: true, completion: nil)
+            self.viewController?.present(alertController, animated: true, completion: nil)
             return
         }
         
@@ -74,6 +74,8 @@ class AVVideoExporter{
         instructions.layerInstructions = [layerInstructions]
         layerComposition.instructions = [instructions]
         
+        
+        
         self.applyLayersToVideo(composition: layerComposition, size: size)
         
         // get path
@@ -96,7 +98,7 @@ class AVVideoExporter{
         
     }
     
-    func exportDidFinish(_ session: AVAssetExportSession?){
+    private func exportDidFinish(_ session: AVAssetExportSession?){
         print(session?.status == AVAssetExportSessionStatus.completed)
         //        if session?.status == AVAssetExportSessionStatus.completed {
         let outputURL = session?.outputURL
@@ -115,13 +117,13 @@ class AVVideoExporter{
                             let alertController = UIAlertController(title: "Video Failed", message: "Video Saving Failed", preferredStyle: .alert)
                             let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                             alertController.addAction(okAction)
-                            self.present(alertController, animated: true, completion: nil)
+                            self.viewController?.present(alertController, animated: true, completion: nil)
                             
                         } else {
                             let alertController = UIAlertController(title: "Video Saved", message: "Saved To Photo Album", preferredStyle: .alert)
                             let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                             alertController.addAction(okAction)
-                            self.present(alertController, animated: true, completion: nil)
+                            self.viewController?.present(alertController, animated: true, completion: nil)
                         }
                     }
                 })
@@ -129,7 +131,7 @@ class AVVideoExporter{
         })
     }
     
-    func applyLayersToVideo(composition: AVMutableVideoComposition, size: CGSize) {
+    private func applyLayersToVideo(composition: AVMutableVideoComposition, size: CGSize) {
         let parentLayer = CALayer()
         let videoLayer = CALayer()
         parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
@@ -147,5 +149,11 @@ class AVVideoExporter{
         }
         
         composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+    }
+    
+    private func layerInstructionsAfterFixingOrientationFor(asset: AVAsset, track: AVMutableCompositionTrack, atTime: CMTime) -> AVMutableVideoCompositionLayerInstruction {
+        var videoAssetOrientation = UIImageOrientation.up
+        var isVideoAssetPortrait = false
+        var videoTransform = videoTrack.preferredTransform
     }
 }
