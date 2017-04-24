@@ -8,9 +8,10 @@
 
 import Foundation
 import AVFoundation
+import Photos
 
 class AVVideoExporter{
-
+    
     var videoAsset: AVAsset?
     
     var composition: AVMutableComposition = AVMutableComposition()
@@ -87,7 +88,59 @@ class AVVideoExporter{
         assetExport.exportAsynchronously(completionHandler: {
             self.exportDidFinish(assetExport)
         })
-
+        
     }
     
+    func exportDidFinish(_ session: AVAssetExportSession?){
+        print(session?.status == AVAssetExportSessionStatus.completed)
+        //        if session?.status == AVAssetExportSessionStatus.completed {
+        let outputURL = session?.outputURL
+        // must check for authorization status
+        PHPhotoLibrary.requestAuthorization({ (status) in
+            if status == .authorized {
+                // saving the movie file to the photo library
+                PHPhotoLibrary.shared().performChanges({
+                    let options = PHAssetResourceCreationOptions()
+                    options.shouldMoveFile = true
+                    let creationRequest = PHAssetCreationRequest.forAsset()
+                    creationRequest.addResource(with: .video, fileURL: outputURL!, options: options)
+                }, completionHandler: { (success, error) in
+                    DispatchQueue.main.async {
+                        if !success {
+                            let alertController = UIAlertController(title: "Video Failed", message: "Video Saving Failed", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alertController.addAction(okAction)
+                            self.present(alertController, animated: true, completion: nil)
+                            
+                        } else {
+                            let alertController = UIAlertController(title: "Video Saved", message: "Saved To Photo Album", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alertController.addAction(okAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    }
+                })
+            }
+        })
+    }
+    
+    func applyLayersToVideo(composition: AVMutableVideoComposition, size: CGSize, with imageViews: [UIImagesViews]) {
+        let parentLayer = CALayer()
+        let videoLayer = CALayer()
+        parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        videoLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        print(parentLayer.frame)
+        
+        
+        parentLayer.addSublayer(videoLayer)
+        imageViews.forEach { (imageView) in
+            let stickerLayer = CALayer()
+            stickerLayer.contents = imageView.image?.cgImage
+            stickerLayer.frame = CGRect(origin: imageView.frame.origin, size: CGSize(width: 110, height: 110))
+            stickerLayer.masksToBounds = true
+            parentLayer.addSublayer(stickerLayer)
+        }
+        
+        composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+    }
 }
