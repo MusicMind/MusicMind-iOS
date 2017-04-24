@@ -223,7 +223,7 @@ final class CameraCaptureViewController: UIViewController {
     fileprivate func navigateToPostProcessingViewController(movieURL: URL) {
         let sendToFriendViewController = UIStoryboard(name: "PostProcessing", bundle: nil).instantiateViewController(withIdentifier: "PostProcessingViewController") as! PostProcessingViewController
         
-//        sendToFriendViewController.localUrlOfVideo = movieURL
+        sendToFriendViewController.localUrlOfOriginalVideo = movieURL
         
         self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
     }
