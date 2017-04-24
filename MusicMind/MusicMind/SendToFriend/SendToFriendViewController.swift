@@ -35,7 +35,7 @@ final class SendToFriendViewController: UIViewController {
         if let urlString = self.downloadURLString {
             UIPasteboard.general.string = urlString
             
-            sender.titleLabel?.setTextWhileKeepingAttributes(string: "Copied!")
+            sender.setTitle("Copied!", for: .normal)
             
 //            copyToClipboardButton.titleLabel?.text = "Copied!"
             
