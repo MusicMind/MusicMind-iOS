@@ -30,22 +30,13 @@ final class SendToFriendViewController: UIViewController {
     
     // MARK: - IB Actions
     
-    @IBAction func activityButtonPressed(_ sender: Any) {
-        let uploadActivity = UploadActivity()
-        
-        if let localUrlOfVideo = localUrlOfVideo {
-            let activityController = UIActivityViewController(activityItems: [localUrlOfVideo], applicationActivities: [uploadActivity])
-            
-            present(activityController, animated: true, completion: nil)
-        }
-    }
-    
-    
-    @IBAction func copyDownloadUrlToClipboard(_ sender: Any) {
+    @IBAction func copyDownloadUrlToClipboard(_ sender: UIButton) {
         if let urlString = self.downloadURLString {
             UIPasteboard.general.string = urlString
             
-            copyToClipboardButton.titleLabel?.text = "Copied!"
+            sender.titleLabel?.setTextWhileKeepingAttributes(string: "Copied!")
+            
+//            copyToClipboardButton.titleLabel?.text = "Copied!"
             
 //            let timer = Timer.init(timeInterval: 1000, repeats: false, block: { _ in
 //                self.dismiss(animated: true, completion: nil)
