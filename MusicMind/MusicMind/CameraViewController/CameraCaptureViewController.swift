@@ -221,11 +221,11 @@ final class CameraCaptureViewController: UIViewController {
     // MARK: - Navigation
     
     fileprivate func navigateToPostProcessingViewController(movieURL: URL) {
-        let sendToFriendViewController = UIStoryboard(name: "PostProcessing", bundle: nil).instantiateViewController(withIdentifier: "PostProcessingViewController") as! PostProcessingViewController
+        let postProcessingViewController = UIStoryboard(name: "PostProcessing", bundle: nil).instantiateViewController(withIdentifier: "PostProcessingViewController") as! PostProcessingViewController
         
-        sendToFriendViewController.localUrlOfOriginalVideo = movieURL
+        postProcessingViewController.localUrlOfOriginalVideo = movieURL
         
-        self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
+        self.navigationController?.pushViewController(postProcessingViewController, animated: true)
     }
     
     @IBAction func presentSelectFromLibraryViewController(_ sender: Any) {
