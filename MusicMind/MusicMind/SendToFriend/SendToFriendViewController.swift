@@ -12,15 +12,13 @@ import MobileCoreServices
 
 final class SendToFriendViewController: UIViewController {
     
-    @IBAction func done(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+
     var localUrlOfVideo: URL?
     var remoteDownloadUrlOfVideo: URL?
     private var downloadURLString: String?
     @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var copyToClipboardButton: UIButton!
     
     @IBAction func activityButtonPressed(_ sender: Any) {
         // creating activity
@@ -34,6 +32,10 @@ final class SendToFriendViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        attemptUpload()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationBar(theme: .light)
     }
@@ -41,10 +43,19 @@ final class SendToFriendViewController: UIViewController {
     @IBAction func copyDownloadUrlToClipboard(_ sender: Any) {
         if let urlString = self.downloadURLString {
             UIPasteboard.general.string = urlString
+            
+            copyToClipboardButton.titleLabel?.text = "Copied!"
+            
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
-    @IBAction func attemptUpload(_ sender: Any) {
+    @IBAction func done(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func attemptUpload() {
         self.progressBar.isHidden = false
         
         //  Store Current Date
