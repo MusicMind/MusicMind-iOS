@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class PostProcessingViewController: VideoPickerViewController{
+class PostProcessingViewController: VideoPickerViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var recordedVideoView: VideoContainerView!
@@ -35,6 +35,7 @@ class PostProcessingViewController: VideoPickerViewController{
             videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
         }
     }
+    
     func startPlayingVideoWith(_ url: URL){
         let playerItem = AVPlayerItem(url: url)
         
