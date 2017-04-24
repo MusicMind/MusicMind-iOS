@@ -12,9 +12,18 @@ import MobileCoreServices
 
 final class SendToFriendViewController: UIViewController {
     
-
     var localUrlOfVideo: URL?
-    var remoteDownloadUrlOfVideo: URL?
+    var remoteDownloadUrlOfVideo: URL? {
+        didSet {
+            if remoteDownloadUrlOfVideo != nil {
+                copyToClipboardButton.isHidden = false
+            } else {
+                copyToClipboardButton.isHidden = true
+            }
+        }
+    }
+    
+    
     private var downloadURLString: String?
     @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
@@ -34,6 +43,8 @@ final class SendToFriendViewController: UIViewController {
     
     override func viewDidLoad() {
         attemptUpload()
+        
+        copyToClipboardButton.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,31 +78,31 @@ final class SendToFriendViewController: UIViewController {
         let uploadMetadata = FIRStorageMetadata()
         uploadMetadata.contentType = "video/quicktime"
         
-        //  Store URL
-        let uploadTask = storageRef.putFile(localUrlOfVideo!, metadata: uploadMetadata) { (metadata, error) in
-            if error == nil {
-                let downloadURL = metadata?.downloadURL()
-                
-                print(downloadURL!.absoluteString)
-                
-                self.remoteDownloadUrlOfVideo = downloadURL
-                
-                self.textFieldForDownloadURL.text = downloadURL!.absoluteString
-                
-                self.downloadURLString = downloadURL!.absoluteString
-                
-            } else {
-                print("There was an error: \(error!.localizedDescription)")
+        if let localUrlOfVideo = localUrlOfVideo {
+            let uploadTask = storageRef.putFile(localUrlOfVideo, metadata: uploadMetadata) { (metadata, error) in
+                if error == nil {
+                    let downloadUrl = metadata?.downloadURL()
+                    
+                    if let downloadUrl = downloadUrl {
+                        self.remoteDownloadUrlOfVideo = downloadUrl
+                        
+                        self.textFieldForDownloadURL.text = downloadUrl.absoluteString
+                        
+                        self.downloadURLString = downloadUrl.absoluteString
+                    }
+                } else {
+                    print("There was an error: \(error!.localizedDescription)")
+                }
             }
-        }
-        
-        uploadTask.observe(.progress) { [weak self] (snapshot) in
-            guard let strongSelf = self else { return }
             
-            guard let progress = snapshot.progress else { return }
-            
-            strongSelf.progressBar.progress = Float(progress.fractionCompleted)
-            
+            uploadTask.observe(.progress) { [weak self] (snapshot) in
+                guard let strongSelf = self else { return }
+                
+                guard let progress = snapshot.progress else { return }
+                
+                strongSelf.progressBar.progress = Float(progress.fractionCompleted)
+                
+            }
         }
     }
 }

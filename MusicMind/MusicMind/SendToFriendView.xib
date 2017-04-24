@@ -43,7 +43,7 @@
                     <color key="textColor" red="0.093709267747782793" green="0.097983722420143401" blue="0.10794733502538068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="xAb-Zb-gNX">
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xAb-Zb-gNX">
                     <rect key="frame" x="87" y="143.5" width="200" height="2"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="amR-uK-fOy"/>

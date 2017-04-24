@@ -39,14 +39,9 @@ class UploadActivity: UIActivity {
     override func prepare(withActivityItems activityItems: [Any]) {
         for item in activityItems {
             if let url = item as? URL {
-                print("Item is a url. See: \(url.absoluteString)")
-                
-                // save url
-                
-                // get vc ready
-                
                 sendToFriendViewController = SendToFriendViewController(nibName: "SendToFriendView", bundle: Bundle.main)
-                
+
+                sendToFriendViewController?.localUrlOfVideo = url
             }
         }
     }
@@ -54,8 +49,4 @@ class UploadActivity: UIActivity {
     override var activityViewController: UIViewController? {
         return sendToFriendViewController
     }
-    
-//    override var activityCategory: UIActivityCategory {
-//        return UIActivityCategory.action
-//    }
 }
