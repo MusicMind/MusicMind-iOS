@@ -44,7 +44,7 @@ class UploadActivity: UIActivity {
                 
                 // get vc ready
                 
-                
+                sendToFriendViewController = SendToFriendViewController(nibName: "SendToFriendView", bundle: Bundle.main)
                 
             }
         }

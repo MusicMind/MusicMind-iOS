@@ -12,6 +12,10 @@ import MobileCoreServices
 
 final class SendToFriendViewController: UIViewController {
     
+    @IBAction func done(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     var localUrlOfVideo: URL?
     var remoteDownloadUrlOfVideo: URL?
     private var downloadURLString: String?
