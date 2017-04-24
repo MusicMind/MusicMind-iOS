@@ -23,7 +23,7 @@ final class SendToFriendViewController: UIViewController {
         }
     }
     
-    
+    private var uploadTask: FIRStorageUploadTask?
     private var downloadURLString: String?
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var copyToClipboardButton: UIButton!
@@ -54,18 +54,22 @@ final class SendToFriendViewController: UIViewController {
         if let urlString = self.downloadURLString {
             UIPasteboard.general.string = urlString
             
-//            copyToClipboardButton.titleLabel?.text = "Copied!"
+            copyToClipboardButton.titleLabel?.text = "Copied!"
             
             let timer = Timer.init(timeInterval: 1000, repeats: false, block: { _ in
-//                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             })
             
-//            timer.fire()
+            timer.fire()
             
         }
     }
     
     @IBAction func done(_ sender: Any) {
+        if let uploadTask = uploadTask {
+            uploadTask.cancel()
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -83,7 +87,7 @@ final class SendToFriendViewController: UIViewController {
         uploadMetadata.contentType = "video/quicktime"
         
         if let localUrlOfVideo = localUrlOfVideo {
-            let uploadTask = storageRef.putFile(localUrlOfVideo, metadata: uploadMetadata) { (metadata, error) in
+            uploadTask = storageRef.putFile(localUrlOfVideo, metadata: uploadMetadata) { (metadata, error) in
                 if error == nil {
                     let downloadUrl = metadata?.downloadURL()
                     
@@ -97,7 +101,7 @@ final class SendToFriendViewController: UIViewController {
                 }
             }
             
-            uploadTask.observe(.progress) { [weak self] (snapshot) in
+            uploadTask?.observe(.progress) { [weak self] (snapshot) in
                 guard let strongSelf = self else { return }
                 
                 guard let progress = snapshot.progress else { return }
