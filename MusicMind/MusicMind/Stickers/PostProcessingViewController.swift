@@ -17,7 +17,8 @@ class PostProcessingViewController: VideoPickerViewController {
 
     var videoPlayer: AVPlayer!
     var stickersAdded: [UIImageView] = []
-    var videoLoaded = false
+    var localUrlOfOriginalVideo: URL?
+//    var videoLoaded = false
     
     let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "cool"), #imageLiteral(resourceName: "happy"), #imageLiteral(resourceName: "nerd"), #imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
     
@@ -26,15 +27,21 @@ class PostProcessingViewController: VideoPickerViewController {
         delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
-                
+        
+        if let videoUrl = localUrlOfOriginalVideo {
+            startPlayingVideoWith(videoUrl)
+        } else {
+            // something's wrong. We shouldn't be able to get to this screen without a video url.
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if videoLoaded == false {
-            videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        if videoLoaded == false {
+//            videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
+//        }
+//    }
     
     func startPlayingVideoWith(_ url: URL){
         let playerItem = AVPlayerItem(url: url)
