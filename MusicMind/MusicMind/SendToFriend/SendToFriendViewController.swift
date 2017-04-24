@@ -37,14 +37,9 @@ final class SendToFriendViewController: UIViewController {
             
             sender.setTitle("Copied!", for: .normal)
             
-//            copyToClipboardButton.titleLabel?.text = "Copied!"
-            
-//            let timer = Timer.init(timeInterval: 1000, repeats: false, block: { _ in
-//                self.dismiss(animated: true, completion: nil)
-//            })
-//            
-//            timer.fire()
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                self.dismiss(animated: true, completion: nil)
+            })
         }
     }
     
