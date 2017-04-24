@@ -47,11 +47,11 @@ final class SendToFriendViewController: UIViewController {
             
             copyToClipboardButton.titleLabel?.text = "Copied!"
             
-            let timer = Timer.init(timeInterval: 1000, repeats: false, block: { _ in
-                self.dismiss(animated: true, completion: nil)
-            })
-            
-            timer.fire()
+//            let timer = Timer.init(timeInterval: 1000, repeats: false, block: { _ in
+//                self.dismiss(animated: true, completion: nil)
+//            })
+//            
+//            timer.fire()
             
         }
     }
