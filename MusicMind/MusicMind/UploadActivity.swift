@@ -10,6 +10,8 @@ import UIKit
 
 class UploadActivity: UIActivity {
     
+    private var sendToFriendViewController: SendToFriendViewController?
+    
     override var activityType: UIActivityType? {
         return nil
     }
@@ -37,8 +39,19 @@ class UploadActivity: UIActivity {
         for item in activityItems {
             if let url = item as? URL {
                 print("Item is a url. See: \(url.absoluteString)")
+                
+                // save url
+                
+                // get vc ready
+                
+                
+                
             }
         }
+    }
+    
+    override var activityViewController: UIViewController? {
+        return sendToFriendViewController
     }
     
 //    override var activityCategory: UIActivityCategory {
