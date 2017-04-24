@@ -25,7 +25,6 @@ final class SendToFriendViewController: UIViewController {
     
     
     private var downloadURLString: String?
-    @IBOutlet weak var textFieldForDownloadURL: UITextField!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var copyToClipboardButton: UIButton!
     
@@ -55,9 +54,14 @@ final class SendToFriendViewController: UIViewController {
         if let urlString = self.downloadURLString {
             UIPasteboard.general.string = urlString
             
-            copyToClipboardButton.titleLabel?.text = "Copied!"
+//            copyToClipboardButton.titleLabel?.text = "Copied!"
             
-            self.dismiss(animated: true, completion: nil)
+            let timer = Timer.init(timeInterval: 1000, repeats: false, block: { _ in
+//                self.dismiss(animated: true, completion: nil)
+            })
+            
+//            timer.fire()
+            
         }
     }
     
@@ -85,8 +89,6 @@ final class SendToFriendViewController: UIViewController {
                     
                     if let downloadUrl = downloadUrl {
                         self.remoteDownloadUrlOfVideo = downloadUrl
-                        
-                        self.textFieldForDownloadURL.text = downloadUrl.absoluteString
                         
                         self.downloadURLString = downloadUrl.absoluteString
                     }

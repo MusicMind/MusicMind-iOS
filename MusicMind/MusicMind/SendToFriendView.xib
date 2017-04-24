@@ -63,7 +63,6 @@
                     </state>
                     <connections>
                         <action selector="copyDownloadUrlToClipboard:" destination="-1" eventType="touchUpInside" id="HZg-Be-kV6"/>
-                        <action selector="done:" destination="-1" eventType="touchUpInside" id="ave-zg-FMP"/>
                     </connections>
                 </button>
             </subviews>
