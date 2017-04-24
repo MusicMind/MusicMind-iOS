@@ -23,11 +23,22 @@ class UploadActivity: UIActivity {
     }
     
     override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
-        return true
+        for item in activityItems {
+            if let url = item as? URL {
+                if url.lastPathComponent == "movie.mov" || url.lastPathComponent == "movie.mp4" {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     override func prepare(withActivityItems activityItems: [Any]) {
-        // code
+        for item in activityItems {
+            if let url = item as? URL {
+                print("Item is a url. See: \(url.absoluteString)")
+            }
+        }
     }
     
 //    override var activityCategory: UIActivityCategory {
