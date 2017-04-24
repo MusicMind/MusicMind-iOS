@@ -32,6 +32,7 @@ class UploadActivity: UIActivity {
                 }
             }
         }
+        
         return false
     }
     
