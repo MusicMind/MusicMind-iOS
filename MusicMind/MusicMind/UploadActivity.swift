@@ -17,7 +17,7 @@ class UploadActivity: UIActivity {
     }
     
     override var activityTitle: String? {
-        return "Upload to MusicMind"
+        return "Share via MusicMind"
     }
     
     override var activityImage: UIImage? {
