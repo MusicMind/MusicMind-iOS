@@ -62,6 +62,7 @@ class AVVideoExporter{
         }
         
         let size = videoTrack.naturalSize
+
         
         let layerComposition = AVMutableVideoComposition()
         layerComposition.frameDuration = CMTimeMake(1, 30)
@@ -71,11 +72,11 @@ class AVVideoExporter{
         instructions.timeRange = CMTimeRangeMake(kCMTimeZero, composition.duration)
         let videoTrackFromCompostion = composition.tracks(withMediaType: AVMediaTypeVideo)[0] as AVAssetTrack
         
-        let layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrackFromCompostion)
+        let layerInstructions = layerInstructionsAfterFixingOrientationFor(asset: videoAsset, for: compositionVideoTrack, atTime: kCMTimeZero)
         instructions.layerInstructions = [layerInstructions]
         layerComposition.instructions = [instructions]
         
-        compositionVideoTrack.preferredTransform = videoTrack.preferredTransform
+//        compositionVideoTrack.preferredTransform = videoTrack.preferredTransform
         
         self.applyLayersToVideo(composition: layerComposition, size: size)
         
@@ -153,8 +154,8 @@ class AVVideoExporter{
     }
     
     private func layerInstructionsAfterFixingOrientationFor(asset: AVAsset,for track: AVMutableCompositionTrack, atTime: CMTime) -> AVMutableVideoCompositionLayerInstruction {
-        var layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
-        var videoAssetTrack = asset.tracks(withMediaType: AVMediaTypeVideo)[0]
+        let layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
+        let videoAssetTrack = asset.tracks(withMediaType: AVMediaTypeVideo)[0]
         var videoAssetOrientation = UIImageOrientation.up
         var isVideoAssetPortrait = false
         var videoTransform = videoAssetTrack.preferredTransform
@@ -182,9 +183,12 @@ class AVVideoExporter{
             
             layerInstructions.setTransform(videoAssetTrack.preferredTransform.concatenating(firstAssetScaleFactor), at: kCMTimeZero)
         } else {
-            var firstAssetScalreFactor = CGAffineTransform(scaleX: firstAssetScaleToFitRatio, y: firstAssetScaleToFitRatio)
-            layerInstructions.setTransform(videoAssetTrack.preferredTransform.concatenating(firstAssetScalreFactor), at: <#T##CMTime#>)
+            var firstAssetScaleFactor = CGAffineTransform(scaleX: firstAssetScaleToFitRatio, y: firstAssetScaleToFitRatio)
+            let prefferedTransformConcat = videoAssetTrack.preferredTransform.concatenating(firstAssetScaleFactor)
+            layerInstructions.setTransform(prefferedTransformConcat.concatenating(CGAffineTransform(translationX: 0, y: 160)), at: kCMTimeZero)
         }
+        
+        layerInstructions.setOpacity(0.0, at: kCMTimeZero)
         
         return layerInstructions
     }
