@@ -19,8 +19,16 @@ class FirebaseDataService{
     // DB References
     private let userDatabase = database.child("users")
     
-    func addUserToUserList(_ user: User){
-        userDatabase.child(user.firebaseUUID!).updateChildValues(user.dictionaryRepresentation)
+    func addUserToUserList(_ user: User) {
+        var userAsDictionary: [String: Any] = [:]
+        
+        for (key, value) in user.dictionaryRepresentation {
+            if let value = value {
+                userAsDictionary[key] = value
+            }
+        }
+        
+        userDatabase.child(user.firebaseUUID!).updateChildValues(userAsDictionary)
     }
     
 }
