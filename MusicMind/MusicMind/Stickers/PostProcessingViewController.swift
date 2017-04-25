@@ -68,9 +68,9 @@ class PostProcessingViewController: VideoPickerViewController {
     }
     
     override func applyVideoEffectsTo(composition: AVMutableVideoComposition, size: CGSize) {
-        let rect = UIView(frame: CGRect(origin: CGPoint.zero, size: size))
         let parentLayer = CALayer()
         let videoLayer = CALayer()
+        
         parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         videoLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         print(parentLayer.frame)

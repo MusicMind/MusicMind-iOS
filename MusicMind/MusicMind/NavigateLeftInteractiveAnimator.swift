@@ -26,7 +26,6 @@ class NavigateLeftInteractiveAnimator: NSObject, UIViewControllerAnimatedTransit
         
         guard let toViewController = transitionContext.viewController(forKey: .to) else { return }
         guard let toView = transitionContext.view(forKey: .to) else { return }
-        let toFrame = transitionContext.initialFrame(for: toViewController)
         
         let containerView = transitionContext.containerView
         
