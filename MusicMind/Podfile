@@ -14,7 +14,7 @@ target 'MusicMind' do
   pod 'Alamofire'
   pod 'SinchVerification-Swift'
   pod 'Firebase/Database'
-  pod 'RecordButton'
+  pod 'RecordButton', :git => 'https://github.com/felipericieri/RecordButton.git'
 
   target 'MusicMindTests' do
       

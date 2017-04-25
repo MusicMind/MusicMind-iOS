@@ -50,8 +50,17 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - KeychainSwift
-  - RecordButton
+  - RecordButton (from `https://github.com/felipericieri/RecordButton.git`)
   - SinchVerification-Swift
+
+EXTERNAL SOURCES:
+  RecordButton:
+    :git: https://github.com/felipericieri/RecordButton.git
+
+CHECKOUT OPTIONS:
+  RecordButton:
+    :commit: b3ff008d9b0313e1864f0397ba5302cd898e31f4
+    :git: https://github.com/felipericieri/RecordButton.git
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -65,9 +74,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   KeychainSwift: b6947435dd78cc442c64a84ae648dd0e871cf448
-  RecordButton: 76677be0f4b94f8a387454a23b4b64bd9b6c0e51
+  RecordButton: 8290de19cf5d92144ad4996eaff60994334e553b
   SinchVerification-Swift: 567aaf9cb29c55a115faecb6016fea25a7f37688
 
-PODFILE CHECKSUM: 9097014f9db39181f25f3d180cca801d2ac2628d
+PODFILE CHECKSUM: dc576a6940c448773a6da451030cb5912ea3c6bf
 
 COCOAPODS: 1.2.0.beta.1
