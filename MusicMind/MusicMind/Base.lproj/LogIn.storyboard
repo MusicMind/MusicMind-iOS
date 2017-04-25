@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,44 +73,26 @@
                                     <segue destination="vX9-lh-jN2" kind="show" id="Mwo-GG-tMH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFs-U1-zUt">
-                                <rect key="frame" x="307" y="104" width="52" height="30"/>
-                                <state key="normal" title="Sign up"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cG4-B4-N9e">
-                                <rect key="frame" x="16" y="142" width="95" height="30"/>
-                                <state key="normal" title="Show Camera"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="cG4-B4-N9e" secondAttribute="leading" id="0m0-8v-VzO"/>
                             <constraint firstItem="8Is-GU-swc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3R5-pE-JaZ"/>
                             <constraint firstItem="S1G-xK-vGs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3iu-Ey-Uza"/>
                             <constraint firstItem="K8C-yW-s17" firstAttribute="top" secondItem="S1G-xK-vGs" secondAttribute="bottom" id="4fI-eb-wcg"/>
                             <constraint firstItem="8Is-GU-swc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="79I-um-rw3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MTZ-Cd-i1B" secondAttribute="trailing" constant="15" id="7W5-iY-EzG"/>
                             <constraint firstItem="S1G-xK-vGs" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="9gk-gl-vv0"/>
-                            <constraint firstItem="CFs-U1-zUt" firstAttribute="top" secondItem="kCw-jG-ZqY" secondAttribute="bottom" constant="8" id="Nzr-XE-jKs"/>
                             <constraint firstItem="kCw-jG-ZqY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bOZ-3a-GnX"/>
                             <constraint firstItem="kCw-jG-ZqY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="buw-bc-jOy"/>
                             <constraint firstItem="S1G-xK-vGs" firstAttribute="top" secondItem="kCw-jG-ZqY" secondAttribute="bottom" constant="30" id="eOF-md-3dF"/>
                             <constraint firstItem="K8C-yW-s17" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f88-Zm-5cs"/>
                             <constraint firstItem="8Is-GU-swc" firstAttribute="top" secondItem="MTZ-Cd-i1B" secondAttribute="bottom" constant="30" id="fIN-Jl-J6c"/>
                             <constraint firstItem="MTZ-Cd-i1B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fia-ih-bgr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CFs-U1-zUt" secondAttribute="trailing" id="ge0-2V-MUl"/>
                             <constraint firstItem="K8C-yW-s17" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iQM-Tu-nze"/>
                             <constraint firstItem="MTZ-Cd-i1B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="oKb-IU-pNP"/>
                             <constraint firstItem="MTZ-Cd-i1B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="u9Q-5o-Rhl"/>
-                            <constraint firstItem="cG4-B4-N9e" firstAttribute="top" secondItem="S1G-xK-vGs" secondAttribute="bottom" constant="8" id="vU6-9e-w9N"/>
                             <constraint firstItem="kCw-jG-ZqY" firstAttribute="top" secondItem="8Is-GU-swc" secondAttribute="bottom" constant="20" id="wTo-Z8-9dz"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="CFs-U1-zUt"/>
-                                <exclude reference="cG4-B4-N9e"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="8Is-GU-swc" id="FAg-qy-Li6"/>
