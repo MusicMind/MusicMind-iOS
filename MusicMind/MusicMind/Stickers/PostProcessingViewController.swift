@@ -20,11 +20,17 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var exportButton: UIButton!
 
     var videoPlayer: AVPlayer!
-    var stickersAdded: [UIImageView] = []
     var videoLoaded = false
     var isHidden = false
     
+    
+    /// The url in which the Camera Capture save the video or photo it captures.
+    /// If empty, image picker shows up.
+    var videoAssetURL: URL?
+    
     let assets: [UIImage] = [#imageLiteral(resourceName: "guitar") ]
+    
+    var avVideoExporter: AVVideoExporter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +41,15 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if videoLoaded == false {
+        if let videoAssetURL = videoAssetURL{
+            startPlayingVideoWith(videoAssetURL)
+            avVideoExporter = AVVideoExporter(url: videoAssetURL)
+            videoLoaded =  true
+        } else if videoLoaded == false {
             videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
         }
     }
     
-    /// The url in which the Camera Capture save the video or photo it captures.
-    /// If empty, image picker shows up.
-    var videoAssetURL: URL?
     
     func startMediaBroswerFrom(viewController: UIViewController?, using delegate: Any?) -> Bool{
         
@@ -70,8 +77,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         
         let url = info[UIImagePickerControllerMediaURL] as! URL
         
-        // handle video selection
-        self.videoAsset = AVAsset(url: url)
+        avVideoExporter = AVVideoExporter(url: url)
         
         self.startPlayingVideoWith(url)
         
@@ -118,7 +124,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func exportButtonPressed(_ sender: Any) {
-        self.videoOutput()
+        self.avVideoExporter?.output()
     }
 }
 

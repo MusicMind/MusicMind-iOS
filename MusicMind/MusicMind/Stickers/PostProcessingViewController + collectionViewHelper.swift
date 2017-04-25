@@ -43,7 +43,7 @@ extension PostProcessingViewController: UICollectionViewDelegate, UICollectionVi
         newImageView.frame.origin = self.view.center
 //        newImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(detectPan(recognizer:))))
         
-        self.stickersAdded.append(newImageView)
+        self.avVideoExporter?.imageViews.append(newImageView)
         self.view.addSubview(newImageView)
         
         newImageView.frame = self.view.frame
