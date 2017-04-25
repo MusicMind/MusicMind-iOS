@@ -6,12 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "For UIActivity@1x.png",
+      "filename" : "For UIActivity.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "For UIActivity@2x.png",
       "scale" : "3x"
     }
   ],
