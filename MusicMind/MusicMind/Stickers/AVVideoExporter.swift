@@ -70,11 +70,12 @@ class AVVideoExporter{
         let instructions = AVMutableVideoCompositionInstruction()
         instructions.timeRange = CMTimeRangeMake(kCMTimeZero, composition.duration)
         let videoTrackFromCompostion = composition.tracks(withMediaType: AVMediaTypeVideo)[0] as AVAssetTrack
+        
         let layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrackFromCompostion)
         instructions.layerInstructions = [layerInstructions]
         layerComposition.instructions = [instructions]
         
-        
+        compositionVideoTrack.preferredTransform = videoTrack.preferredTransform
         
         self.applyLayersToVideo(composition: layerComposition, size: size)
         
@@ -151,9 +152,40 @@ class AVVideoExporter{
         composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
     }
     
-    private func layerInstructionsAfterFixingOrientationFor(asset: AVAsset, track: AVMutableCompositionTrack, atTime: CMTime) -> AVMutableVideoCompositionLayerInstruction {
+    private func layerInstructionsAfterFixingOrientationFor(asset: AVAsset,for track: AVMutableCompositionTrack, atTime: CMTime) -> AVMutableVideoCompositionLayerInstruction {
+        var layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: track)
+        var videoAssetTrack = asset.tracks(withMediaType: AVMediaTypeVideo)[0]
         var videoAssetOrientation = UIImageOrientation.up
         var isVideoAssetPortrait = false
-        var videoTransform = videoTrack.preferredTransform
+        var videoTransform = videoAssetTrack.preferredTransform
+        
+        if(videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0)  {
+            videoAssetOrientation = .right
+            isVideoAssetPortrait = true
+        }
+        if(videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0){
+            videoAssetOrientation =  .left
+            isVideoAssetPortrait = true
+        }
+        if(videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0){
+            videoAssetOrientation =  .up
+        }
+        if(videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
+            videoAssetOrientation = .down
+        }
+        
+        var firstAssetScaleToFitRatio = 320.0 / videoAssetTrack.naturalSize.width
+        
+        if isVideoAssetPortrait {
+            firstAssetScaleToFitRatio = 320.0 / videoAssetTrack.naturalSize.height
+            var firstAssetScaleFactor = CGAffineTransform(scaleX: firstAssetScaleToFitRatio, y: firstAssetScaleToFitRatio)
+            
+            layerInstructions.setTransform(videoAssetTrack.preferredTransform.concatenating(firstAssetScaleFactor), at: kCMTimeZero)
+        } else {
+            var firstAssetScalreFactor = CGAffineTransform(scaleX: firstAssetScaleToFitRatio, y: firstAssetScaleToFitRatio)
+            layerInstructions.setTransform(videoAssetTrack.preferredTransform.concatenating(firstAssetScalreFactor), at: <#T##CMTime#>)
+        }
+        
+        return layerInstructions
     }
 }
