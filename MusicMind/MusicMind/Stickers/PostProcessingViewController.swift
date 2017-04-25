@@ -10,15 +10,15 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class PostProcessingViewController: VideoPickerViewController{
+class PostProcessingViewController: VideoPickerViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var recordedVideoView: VideoContainerView!
 
     var videoPlayer: AVPlayer!
     var stickersAdded: [UIImageView] = []
-    var videoLoaded = false
-    
+    var localUrlOfOriginalVideo: URL?
+
     let emojiImagesArray: [UIImage] = [#imageLiteral(resourceName: "cool"), #imageLiteral(resourceName: "happy"), #imageLiteral(resourceName: "nerd"), #imageLiteral(resourceName: "speaker"), #imageLiteral(resourceName: "mic")]
     
     override func viewDidLoad() {
@@ -26,15 +26,28 @@ class PostProcessingViewController: VideoPickerViewController{
         delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
-                
+        
+        if let videoUrl = localUrlOfOriginalVideo {
+            startPlayingVideoWith(videoUrl)
+        }
+        
+        setupNavigationBar(theme: .light)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if videoLoaded == false {
-            videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
+    @IBAction func activityButtonPressed(_ sender: Any) {
+        // creating activity
+        let uploadActivity = UploadActivity()
+        
+        // creating activity view controller
+        if let localUrlOfOriginalVideo = localUrlOfOriginalVideo {
+            let activityController = UIActivityViewController(activityItems: [localUrlOfOriginalVideo], applicationActivities: [uploadActivity])
+            
+            present(activityController, animated: true, completion: nil)
         }
     }
+    
     func startPlayingVideoWith(_ url: URL){
         let playerItem = AVPlayerItem(url: url)
         
