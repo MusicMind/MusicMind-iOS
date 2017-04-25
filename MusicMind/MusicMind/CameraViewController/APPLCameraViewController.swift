@@ -536,7 +536,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 						}
 						
 						let inProgressLivePhotoCapturesCount = self.inProgressLivePhotoCapturesCount
-						DispatchQueue.main.async { [unowned self] in
+						DispatchQueue.main.async {
 							if inProgressLivePhotoCapturesCount > 0 {
 								
 							}
@@ -579,7 +579,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			self.livePhotoMode = (self.livePhotoMode == .on) ? .off : .on
 			let livePhotoMode = self.livePhotoMode
 			
-			DispatchQueue.main.async { [unowned self] in
+			DispatchQueue.main.async {
 				if livePhotoMode == .on {
 					
 				}
