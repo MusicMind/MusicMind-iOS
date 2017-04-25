@@ -55,6 +55,7 @@
 		DE503ADA1E94368C00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
 		DE503ADC1E94368F00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
+		DE783F441EAFC4FF0007877A /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE783F431EAFC4FF0007877A /* Platform.swift */; };
 		DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */; };
 		DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */; };
 		DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */; };
@@ -151,6 +152,7 @@
 		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllerTests.swift; sourceTree = "<group>"; };
+		DE783F431EAFC4FF0007877A /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifier.swift; sourceTree = "<group>"; };
 		DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicMind.entitlements; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE487E051E8D6A3C0025B514 /* Extensions */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
+				DE783F431EAFC4FF0007877A /* Platform.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
 				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
@@ -777,6 +780,7 @@
 				DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */,
 				0FF4B61B1E83946100EEAE8C /* PostProcessingViewController.swift in Sources */,
 				DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */,
+				DE783F441EAFC4FF0007877A /* Platform.swift in Sources */,
 				0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */,
 				0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */,
 				DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */,
