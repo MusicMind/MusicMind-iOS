@@ -21,7 +21,7 @@ class UploadActivity: UIActivity {
     }
     
     override var activityImage: UIImage? {
-        return #imageLiteral(resourceName: "cool")
+        return UIImage(named: "uploadActivityIcon")
     }
     
     override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
