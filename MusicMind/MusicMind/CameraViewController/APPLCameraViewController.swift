@@ -711,7 +711,9 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 							creationRequest.addResource(with: .video, fileURL: outputFileURL, options: options)
 						}, completionHandler: { success, error in
 							if !success {
-								print("Could not save movie to photo library: \(error)")
+                                if let error = error {
+                                    print("Could not save movie to photo library: \(error.localizedDescription)")
+                                }
 							}
 							cleanup()
 						}
