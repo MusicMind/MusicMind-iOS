@@ -11,13 +11,29 @@ import AVFoundation
 import RecordButton
 import MobileCoreServices
 
+fileprivate enum CurrentCamera {
+    case front
+    case back
+}
+
 final class CameraCaptureViewController: UIViewController {
     
     @IBOutlet private weak var cameraPreviewView: UIView!
     @IBOutlet private weak var libraryButton: UIButton!
     @IBOutlet private weak var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
-
+    
+    // AV capturing objects
+    fileprivate var currentCamera = CurrentCamera.front
+    let session = AVCaptureSession()
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var cameraCaptureOutput: AVCaptureMovieFileOutput?
+    var backCameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) // default is always back camera
+    var backCameraInput: AVCaptureDeviceInput?
+    var frontCameraDevice: AVCaptureDevice?
+    var frontCameraInput: AVCaptureDeviceInput?
+    var microphoneAudioDevice: AVCaptureDevice?
+    var microphoneAudioInput: AVCaptureDeviceInput?
     
     // MARK: - View Controller Lifecycle
     
@@ -63,22 +79,6 @@ final class CameraCaptureViewController: UIViewController {
     
     
     // MARK: - AV Capturing
-    
-    enum CurrentCamera {
-        case front
-        case back
-    }
-    
-    var currentCamera = CurrentCamera.front
-    let session = AVCaptureSession()
-    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
-    var cameraCaptureOutput: AVCaptureMovieFileOutput?
-    var backCameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) // default is always back camera
-    var backCameraInput: AVCaptureDeviceInput?
-    var frontCameraDevice: AVCaptureDevice?
-    var frontCameraInput: AVCaptureDeviceInput?
-    var microphoneAudioDevice: AVCaptureDevice?
-    var microphoneAudioInput: AVCaptureDeviceInput?
 
     func setupCaptureSession() {
         session.sessionPreset = AVCaptureSessionPresetHigh
@@ -124,7 +124,6 @@ final class CameraCaptureViewController: UIViewController {
                 }
             }
         }
-
         
         // Get back camera input ready
         do {
@@ -154,9 +153,6 @@ final class CameraCaptureViewController: UIViewController {
             
             cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
         }
-    
-        
-
         
         session.startRunning()
     }
