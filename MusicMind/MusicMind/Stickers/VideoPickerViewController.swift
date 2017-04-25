@@ -23,7 +23,7 @@ class VideoPickerViewController: UIViewController, UIImagePickerControllerDelega
     
     weak var delegate: VideoPickerViewControllerDelegate?
     
-    func startMediaBroswerFrom(viewController: UIViewController?, using delegate: Any?) -> Bool{
+    func startMediaBroswerFrom(viewController: UIViewController?, using delegate: Any?) -> Bool {
         
         // some validation
         if ((UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) == false) || (delegate == nil) || (viewController == nil)){

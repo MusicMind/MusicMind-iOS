@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC">
-                                <rect key="frame" x="37" y="516" width="57" height="37"/>
+                                <rect key="frame" x="37" y="565" width="57" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Library">
                                     <color key="titleColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfH-an-nOB" customClass="RecordButton" customModule="RecordButton">
-                                <rect key="frame" x="152.5" y="498" width="70" height="70"/>
+                                <rect key="frame" x="152.5" y="547" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.53569626135066484" green="1" blue="0.49764684300365181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="PGq-ie-DFF"/>
@@ -85,7 +85,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="abx-js-koV"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraPreviewView" destination="p2Q-BA-tgI" id="WHu-pH-iuI"/>
                         <outlet property="libraryButton" destination="8uN-dK-thC" id="mua-I4-hqr"/>

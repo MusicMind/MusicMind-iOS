@@ -22,7 +22,7 @@
 		0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */; };
 		0FF4B61B1E83946100EEAE8C /* PostProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */; };
 		0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */; };
-		0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */; };
+		0FF4B61D1E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6181E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift */; };
 		0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */; };
 		0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */; };
 		0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */; };
@@ -33,6 +33,8 @@
 		13B8212CFD3774E4DC2E8009 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
+		DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE007F601EAEA17300966F55 /* SendToFriendView.xib */; };
+		DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */; };
 		DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */; };
 		DE1471F81E7CBF3D000C45E6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		DE1471F91E7CBF3E000C45E6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
@@ -53,7 +55,6 @@
 		DE503ADA1E94368C00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
 		DE503ADC1E94368F00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
-		DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */; };
 		DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */; };
 		DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */; };
 		DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */; };
@@ -71,6 +72,7 @@
 		DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
 		DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
 		DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
+		DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */; };
 		F4A2A067D693BF8B8983FADF /* Pods_MusicMind_MusicMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B61F615E231AD98737EC03 /* Pods_MusicMind_MusicMindUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +109,7 @@
 		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CameraCapture.storyboard; sourceTree = "<group>"; };
 		0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostProcessingViewController.swift; path = Stickers/PostProcessingViewController.swift; sourceTree = "<group>"; };
 		0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiCollectionViewCell.swift; path = Stickers/EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
-		0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StickersViewController + collectionViewHelper.swift"; path = "Stickers/StickersViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
+		0FF4B6181E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PostProcessingViewController + collectionViewHelper.swift"; path = "Stickers/PostProcessingViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
 		0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoContainerView.swift; path = Stickers/VideoContainerView.swift; sourceTree = "<group>"; };
 		0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewController.swift; path = Stickers/VideoPickerViewController.swift; sourceTree = "<group>"; };
 		0FF4B6211E8394E600EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PostProcessing.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,8 @@
 		9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
 		CE436F3A13088C34C7891AAB /* Pods-MusicMindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMindUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMindUITests/Pods-MusicMindUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD4D6AD168F8C6B39F99AAB7 /* Pods-MusicMind-MusicMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE007F601EAEA17300966F55 /* SendToFriendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendToFriendView.xib; sourceTree = "<group>"; };
+		DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+setTextWhileKeepingAttributes.swift"; sourceTree = "<group>"; };
 		DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendToFriendViewController.swift; path = SendToFriend/SendToFriendViewController.swift; sourceTree = "<group>"; };
 		DE357AC21E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationCodeEntryViewController.swift; sourceTree = "<group>"; };
 		DE429F7E1E661BB20050E719 /* MusicMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +151,6 @@
 		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllerTests.swift; sourceTree = "<group>"; };
-		DE64942B1E7CE6F0003D92D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SendToFriend.storyboard; sourceTree = "<group>"; };
 		DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifier.swift; sourceTree = "<group>"; };
 		DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicMind.entitlements; sourceTree = "<group>"; };
@@ -166,6 +169,7 @@
 		DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
 		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
 		DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberEntryViewController.swift; sourceTree = "<group>"; };
+		DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadActivity.swift; sourceTree = "<group>"; };
 		EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -233,7 +237,7 @@
 				0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */,
 				0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */,
 				0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */,
-				0FF4B6181E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift */,
+				0FF4B6181E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift */,
 				0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */,
 				0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */,
 			);
@@ -288,8 +292,9 @@
 		DE09EC6A1E7CDF81005B237A /* Send to friend */ = {
 			isa = PBXGroup;
 			children = (
-				DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */,
+				DE007F601EAEA17300966F55 /* SendToFriendView.xib */,
 				DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */,
+				DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */,
 			);
 			name = "Send to friend";
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 		DE487E051E8D6A3C0025B514 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */,
 				DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */,
 				DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */,
 				DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
@@ -580,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */,
+				DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */,
 				0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */,
 				0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */,
 				DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */,
@@ -588,7 +595,6 @@
 				DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */,
 				0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */,
 				DE860DF11E93626D00393B03 /* MusicSearch.storyboard in Resources */,
-				DE64942C1E7CE6F0003D92D0 /* SendToFriend.storyboard in Resources */,
 				DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 			);
@@ -755,10 +761,12 @@
 			files = (
 				DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */,
-				0FF4B61D1E83946100EEAE8C /* StickersViewController + collectionViewHelper.swift in Sources */,
+				0FF4B61D1E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift in Sources */,
+				DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */,
 				DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */,
 				DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */,
 				DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
+				DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */,
 				DEA2A7A21E946B0700D78E23 /* CameraCaptureViewController.swift in Sources */,
 				0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */,
 				0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */,
@@ -864,14 +872,6 @@
 				DE429F8B1E661BB20050E719 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		DE64942A1E7CE6F0003D92D0 /* SendToFriend.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE64942B1E7CE6F0003D92D0 /* Base */,
-			);
-			name = SendToFriend.storyboard;
 			sourceTree = "<group>";
 		};
 		DE860DE11E93602400393B03 /* ForgotPassword.storyboard */ = {
