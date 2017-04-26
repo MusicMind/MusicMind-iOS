@@ -22,16 +22,14 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     var videoPlayer: AVPlayer!
     var videoLoaded = false
     var isHidden = false
-    
-    
-    /// The url in which the Camera Capture save the video or photo it captures.
-    /// If empty, image picker shows up.
-    var videoAssetURL: URL?
-    
+
     let assets: [UIImage] = [#imageLiteral(resourceName: "guitar") ]
   
     var avVideoExporter: AVVideoExporter?
     var stickersAdded: [UIImageView] = []
+    
+    /// The url in which the Camera Capture save the video or photo it captures.
+    /// If empty, image picker shows up.
     var localUrlOfOriginalVideo: URL?
     
     override func viewDidLoad() {
@@ -49,7 +47,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let videoAssetURL = videoAssetURL{
+        if let videoAssetURL = localUrlOfOriginalVideo{
             startPlayingVideoWith(videoAssetURL)
             avVideoExporter = AVVideoExporter(url: videoAssetURL)
             videoLoaded =  true

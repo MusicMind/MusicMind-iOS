@@ -45,11 +45,12 @@
                                 </constraints>
                                 <state key="normal" title="Export"/>
                                 <connections>
-                                    <action selector="exportButtonPressed:" destination="Fvl-8P-Phq" eventType="touchUpInside" id="oya-kK-MIT"/>
+                                    <action selector="exportButtonPressed:" destination="Fvl-8P-Phq" eventType="touchUpInside" id="QyC-1Q-5js"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="56W-Wl-gr7">
                                 <rect key="frame" x="0.0" y="513" width="375" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="sZT-md-Vfv"/>
                                 </constraints>
@@ -118,6 +119,7 @@
                     <connections>
                         <outlet property="assetsButton" destination="63m-SG-rpw" id="r7W-VV-nla"/>
                         <outlet property="collectionView" destination="56W-Wl-gr7" id="MGL-D5-SgQ"/>
+                        <outlet property="exportButton" destination="T1K-Hv-YhA" id="zpo-oW-hWh"/>
                         <outlet property="recordedVideoView" destination="WBo-7w-cc2" id="4h0-JA-aHK"/>
                     </connections>
                 </viewController>
