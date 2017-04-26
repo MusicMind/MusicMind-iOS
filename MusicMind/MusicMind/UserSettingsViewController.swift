@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserSettingsViewController: UIViewController {
+class UserSettingsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
