@@ -125,7 +125,7 @@
         <!--ForgotPassword-->
         <scene sceneID="pdG-NV-acd">
             <objects>
-                <viewControllerPlaceholder storyboardName="ForgotPassword" id="vX9-lh-jN2" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="LoginPage" storyboardName="ForgotPassword" id="vX9-lh-jN2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFy-Kd-nbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700" y="192"/>

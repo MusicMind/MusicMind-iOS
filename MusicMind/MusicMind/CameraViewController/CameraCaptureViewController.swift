@@ -13,28 +13,23 @@ import MobileCoreServices
 
 final class CameraCaptureViewController: UIViewController {
     
-    @IBOutlet private weak var cameraPreviewView: PreviewView!
-    @IBOutlet private weak var recordButtonContainer: UIView!
+    @IBOutlet private weak var cameraPreviewView: UIView!
     @IBOutlet private weak var libraryButton: UIButton!
-    private var recordButton: RecordButton!
+    @IBOutlet private weak var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
-    
+
     
     // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Setups
-        setupCaptureSession()
-        setupNavigationBar(theme: .light)
         
-        // Position the library button
-        libraryButton.center = CGPoint(x: recordButtonContainer.center.x - 110, y: recordButtonContainer.center.y)
-        
-        // Set up the record button
-        recordButton = RecordButton(frame: CGRect(x: 0,y: 0,width: 70,height: 70))
-        recordButton.center = recordButtonContainer.center
+        // Setup gesture recognizer
+        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
+        edgeGesture.edges = UIRectEdge.left
+        view.addGestureRecognizer(edgeGesture)
+       
+        // Setup record button
         recordButton.buttonColor = .white
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
@@ -42,6 +37,10 @@ final class CameraCaptureViewController: UIViewController {
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchUpInside)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchDragExit)
         self.view.addSubview(recordButton)
+        
+        // Other setups
+        setupCaptureSession()
+        setupNavigationBar(theme: .light)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +49,16 @@ final class CameraCaptureViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            performSegue(withIdentifier: "showMusicSearchViewContoller", sender: self)
+        default:
+            // pass down for the interaction controller to handle the rest of these cases
+           break
+        }
     }
     
     
@@ -115,7 +124,7 @@ final class CameraCaptureViewController: UIViewController {
                 }
             }
         }
-        
+
         
         // Get back camera input ready
         do {
@@ -137,12 +146,19 @@ final class CameraCaptureViewController: UIViewController {
         cameraCaptureOutput = AVCaptureMovieFileOutput()
         session.addOutput(cameraCaptureOutput)
         
-        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
-        cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        cameraPreviewLayer?.frame = cameraPreviewView.bounds
-        cameraPreviewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
+        if TARGET_OS_SIMULATOR == 1 {
+            print("Running on sim")
+        } else {
+            cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
+            cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+            cameraPreviewLayer?.frame = cameraPreviewView.bounds
+            cameraPreviewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
+            
+            cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
+        }
+    
         
-        cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
+
         
         session.startRunning()
     }
@@ -204,12 +220,12 @@ final class CameraCaptureViewController: UIViewController {
     
     // MARK: - Navigation
     
-    fileprivate func navigateToSendToFriendViewController(movieURL: URL) {
-        let sendToFriendViewController = UIStoryboard(name: "SendToFriend", bundle: nil).instantiateViewController(withIdentifier: "SendToFriendViewController") as! SendToFriendViewController
+    fileprivate func navigateToPostProcessingViewController(movieURL: URL) {
+        let postProcessingViewController = UIStoryboard(name: "PostProcessing", bundle: nil).instantiateViewController(withIdentifier: "PostProcessingViewController") as! PostProcessingViewController
         
-        sendToFriendViewController.urlOfVideo = movieURL
+        postProcessingViewController.localUrlOfOriginalVideo = movieURL
         
-        self.navigationController?.pushViewController(sendToFriendViewController, animated: true)
+        self.navigationController?.pushViewController(postProcessingViewController, animated: true)
     }
     
     @IBAction func presentSelectFromLibraryViewController(_ sender: Any) {
@@ -225,7 +241,7 @@ final class CameraCaptureViewController: UIViewController {
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
-        navigateToSendToFriendViewController(movieURL: newMovieFileUrl)
+        navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
     }
 
 }
@@ -234,7 +250,7 @@ extension CameraCaptureViewController: UIImagePickerControllerDelegate, UINaviga
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let urlForMovie = info[UIImagePickerControllerMediaURL] as? URL {
-            navigateToSendToFriendViewController(movieURL: urlForMovie)
+            navigateToPostProcessingViewController(movieURL: urlForMovie)
         }
         
         dismiss(animated: true, completion: nil)

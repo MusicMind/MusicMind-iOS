@@ -9,29 +9,89 @@
 import UIKit
 import Alamofire
 
-class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate {
+class MusicSearchViewController: UIViewController {
     
-    var arr = [String:Any]()
-    var arrCount: Int = 0
-    var audioPlayer: SPTAudioStreamingController?
+    var searchResults = [String: Any]()
+    var totalNumberOfSongFromResults: Int = 0
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+
+    // MARK: - View controller lifecycle
     
-    func createSearchBar(){
-        let searchBar = UISearchBar()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Setup gesture recognizer
+        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(MusicSearchViewController.edgeGestureAction(sender:)))
+        edgeGesture.edges = UIRectEdge.right
+        view.addGestureRecognizer(edgeGesture)
+     
+        // Other setups
+        hideKeyboardWhenTappedAround()
+        searchBar.keyboardAppearance = .dark
+        
+        // Set delegates
         searchBar.delegate = self
-        searchBar.sizeToFit()
-        searchBar.frame.size.width = self.view.frame.size.width - 160
-        searchBar.placeholder = "search"
-        let searchItem = UIBarButtonItem(customView: searchBar)
-        self.navigationItem.leftBarButtonItem = searchItem
+        tableView.delegate = self
+        tableView.dataSource = self
+        spotifyStreamingController.delegate = self
     }
     
-    func createAudioPlayer(){
-        self.audioPlayer = SPTAudioStreamingController.sharedInstance()
-        self.audioPlayer?.playbackDelegate = self
-        self.audioPlayer?.delegate = self
-        try! self.audioPlayer?.start(withClientId: "85374bf3879843d6a7b6fd4e62030d97")
-        self.audioPlayer!.login(withAccessToken: user.spotifyToken)
+    deinit {
+        spotifyStreamingController.delegate = nil
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let session = spotifyAuth.session {
+            if session.isValid() {
+                if spotifyStreamingController.loggedIn {
+                    print("Already loggedin to spotifyStreamingController")
+                } else {
+                    spotifyStreamingController.login(withAccessToken: session.accessToken)
+                }
+            } else {
+                presentSpotifyLoginAlert()
+            }
+        } else {
+            presentSpotifyLoginAlert()
+        }
+    }
+    
+    private func presentSpotifyLoginAlert() {
+        let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+        let login = UIAlertAction(title: "Go to Spotify", style: .default) { (alertAction) in
+            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
+                UIApplication.shared.open(spotifyUrl, options: [:])
+            }
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(login)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func done(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            self.dismiss(animated: true, completion: nil)
+        default:
+            break
+        }
+    }
+
+    
+    // MARK: - Setups and helpers
     
     func convertStringToDictionary(text: String) -> [String:Any]? {
         if let data = text.data(using: .utf8) {
@@ -43,6 +103,9 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPT
         }
         return nil
     }
+}
+
+extension MusicSearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
@@ -52,167 +115,107 @@ class MusicSearchViewController: UITableViewController, UISearchBarDelegate, SPT
             
             if let json = response.result.value {
                 print("JSON: \(json)")
+                
                 if let dict = self.convertStringToDictionary(text: json ) {
-                    self.arr = dict
-                    if let tracks = self.arr["tracks"] as? [String: Any] {
+                    self.searchResults = dict
+                    
+                    if let tracks = self.searchResults["tracks"] as? [String: Any] {
                         if let items = tracks["items"] as? [[String: Any]] {
-                            self.arrCount = items.count
+                            self.totalNumberOfSongFromResults = items.count
                         }
                     }
-                    debugPrint(self.arr)
+                    
+                    debugPrint(self.searchResults)
+                    
                     self.tableView?.reloadData()
-                    //debugPrint((self.arr["tracks"] as! [String: AnyObject])["items"] as! [String: AnyObject])
                 }
             }
         }
     }
     
+}
+
+extension MusicSearchViewController: SPTAudioStreamingDelegate {
+
     func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
-        print(audioStreaming)
+        //
     }
+    
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didReceiveError error: Error!) {
-        print(error)
+        print("Audio streaming error: \(error.localizedDescription)")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.createSearchBar()
-        self.createAudioPlayer()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+}
+
+extension MusicSearchViewController: UITextViewDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+// MARK: - Table view delegates
+extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let tracks = self.searchResults["tracks"] as? [String: Any] {
+            if let items = tracks["items"] as? [[String: Any]] {
+                let index = items[indexPath.row]
+                let trackURI = index["uri"] as? String
+
+                spotifyStreamingController.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
+                    error in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        return
+                    }
+                }
+            }
+        }
     }
     
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.arrCount
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return totalNumberOfSongFromResults
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        //Configure the cell...
-        if let tracks = self.arr["tracks"] as? [String: Any] {
+        if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
+                let index = items[indexPath.row]
                     
-                    cell.textLabel?.text = index["name"] as? String
+                cell.textLabel?.text = index["name"] as? String
+                
+                if let album = index["album"] as? [String: Any] {
                     
-                    if let album = index["album"] as? [String: Any] {
+                    if let artist = album["artists"] as? [[String: Any]] {
+                        cell.detailTextLabel?.text = artist[0]["name"] as? String
+                    }
+                    
+                    if let image = album["images"] as? [[String: Any]] {
+                        let smallImage = image[2]
+                        let urlString = smallImage["url"] as? String
                         
-                        //cell.textLabel?.text = album["name"] as? String
-                        
-                        if let artist = album["artists"] as? [[String: Any]] {
-                            cell.detailTextLabel?.text = artist[0]["name"] as? String
-                            print(artist[0]["name"] as? String)
-                        }
-                        
-                        if let image = album["images"] as? [[String: Any]]{
-                            if let smallImage = image[2] as? [String: Any]{
-                                let urlString = smallImage["url"] as? String
-                                if let url  = NSURL(string: urlString!){
-                                    if let data = NSData(contentsOf: url as URL){
-                                        cell.imageView?.image = UIImage(data: data as Data)
-                                    }
-                                }
+                        if let url  = NSURL(string: urlString!){
+                            if let data = NSData(contentsOf: url as URL){
+                                cell.imageView?.image = UIImage(data: data as Data)
                             }
                         }
+
                     }
                 }
+
             }
         }
         
         return cell
     }
-    
-    func audioStreaming(_ audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: String!) {
-        print(trackUri)
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let tracks = self.arr["tracks"] as? [String: Any] {
-            if let items = tracks["items"] as? [[String: Any]] {
-                if let index = items[indexPath.row] as? [String: Any] {
-                    let trackURI = index["uri"] as? String
-                    self.audioPlayer?.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0, callback: { error in
-                        if (error != nil) {
-                            print(error)
-                            return;
-                        }})
-                    
-                }
-            }
-        }
-        
-    }
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-}
 
-extension MusicSearchViewController: UITextViewDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //        self.view.endEditing(true)
-        searchBar.resignFirstResponder()
-    }
 }

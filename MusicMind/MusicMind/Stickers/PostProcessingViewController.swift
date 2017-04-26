@@ -29,14 +29,22 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     var videoAssetURL: URL?
     
     let assets: [UIImage] = [#imageLiteral(resourceName: "guitar") ]
-    
+  
     var avVideoExporter: AVVideoExporter?
+    var stickersAdded: [UIImageView] = []
+    var localUrlOfOriginalVideo: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-                
+        
+        if let videoUrl = localUrlOfOriginalVideo {
+            startPlayingVideoWith(videoUrl)
+        }
+        
+        setupNavigationBar(theme: .light)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer)
     }
     
@@ -86,7 +94,19 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
-
+	
+    @IBAction func activityButtonPressed(_ sender: Any) {
+        // creating activity
+        let uploadActivity = UploadActivity()
+        
+        // creating activity view controller
+        if let localUrlOfOriginalVideo = localUrlOfOriginalVideo {
+            let activityController = UIActivityViewController(activityItems: [localUrlOfOriginalVideo], applicationActivities: [uploadActivity])
+            
+            present(activityController, animated: true, completion: nil)
+        }
+    }
+    
     func startPlayingVideoWith(_ url: URL){
         let playerItem = AVPlayerItem(url: url)
         
