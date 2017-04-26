@@ -24,7 +24,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2Q-BA-tgI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.80784314869999996" green="0.027450980619999999" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.80784314869999996" green="0.027450980619999999" blue="0.33333334329999997" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFk-iX-4OX">
                                 <rect key="frame" x="316" y="87" width="30" height="30"/>
@@ -79,7 +79,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.30958518401015234" green="0.047537353310250594" blue="0.17635451106072988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="8uN-dK-thC" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="21" id="2nz-W1-sp7"/>
                             <constraint firstItem="THY-bH-VVn" firstAttribute="leading" secondItem="Fk2-94-Jwe" secondAttribute="leadingMargin" constant="13" id="4jW-6A-SB5"/>
