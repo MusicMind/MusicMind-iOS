@@ -74,6 +74,11 @@
                                     <constraint firstAttribute="height" constant="30" id="c9E-0T-oSH"/>
                                 </constraints>
                                 <state key="normal" title="User Settings" image="userProfileIcon"/>
+                                <connections>
+                                    <segue destination="ZSr-vH-Eox" kind="popoverPresentation" popoverAnchorView="zZh-AV-6EJ" id="qGC-Oh-hIL">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,6 +117,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uL-lC-cFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1659" y="-100"/>
+        </scene>
+        <!--UserSettingsViewController-->
+        <scene sceneID="wuD-ha-2vi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserSettings" referencedIdentifier="UserSettingsViewController" id="ZSr-vH-Eox" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bZ-4K-bUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="91"/>
         </scene>
         <!--Camera Capture Navigation Controller-->
         <scene sceneID="5BW-Lr-jx8">
