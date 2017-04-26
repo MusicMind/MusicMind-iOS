@@ -75,9 +75,7 @@
                                 </constraints>
                                 <state key="normal" title="User Settings" image="userProfileIcon"/>
                                 <connections>
-                                    <segue destination="ZSr-vH-Eox" kind="popoverPresentation" popoverAnchorView="zZh-AV-6EJ" id="qGC-Oh-hIL">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
-                                    </segue>
+                                    <segue destination="ZSr-vH-Eox" kind="show" id="qGC-Oh-hIL"/>
                                 </connections>
                             </button>
                         </subviews>
