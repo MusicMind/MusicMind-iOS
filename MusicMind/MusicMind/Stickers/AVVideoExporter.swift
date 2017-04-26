@@ -72,11 +72,11 @@ class AVVideoExporter{
         instructions.timeRange = CMTimeRangeMake(kCMTimeZero, composition.duration)
         let videoTrackFromCompostion = composition.tracks(withMediaType: AVMediaTypeVideo)[0] as AVAssetTrack
         
-        let layerInstructions = layerInstructionsAfterFixingOrientationFor(asset: videoAsset, for: compositionVideoTrack, atTime: kCMTimeZero)
+        let layerInstructions = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
         instructions.layerInstructions = [layerInstructions]
         layerComposition.instructions = [instructions]
         
-//        compositionVideoTrack.preferredTransform = videoTrack.preferredTransform
+        compositionVideoTrack.preferredTransform = videoTrack.preferredTransform
         
         self.applyLayersToVideo(composition: layerComposition, size: size)
         
