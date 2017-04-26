@@ -43,7 +43,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         
         setupNavigationBar(theme: .light)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer)
+        NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem)
     }
     
     override func viewDidAppear(_ animated: Bool) {
