@@ -43,7 +43,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         
         setupNavigationBar(theme: .light)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(replayVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -115,13 +115,14 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         recordedVideoView.layer.addSublayer(videoLayer)
         recordedVideoView.playerLayer = videoLayer
         
-        videoPlayer.play()
+        self.playVideo()
     }
     
-    func replayVideo(){
+    func playVideo(){
         // seek back to zero and play
         videoPlayer.seek(to: kCMTimeZero)
         videoPlayer.play()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.playVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem)
     }
     
     @IBAction func emojiButtonPressed(_ sender: Any) {
