@@ -125,7 +125,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
 
-    override func applyVideoEffectsTo(composition: AVMutableVideoComposition, size: CGSize) {
+    func applyVideoEffectsTo(composition: AVMutableVideoComposition, size: CGSize) {
         let parentLayer = CALayer()
         let videoLayer = CALayer()
         
@@ -141,7 +141,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
             stickerLayer.frame = CGRect(origin: imageView.frame.origin, size: CGSize(width: 110, height: 110))
             stickerLayer.masksToBounds = true
             parentLayer.addSublayer(stickerLayer)
-                   }
+        }
     }
 
     @IBAction func emojiButtonPressed(_ sender: Any) {
@@ -156,9 +156,8 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
                 self.collectionView.alpha = 0.0
             }
             
-        }) { (_) in
+        }) { _ in
             self.isHidden = !self.isHidden
-
         }
     }
     
