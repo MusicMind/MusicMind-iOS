@@ -20,9 +20,9 @@ class UserSettingsViewController: UITableViewController {
         super.viewDidLoad()
         
         if let email = userLoginCredentials.firebaseUserEmail?.lowercased() {
-            infoLabel.text = "\nSigned in as \(email)\n\n1.0.0 (1)"
+            infoLabel.text = "\nSigned in as \(email)\n\n\(prettyVersionNumber)"
         } else {
-            infoLabel.text = "1.0.0 (1)"
+            infoLabel.text = "\(prettyVersionNumber)"
         }
         
         tableView.tableFooterView = UIView(frame: CGRect.zero)

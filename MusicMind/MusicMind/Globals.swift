@@ -19,3 +19,17 @@ enum NavigationBarTheme {
     case light
     case dark
 }
+
+var prettyVersionNumber: String {
+    get {
+        if let infoDictionary = Bundle.main.infoDictionary {
+            if let versionNumber = infoDictionary["CFBundleShortVersionString"] as? String,
+                let buildNumber = infoDictionary["CFBundleVersion"] as? String {
+                
+                return "\(versionNumber) (\(buildNumber))"
+            }
+        }
+        
+        return "No version number found."
+    }
+}
