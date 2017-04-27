@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class UserSettingsViewController: UITableViewController {
    
     @IBOutlet weak var infoLabel: UILabel!
     
     @IBAction func signOut(_ sender: Any) {
-        
+        do {
+            try FIRAuth.auth()?.signOut()
+            
+            let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
+            let welcomeViewController = storyboard.instantiateInitialViewController()
+            
+            UIApplication.shared.keyWindow?.rootViewController = welcomeViewController
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     override func viewDidLoad() {
