@@ -42,8 +42,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         }
         
         setupNavigationBar(theme: .light)
-        
-        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -119,6 +118,8 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
     func playVideo(){
+        
+        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem)
         // seek back to zero and play
         videoPlayer.seek(to: kCMTimeZero)
         videoPlayer.play()
