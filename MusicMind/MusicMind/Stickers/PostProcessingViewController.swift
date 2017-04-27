@@ -123,26 +123,6 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         videoPlayer.play()
         NotificationCenter.default.addObserver(self, selector: #selector(self.playVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem)
     }
-    
-
-    func applyVideoEffectsTo(composition: AVMutableVideoComposition, size: CGSize) {
-        let parentLayer = CALayer()
-        let videoLayer = CALayer()
-        
-        parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        videoLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        print(parentLayer.frame)
-        
-        
-        parentLayer.addSublayer(videoLayer)
-        stickersAdded.forEach { (imageView) in
-            let stickerLayer = CALayer()
-            stickerLayer.contents = imageView.image?.cgImage
-            stickerLayer.frame = CGRect(origin: imageView.frame.origin, size: CGSize(width: 110, height: 110))
-            stickerLayer.masksToBounds = true
-            parentLayer.addSublayer(stickerLayer)
-        }
-    }
 
     @IBAction func emojiButtonPressed(_ sender: Any) {
         let startingFrame = CGRect(origin: CGPoint(x: 0, y: collectionView.frame.origin.y) , size: collectionView.frame.size)
