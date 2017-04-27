@@ -20,6 +20,7 @@ enum NavigationBarTheme {
     case dark
 }
 
+// https://gist.github.com/wvdk/6d4478d1d975068a011eb0bc7d3c5c6f
 var prettyVersionNumber: String {
     get {
         if let infoDictionary = Bundle.main.infoDictionary {
