@@ -82,6 +82,9 @@
                         </connections>
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="WTz-vz-Cos" id="u0p-a5-kgX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCT-ws-3Zp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

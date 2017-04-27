@@ -10,12 +10,20 @@ import UIKit
 
 class UserSettingsViewController: UITableViewController {
    
+    @IBOutlet weak var infoLabel: UILabel!
+    
     @IBAction func signOut(_ sender: Any) {
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let email = userLoginCredentials.firebaseUserEmail?.lowercased() {
+            infoLabel.text = "\nSigned in as \(email)\n\n1.0.0 (1)"
+        } else {
+            infoLabel.text = "1.0.0 (1)"
+        }
         
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
