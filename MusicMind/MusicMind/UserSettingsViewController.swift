@@ -9,9 +9,15 @@
 import UIKit
 
 class UserSettingsViewController: UITableViewController {
+   
+    @IBAction func signOut(_ sender: Any) {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         setupNavigationBar(theme: .light)
     }
