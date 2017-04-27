@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fvl-8P-Phq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fvl-8P-Phq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,20 +26,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63m-SG-rpw">
+                                <rect key="frame" x="301" y="117" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fyu-75-LD7"/>
+                                    <constraint firstAttribute="width" constant="50" id="jZI-cZ-jpm"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="updown"/>
+                                <connections>
+                                    <action selector="emojiButtonPressed:" destination="Fvl-8P-Phq" eventType="touchUpInside" id="Q9t-S6-dPS"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-Hv-YhA">
-                                <rect key="frame" x="298" y="8" width="53" height="41"/>
+                                <rect key="frame" x="298" y="65" width="53" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="3Qf-k3-auy"/>
                                     <constraint firstAttribute="height" constant="41" id="zxE-k7-Kjw"/>
                                 </constraints>
                                 <state key="normal" title="Export"/>
                                 <connections>
-                                    <action selector="exportButtonPressed:" destination="Fvl-8P-Phq" eventType="touchUpInside" id="oya-kK-MIT"/>
+                                    <action selector="exportButtonPressed:" destination="Fvl-8P-Phq" eventType="touchUpInside" id="QyC-1Q-5js"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="56W-Wl-gr7">
                                 <rect key="frame" x="0.0" y="513" width="375" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="sZT-md-Vfv"/>
                                 </constraints>
@@ -92,19 +103,23 @@
                             <constraint firstItem="UBn-eS-a7H" firstAttribute="leading" secondItem="WBo-7w-cc2" secondAttribute="leading" id="EmX-bC-ESf"/>
                             <constraint firstItem="UBn-eS-a7H" firstAttribute="trailing" secondItem="WBo-7w-cc2" secondAttribute="trailing" id="Ib3-og-W4v"/>
                             <constraint firstItem="56W-Wl-gr7" firstAttribute="centerX" secondItem="cI5-qD-8OS" secondAttribute="centerX" id="IbG-bY-l37"/>
-                            <constraint firstItem="T1K-Hv-YhA" firstAttribute="top" secondItem="cI5-qD-8OS" secondAttribute="topMargin" constant="8" id="OOe-JN-jNh"/>
+                            <constraint firstItem="T1K-Hv-YhA" firstAttribute="top" secondItem="cI5-qD-8OS" secondAttribute="topMargin" constant="65" id="OOe-JN-jNh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="63m-SG-rpw" secondAttribute="trailing" constant="8" id="cBW-hg-PcJ"/>
                             <constraint firstItem="WBo-7w-cc2" firstAttribute="top" secondItem="cI5-qD-8OS" secondAttribute="top" id="dHk-kn-28j"/>
                             <constraint firstAttribute="trailing" secondItem="WBo-7w-cc2" secondAttribute="trailing" id="eXJ-la-x7i"/>
                             <constraint firstItem="UBn-eS-a7H" firstAttribute="bottom" secondItem="Rqd-eC-9KP" secondAttribute="top" id="ecL-bV-46R"/>
                             <constraint firstItem="56W-Wl-gr7" firstAttribute="width" secondItem="cI5-qD-8OS" secondAttribute="width" id="enC-jZ-ipG"/>
                             <constraint firstItem="WBo-7w-cc2" firstAttribute="leading" secondItem="cI5-qD-8OS" secondAttribute="leading" id="iOF-XN-tg2"/>
+                            <constraint firstItem="63m-SG-rpw" firstAttribute="top" secondItem="T1K-Hv-YhA" secondAttribute="bottom" constant="11" id="sTL-9B-B0t"/>
                             <constraint firstItem="WBo-7w-cc2" firstAttribute="bottom" secondItem="Rqd-eC-9KP" secondAttribute="top" id="wA4-2q-dCU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stickers" id="9SM-3J-Tky"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="assetsButton" destination="63m-SG-rpw" id="r7W-VV-nla"/>
                         <outlet property="collectionView" destination="56W-Wl-gr7" id="MGL-D5-SgQ"/>
+                        <outlet property="exportButton" destination="T1K-Hv-YhA" id="zpo-oW-hWh"/>
                         <outlet property="recordedVideoView" destination="WBo-7w-cc2" id="4h0-JA-aHK"/>
                     </connections>
                 </viewController>
@@ -115,5 +130,6 @@
     </scenes>
     <resources>
         <image name="happy" width="160" height="160"/>
+        <image name="updown" width="50" height="50"/>
     </resources>
 </document>
