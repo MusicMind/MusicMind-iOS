@@ -37,15 +37,6 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        if let videoUrl = localUrlOfOriginalVideo {
-            startPlayingVideoWith(videoUrl)
-        }
-        
-        setupNavigationBar(theme: .light)
-
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         if let videoAssetURL = localUrlOfOriginalVideo{
             startPlayingVideoWith(videoAssetURL)
             avVideoExporter = AVVideoExporter(url: videoAssetURL)
@@ -53,6 +44,13 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         } else if videoLoaded == false {
             videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
         }
+        
+        setupNavigationBar(theme: .light)
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
     }
     
     
