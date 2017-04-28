@@ -155,6 +155,14 @@ final class CameraCaptureViewController: UIViewController {
         cameraCaptureOutput = AVCaptureMovieFileOutput()
         session.addOutput(cameraCaptureOutput)
         
+        setupPreviewLayer()
+        
+        session.startRunning()
+    }
+    
+    func setupPreviewLayer() {
+        cameraPreviewView.layer.sublayers = nil
+        
         if !Platform.isSimulator {
             cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
             cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
@@ -163,8 +171,6 @@ final class CameraCaptureViewController: UIViewController {
             
             cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
         }
-        
-        session.startRunning()
     }
     
     // MARK: - Camera interaction
@@ -194,6 +200,8 @@ final class CameraCaptureViewController: UIViewController {
             }
         }
         
+        setupPreviewLayer()
+
         session.commitConfiguration()
     }
     
