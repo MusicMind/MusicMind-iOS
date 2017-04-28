@@ -178,13 +178,17 @@ final class CameraCaptureViewController: UIViewController {
         if frontCameraInput != nil && backCameraInput != nil {
             switch currentCamera {
             case .back:
-                session.removeInput(backCameraInput)
-                session.addInput(frontCameraInput)
-                currentCamera = .front
+                if session.canAddInput(frontCameraInput) {
+                    session.removeInput(backCameraInput)
+                    session.addInput(frontCameraInput)
+                    currentCamera = .front
+                }
             case .front:
-                session.removeInput(frontCameraInput)
-                session.addInput(backCameraInput)
-                currentCamera = .back
+                if session.canAddInput(backCameraInput) {
+                    session.removeInput(frontCameraInput)
+                    session.addInput(backCameraInput)
+                    currentCamera = .back
+                }
             }
         }
         
