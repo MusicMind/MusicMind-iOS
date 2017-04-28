@@ -63,6 +63,10 @@ final class CameraCaptureViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        stopRecordingVideo()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -162,7 +166,7 @@ final class CameraCaptureViewController: UIViewController {
     private var recordingProgressTimer: Timer!
     var recordingProgressFraction: CGFloat! = 0
     
-    @IBAction func flipCameras(_ sender: Any) {
+    @IBAction func flipCamera(_ sender: Any) {
         session.beginConfiguration()
         
         if frontCameraInput != nil && backCameraInput != nil {
@@ -204,8 +208,12 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func stopRecordingVideo() {
-        cameraCaptureOutput?.stopRecording()
-        
+        if let cameraCaptureOutput = cameraCaptureOutput {
+            if cameraCaptureOutput.isRecording {
+                cameraCaptureOutput.stopRecording()
+            }
+        }
+
         self.recordingProgressTimer.invalidate()
         recordingProgressFraction = 0.0
         recordButton.setProgress(recordingProgressFraction)
