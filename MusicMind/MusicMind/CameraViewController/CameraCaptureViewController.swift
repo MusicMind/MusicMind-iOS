@@ -121,7 +121,9 @@ final class CameraCaptureViewController: UIViewController {
                     try microphoneAudioInput = AVCaptureDeviceInput(device: microphoneAudioDevice)
                     
                     if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
-                        session.addInput(unwrappedMicrophoneAudioInput)
+                        if session.canAddInput(unwrappedMicrophoneAudioInput) {
+                            session.addInput(unwrappedMicrophoneAudioInput)
+                        }
                     }
                 } catch {
                     print(error.localizedDescription)
@@ -140,9 +142,13 @@ final class CameraCaptureViewController: UIViewController {
         if frontCameraInput != nil && backCameraInput != nil {
             switch currentCamera {
             case .front:
-                session.addInput(frontCameraInput)
+                if session.canAddInput(frontCameraInput) {
+                    session.addInput(frontCameraInput)
+                }
             case .back:
-                session.addInput(backCameraInput)
+                if session.canAddInput(backCameraInput) {
+                    session.addInput(backCameraInput)
+                }
             }
         }
 
