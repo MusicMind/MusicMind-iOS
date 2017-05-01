@@ -225,8 +225,6 @@ final class CameraCaptureViewController: UIViewController {
         if let cameraCaptureOutput = cameraCaptureOutput {
             if cameraCaptureOutput.isRecording {
                 cameraCaptureOutput.stopRecording()
-                
-
             }
         }
 
