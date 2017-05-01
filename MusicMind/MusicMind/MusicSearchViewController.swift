@@ -110,7 +110,7 @@ extension MusicSearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
-        Alamofire.request("https://api.spotify.com/v1/search?q=\(searchText)&type=track").responseString { response in
+        Alamofire.request("https://api.spotify.com/v1/search?q=\(searchText)&type=track&limit=5").responseString { response in
             debugPrint(response)
             
             if let json = response.result.value {
