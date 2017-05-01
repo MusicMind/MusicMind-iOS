@@ -57,14 +57,8 @@ final class CameraCaptureViewController: UIViewController {
         // Other setups
         setupCaptureSession()
         setupNavigationBar(theme: .light)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
-    
-    func willEnterForground() {
-        print("will enter forground")
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
