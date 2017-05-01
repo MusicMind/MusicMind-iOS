@@ -22,6 +22,8 @@ final class CameraCaptureViewController: UIViewController {
     @IBOutlet private weak var libraryButton: UIButton!
     @IBOutlet private weak var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
+    private var recordingProgressTimer: Timer?
+    var recordingProgressFraction: CGFloat! = 0
     
     // AV capturing objects
     fileprivate var currentCamera = CurrentCamera.front
@@ -34,6 +36,8 @@ final class CameraCaptureViewController: UIViewController {
     var frontCameraInput: AVCaptureDeviceInput?
     var microphoneAudioDevice: AVCaptureDevice?
     var microphoneAudioInput: AVCaptureDeviceInput?
+    
+
     
     // MARK: - View Controller Lifecycle
     
@@ -175,9 +179,6 @@ final class CameraCaptureViewController: UIViewController {
     
     // MARK: - Camera interaction
     
-    private var recordingProgressTimer: Timer!
-    var recordingProgressFraction: CGFloat! = 0
-    
     @IBAction func flipCamera(_ sender: Any) {
         session.beginConfiguration()
         
@@ -234,7 +235,7 @@ final class CameraCaptureViewController: UIViewController {
             }
         }
 
-        self.recordingProgressTimer.invalidate()
+        self.recordingProgressTimer?.invalidate()
         recordingProgressFraction = 0.0
         recordButton.setProgress(recordingProgressFraction)
         recordButton.buttonState = .idle
