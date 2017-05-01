@@ -63,6 +63,10 @@ final class CameraCaptureViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        stopRecordingVideo()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -117,7 +121,9 @@ final class CameraCaptureViewController: UIViewController {
                     try microphoneAudioInput = AVCaptureDeviceInput(device: microphoneAudioDevice)
                     
                     if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
-                        session.addInput(unwrappedMicrophoneAudioInput)
+                        if session.canAddInput(unwrappedMicrophoneAudioInput) {
+                            session.addInput(unwrappedMicrophoneAudioInput)
+                        }
                     }
                 } catch {
                     print(error.localizedDescription)
@@ -136,14 +142,26 @@ final class CameraCaptureViewController: UIViewController {
         if frontCameraInput != nil && backCameraInput != nil {
             switch currentCamera {
             case .front:
-                session.addInput(frontCameraInput)
+                if session.canAddInput(frontCameraInput) {
+                    session.addInput(frontCameraInput)
+                }
             case .back:
-                session.addInput(backCameraInput)
+                if session.canAddInput(backCameraInput) {
+                    session.addInput(backCameraInput)
+                }
             }
         }
 
         cameraCaptureOutput = AVCaptureMovieFileOutput()
         session.addOutput(cameraCaptureOutput)
+        
+        setupPreviewLayer()
+        
+        session.startRunning()
+    }
+    
+    func setupPreviewLayer() {
+        cameraPreviewView.layer.sublayers = nil
         
         if !Platform.isSimulator {
             cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
@@ -153,8 +171,6 @@ final class CameraCaptureViewController: UIViewController {
             
             cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
         }
-        
-        session.startRunning()
     }
     
     // MARK: - Camera interaction
@@ -162,22 +178,30 @@ final class CameraCaptureViewController: UIViewController {
     private var recordingProgressTimer: Timer!
     var recordingProgressFraction: CGFloat! = 0
     
-    @IBAction func flipCameras(_ sender: Any) {
+    @IBAction func flipCamera(_ sender: Any) {
         session.beginConfiguration()
         
         if frontCameraInput != nil && backCameraInput != nil {
             switch currentCamera {
             case .back:
                 session.removeInput(backCameraInput)
-                session.addInput(frontCameraInput)
-                currentCamera = .front
+
+                if session.canAddInput(frontCameraInput) {
+                    session.addInput(frontCameraInput)
+                    currentCamera = .front
+                }
             case .front:
                 session.removeInput(frontCameraInput)
-                session.addInput(backCameraInput)
-                currentCamera = .back
+
+                if session.canAddInput(backCameraInput) {
+                    session.addInput(backCameraInput)
+                    currentCamera = .back
+                }
             }
         }
         
+        setupPreviewLayer()
+
         session.commitConfiguration()
     }
     
@@ -204,8 +228,12 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func stopRecordingVideo() {
-        cameraCaptureOutput?.stopRecording()
-        
+        if let cameraCaptureOutput = cameraCaptureOutput {
+            if cameraCaptureOutput.isRecording {
+                cameraCaptureOutput.stopRecording()
+            }
+        }
+
         self.recordingProgressTimer.invalidate()
         recordingProgressFraction = 0.0
         recordButton.setProgress(recordingProgressFraction)

@@ -34,7 +34,7 @@
                                 </constraints>
                                 <state key="normal" title="Camera Flip" image="Camera Flip Icon"/>
                                 <connections>
-                                    <action selector="flipCameras:" destination="sBF-OT-sPe" eventType="touchUpInside" id="otq-49-243"/>
+                                    <action selector="flipCamera:" destination="sBF-OT-sPe" eventType="touchUpInside" id="KKx-GK-isS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn" userLabel="Music Search Button">
