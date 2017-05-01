@@ -57,6 +57,12 @@ final class CameraCaptureViewController: UIViewController {
         // Other setups
         setupCaptureSession()
         setupNavigationBar(theme: .light)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+    }
+    
+    func willEnterForground() {
+        print("will enter forground")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -120,11 +126,11 @@ final class CameraCaptureViewController: UIViewController {
                 do {
                     try microphoneAudioInput = AVCaptureDeviceInput(device: microphoneAudioDevice)
                     
-                    if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
-                        if session.canAddInput(unwrappedMicrophoneAudioInput) {
-                            session.addInput(unwrappedMicrophoneAudioInput)
-                        }
-                    }
+//                    if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
+//                        if session.canAddInput(unwrappedMicrophoneAudioInput) {
+//                            session.addInput(unwrappedMicrophoneAudioInput)
+//                        }
+//                    }
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -219,6 +225,20 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func startRecordingVideo() {
+        
+        session.beginConfiguration()
+        
+        if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
+            if session.canAddInput(unwrappedMicrophoneAudioInput) {
+                
+
+                
+                session.addInput(unwrappedMicrophoneAudioInput)
+            }
+        }
+        
+        session.commitConfiguration()
+        
         recordingProgressFraction = 0.0
         recordButton.setProgress(recordingProgressFraction)
         
@@ -228,9 +248,13 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func stopRecordingVideo() {
+        session.removeInput(microphoneAudioInput)
+        
         if let cameraCaptureOutput = cameraCaptureOutput {
             if cameraCaptureOutput.isRecording {
                 cameraCaptureOutput.stopRecording()
+                
+
             }
         }
 
