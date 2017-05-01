@@ -63,9 +63,12 @@ struct User{
         }
     }
     
-    var dictionaryRepresentation: [String:Any?] {
+    var dictionaryRepresentation: [String: Any?] {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        return ["firstName": self.firstName, "lastName": self.lastName, "birthday": dateFormatter.string(from: self.birthday!), "mobileNum": self.mobileNumber]
+        return ["firstName": self.firstName,
+                "lastName": self.lastName,
+                "birthday": dateFormatter.string(from: self.birthday!),
+                "mobileNum": self.mobileNumber]
     }
 }

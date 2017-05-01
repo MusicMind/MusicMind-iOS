@@ -536,7 +536,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 						}
 						
 						let inProgressLivePhotoCapturesCount = self.inProgressLivePhotoCapturesCount
-						DispatchQueue.main.async { [unowned self] in
+						DispatchQueue.main.async {
 							if inProgressLivePhotoCapturesCount > 0 {
 								
 							}
@@ -579,7 +579,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			self.livePhotoMode = (self.livePhotoMode == .on) ? .off : .on
 			let livePhotoMode = self.livePhotoMode
 			
-			DispatchQueue.main.async { [unowned self] in
+			DispatchQueue.main.async {
 				if livePhotoMode == .on {
 					
 				}
@@ -711,7 +711,9 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 							creationRequest.addResource(with: .video, fileURL: outputFileURL, options: options)
 						}, completionHandler: { success, error in
 							if !success {
-								print("Could not save movie to photo library: \(error)")
+                                if let error = error {
+                                    print("Could not save movie to photo library: \(error.localizedDescription)")
+                                }
 							}
 							cleanup()
 						}
@@ -766,9 +768,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 		if context == &sessionRunningObserveContext {
 			let newValue = change?[.newKey] as AnyObject?
 			guard let isSessionRunning = newValue?.boolValue else { return }
-			let isLivePhotoCaptureSupported = photoOutput.isLivePhotoCaptureSupported
-			let isLivePhotoCaptureEnabled = photoOutput.isLivePhotoCaptureEnabled
-			
+
 			DispatchQueue.main.async { [unowned self] in
 				// Only enable the ability to change camera if the device has more than one camera.
 				self.delegate?.shouldEnableCameraUI(enabled: isSessionRunning && self.videoDeviceDiscoverySession.uniqueDevicePositionsCount() > 1)

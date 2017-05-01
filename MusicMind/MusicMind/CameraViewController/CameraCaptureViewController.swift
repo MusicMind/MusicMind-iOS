@@ -146,9 +146,7 @@ final class CameraCaptureViewController: UIViewController {
         cameraCaptureOutput = AVCaptureMovieFileOutput()
         session.addOutput(cameraCaptureOutput)
         
-        if TARGET_OS_SIMULATOR == 1 {
-            print("Running on sim")
-        } else {
+        if !Platform.isSimulator {
             cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
             cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             cameraPreviewLayer?.frame = cameraPreviewView.bounds

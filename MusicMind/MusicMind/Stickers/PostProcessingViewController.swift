@@ -123,7 +123,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
         videoPlayer.play()
         NotificationCenter.default.addObserver(self, selector: #selector(self.playVideo), name: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem)
     }
-    
+
     @IBAction func emojiButtonPressed(_ sender: Any) {
         let startingFrame = CGRect(origin: CGPoint(x: 0, y: collectionView.frame.origin.y) , size: collectionView.frame.size)
         let hiddenFrame = CGRect(origin: CGPoint(x: collectionView.frame.width, y: collectionView.frame.origin.y) , size: collectionView.frame.size)
@@ -136,7 +136,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
                 self.collectionView.alpha = 0.0
             }
             
-        }) { (_) in
+        }) { _ in
             self.isHidden = !self.isHidden
         }
     }
