@@ -108,34 +108,10 @@ final class CameraCaptureViewController: UIViewController {
         }
         
         // Get microphone devices
-
-//        let microphoneDeviceDiscoberySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInMicrophone], mediaType: AVMediaTypeAudio, position: AVCaptureDevicePosition.unspecified)
-//        
-//        let microphoneDevices = microphoneDeviceDiscoberySession?.devices
-//        
-//        if let unwrappedMicrophoneDevices = microphoneDevices {
-//            if !unwrappedMicrophoneDevices.isEmpty {
-//                microphoneAudioDevice = unwrappedMicrophoneDevices[0]
-//                
-//                do {
-//                    try microphoneAudioInput = AVCaptureDeviceInput(device: microphoneAudioDevice)
-//                    
-//                    if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
-//                        if session.canAddInput(unwrappedMicrophoneAudioInput) {
-//                            session.addInput(unwrappedMicrophoneAudioInput)
-//                        }
-//                    }
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-        
         
         microphoneAudioDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeAudio)
         
         if let microphoneAudioDevice = microphoneAudioDevice {
-            
             do {
                 try microphoneAudioInput = AVCaptureDeviceInput(device: microphoneAudioDevice)
                 
@@ -147,7 +123,6 @@ final class CameraCaptureViewController: UIViewController {
             } catch {
                 print(error.localizedDescription)
             }
-            
         }
         
         // Get back camera input ready
