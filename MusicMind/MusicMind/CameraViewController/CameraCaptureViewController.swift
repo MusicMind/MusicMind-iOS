@@ -120,11 +120,11 @@ final class CameraCaptureViewController: UIViewController {
                 do {
                     try microphoneAudioInput = AVCaptureDeviceInput(device: microphoneAudioDevice)
                     
-//                    if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
-//                        if session.canAddInput(unwrappedMicrophoneAudioInput) {
-//                            session.addInput(unwrappedMicrophoneAudioInput)
-//                        }
-//                    }
+                    if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
+                        if session.canAddInput(unwrappedMicrophoneAudioInput) {
+                            session.addInput(unwrappedMicrophoneAudioInput)
+                        }
+                    }
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -218,21 +218,7 @@ final class CameraCaptureViewController: UIViewController {
         
     }
     
-    func startRecordingVideo() {
-        
-        session.beginConfiguration()
-        
-        if let unwrappedMicrophoneAudioInput = microphoneAudioInput {
-            if session.canAddInput(unwrappedMicrophoneAudioInput) {
-                
-
-                
-                session.addInput(unwrappedMicrophoneAudioInput)
-            }
-        }
-        
-        session.commitConfiguration()
-        
+    func startRecordingVideo() {        
         recordingProgressFraction = 0.0
         recordButton.setProgress(recordingProgressFraction)
         
@@ -242,8 +228,6 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func stopRecordingVideo() {
-        session.removeInput(microphoneAudioInput)
-        
         if let cameraCaptureOutput = cameraCaptureOutput {
             if cameraCaptureOutput.isRecording {
                 cameraCaptureOutput.stopRecording()
