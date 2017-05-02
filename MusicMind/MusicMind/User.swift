@@ -9,31 +9,16 @@ import Foundation
 
 struct User {
     
-    private enum UserDefaultsKeys: String {
-        case firstNameKey = "MMFirstName"
-        case lastNameKey = "MMLastName"
-        case birthdayKey = "MMBirthday"
-        case firebaseUUIDKey = "MMFirebaseUUIDKey"
-        case mobileNumberKey = "MMMobileNumber"
-    }
-    
     var firstName: String?
-    
     
     var lastName: String?
     
     var birthday: Date?
+//    let dateFormatter = DateFormatter()
+//    dateFormatter.dateFormat = "yyyy-MM-dd"
     
     var firebaseUUID: String?
     
     var mobileNumber: String?
     
-    var dictionaryRepresentation: [String: Any?] {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return ["firstName": self.firstName,
-                "lastName": self.lastName,
-                "birthday": dateFormatter.string(from: self.birthday!),
-                "mobileNum": self.mobileNumber]
-    }
 }
