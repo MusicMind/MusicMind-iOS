@@ -5,31 +5,38 @@
 //  Created by Angel Contreras on 4/3/17.
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
+
 import Foundation
+import Firebase
+
+// Create new user
+// Init preexisting user
+// Update user info
 
 struct User {
+    private let usersRef = FIRDatabase.database().reference(withPath: "users")
     
-    static let shared = FirebaseDataService()
-    
-    // DB References
-    private let userDatabase = database.child("users")
-    
-    func addUserToUserList(_ user: User) {
-        var userAsDictionary: [String: Any] = [:]
+    init(firebaseUserWithUuid uuid: String) {
+        let userRef = usersRef.child(uuid)
         
-        for (key, value) in user.dictionaryRepresentation {
-            if let value = value {
-                userAsDictionary[key] = value
-            }
-        }
-        
-        userDatabase.child(user.firebaseUUID!).updateChildValues(userAsDictionary)
+        self.uuid = uuid
+        self.firstName = userRef.value(forKey: "firstName") as! String
+        self.lastName = nil
+        self.mobileNumber = nil
+        self.birthday = nil
     }
     
-    fileprivate let database = FIRDatabase.database().reference()
-    fileprivate let storage = FIRStorage.storage().reference()
-
-    
+//    func addUserToUserList(_ user: User) {
+//        var userAsDictionary: [String: Any] = [:]
+//        
+//        for (key, value) in user.dictionaryRepresentation {
+//            if let value = value {
+//                userAsDictionary[key] = value
+//            }
+//        }
+//        usersRef.child(uuid).updateChildValues(userAsDictionary)
+//    }
+//    
     var uuid: String?
     var firstName: String?
     var lastName: String?
