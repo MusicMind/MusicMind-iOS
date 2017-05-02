@@ -7,14 +7,28 @@
 //
 
 import XCTest
+//import @testable MusicMind
+
 
 class UserTests: XCTestCase {
     
-    func testFirstNamePersistance(){
-        let firstName = "Angel"
-        let user = User()
-        user.firstName = "Angel"
-        XCTAssert(user.firstName == firstName)
+//    func testFirstNamePersistance(){
+//        let firstName = "Angel"
+//        let user = User()
+//        user.firstName = "Angel"
+//        XCTAssert(user.firstName == firstName)
+//    }
+    
+    func testInitForUuid() {
+        let testUserUuid = ""
+    }
+    
+    func testCreatingJohnDoe() {
+        let fakeUuid = "abc123fakeUuidForJohnDoe"
+        let firstName = "John"
+        let lastName = "Doe"
+        
+//        let
     }
     
 }

@@ -16,7 +16,7 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     
-    var newUser = User()
+//    var newUser = User(fi
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class EmailPasswordViewController: UIViewController {
         passwordTextField.delegate = self
         passwordConfirmationTextField.delegate = self
         
-        print(newUser.dictionaryRepresentation)
+//        print(newUser.dictionaryRepresentation)
         
         self.hideKeyboardWhenTappedAround()
     }
@@ -94,11 +94,11 @@ class EmailPasswordViewController: UIViewController {
             self.goToCameraCapture()
             
             // Post new user to firebase
-            self.newUser.firebaseUUID = user?.uid
-            
-            if self.newUser.firebaseUUID != nil {
-                FirebaseDataService.shared.addUserToUserList(self.newUser)
-            }
+//            self.newUser.firebaseUUID = user?.uid
+//            
+//            if self.newUser.firebaseUUID != nil {
+//                FirebaseDataService.shared.addUserToUserList(self.newUser)
+//            }
         })
         
     }

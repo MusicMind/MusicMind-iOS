@@ -16,12 +16,12 @@ class BirthdayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(newUser)
+//        print(newUser)
         
         self.hideKeyboardWhenTappedAround()
     }
 
-    var newUser = User()
+//    var newUser = User()
     
     
     @IBAction func datePickerValueChange(_ sender: Any) {
@@ -55,7 +55,7 @@ class BirthdayViewController: UIViewController {
             })
         }
         
-        newUser.birthday = birthDate
+//        newUser.birthday = birthDate
         
     }
 
