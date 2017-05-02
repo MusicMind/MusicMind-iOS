@@ -14,7 +14,6 @@
 		0F1DE25C1E941BDF0032A49A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE25B1E941BDF0032A49A /* UserTests.swift */; };
 		0F1DE25D1E941C000032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
 		0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */; };
-		0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2641E9491260032A49A /* FirebaseDataService.swift */; };
 		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
 		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
@@ -104,7 +103,6 @@
 		0F1DE2591E9327C60032A49A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F1DE25B1E941BDF0032A49A /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
-		0F1DE2641E9491260032A49A /* FirebaseDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDataService.swift; sourceTree = "<group>"; };
 		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
 		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DE783F431EAFC4FF0007877A /* Platform.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
-				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
 				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
 				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
@@ -808,7 +805,6 @@
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
-				0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */,
