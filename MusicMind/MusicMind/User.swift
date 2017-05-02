@@ -7,7 +7,7 @@
 //
 import Foundation
 
-struct User{
+struct User {
     
     private enum UserDefaultsKeys: String {
         case firstNameKey = "MMFirstName"
@@ -17,51 +17,16 @@ struct User{
         case mobileNumberKey = "MMMobileNumber"
     }
     
-    var firstName: String? {
-        get{
-            return UserDefaults.standard.object(forKey: UserDefaultsKeys.firstNameKey.rawValue) as? String
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.firstNameKey.rawValue)
-        }
-    }
+    var firstName: String?
     
     
-    var lastName: String? {
-        get{
-            return UserDefaults.standard.object(forKey: UserDefaultsKeys.lastNameKey.rawValue) as? String
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.lastNameKey.rawValue)
-        }
-    }
+    var lastName: String?
     
-    var birthday: Date? {
-        get{
-            return UserDefaults.standard.object(forKey: UserDefaultsKeys.birthdayKey.rawValue) as? Date
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.birthdayKey.rawValue)
-        }
-    }
+    var birthday: Date?
     
-    var firebaseUUID: String? {
-        get{
-            return UserDefaults.standard.object(forKey: UserDefaultsKeys.firebaseUUIDKey.rawValue) as? String
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.firebaseUUIDKey.rawValue)
-        }
-    }
+    var firebaseUUID: String?
     
-    var mobileNumber: String? {
-        get{
-            return UserDefaults.standard.object(forKey: UserDefaultsKeys.mobileNumberKey.rawValue) as? String
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.mobileNumberKey.rawValue)
-        }
-    }
+    var mobileNumber: String?
     
     var dictionaryRepresentation: [String: Any?] {
         let dateFormatter = DateFormatter()
