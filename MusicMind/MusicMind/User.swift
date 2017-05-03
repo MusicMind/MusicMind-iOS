@@ -14,42 +14,25 @@ import Firebase
 // Update user info
 
 struct User {
-    private let currentUserRef: FIRDatabaseReference?
-
-    init(firebaseUserWithUuid uuid: String, completionHandler: @escaping () -> ()) {
-        
-        currentUserRef = FIRDatabase.database().reference().child("users/\(uuid)")
-        
-        currentUserRef?.setValue(["firstName": "test"], withCompletionBlock: { (error, ref) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("success")
-                completionHandler()
-            }
-        })
-
-        self.uuid = uuid
-        self.firstName = nil
-        self.lastName = nil
-        self.mobileNumber = nil
-        self.birthday = nil
-    }
-    
-    var uuid: String?
+    let currentUserRef: FIRDatabaseReference?
+    let id: String?
     var firstName: String? {
         didSet {
             if let firstName = firstName, let currentUserRef = currentUserRef {
-                currentUserRef.setValue(["firstName": firstName], withCompletionBlock: { (error, ref) in
-                    //
-                })
+                currentUserRef.setValue(["firstName": firstName])
             }
         }
     }
     var lastName: String?
     var mobileNumber: String?
     var birthday: Date?
-//    let dateFormatter = DateFormatter()
-//    dateFormatter.dateFormat = "yyyy-MM-dd"
     
+    init (newId: String) {
+        currentUserRef = FIRDatabase.database().reference().child("users/\(newId)")
+        id = newId
+        firstName = nil
+        lastName = nil
+        mobileNumber = nil
+        birthday = nil
+    }
 }

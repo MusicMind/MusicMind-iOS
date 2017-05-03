@@ -8,18 +8,25 @@
 
 import XCTest
 @testable import MusicMind
-
+import Firebase
 
 class UserTests: XCTestCase {
     
     func testInitForUuid() {
         let e = expectation(description: "init with uuid")
-
-        let testUser = User(firebaseUserWithUuid: "fakeUuidForJohnDoe") {
-            e.fulfill()
+        
+        let testUser = User(firebaseUserWithUuid: "fakeUuidForJohnDoe")
+        
+        if let currentUserRef = testUser.currentUserRef {
+            currentUserRef.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                print("value changed")
+                print(snapshot.description)
+            })
         }
         
-        wait(for: [e], timeout: 10)
+        
+        
+        wait(for: [e], timeout: 100)
     }
     
 }
