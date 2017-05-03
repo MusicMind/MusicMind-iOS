@@ -7,6 +7,14 @@
 //
 
 import UIKit
-import AVFoundation
+
+class ProfilePhotoViewController: UIViewController {
+    @IBAction func showImagePicker(_ sender: Any) {
+        let imagePickerVC = UIImagePickerController()
+        present(imagePickerVC, animated: true, completion: nil)
+    }
+
+}
+
 
 

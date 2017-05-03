@@ -351,6 +351,7 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
+				DE85E5C11EB1277A005FFEB9 /* User Settings */,
 				0C8ACDAA1EB92CA3003278C9 /* User Profile */,
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE487E051E8D6A3C0025B514 /* Extensions */,
@@ -368,7 +369,6 @@
 				DE860DDA1E935EAB00393B03 /* Music search */,
 				0FF4B6151E83930000EEAE8C /* Post processing */,
 				DE09EC6A1E7CDF81005B237A /* Send to friend */,
-				DE85E5C11EB1277A005FFEB9 /* User Settings */,
 				DE429F881E661BB20050E719 /* Assets.xcassets */,
 				DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */,
 				DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */,

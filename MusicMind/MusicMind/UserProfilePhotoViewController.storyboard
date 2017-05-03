@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile Photo View Controller-->
         <scene sceneID="Uro-g2-NFb">
             <objects>
-                <viewController id="a6q-6h-IXK" sceneMemberID="viewController">
+                <viewController id="a6q-6h-IXK" customClass="ProfilePhotoViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oAd-Sk-ALS"/>
                         <viewControllerLayoutGuide type="bottom" id="Dez-sR-vgp"/>
@@ -23,8 +23,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="retake" id="SBA-2h-iN6"/>
-                        <barButtonItem title="Choose" id="l0z-3d-NYL"/>
+                        <barButtonItem title="Item" id="AXr-k9-Qlg">
+                            <connections>
+                                <action selector="showImagePicker:" destination="a6q-6h-IXK" id="g38-sS-Nwm"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
