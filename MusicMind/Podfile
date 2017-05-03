@@ -10,29 +10,27 @@ target 'MusicMind' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'Firebase/Database'
   pod 'KeychainSwift'
   pod 'Alamofire'
   pod 'SinchVerification-Swift'
-  pod 'Firebase/Database'
   pod 'RecordButton', :git => 'https://github.com/felipericieri/RecordButton.git'
 
   target 'MusicMindTests' do
-      
+      inherit! :search_paths
       pod 'Firebase/Core'
       pod 'Firebase/Auth'
       pod 'Firebase/Storage'
+      pod 'Firebase/Database'
       pod 'KeychainSwift'
       pod 'Alamofire'
-
-
   end
 
   target 'MusicMindUITests' do
-    
-    
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
+    pod 'Firebase/Database'
     pod 'KeychainSwift'
     pod 'Alamofire'
 
