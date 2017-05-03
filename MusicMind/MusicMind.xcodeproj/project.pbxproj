@@ -31,6 +31,7 @@
 		13B8212CFD3774E4DC2E8009 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
+		B468182050EC5652188EE99F /* Pods_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E998B4E494A2D660BB680CF /* Pods_MusicMindTests.framework */; };
 		DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE007F601EAEA17300966F55 /* SendToFriendView.xib */; };
 		DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */; };
 		DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */; };
@@ -195,6 +196,7 @@
 				DE1471F81E7CBF3D000C45E6 /* Pods_MusicMind.framework in Frameworks */,
 				DE503AD91E94368B00124BFA /* SpotifyAudioPlayback.framework in Frameworks */,
 				13B8212CFD3774E4DC2E8009 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */,
+				B468182050EC5652188EE99F /* Pods_MusicMindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +672,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMindTests/Pods-MusicMindTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4A1E3411F726C065A61656CF /* [CP] Copy Pods Resources */ = {
@@ -745,7 +747,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMindTests/Pods-MusicMindTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F58848CE2D7B823D92431A83 /* [CP] Check Pods Manifest.lock */ = {
@@ -1073,7 +1075,7 @@
 		};
 		DE429FAA1E661BB20050E719 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD4D6AD168F8C6B39F99AAB7 /* Pods-MusicMind-MusicMindTests.debug.xcconfig */;
+			baseConfigurationReference = 43C3ADAD2F7337DFBD1894BF /* Pods-MusicMindTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1092,7 +1094,7 @@
 		};
 		DE429FAB1E661BB20050E719 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA0B55015F9B228E9B2CFAB6 /* Pods-MusicMind-MusicMindTests.release.xcconfig */;
+			baseConfigurationReference = 30F09403DC710C15E979D2C8 /* Pods-MusicMindTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";

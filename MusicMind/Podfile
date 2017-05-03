@@ -17,23 +17,11 @@ target 'MusicMind' do
   pod 'RecordButton', :git => 'https://github.com/felipericieri/RecordButton.git'
 
   target 'MusicMindTests' do
-      inherit! :search_paths
-      pod 'Firebase/Core'
-      pod 'Firebase/Auth'
-      pod 'Firebase/Storage'
-      pod 'Firebase/Database'
-      pod 'KeychainSwift'
-      pod 'Alamofire'
+      inherit! :complete
   end
 
   target 'MusicMindUITests' do
-    pod 'Firebase/Core'
-    pod 'Firebase/Auth'
-    pod 'Firebase/Storage'
-    pod 'Firebase/Database'
-    pod 'KeychainSwift'
-    pod 'Alamofire'
-
+    inherit! :complete
   end
 
 
