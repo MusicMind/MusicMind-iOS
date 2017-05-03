@@ -20,13 +20,13 @@ class UserTests: XCTestCase {
 //    }
     
     func testInitForUuid() {
-        let testUserUuid = User(firebaseUserWithUuid: "blahblahblah")
+//        let testUser = User(firebaseUserWithUuid: "abc123fakeUuidForJohnDoe")
+//        
     }
     
     func testCreatingJohnDoe() {
-        let fakeUuid = "abc123fakeUuidForJohnDoe"
-        let firstName = "John"
-        let lastName = "Doe"
+        
+        let _ = User(newUserWithFirstName: "John", lastName: "Doe")
         
 //        let
     }

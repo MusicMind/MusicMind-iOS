@@ -14,16 +14,30 @@ import Firebase
 // Update user info
 
 struct User {
-    private let usersRef = FIRDatabase.database().reference(withPath: "users")
+    private let users = FIRDatabase.database().reference(withPath: "users")
+    private let currentUser: FIRDatabaseReference?
     
     init(firebaseUserWithUuid uuid: String) {
         let userRef = usersRef.child(uuid)
         
         self.uuid = uuid
-        self.firstName = userRef.value(forKey: "firstName") as! String
+        self.firstName = nil
+//        self.firstName = userRef.value(forKey: "firstName") as! String
         self.lastName = nil
         self.mobileNumber = nil
         self.birthday = nil
+    }
+    
+    init(newUserWithFirstName firstName: String?, lastName: String?) {
+        currentUser = users.childByAutoId()
+        
+        self.uuid = "testing1233"
+        self.firstName = firstName
+        self.lastName = lastName
+        self.birthday = nil
+        self.mobileNumber = nil
+        
+//        newUserRef.child("lastName").setValue(lastName)
     }
     
 //    func addUserToUserList(_ user: User) {
@@ -38,7 +52,13 @@ struct User {
 //    }
 //    
     var uuid: String?
-    var firstName: String?
+    var firstName: String? {
+        didSet {
+            if let uuid = uuid, let firstName = firstName {
+                usersRef.child("\(uuid)/firstName").setValue(firstName)
+            }
+        }
+    }
     var lastName: String?
     var mobileNumber: String?
     var birthday: Date?
