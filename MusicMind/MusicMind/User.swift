@@ -14,12 +14,25 @@ import Firebase
 // Update user info
 
 struct User {
-    let ref = FIRDatabase.database().reference()
-//    private let currentUser: FIRDatabaseReference?
+    private let currentUserRef: FIRDatabaseReference?
+
     
-    init(firebaseUserWithUuid uuid: String) {
-        self.ref.child("users").child(uuid).setValue(["firstName": "testname"])
-        self.ref.childByAutoId().setValue(["test":"test"])
+    init(firebaseUserWithUuid uuid: String, completionHandler: @escaping () -> ()) {
+        
+        currentUserRef = FIRDatabase.database().reference().child("users/\(uuid)")
+        
+        currentUserRef?.setValue(["firstName": "test"], withCompletionBlock: { (error, ref) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("success")
+                completionHandler()
+            }
+        })
+        
+        
+//        self.ref.child("users").child(uuid).setValue(["firstName": "testname"])
+//        self.ref.childByAutoId().setValue(["test":"test"])
 
 //        self.currentUser = users.child(uuid).setValue(uuid)
         self.uuid = uuid
