@@ -16,7 +16,6 @@ import Firebase
 struct User {
     private let currentUserRef: FIRDatabaseReference?
 
-    
     init(firebaseUserWithUuid uuid: String, completionHandler: @escaping () -> ()) {
         
         currentUserRef = FIRDatabase.database().reference().child("users/\(uuid)")
@@ -29,12 +28,7 @@ struct User {
                 completionHandler()
             }
         })
-        
-        
-//        self.ref.child("users").child(uuid).setValue(["firstName": "testname"])
-//        self.ref.childByAutoId().setValue(["test":"test"])
 
-//        self.currentUser = users.child(uuid).setValue(uuid)
         self.uuid = uuid
         self.firstName = nil
         self.lastName = nil
@@ -42,35 +36,16 @@ struct User {
         self.birthday = nil
     }
     
-//    init(newUserWithFirstName firstName: String?, lastName: String?) {
-//        self.init(firebaseUserWithUuid: "abc")
-//        
-//        self.firstName = firstName
-//        self.lastName = lastName
-//        self.birthday = nil
-//        self.mobileNumber = nil
-//    }
-    
-//    func addUserToUserList(_ user: User) {
-//        var userAsDictionary: [String: Any] = [:]
-//        
-//        for (key, value) in user.dictionaryRepresentation {
-//            if let value = value {
-//                userAsDictionary[key] = value
-//            }
-//        }
-//        usersRef.child(uuid).updateChildValues(userAsDictionary)
-//    }
-//    
     var uuid: String?
-    var firstName: String?
-//    {
-//        didSet {
-//            if let uuid = uuid, let firstName = firstName, let currentUser = currentUser {
-//                currentUser.child("\(uuid)/firstName").setValue(firstName)
-//            }
-//        }
-//    }
+    var firstName: String? {
+        didSet {
+            if let firstName = firstName, let currentUserRef = currentUserRef {
+                currentUserRef.setValue(["firstName": firstName], withCompletionBlock: { (error, ref) in
+                    //
+                })
+            }
+        }
+    }
     var lastName: String?
     var mobileNumber: String?
     var birthday: Date?
