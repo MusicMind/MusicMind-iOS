@@ -14,11 +14,14 @@ import Firebase
 // Update user info
 
 struct User {
-    private let users = FIRDatabase.database().reference(withPath: "users")
-    private let currentUser: FIRDatabaseReference?
+    let ref = FIRDatabase.database().reference()
+//    private let currentUser: FIRDatabaseReference?
     
     init(firebaseUserWithUuid uuid: String) {
-        self.currentUser = users.child(uuid)
+        self.ref.child("users").child(uuid).setValue(["firstName": "testname"])
+        self.ref.childByAutoId().setValue(["test":"test"])
+
+//        self.currentUser = users.child(uuid).setValue(uuid)
         self.uuid = uuid
         self.firstName = nil
         self.lastName = nil
@@ -26,17 +29,14 @@ struct User {
         self.birthday = nil
     }
     
-    init(newUserWithFirstName firstName: String?, lastName: String?) {
-        currentUser = users.childByAutoId()
-        
-        self.uuid = "testing1233"
-        self.firstName = firstName
-        self.lastName = lastName
-        self.birthday = nil
-        self.mobileNumber = nil
-        
-//        newUserRef.child("lastName").setValue(lastName)
-    }
+//    init(newUserWithFirstName firstName: String?, lastName: String?) {
+//        self.init(firebaseUserWithUuid: "abc")
+//        
+//        self.firstName = firstName
+//        self.lastName = lastName
+//        self.birthday = nil
+//        self.mobileNumber = nil
+//    }
     
 //    func addUserToUserList(_ user: User) {
 //        var userAsDictionary: [String: Any] = [:]
@@ -50,13 +50,14 @@ struct User {
 //    }
 //    
     var uuid: String?
-    var firstName: String? {
-        didSet {
-            if let uuid = uuid, let firstName = firstName, let currentUser = currentUser {
-                currentUser.child("\(uuid)/firstName").setValue(firstName)
-            }
-        }
-    }
+    var firstName: String?
+//    {
+//        didSet {
+//            if let uuid = uuid, let firstName = firstName, let currentUser = currentUser {
+//                currentUser.child("\(uuid)/firstName").setValue(firstName)
+//            }
+//        }
+//    }
     var lastName: String?
     var mobileNumber: String?
     var birthday: Date?

@@ -20,13 +20,29 @@ class UserTests: XCTestCase {
 //    }
     
     func testInitForUuid() {
-//        let testUser = User(firebaseUserWithUuid: "abc123fakeUuidForJohnDoe")
-//        
+        let testUser = User(firebaseUserWithUuid: "abc123fakeUuidForJohnDoe")
+        
+        let e = expectation(description: "init with uuid")
+        
+        print("starting")
+        
+        testUser.ref.childByAutoId().setValue(["abc":"abc"]) { (error, ref) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("success")
+                e.fulfill()
+            }
+        }
+        
+        wait(for: [e], timeout: 10)
     }
     
     func testCreatingJohnDoe() {
         
-        let _ = User(newUserWithFirstName: "John", lastName: "Doe")
+        
+        
+//        let _ = User(newUserWithFirstName: "John", lastName: "Doe")
         
 //        let
     }

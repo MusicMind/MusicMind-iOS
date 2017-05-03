@@ -11,6 +11,8 @@ import AVFoundation
 import RecordButton
 import MobileCoreServices
 
+import Firebase
+
 fileprivate enum CurrentCamera {
     case front
     case back
@@ -43,6 +45,9 @@ final class CameraCaptureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let ref = FIRDatabase.database().reference()
+        ref.childByAutoId().setValue(["test":"test"])
         
         // Setup gesture recognizer
         let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
