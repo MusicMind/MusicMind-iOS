@@ -7,7 +7,7 @@
 //
 
 import XCTest
-//import @testable MusicMind
+import MusicMind
 
 
 class UserTests: XCTestCase {
@@ -20,7 +20,7 @@ class UserTests: XCTestCase {
 //    }
     
     func testInitForUuid() {
-        let testUserUuid = ""
+        let testUserUuid = User(firebaseUserWithUuid: "blahblahblah")
     }
     
     func testCreatingJohnDoe() {
