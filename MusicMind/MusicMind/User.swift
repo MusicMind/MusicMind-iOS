@@ -18,11 +18,9 @@ struct User {
     private let currentUser: FIRDatabaseReference?
     
     init(firebaseUserWithUuid uuid: String) {
-        let userRef = usersRef.child(uuid)
-        
+        self.currentUser = users.child(uuid)
         self.uuid = uuid
         self.firstName = nil
-//        self.firstName = userRef.value(forKey: "firstName") as! String
         self.lastName = nil
         self.mobileNumber = nil
         self.birthday = nil
@@ -54,8 +52,8 @@ struct User {
     var uuid: String?
     var firstName: String? {
         didSet {
-            if let uuid = uuid, let firstName = firstName {
-                usersRef.child("\(uuid)/firstName").setValue(firstName)
+            if let uuid = uuid, let firstName = firstName, let currentUser = currentUser {
+                currentUser.child("\(uuid)/firstName").setValue(firstName)
             }
         }
     }
