@@ -13,6 +13,13 @@ class UserSettingsViewController: UITableViewController {
    
     @IBOutlet weak var infoLabel: UILabel!
     
+    // MARK: UIImagePickerController()
+    @IBAction func showImagePicker(_ sender: Any) {
+        let imagePickerVC = UIImagePickerController()
+        present(imagePickerVC, animated: true, completion: nil)
+    }
+    
+    // MARK: WelcomeViewController()
     @IBAction func signOut(_ sender: Any) {
         do {
             try FIRAuth.auth()?.signOut()
@@ -25,6 +32,10 @@ class UserSettingsViewController: UITableViewController {
             print(error.localizedDescription)
         }
     }
+    
+
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

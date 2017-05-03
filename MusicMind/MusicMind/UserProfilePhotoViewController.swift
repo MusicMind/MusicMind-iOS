@@ -9,9 +9,22 @@
 import UIKit
 
 class ProfilePhotoViewController: UIViewController {
+    
+    // MARK: Properties
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     @IBAction func showImagePicker(_ sender: Any) {
         let imagePickerVC = UIImagePickerController()
         present(imagePickerVC, animated: true, completion: nil)
+        
+        func isSourceTypeAvailable(_ sourceType: UIImagePickerControllerSourceType) -> Bool{
+            
+            return true
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
 }
