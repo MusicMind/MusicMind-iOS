@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		062DA100AA226A2ECB9CD183CD42550B /* Pods-MusicMind-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C68A50226A45F9EAA9EA9B4C3E4692 /* Pods-MusicMind-dummy.m */; };
-		06B321EEDF6884A1B98D98C515003233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
+		062DA100AA226A2ECB9CD183CD42550B /* Pods-MusicMind-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB72423C179CD27739F1A2382C6EB /* Pods-MusicMind-dummy.m */; };
 		07340F15BACBA601736DBB2ABF1ABC35 /* GTMSessionFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F33DC9DFB2D607825A9F7ACBB85E9DD /* GTMSessionFetcherLogging.m */; };
 		0749EC40D3519957D43A1040F9662F71 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC2B8A12D8DA17E94B5875245154B51 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08AA89D020B5C4FD74D1529A3E972AB9 /* KeychainSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 830B04420D9BD3326FEF0CCBEBDD9CE4 /* KeychainSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,16 +17,15 @@
 		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BE807B7206DD54D01E99EB95C226FF /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1ED67707C258751E7888DAC2AB3D8501 /* GTMSessionFetcherLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 230061B44E75F85013880004DBBAA371 /* GTMSessionFetcherLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F9B999DFAA1052294448B64C77434B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
-		2D4CCAC1020ECD39D27C0A38B2FB96F1 /* Pods-MusicMind-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69C242B5255A4EDEA28FF7D9B1547B55 /* Pods-MusicMind-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23DD3F2BCFCEB29F8448A2DCB4BB0195 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
+		2D4CCAC1020ECD39D27C0A38B2FB96F1 /* Pods-MusicMind-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB927AC5BE23F64D3B69F235E3EFFADA /* Pods-MusicMind-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EFC826FB30ECD27C98CE7F3707E9012 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B6B0A2749137985B4945DB16C1F07 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		32CF9BB4493C89CB01FFADD6DB754927 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B93156E9D51CC217D7618B205A299BA2 /* GoogleToolboxForMac-dummy.m */; };
 		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A8D9DC0FAF5DA2756F3FED6FC6B57 /* TaskDelegate.swift */; };
 		3EFD4EADEC1B30380E1914D23E96EED2 /* RecordButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9174F6A5F72E3C29E841ED0694C0ED87 /* RecordButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41B179C28AC98D323FC8271222C20F08 /* Pods-MusicMindTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC3FF68C59D319E29F9937718F82F43A /* Pods-MusicMindTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4418B067DEDFCBE0E8F502D92DE263D7 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5DBDB5BAF2D269814132C66D57134 /* RecordButton.swift */; };
 		4F2AB5BFF7D9DE66B8B242ACE69AE0D9 /* GTMDebugThreadValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ADC7CAA9BFC78A988A33B584E384A2C /* GTMDebugThreadValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1C001A3BAA71487E3F1C480C30A7F3 /* Request.swift */; };
-		5719A1660A3F39989AFD352D6CBA45A8 /* Pods-MusicMindTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AFA055BFBC98AC165ACDF07B89583E /* Pods-MusicMindTests-dummy.m */; };
 		5AE17073CE5EA178FC61168EFDB26CEB /* SinchVerification-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCDDF1BEA1981E37CEEBB961332866 /* SinchVerification-Swift-dummy.m */; };
 		5B92D1D5ECFEBA99F4C67864E1397A6D /* GTMNSString+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D7E3287FD4BB7FEF3946D3DBBC5A30 /* GTMNSString+URLArguments.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5DF00FE4563E892E0DAE60436AB617DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F7A9E7BA6E22193BA94D4D0030AD06 /* UIKit.framework */; };
@@ -43,7 +41,7 @@
 		81967DA03DBC9D0D6E60E508FEF14F84 /* SinchVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E37706F206ECB7B57F159D546599A2 /* SinchVerification.swift */; };
 		822246278D4684A43F2BBB599E636F6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
 		8852FD9AFC242520924D98BE9C4E2477 /* GTMSessionFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = F918D6574A361B81EB8438413AF9C4C4 /* GTMSessionFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8CFF0D928BBD7B735DBA26EFC39262BA /* Pods-MusicMind-MusicMindUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16C6A66D6DD8D38B32535AAB770859E7 /* Pods-MusicMind-MusicMindUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CFF0D928BBD7B735DBA26EFC39262BA /* Pods-MusicMind-MusicMindUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B4ED7F7EB0334F5C8FE608EC893823A6 /* Pods-MusicMind-MusicMindUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95C69447F517DB81437EDE0003486963 /* GTMSessionFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4447C5C468B388FC80B35069B15981 /* GTMSessionFetcherService.m */; };
 		967551D370060AE0F4BC86BA2FE66E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
 		9D7CF6814BD28B594E1700B149FCDFB5 /* RecordButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D03B4133FD019D49EC0CB6036C20E267 /* RecordButton-dummy.m */; };
@@ -60,6 +58,7 @@
 		B61902FA902C8B4D08F60882D3BBAFDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F7A9E7BA6E22193BA94D4D0030AD06 /* UIKit.framework */; };
 		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55A76F1F4E48497367F8C37B05B8CF6 /* MultipartFormData.swift */; };
 		B9A04CBBF007CB8AAF75D61C5EF4D81F /* GTMMethodCheck.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C358D74D0BF9E6AAC54BDAEE5AA4762 /* GTMMethodCheck.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAE48293F98A17E8FD7F251633740302 /* Pods-MusicMind-MusicMindTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9E7A1B722D9995BBA17BE79EAFB4A /* Pods-MusicMind-MusicMindTests-dummy.m */; };
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095D2D62A562500E5D3BF4E40566F60 /* Validation.swift */; };
 		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918132C6D6282AB8CBDAD5C6544DA10 /* ParameterEncoding.swift */; };
 		C34E24520624B382515A0F58185E6926 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = ACE079BF0F74FA49D039BB7F8BAD02C5 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,13 +66,14 @@
 		C8865DA7BD76026FC9782E04D6D6BA76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
 		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267FA5C05366ED28AA40B034C2287C03 /* Response.swift */; };
 		CCBE57237E9F0DBAAF02A5575244F3BE /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2779D9DDBC2B07843DD0110231DA87A /* KeychainSwift.swift */; };
+		CE0BC6E7050D2497F55C81DD4C9684EC /* Pods-MusicMind-MusicMindTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B1EA4D0805E780C5567FAED3BAED786 /* Pods-MusicMind-MusicMindTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D28734EDC84B2A7FBC4D5DCF95177BF8 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C31F0BCC7976EA7A6F0F5042ABE383A /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3F381B45ADFDDE51CA31F1E141236CA /* GTMSessionFetcher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16C83FF9A92B53B35CBDC4B7CC4CE138 /* GTMSessionFetcher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA2F5A299DC9A8ECC5F73A66172E64BC /* GTMNSString+URLArguments.h in Headers */ = {isa = PBXBuildFile; fileRef = 75BF4DDD4BFEE263D5B3A25C81F3080B /* GTMNSString+URLArguments.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF9559C3822E3C6119BE43E4EDFD7EEE /* GTMSessionFetcherService.h in Headers */ = {isa = PBXBuildFile; fileRef = AAC500317C6895E1DFC21E698B8346A9 /* GTMSessionFetcherService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7D23D2F163A34BEC60FD54BCCC22C76 /* GTMNSDictionary+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 6830CB3C920F4BAB07958CBEB620D19F /* GTMNSDictionary+URLArguments.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		EBA8B955A11296BD7AA307752FE82ED4 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FF3DEEED83A497FF974D50E95E25D /* KeychainSwiftAccessOptions.swift */; };
-		ECD7771771B15736DD8B6E7398934B90 /* Pods-MusicMind-MusicMindUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DDFDAA9EFB95431D025DAA6D897BF5 /* Pods-MusicMind-MusicMindUITests-dummy.m */; };
+		ECD7771771B15736DD8B6E7398934B90 /* Pods-MusicMind-MusicMindUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA52D881178BCFA18F9FD0BD4A8901D9 /* Pods-MusicMind-MusicMindUITests-dummy.m */; };
 		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120646BC8BC4D56B40593E92D459AA45 /* Notifications.swift */; };
 		F09EDD53B94234F5F8DAC4DCD5CD969E /* GTMSessionUploadFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EBCBC3BC2A34A5D662AA7E2D263E92 /* GTMSessionUploadFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4E294C07EE32FFCDCF7FF4D71D850BD /* GTMSessionUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0103D605779DC1BB5E63FACCAF0C37B5 /* GTMSessionUploadFetcher.m */; };
@@ -82,19 +82,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		074292C67C6D5465E5A1264B41F6E103 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 38ACA430605AFB4229712A18BDDF5086;
-			remoteInfo = KeychainSwift;
-		};
 		0F38D67732186F903CDB7FD4C1F49CD4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 38ACA430605AFB4229712A18BDDF5086;
 			remoteInfo = KeychainSwift;
+		};
+		0F8D9A2824898E319D3118904AF27430 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
+			remoteInfo = Alamofire;
 		};
 		1ABC5A32675838331113FEA31487122E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -103,19 +103,33 @@
 			remoteGlobalIDString = 1F1A188ED9E16E184C4D7104E083FAF4;
 			remoteInfo = RecordButton;
 		};
-		220FEC5C0BD6820382588354430A442F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 107A9565F9DF88517DFD3E28C05B2B96;
-			remoteInfo = GoogleToolboxForMac;
-		};
 		6EB66A6E9125E86C0119EA0409825CA9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C052BEBFBD0AB5218CC64BA3450F6547;
 			remoteInfo = GTMSessionFetcher;
+		};
+		82DFE91F3500235E4B1733235C297910 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C052BEBFBD0AB5218CC64BA3450F6547;
+			remoteInfo = GTMSessionFetcher;
+		};
+		8A92B58CEADD1095ABCF82296EAAD38E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38ACA430605AFB4229712A18BDDF5086;
+			remoteInfo = KeychainSwift;
+		};
+		90A192BC7B0A88997243B2A2153A609F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1A188ED9E16E184C4D7104E083FAF4;
+			remoteInfo = RecordButton;
 		};
 		92FA08C8E9372CCA8AF33736BBE941D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -145,19 +159,19 @@
 			remoteGlobalIDString = 7A85ECF82A694BC610090BCA84A41F62;
 			remoteInfo = "SinchVerification-Swift";
 		};
-		B3DCDAF0DA64E5790364B6ED9280BEB0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C052BEBFBD0AB5218CC64BA3450F6547;
-			remoteInfo = GTMSessionFetcher;
-		};
 		BF5591B26022DB56CD08EBED2B4CC8D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C052BEBFBD0AB5218CC64BA3450F6547;
 			remoteInfo = GTMSessionFetcher;
+		};
+		CBC5680D2108D69CEF90E18B525FDEB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 107A9565F9DF88517DFD3E28C05B2B96;
+			remoteInfo = GoogleToolboxForMac;
 		};
 		CE71799636A7786D99F99B02A0292496 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -180,12 +194,12 @@
 			remoteGlobalIDString = 107A9565F9DF88517DFD3E28C05B2B96;
 			remoteInfo = GoogleToolboxForMac;
 		};
-		E66EF98345EDD30083AEBBA01381D0A0 /* PBXContainerItemProxy */ = {
+		E4B6BCBAD88C35980893A2E98E97E511 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
-			remoteInfo = Alamofire;
+			remoteGlobalIDString = 7A85ECF82A694BC610090BCA84A41F62;
+			remoteInfo = "SinchVerification-Swift";
 		};
 		EAC4C2DE01C0EC7785BDADFD0EC3DA10 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -198,8 +212,8 @@
 
 /* Begin PBXFileReference section */
 		0103D605779DC1BB5E63FACCAF0C37B5 /* GTMSessionUploadFetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionUploadFetcher.m; path = Source/GTMSessionUploadFetcher.m; sourceTree = "<group>"; };
+		076545D4651CFDA6CAD4883A62E50377 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		07EBCBC3BC2A34A5D662AA7E2D263E92 /* GTMSessionUploadFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionUploadFetcher.h; path = Source/GTMSessionUploadFetcher.h; sourceTree = "<group>"; };
-		08E5F11D1960345523D0F230DB2464D0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0918132C6D6282AB8CBDAD5C6544DA10 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		09CDE0E69C031173F7057295CF988747 /* GTMSessionFetcher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GTMSessionFetcher.xcconfig; sourceTree = "<group>"; };
 		0BA77C7EF0D9FB5B6644012716691C2F /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
@@ -208,9 +222,7 @@
 		0FC77F37FCEA95B9065F30968E8CEEBE /* KeychainSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainSwift-dummy.m"; sourceTree = "<group>"; };
 		120646BC8BC4D56B40593E92D459AA45 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		137C993C7B167EDE93724E8E97682F41 /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMDebugSelectorValidation.h; path = DebugUtils/GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
-		149658FA76597CC410ECEE2286193B07 /* Pods_MusicMind_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMind_MusicMindUITests.framework; path = "Pods-MusicMind-MusicMindUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B929A07FA91317D142F3787651530B /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
-		16C6A66D6DD8D38B32535AAB770859E7 /* Pods-MusicMind-MusicMindUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMind-MusicMindUITests-umbrella.h"; sourceTree = "<group>"; };
 		16C83FF9A92B53B35CBDC4B7CC4CE138 /* GTMSessionFetcher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTMSessionFetcher-umbrella.h"; sourceTree = "<group>"; };
 		1A81CFC40ABEF894DCFE3E8EB1909F1A /* GTMSessionFetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionFetcher.m; path = Source/GTMSessionFetcher.m; sourceTree = "<group>"; };
 		1B9A8D9DC0FAF5DA2756F3FED6FC6B57 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
@@ -221,105 +233,107 @@
 		230061B44E75F85013880004DBBAA371 /* GTMSessionFetcherLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcherLogging.h; path = Source/GTMSessionFetcherLogging.h; sourceTree = "<group>"; };
 		24705DCA3298A60CC3140410433065A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		267FA5C05366ED28AA40B034C2287C03 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		281996B922C1FC2AE3A6B16475D51BDD /* Pods-MusicMind-MusicMindUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMind-MusicMindUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		284206E1DA1DDCFA47E05E62DAA1CCCC /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		286FC87979B483F522D3FBBF6B1696BB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29C5D4470745C1F2C8937D97B5FEB7EE /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind-MusicMindUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B7C7A5270F963D29CD22DF3819BD565 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		2F310EF6C4DB4CEE5B8CFA83E05019AC /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTMSessionFetcher.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		332496D70D1BC27B5C540327139E3938 /* SinchVerification-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SinchVerification-Swift-prefix.pch"; sourceTree = "<group>"; };
-		380EE19B9ABD27654639D20A1D0781BB /* Pods-MusicMindTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMindTests.modulemap"; sourceTree = "<group>"; };
+		347DD55FE44A7EC9BA90A25A1D4E45E0 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		384DE3416A8264E65C214E6B141BA589 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		39E33308E95B716E290D68D8E98F2E0E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		406F5DBC4D635C7290DFC07248B42940 /* Pods-MusicMind-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-resources.sh"; sourceTree = "<group>"; };
 		418B9C4CC272ED707B2AAFA910E21E17 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
-		43188727E785D3EDED706E69678BEBA2 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4352D6FF84F1BB8CD5E001A752464CF1 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
-		482BED1F5756155B0F875F792C7E3327 /* Pods-MusicMind-MusicMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind-MusicMindUITests.release.xcconfig"; sourceTree = "<group>"; };
-		492BD4E4FAC2B1074708CF90A9AA1276 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
+		461909314816960C6FB58F340FA941AC /* Pods-MusicMind-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-frameworks.sh"; sourceTree = "<group>"; };
+		4936BBEC2C81C2353C3A6C06F64576BF /* Pods-MusicMind-MusicMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind-MusicMindUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AA0D06322FCB62F376E46F57BD729ED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		4C358D74D0BF9E6AAC54BDAEE5AA4762 /* GTMMethodCheck.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMMethodCheck.h; path = DebugUtils/GTMMethodCheck.h; sourceTree = "<group>"; };
-		54AFA055BFBC98AC165ACDF07B89583E /* Pods-MusicMindTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMindTests-dummy.m"; sourceTree = "<group>"; };
-		55C68A50226A45F9EAA9EA9B4C3E4692 /* Pods-MusicMind-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMind-dummy.m"; sourceTree = "<group>"; };
+		4CC5F7A1E38D85FC7A6375CD5916A62F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5200DF471C92F55ECC174A1F622D8802 /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RecordButton.framework; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55DA08109D2345BE8824CAE85BF32129 /* Pods-MusicMind-MusicMindUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMind-MusicMindUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		585E05CD1F0F275D5EF180478AD06D64 /* Pods_MusicMind_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMind_MusicMindUITests.framework; path = "Pods-MusicMind-MusicMindUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4D8A8470135EE8205F93DE0C70C79B /* KeychainSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-prefix.pch"; sourceTree = "<group>"; };
+		5AC0D677F7CCD2372DE521369A9C1FFE /* Pods-MusicMind-MusicMindUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-MusicMindUITests-frameworks.sh"; sourceTree = "<group>"; };
 		5ADC7CAA9BFC78A988A33B584E384A2C /* GTMDebugThreadValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMDebugThreadValidation.h; path = DebugUtils/GTMDebugThreadValidation.h; sourceTree = "<group>"; };
 		5FBCDDF1BEA1981E37CEEBB961332866 /* SinchVerification-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SinchVerification-Swift-dummy.m"; sourceTree = "<group>"; };
 		600D239F0009DB8F8CD03A7C6CEFA869 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		639D2C5734E9727BD1492FDD8FFB83BB /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
+		6531B5E0DD722DDC7E0C5C067C98D92E /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMind.framework; path = "Pods-MusicMind.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6830CB3C920F4BAB07958CBEB620D19F /* GTMNSDictionary+URLArguments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSDictionary+URLArguments.m"; path = "Foundation/GTMNSDictionary+URLArguments.m"; sourceTree = "<group>"; };
+		687468B6CA56A1857A886D08FCD11434 /* Pods-MusicMind-MusicMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind-MusicMindTests.debug.xcconfig"; sourceTree = "<group>"; };
 		699D8571529F54D3185E927E2927BB09 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		69C242B5255A4EDEA28FF7D9B1547B55 /* Pods-MusicMind-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMind-umbrella.h"; sourceTree = "<group>"; };
 		6B8B4BEFC16D8B3A86252EAD70F9192D /* GTMSessionFetcher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GTMSessionFetcher.modulemap; sourceTree = "<group>"; };
 		6BC60E18DA403A1D25F4F8BAD138DA5A /* SinchVerification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SinchVerification.framework; path = objc/SinchVerification.framework; sourceTree = "<group>"; };
+		6CA9E7A1B722D9995BBA17BE79EAFB4A /* Pods-MusicMind-MusicMindTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMind-MusicMindTests-dummy.m"; sourceTree = "<group>"; };
 		6D30E84B8FED1438DA1FA2F99FBDD127 /* KeychainSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainSwift.xcconfig; sourceTree = "<group>"; };
 		7095D2D62A562500E5D3BF4E40566F60 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		71982E5491561D13C1E1C4125B79D6D1 /* RecordButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RecordButton.modulemap; sourceTree = "<group>"; };
 		72905A94696F53CA466AC65E1AC7F86B /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
 		75BF4DDD4BFEE263D5B3A25C81F3080B /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+URLArguments.h"; path = "Foundation/GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
 		76B4B639FFA70CE5E156B3BC0111A536 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
-		77DDFDAA9EFB95431D025DAA6D897BF5 /* Pods-MusicMind-MusicMindUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMind-MusicMindUITests-dummy.m"; sourceTree = "<group>"; };
-		790D325CC608797A6B5F44CC477CF4D1 /* Pods-MusicMind-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMind-acknowledgements.plist"; sourceTree = "<group>"; };
-		7A3AFF793960B95E02DDEE2753D03B5E /* Pods-MusicMindTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMindTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7B1C001A3BAA71487E3F1C480C30A7F3 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		7B76A95B9B80BC5049D072EA872E5F93 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C5CFDEB10885C7574A898BCC53A3B7E /* Pods-MusicMind-MusicMindUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMind-MusicMindUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7D11562749D5ED3F438E32E32341B80D /* GTMNSDictionary+URLArguments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSDictionary+URLArguments.h"; path = "Foundation/GTMNSDictionary+URLArguments.h"; sourceTree = "<group>"; };
-		809BE5618CF5DA06F113A57677F32DC1 /* Pods-MusicMind-MusicMindUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMind-MusicMindUITests.modulemap"; sourceTree = "<group>"; };
+		815F3A94F9D2A6B9507C658FE8BFFBC6 /* Pods-MusicMind-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMind-acknowledgements.plist"; sourceTree = "<group>"; };
 		8287CB6BB4F70601E661DAE22E32FFE9 /* SinchVerification-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SinchVerification-Swift.xcconfig"; sourceTree = "<group>"; };
 		830B04420D9BD3326FEF0CCBEBDD9CE4 /* KeychainSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-umbrella.h"; sourceTree = "<group>"; };
 		83F7A9E7BA6E22193BA94D4D0030AD06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8C2FC9B688C832499CE47B7CD8DB230F /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		8C8E1FF8ECD13153C889C753C3556DA2 /* Pods-MusicMind-MusicMindTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-MusicMindTests-frameworks.sh"; sourceTree = "<group>"; };
 		8F33DC9DFB2D607825A9F7ACBB85E9DD /* GTMSessionFetcherLogging.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionFetcherLogging.m; path = Source/GTMSessionFetcherLogging.m; sourceTree = "<group>"; };
 		90B50DC2EA67FBB0E401B942FDF83AC0 /* GTMSessionFetcher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GTMSessionFetcher-dummy.m"; sourceTree = "<group>"; };
 		9174F6A5F72E3C29E841ED0694C0ED87 /* RecordButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-umbrella.h"; sourceTree = "<group>"; };
+		92A3750CE1CA7B5850563AED6454AB7F /* Pods-MusicMind-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMind-acknowledgements.markdown"; sourceTree = "<group>"; };
 		931905822114E85BC2F32602D3AEFC24 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
 		938931F0C48DAAB1944F13D37A4F1B46 /* SinchVerification-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "SinchVerification-Swift.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		942C21AE3C6765B7550C4761E807B3D5 /* Pods-MusicMind-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMind-acknowledgements.markdown"; sourceTree = "<group>"; };
-		94A7CFC14612A39639261059F72EA217 /* SinchVerification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SinchVerification.framework; path = "SinchVerification-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97791A244D73937BC12EE550AB76E633 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		9AA3FF9E2AB259842AB1A29EE6F21EAD /* Pods-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
+		996C94B30FE1DF61CEAF221D0A5D16FE /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind-MusicMindUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B1EA4D0805E780C5567FAED3BAED786 /* Pods-MusicMind-MusicMindTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMind-MusicMindTests-umbrella.h"; sourceTree = "<group>"; };
 		9BC58F7DDBEE5403374AD2DF16C08A91 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		9C692975BEBB01D99C3CE0A462EE509E /* Pods-MusicMindTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMindTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9F0E8843099AC2584FFF277B04F6C165 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		9FE4BECFB885F800465708E2D3B76154 /* Pods-MusicMindTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMindTests-frameworks.sh"; sourceTree = "<group>"; };
 		A092772C5688D7CBCD76621EB132A6FB /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		A2779D9DDBC2B07843DD0110231DA87A /* KeychainSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwift.swift; path = Sources/KeychainSwift.swift; sourceTree = "<group>"; };
 		AAC500317C6895E1DFC21E698B8346A9 /* GTMSessionFetcherService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcherService.h; path = Source/GTMSessionFetcherService.h; sourceTree = "<group>"; };
-		AC3FF68C59D319E29F9937718F82F43A /* Pods-MusicMindTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMindTests-umbrella.h"; sourceTree = "<group>"; };
+		AAFDB72423C179CD27739F1A2382C6EB /* Pods-MusicMind-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMind-dummy.m"; sourceTree = "<group>"; };
+		ABABB451A20ED9C23156B8C15AFBC570 /* Pods-MusicMind-MusicMindTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-MusicMindTests-resources.sh"; sourceTree = "<group>"; };
 		ACE079BF0F74FA49D039BB7F8BAD02C5 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
-		AD0D56604FB5E9EEA023E71AD405C3A3 /* Pods-MusicMind-MusicMindUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMind-MusicMindUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AE4447C5C468B388FC80B35069B15981 /* GTMSessionFetcherService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionFetcherService.m; path = Source/GTMSessionFetcherService.m; sourceTree = "<group>"; };
+		B2EA7DF6DA7B42CA31996865720D6087 /* SinchVerification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SinchVerification.framework; path = "SinchVerification-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3BE807B7206DD54D01E99EB95C226FF /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		B4764DA0FA31A6D70EEDB4D21C5DF95F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4ED7F7EB0334F5C8FE608EC893823A6 /* Pods-MusicMind-MusicMindUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMind-MusicMindUITests-umbrella.h"; sourceTree = "<group>"; };
 		B55A76F1F4E48497367F8C37B05B8CF6 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		B909E5E710841E06BD9DA283896FFE60 /* Pods-MusicMind-MusicMindTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMind-MusicMindTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B93156E9D51CC217D7618B205A299BA2 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
+		BB25D845BBC6ECC94F1DA6CE0EF83A90 /* Pods-MusicMind-MusicMindUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-MusicMindUITests-resources.sh"; sourceTree = "<group>"; };
+		BB927AC5BE23F64D3B69F235E3EFFADA /* Pods-MusicMind-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMind-umbrella.h"; sourceTree = "<group>"; };
 		BC0B254A72349FE191C2991283419F42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BE263FC28153B57135DEBBCF4D26356C /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		BE32AC5211B0804553A31069D74072EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEDD3F0561AF9B68951D9765C09525A3 /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Frameworks/FirebaseStorage.framework; sourceTree = "<group>"; };
-		C1C823521C0D477B9C3D725DE469A5B4 /* Pods-MusicMind.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMind.modulemap"; sourceTree = "<group>"; };
+		C368289564C20E68836C1567A3A28616 /* Pods_MusicMind_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMind_MusicMindTests.framework; path = "Pods-MusicMind-MusicMindTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C8829166791112B478FEAD50B5FDE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6D7E3287FD4BB7FEF3946D3DBBC5A30 /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+URLArguments.m"; path = "Foundation/GTMNSString+URLArguments.m"; sourceTree = "<group>"; };
-		C914B639BAC6DB5306B708FEE5754CDA /* Pods-MusicMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMindTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA0B5325EFE8C82EE44C73F1B0F7515F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA8F6EFCD81F6B76D1E3890D5574DF79 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTMSessionFetcher.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB8735AC5927334047A0D1F5E8D0777B /* Pods_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMindTests.framework; path = "Pods-MusicMindTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDAC02E20B30B015D39E394723D26F04 /* Pods-MusicMind-MusicMindUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-MusicMindUITests-frameworks.sh"; sourceTree = "<group>"; };
+		CA49097A8A4465279D105A4C9B0BDB74 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB565071A85848650C69B6BB77BD8CD6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD67D939A6F4BDE91431B54E09ED8A8C /* Pods-MusicMind.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMind.modulemap"; sourceTree = "<group>"; };
 		CFFA79E733BDC045A221CFDFFAA78E42 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		D03B4133FD019D49EC0CB6036C20E267 /* RecordButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RecordButton-dummy.m"; sourceTree = "<group>"; };
-		D0FC1BB2B3566A8A23A3EE31786A867B /* Pods-MusicMind-MusicMindUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-MusicMindUITests-resources.sh"; sourceTree = "<group>"; };
+		D231B5DFAD436CA10A9BE46AC3BC6ED2 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D250CF8F2A60D5DA6485E2F7431B7AF2 /* RecordButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RecordButton.xcconfig; sourceTree = "<group>"; };
-		D2DF11CBD38DC6BF45F3CCBC6F1FA9BE /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA5943F56C8E4E5338C47E2F2632C973 /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RecordButton.framework; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D62226B833E4F80624FAE01BCD74A202 /* Pods-MusicMind-MusicMindTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMind-MusicMindTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DA944EB35F1D0B66769BEDF3BF5EB6DC /* TegKeychainConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TegKeychainConstants.swift; path = Sources/TegKeychainConstants.swift; sourceTree = "<group>"; };
-		DC0DEF38E3938BAE6A995CDFE8793C2D /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMind.framework; path = "Pods-MusicMind.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC102B791AE19D49E490CC176B0160CC /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		DDC2B8A12D8DA17E94B5875245154B51 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
 		E0A43EDF152A193D136B173A96645FEF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4E37706F206ECB7B57F159D546599A2 /* SinchVerification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SinchVerification.swift; path = swift3/src/SinchVerification.swift; sourceTree = "<group>"; };
 		E5948C7689943E5F7469FE915FF3CA32 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		E91B6B0A2749137985B4945DB16C1F07 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		EA52D881178BCFA18F9FD0BD4A8901D9 /* Pods-MusicMind-MusicMindUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMind-MusicMindUITests-dummy.m"; sourceTree = "<group>"; };
+		EA7006F4B88CB944FBF4149E198E95CD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F089537ED182070FE7F99002376C716A /* Pods-MusicMind-MusicMindUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMind-MusicMindUITests.modulemap"; sourceTree = "<group>"; };
+		F08D26605014FD7EBBA94AA874BC336B /* Pods-MusicMind-MusicMindTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMind-MusicMindTests.modulemap"; sourceTree = "<group>"; };
 		F0E834F7D6FD250BCFD7B25B92EB9BB2 /* SinchVerification-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SinchVerification-Swift-umbrella.h"; sourceTree = "<group>"; };
-		F12C70E4FAFC501A8A0D49A37B66AE64 /* Pods-MusicMind-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-frameworks.sh"; sourceTree = "<group>"; };
-		F4FDBFA0466F8CCEE66B47E4ED4949CF /* Pods-MusicMindTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMindTests-resources.sh"; sourceTree = "<group>"; };
+		F469B639DCE253144BAF617A3DB0981A /* Pods-MusicMind-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-resources.sh"; sourceTree = "<group>"; };
+		F84688A6691E1C098FEE4E49A3CD8F9E /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
 		F918D6574A361B81EB8438413AF9C4C4 /* GTMSessionFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcher.h; path = Source/GTMSessionFetcher.h; sourceTree = "<group>"; };
 		FA3FF3DEEED83A497FF974D50E95E25D /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwiftAccessOptions.swift; path = Sources/KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
 		FAD4CE0E18E75E14D3A58494A6000BF5 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
@@ -345,20 +359,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5044B75384D8941A27C6E441BB63D81E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23DD3F2BCFCEB29F8448A2DCB4BB0195 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AE88E96161DE195EAAF0A3B6375EA50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1F9B999DFAA1052294448B64C77434B1 /* Foundation.framework in Frameworks */,
 				65B56BD3DBC9B81BB008219D0BA735A9 /* Security.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		80AC87B1612A05D912437CA41874B9AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06B321EEDF6884A1B98D98C515003233 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +432,24 @@
 			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
+		0704BEE44BE0A4BAA360C81DD39CDB1C /* Pods-MusicMind-MusicMindTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB565071A85848650C69B6BB77BD8CD6 /* Info.plist */,
+				F08D26605014FD7EBBA94AA874BC336B /* Pods-MusicMind-MusicMindTests.modulemap */,
+				B909E5E710841E06BD9DA283896FFE60 /* Pods-MusicMind-MusicMindTests-acknowledgements.markdown */,
+				D62226B833E4F80624FAE01BCD74A202 /* Pods-MusicMind-MusicMindTests-acknowledgements.plist */,
+				6CA9E7A1B722D9995BBA17BE79EAFB4A /* Pods-MusicMind-MusicMindTests-dummy.m */,
+				8C8E1FF8ECD13153C889C753C3556DA2 /* Pods-MusicMind-MusicMindTests-frameworks.sh */,
+				ABABB451A20ED9C23156B8C15AFBC570 /* Pods-MusicMind-MusicMindTests-resources.sh */,
+				9B1EA4D0805E780C5567FAED3BAED786 /* Pods-MusicMind-MusicMindTests-umbrella.h */,
+				687468B6CA56A1857A886D08FCD11434 /* Pods-MusicMind-MusicMindTests.debug.xcconfig */,
+				347DD55FE44A7EC9BA90A25A1D4E45E0 /* Pods-MusicMind-MusicMindTests.release.xcconfig */,
+			);
+			name = "Pods-MusicMind-MusicMindTests";
+			path = "Target Support Files/Pods-MusicMind-MusicMindTests";
+			sourceTree = "<group>";
+		};
 		16E9571A80DD08CD49F6BA03268BD25C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,24 +478,6 @@
 			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
-		1B36356963849D43D880784E120AC3E8 /* Pods-MusicMindTests */ = {
-			isa = PBXGroup;
-			children = (
-				39E33308E95B716E290D68D8E98F2E0E /* Info.plist */,
-				380EE19B9ABD27654639D20A1D0781BB /* Pods-MusicMindTests.modulemap */,
-				9C692975BEBB01D99C3CE0A462EE509E /* Pods-MusicMindTests-acknowledgements.markdown */,
-				7A3AFF793960B95E02DDEE2753D03B5E /* Pods-MusicMindTests-acknowledgements.plist */,
-				54AFA055BFBC98AC165ACDF07B89583E /* Pods-MusicMindTests-dummy.m */,
-				9FE4BECFB885F800465708E2D3B76154 /* Pods-MusicMindTests-frameworks.sh */,
-				F4FDBFA0466F8CCEE66B47E4ED4949CF /* Pods-MusicMindTests-resources.sh */,
-				AC3FF68C59D319E29F9937718F82F43A /* Pods-MusicMindTests-umbrella.h */,
-				C914B639BAC6DB5306B708FEE5754CDA /* Pods-MusicMindTests.debug.xcconfig */,
-				9AA3FF9E2AB259842AB1A29EE6F21EAD /* Pods-MusicMindTests.release.xcconfig */,
-			);
-			name = "Pods-MusicMindTests";
-			path = "Target Support Files/Pods-MusicMindTests";
-			sourceTree = "<group>";
-		};
 		1DB8EB01E44BF9C00A570C0EF5449F3B /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,16 +499,6 @@
 				6BC60E18DA403A1D25F4F8BAD138DA5A /* SinchVerification.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1FB336FABCA895B5E5D33ED9FFF572C5 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CBA8EF48B9B2E8DBCA96E1DBD67D3553 /* Pods-MusicMind */,
-				2FC67F19BD2BAC7A9B92F7B26A69A15C /* Pods-MusicMind-MusicMindUITests */,
-				1B36356963849D43D880784E120AC3E8 /* Pods-MusicMindTests */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
@@ -521,24 +525,6 @@
 				6830CB3C920F4BAB07958CBEB620D19F /* GTMNSDictionary+URLArguments.m */,
 			);
 			name = "NSDictionary+URLArguments";
-			sourceTree = "<group>";
-		};
-		2FC67F19BD2BAC7A9B92F7B26A69A15C /* Pods-MusicMind-MusicMindUITests */ = {
-			isa = PBXGroup;
-			children = (
-				286FC87979B483F522D3FBBF6B1696BB /* Info.plist */,
-				809BE5618CF5DA06F113A57677F32DC1 /* Pods-MusicMind-MusicMindUITests.modulemap */,
-				AD0D56604FB5E9EEA023E71AD405C3A3 /* Pods-MusicMind-MusicMindUITests-acknowledgements.markdown */,
-				281996B922C1FC2AE3A6B16475D51BDD /* Pods-MusicMind-MusicMindUITests-acknowledgements.plist */,
-				77DDFDAA9EFB95431D025DAA6D897BF5 /* Pods-MusicMind-MusicMindUITests-dummy.m */,
-				CDAC02E20B30B015D39E394723D26F04 /* Pods-MusicMind-MusicMindUITests-frameworks.sh */,
-				D0FC1BB2B3566A8A23A3EE31786A867B /* Pods-MusicMind-MusicMindUITests-resources.sh */,
-				16C6A66D6DD8D38B32535AAB770859E7 /* Pods-MusicMind-MusicMindUITests-umbrella.h */,
-				29C5D4470745C1F2C8937D97B5FEB7EE /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */,
-				482BED1F5756155B0F875F792C7E3327 /* Pods-MusicMind-MusicMindUITests.release.xcconfig */,
-			);
-			name = "Pods-MusicMind-MusicMindUITests";
-			path = "Target Support Files/Pods-MusicMind-MusicMindUITests";
 			sourceTree = "<group>";
 		};
 		3635199B8392A8A0EBEF86A453AD1214 /* KeychainSwift */ = {
@@ -589,6 +575,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D34E3599B7335185D8B09B717EDF06A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA49097A8A4465279D105A4C9B0BDB74 /* Alamofire.framework */,
+				D231B5DFAD436CA10A9BE46AC3BC6ED2 /* GoogleToolboxForMac.framework */,
+				2F310EF6C4DB4CEE5B8CFA83E05019AC /* GTMSessionFetcher.framework */,
+				7B76A95B9B80BC5049D072EA872E5F93 /* KeychainSwift.framework */,
+				6531B5E0DD722DDC7E0C5C067C98D92E /* Pods_MusicMind.framework */,
+				C368289564C20E68836C1567A3A28616 /* Pods_MusicMind_MusicMindTests.framework */,
+				585E05CD1F0F275D5EF180478AD06D64 /* Pods_MusicMind_MusicMindUITests.framework */,
+				5200DF471C92F55ECC174A1F622D8802 /* RecordButton.framework */,
+				B2EA7DF6DA7B42CA31996865720D6087 /* SinchVerification.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4FDB302CED741FDCB37661DB837D6143 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +637,16 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		5C97D9BF09D36B9122052C2AC64FEB3A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D74F4214CFC42BB87CA6D52FEFBF5C46 /* Pods-MusicMind */,
+				0704BEE44BE0A4BAA360C81DD39CDB1C /* Pods-MusicMind-MusicMindTests */,
+				DAFFEA6DD50DF259916365234E104068 /* Pods-MusicMind-MusicMindUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		752DEBEBD881D52E0BD016831A67A2F5 /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,8 +662,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
 				55892093E1D381166824132253D1B79E /* Pods */,
-				9290CE79FB98DA4F0EFE83A643EC11BB /* Products */,
-				1FB336FABCA895B5E5D33ED9FFF572C5 /* Targets Support Files */,
+				4D34E3599B7335185D8B09B717EDF06A /* Products */,
+				5C97D9BF09D36B9122052C2AC64FEB3A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -662,22 +674,6 @@
 				E91B6B0A2749137985B4945DB16C1F07 /* GTMNSData+zlib.m */,
 			);
 			name = "NSData+zlib";
-			sourceTree = "<group>";
-		};
-		9290CE79FB98DA4F0EFE83A643EC11BB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B4764DA0FA31A6D70EEDB4D21C5DF95F /* Alamofire.framework */,
-				43188727E785D3EDED706E69678BEBA2 /* GoogleToolboxForMac.framework */,
-				CA8F6EFCD81F6B76D1E3890D5574DF79 /* GTMSessionFetcher.framework */,
-				D2DF11CBD38DC6BF45F3CCBC6F1FA9BE /* KeychainSwift.framework */,
-				DC0DEF38E3938BAE6A995CDFE8793C2D /* Pods_MusicMind.framework */,
-				149658FA76597CC410ECEE2286193B07 /* Pods_MusicMind_MusicMindUITests.framework */,
-				CB8735AC5927334047A0D1F5E8D0777B /* Pods_MusicMindTests.framework */,
-				DA5943F56C8E4E5338C47E2F2632C973 /* RecordButton.framework */,
-				94A7CFC14612A39639261059F72EA217 /* SinchVerification.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		94DCEF2DCBAF180D132993684849FE84 /* Frameworks */ = {
@@ -797,19 +793,19 @@
 			path = "../Target Support Files/GTMSessionFetcher";
 			sourceTree = "<group>";
 		};
-		CBA8EF48B9B2E8DBCA96E1DBD67D3553 /* Pods-MusicMind */ = {
+		D74F4214CFC42BB87CA6D52FEFBF5C46 /* Pods-MusicMind */ = {
 			isa = PBXGroup;
 			children = (
-				08E5F11D1960345523D0F230DB2464D0 /* Info.plist */,
-				C1C823521C0D477B9C3D725DE469A5B4 /* Pods-MusicMind.modulemap */,
-				942C21AE3C6765B7550C4761E807B3D5 /* Pods-MusicMind-acknowledgements.markdown */,
-				790D325CC608797A6B5F44CC477CF4D1 /* Pods-MusicMind-acknowledgements.plist */,
-				55C68A50226A45F9EAA9EA9B4C3E4692 /* Pods-MusicMind-dummy.m */,
-				F12C70E4FAFC501A8A0D49A37B66AE64 /* Pods-MusicMind-frameworks.sh */,
-				406F5DBC4D635C7290DFC07248B42940 /* Pods-MusicMind-resources.sh */,
-				69C242B5255A4EDEA28FF7D9B1547B55 /* Pods-MusicMind-umbrella.h */,
-				639D2C5734E9727BD1492FDD8FFB83BB /* Pods-MusicMind.debug.xcconfig */,
-				492BD4E4FAC2B1074708CF90A9AA1276 /* Pods-MusicMind.release.xcconfig */,
+				EA7006F4B88CB944FBF4149E198E95CD /* Info.plist */,
+				CD67D939A6F4BDE91431B54E09ED8A8C /* Pods-MusicMind.modulemap */,
+				92A3750CE1CA7B5850563AED6454AB7F /* Pods-MusicMind-acknowledgements.markdown */,
+				815F3A94F9D2A6B9507C658FE8BFFBC6 /* Pods-MusicMind-acknowledgements.plist */,
+				AAFDB72423C179CD27739F1A2382C6EB /* Pods-MusicMind-dummy.m */,
+				461909314816960C6FB58F340FA941AC /* Pods-MusicMind-frameworks.sh */,
+				F469B639DCE253144BAF617A3DB0981A /* Pods-MusicMind-resources.sh */,
+				BB927AC5BE23F64D3B69F235E3EFFADA /* Pods-MusicMind-umbrella.h */,
+				F84688A6691E1C098FEE4E49A3CD8F9E /* Pods-MusicMind.debug.xcconfig */,
+				076545D4651CFDA6CAD4883A62E50377 /* Pods-MusicMind.release.xcconfig */,
 			);
 			name = "Pods-MusicMind";
 			path = "Target Support Files/Pods-MusicMind";
@@ -822,6 +818,24 @@
 			);
 			name = FirebaseAuth;
 			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		DAFFEA6DD50DF259916365234E104068 /* Pods-MusicMind-MusicMindUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5F7A1E38D85FC7A6375CD5916A62F /* Info.plist */,
+				F089537ED182070FE7F99002376C716A /* Pods-MusicMind-MusicMindUITests.modulemap */,
+				55DA08109D2345BE8824CAE85BF32129 /* Pods-MusicMind-MusicMindUITests-acknowledgements.markdown */,
+				7C5CFDEB10885C7574A898BCC53A3B7E /* Pods-MusicMind-MusicMindUITests-acknowledgements.plist */,
+				EA52D881178BCFA18F9FD0BD4A8901D9 /* Pods-MusicMind-MusicMindUITests-dummy.m */,
+				5AC0D677F7CCD2372DE521369A9C1FFE /* Pods-MusicMind-MusicMindUITests-frameworks.sh */,
+				BB25D845BBC6ECC94F1DA6CE0EF83A90 /* Pods-MusicMind-MusicMindUITests-resources.sh */,
+				B4ED7F7EB0334F5C8FE608EC893823A6 /* Pods-MusicMind-MusicMindUITests-umbrella.h */,
+				996C94B30FE1DF61CEAF221D0A5D16FE /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */,
+				4936BBEC2C81C2353C3A6C06F64576BF /* Pods-MusicMind-MusicMindUITests.release.xcconfig */,
+			);
+			name = "Pods-MusicMind-MusicMindUITests";
+			path = "Target Support Files/Pods-MusicMind-MusicMindUITests";
 			sourceTree = "<group>";
 		};
 		DBA11DE5A7D083C34BD2C27F9A74EBE2 /* GoogleToolboxForMac */ = {
@@ -925,11 +939,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CB9A93E13F029568C1A95868B605467 /* Headers */ = {
+		9506C4EE90FE3245C715980F7E68F528 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41B179C28AC98D323FC8271222C20F08 /* Pods-MusicMindTests-umbrella.h in Headers */,
+				CE0BC6E7050D2497F55C81DD4C9684EC /* Pods-MusicMind-MusicMindTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -997,7 +1011,7 @@
 			);
 			name = GoogleToolboxForMac;
 			productName = GoogleToolboxForMac;
-			productReference = 43188727E785D3EDED706E69678BEBA2 /* GoogleToolboxForMac.framework */;
+			productReference = D231B5DFAD436CA10A9BE46AC3BC6ED2 /* GoogleToolboxForMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1C53F19CDD05B32E98ABC745AF2F25F4 /* Pods-MusicMind-MusicMindUITests */ = {
@@ -1020,7 +1034,7 @@
 			);
 			name = "Pods-MusicMind-MusicMindUITests";
 			productName = "Pods-MusicMind-MusicMindUITests";
-			productReference = 149658FA76597CC410ECEE2286193B07 /* Pods_MusicMind_MusicMindUITests.framework */;
+			productReference = 585E05CD1F0F275D5EF180478AD06D64 /* Pods_MusicMind_MusicMindUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1F1A188ED9E16E184C4D7104E083FAF4 /* RecordButton */ = {
@@ -1037,7 +1051,7 @@
 			);
 			name = RecordButton;
 			productName = RecordButton;
-			productReference = DA5943F56C8E4E5338C47E2F2632C973 /* RecordButton.framework */;
+			productReference = 5200DF471C92F55ECC174A1F622D8802 /* RecordButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		38ACA430605AFB4229712A18BDDF5086 /* KeychainSwift */ = {
@@ -1054,7 +1068,7 @@
 			);
 			name = KeychainSwift;
 			productName = KeychainSwift;
-			productReference = D2DF11CBD38DC6BF45F3CCBC6F1FA9BE /* KeychainSwift.framework */;
+			productReference = 7B76A95B9B80BC5049D072EA872E5F93 /* KeychainSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7A85ECF82A694BC610090BCA84A41F62 /* SinchVerification-Swift */ = {
@@ -1071,7 +1085,7 @@
 			);
 			name = "SinchVerification-Swift";
 			productName = "SinchVerification-Swift";
-			productReference = 94A7CFC14612A39639261059F72EA217 /* SinchVerification.framework */;
+			productReference = B2EA7DF6DA7B42CA31996865720D6087 /* SinchVerification.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */ = {
@@ -1088,7 +1102,30 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = B4764DA0FA31A6D70EEDB4D21C5DF95F /* Alamofire.framework */;
+			productReference = CA49097A8A4465279D105A4C9B0BDB74 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A670AD40050D714F60942D5D08B9CF46 /* Pods-MusicMind-MusicMindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43B7CD55785879C2DF42B1E3F4DB106F /* Build configuration list for PBXNativeTarget "Pods-MusicMind-MusicMindTests" */;
+			buildPhases = (
+				CAEBAFFDCA76E5D9EDE12B7CB3DFC202 /* Sources */,
+				5044B75384D8941A27C6E441BB63D81E /* Frameworks */,
+				9506C4EE90FE3245C715980F7E68F528 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44E7FB57D12393D0DC095AEAA4BDD15F /* PBXTargetDependency */,
+				D40515ED35302A88404222AC275FFB2B /* PBXTargetDependency */,
+				ECCB58568FADD446708F100BEDB5D6FC /* PBXTargetDependency */,
+				EC87F8AE3531ACE3CD481AF06A66F011 /* PBXTargetDependency */,
+				EE5DCF58A9C6642B672CEF84644B3439 /* PBXTargetDependency */,
+				9ADACFA41EAA877D4988E6E923442881 /* PBXTargetDependency */,
+			);
+			name = "Pods-MusicMind-MusicMindTests";
+			productName = "Pods-MusicMind-MusicMindTests";
+			productReference = C368289564C20E68836C1567A3A28616 /* Pods_MusicMind_MusicMindTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */ = {
@@ -1105,7 +1142,7 @@
 			);
 			name = GTMSessionFetcher;
 			productName = GTMSessionFetcher;
-			productReference = CA8F6EFCD81F6B76D1E3890D5574DF79 /* GTMSessionFetcher.framework */;
+			productReference = 2F310EF6C4DB4CEE5B8CFA83E05019AC /* GTMSessionFetcher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DD58B6CE923566714A947372F97E6FB0 /* Pods-MusicMind */ = {
@@ -1128,28 +1165,7 @@
 			);
 			name = "Pods-MusicMind";
 			productName = "Pods-MusicMind";
-			productReference = DC0DEF38E3938BAE6A995CDFE8793C2D /* Pods_MusicMind.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E7BFA47F66592B582CE6A07F6EAD7BEE /* Pods-MusicMindTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 031982937DDC690ACD0E608B52BDC779 /* Build configuration list for PBXNativeTarget "Pods-MusicMindTests" */;
-			buildPhases = (
-				980F0162DA8D8F46EFE6C0038332A946 /* Sources */,
-				80AC87B1612A05D912437CA41874B9AE /* Frameworks */,
-				8CB9A93E13F029568C1A95868B605467 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				205730BA2D5F27C57372C38F4D9F7A01 /* PBXTargetDependency */,
-				24FFD7C53C23AED628C21B5623A579F9 /* PBXTargetDependency */,
-				72372A07AEBD5F7D3656F89A473558CE /* PBXTargetDependency */,
-				4CC66D0CA705DC1D7548B3781F3EF164 /* PBXTargetDependency */,
-			);
-			name = "Pods-MusicMindTests";
-			productName = "Pods-MusicMindTests";
-			productReference = CB8735AC5927334047A0D1F5E8D0777B /* Pods_MusicMindTests.framework */;
+			productReference = 6531B5E0DD722DDC7E0C5C067C98D92E /* Pods_MusicMind.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1169,7 +1185,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9290CE79FB98DA4F0EFE83A643EC11BB /* Products */;
+			productRefGroup = 4D34E3599B7335185D8B09B717EDF06A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1178,8 +1194,8 @@
 				C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */,
 				38ACA430605AFB4229712A18BDDF5086 /* KeychainSwift */,
 				DD58B6CE923566714A947372F97E6FB0 /* Pods-MusicMind */,
+				A670AD40050D714F60942D5D08B9CF46 /* Pods-MusicMind-MusicMindTests */,
 				1C53F19CDD05B32E98ABC745AF2F25F4 /* Pods-MusicMind-MusicMindUITests */,
-				E7BFA47F66592B582CE6A07F6EAD7BEE /* Pods-MusicMindTests */,
 				1F1A188ED9E16E184C4D7104E083FAF4 /* RecordButton */,
 				7A85ECF82A694BC610090BCA84A41F62 /* SinchVerification-Swift */,
 			);
@@ -1249,14 +1265,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		980F0162DA8D8F46EFE6C0038332A946 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5719A1660A3F39989AFD352D6CBA45A8 /* Pods-MusicMindTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BA64D531146693E66BF1C1CEE1D81BC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1288,6 +1296,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CAEBAFFDCA76E5D9EDE12B7CB3DFC202 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE48293F98A17E8FD7F251633740302 /* Pods-MusicMind-MusicMindTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1296,18 +1312,6 @@
 			name = Alamofire;
 			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
 			targetProxy = 94BC02BAD12066D334ECE2C82142CA08 /* PBXContainerItemProxy */;
-		};
-		205730BA2D5F27C57372C38F4D9F7A01 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
-			targetProxy = E66EF98345EDD30083AEBBA01381D0A0 /* PBXContainerItemProxy */;
-		};
-		24FFD7C53C23AED628C21B5623A579F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GTMSessionFetcher;
-			target = C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */;
-			targetProxy = B3DCDAF0DA64E5790364B6ED9280BEB0 /* PBXContainerItemProxy */;
 		};
 		2D52DD65706C27B2FC169FE9113C7ABF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1321,23 +1325,17 @@
 			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
 			targetProxy = AD53B2D0972600138C7A840BE41E0E3B /* PBXContainerItemProxy */;
 		};
-		4CC66D0CA705DC1D7548B3781F3EF164 /* PBXTargetDependency */ = {
+		44E7FB57D12393D0DC095AEAA4BDD15F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = KeychainSwift;
-			target = 38ACA430605AFB4229712A18BDDF5086 /* KeychainSwift */;
-			targetProxy = 074292C67C6D5465E5A1264B41F6E103 /* PBXContainerItemProxy */;
+			name = Alamofire;
+			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
+			targetProxy = 0F8D9A2824898E319D3118904AF27430 /* PBXContainerItemProxy */;
 		};
 		660896EBB7395FFA266D214F2E5805B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SinchVerification-Swift";
 			target = 7A85ECF82A694BC610090BCA84A41F62 /* SinchVerification-Swift */;
 			targetProxy = CE71799636A7786D99F99B02A0292496 /* PBXContainerItemProxy */;
-		};
-		72372A07AEBD5F7D3656F89A473558CE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GoogleToolboxForMac;
-			target = 107A9565F9DF88517DFD3E28C05B2B96 /* GoogleToolboxForMac */;
-			targetProxy = 220FEC5C0BD6820382588354430A442F /* PBXContainerItemProxy */;
 		};
 		757963530518437C7D8B9C33FE278432 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1351,6 +1349,12 @@
 			target = 7A85ECF82A694BC610090BCA84A41F62 /* SinchVerification-Swift */;
 			targetProxy = AEDA9B913AB645F1C0F25E91A4EEA070 /* PBXContainerItemProxy */;
 		};
+		9ADACFA41EAA877D4988E6E923442881 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SinchVerification-Swift";
+			target = 7A85ECF82A694BC610090BCA84A41F62 /* SinchVerification-Swift */;
+			targetProxy = E4B6BCBAD88C35980893A2E98E97E511 /* PBXContainerItemProxy */;
+		};
 		9CA3D89235E48319E741AD4F41819618 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RecordButton;
@@ -1362,6 +1366,12 @@
 			name = GoogleToolboxForMac;
 			target = 107A9565F9DF88517DFD3E28C05B2B96 /* GoogleToolboxForMac */;
 			targetProxy = DA37703886253898A9E0326D7574F27C /* PBXContainerItemProxy */;
+		};
+		D40515ED35302A88404222AC275FFB2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTMSessionFetcher;
+			target = C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */;
+			targetProxy = 82DFE91F3500235E4B1733235C297910 /* PBXContainerItemProxy */;
 		};
 		DE46818F05A658E22A90A8ED772A42B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1380,6 +1390,24 @@
 			name = GTMSessionFetcher;
 			target = C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */;
 			targetProxy = 6EB66A6E9125E86C0119EA0409825CA9 /* PBXContainerItemProxy */;
+		};
+		EC87F8AE3531ACE3CD481AF06A66F011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KeychainSwift;
+			target = 38ACA430605AFB4229712A18BDDF5086 /* KeychainSwift */;
+			targetProxy = 8A92B58CEADD1095ABCF82296EAAD38E /* PBXContainerItemProxy */;
+		};
+		ECCB58568FADD446708F100BEDB5D6FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = 107A9565F9DF88517DFD3E28C05B2B96 /* GoogleToolboxForMac */;
+			targetProxy = CBC5680D2108D69CEF90E18B525FDEB2 /* PBXContainerItemProxy */;
+		};
+		EE5DCF58A9C6642B672CEF84644B3439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RecordButton;
+			target = 1F1A188ED9E16E184C4D7104E083FAF4 /* RecordButton */;
+			targetProxy = 90A192BC7B0A88997243B2A2153A609F /* PBXContainerItemProxy */;
 		};
 		EF005364730243583C7331F209E3727A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1424,7 +1452,7 @@
 		};
 		0CFC1218712524C148F8BAE8034A006D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 492BD4E4FAC2B1074708CF90A9AA1276 /* Pods-MusicMind.release.xcconfig */;
+			baseConfigurationReference = 076545D4651CFDA6CAD4883A62E50377 /* Pods-MusicMind.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1488,6 +1516,42 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		0DBC2E58F2D51A1236E9AD5B9DA92F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 687468B6CA56A1857A886D08FCD11434 /* Pods-MusicMind-MusicMindTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MusicMind-MusicMindTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MusicMind_MusicMindTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		1839F7DC941A2583945708B12B5B5BBD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1556,7 +1620,7 @@
 		};
 		310E7EE263F35788FB7F0A16C2E9D1A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 639D2C5734E9727BD1492FDD8FFB83BB /* Pods-MusicMind.debug.xcconfig */;
+			baseConfigurationReference = F84688A6691E1C098FEE4E49A3CD8F9E /* Pods-MusicMind.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1621,41 +1685,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		4C3CD458ED340FBBFEC548A055E3E7D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AA3FF9E2AB259842AB1A29EE6F21EAD /* Pods-MusicMindTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MusicMindTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MusicMindTests/Pods-MusicMindTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MusicMindTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		673254EEAF0B5BF4596080C749645884 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1763,41 +1792,40 @@
 			};
 			name = Debug;
 		};
-		80C4048996F5F8F37601B7EDC389EE94 /* Debug */ = {
+		7D6D531A378938F2E47B75B3ACEB492C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C914B639BAC6DB5306B708FEE5754CDA /* Pods-MusicMindTests.debug.xcconfig */;
+			baseConfigurationReference = 347DD55FE44A7EC9BA90A25A1D4E45E0 /* Pods-MusicMind-MusicMindTests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MusicMindTests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-MusicMind-MusicMindTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MusicMindTests/Pods-MusicMindTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MODULEMAP_FILE = "Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MusicMindTests;
+				PRODUCT_NAME = Pods_MusicMind_MusicMindTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		881B19BB9961D509DACE94450066151E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1897,7 +1925,7 @@
 		};
 		D04198031E8A6C71E30F8D8A04335E2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 482BED1F5756155B0F875F792C7E3327 /* Pods-MusicMind-MusicMindUITests.release.xcconfig */;
+			baseConfigurationReference = 4936BBEC2C81C2353C3A6C06F64576BF /* Pods-MusicMind-MusicMindUITests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2041,7 +2069,7 @@
 		};
 		F3D8BFBD2D8AB7B3A7D30F986B837A06 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29C5D4470745C1F2C8937D97B5FEB7EE /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */;
+			baseConfigurationReference = 996C94B30FE1DF61CEAF221D0A5D16FE /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2078,15 +2106,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		031982937DDC690ACD0E608B52BDC779 /* Build configuration list for PBXNativeTarget "Pods-MusicMindTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80C4048996F5F8F37601B7EDC389EE94 /* Debug */,
-				4C3CD458ED340FBBFEC548A055E3E7D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		15E17E5CA48894EB4A64774B53DF6F86 /* Build configuration list for PBXNativeTarget "SinchVerification-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2137,6 +2156,15 @@
 			buildConfigurations = (
 				F383079BFBF927813EA3613CFB679FDE /* Debug */,
 				0A29B6F510198AF64EFD762EF6FA97A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43B7CD55785879C2DF42B1E3F4DB106F /* Build configuration list for PBXNativeTarget "Pods-MusicMind-MusicMindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DBC2E58F2D51A1236E9AD5B9DA92F32 /* Debug */,
+				7D6D531A378938F2E47B75B3ACEB492C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
