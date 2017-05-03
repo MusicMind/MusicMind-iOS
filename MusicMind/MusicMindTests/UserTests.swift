@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import MusicMind
+@testable import MusicMind
 
 
 class UserTests: XCTestCase {
