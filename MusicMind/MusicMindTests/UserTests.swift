@@ -79,19 +79,19 @@ class UserTests: XCTestCase {
         let e = expectation(description: "test mobile number")
         let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingBirthday")
         
-        let birthdayDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let birthdayDate = dateFormatter.date(from: "1990-01-01")
         
         if let ref = user.userRef {
             ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
                 if let user = snapshot.value as? [String: Any?] {
                     if let dateString = user["birthday"] as? String {
-                        
-                        let date = dateFormatter.date(from: dateString)
-                        
-                        if date == birthdayDate {
-                            e.fulfill()
+                        if let date = dateFormatter.date(from: dateString) {
+                            if date == birthdayDate {
+                                e.fulfill()
+                            }
                         }
                     }
                 }
