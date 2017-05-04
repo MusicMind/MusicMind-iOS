@@ -9,7 +9,7 @@
 import Foundation
 
 let userLoginCredentials = UserLoginCredentials()
-var user: User?
+var user = User()
 let spotifyAuth = SPTAuth.defaultInstance()!
 let spotifyStreamingController = SPTAudioStreamingController.sharedInstance()!
 

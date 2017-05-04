@@ -17,8 +17,6 @@ class NameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        user = User(newId: "aaaaaaa")
-        
         setupNavigationBar(theme: .light)
         
         self.hideKeyboardWhenTappedAround()
@@ -37,8 +35,8 @@ class NameViewController: UIViewController {
                 return
         }
         
-        user?.firstName = firstName
-        user?.lastName = lastName
+        user.firstName = firstName
+        user.lastName = lastName
     }
     
 }
@@ -50,7 +48,6 @@ extension NameViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         if textField == firstNameTextField {
             lastNameTextField.becomeFirstResponder()
         } else {
