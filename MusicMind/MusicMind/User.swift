@@ -10,12 +10,12 @@ import Foundation
 import Firebase
 
 struct User {
-    let currentUserRef: FIRDatabaseReference?
+    let userRef: FIRDatabaseReference?
     let id: String?
     var firstName: String? {
         didSet {
-            if let firstName = firstName, let currentUserRef = currentUserRef {
-                currentUserRef.setValue(["firstName": firstName])
+            if let firstName = firstName, let userRef = userRef {
+                userRef.setValue(["firstName": firstName])
             }
         }
     }
@@ -24,7 +24,7 @@ struct User {
     var birthday: Date?
     
     init (newId: String) {
-        currentUserRef = FIRDatabase.database().reference().child("users/\(newId)")
+        userRef = FIRDatabase.database().reference().child("users/\(newId)")
         id = newId
         firstName = nil
         lastName = nil
