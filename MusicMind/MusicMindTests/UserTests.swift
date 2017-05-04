@@ -54,4 +54,24 @@ class UserTests: XCTestCase {
         wait(for: [e], timeout: 10)
     }
     
+    func testCreatingJohnDoeUserAndTestingMobileNumber() {
+        let e = expectation(description: "test mobile number")
+        let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingMobileNumber")
+        
+        if let ref = user.userRef {
+            ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                if let user = snapshot.value as? [String: Any?] {
+                    if let number = user["mobileNumber"] as? String {
+                        if number == "000-000-0000" {
+                            e.fulfill()
+                        }
+                    }
+                }
+            })
+        }
+        
+        user.mobileNumber = "000-000-0000"
+        
+        wait(for: [e], timeout: 10)
+    }
 }

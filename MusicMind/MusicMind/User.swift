@@ -26,7 +26,13 @@ class User {
             }
         }
     }
-    var mobileNumber: String?
+    var mobileNumber: String? {
+        didSet {
+            if let number = mobileNumber, let userRef = userRef {
+                userRef.setValue(["mobileNumber": number])
+            }
+        }
+    }
     var birthday: Date?
     
     init (newId: String) {
