@@ -10,8 +10,9 @@ import Foundation
 import Firebase
 
 class User {
-    let userRef: FIRDatabaseReference?
+    var userRef: FIRDatabaseReference?
     let id: String?
+    var isAlreadyInFirebase: Bool = false
     var firstName: String? {
         didSet {
             if let firstName = firstName, let userRef = userRef {
@@ -64,5 +65,29 @@ class User {
         birthday = nil
     }
     
+    func pushNewUserToFirebase() {
+        let usersRef = FIRDatabase.database().reference().child("users")
+        userRef = usersRef.childByAutoId()
+        
+        if let userRef = userRef,
+            let firstName = firstName,
+            let lastName = lastName,
+            let mobileNumber = mobileNumber,
+            let birthday = birthday {
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            
+            let birthdayString = formatter.string(from: birthday)
+            
+            userRef.setValue(["firstName": firstName,
+                              "lastName": lastName,
+                              "mobileNumber": mobileNumber,
+                              "birthday": birthdayString])
+            
+            isAlreadyInFirebase = true
+        }
+        
+    }
 
 }
