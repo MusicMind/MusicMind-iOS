@@ -14,7 +14,7 @@ class UserTests: XCTestCase {
     
     func testCreatingJohnDoeUserAndTestingFirstName() {
         let e = expectation(description: "test first name")
-        let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingFirstName")
+        let user = User(withId: "ABC123-testCreatingJohnDoeUserAndTestingFirstName")
         
         if let ref = user.userRef {
             ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
@@ -35,7 +35,7 @@ class UserTests: XCTestCase {
     
     func testCreatingJohnDoeUserAndTestingLastName() {
         let e = expectation(description: "test last name")
-        let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingLastName")
+        let user = User(withId: "ABC123-testCreatingJohnDoeUserAndTestingLastName")
         
         if let ref = user.userRef {
             ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
@@ -56,7 +56,7 @@ class UserTests: XCTestCase {
     
     func testCreatingJohnDoeUserAndTestingMobileNumber() {
         let e = expectation(description: "test mobile number")
-        let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingMobileNumber")
+        let user = User(withId: "ABC123-testCreatingJohnDoeUserAndTestingMobileNumber")
         
         if let ref = user.userRef {
             ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
@@ -77,7 +77,7 @@ class UserTests: XCTestCase {
     
     func testCreatingJohnDoeUserAndTestingBirthday() {
         let e = expectation(description: "test mobile number")
-        let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingBirthday")
+        let user = User(withId: "ABC123-testCreatingJohnDoeUserAndTestingBirthday")
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

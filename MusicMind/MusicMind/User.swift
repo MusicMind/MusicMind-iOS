@@ -55,9 +55,9 @@ class User {
         birthday = nil
     }
     
-    init (newId: String) {
-        userRef = FIRDatabase.database().reference().child("users/\(newId)")
-        id = newId
+    init (withId: String) {
+        userRef = FIRDatabase.database().reference().child("users/\(withId)")
+        id = withId
         firstName = nil
         lastName = nil
         mobileNumber = nil
