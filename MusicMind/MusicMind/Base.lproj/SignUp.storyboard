@@ -62,7 +62,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BYj-Gn-3Pr"/>
                                 </constraints>
-                                <color key="textColor" red="0.41146899790000002" green="0.43159904290000001" blue="0.47103707900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
