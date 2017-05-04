@@ -12,22 +12,21 @@ import Firebase
 
 class UserTests: XCTestCase {
     
-    func testInitForUuid() {
+    func testCreatingJohnDoeUser() {
         let e = expectation(description: "init with uuid")
-        
         let johnDoeUser = User(newId: "fakeUuidForJohnDoe")
         
-        if let userRef = johnDoeUser.userRef {
-            userRef.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
-                print("value changed")
-                print(snapshot.description)
+        if let ref = johnDoeUser.userRef {
+            ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                if let user = snapshot.value as? [String: Any?] {
+                    assert((user["firstName"] as! String) == "John")
+                }
+                
                 e.fulfill()
             })
         }
         
         johnDoeUser.firstName = "John"
-        
-        
         
         wait(for: [e], timeout: 100)
     }
