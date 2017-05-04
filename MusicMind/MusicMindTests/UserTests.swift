@@ -15,7 +15,7 @@ class UserTests: XCTestCase {
     func testInitForUuid() {
         let e = expectation(description: "init with uuid")
         
-        let testUser = User(firebaseUserWithUuid: "fakeUuidForJohnDoe")
+        let testUser = User(newId: "fakeUuidForJohnDoe")
         
         if let currentUserRef = testUser.currentUserRef {
             currentUserRef.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in

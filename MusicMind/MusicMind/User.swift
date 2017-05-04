@@ -9,10 +9,6 @@
 import Foundation
 import Firebase
 
-// Create new user
-// Init preexisting user
-// Update user info
-
 struct User {
     let currentUserRef: FIRDatabaseReference?
     let id: String?
