@@ -74,4 +74,32 @@ class UserTests: XCTestCase {
         
         wait(for: [e], timeout: 10)
     }
+    
+    func testCreatingJohnDoeUserAndTestingBirthday() {
+        let e = expectation(description: "test mobile number")
+        let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingBirthday")
+        
+        let birthdayDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        if let ref = user.userRef {
+            ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                if let user = snapshot.value as? [String: Any?] {
+                    if let dateString = user["birthday"] as? String {
+                        
+                        let date = dateFormatter.date(from: dateString)
+                        
+                        if date == birthdayDate {
+                            e.fulfill()
+                        }
+                    }
+                }
+            })
+        }
+        
+        user.birthday = birthdayDate
+        
+        wait(for: [e], timeout: 10)
+    }
 }
