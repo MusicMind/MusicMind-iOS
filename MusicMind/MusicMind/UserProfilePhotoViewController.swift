@@ -10,6 +10,8 @@ import UIKit
 
 class UserProfilePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBAction func backToSettings(_ sender: UIButton) {
+    }
     
     @IBAction func openPhotoTaker(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
@@ -25,18 +27,36 @@ class UserProfilePhotoViewController: UIViewController, UIImagePickerControllerD
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         if image != nil {
-        photoImageView.image = image!
+            photoImageView.image = image!
+            photoImageView.contentMode = .scaleAspectFit
+            
+            picker.dismiss(animated: true, completion: nil)
+            
+
         }
     }
-    @IBOutlet weak var didTakePhoto: UIImageView!
+    
     // MARK: Properties
     @IBOutlet weak var photoImageView: UIImageView!
+    
     
     @IBAction func showImagePicker(_ sender: Any) {
         let imagePickerVC = UIImagePickerController()
         present(imagePickerVC, animated: true, completion: nil)
         
     }
+    
+    func imageLibraryPickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+            let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            if image != nil {
+                photoImageView.image = image!
+                
+                picker.dismiss(animated: true, completion: nil)
+            }
+        
+        }
+        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
