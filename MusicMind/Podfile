@@ -19,10 +19,5 @@ target 'MusicMind' do
   target 'MusicMindTests' do
       inherit! :complete
   end
-
-  target 'MusicMindUITests' do
-    inherit! :complete
-  end
-
-
+  
 end
