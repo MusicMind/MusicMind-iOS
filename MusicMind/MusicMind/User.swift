@@ -33,7 +33,18 @@ class User {
             }
         }
     }
-    var birthday: Date?
+    var birthday: Date? {
+        didSet {
+            if let birthday = birthday, let userRef = userRef {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                
+                let birthdayString = formatter.string(from: birthday)
+                
+                userRef.setValue(["birthday": birthdayString])
+            }
+        }
+    }
     
     init (newId: String) {
         userRef = FIRDatabase.database().reference().child("users/\(newId)")
