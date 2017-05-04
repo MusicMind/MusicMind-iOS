@@ -14,50 +14,42 @@ class UserTests: XCTestCase {
     
     func testCreatingJohnDoeUserAndTestingFirstName() {
         let e = expectation(description: "test first name")
-        let johnDoeUser = User(newId: "ABC123-fakeUidForJohnDoe")
+        let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingFirstName")
         
-        if let ref = johnDoeUser.userRef {
+        if let ref = user.userRef {
             ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
                 if let user = snapshot.value as? [String: Any?] {
-                    
-                    if let firstName = user["firstName"] as? String {
-                        if firstName == "John" {
+                    if let name = user["firstName"] as? String {
+                        if name == "John" {
                             e.fulfill()
                         }
                     }
                 }
-                
-                
-                
             })
         }
         
-        johnDoeUser.firstName = "John"
+        user.firstName = "John"
         
         wait(for: [e], timeout: 10)
     }
     
     func testCreatingJohnDoeUserAndTestingLastName() {
         let e = expectation(description: "test last name")
-        let johnDoeUser = User(newId: "ABC123-fakeUidForJohnDoe")
+        let user = User(newId: "ABC123-testCreatingJohnDoeUserAndTestingLastName")
         
-        if let ref = johnDoeUser.userRef {
+        if let ref = user.userRef {
             ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
                 if let user = snapshot.value as? [String: Any?] {
-                    
-                    if let lastName = user["lastName"] as? String {
-                        if lastName == "Doe" {
+                    if let name = user["lastName"] as? String {
+                        if name == "Doe" {
                             e.fulfill()
                         }
                     }
                 }
-                
-
-                
             })
         }
         
-        johnDoeUser.lastName = "Doe"
+        user.lastName = "Doe"
         
         wait(for: [e], timeout: 10)
     }
