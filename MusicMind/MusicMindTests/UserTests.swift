@@ -21,8 +21,11 @@ class UserTests: XCTestCase {
             userRef.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
                 print("value changed")
                 print(snapshot.description)
+                e.fulfill()
             })
         }
+        
+        johnDoeUser.firstName = "John"
         
         
         

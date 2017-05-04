@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct User {
+class User {
     let userRef: FIRDatabaseReference?
     let id: String?
     var firstName: String? {
