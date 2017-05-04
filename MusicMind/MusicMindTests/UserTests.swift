@@ -12,23 +12,54 @@ import Firebase
 
 class UserTests: XCTestCase {
     
-    func testCreatingJohnDoeUser() {
-        let e = expectation(description: "init with uuid")
-        let johnDoeUser = User(newId: "fakeUuidForJohnDoe")
+    func testCreatingJohnDoeUserAndTestingFirstName() {
+        let e = expectation(description: "test first name")
+        let johnDoeUser = User(newId: "ABC123-fakeUidForJohnDoe")
         
         if let ref = johnDoeUser.userRef {
             ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
                 if let user = snapshot.value as? [String: Any?] {
-                    assert((user["firstName"] as! String) == "John")
+                    
+                    if let firstName = user["firstName"] as? String {
+                        if firstName == "John" {
+                            e.fulfill()
+                        }
+                    }
                 }
                 
-                e.fulfill()
+                
+                
             })
         }
         
         johnDoeUser.firstName = "John"
         
-        wait(for: [e], timeout: 100)
+        wait(for: [e], timeout: 10)
+    }
+    
+    func testCreatingJohnDoeUserAndTestingLastName() {
+        let e = expectation(description: "test last name")
+        let johnDoeUser = User(newId: "ABC123-fakeUidForJohnDoe")
+        
+        if let ref = johnDoeUser.userRef {
+            ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                if let user = snapshot.value as? [String: Any?] {
+                    
+                    if let lastName = user["lastName"] as? String {
+                        if lastName == "Doe" {
+                            e.fulfill()
+                        }
+                    }
+                }
+                
+
+                
+            })
+        }
+        
+        johnDoeUser.lastName = "Doe"
+        
+        wait(for: [e], timeout: 10)
     }
     
 }

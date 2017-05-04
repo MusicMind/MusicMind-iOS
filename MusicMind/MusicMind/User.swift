@@ -19,7 +19,13 @@ class User {
             }
         }
     }
-    var lastName: String?
+    var lastName: String? {
+        didSet {
+            if let lastName = lastName, let userRef = userRef {
+                userRef.setValue(["lastName": lastName])
+            }
+        }
+    }
     var mobileNumber: String?
     var birthday: Date?
     
