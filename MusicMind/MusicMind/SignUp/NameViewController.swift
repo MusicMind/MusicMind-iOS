@@ -14,10 +14,10 @@ class NameViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
-//    var newUser = User()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        user = User(newId: "aaaaaaa")
         
         setupNavigationBar(theme: .light)
         
@@ -37,8 +37,8 @@ class NameViewController: UIViewController {
                 return
         }
         
-//        newUser.firstName = firstName
-//        newUser.lastName = lastName
+        user?.firstName = firstName
+        user?.lastName = lastName
     }
     
 }
