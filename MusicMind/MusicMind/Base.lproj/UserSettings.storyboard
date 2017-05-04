@@ -28,18 +28,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prH-jM-TI5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                                    <connections>
-                                                        <action selector="signOut:" destination="254-1z-MR1" eventType="touchUpInside" id="Sqe-Az-Lhs"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpU-ZX-0HP">
-                                                    <rect key="frame" x="17" y="11" width="64.5" height="23.5"/>
+                                                    <rect key="frame" x="17" y="10" width="64.5" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prH-jM-TI5">
+                                                    <rect key="frame" x="0.0" y="8" width="375" height="44"/>
+                                                    <connections>
+                                                        <action selector="signOut:" destination="254-1z-MR1" eventType="touchUpInside" id="Sqe-Az-Lhs"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="PpU-ZX-0HP" firstAttribute="leading" secondItem="KrD-Jb-5b0" secondAttribute="leadingMargin" constant="9" id="3d2-aH-Yo1"/>
@@ -62,10 +62,11 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <connections>
                                                         <action selector="showImagePicker:" destination="254-1z-MR1" eventType="touchUpInside" id="oVx-Ic-MNx"/>
+                                                        <segue destination="1rl-D1-Zpv" kind="presentation" id="0zc-xf-NHX"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Profile Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIt-T2-9DR">
-                                                    <rect key="frame" x="17" y="10" width="164" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIt-T2-9DR">
+                                                    <rect key="frame" x="17" y="10" width="84" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -81,15 +82,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="88" id="3fY-jb-0SF" userLabel="Info Table View Cell">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="90" id="3fY-jb-0SF" userLabel="Info Table View Cell">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3fY-jb-0SF" id="l46-oN-0Un">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTz-vz-Cos" userLabel="info label">
-                                                    <rect key="frame" x="15" y="33.5" width="345.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="34.5" width="345.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" red="0.41146899790000002" green="0.43159904290000001" blue="0.47103707900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -118,7 +119,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCT-ws-3Zp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="27"/>
+            <point key="canvasLocation" x="16.800000000000001" y="26.53673163418291"/>
+        </scene>
+        <!--UserProfilePhoto-->
+        <scene sceneID="TKO-SF-STH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserProfilePhoto" referencedIdentifier="UserProfilePhoto" id="1rl-D1-Zpv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rau-50-4aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679" y="19"/>
         </scene>
     </scenes>
 </document>

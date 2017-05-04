@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2749E01EBBBC1D00BC77F8 /* UserProfilePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2749DF1EBBBC1D00BC77F8 /* UserProfilePhoto.storyboard */; };
 		0C8ACDAC1EB92D33003278C9 /* UserProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8ACDAB1EB92D33003278C9 /* UserProfilePhotoViewController.swift */; };
-		0C8ACDAE1EB92F69003278C9 /* UserProfilePhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C8ACDAD1EB92F69003278C9 /* UserProfilePhoto.storyboard */; };
 		0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */; };
@@ -100,8 +100,8 @@
 
 /* Begin PBXFileReference section */
 		097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2749DF1EBBBC1D00BC77F8 /* UserProfilePhoto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfilePhoto.storyboard; sourceTree = "<group>"; };
 		0C8ACDAB1EB92D33003278C9 /* UserProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoViewController.swift; sourceTree = "<group>"; };
-		0C8ACDAD1EB92F69003278C9 /* UserProfilePhoto.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfilePhoto.storyboard; sourceTree = "<group>"; };
 		0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailPasswordViewController.swift; path = SignUp/EmailPasswordViewController.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		0C8ACDAA1EB92CA3003278C9 /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
-				0C8ACDAD1EB92F69003278C9 /* UserProfilePhoto.storyboard */,
+				0C2749DF1EBBBC1D00BC77F8 /* UserProfilePhoto.storyboard */,
 				0C8ACDAB1EB92D33003278C9 /* UserProfilePhotoViewController.swift */,
 			);
 			name = "User Profile";
@@ -626,10 +626,10 @@
 				DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */,
 				0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */,
 				DE860DF11E93626D00393B03 /* MusicSearch.storyboard in Resources */,
+				0C2749E01EBBBC1D00BC77F8 /* UserProfilePhoto.storyboard in Resources */,
 				DE85E5C41EB1279E005FFEB9 /* UserSettings.storyboard in Resources */,
 				DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */,
-				0C8ACDAE1EB92F69003278C9 /* UserProfilePhoto.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

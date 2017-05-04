@@ -9,40 +9,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile Photo View Controller-->
-        <scene sceneID="Uro-g2-NFb">
+        <!--User Profile Photo View Controller-->
+        <scene sceneID="qmE-5d-6jd">
             <objects>
-                <viewController id="a6q-6h-IXK" customClass="ProfilePhotoViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="UserProfilePhoto" storyboardIdentifier="UserProfilePhoto" id="Lj7-l7-gCi" customClass="UserProfilePhotoViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oAd-Sk-ALS"/>
-                        <viewControllerLayoutGuide type="bottom" id="Dez-sR-vgp"/>
+                        <viewControllerLayoutGuide type="top" id="pGJ-3B-MPw"/>
+                        <viewControllerLayoutGuide type="bottom" id="vW5-9P-2Eh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ReZ-gt-b7q">
+                    <view key="view" contentMode="scaleToFill" id="qqc-aI-N9U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Wl-vV-BFS">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80e-Kl-9di">
+                                <rect key="frame" x="316" y="617" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="library"/>
+                                <connections>
+                                    <action selector="showImagePicker:" destination="Lj7-l7-gCi" eventType="touchUpInside" id="H23-fm-gxi"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ut0-tY-5FA">
+                                <rect key="frame" x="68" y="269" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3M-JF-Wbj">
+                                <rect key="frame" x="150" y="617" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="take photo"/>
+                                <connections>
+                                    <action selector="openPhotoTaker:" destination="Lj7-l7-gCi" eventType="touchUpInside" id="lPq-SQ-iif"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="AXr-k9-Qlg">
-                            <connections>
-                                <action selector="showImagePicker:" destination="a6q-6h-IXK" id="g38-sS-Nwm"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="photoImageView" destination="3Wl-vV-BFS" id="abW-6w-Tas"/>
+                        <outlet property="didTakePhoto" destination="Ut0-tY-5FA" id="Xrt-Pz-yge"/>
+                        <outlet property="photoImageView" destination="Ut0-tY-5FA" id="Yol-HX-ogC"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xym-OE-rt9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PgH-Xe-m9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31" y="157"/>
+            <point key="canvasLocation" x="54" y="49"/>
         </scene>
     </scenes>
 </document>

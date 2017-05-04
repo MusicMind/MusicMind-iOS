@@ -8,8 +8,27 @@
 
 import UIKit
 
-class ProfilePhotoViewController: UIViewController {
+class UserProfilePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
+    @IBAction func openPhotoTaker(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.sourceType = .camera
+        
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if image != nil {
+        photoImageView.image = image!
+        }
+    }
+    @IBOutlet weak var didTakePhoto: UIImageView!
     // MARK: Properties
     @IBOutlet weak var photoImageView: UIImageView!
     
@@ -17,10 +36,6 @@ class ProfilePhotoViewController: UIViewController {
         let imagePickerVC = UIImagePickerController()
         present(imagePickerVC, animated: true, completion: nil)
         
-        func isSourceTypeAvailable(_ sourceType: UIImagePickerControllerSourceType) -> Bool{
-            
-            return true
-        }
     }
     
     override func viewDidLoad() {
