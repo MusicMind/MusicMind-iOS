@@ -17,6 +17,8 @@ class UserSettingsViewController: UITableViewController {
         do {
             try FIRAuth.auth()?.signOut()
             
+            user = User()
+            
             let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
             let welcomeViewController = storyboard.instantiateInitialViewController()
             
