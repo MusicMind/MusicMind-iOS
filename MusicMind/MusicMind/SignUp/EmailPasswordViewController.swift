@@ -60,7 +60,7 @@ class EmailPasswordViewController: UIViewController {
         userLoginCredentials.firebaseUserEmail = email
         userLoginCredentials.firebaseUserPassword = password
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (fbAuthUser, error) in
             //TODO: handle error 17001 when the user exists in fire base
             
             func presentErrorWith(string: String){
@@ -89,8 +89,7 @@ class EmailPasswordViewController: UIViewController {
             
             self.goToCameraCapture()
             
-            // Post new user to firebase
-
+            user.pushNewUserToFirebase()
         })
         
     }
