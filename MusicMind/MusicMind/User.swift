@@ -73,15 +73,6 @@ class User {
         email = nil
     }
     
-//    init (withId: String) {
-//        userRef = FIRDatabase.database().reference().child("users/\(withId)")
-//        id = withId
-//        firstName = nil
-//        lastName = nil
-//        mobileNumber = nil
-//        birthday = nil
-//    }
-    
     func pushNewUserToFirebaseDatabase(assosiatedWithAuthUser authUser: FIRUser) {
         userRef = FIRDatabase.database().reference().child("users/\(authUser.uid)")
         
