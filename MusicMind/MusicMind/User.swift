@@ -10,7 +10,14 @@ import Foundation
 import Firebase
 
 class User {
-    var userRef: FIRDatabaseReference?
+    var userRef: FIRDatabaseReference? {
+        didSet {
+            // Create an observer for entire user listing in firebase that will update the values of user instance when updates are made to firebase database.
+            userRef?.observe(.value, with: { (snapshot) in
+                // code
+            })
+        }
+    }
     let id: String?
     var isAlreadyInFirebase: Bool = false
     var firstName: String? {
