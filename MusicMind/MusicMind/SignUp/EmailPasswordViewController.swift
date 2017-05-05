@@ -90,7 +90,7 @@ class EmailPasswordViewController: UIViewController {
             self.goToCameraCapture()
             
             if let fbAuthUser = fbAuthUser {
-                user.pushNewUserToFirebase(withId: fbAuthUser.uid)
+                user.pushNewUserToFirebaseDatabase(assosiatedWithAuthUser: fbAuthUser)
             }
         })
         

@@ -26,8 +26,8 @@ class User {
             })
         }
     }
+    var firebaseAuthUser: FIRUser?
     let id: String?
-    var isAlreadyInFirebase: Bool = false
     var firstName: String? {
         didSet {
             if let firstName = firstName, let userRef = userRef {
@@ -71,19 +71,17 @@ class User {
         birthday = nil
     }
     
-    init (withId: String) {
-        userRef = FIRDatabase.database().reference().child("users/\(withId)")
-        id = withId
-        firstName = nil
-        lastName = nil
-        mobileNumber = nil
-        birthday = nil
-    }
+//    init (withId: String) {
+//        userRef = FIRDatabase.database().reference().child("users/\(withId)")
+//        id = withId
+//        firstName = nil
+//        lastName = nil
+//        mobileNumber = nil
+//        birthday = nil
+//    }
     
-    func pushNewUserToFirebase(withId: String) {
-        let usersRef = FIRDatabase.database().reference().child("users")
-        userRef = FIRDatabase.database().reference().child("users/\(withId)")
-
+    func pushNewUserToFirebaseDatabase(assosiatedWithAuthUser authUser: FIRUser) {
+        userRef = FIRDatabase.database().reference().child("users/\(authUser.uid)")
         
         if let userRef = userRef,
             let firstName = firstName,
@@ -99,11 +97,27 @@ class User {
             userRef.setValue(["firstName": firstName,
                               "lastName": lastName,
                               "mobileNumber": mobileNumber,
-                              "birthday": birthdayString])
+                              "birthday": birthdayString],
+                             withCompletionBlock: { (error, ref) in
+                                // completion code
+            })
             
-            isAlreadyInFirebase = true
+            
         }
         
     }
+    
+    init(withAuthUser authUser: FIRUser) {
+        userRef = FIRDatabase.database().reference().child("users/\(authUser.uid)")
+        
+        // TODO: fetch single and set all values for self from the snapshot
+        
+        id = authUser.uid
+        firstName = nil
+        lastName = nil
+        mobileNumber = nil
+        birthday = nil
+    }
+
 
 }

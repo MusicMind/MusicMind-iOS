@@ -107,7 +107,7 @@ class UserTests: XCTestCase {
         let e = expectation(description: "test push new user")
         let user = User()
         
-        user.pushNewUserToFirebase()
+//        user.pushNewUserToFirebase()
         
         if let ref = user.userRef {
             ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
