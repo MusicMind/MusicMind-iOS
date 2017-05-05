@@ -102,4 +102,29 @@ class UserTests: XCTestCase {
         
         wait(for: [e], timeout: 10)
     }
+    
+    func testPushNewUserToFirebase() {
+        let e = expectation(description: "test push new user")
+        let user = User()
+        
+        user.firstName = "Test"
+        
+        user.pushNewUserToFirebase()
+        
+        if let ref = user.userRef {
+            ref.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                if let user = snapshot.value as? [String: Any?] {
+                    if let name = user["firstName"] as? String {
+                        if name == "John" {
+                            e.fulfill()
+                        }
+                    }
+                }
+            })
+        }
+        
+        user.firstName = "John"
+        
+        wait(for: [e], timeout: 10)
+    }
 }
