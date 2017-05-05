@@ -61,6 +61,7 @@ class User {
             }
         }
     }
+    private(set) var email: String?
     
     init() {
         userRef = nil
@@ -69,6 +70,7 @@ class User {
         lastName = nil
         mobileNumber = nil
         birthday = nil
+        email = nil
     }
     
 //    init (withId: String) {
@@ -117,6 +119,7 @@ class User {
         lastName = nil
         mobileNumber = nil
         birthday = nil
+        email = nil
     }
 
 
