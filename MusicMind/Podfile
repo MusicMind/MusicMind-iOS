@@ -11,7 +11,6 @@ target 'MusicMind' do
   pod 'Firebase/Auth', '~> 3.15.0'
   pod 'Firebase/Storage', '~> 3.15.0'
   pod 'Firebase/Database', '~> 3.15.0'
-  pod 'KeychainSwift'
   pod 'Alamofire'
   pod 'SinchVerification-Swift'
   pod 'RecordButton', :git => 'https://github.com/felipericieri/RecordButton.git'
