@@ -106,7 +106,6 @@ class UserTests: XCTestCase {
     func testPushNewUserToFirebase() {
         let e = expectation(description: "test push new user")
         let user = User()
-//        let user = User(withId: "ABC123-testCreatingJohnDoeUserAndTestingLastName")
         
         user.pushNewUserToFirebase()
         
@@ -121,7 +120,6 @@ class UserTests: XCTestCase {
                 }
             })
         }
-        
         
         user.firstName = "test"
         

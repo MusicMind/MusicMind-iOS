@@ -12,9 +12,13 @@ import Firebase
 class User {
     var userRef: FIRDatabaseReference? {
         didSet {
-            // Create an observer for entire user listing in firebase that will update the values of user instance when updates are made to firebase database.
+            // Create an observer for entire user listing in firebase that will update the values of this user instance when updates are made to firebase
             userRef?.observe(.value, with: { (snapshot) in
-                // code
+                
+                if let user = snapshot.value as? [String: Any?] {
+                    print(user.debugDescription)
+                }
+                
             })
         }
     }
