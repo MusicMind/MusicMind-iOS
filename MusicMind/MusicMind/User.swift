@@ -14,9 +14,13 @@ class User {
         didSet {
             // Create an observer for entire user listing in firebase that will update the values of this user instance when updates are made to firebase
             userRef?.observe(.value, with: { (snapshot) in
-                
                 if let user = snapshot.value as? [String: Any?] {
                     print(user.debugDescription)
+                    
+                    if let firstName = user["firstName"] as? String {
+                        self.firstName = firstName
+                    }
+                    
                 }
                 
             })
@@ -76,9 +80,10 @@ class User {
         birthday = nil
     }
     
-    func pushNewUserToFirebase() {
+    func pushNewUserToFirebase(withId: String) {
         let usersRef = FIRDatabase.database().reference().child("users")
-        userRef = usersRef.childByAutoId()
+        userRef = FIRDatabase.database().reference().child("users/\(withId)")
+
         
         if let userRef = userRef,
             let firstName = firstName,
