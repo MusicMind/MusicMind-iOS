@@ -56,10 +56,6 @@ class EmailPasswordViewController: UIViewController {
                 return
         }
         
-        // Save log in info to keychain
-        userLoginCredentials.firebaseUserEmail = email
-        userLoginCredentials.firebaseUserPassword = password
-        
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (fbAuthUser, error) in
             //TODO: handle error 17001 when the user exists in fire base
             
