@@ -187,7 +187,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			var defaultVideoDevice: AVCaptureDevice?
 			
 			// Choose the back dual camera if available, otherwise default to a wide angle camera.
-			if let dualCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInDualCamera, mediaType: AVMediaTypeVideo, position: .back) {
+			if let dualCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .back) {
 				defaultVideoDevice = dualCameraDevice
 			}
 			else if let backCameraDevice = AVCaptureDevice.defaultDevice(withDeviceType: .builtInWideAngleCamera, mediaType: AVMediaTypeVideo, position: .back) {
@@ -361,7 +361,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 	// MARK: Device Configuration
 	
 		
-	private let videoDeviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera, .builtInDualCamera], mediaType: AVMediaTypeVideo, position: .unspecified)!
+	private let videoDeviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: .unspecified)!
 	
 	func changeCamera() {
         self.delegate?.shouldEnableCameraUI(enabled: false)
@@ -377,7 +377,7 @@ class APPLCameraViewController: UIViewController, AVCaptureFileOutputRecordingDe
 			switch currentPosition {
 				case .unspecified, .front:
 					preferredPosition = .back
-					preferredDeviceType = .builtInDualCamera
+					preferredDeviceType = .builtInWideAngleCamera
 				
 				case .back:
 					preferredPosition = .front
