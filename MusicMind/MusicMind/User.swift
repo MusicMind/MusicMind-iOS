@@ -15,12 +15,47 @@ class User {
             // Create an observer for entire user listing in firebase that will update the values of this user instance when updates are made to firebase
             userRef?.observe(.value, with: { (snapshot) in
                 if let user = snapshot.value as? [String: Any?] {
-                    print(user.debugDescription)
                     
+                    // First name
                     if let firstName = user["firstName"] as? String {
-                        self.firstName = firstName
+                        self.lastName = firstName
                     }
                     
+                    // Last name
+                    if let lastName = user["lastName"] as? String {
+                        self.lastName = lastName
+                    }
+                    
+                    // Mobile number
+                    if let mobileNumber = user["mobileNumber"] as? String {
+                        self.mobileNumber = mobileNumber
+                    }
+                    
+                    // Email
+                    if let email = user["email"] as? String {
+                        self.email = email
+                    }
+                    
+                    // Profile photo
+                    if let profilePhotoUrlString = user["profilePhoto"] as? String {
+                        let profilePhotoUrl = URL(string: profilePhotoUrlString)
+                        
+                        if let profilePhotoUrl = profilePhotoUrl {
+                            self.profilePhoto = profilePhotoUrl
+                        }
+                    }
+                    
+                    // Birthday
+                    if let birthdayString = user["birthday"] as? String {
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "yyyy-MM-dd"
+                        
+                        let birthdayDate = formatter.date(from: birthdayString)
+                        
+                        if let birthdayDate = birthdayDate {
+                            self.birthday = birthdayDate
+                        }
+                    }
                 }
                 
             })
