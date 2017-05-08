@@ -17,8 +17,30 @@ class User {
     private var observerHandle: UInt? = nil
     var firstName: String? = nil {
         didSet {
-            if let firstName = firstName, let userRef = userRef {
-                userRef.setValue(["firstName": firstName])
+            if let userRef = userRef {
+                if let firstName = firstName {
+                    userRef.setValue(["firstName": firstName])
+                } else {
+                    // remove value from firebase
+                }
+                
+                userRef.child("firstName").observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                    // set self with new value
+                    
+                    if let name = snapshot.value as? String {
+                        print(name)
+                    }
+                    
+                    // First name
+//                    if let firstName = user["firstName"] as? String {
+//                        if firstName != self.firstName {
+//                            self.firstName = firstName
+//                        }
+//                    }
+                    
+                    print(snapshot.value as? [String: Any])
+                })
+                
             }
         }
     }
@@ -64,110 +86,24 @@ class User {
         }
         
         if let userRef = userRef {
-            
-            // Construct a dictionary out of all non-nil properties then send to firebase
+            // Construct a dictionary out of all non-nil properties and send to firebase
             var dictionaryRepresentation: [String: String] = [:]
             
-            // First name
-            if let firstName = firstName {
-                dictionaryRepresentation["firstName"] = firstName
-            }
-            
-            // Last name
-            if let lastName = lastName {
-                dictionaryRepresentation["lastName"] = lastName
-            }
-            
-            // Mobile number
-            if let mobileNumber = mobileNumber {
-                dictionaryRepresentation["mobileNumber"] = mobileNumber
-            }
-            
-            // Email
-            if let email = email {
-                dictionaryRepresentation["email"] = email
-            }
-            
-            // Profile photo
-            if let profilePhoto = profilePhoto {
-                dictionaryRepresentation["profilePhoto"] = profilePhoto.absoluteString
-            }
-            
-            // Birthday
-            if let birthday = birthday {
+            if let firstName    = firstName { dictionaryRepresentation["firstName"] = firstName }
+            if let lastName     = lastName { dictionaryRepresentation["lastName"] = lastName }
+            if let mobileNumber = mobileNumber { dictionaryRepresentation["mobileNumber"] = mobileNumber }
+            if let email        = email { dictionaryRepresentation["email"] = email }
+            if let profilePhoto = profilePhoto { dictionaryRepresentation["profilePhoto"] = profilePhoto.absoluteString }
+            if let birthday     = birthday {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
-                
                 let birthdayString = formatter.string(from: birthday)
-                
                 dictionaryRepresentation["birthday"] = birthdayString
             }
 
             userRef.setValue(dictionaryRepresentation) { (error, ref) in
-                
                 if let error = error {
                     print(error.localizedDescription)
-                } else {
-                
-                    // Create an observer for entire user listing in firebase that will update the values of this user instance when updates are made to firebase
-
-                    let handle = userRef.observe(.value, with: { snapshot in
-                        if let user = snapshot.value as? [String: Any?] {
-                            
-                            // First name
-                            if let firstName = user["firstName"] as? String {
-                                if firstName != self.firstName {
-                                    self.firstName = firstName
-                                }
-                            }
-                            
-                            // Last name
-                            if let lastName = user["lastName"] as? String {
-                                if lastName != self.lastName {
-                                    self.lastName = lastName
-                                }
-                            }
-                            
-                            // Mobile number
-                            if let mobileNumber = user["mobileNumber"] as? String {
-                                if mobileNumber != self.mobileNumber {
-                                    self.mobileNumber = mobileNumber
-                                }
-                            }
-                            
-                            // Email
-                            if let email = user["email"] as? String {
-                                if email != self.email {
-                                    self.email = email
-                                }
-                            }
-                            
-                            // Profile photo
-                            if let profilePhotoUrlString = user["profilePhoto"] as? String {
-                                let profilePhotoUrl = URL(string: profilePhotoUrlString)
-                                
-                                if let profilePhotoUrl = profilePhotoUrl {
-                                    if profilePhotoUrl != self.profilePhoto {
-                                        self.profilePhoto = profilePhotoUrl
-                                    }
-                                }
-                            }
-                            
-                            // Birthday
-                            if let birthdayString = user["birthday"] as? String {
-                                let formatter = DateFormatter()
-                                formatter.dateFormat = "yyyy-MM-dd"
-                                
-                                let birthdayDate = formatter.date(from: birthdayString)
-                                
-                                if let birthdayDate = birthdayDate {
-                                    if birthdayDate != self.birthday {
-                                        self.birthday = birthdayDate
-                                    }
-                                }
-                            }
-                        }
-                    })
                 }
             }
         }
@@ -178,8 +114,6 @@ class User {
         
         userRef = FIRDatabase.database().reference().child("users/\(authUser.uid)")
         
-        // TODO: fetch single and set all values for self from the snapshot
-        
         id = authUser.uid
         firstName = nil
         lastName = nil
@@ -188,6 +122,5 @@ class User {
         email = nil
         profilePhoto = nil
     }
-
 
 }
