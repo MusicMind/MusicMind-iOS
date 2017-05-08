@@ -93,6 +93,32 @@ class User {
             // Construct a dictionary out of all non-nil properties then send to firebase
             var dictionaryRepresentation: [String: String] = [:]
             
+            // First name
+            if let firstName = firstName {
+                dictionaryRepresentation["firstName"] = firstName
+            }
+            
+            // Last name
+            if let lastName = lastName {
+                dictionaryRepresentation["lastName"] = lastName
+            }
+            
+            // Mobile number
+            if let mobileNumber = mobileNumber {
+                dictionaryRepresentation["mobileNumber"] = mobileNumber
+            }
+            
+            // Email
+            if let email = email {
+                dictionaryRepresentation["email"] = email
+            }
+            
+            // Profile photo
+            if let profilePhoto = profilePhoto {
+                dictionaryRepresentation["profilePhoto"] = profilePhoto.absoluteString
+            }
+            
+            // Birthday
             if let birthday = birthday {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
