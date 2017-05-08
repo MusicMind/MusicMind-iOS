@@ -30,7 +30,7 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
     var conversations = [Conversation]()
     
     var convID : Int64!
-    var conversation : Conversation!
+    
     
     var messagesDisplayed = 0
     let ownID: String! = UserDefaults.standard.string(forKey: "userID")
@@ -43,38 +43,6 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     
-    func loadConversation() {
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Conversation")
-        
-        // Create a sort descriptor object that sorts based on timeAgo posted
-        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: true)
-        
-        // Set the list of sort descriptors in the fetch request, so it includes the sort descriptor
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        
-        // Create a new predicate that filters out any conversation other than the current one
-        let predicate = NSPredicate(format: "conversationID == %@", String(convID))
-        
-        // Set the predicate on the fetch request
-        fetchRequest.predicate = predicate
-        
-        if let fetchResults = (try? managedObjectContext.fetch(fetchRequest)) as? [Conversation] {
-            conversations = fetchResults
-        }
-        
-        if conversations.count == 0 {
-            presentingViewController?.dismiss(animated: true, completion: nil)
-        } else if conversations.count == 1 {
-            
-            // Get the last message (for use in message previews on previous screen)
-            let pMes: [Message]! = conversations[0].messages
-            let mes: Message! = pMes[pMes.count-1]
-            
-            // ************************  Extract Conversation Info ****************************************************
-        }
-    }
     
     
     func checkNewMessages(_ timer: Timer) {
@@ -84,7 +52,7 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     func loadMessages() {
-        fetchCache()
+        loadConversation()
         if numMes < Int(conversations[0].messageNum) {
             messages = conversations[0].messages
             numMes = Int(conversations[0].messageNum)
@@ -101,7 +69,7 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
         numMes = numMes+1
         conversations[0].messageNum = Int16(numMes)
         conversations[0].timeStamp = message.timeStamp
-        // Save conversation instead of former conversation
+        
         save()
         
     }
@@ -112,12 +80,12 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
             messages[row].status = 2
         }
         conversations[0].messages = messages
-        // Save conversation instead of former conversation
+        
         save()
     }
     
     
-    func fetchCache() {
+    func loadConversation() {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Conversation")
         
@@ -142,11 +110,7 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     func save() {
-        do {
-            try managedObjectContext.save()
-        } catch {
-            // let nserror = error as NSError
-        }
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
     
@@ -170,7 +134,7 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
         loadMessages()
         
         
-        partnerLabel.text = conversation.partnerName
+        partnerLabel.text = conversations[0].partnerName
         
         
         
