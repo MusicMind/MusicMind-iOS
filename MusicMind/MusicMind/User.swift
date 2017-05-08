@@ -18,22 +18,30 @@ class User {
                     
                     // First name
                     if let firstName = user["firstName"] as? String {
-                        self.lastName = firstName
+                        if firstName != self.firstName {
+                            self.firstName = firstName
+                        }
                     }
                     
                     // Last name
                     if let lastName = user["lastName"] as? String {
-                        self.lastName = lastName
+                        if lastName != self.lastName {
+                            self.lastName = lastName
+                        }
                     }
                     
                     // Mobile number
                     if let mobileNumber = user["mobileNumber"] as? String {
-                        self.mobileNumber = mobileNumber
+                        if mobileNumber != self.mobileNumber {
+                            self.mobileNumber = mobileNumber
+                        }
                     }
                     
                     // Email
                     if let email = user["email"] as? String {
-                        self.email = email
+                        if email != self.email {
+                            self.email = email
+                        }
                     }
                     
                     // Profile photo
@@ -41,7 +49,9 @@ class User {
                         let profilePhotoUrl = URL(string: profilePhotoUrlString)
                         
                         if let profilePhotoUrl = profilePhotoUrl {
-                            self.profilePhoto = profilePhotoUrl
+                            if profilePhotoUrl != self.profilePhoto {
+                                self.profilePhoto = profilePhotoUrl
+                            }
                         }
                     }
                     
@@ -53,11 +63,12 @@ class User {
                         let birthdayDate = formatter.date(from: birthdayString)
                         
                         if let birthdayDate = birthdayDate {
-                            self.birthday = birthdayDate
+                            if birthdayDate != self.birthday {
+                                self.birthday = birthdayDate
+                            }
                         }
                     }
                 }
-                
             })
         }
     }
