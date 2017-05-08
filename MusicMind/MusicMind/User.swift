@@ -62,6 +62,7 @@ class User {
         }
     }
     private(set) var email: String?
+    var profilePhoto: URL?
     
     init() {
         userRef = nil
@@ -71,6 +72,7 @@ class User {
         mobileNumber = nil
         birthday = nil
         email = nil
+        profilePhoto = nil
     }
     
     func pushNewUserToFirebaseDatabase(assosiatedWithAuthUser authUser: FIRUser) {
@@ -111,6 +113,7 @@ class User {
         mobileNumber = nil
         birthday = nil
         email = nil
+        profilePhoto = nil
     }
 
 
