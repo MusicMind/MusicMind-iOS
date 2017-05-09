@@ -51,7 +51,13 @@ class BirthdayViewController: UIViewController {
             })
         }
         
-//        user.birthday = birthDate
+        if var user = user {
+            user.birthday = birthDate
+            
+            if let emailVC = segue.destination as? EmailPasswordViewController {
+                emailVC.user = user
+            }
+        }
     }
 
 }

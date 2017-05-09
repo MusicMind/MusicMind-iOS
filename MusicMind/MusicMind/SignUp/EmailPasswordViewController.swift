@@ -15,6 +15,7 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
