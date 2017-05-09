@@ -343,11 +343,10 @@
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DE783F431EAFC4FF0007877A /* Platform.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
+				0F1DE2591E9327C60032A49A /* User.swift */,
 				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
 				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
-				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
-				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
 				DE6494251E7CE670003D92D0 /* Log in */,
 				DE860DDC1E935F6D00393B03 /* Forgot password */,
 				0FD0256F1E6B4BD500E59E95 /* Camera capture */,
@@ -428,6 +427,7 @@
 		DE860DDB1E935F1B00393B03 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
 				DE860DEA1E93618900393B03 /* Welcome.storyboard */,
 				DE860DE61E93617700393B03 /* WelcomeViewController.swift */,
 			);

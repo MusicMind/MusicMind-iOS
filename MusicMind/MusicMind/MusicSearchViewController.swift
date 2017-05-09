@@ -8,14 +8,20 @@
 
 import UIKit
 import Alamofire
+import AVFoundation
 
 class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
+    var player = AVAudioPlayer()
+    
+    @IBOutlet weak var playPause: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
 
     // MARK: - View controller lifecycle
     
@@ -110,6 +116,10 @@ extension MusicSearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
+        if spotifyStreamingController.loggedIn {
+            
+        }
+        
         Alamofire.request("https://api.spotify.com/v1/search?q=\(searchText)&type=track").responseString { response in
             debugPrint(response)
             
@@ -156,6 +166,7 @@ extension MusicSearchViewController: UITextViewDelegate {
 }
 
 // MARK: - Table view delegates
+
 extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -163,6 +174,11 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
             if let items = tracks["items"] as? [[String: Any]] {
                 let index = items[indexPath.row]
                 let trackURI = index["uri"] as? String
+                print(trackURI)
+                
+//                  downloadFileFromURL(url: URL(string: trackURI!)!)
+//                    play(url: URL(string: trackURI!)!)
+//                playPause.setTitle("Pause", for: .normal)
 
                 spotifyStreamingController.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
                     error in
@@ -174,6 +190,48 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
             }
         }
     }
+    
+  
+    // Play Pause Audio
+    
+//    func downloadFileFromURL(url: URL) {
+//        print(url)
+//        var downloadTask = URLSessionDownloadTask()
+//            downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: {
+//            customURL, response, error in
+//            
+//            self.play(url: customURL!)
+//            
+//        })
+//        
+//        downloadTask.resume()
+//    }
+
+//    func play(url: URL) {
+//        
+//        do {
+//            player = try AVAudioPlayer(contentsOf: url)
+//            player.prepareToPlay()
+//            player.play()
+//        }
+//        catch {
+//            print(error)
+//        }
+//    }
+//
+//    @IBAction func playPauseAction(_ sender: Any) {
+//        
+//        if player.isPlaying {
+//            player.pause()
+//            playPause.setTitle("Play", for: .normal)
+//        }
+//        else {
+//            player.play()
+//            playPause.setTitle("Pause", for: .normal)
+//        }
+//    }
+    
+    // End Play/Pause Audio
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -190,13 +248,16 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
                 let index = items[indexPath.row]
-                    
-                cell.textLabel?.text = index["name"] as? String
+                
+                
+                let songLabel = cell.viewWithTag(4) as! UILabel
+                songLabel.text = index["name"] as? String
                 
                 if let album = index["album"] as? [String: Any] {
                     
                     if let artist = album["artists"] as? [[String: Any]] {
-                        cell.detailTextLabel?.text = artist[0]["name"] as? String
+                        let artistLabel = cell.viewWithTag(3) as! UILabel
+                        artistLabel.text = artist[0]["name"] as? String
                     }
                     
                     if let image = album["images"] as? [[String: Any]] {
@@ -205,7 +266,12 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                         
                         if let url  = NSURL(string: urlString!){
                             if let data = NSData(contentsOf: url as URL){
-                                cell.imageView?.image = UIImage(data: data as Data)
+                                
+                                let backgroundImage = cell.viewWithTag(1) as! UIImageView
+                                backgroundImage.image = UIImage(data: data as Data)
+                                
+                                let mainImage = cell.viewWithTag(2) as! UIImageView
+                                mainImage.image = UIImage(data: data as Data)
                             }
                         }
 
