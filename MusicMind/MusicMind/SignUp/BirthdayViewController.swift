@@ -13,6 +13,7 @@ class BirthdayViewController: UIViewController {
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var continueButton: UIButton!
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()

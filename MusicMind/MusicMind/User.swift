@@ -20,6 +20,8 @@ struct User {
     var birthday: Date?
     var profilePhoto: URL?
     
+    init() {}
+    
     init(withSnapshot snapshot: FIRDataSnapshot) {
         firebaseAuthUser = FIRAuth.auth()?.currentUser
         id = firebaseAuthUser?.uid

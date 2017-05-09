@@ -35,10 +35,14 @@ class NameViewController: UIViewController {
                 return
         }
         
-//        let user = User()
+        var user = User()
         
-//        user.firstName = firstName
-//        user.lastName = lastName
+        user.firstName = firstName
+        user.lastName = lastName
+        
+        if let birthdayVC = segue.destination as? BirthdayViewController {
+            birthdayVC.user = user
+        }
     }
     
 }
