@@ -35,8 +35,10 @@ class NameViewController: UIViewController {
                 return
         }
         
-        user.firstName = firstName
-        user.lastName = lastName
+//        let user = User()
+        
+//        user.firstName = firstName
+//        user.lastName = lastName
     }
     
 }

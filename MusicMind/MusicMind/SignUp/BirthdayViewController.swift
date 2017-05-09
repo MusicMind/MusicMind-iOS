@@ -17,8 +17,6 @@ class BirthdayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(user)
-        
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -52,7 +50,7 @@ class BirthdayViewController: UIViewController {
             })
         }
         
-        user.birthday = birthDate
+//        user.birthday = birthDate
     }
 
 }

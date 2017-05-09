@@ -19,10 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         // If user is already signed in skip the onboarding flow
-        if let currentFirebaseAuthUser = FIRAuth.auth()?.currentUser {
-            // Set up the global user object with firebase auth user
-            user = User(withAuthUser: currentFirebaseAuthUser)
-            
+        if let _ = FIRAuth.auth()?.currentUser {
             // Go to Camera Capture directly
             let storyboard = UIStoryboard(name: "CameraCapture", bundle: nil)
             let welcomeViewController = storyboard.instantiateInitialViewController()

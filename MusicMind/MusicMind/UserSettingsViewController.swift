@@ -17,8 +17,6 @@ class UserSettingsViewController: UITableViewController {
         do {
             try FIRAuth.auth()?.signOut()
             
-            user = User()
-            
             let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
             let welcomeViewController = storyboard.instantiateInitialViewController()
             
@@ -31,7 +29,7 @@ class UserSettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let email = user.email {
+        if let email = FIRAuth.auth()?.currentUser?.email {
             infoLabel.text = "\nSigned in as \(email)\n\n\(prettyVersionNumber)"
         } else {
             infoLabel.text = "\(prettyVersionNumber)"
