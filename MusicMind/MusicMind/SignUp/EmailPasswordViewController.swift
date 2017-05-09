@@ -86,8 +86,20 @@ class EmailPasswordViewController: UIViewController {
             
             self.goToCameraCapture()
             
-            if let fbAuthUser = fbAuthUser {
-//                user.pushNewUserToFirebaseDatabase(assosiatedWithAuthUser: fbAuthUser)
+            if var user = self.user {
+                user.firebaseAuthUser = fbAuthUser
+                user.email = fbAuthUser?.email
+                user.dateCreated = Date()
+                
+                let newUserRef = FIRDatabase.database().reference().child("users").childByAutoId()
+                
+                newUserRef.setValue(user.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        print("Successfully pushed new user to Firebase")
+                    }
+                })
             }
         })
         

@@ -19,10 +19,17 @@ struct User {
     var mobileNumber: String?
     var birthday: Date?
     var profilePhoto: URL?
+    var dateCreated: Date?
     
-    init() {}
+    private let dateFormatter = DateFormatter()
+    
+    init() {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+    }
     
     init(withSnapshot snapshot: FIRDataSnapshot) {
+        self.init()
+        
         firebaseAuthUser = FIRAuth.auth()?.currentUser
         id = firebaseAuthUser?.uid
         
@@ -34,5 +41,13 @@ struct User {
 //        birthday = nil
 //        profilePhoto = nil
     }
-
+    
+    var asDictionary: [String: Any?] {
+        var dict: [String: Any?] = [:]
+        
+        dict["test"] = 100
+        
+        return dict
+    }
+    
 }
