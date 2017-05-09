@@ -8,7 +8,6 @@
 
 import Foundation
 
-var user = User()
 let spotifyAuth = SPTAuth.defaultInstance()!
 let spotifyStreamingController = SPTAudioStreamingController.sharedInstance()!
 
