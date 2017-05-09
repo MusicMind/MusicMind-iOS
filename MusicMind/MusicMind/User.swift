@@ -11,26 +11,26 @@ import Firebase
 
 struct User {
  
-    var firebaseAuthUser: FIRUser? = nil
-    var id: String? = nil
-    var email: String? = nil
-    var firstName: String? = nil
-    var lastName: String? = nil
-    var mobileNumber: String? = nil
-    var birthday: Date? = nil
-    var profilePhoto: URL? = nil
+    var firebaseAuthUser: FIRUser?
+    var id: String?
+    var email: String?
+    var firstName: String?
+    var lastName: String?
+    var mobileNumber: String?
+    var birthday: Date?
+    var profilePhoto: URL?
     
     init(withSnapshot snapshot: FIRDataSnapshot) {
         firebaseAuthUser = FIRAuth.auth()?.currentUser
         id = firebaseAuthUser?.uid
         
         // TODO: init the following properties from snapshot:
-        email = nil
-        firstName = nil
-        lastName = nil
-        mobileNumber = nil
-        birthday = nil
-        profilePhoto = nil
+//        email = nil
+//        firstName = nil
+//        lastName = nil
+//        mobileNumber = nil
+//        birthday = nil
+//        profilePhoto = nil
     }
 
 }
