@@ -17,6 +17,21 @@ struct Post: FirebaseConvertable {
     var recipients: [String]?
     var videoDownloadUrl: URL?
     var numberOfPlays: Int?
+    private let dateFormatter = DateFormatter()
+    var asDictionary: [String : Any] {
+        let dict: [String: Any] = [:]
+        
+        if let dateTimeCreated = dateTimeCreated {
+            
+        }
+        
+        
+        return dict
+    }
+    
+    init() {
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    }
     
 //    In the future posts will have stuff like the following:
 //    var associatedTracks: [Track]?
@@ -25,11 +40,11 @@ struct Post: FirebaseConvertable {
 //    var postingLocation: CLLocation?
 //    var likesFromUsers: [String]?
     
-    var asDictionary: [String : Any] {
-        return [:]
-    }
+
     
     init(withSnapshot snapshot: FIRDataSnapshot) {
+        self.init()
         
+        // Init from snapshot code here
     }
 }
