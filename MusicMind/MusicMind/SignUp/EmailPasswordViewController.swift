@@ -90,8 +90,9 @@ class EmailPasswordViewController: UIViewController {
                 user.firebaseAuthUser = fbAuthUser
                 user.email = fbAuthUser?.email
                 user.dateCreated = Date()
+                user.id = fbAuthUser?.uid
                 
-                let newUserRef = FIRDatabase.database().reference().child("users").childByAutoId()
+                let newUserRef = FIRDatabase.database().reference().child("users/\(user.id!)")
                 
                 newUserRef.setValue(user.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                     if let error = error {
