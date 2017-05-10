@@ -14,8 +14,6 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    // TODO: Disable button if email || password fields are nil. Use textFieldDelegate to check everytime keypress.
-    
     @IBAction func attemptLogIn(_ sender: Any) {
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             if error == nil {
@@ -43,10 +41,6 @@ class LogInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         passwordField.text = nil
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
     }
     
     func goToCameraCapture() {
