@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct User: FirebaseConvertable {
+struct User {
  
     var firebaseAuthUser: FIRUser?
     var id: String?
@@ -20,7 +20,18 @@ struct User: FirebaseConvertable {
     var birthday: Date?
     var profilePhoto: URL?
     var dateCreated: Date?
-    private let dateFormatter = DateFormatter()
+    fileprivate let dateFormatter = DateFormatter()
+    
+    init() {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+    }
+    
+
+    
+}
+
+extension User: FirebaseConvertable {
+    
     var asDictionary: [String: Any] {
         var dict: [String: Any] = [:]
         
@@ -34,11 +45,7 @@ struct User: FirebaseConvertable {
         
         return dict
     }
-    
-    init() {
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-    }
-    
+
     init(withSnapshot snapshot: FIRDataSnapshot) {
         self.init()
         
