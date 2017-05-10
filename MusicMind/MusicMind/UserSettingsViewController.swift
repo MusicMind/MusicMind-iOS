@@ -29,7 +29,7 @@ class UserSettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let email = userLoginCredentials.firebaseUserEmail?.lowercased() {
+        if let email = FIRAuth.auth()?.currentUser?.email {
             infoLabel.text = "\nSigned in as \(email)\n\n\(prettyVersionNumber)"
         } else {
             infoLabel.text = "\(prettyVersionNumber)"

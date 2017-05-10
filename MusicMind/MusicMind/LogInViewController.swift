@@ -14,13 +14,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    // TODO: Disable button if email || password fields are nil. Use textFieldDelegate to check everytime keypress.
-    
     @IBAction func attemptLogIn(_ sender: Any) {
-        
-        userLoginCredentials.firebaseUserEmail = emailField.text!
-        userLoginCredentials.firebaseUserPassword = passwordField.text!
-
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
             if error == nil {
                 self.view.backgroundColor = .green
@@ -42,23 +36,11 @@ class LogInViewController: UIViewController {
         emailField.delegate = self
         passwordField.delegate = self
         
-        if let email = userLoginCredentials.firebaseUserEmail {
-            emailField.text = email
-        }
-        
-        if let password = userLoginCredentials.firebaseUserPassword {
-            passwordField.text = password
-        }
-        
         self.hideKeyboardWhenTappedAround()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         passwordField.text = nil
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
     }
     
     func goToCameraCapture() {

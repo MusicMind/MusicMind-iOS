@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014F9A2BB40C2B10F7891568 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */; };
 		0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */; };
 		0F1DE25A1E9327C60032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
-		0F1DE25C1E941BDF0032A49A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE25B1E941BDF0032A49A /* UserTests.swift */; };
-		0F1DE25D1E941C000032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
-		0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */; };
-		0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2641E9491260032A49A /* FirebaseDataService.swift */; };
 		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
 		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
 		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
@@ -30,32 +27,25 @@
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
 		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
 		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
-		13B8212CFD3774E4DC2E8009 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
 		DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE007F601EAEA17300966F55 /* SendToFriendView.xib */; };
 		DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */; };
 		DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */; };
 		DE1471F81E7CBF3D000C45E6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
-		DE1471F91E7CBF3E000C45E6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		DE357AC31E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE357AC21E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift */; };
 		DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F811E661BB20050E719 /* AppDelegate.swift */; };
 		DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F851E661BB20050E719 /* LogIn.storyboard */; };
 		DE429F891E661BB20050E719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE429F881E661BB20050E719 /* Assets.xcassets */; };
 		DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */; };
 		DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F961E661BB20050E719 /* MusicMindTests.swift */; };
-		DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429FA11E661BB20050E719 /* MusicMindUITests.swift */; };
 		DE438A691EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */; };
 		DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
-		DE487E031E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
-		DE487E041E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
 		DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
-		DE503AD81E94349200124BFA /* WelcomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */; };
 		DE503AD91E94368B00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
-		DE503ADA1E94368C00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
-		DE503ADC1E94368F00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
 		DE783F441EAFC4FF0007877A /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE783F431EAFC4FF0007877A /* Platform.swift */; };
+		DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */; };
 		DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */; };
 		DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */; };
 		DE85E5C41EB1279E005FFEB9 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE85E5C21EB1279E005FFEB9 /* UserSettings.storyboard */; };
@@ -76,18 +66,10 @@
 		DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
 		DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
 		DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */; };
-		F4A2A067D693BF8B8983FADF /* Pods_MusicMind_MusicMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B61F615E231AD98737EC03 /* Pods_MusicMind_MusicMindUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DE429F931E661BB20050E719 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE429F761E661BB20050E719 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE429F7D1E661BB20050E719;
-			remoteInfo = MusicMind;
-		};
-		DE429F9E1E661BB20050E719 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE429F761E661BB20050E719 /* Project object */;
 			proxyType = 1;
@@ -102,9 +84,6 @@
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailPasswordViewController.swift; path = SignUp/EmailPasswordViewController.swift; sourceTree = "<group>"; };
 		0F1DE2591E9327C60032A49A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0F1DE25B1E941BDF0032A49A /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
-		0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginCredentials.swift; sourceTree = "<group>"; };
-		0F1DE2641E9491260032A49A /* FirebaseDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDataService.swift; sourceTree = "<group>"; };
 		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
 		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
 		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
@@ -147,14 +126,12 @@
 		DE429F921E661BB20050E719 /* MusicMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE429F961E661BB20050E719 /* MusicMindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMindTests.swift; sourceTree = "<group>"; };
 		DE429F981E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE429F9D1E661BB20050E719 /* MusicMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE429FA11E661BB20050E719 /* MusicMindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMindUITests.swift; sourceTree = "<group>"; };
-		DE429FA31E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigateLeftTransitionInteractionController.swift; sourceTree = "<group>"; };
 		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllerTests.swift; sourceTree = "<group>"; };
 		DE783F431EAFC4FF0007877A /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConvertable.swift; sourceTree = "<group>"; };
 		DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifier.swift; sourceTree = "<group>"; };
 		DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicMind.entitlements; sourceTree = "<group>"; };
@@ -200,18 +177,7 @@
 				DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */,
 				DE1471F81E7CBF3D000C45E6 /* Pods_MusicMind.framework in Frameworks */,
 				DE503AD91E94368B00124BFA /* SpotifyAudioPlayback.framework in Frameworks */,
-				13B8212CFD3774E4DC2E8009 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE429F9A1E661BB20050E719 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE503ADC1E94368F00124BFA /* SpotifyAuthentication.framework in Frameworks */,
-				DE1471F91E7CBF3E000C45E6 /* Pods_MusicMind.framework in Frameworks */,
-				DE503ADA1E94368C00124BFA /* SpotifyAudioPlayback.framework in Frameworks */,
-				F4A2A067D693BF8B8983FADF /* Pods_MusicMind_MusicMindUITests.framework in Frameworks */,
+				014F9A2BB40C2B10F7891568 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +189,7 @@
 			children = (
 				0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */,
 				0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */,
+				DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -318,7 +285,6 @@
 			children = (
 				DE429F801E661BB20050E719 /* MusicMind */,
 				DE429F951E661BB20050E719 /* MusicMindTests */,
-				DE429FA01E661BB20050E719 /* MusicMindUITests */,
 				DE429F7F1E661BB20050E719 /* Products */,
 				AFEDE517BD9FE9008E5C98F7 /* Pods */,
 				6411FC252D5E1FC5BDF80FA6 /* Frameworks */,
@@ -330,7 +296,6 @@
 			children = (
 				DE429F7E1E661BB20050E719 /* MusicMind.app */,
 				DE429F921E661BB20050E719 /* MusicMindTests.xctest */,
-				DE429F9D1E661BB20050E719 /* MusicMindUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -343,8 +308,6 @@
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DE783F431EAFC4FF0007877A /* Platform.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
-				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
-				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
 				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
 				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
@@ -371,19 +334,9 @@
 			children = (
 				DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */,
 				DE429F961E661BB20050E719 /* MusicMindTests.swift */,
-				0F1DE25B1E941BDF0032A49A /* UserTests.swift */,
 				DE429F981E661BB20050E719 /* Info.plist */,
 			);
 			path = MusicMindTests;
-			sourceTree = "<group>";
-		};
-		DE429FA01E661BB20050E719 /* MusicMindUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DE429FA11E661BB20050E719 /* MusicMindUITests.swift */,
-				DE429FA31E661BB20050E719 /* Info.plist */,
-			);
-			path = MusicMindUITests;
 			sourceTree = "<group>";
 		};
 		DE487E051E8D6A3C0025B514 /* Extensions */ = {
@@ -509,27 +462,6 @@
 			productReference = DE429F921E661BB20050E719 /* MusicMindTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DE429F9C1E661BB20050E719 /* MusicMindUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE429FAC1E661BB20050E719 /* Build configuration list for PBXNativeTarget "MusicMindUITests" */;
-			buildPhases = (
-				A994BF0E893F9435A64BDDD0 /* [CP] Check Pods Manifest.lock */,
-				DE429F991E661BB20050E719 /* Sources */,
-				DE429F9A1E661BB20050E719 /* Frameworks */,
-				DE429F9B1E661BB20050E719 /* Resources */,
-				C7B4E9A9F5E1DE0D9660CED6 /* [CP] Embed Pods Frameworks */,
-				1FDB944DE8A211DC15F0F71F /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE429F9F1E661BB20050E719 /* PBXTargetDependency */,
-			);
-			name = MusicMindUITests;
-			productName = MusicMindUITests;
-			productReference = DE429F9D1E661BB20050E719 /* MusicMindUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -569,12 +501,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = DE429F7D1E661BB20050E719;
 					};
-					DE429F9C1E661BB20050E719 = {
-						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DE429F7D1E661BB20050E719;
-					};
 				};
 			};
 			buildConfigurationList = DE429F791E661BB20050E719 /* Build configuration list for PBXProject "MusicMind" */;
@@ -592,7 +518,6 @@
 			targets = (
 				DE429F7D1E661BB20050E719 /* MusicMind */,
 				DE429F911E661BB20050E719 /* MusicMindTests */,
-				DE429F9C1E661BB20050E719 /* MusicMindUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -625,31 +550,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE429F9B1E661BB20050E719 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FDB944DE8A211DC15F0F71F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind-MusicMindUITests/Pods-MusicMind-MusicMindUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		23A58EE0A24960AE6A7EEC7F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -710,36 +613,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A994BF0E893F9435A64BDDD0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C7B4E9A9F5E1DE0D9660CED6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind-MusicMindUITests/Pods-MusicMind-MusicMindUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EBAFFFAB912402C4E919F8E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -791,6 +664,7 @@
 				0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */,
 				DE357AC31E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DEBB98A51EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift in Sources */,
+				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,
 				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
 				DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */,
 				DE85E5C61EB127C7005FFEB9 /* UserSettingsViewController.swift in Sources */,
@@ -808,10 +682,8 @@
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
-				0F1DE2651E9491260032A49A /* FirebaseDataService.swift in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
-				0F1DE2631E9429600032A49A /* UserLoginCredentials.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
 				DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */,
 			);
@@ -821,20 +693,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F1DE25C1E941BDF0032A49A /* UserTests.swift in Sources */,
-				0F1DE25D1E941C000032A49A /* User.swift in Sources */,
 				DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */,
-				DE487E031E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
-				DE503AD81E94349200124BFA /* WelcomeViewControllerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE429F991E661BB20050E719 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE429FA21E661BB20050E719 /* MusicMindUITests.swift in Sources */,
-				DE487E041E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,11 +704,6 @@
 			isa = PBXTargetDependency;
 			target = DE429F7D1E661BB20050E719 /* MusicMind */;
 			targetProxy = DE429F931E661BB20050E719 /* PBXContainerItemProxy */;
-		};
-		DE429F9F1E661BB20050E719 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE429F7D1E661BB20050E719 /* MusicMind */;
-			targetProxy = DE429F9E1E661BB20050E719 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1121,42 +975,6 @@
 			};
 			name = Release;
 		};
-		DE429FAD1E661BB20050E719 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30608B570D6B30E9CE895F60 /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = MusicMindUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MusicMind.MusicMindUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MusicMind;
-			};
-			name = Debug;
-		};
-		DE429FAE1E661BB20050E719 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ACF4B55173218734EBD947B /* Pods-MusicMind-MusicMindUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = MusicMindUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MusicMind.MusicMindUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MusicMind;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1183,15 +1001,6 @@
 			buildConfigurations = (
 				DE429FAA1E661BB20050E719 /* Debug */,
 				DE429FAB1E661BB20050E719 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE429FAC1E661BB20050E719 /* Build configuration list for PBXNativeTarget "MusicMindUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE429FAD1E661BB20050E719 /* Debug */,
-				DE429FAE1E661BB20050E719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
