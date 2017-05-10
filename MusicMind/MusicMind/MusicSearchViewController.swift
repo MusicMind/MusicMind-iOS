@@ -113,16 +113,29 @@ class MusicSearchViewController: UIViewController {
     }
 }
 
+//func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//    let keywords = searchBar.text
+//    let finalKeywords = keywords?.replacingOccurrences(of: " ", with: "+")
+//    searchURL = "https://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track"
+//    callAlamo(url: searchURL)
+//    self.view.endEditing(true)
+//}
+
+
 extension MusicSearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        print(searchText)
         
         if spotifyStreamingController.loggedIn {
             
         }
         
-        Alamofire.request("https://api.spotify.com/v1/search?q=\(searchText)&type=track&limit=7").responseString { response in
+        let keywords = searchBar.text
+        let finalKeywords = keywords?.replacingOccurrences(of: " ", with: "+")
+        let searchURL = "https://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track"
+
+        
+        Alamofire.request(searchURL).responseString { response in
 //            debugPrint(response)
             
             if let json = response.result.value {
@@ -220,18 +233,13 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     
-    //    @IBAction func playPauseAction(_ sender: Any) {
-    //
-    //        if audioPlayer.isPlaying {
-    //            audioPlayer.pause()
-    //
-    //        }
-    //        else {
-    //            audioPlayer.play()
-    //
-    //        }
-    //    }
+        @IBAction func playPauseAction(_ sender: Any) {
     
+          spotifyStreamingController.setIsPlaying(false, callback: nil)
+        }
+    
+    
+  
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
