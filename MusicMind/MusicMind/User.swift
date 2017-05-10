@@ -20,8 +20,20 @@ struct User: FirebaseConvertable {
     var birthday: Date?
     var profilePhoto: URL?
     var dateCreated: Date?
-    
     private let dateFormatter = DateFormatter()
+    var asDictionary: [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        if let email = email { dict["email"] = email }
+        if let firstName = firstName { dict["firstName"] = firstName }
+        if let lastName = lastName { dict["lastName"] = lastName }
+        if let mobileNumber = mobileNumber { dict["mobileNumber"] = mobileNumber }
+        if let birthday = birthday { dict["birthday"] = dateFormatter.string(from: birthday) }
+        if let profilePhoto = profilePhoto { dict["profilePhoto"] = profilePhoto.absoluteString }
+        if let dateCreated = dateCreated { dict["dateCreated"] = dateFormatter.string(from: dateCreated) }
+        
+        return dict
+    }
     
     init() {
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -104,20 +116,6 @@ struct User: FirebaseConvertable {
                 }
             }
         }
-    }
-    
-    var asDictionary: [String: Any] {
-        var dict: [String: Any] = [:]
-        
-        if let email = email { dict["email"] = email }
-        if let firstName = firstName { dict["firstName"] = firstName }
-        if let lastName = lastName { dict["lastName"] = lastName }
-        if let mobileNumber = mobileNumber { dict["mobileNumber"] = mobileNumber }
-        if let birthday = birthday { dict["birthday"] = dateFormatter.string(from: birthday) }
-        if let profilePhoto = profilePhoto { dict["profilePhoto"] = profilePhoto.absoluteString }
-        if let dateCreated = dateCreated { dict["dateCreated"] = dateFormatter.string(from: dateCreated) }
-
-        return dict
     }
     
 }

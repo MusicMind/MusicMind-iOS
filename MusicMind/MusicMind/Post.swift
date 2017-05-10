@@ -12,19 +12,19 @@ import Firebase
 struct Post: FirebaseConvertable {
 
     var dateTimeCreated: Date?
-    var postTitle: String?
     var authorId: String?
     var recipients: [String]?
     var videoDownloadUrl: URL?
-    var numberOfPlays: Int?
+    var numberOfViews: Int?
     private let dateFormatter = DateFormatter()
     var asDictionary: [String : Any] {
-        let dict: [String: Any] = [:]
+        var dict: [String: Any] = [:]
         
-        if let dateTimeCreated = dateTimeCreated {
-            
-        }
-        
+        if let dateTimeCreated = dateTimeCreated { dict["dateTimeCreated"] = dateFormatter.string(from: dateTimeCreated) }
+        if let authorId = authorId { dict["authorId"] = authorId }
+        if let recipients = recipients { dict["recipients"] = recipients }
+        if let videoDownloadUrl = videoDownloadUrl { dict["videoDownloadUrl"] = videoDownloadUrl.absoluteString }
+        if let numberOfViews = numberOfViews { dict["numberOfViews"] = numberOfViews }
         
         return dict
     }
@@ -35,6 +35,8 @@ struct Post: FirebaseConvertable {
     
 //    In the future posts will have stuff like the following:
 //    var associatedTracks: [Track]?
+//    var postTitle: String?
+//    var postType: String?
 //    var comments: [Comment]?
 //    var tags: [String]?
 //    var postingLocation: CLLocation?
