@@ -32,7 +32,6 @@ struct Post {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     }
     
-
 }
 
 extension Post: FirebaseConvertable {
@@ -55,10 +54,12 @@ extension Post: FirebaseConvertable {
         self.id = snapshot.key
         
         if let postData = snapshot.value as? [String: Any] {
-            
             if let dateTimeCreatedString = postData["dateTimeCreated"] as? String { dateTimeCreated = dateFormatter.date(from: dateTimeCreatedString) }
+            if let authorId = postData["authorId"] as? String { self.authorId = authorId }
+            if let recipients = postData["recipients"] as? [String] { self.recipients = recipients }
+            if let videoDownloadUrlString = postData["videoDownloadUrl"] as? String { self.videoDownloadUrl = URL(string: videoDownloadUrlString) }
+            if let numberOfViews = postData["numberOfViews"] as? Int { self.numberOfViews = numberOfViews }
         }
-        
     }
     
 }

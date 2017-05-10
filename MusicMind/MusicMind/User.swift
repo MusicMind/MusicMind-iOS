@@ -26,8 +26,6 @@ struct User {
         dateFormatter.dateFormat = "yyyy-MM-dd"
     }
     
-
-    
 }
 
 extension User: FirebaseConvertable {
