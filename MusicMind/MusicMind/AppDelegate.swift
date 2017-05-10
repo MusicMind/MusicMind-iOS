@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Setup spotify auth
         spotifyAuth.sessionUserDefaultsKey = "MMSpotifySession" // Enable automatic saving of the session to defaults
-        spotifyAuth.clientID = "3b7f66602b9c45b78f4aa55de8efd046"
+        spotifyAuth.clientID = "a87022d4244f46129aac192c58fb6389"
         spotifyAuth.redirectURL = URL(string: "musicmind://returnAfterSpotify")
         spotifyAuth.requestedScopes = [SPTAuthStreamingScope]
         
