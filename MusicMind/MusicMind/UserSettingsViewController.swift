@@ -11,6 +11,7 @@ import Firebase
 
 class UserSettingsViewController: UITableViewController {
    
+    private var user: User?
     @IBOutlet weak var infoLabel: UILabel!
     
     @IBAction func signOut(_ sender: Any) {
@@ -33,6 +34,16 @@ class UserSettingsViewController: UITableViewController {
             infoLabel.text = "\nSigned in as \(email)\n\n\(prettyVersionNumber)"
         } else {
             infoLabel.text = "\(prettyVersionNumber)"
+        }
+        
+        let userRef = FIRDatabase.database().reference().child("users/\(FIRAuth.auth()!.currentUser!.uid)")
+        
+        userRef.observe(.value) { (snapshot: FIRDataSnapshot) in
+            self.user = User(withSnapshot: snapshot)
+            
+            if let dictionaryStringOfUser = self.user?.asDictionary.description {
+                print(dictionaryStringOfUser)
+            }
         }
         
         tableView.tableFooterView = UIView(frame: CGRect.zero)
