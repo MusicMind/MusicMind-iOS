@@ -277,6 +277,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8487F6C01EC26836007119A9 /* Audio Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Audio Controls";
+			sourceTree = "<group>";
+		};
 		AFEDE517BD9FE9008E5C98F7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +354,7 @@
 				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
 				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
+				8487F6C01EC26836007119A9 /* Audio Controls */,
 				DE6494251E7CE670003D92D0 /* Log in */,
 				DE860DDC1E935F6D00393B03 /* Forgot password */,
 				0FD0256F1E6B4BD500E59E95 /* Camera capture */,

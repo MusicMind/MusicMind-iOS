@@ -8,13 +8,15 @@
 
 import UIKit
 import Alamofire
+import AVKit
 import AVFoundation
 
 class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
-    var player = AVAudioPlayer()
+    var audioPlayer = AVAudioPlayer()
+    
     
     @IBOutlet weak var playPause: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -114,14 +116,14 @@ class MusicSearchViewController: UIViewController {
 extension MusicSearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+//        print(searchText)
         
         if spotifyStreamingController.loggedIn {
             
         }
         
-        Alamofire.request("https://api.spotify.com/v1/search?q=\(searchText)&type=track").responseString { response in
-            debugPrint(response)
+        Alamofire.request("https://api.spotify.com/v1/search?q=\(searchText)&type=track&limit=7").responseString { response in
+//            debugPrint(response)
             
             if let json = response.result.value {
                 print("JSON: \(json)")
@@ -135,7 +137,7 @@ extension MusicSearchViewController: UISearchBarDelegate {
                         }
                     }
                     
-                    debugPrint(self.searchResults)
+//                    debugPrint(self.searchResults)
                     
                     self.tableView?.reloadData()
                 }
@@ -168,15 +170,41 @@ extension MusicSearchViewController: UITextViewDelegate {
 // MARK: - Table view delegates
 
 extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
+ 
+//    func downloadFileFromURL(url: URL) {
+//        print(url)
+//        var downloadTask = URLSessionDownloadTask()
+//        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: {
+//            customURL, response, error in
+//            print(customURL)
+//            self.play(url: customURL!)
+//        })
+//        
+//        downloadTask.resume()
+//    }
+//    
+//    func play(url: URL) {
+//        
+//        do {
+//            audioPlayer = try AVAudioPlayer(contentsOf: url)
+//            audioPlayer.prepareToPlay()
+//            audioPlayer.play()
+//        }
+//        catch {
+//            print(error)
+//        }
+//    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
                 let index = items[indexPath.row]
                 let trackURI = index["uri"] as? String
-                print(trackURI)
+                let preview = index["preview_url"]
+           
                 
-//                  downloadFileFromURL(url: URL(string: trackURI!)!)
+//                self.downloadFileFromURL(url: URL(string: trackURI! as! String)!)
 //                    play(url: URL(string: trackURI!)!)
 //                playPause.setTitle("Pause", for: .normal)
 
@@ -191,47 +219,19 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-  
-    // Play Pause Audio
     
-//    func downloadFileFromURL(url: URL) {
-//        print(url)
-//        var downloadTask = URLSessionDownloadTask()
-//            downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: {
-//            customURL, response, error in
-//            
-//            self.play(url: customURL!)
-//            
-//        })
-//        
-//        downloadTask.resume()
-//    }
-
-//    func play(url: URL) {
-//        
-//        do {
-//            player = try AVAudioPlayer(contentsOf: url)
-//            player.prepareToPlay()
-//            player.play()
-//        }
-//        catch {
-//            print(error)
-//        }
-//    }
-//
-//    @IBAction func playPauseAction(_ sender: Any) {
-//        
-//        if player.isPlaying {
-//            player.pause()
-//            playPause.setTitle("Play", for: .normal)
-//        }
-//        else {
-//            player.play()
-//            playPause.setTitle("Pause", for: .normal)
-//        }
-//    }
+    //    @IBAction func playPauseAction(_ sender: Any) {
+    //
+    //        if audioPlayer.isPlaying {
+    //            audioPlayer.pause()
+    //
+    //        }
+    //        else {
+    //            audioPlayer.play()
+    //
+    //        }
+    //    }
     
-    // End Play/Pause Audio
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
