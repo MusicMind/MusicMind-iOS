@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct User {
+struct User: FirebaseConvertable {
  
     var firebaseAuthUser: FIRUser?
     var id: String?
@@ -104,8 +104,8 @@ struct User {
         }
     }
     
-    var asDictionary: [String: Any?] {
-        var dict: [String: Any?] = [:]
+    var asDictionary: [String: Any] {
+        var dict: [String: Any] = [:]
         
         if let email = email { dict["email"] = email }
         if let firstName = firstName { dict["firstName"] = firstName }
