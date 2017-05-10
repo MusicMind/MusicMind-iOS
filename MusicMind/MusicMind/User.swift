@@ -33,7 +33,9 @@ struct User: FirebaseConvertable {
         firebaseAuthUser = FIRAuth.auth()?.currentUser
         id = firebaseAuthUser?.uid
         
-        if let userData = snapshot.value as? [String: Any?] {
+//        firstName = (snapshot.value as! [String: Any])["firstName"] as? String
+        
+        if let userData = snapshot.value as? [String: Any] {
 
             // First name
             if let firstName = userData["firstName"] as? String {
