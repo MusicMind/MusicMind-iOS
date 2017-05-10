@@ -11,6 +11,7 @@ import Firebase
 
 struct Post: FirebaseConvertable {
 
+    var id: String?
     var dateTimeCreated: Date?
     var authorId: String?
     var recipients: [String]?
@@ -29,24 +30,28 @@ struct Post: FirebaseConvertable {
         return dict
     }
     
+    //    In the future posts will have stuff like the following:
+    //    var associatedTracks: [Track]?
+    //    var postTitle: String?
+    //    var postType: String?
+    //    var comments: [Comment]?
+    //    var tags: [String]?
+    //    var postingLocation: CLLocation?
+    //    var likesFromUsers: [String]?
+    
     init() {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     }
     
-//    In the future posts will have stuff like the following:
-//    var associatedTracks: [Track]?
-//    var postTitle: String?
-//    var postType: String?
-//    var comments: [Comment]?
-//    var tags: [String]?
-//    var postingLocation: CLLocation?
-//    var likesFromUsers: [String]?
-    
-
-    
     init(withSnapshot snapshot: FIRDataSnapshot) {
         self.init()
         
-        // Init from snapshot code here
+        self.id = snapshot.key
+        
+        if let postData = snapshot.value as? [String: Any] {
+         
+            if let dateTimeCreatedString = postData["dateTimeCreated"] as? String { dateTimeCreated = dateFormatter.date(from: dateTimeCreatedString) }
+        }
+
     }
 }
