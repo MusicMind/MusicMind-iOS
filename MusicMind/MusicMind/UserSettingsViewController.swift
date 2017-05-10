@@ -35,17 +35,6 @@ class UserSettingsViewController: UITableViewController {
             infoLabel.text = "\(prettyVersionNumber)"
         }
         
-        
-        // lets see what happens when I init with snapshot
-        
-        let userRef = FIRDatabase.database().reference().child("users/\(FIRAuth.auth()!.currentUser!.uid)")
-        
-        userRef.observe(.value) { (snapshot: FIRDataSnapshot) in
-            let user = User(withSnapshot: snapshot)
-            
-            print(user.asDictionary)
-        }
-        
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         setupNavigationBar(theme: .light)
