@@ -13,19 +13,15 @@ class BirthdayViewController: UIViewController {
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var continueButton: UIButton!
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(newUser)
         
         self.hideKeyboardWhenTappedAround()
     }
-
-    var newUser = User()
-    
     
     @IBAction func datePickerValueChange(_ sender: Any) {
-        
         continueButton.isEnabled = true
         
         let dateFormatter: DateFormatter = {
@@ -34,8 +30,8 @@ class BirthdayViewController: UIViewController {
             dateFormatter.timeStyle = .none
             return dateFormatter
         }()
+
         birthdayLabel.text = dateFormatter.string(from: datePicker.date)
-        
     }
 
     // MARK: - Navigation
@@ -55,8 +51,13 @@ class BirthdayViewController: UIViewController {
             })
         }
         
-        newUser.birthday = birthDate
-        
+        if var user = user {
+            user.birthday = birthDate
+            
+            if let emailVC = segue.destination as? EmailPasswordViewController {
+                emailVC.user = user
+            }
+        }
     }
 
 }
