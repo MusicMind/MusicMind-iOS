@@ -20,6 +20,7 @@ class ACViewController: UIViewController {
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var playPauseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +28,8 @@ class ACViewController: UIViewController {
         albumImage.image = mainImage
         songTitle.text = mainSongTitle
         artistName.text = mainArtistName
+        
+        playPauseButton.setTitle("Pause", for: .normal)
         
     }
 
@@ -43,8 +46,6 @@ class ACViewController: UIViewController {
                 return
             }
         }
-        
-
     }
     
     @IBAction func playPauseAction(_ sender: Any) {
@@ -102,6 +103,18 @@ class ACViewController: UIViewController {
         }
     }
 
+    @IBAction func spotifyVolume(_ sender: UISlider) {
+        
+        let currentValue = Float(sender.value)
+        
+        spotifyStreamingController.setVolume(SPTVolume(currentValue)) {
+            error in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+        }
+    }
     
 
 }

@@ -225,7 +225,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="7cF-Uo-adu">
-                                                    <rect key="frame" x="62" y="316" width="218" height="30"/>
+                                                    <rect key="frame" x="62" y="274" width="218" height="30"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvT-MK-Zi9">
                                                             <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
@@ -250,22 +250,31 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sYe-PV-d3b">
+                                                    <rect key="frame" x="6" y="325" width="331" height="31"/>
+                                                    <connections>
+                                                        <action selector="spotifyVolume:" destination="bVc-mh-ge2" eventType="valueChanged" id="7EE-DQ-LgQ"/>
+                                                    </connections>
+                                                </slider>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="P1O-6w-LmW" firstAttribute="leading" secondItem="piM-NL-c0S" secondAttribute="leading" id="7AI-EN-3Pf"/>
+                                                <constraint firstItem="sYe-PV-d3b" firstAttribute="leading" secondItem="piM-NL-c0S" secondAttribute="leading" id="7i0-vx-Qv1"/>
                                                 <constraint firstItem="piM-NL-c0S" firstAttribute="top" secondItem="P1O-6w-LmW" secondAttribute="bottom" constant="8" symbolic="YES" id="9VA-YR-6Ul"/>
                                                 <constraint firstAttribute="bottom" secondItem="vAf-Gr-kXG" secondAttribute="bottom" id="BaF-7h-JBj"/>
+                                                <constraint firstItem="sYe-PV-d3b" firstAttribute="top" secondItem="7cF-Uo-adu" secondAttribute="bottom" constant="21" id="GBn-qF-yXy"/>
                                                 <constraint firstItem="P1O-6w-LmW" firstAttribute="leading" secondItem="MXm-l0-9a7" secondAttribute="leadingMargin" id="HZy-Zb-zxe"/>
-                                                <constraint firstItem="7cF-Uo-adu" firstAttribute="centerX" secondItem="piM-NL-c0S" secondAttribute="centerX" id="Xp3-5r-ekd"/>
+                                                <constraint firstItem="7cF-Uo-adu" firstAttribute="top" secondItem="piM-NL-c0S" secondAttribute="bottom" constant="18" id="UmH-WR-1Wv"/>
                                                 <constraint firstItem="P1O-6w-LmW" firstAttribute="trailing" secondItem="piM-NL-c0S" secondAttribute="trailing" id="aNv-dQ-Jhn"/>
                                                 <constraint firstItem="INn-qz-X03" firstAttribute="top" secondItem="MXm-l0-9a7" secondAttribute="topMargin" id="cI0-KE-kLT"/>
                                                 <constraint firstItem="P1O-6w-LmW" firstAttribute="trailing" secondItem="MXm-l0-9a7" secondAttribute="trailingMargin" id="can-6q-3B8"/>
+                                                <constraint firstItem="7cF-Uo-adu" firstAttribute="centerX" secondItem="piM-NL-c0S" secondAttribute="centerX" id="fQE-zh-CNp"/>
                                                 <constraint firstAttribute="trailing" secondItem="INn-qz-X03" secondAttribute="trailing" constant="81" id="ibb-Ov-Ylm"/>
                                                 <constraint firstItem="vAf-Gr-kXG" firstAttribute="trailing" secondItem="piM-NL-c0S" secondAttribute="trailing" id="iu8-vu-jqN"/>
                                                 <constraint firstItem="piM-NL-c0S" firstAttribute="top" secondItem="INn-qz-X03" secondAttribute="bottom" constant="37" id="jMi-eN-Z9q"/>
-                                                <constraint firstItem="vAf-Gr-kXG" firstAttribute="top" secondItem="7cF-Uo-adu" secondAttribute="bottom" constant="56" id="mbv-iJ-DjT"/>
                                                 <constraint firstItem="INn-qz-X03" firstAttribute="leading" secondItem="MXm-l0-9a7" secondAttribute="leading" constant="72" id="sYK-BO-eBw"/>
                                                 <constraint firstItem="P1O-6w-LmW" firstAttribute="top" secondItem="INn-qz-X03" secondAttribute="bottom" constant="8" symbolic="YES" id="ty9-UC-ZKD"/>
+                                                <constraint firstItem="sYe-PV-d3b" firstAttribute="trailing" secondItem="piM-NL-c0S" secondAttribute="trailing" id="xhH-NJ-5En"/>
                                             </constraints>
                                         </view>
                                         <blurEffect style="light"/>
