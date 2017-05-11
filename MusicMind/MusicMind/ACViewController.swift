@@ -10,11 +10,6 @@ import UIKit
 
 class ACViewController: UIViewController {
     
-    var backgroundImage = UIImage()
-    var mainImage = UIImage()
-    var mainSongTitle = String()
-    var mainArtistName = String()
-
     @IBOutlet weak var backgroundImageBlurred: UIImageView!
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var artistName: UILabel!
@@ -24,10 +19,10 @@ class ACViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImageBlurred.image = backgroundImage
-        albumImage.image = mainImage
-        songTitle.text = mainSongTitle
-        artistName.text = mainArtistName
+        backgroundImageBlurred.image = currentTrackDetails.albumImage
+        albumImage.image = currentTrackDetails.albumImage
+        songTitle.text = currentTrackDetails.songTitle
+        artistName.text = currentTrackDetails.artist
         
         playPauseButton.setTitle("Pause", for: .normal)
         
@@ -72,7 +67,6 @@ class ACViewController: UIViewController {
     }
     
     @IBAction func fastForward(_ sender: UIButton) {
-        
         spotifySeekForward()
     }
     
@@ -88,7 +82,6 @@ class ACViewController: UIViewController {
     }
     
     @IBAction func rewind(_ sender: UIButton) {
-        
         spotifySeekRewind()
     }
     
@@ -104,9 +97,7 @@ class ACViewController: UIViewController {
     }
 
     @IBAction func spotifyVolume(_ sender: UISlider) {
-        
         let currentValue = Float(sender.value)
-        
         spotifyStreamingController.setVolume(SPTVolume(currentValue)) {
             error in
             if error != nil {

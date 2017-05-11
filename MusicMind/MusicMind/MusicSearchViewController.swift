@@ -11,12 +11,18 @@ import Alamofire
 import AVKit
 import AVFoundation
 
+struct track {
+    let artist: String!
+    let songTitle: String!
+    let albumImage: UIImage!
+}
+
+var currentTrackDetails: track!
+
 class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
     var totalNumberOfSongFromResults: Int = 0
-    var audioPlayer = AVAudioPlayer()
-    
     var backgroundImage = UIImage()
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -24,8 +30,6 @@ class MusicSearchViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
-  
-
     // MARK: - View controller lifecycle
     
     override func viewDidLoad() {
@@ -130,21 +134,14 @@ extension MusicSearchViewController: UISearchBarDelegate {
 
         
         Alamofire.request(searchURL).responseString { response in
-//            debugPrint(response)
-            
             if let json = response.result.value {
-                print("JSON: \(json)")
-                
                 if let dict = self.convertStringToDictionary(text: json ) {
                     self.searchResults = dict
-                    
                     if let tracks = self.searchResults["tracks"] as? [String: Any] {
                         if let items = tracks["items"] as? [[String: Any]] {
                             self.totalNumberOfSongFromResults = items.count
                         }
                     }
-                    
-//                    debugPrint(self.searchResults)
                     
                     self.tableView?.reloadData()
                 }
@@ -174,6 +171,23 @@ extension MusicSearchViewController: UITextViewDelegate {
     
 }
 
+//// Setting
+//
+//let defaults = UserDefaults.standard
+//defaults.set("Some String Value", forKey: defaultsKeys.keyOne)
+//defaults.set("Another String Value", forKey: defaultsKeys.keyTwo)
+//
+//// Getting
+//
+//let defaults = UserDefaults.standard
+//if let stringOne = defaults.string(forKey: defaultsKeys.keyOne) {
+//    print(stringOne) // Some String Value
+//}
+//if let stringTwo = defaults.string(forKey: defaultsKeys.keyTwo) {
+//    print(stringTwo) // Another String Value
+//}
+
+
 // MARK: - Table view delegates
 
 extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -182,45 +196,57 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
                 let index = items[indexPath.row]
-                let trackURI = index["uri"] as? String
-//                let preview = index["preview_url"]
-                
-                let ACView = ACViewController()
-                ACView.playSpotify(uri: trackURI!)
-             
-            }
-        }
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let indexPath = self.tableView.indexPathForSelectedRow?.row
-        let vc = segue.destination as! ACViewController
-        if let tracks = self.searchResults["tracks"] as? [String: Any] {
-            if let items = tracks["items"] as? [[String: Any]] {
-                let index = items[indexPath!]
-                vc.mainSongTitle = (index["name"] as? String)!
-  
+                let songTitle = (index["name"] as? String)!
                 if let album = index["album"] as? [String: Any] {
                     if let artist = album["artists"] as? [[String: Any]] {
-                        
-                        vc.mainArtistName = (artist[0]["name"] as? String)!
-                    }
-                    if let image = album["images"] as? [[String: Any]] {
-                        let smallImage = image[0]
-                        let urlString = smallImage["url"] as? String
-                        if let url  = NSURL(string: urlString!){
-                            if let data = NSData(contentsOf: url as URL){
-                                vc.backgroundImage = UIImage(data: data as Data)!
-                                vc.mainImage = UIImage(data: data as Data)!
+                        var mainArtistName = (artist[0]["name"] as? String)!
+                        if let image = album["images"] as? [[String: Any]] {
+                            let smallImage = image[0]
+                            let urlString = smallImage["url"] as? String
+                            if let url  = NSURL(string: urlString!){
+                                if let data = NSData(contentsOf: url as URL){
+                                    currentTrackDetails = track.init(artist: mainArtistName, songTitle: songTitle, albumImage: UIImage(data: data as Data)!)
+                                }
                             }
                         }
                     }
                 }
+                let trackURI = index["uri"] as? String
+                let ACView = ACViewController()
+                ACView.playSpotify(uri: trackURI!)
             }
         }
     }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        let indexPath = self.tableView.indexPathForSelectedRow?.row
+//        let vc = segue.destination as! ACViewController
+//        if let tracks = self.searchResults["tracks"] as? [String: Any] {
+//            if let items = tracks["items"] as? [[String: Any]] {
+//                let index = items[indexPath!]
+//                vc.mainSongTitle = (index["name"] as? String)!
+//  
+//                if let album = index["album"] as? [String: Any] {
+//                    if let artist = album["artists"] as? [[String: Any]] {
+//                        
+//                        vc.mainArtistName = (artist[0]["name"] as? String)!
+//                    }
+//                    if let image = album["images"] as? [[String: Any]] {
+//                        let smallImage = image[0]
+//                        let urlString = smallImage["url"] as? String
+//                        if let url  = NSURL(string: urlString!){
+//                            if let data = NSData(contentsOf: url as URL){
+//                                vc.backgroundImage = UIImage(data: data as Data)!
+//                                vc.mainImage = UIImage(data: data as Data)!
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -230,7 +256,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
         return totalNumberOfSongFromResults
     }
     
-    
+    // Populate table with search results
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
