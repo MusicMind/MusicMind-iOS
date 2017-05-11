@@ -167,7 +167,7 @@ final class CameraCaptureViewController: UIViewController {
     func setupPreviewLayer() {
         cameraPreviewView.layer.sublayers = nil
         
-        if !Platform.isSimulator {
+        if !UIApplication.isRunningOnSimulator {
             cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
             cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             cameraPreviewLayer?.frame = cameraPreviewView.bounds
