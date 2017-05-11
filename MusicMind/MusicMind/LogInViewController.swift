@@ -19,6 +19,23 @@ class LogInViewController: UIViewController {
             if error == nil {
                 self.view.backgroundColor = .green
                 
+                // Let's update the user info in firebase just in case it's not already in there
+                if let authUser = FIRAuth.auth()?.currentUser {
+                    let userRef = FIRDatabase.database().reference().child("users/\(authUser.uid)")
+                    
+                    var user = User()
+                    user.id = authUser.uid
+                    user.email = authUser.email
+                    
+                    userRef.updateChildValues(user.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            print("Updated user id and password")
+                        }
+                    })
+                }
+                
                 self.goToCameraCapture()
             } else {
                 print(error.debugDescription)
