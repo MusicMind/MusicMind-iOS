@@ -25,7 +25,6 @@
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
 		DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE007F601EAEA17300966F55 /* SendToFriendView.xib */; };
 		DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */; };
-		DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */; };
 		DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F811E661BB20050E719 /* AppDelegate.swift */; };
 		DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F851E661BB20050E719 /* LogIn.storyboard */; };
 		DE429F891E661BB20050E719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE429F881E661BB20050E719 /* Assets.xcassets */; };
@@ -46,6 +45,7 @@
 		DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8EE3AF1E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift */; };
 		DEB4FDD11EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD01EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift */; };
 		DEB4FDD31EC520A5001458CE /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD21EC520A5001458CE /* CameraCaptureViewController.swift */; };
+		DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD41EC520ED001458CE /* SendToFriendViewController.swift */; };
 		DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC96E261E957BCD00660262 /* LogInViewController.swift */; };
@@ -75,7 +75,6 @@
 		9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
 		DE007F601EAEA17300966F55 /* SendToFriendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendToFriendView.xib; sourceTree = "<group>"; };
 		DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+setTextWhileKeepingAttributes.swift"; sourceTree = "<group>"; };
-		DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendToFriendViewController.swift; path = SendToFriend/SendToFriendViewController.swift; sourceTree = "<group>"; };
 		DE429F7E1E661BB20050E719 /* MusicMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE429F811E661BB20050E719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE429F861E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		DE8EE3AF1E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+setupNavigationBarWithTheme.swift"; sourceTree = "<group>"; };
 		DEB4FDD01EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isRunningOnSimulator.swift"; sourceTree = "<group>"; };
 		DEB4FDD21EC520A5001458CE /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
+		DEB4FDD41EC520ED001458CE /* SendToFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendToFriendViewController.swift; sourceTree = "<group>"; };
 		DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageColored.swift"; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEC96E261E957BCD00660262 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				DE007F601EAEA17300966F55 /* SendToFriendView.xib */,
-				DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */,
+				DEB4FDD41EC520ED001458CE /* SendToFriendViewController.swift */,
 				DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */,
 			);
 			name = "Send to friend";
@@ -467,6 +467,7 @@
 				0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */,
 				0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */,
 				DE85666C1EC3BE5D00B2409D /* Post.swift in Sources */,
+				DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */,
 				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,
 				DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */,
 				DE85E5C61EB127C7005FFEB9 /* UserSettingsViewController.swift in Sources */,
@@ -478,7 +479,6 @@
 				0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */,
 				0F58F2691EAE833B00DC04EA /* AVVideoExporter.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
-				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				DEB4FDD31EC520A5001458CE /* CameraCaptureViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
