@@ -14,14 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var user: User!
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FIRApp.configure()
         
         // If user is already signed in skip the onboarding flow
-        if FIRAuth.auth()?.currentUser != nil {
+        if let _ = FIRAuth.auth()?.currentUser {
+            // Go to Camera Capture directly
             let storyboard = UIStoryboard(name: "CameraCapture", bundle: nil)
             let welcomeViewController = storyboard.instantiateInitialViewController()
             
@@ -35,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Setup spotify auth
         spotifyAuth.sessionUserDefaultsKey = "MMSpotifySession" // Enable automatic saving of the session to defaults
-        spotifyAuth.clientID = "3b7f66602b9c45b78f4aa55de8efd046"
+        spotifyAuth.clientID = "a87022d4244f46129aac192c58fb6389"
         spotifyAuth.redirectURL = URL(string: "musicmind://returnAfterSpotify")
         spotifyAuth.requestedScopes = [SPTAuthStreamingScope]
         

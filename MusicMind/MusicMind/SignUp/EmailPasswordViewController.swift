@@ -15,8 +15,7 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
-    
-    var newUser = User()
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +23,6 @@ class EmailPasswordViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordConfirmationTextField.delegate = self
-        
-        print(newUser.dictionaryRepresentation)
         
         self.hideKeyboardWhenTappedAround()
     }
@@ -60,11 +57,7 @@ class EmailPasswordViewController: UIViewController {
                 return
         }
         
-        // Save log in info to keychain
-        userLoginCredentials.firebaseUserEmail = email
-        userLoginCredentials.firebaseUserPassword = password
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (fbAuthUser, error) in
             //TODO: handle error 17001 when the user exists in fire base
             
             func presentErrorWith(string: String){
@@ -93,11 +86,21 @@ class EmailPasswordViewController: UIViewController {
             
             self.goToCameraCapture()
             
-            // Post new user to firebase
-            self.newUser.firebaseUUID = user?.uid
-            
-            if self.newUser.firebaseUUID != nil {
-                FirebaseDataService.shared.addUserToUserList(self.newUser)
+            if var user = self.user {
+                user.firebaseAuthUser = fbAuthUser
+                user.email = fbAuthUser?.email
+                user.dateCreated = Date()
+                user.id = fbAuthUser?.uid
+                
+                let newUserRef = FIRDatabase.database().reference().child("users/\(user.id!)")
+                
+                newUserRef.setValue(user.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    } else {
+                        print("Successfully pushed new user to Firebase")
+                    }
+                })
             }
         })
         

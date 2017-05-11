@@ -7,36 +7,16 @@ target 'MusicMind' do
 
   # Pods for MusicMind
 
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Storage'
-  pod 'KeychainSwift'
+  pod 'Firebase/Core', '~> 3.15.0'
+  pod 'Firebase/Auth', '~> 3.15.0'
+  pod 'Firebase/Storage', '~> 3.15.0'
+  pod 'Firebase/Database', '~> 3.15.0'
   pod 'Alamofire'
   pod 'SinchVerification-Swift'
-  pod 'Firebase/Database'
   pod 'RecordButton', :git => 'https://github.com/felipericieri/RecordButton.git'
 
   target 'MusicMindTests' do
-      
-      pod 'Firebase/Core'
-      pod 'Firebase/Auth'
-      pod 'Firebase/Storage'
-      pod 'KeychainSwift'
-      pod 'Alamofire'
-
-
+      inherit! :complete
   end
-
-  target 'MusicMindUITests' do
-    
-    
-    pod 'Firebase/Core'
-    pod 'Firebase/Auth'
-    pod 'Firebase/Storage'
-    pod 'KeychainSwift'
-    pod 'Alamofire'
-
-  end
-
-
+  
 end
