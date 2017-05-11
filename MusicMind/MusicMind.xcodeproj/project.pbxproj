@@ -19,7 +19,6 @@
 		0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */; };
 		0FF4B61D1E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6181E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift */; };
 		0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */; };
-		0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */; };
 		0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */; };
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
 		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
@@ -89,7 +88,6 @@
 		0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiCollectionViewCell.swift; path = Stickers/EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		0FF4B6181E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PostProcessingViewController + collectionViewHelper.swift"; path = "Stickers/PostProcessingViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
 		0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoContainerView.swift; path = Stickers/VideoContainerView.swift; sourceTree = "<group>"; };
-		0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewController.swift; path = Stickers/VideoPickerViewController.swift; sourceTree = "<group>"; };
 		0FF4B6211E8394E600EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PostProcessing.storyboard; sourceTree = "<group>"; };
 		0FF4B6291E8AD8D700EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameViewController.swift; path = SignUp/NameViewController.swift; sourceTree = "<group>"; };
@@ -266,13 +264,6 @@
 			name = "Send to friend";
 			sourceTree = "<group>";
 		};
-		DE379D5D1E9D479B003C921F /* Old CameraCapture stuff */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Old CameraCapture stuff";
-			sourceTree = "<group>";
-		};
 		DE429F751E661BB20050E719 = {
 			isa = PBXGroup;
 			children = (
@@ -401,10 +392,8 @@
 		DE860DF81E9363C200393B03 /* Old or not in use */ = {
 			isa = PBXGroup;
 			children = (
-				0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */,
 				DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */,
 				DEBB98A41EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift */,
-				DE379D5D1E9D479B003C921F /* Old CameraCapture stuff */,
 				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
 			);
 			name = "Old or not in use";
@@ -682,7 +671,6 @@
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
-				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
 				DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */,
