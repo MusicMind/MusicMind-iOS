@@ -14,9 +14,5 @@ target 'MusicMind' do
   pod 'Alamofire'
   pod 'SinchVerification-Swift'
   pod 'RecordButton', :git => 'https://github.com/felipericieri/RecordButton.git'
-
-  target 'MusicMindTests' do
-      inherit! :complete
-  end
   
 end

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		07340F15BACBA601736DBB2ABF1ABC35 /* GTMSessionFetcherLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DB63BE9044806232316AA3D1C76CC1 /* GTMSessionFetcherLogging.m */; };
 		0749EC40D3519957D43A1040F9662F71 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D29250939FD97643AE1533D95673BB1 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F0DDC1B89F316F3E80F7C0F9B3588DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
 		0F7DDFB6827F8204B63A87CF21F3DDC5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418B9C4CC272ED707B2AAFA910E21E17 /* CoreTelephony.framework */; };
 		10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE03EA8F75C0AB1A619B90023ED7165 /* Timeline.swift */; };
 		11F0D0CB930604B4DAAE93FEA3904826 /* GTMNSDictionary+URLArguments.h in Headers */ = {isa = PBXBuildFile; fileRef = D09AE9E90332AD34EC7EE52D2907ECAC /* GTMNSDictionary+URLArguments.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,11 +18,10 @@
 		2633762BA2DDE2D219D268ED680D9E5B /* SinchVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E483C4BACC6781CDE192889F6309C322 /* SinchVerification.swift */; };
 		299DB38197A7206114768F5E21989FA8 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5CF21FD9C457818B139B99C8A3AFD /* RecordButton.swift */; };
 		2BAC8C31EC37B7314A218DCEA4F49F78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F7A9E7BA6E22193BA94D4D0030AD06 /* UIKit.framework */; };
-		2BC394F1732E3B52C184A449D971BF63 /* Pods-MusicMind-MusicMindTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FA9A2D35FD3C786D1DC74FBD9D433C /* Pods-MusicMind-MusicMindTests-dummy.m */; };
 		2EFC826FB30ECD27C98CE7F3707E9012 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = D109AAB4DF72D6CB139C0BADDFDB8DA0 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		32CF9BB4493C89CB01FFADD6DB754927 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A28C435DBC225B383EAC8E30E08C6C69 /* GoogleToolboxForMac-dummy.m */; };
 		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FFDB88E1CEB5D035440F3A07595D20 /* TaskDelegate.swift */; };
-		3EF83B3548C9BA5DBBD09EDE9544E838 /* Pods-MusicMind-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E2F80484BB64D0BC4E22E1A5E46C5D48 /* Pods-MusicMind-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EF83B3548C9BA5DBBD09EDE9544E838 /* Pods-MusicMind-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F895D047A634AE1E4127C6A7AD94F126 /* Pods-MusicMind-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43237236023ECEE96CD007EB6E4B1DFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F7A9E7BA6E22193BA94D4D0030AD06 /* UIKit.framework */; };
 		4F2AB5BFF7D9DE66B8B242ACE69AE0D9 /* GTMDebugThreadValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 56AB741E6A9314585B90B6E8F41DAF50 /* GTMDebugThreadValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAEEA53E387FDEE324AAD24B4F83C2C /* Request.swift */; };
@@ -40,10 +38,9 @@
 		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F5D8903CA5EFEC3E2AF2C616587AC /* SessionDelegate.swift */; };
 		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8657DE104ECD388D905B04BE695A2975 /* Result.swift */; };
 		8852FD9AFC242520924D98BE9C4E2477 /* GTMSessionFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B08B79516BE11B7F14D2DE3908F1FAC /* GTMSessionFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95C0419D46AA4D3E1E1DB3EA1703E316 /* Pods-MusicMind-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91227FF94CCF65D23661E81B4AB862AF /* Pods-MusicMind-dummy.m */; };
+		95C0419D46AA4D3E1E1DB3EA1703E316 /* Pods-MusicMind-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6443307A90F7836FC078AA100F83377 /* Pods-MusicMind-dummy.m */; };
 		95C69447F517DB81437EDE0003486963 /* GTMSessionFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = FC66F902AD3FFFF78721EA35CBA43ABE /* GTMSessionFetcherService.m */; };
 		967551D370060AE0F4BC86BA2FE66E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
-		9C3DB1D7B6A3C4CECB237AA6BF38D7B4 /* Pods-MusicMind-MusicMindTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 084CE0BB859A99B76E4DAE91FB2F622E /* Pods-MusicMind-MusicMindTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85CEF154378026B51FEA51F516BD729 /* AFError.swift */; };
 		A04BFC558D69E7DBB68023C80A9CFE4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0B254A72349FE191C2991283419F42 /* Foundation.framework */; };
 		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3A9818F9455A76C7E5F66D7873B80F /* NetworkReachabilityManager.swift */; };
@@ -73,26 +70,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0FB66D48D62EC274DE79521C1B52123B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 107A9565F9DF88517DFD3E28C05B2B96;
-			remoteInfo = GoogleToolboxForMac;
-		};
 		2208AC705051A1DBE7C3AAFFE0A9A8BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C052BEBFBD0AB5218CC64BA3450F6547;
 			remoteInfo = GTMSessionFetcher;
-		};
-		2D387DA917B0C905435C94D798E21575 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F7AFC2DF119131D7670428007E444893;
-			remoteInfo = RecordButton;
 		};
 		35271253DE078E87EE37736125168FC2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -101,33 +84,12 @@
 			remoteGlobalIDString = F7AFC2DF119131D7670428007E444893;
 			remoteInfo = RecordButton;
 		};
-		6126E70A05239E1488BB888EB34D831E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C052BEBFBD0AB5218CC64BA3450F6547;
-			remoteInfo = GTMSessionFetcher;
-		};
 		6A1553498AAAD4787FD6E0596A17B91A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 107A9565F9DF88517DFD3E28C05B2B96;
 			remoteInfo = GoogleToolboxForMac;
-		};
-		6B43A8A9B9D1B76D2852A14FC83CC3AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C08646F2D02D5B357E077525581D1594;
-			remoteInfo = "SinchVerification-Swift";
-		};
-		6C663050942DC01196ABAA0179BDA5A9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
-			remoteInfo = Alamofire;
 		};
 		C8126A0E4986A3281184DDEA1BB404A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -146,7 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		084CE0BB859A99B76E4DAE91FB2F622E /* Pods-MusicMind-MusicMindTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMind-MusicMindTests-umbrella.h"; sourceTree = "<group>"; };
+		065253D8696CACA5CB4CE3CAF9A8ADB3 /* SinchVerification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SinchVerification.framework; path = "SinchVerification-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08DB63BE9044806232316AA3D1C76CC1 /* GTMSessionFetcherLogging.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionFetcherLogging.m; path = Source/GTMSessionFetcherLogging.m; sourceTree = "<group>"; };
 		0E1C19EDFA0A77387397FDECFEA66AC4 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		15387C64B103768EB987D14D5840B7A4 /* RecordButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RecordButton.modulemap; sourceTree = "<group>"; };
@@ -155,101 +117,90 @@
 		180A7E84C7CFFCE777D33AB7ED9BBA02 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
 		1BE03EA8F75C0AB1A619B90023ED7165 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		1C3AE990EC1E2F35B7374B94937D3CC4 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		1D15DCADF5C606DC93209F4B96B76837 /* Pods-MusicMind-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
-		22E57BD67D8B2A5CF81461E4E3B16B73 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23732AFD7BB749E0B9571CCA3A3DD96A /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTMSessionFetcher.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		257919C9B3A087E5F6897ABEE2D74020 /* GTMSessionUploadFetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionUploadFetcher.m; path = Source/GTMSessionUploadFetcher.m; sourceTree = "<group>"; };
 		261613F77E2A16FAA21B7E6B645575EE /* GTMNSDictionary+URLArguments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSDictionary+URLArguments.m"; path = "Foundation/GTMNSDictionary+URLArguments.m"; sourceTree = "<group>"; };
 		2B1A7943CF7A37AA10F3096C09D99AD9 /* SinchVerification-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SinchVerification-Swift-dummy.m"; sourceTree = "<group>"; };
 		2B779728C061AB162C3F38C32ED5A338 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		32F06A6603F576EFB6471F2AE8EC582B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33ED538CA41E901530331989671D7F80 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		346E1789557126621492005B3E025137 /* SinchVerification-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SinchVerification-Swift-prefix.pch"; sourceTree = "<group>"; };
 		36906C9E27F325280D19DDEB4C9813F2 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		3770B62D820DADFBB5603FED56F04A29 /* Pods-MusicMind-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-frameworks.sh"; sourceTree = "<group>"; };
 		3AA359A65831C263B58FE045BC96656C /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		3C1862399003041B4BA91052777F4C2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		418B9C4CC272ED707B2AAFA910E21E17 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		476FCAFE12A5869C175E5EC81AB4E789 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49C1829EAA2D2613F525723E1D890541 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AA0D06322FCB62F376E46F57BD729ED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		4B4A4D3313DB4C5EBE063D848DDEEC7F /* Pods-MusicMind-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-frameworks.sh"; sourceTree = "<group>"; };
 		4D29250939FD97643AE1533D95673BB1 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
-		4F8ECF686CC3209CD5BBBCA5CD438ADB /* Pods-MusicMind-MusicMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind-MusicMindTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4F9B7234EB7C4FF019394A3688117485 /* Pods_MusicMind_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMind_MusicMindTests.framework; path = "Pods-MusicMind-MusicMindTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		523F00B20729A9DA306751381251608E /* GTMSessionFetcher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTMSessionFetcher-prefix.pch"; sourceTree = "<group>"; };
 		53FBCB9C650572371C68D3E9536081F8 /* RecordButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-umbrella.h"; sourceTree = "<group>"; };
 		55D9BB6D5CBB447EC040F9187FA46AD0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56AB741E6A9314585B90B6E8F41DAF50 /* GTMDebugThreadValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMDebugThreadValidation.h; path = DebugUtils/GTMDebugThreadValidation.h; sourceTree = "<group>"; };
-		63FECB8F033902260DD13A4651363160 /* Pods-MusicMind-MusicMindTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMind-MusicMindTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		6746EA10241539E84633C9DD1B2AB212 /* GTMSessionFetcher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GTMSessionFetcher.xcconfig; sourceTree = "<group>"; };
 		67978C42E0BCCB1E79C2E161DC5F8CCC /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		69280FF0EDE4B6E18D05D3417D5300C9 /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+URLArguments.h"; path = "Foundation/GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
+		6AFD62D372717E753541326AD65113FF /* Pods-MusicMind-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-resources.sh"; sourceTree = "<group>"; };
 		7295065AF3D2CA2489BA9C23E1D94096 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		7477656C1EEC2DA61A008E69A47BDA8F /* GTMSessionFetcher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTMSessionFetcher-umbrella.h"; sourceTree = "<group>"; };
-		79769AD3755D254F323A938D86B3F074 /* Pods-MusicMind-MusicMindTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-MusicMindTests-resources.sh"; sourceTree = "<group>"; };
 		79B3ABE1E34B256024447AEB0AB3A667 /* GTMSessionUploadFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionUploadFetcher.h; path = Source/GTMSessionUploadFetcher.h; sourceTree = "<group>"; };
+		7A3011F2265D946EFA45C48DEC1C7946 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		7B31280FF13280F96D6D827D5A56EE69 /* SinchVerification-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SinchVerification-Swift.xcconfig"; sourceTree = "<group>"; };
 		7C0C73873EDEAA40811C0E8D062CBFD6 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		7F6729047D2F4D113145A05FC78C1F1B /* GTMSessionFetcherLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcherLogging.h; path = Source/GTMSessionFetcherLogging.h; sourceTree = "<group>"; };
-		80417E931E6B1BB54B0D92103763C61B /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMind.framework; path = "Pods-MusicMind.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F7A9E7BA6E22193BA94D4D0030AD06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		85203F55DB38A569D6316861FF06773C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8657DE104ECD388D905B04BE695A2975 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		86FA9A2D35FD3C786D1DC74FBD9D433C /* Pods-MusicMind-MusicMindTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMind-MusicMindTests-dummy.m"; sourceTree = "<group>"; };
-		898523A771B126106CA4FACAB265D548 /* Pods-MusicMind-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMind-acknowledgements.plist"; sourceTree = "<group>"; };
+		87957BCBE1B4EBD7F66CFF56657E125D /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTMSessionFetcher.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A64B05CB506D9F9A215DC438EE6EF99 /* GTMSessionFetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionFetcher.m; path = Source/GTMSessionFetcher.m; sourceTree = "<group>"; };
-		91227FF94CCF65D23661E81B4AB862AF /* Pods-MusicMind-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMind-dummy.m"; sourceTree = "<group>"; };
 		92CD5B11B2F6CA786570B84959F70DC2 /* GTMSessionFetcher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GTMSessionFetcher-dummy.m"; sourceTree = "<group>"; };
 		92D46E56422635234B989BC8DA2D0067 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97791A244D73937BC12EE550AB76E633 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		99015A39E9C8AF1F557B3B1886251ED1 /* RecordButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RecordButton.xcconfig; sourceTree = "<group>"; };
 		9B08B79516BE11B7F14D2DE3908F1FAC /* GTMSessionFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcher.h; path = Source/GTMSessionFetcher.h; sourceTree = "<group>"; };
-		A14F519D5978A79E498BD8562E7B1F30 /* Pods-MusicMind-MusicMindTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMind-MusicMindTests.modulemap"; sourceTree = "<group>"; };
 		A28C435DBC225B383EAC8E30E08C6C69 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		A5EACD9753CA98F61495F46E1DC0CBCE /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		A66762855BA227995BC8D42C01A17F6C /* Pods-MusicMind-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-resources.sh"; sourceTree = "<group>"; };
+		A6443307A90F7836FC078AA100F83377 /* Pods-MusicMind-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MusicMind-dummy.m"; sourceTree = "<group>"; };
 		A750D4F9F624887B361FF7B7D9070C6D /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		A779B18014E063B2AB5D7FBDA9D955D7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85CEF154378026B51FEA51F516BD729 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		AA564B20915D1E793391D18603702DB1 /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RecordButton.framework; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB3682D0BE91B112B7479432DC6C6E5 /* SinchVerification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SinchVerification.framework; path = objc/SinchVerification.framework; sourceTree = "<group>"; };
 		ADF45773D8AD393E757613318BB513CD /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
-		AE3D59CFA57562DA07BD04A4FA8D4569 /* SinchVerification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SinchVerification.framework; path = "SinchVerification-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC7DE2493EDAC37E89991A1F307C7FE /* GTMSessionFetcher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GTMSessionFetcher.modulemap; sourceTree = "<group>"; };
-		AFF40EFB370F7BEEA3919B9BF231DC8D /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		B0BF190307CC2516858A32064102A95E /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		B2484CF678673526501B2405EBE55248 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
 		B45639226EB61936DE2F514737352250 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
 		B4FFDB88E1CEB5D035440F3A07595D20 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		BC0B254A72349FE191C2991283419F42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BCAEEA53E387FDEE324AAD24B4F83C2C /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		BD4AF96842C0E9D1BC7E6E056BC468BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCCFB0B0255216EA28EF3410B72E3A7D /* Pods-MusicMind-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMind-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BE65BE7A21AAC4CF6FB39B8EDA4BD4C8 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		C19097BA93D31981540D98A00F75592C /* Pods-MusicMind.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMind.modulemap"; sourceTree = "<group>"; };
 		C5F3A88C2DAE09B5F23F4CB8A09F6E56 /* GTMMethodCheck.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMMethodCheck.h; path = DebugUtils/GTMMethodCheck.h; sourceTree = "<group>"; };
 		CCC13DFA03CBACA24D3F0EFF83777BB0 /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Frameworks/FirebaseStorage.framework; sourceTree = "<group>"; };
-		CDFC902CFE947A5A5AF90B23E83E97B5 /* Pods-MusicMind-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMind-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CE2F0F53FE36877698588FCAF1476DD8 /* Pods-MusicMind-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MusicMind-acknowledgements.plist"; sourceTree = "<group>"; };
 		CFB4D5BA6676E5253DFF61E1FB4341B2 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		D09AE9E90332AD34EC7EE52D2907ECAC /* GTMNSDictionary+URLArguments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSDictionary+URLArguments.h"; path = "Foundation/GTMNSDictionary+URLArguments.h"; sourceTree = "<group>"; };
 		D0AC3F9691B62583D48091BE1ADAEECA /* RecordButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RecordButton-prefix.pch"; sourceTree = "<group>"; };
 		D109AAB4DF72D6CB139C0BADDFDB8DA0 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		D2712485D3C415FB34544B0D48863B78 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		D34153EBF99DDA4A2D889712080EEB77 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		D684E4CECCE4D57C34A33C55CC5AC06D /* Pods-MusicMind.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MusicMind.modulemap"; sourceTree = "<group>"; };
+		D6967B82F27878F47E43D6301FB90913 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MusicMind.framework; path = "Pods-MusicMind.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71E9C15EAD6BEE67D249A8A3FD13980 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		D79F87F3B5ED12289EFB843F069ED33F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EEE9A5E3BD4E582D81CC2C555AD665 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		DB2F5D8903CA5EFEC3E2AF2C616587AC /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		DBC395655412CA3B5C8E3628F77307B0 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		DC544149DAB815D66905D1F4B3631676 /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
 		DD3A9818F9455A76C7E5F66D7873B80F /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		DD41B1B86802B0D6678578A3A517F063 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		E2F80484BB64D0BC4E22E1A5E46C5D48 /* Pods-MusicMind-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMind-umbrella.h"; sourceTree = "<group>"; };
-		E4718863A177D48E1D253A4B263F0796 /* Pods-MusicMind-MusicMindTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MusicMind-MusicMindTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E483C4BACC6781CDE192889F6309C322 /* SinchVerification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SinchVerification.swift; path = swift3/src/SinchVerification.swift; sourceTree = "<group>"; };
-		E8E0619B12B46B502990EA748464FF3A /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
 		EAEB4154C87814A5CC1585CE6F3E96D4 /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+URLArguments.m"; path = "Foundation/GTMNSString+URLArguments.m"; sourceTree = "<group>"; };
 		EBCCE9FC6A4D6B22AD4581A003267A37 /* SinchVerification-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SinchVerification-Swift-umbrella.h"; sourceTree = "<group>"; };
+		EC87C4B00E4B6BCFD117EA09B8537B8C /* RecordButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RecordButton.framework; path = RecordButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C5CF21FD9C457818B139B99C8A3AFD /* RecordButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordButton.swift; path = Pod/Classes/RecordButton.swift; sourceTree = "<group>"; };
-		F35940FCA408D55BECE521C2EF3E8A48 /* Pods-MusicMind-MusicMindTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MusicMind-MusicMindTests-frameworks.sh"; sourceTree = "<group>"; };
-		F6F195DC791D4CC8182A52D8349F2AD2 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F836EAEF81357EBBEC5C7B37D8EF1E4A /* RecordButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RecordButton-dummy.m"; sourceTree = "<group>"; };
+		F895D047A634AE1E4127C6A7AD94F126 /* Pods-MusicMind-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MusicMind-umbrella.h"; sourceTree = "<group>"; };
 		FB9EBAA7494A7DD4E0951718B42B648A /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMDebugSelectorValidation.h; path = DebugUtils/GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
 		FC66F902AD3FFFF78721EA35CBA43ABE /* GTMSessionFetcherService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTMSessionFetcherService.m; path = Source/GTMSessionFetcherService.m; sourceTree = "<group>"; };
 		FC96C5B2838B5BE8332F403CC7558CC3 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
@@ -287,14 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A6BAD2B4EE62BE82C1C9C39A3AA316B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E8F42782CF058DBE00DEA0F708C1C33D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F0DDC1B89F316F3E80F7C0F9B3588DE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,24 +351,6 @@
 			);
 			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
-			sourceTree = "<group>";
-		};
-		26F61B0B5A154DDEAA1902D95A9FF9CB /* Pods-MusicMind-MusicMindTests */ = {
-			isa = PBXGroup;
-			children = (
-				22E57BD67D8B2A5CF81461E4E3B16B73 /* Info.plist */,
-				A14F519D5978A79E498BD8562E7B1F30 /* Pods-MusicMind-MusicMindTests.modulemap */,
-				E4718863A177D48E1D253A4B263F0796 /* Pods-MusicMind-MusicMindTests-acknowledgements.markdown */,
-				63FECB8F033902260DD13A4651363160 /* Pods-MusicMind-MusicMindTests-acknowledgements.plist */,
-				86FA9A2D35FD3C786D1DC74FBD9D433C /* Pods-MusicMind-MusicMindTests-dummy.m */,
-				F35940FCA408D55BECE521C2EF3E8A48 /* Pods-MusicMind-MusicMindTests-frameworks.sh */,
-				79769AD3755D254F323A938D86B3F074 /* Pods-MusicMind-MusicMindTests-resources.sh */,
-				084CE0BB859A99B76E4DAE91FB2F622E /* Pods-MusicMind-MusicMindTests-umbrella.h */,
-				4F8ECF686CC3209CD5BBBCA5CD438ADB /* Pods-MusicMind-MusicMindTests.debug.xcconfig */,
-				1D15DCADF5C606DC93209F4B96B76837 /* Pods-MusicMind-MusicMindTests.release.xcconfig */,
-			);
-			name = "Pods-MusicMind-MusicMindTests";
-			path = "Target Support Files/Pods-MusicMind-MusicMindTests";
 			sourceTree = "<group>";
 		};
 		3A8B4A203D89BDEF66574447F3879266 /* Frameworks */ = {
@@ -542,27 +467,17 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
 				D08443D56586E47A334E2038A79C18C5 /* Pods */,
-				BCE013A59A1466C752DDDD34A227866F /* Products */,
-				E68D83976503A8E0E7DA9E3019FFFBA8 /* Targets Support Files */,
+				B3CACBC70562D407E4BB73FFE3782284 /* Products */,
+				8703B4C2150E0BDE473B5EAA9CB175C6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		861867441E6B9ACAC5090B17586488B4 /* Pods-MusicMind */ = {
+		8703B4C2150E0BDE473B5EAA9CB175C6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BD4AF96842C0E9D1BC7E6E056BC468BF /* Info.plist */,
-				D684E4CECCE4D57C34A33C55CC5AC06D /* Pods-MusicMind.modulemap */,
-				CDFC902CFE947A5A5AF90B23E83E97B5 /* Pods-MusicMind-acknowledgements.markdown */,
-				898523A771B126106CA4FACAB265D548 /* Pods-MusicMind-acknowledgements.plist */,
-				91227FF94CCF65D23661E81B4AB862AF /* Pods-MusicMind-dummy.m */,
-				4B4A4D3313DB4C5EBE063D848DDEEC7F /* Pods-MusicMind-frameworks.sh */,
-				A66762855BA227995BC8D42C01A17F6C /* Pods-MusicMind-resources.sh */,
-				E2F80484BB64D0BC4E22E1A5E46C5D48 /* Pods-MusicMind-umbrella.h */,
-				E8E0619B12B46B502990EA748464FF3A /* Pods-MusicMind.debug.xcconfig */,
-				AFF40EFB370F7BEEA3919B9BF231DC8D /* Pods-MusicMind.release.xcconfig */,
+				FCCCE1C27E3DC5BDCCC0D4500E02F5BD /* Pods-MusicMind */,
 			);
-			name = "Pods-MusicMind";
-			path = "Target Support Files/Pods-MusicMind";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		87487591A9EE537A8C3AFAE30B3C24F6 /* Defines */ = {
@@ -605,6 +520,19 @@
 			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
+		B3CACBC70562D407E4BB73FFE3782284 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A779B18014E063B2AB5D7FBDA9D955D7 /* Alamofire.framework */,
+				33ED538CA41E901530331989671D7F80 /* GoogleToolboxForMac.framework */,
+				87957BCBE1B4EBD7F66CFF56657E125D /* GTMSessionFetcher.framework */,
+				D6967B82F27878F47E43D6301FB90913 /* Pods_MusicMind.framework */,
+				EC87C4B00E4B6BCFD117EA09B8537B8C /* RecordButton.framework */,
+				065253D8696CACA5CB4CE3CAF9A8ADB3 /* SinchVerification.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B6A5FCF486F8A68557EB6CE513DB4831 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,20 +549,6 @@
 			);
 			name = FirebaseStorage;
 			path = FirebaseStorage;
-			sourceTree = "<group>";
-		};
-		BCE013A59A1466C752DDDD34A227866F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D79F87F3B5ED12289EFB843F069ED33F /* Alamofire.framework */,
-				F6F195DC791D4CC8182A52D8349F2AD2 /* GoogleToolboxForMac.framework */,
-				23732AFD7BB749E0B9571CCA3A3DD96A /* GTMSessionFetcher.framework */,
-				80417E931E6B1BB54B0D92103763C61B /* Pods_MusicMind.framework */,
-				4F9B7234EB7C4FF019394A3688117485 /* Pods_MusicMind_MusicMindTests.framework */,
-				AA564B20915D1E793391D18603702DB1 /* RecordButton.framework */,
-				AE3D59CFA57562DA07BD04A4FA8D4569 /* SinchVerification.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BDCF47278D19B49E5B324BFF515D083D /* Frameworks */ = {
@@ -712,15 +626,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E68D83976503A8E0E7DA9E3019FFFBA8 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				861867441E6B9ACAC5090B17586488B4 /* Pods-MusicMind */,
-				26F61B0B5A154DDEAA1902D95A9FF9CB /* Pods-MusicMind-MusicMindTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		E6D40371BA4EAC674C0DA5D04C8A4D51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +652,24 @@
 				B45639226EB61936DE2F514737352250 /* Firebase.h */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		FCCCE1C27E3DC5BDCCC0D4500E02F5BD /* Pods-MusicMind */ = {
+			isa = PBXGroup;
+			children = (
+				49C1829EAA2D2613F525723E1D890541 /* Info.plist */,
+				C19097BA93D31981540D98A00F75592C /* Pods-MusicMind.modulemap */,
+				BCCFB0B0255216EA28EF3410B72E3A7D /* Pods-MusicMind-acknowledgements.markdown */,
+				CE2F0F53FE36877698588FCAF1476DD8 /* Pods-MusicMind-acknowledgements.plist */,
+				A6443307A90F7836FC078AA100F83377 /* Pods-MusicMind-dummy.m */,
+				3770B62D820DADFBB5603FED56F04A29 /* Pods-MusicMind-frameworks.sh */,
+				6AFD62D372717E753541326AD65113FF /* Pods-MusicMind-resources.sh */,
+				F895D047A634AE1E4127C6A7AD94F126 /* Pods-MusicMind-umbrella.h */,
+				DC544149DAB815D66905D1F4B3631676 /* Pods-MusicMind.debug.xcconfig */,
+				7A3011F2265D946EFA45C48DEC1C7946 /* Pods-MusicMind.release.xcconfig */,
+			);
+			name = "Pods-MusicMind";
+			path = "Target Support Files/Pods-MusicMind";
 			sourceTree = "<group>";
 		};
 		FF86F2069B89A3E74B0C9DE21062526B /* Firebase */ = {
@@ -805,14 +728,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA4054E530BB88DF57A32B8AD5E6E2F7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C3DB1D7B6A3C4CECB237AA6BF38D7B4 /* Pods-MusicMind-MusicMindTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BB0A1DF130E97C4755B09863D7F1AD5F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -850,7 +765,7 @@
 			);
 			name = "Pods-MusicMind";
 			productName = "Pods-MusicMind";
-			productReference = 80417E931E6B1BB54B0D92103763C61B /* Pods_MusicMind.framework */;
+			productReference = D6967B82F27878F47E43D6301FB90913 /* Pods_MusicMind.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		107A9565F9DF88517DFD3E28C05B2B96 /* GoogleToolboxForMac */ = {
@@ -867,29 +782,7 @@
 			);
 			name = GoogleToolboxForMac;
 			productName = GoogleToolboxForMac;
-			productReference = F6F195DC791D4CC8182A52D8349F2AD2 /* GoogleToolboxForMac.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7BE06DCE2C9E4893FD84F03C6D5D0DD6 /* Pods-MusicMind-MusicMindTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 55609BE3C2907D061AC6357B7E6AC380 /* Build configuration list for PBXNativeTarget "Pods-MusicMind-MusicMindTests" */;
-			buildPhases = (
-				48BF52171C97D698DED698AFCAF70798 /* Sources */,
-				E8F42782CF058DBE00DEA0F708C1C33D /* Frameworks */,
-				BA4054E530BB88DF57A32B8AD5E6E2F7 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9CCAE9EEFE4462D288E4A4EE11A13E0C /* PBXTargetDependency */,
-				4B4C583310402CFFD74D9111E39AC5E6 /* PBXTargetDependency */,
-				5C068FDBC4EA04B5F433FB570F49FD72 /* PBXTargetDependency */,
-				90C75170B5D3B15ECCAADB6700B3417E /* PBXTargetDependency */,
-				C388F687104AC9032286D5C44AD36A50 /* PBXTargetDependency */,
-			);
-			name = "Pods-MusicMind-MusicMindTests";
-			productName = "Pods-MusicMind-MusicMindTests";
-			productReference = 4F9B7234EB7C4FF019394A3688117485 /* Pods_MusicMind_MusicMindTests.framework */;
+			productReference = 33ED538CA41E901530331989671D7F80 /* GoogleToolboxForMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */ = {
@@ -906,7 +799,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = D79F87F3B5ED12289EFB843F069ED33F /* Alamofire.framework */;
+			productReference = A779B18014E063B2AB5D7FBDA9D955D7 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */ = {
@@ -923,7 +816,7 @@
 			);
 			name = GTMSessionFetcher;
 			productName = GTMSessionFetcher;
-			productReference = 23732AFD7BB749E0B9571CCA3A3DD96A /* GTMSessionFetcher.framework */;
+			productReference = 87957BCBE1B4EBD7F66CFF56657E125D /* GTMSessionFetcher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C08646F2D02D5B357E077525581D1594 /* SinchVerification-Swift */ = {
@@ -940,7 +833,7 @@
 			);
 			name = "SinchVerification-Swift";
 			productName = "SinchVerification-Swift";
-			productReference = AE3D59CFA57562DA07BD04A4FA8D4569 /* SinchVerification.framework */;
+			productReference = 065253D8696CACA5CB4CE3CAF9A8ADB3 /* SinchVerification.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F7AFC2DF119131D7670428007E444893 /* RecordButton */ = {
@@ -957,7 +850,7 @@
 			);
 			name = RecordButton;
 			productName = RecordButton;
-			productReference = AA564B20915D1E793391D18603702DB1 /* RecordButton.framework */;
+			productReference = EC87C4B00E4B6BCFD117EA09B8537B8C /* RecordButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -977,7 +870,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = BCE013A59A1466C752DDDD34A227866F /* Products */;
+			productRefGroup = B3CACBC70562D407E4BB73FFE3782284 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -985,7 +878,6 @@
 				107A9565F9DF88517DFD3E28C05B2B96 /* GoogleToolboxForMac */,
 				C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */,
 				0B661E41511BAD3C3BE39BDCE3DF517D /* Pods-MusicMind */,
-				7BE06DCE2C9E4893FD84F03C6D5D0DD6 /* Pods-MusicMind-MusicMindTests */,
 				F7AFC2DF119131D7670428007E444893 /* RecordButton */,
 				C08646F2D02D5B357E077525581D1594 /* SinchVerification-Swift */,
 			);
@@ -1026,14 +918,6 @@
 				3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */,
 				10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */,
 				BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		48BF52171C97D698DED698AFCAF70798 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2BC394F1732E3B52C184A449D971BF63 /* Pods-MusicMind-MusicMindTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,41 +962,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4B4C583310402CFFD74D9111E39AC5E6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GTMSessionFetcher;
-			target = C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */;
-			targetProxy = 6126E70A05239E1488BB888EB34D831E /* PBXContainerItemProxy */;
-		};
 		5AACD10E9EA3535FFB79B1C0281467F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RecordButton;
 			target = F7AFC2DF119131D7670428007E444893 /* RecordButton */;
 			targetProxy = 35271253DE078E87EE37736125168FC2 /* PBXContainerItemProxy */;
 		};
-		5C068FDBC4EA04B5F433FB570F49FD72 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GoogleToolboxForMac;
-			target = 107A9565F9DF88517DFD3E28C05B2B96 /* GoogleToolboxForMac */;
-			targetProxy = 0FB66D48D62EC274DE79521C1B52123B /* PBXContainerItemProxy */;
-		};
 		5E1B3D6474A1894FE8D09C845FF97051 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GTMSessionFetcher;
 			target = C052BEBFBD0AB5218CC64BA3450F6547 /* GTMSessionFetcher */;
 			targetProxy = 2208AC705051A1DBE7C3AAFFE0A9A8BC /* PBXContainerItemProxy */;
-		};
-		90C75170B5D3B15ECCAADB6700B3417E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RecordButton;
-			target = F7AFC2DF119131D7670428007E444893 /* RecordButton */;
-			targetProxy = 2D387DA917B0C905435C94D798E21575 /* PBXContainerItemProxy */;
-		};
-		9CCAE9EEFE4462D288E4A4EE11A13E0C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
-			targetProxy = 6C663050942DC01196ABAA0179BDA5A9 /* PBXContainerItemProxy */;
 		};
 		A2577AF254A63320E98A2CA0F4CFEE77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1125,12 +985,6 @@
 			name = "SinchVerification-Swift";
 			target = C08646F2D02D5B357E077525581D1594 /* SinchVerification-Swift */;
 			targetProxy = C8126A0E4986A3281184DDEA1BB404A1 /* PBXContainerItemProxy */;
-		};
-		C388F687104AC9032286D5C44AD36A50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SinchVerification-Swift";
-			target = C08646F2D02D5B357E077525581D1594 /* SinchVerification-Swift */;
-			targetProxy = 6B43A8A9B9D1B76D2852A14FC83CC3AD /* PBXContainerItemProxy */;
 		};
 		D61F8B4125E89DE3CEE99CDA823BBD4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1206,41 +1060,6 @@
 			};
 			name = Debug;
 		};
-		38494F8FD5C0C6792FD2B9B8311778B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D15DCADF5C606DC93209F4B96B76837 /* Pods-MusicMind-MusicMindTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MusicMind-MusicMindTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MusicMind_MusicMindTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		3AF861AEADA89A377F12178D493BED95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADF45773D8AD393E757613318BB513CD /* GoogleToolboxForMac.xcconfig */;
@@ -1307,7 +1126,7 @@
 		};
 		5054E9A373244E14B4293604BACEFF05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFF40EFB370F7BEEA3919B9BF231DC8D /* Pods-MusicMind.release.xcconfig */;
+			baseConfigurationReference = 7A3011F2265D946EFA45C48DEC1C7946 /* Pods-MusicMind.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1414,7 +1233,7 @@
 		};
 		99F4161E02FBF390900CB5003AEFE83A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8E0619B12B46B502990EA748464FF3A /* Pods-MusicMind.debug.xcconfig */;
+			baseConfigurationReference = DC544149DAB815D66905D1F4B3631676 /* Pods-MusicMind.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1506,42 +1325,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B9D956ADCF53705D1F0A2685ED7F6E64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F8ECF686CC3209CD5BBBCA5CD438ADB /* Pods-MusicMind-MusicMindTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MusicMind-MusicMindTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MusicMind_MusicMindTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1716,15 +1499,6 @@
 			buildConfigurations = (
 				F383079BFBF927813EA3613CFB679FDE /* Debug */,
 				0A29B6F510198AF64EFD762EF6FA97A5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		55609BE3C2907D061AC6357B7E6AC380 /* Build configuration list for PBXNativeTarget "Pods-MusicMind-MusicMindTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9D956ADCF53705D1F0A2685ED7F6E64 /* Debug */,
-				38494F8FD5C0C6792FD2B9B8311778B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
