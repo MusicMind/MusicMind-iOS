@@ -12,7 +12,6 @@
 		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */; };
 		0F1DE25A1E9327C60032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
-		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
 		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
 		0F58F2691EAE833B00DC04EA /* AVVideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2681EAE833B00DC04EA /* AVVideoExporter.swift */; };
 		0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */; };
@@ -83,7 +82,6 @@
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailPasswordViewController.swift; path = SignUp/EmailPasswordViewController.swift; sourceTree = "<group>"; };
 		0F1DE2591E9327C60032A49A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
 		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		0F58F2681EAE833B00DC04EA /* AVVideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVVideoExporter.swift; path = Stickers/AVVideoExporter.swift; sourceTree = "<group>"; };
 		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CameraCapture.storyboard; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 		DE379D5D1E9D479B003C921F /* Old CameraCapture stuff */ = {
 			isa = PBXGroup;
 			children = (
-				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
 			);
 			name = "Old CameraCapture stuff";
 			sourceTree = "<group>";
@@ -671,7 +668,6 @@
 				DE85666C1EC3BE5D00B2409D /* Post.swift in Sources */,
 				DEBB98A51EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift in Sources */,
 				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,
-				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
 				DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */,
 				DE85E5C61EB127C7005FFEB9 /* UserSettingsViewController.swift in Sources */,
 				0FF4B61B1E83946100EEAE8C /* PostProcessingViewController.swift in Sources */,
