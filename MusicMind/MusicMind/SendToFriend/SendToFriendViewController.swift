@@ -89,6 +89,25 @@ final class SendToFriendViewController: UIViewController {
                         
                         self.downloadURLString = downloadUrl.absoluteString
                         
+                        
+                        // Create a post model and upload to firebase db
+                        var post = Post()
+                        post.authorId = FIRAuth.auth()?.currentUser?.uid
+                        post.dateTimeCreated = Date()
+                        post.numberOfViews = 0
+                        post.videoDownloadUrl = downloadUrl
+                        
+                        let postRef = FIRDatabase.database().reference().child("posts").childByAutoId()
+                        
+                        postRef.setValue(post.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            } else {
+                                print("Successfully posted new post to firebase")
+                            }
+                        })
+                        
+                        // Tell the user the good news
                         self.statusLabel.setTextWhileKeepingAttributes(string: "Upload complete!")
                     }
                 } else {
@@ -102,7 +121,6 @@ final class SendToFriendViewController: UIViewController {
                 guard let progress = snapshot.progress else { return }
                 
                 strongSelf.progressBar.progress = Float(progress.fractionCompleted)
-                
             }
         }
     }

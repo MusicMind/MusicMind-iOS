@@ -46,6 +46,18 @@ class UserSettingsViewController: UITableViewController {
             }
         }
         
+        
+        /////////// TESTING /////////////////
+        let postRef = FIRDatabase.database().reference().child("posts/\("-KjsSTYj6iATp5aF6PGW")")
+        
+        postRef.observe(.value) { (snapshot: FIRDataSnapshot) in
+            let post = Post(withSnapshot: snapshot)
+            
+            print(post.asDictionary.description)
+        }
+        /////////// TESTING /////////////////
+
+        
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         setupNavigationBar(theme: .light)

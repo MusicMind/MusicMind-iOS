@@ -36,7 +36,7 @@ struct Post {
 
 extension Post: FirebaseConvertable {
     
-    var asDictionary: [String : Any] {
+    var asDictionary: [String: Any] {
         var dict: [String: Any] = [:]
         
         if let dateTimeCreated = dateTimeCreated { dict["dateTimeCreated"] = dateFormatter.string(from: dateTimeCreated) }
@@ -44,7 +44,7 @@ extension Post: FirebaseConvertable {
         if let recipients = recipients { dict["recipients"] = recipients }
         if let videoDownloadUrl = videoDownloadUrl { dict["videoDownloadUrl"] = videoDownloadUrl.absoluteString }
         if let numberOfViews = numberOfViews { dict["numberOfViews"] = numberOfViews }
-        
+
         return dict
     }
     
