@@ -40,7 +40,6 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - RecordButton (1.0.2)
-  - SinchVerification-Swift (2.0.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -49,7 +48,6 @@ DEPENDENCIES:
   - Firebase/Database (~> 3.15.0)
   - Firebase/Storage (~> 3.15.0)
   - RecordButton (from `https://github.com/felipericieri/RecordButton.git`)
-  - SinchVerification-Swift
 
 EXTERNAL SOURCES:
   RecordButton:
@@ -72,8 +70,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   RecordButton: 8290de19cf5d92144ad4996eaff60994334e553b
-  SinchVerification-Swift: 567aaf9cb29c55a115faecb6016fea25a7f37688
 
-PODFILE CHECKSUM: e5a39377750c9db75008b9ba606d20b9f2ddfde0
+PODFILE CHECKSUM: 1fc8ce94e31a1de034ca81a296723813febb9f19
 
 COCOAPODS: 1.2.0.beta.1
