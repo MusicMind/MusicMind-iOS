@@ -17,13 +17,14 @@ class MusicSearchViewController: UIViewController {
     var totalNumberOfSongFromResults: Int = 0
     var audioPlayer = AVAudioPlayer()
     
+    var backgroundImage = UIImage()
     
-    @IBOutlet weak var playPause: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
+  
 
     // MARK: - View controller lifecycle
     
@@ -44,6 +45,7 @@ class MusicSearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         spotifyStreamingController.delegate = self
+
     }
     
     deinit {
@@ -113,14 +115,6 @@ class MusicSearchViewController: UIViewController {
     }
 }
 
-//func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//    let keywords = searchBar.text
-//    let finalKeywords = keywords?.replacingOccurrences(of: " ", with: "+")
-//    searchURL = "https://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track"
-//    callAlamo(url: searchURL)
-//    self.view.endEditing(true)
-//}
-
 
 extension MusicSearchViewController: UISearchBarDelegate {
     
@@ -184,62 +178,49 @@ extension MusicSearchViewController: UITextViewDelegate {
 
 extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
  
-//    func downloadFileFromURL(url: URL) {
-//        print(url)
-//        var downloadTask = URLSessionDownloadTask()
-//        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: {
-//            customURL, response, error in
-//            print(customURL)
-//            self.play(url: customURL!)
-//        })
-//        
-//        downloadTask.resume()
-//    }
-//    
-//    func play(url: URL) {
-//        
-//        do {
-//            audioPlayer = try AVAudioPlayer(contentsOf: url)
-//            audioPlayer.prepareToPlay()
-//            audioPlayer.play()
-//        }
-//        catch {
-//            print(error)
-//        }
-//    }
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
                 let index = items[indexPath.row]
                 let trackURI = index["uri"] as? String
-                let preview = index["preview_url"]
-           
+//                let preview = index["preview_url"]
                 
-//                self.downloadFileFromURL(url: URL(string: trackURI! as! String)!)
-//                    play(url: URL(string: trackURI!)!)
-//                playPause.setTitle("Pause", for: .normal)
-
-                spotifyStreamingController.playSpotifyURI(trackURI, startingWith: 0, startingWithPosition: 0) {
-                    error in
-                    if error != nil {
-                        print(error!.localizedDescription)
-                        return
-                    }
-                }
+                let ACView = ACViewController()
+                ACView.playSpotify(uri: trackURI!)
+             
             }
         }
     }
     
     
-        @IBAction func playPauseAction(_ sender: Any) {
-    
-          spotifyStreamingController.setIsPlaying(false, callback: nil)
-        }
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let indexPath = self.tableView.indexPathForSelectedRow?.row
+        let vc = segue.destination as! ACViewController
+        if let tracks = self.searchResults["tracks"] as? [String: Any] {
+            if let items = tracks["items"] as? [[String: Any]] {
+                let index = items[indexPath!]
+                vc.mainSongTitle = (index["name"] as? String)!
   
+                if let album = index["album"] as? [String: Any] {
+                    if let artist = album["artists"] as? [[String: Any]] {
+                        
+                        vc.mainArtistName = (artist[0]["name"] as? String)!
+                    }
+                    if let image = album["images"] as? [[String: Any]] {
+                        let smallImage = image[0]
+                        let urlString = smallImage["url"] as? String
+                        if let url  = NSURL(string: urlString!){
+                            if let data = NSData(contentsOf: url as URL){
+                                vc.backgroundImage = UIImage(data: data as Data)!
+                                vc.mainImage = UIImage(data: data as Data)!
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
