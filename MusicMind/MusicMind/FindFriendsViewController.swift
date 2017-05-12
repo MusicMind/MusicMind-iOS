@@ -15,7 +15,6 @@ class FindFriendsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        
         // Setups
         setupNavigationBar(theme: .light)
         hideKeyboardWhenTappedAround()
@@ -30,6 +29,19 @@ class FindFriendsViewController: UIViewController {
 
 extension FindFriendsViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Perform search
+        
+        let usersRef = FIRDatabase.database().reference().child("users")
+        
+//        usersRef.queryOrderedByKey().
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //
+    }
+
 }
 
 extension FindFriendsViewController: UITableViewDelegate {
