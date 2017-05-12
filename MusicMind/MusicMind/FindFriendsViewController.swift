@@ -15,10 +15,18 @@ class FindFriendsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        setupNavigationBar(theme: .light)
         
+        // Setups
+        setupNavigationBar(theme: .light)
         hideKeyboardWhenTappedAround()
+        
+        // Set delegates
+        searchBar.delegate = self
     }
+    
+}
+
+extension FindFriendsViewController: UISearchBarDelegate {
     
 }
 
