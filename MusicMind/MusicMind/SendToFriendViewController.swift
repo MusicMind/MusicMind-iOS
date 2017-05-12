@@ -92,7 +92,8 @@ final class SendToFriendViewController: UIViewController {
                         
                         // Create a post model and upload to firebase db
                         var post = Post()
-                        post.authorId = FIRAuth.auth()?.currentUser?.uid
+                        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+                        post.authorId = uid
                         post.dateTimeCreated = Date()
                         post.numberOfViews = 0
                         post.videoDownloadUrl = downloadUrl
@@ -104,6 +105,17 @@ final class SendToFriendViewController: UIViewController {
                                 print(error.localizedDescription)
                             } else {
                                 print("Successfully posted new post to firebase")
+                                
+                                // We also need to create a userPosts lookup table
+                                let userPostsRef = FIRDatabase.database().reference().child("userPosts/\(uid)")
+
+                                userPostsRef.updateChildValues([ref.key: true], withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                                    if let error = error {
+                                        print(error.localizedDescription)
+                                    } else {
+                                        print("pushed to userPosts")
+                                    }
+                                })
                             }
                         })
                         
