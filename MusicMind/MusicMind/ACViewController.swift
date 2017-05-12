@@ -40,7 +40,7 @@ class ACViewController: UIViewController {
         let convertedTrackLength = trackLength.toMM_SS()
         maxValueLabel.text = convertedTrackLength
 
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
     }
 
     @IBAction func closeWindow(_ sender: UIButton) {
@@ -153,7 +153,6 @@ extension TimeInterval {
     func toMM_SS() -> String {
         let interval = self
         let componentFormatter = DateComponentsFormatter()
-        
         componentFormatter.unitsStyle = .positional
         componentFormatter.zeroFormattingBehavior = .pad
         componentFormatter.allowedUnits = [.minute, .second]
