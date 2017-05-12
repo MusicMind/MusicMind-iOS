@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,13 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search by name" translatesAutoresizingMaskIntoConstraints="NO" id="XTj-7W-ytS">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search by name" translatesAutoresizingMaskIntoConstraints="NO" id="XTj-7W-ytS">
+                                <rect key="frame" x="0.0" y="71" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1S-9f-Gpn">
-                                <rect key="frame" x="134" y="95" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k36-AU-oia">
+                                <rect key="frame" x="140" y="40" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1S-9f-Gpn">
+                                <rect key="frame" x="16" y="35" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="close:" destination="8j0-gz-Iiq" eventType="touchUpInside" id="jN3-dK-rHJ"/>
@@ -36,15 +42,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XTj-7W-ytS" firstAttribute="top" secondItem="WFp-KN-1Xx" secondAttribute="bottom" constant="8" id="BS4-Xn-B4N"/>
-                            <constraint firstItem="XTj-7W-ytS" firstAttribute="leading" secondItem="kmk-JV-Yc2" secondAttribute="leading" id="Me1-DO-ScQ"/>
-                            <constraint firstAttribute="trailing" secondItem="XTj-7W-ytS" secondAttribute="trailing" id="iGy-Ms-08d"/>
+                            <constraint firstItem="k36-AU-oia" firstAttribute="top" secondItem="WFp-KN-1Xx" secondAttribute="bottom" constant="20" id="4CM-pf-zaP"/>
+                            <constraint firstItem="l1S-9f-Gpn" firstAttribute="centerY" secondItem="k36-AU-oia" secondAttribute="centerY" id="cc3-qM-jiO"/>
+                            <constraint firstItem="k36-AU-oia" firstAttribute="centerX" secondItem="kmk-JV-Yc2" secondAttribute="centerX" id="cpR-U1-tXd"/>
+                            <constraint firstItem="XTj-7W-ytS" firstAttribute="width" secondItem="kmk-JV-Yc2" secondAttribute="width" id="jHN-gb-CNB"/>
+                            <constraint firstItem="XTj-7W-ytS" firstAttribute="centerX" secondItem="kmk-JV-Yc2" secondAttribute="centerX" id="pQY-8V-CMB"/>
+                            <constraint firstItem="XTj-7W-ytS" firstAttribute="top" secondItem="k36-AU-oia" secondAttribute="bottom" constant="10" id="qWD-sG-a0A"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="l1S-9f-Gpn" secondAttribute="leading" id="vmH-al-lqw"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQI-Hm-K2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="152"/>
+            <point key="canvasLocation" x="108" y="151.57421289355324"/>
         </scene>
     </scenes>
 </document>
