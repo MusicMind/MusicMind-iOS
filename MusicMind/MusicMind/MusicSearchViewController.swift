@@ -15,6 +15,7 @@ struct track {
     let artist: String!
     let songTitle: String!
     let albumImage: UIImage!
+    let albumName: String!
 }
 
 var currentTrackDetails: track!
@@ -198,6 +199,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                 let index = items[indexPath.row]
                 let songTitle = (index["name"] as? String)!
                 if let album = index["album"] as? [String: Any] {
+                    let albumName = album["name"] as? String
                     if let artist = album["artists"] as? [[String: Any]] {
                         var mainArtistName = (artist[0]["name"] as? String)!
                         if let image = album["images"] as? [[String: Any]] {
@@ -205,7 +207,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                             let urlString = smallImage["url"] as? String
                             if let url  = NSURL(string: urlString!){
                                 if let data = NSData(contentsOf: url as URL){
-                                    currentTrackDetails = track.init(artist: mainArtistName, songTitle: songTitle, albumImage: UIImage(data: data as Data)!)
+                                    currentTrackDetails = track.init(artist: mainArtistName, songTitle: songTitle, albumImage: UIImage(data: data as Data)!, albumName: albumName)
                                 }
                             }
                         }
@@ -218,35 +220,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        let indexPath = self.tableView.indexPathForSelectedRow?.row
-//        let vc = segue.destination as! ACViewController
-//        if let tracks = self.searchResults["tracks"] as? [String: Any] {
-//            if let items = tracks["items"] as? [[String: Any]] {
-//                let index = items[indexPath!]
-//                vc.mainSongTitle = (index["name"] as? String)!
-//  
-//                if let album = index["album"] as? [String: Any] {
-//                    if let artist = album["artists"] as? [[String: Any]] {
-//                        
-//                        vc.mainArtistName = (artist[0]["name"] as? String)!
-//                    }
-//                    if let image = album["images"] as? [[String: Any]] {
-//                        let smallImage = image[0]
-//                        let urlString = smallImage["url"] as? String
-//                        if let url  = NSURL(string: urlString!){
-//                            if let data = NSData(contentsOf: url as URL){
-//                                vc.backgroundImage = UIImage(data: data as Data)!
-//                                vc.mainImage = UIImage(data: data as Data)!
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
+  
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

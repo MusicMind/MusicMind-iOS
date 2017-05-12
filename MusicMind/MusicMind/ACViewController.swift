@@ -15,6 +15,10 @@ class ACViewController: UIViewController {
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var albumName: UILabel!
+    @IBOutlet weak var minValueLabel: UILabel!
+    @IBOutlet weak var maxValueLabel: UILabel!
+    @IBOutlet weak var trackSeekSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +27,13 @@ class ACViewController: UIViewController {
         albumImage.image = currentTrackDetails.albumImage
         songTitle.text = currentTrackDetails.songTitle
         artistName.text = currentTrackDetails.artist
-        
+        albumName.text = currentTrackDetails.albumName
         playPauseButton.setTitle("Pause", for: .normal)
+        
+        let currentTrackPosition = spotifyStreamingController.playbackState.position
+        minValueLabel.text = String(describing: currentTrackPosition as? TimeInterval!)
+        trackSeekSlider.minimumValue = 0
+        trackSeekSlider.maximumValue = Float((spotifyStreamingController.metadata.currentTrack?.duration)!)
         
     }
 
@@ -43,7 +52,26 @@ class ACViewController: UIViewController {
         }
     }
     
+    @IBAction func trackSeekStart(_ sender: UISlider) {
+        spotifyPlayPause()
+    }
+    
+    @IBAction func trackSeek(_ sender: UISlider) {
+        spotifyStreamingController.seek(to: TimeInterval(sender.value)) {
+            error in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+        }
+        spotifyPlayPause()
+    }
+    
     @IBAction func playPauseAction(_ sender: Any) {
+        spotifyPlayPause()
+    }
+    
+    func spotifyPlayPause() {
         if spotifyStreamingController.playbackState.isPlaying == true {
             spotifyStreamingController.setIsPlaying(false) {
                 error in
@@ -106,6 +134,9 @@ class ACViewController: UIViewController {
             }
         }
     }
+    
+
+    
     
 
 }
