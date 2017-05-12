@@ -7,7 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class FindFriendsViewController: UIViewController {
+    
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        
+    }
     
 }
