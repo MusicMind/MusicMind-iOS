@@ -52,6 +52,10 @@
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchBar" destination="XTj-7W-ytS" id="qoj-K3-xZj"/>
+                        <outlet property="tableView" destination="SxJ-vj-S9P" id="KHo-WK-BoG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQI-Hm-K2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

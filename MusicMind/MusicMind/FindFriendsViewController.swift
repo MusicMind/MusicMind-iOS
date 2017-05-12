@@ -11,6 +11,9 @@ import Firebase
 
 class FindFriendsViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         setupNavigationBar(theme: .light)
         
