@@ -13,6 +13,8 @@ class FindFriendsViewController: UIViewController {
     
     override func viewDidLoad() {
         setupNavigationBar(theme: .light)
+        
+        hideKeyboardWhenTappedAround()
     }
     
 }
