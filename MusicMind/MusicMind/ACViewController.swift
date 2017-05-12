@@ -20,6 +20,8 @@ class ACViewController: UIViewController {
     @IBOutlet weak var maxValueLabel: UILabel!
     @IBOutlet weak var trackSeekSlider: UISlider!
     
+    var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,26 +30,36 @@ class ACViewController: UIViewController {
         songTitle.text = currentTrackDetails.songTitle
         artistName.text = currentTrackDetails.artist
         albumName.text = currentTrackDetails.albumName
+        
         playPauseButton.setTitle("Pause", for: .normal)
         
-        let currentTrackPosition = spotifyStreamingController.playbackState.position
-        minValueLabel.text = String(describing: currentTrackPosition as? TimeInterval!)
-        trackSeekSlider.minimumValue = 0
+        trackSeekSlider.minimumValue = 0.00
         trackSeekSlider.maximumValue = Float((spotifyStreamingController.metadata.currentTrack?.duration)!)
         
+        let trackLength = TimeInterval((spotifyStreamingController.metadata.currentTrack?.duration)!)
+        let convertedTrackLength = trackLength.toMM_SS()
+        maxValueLabel.text = convertedTrackLength
+
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
     }
 
     @IBAction func closeWindow(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
+
+    func updateTime() {
+        let currentTime = TimeInterval(spotifyStreamingController.playbackState.position)
+        let convertedTime = currentTime.toMM_SS()
+        minValueLabel.text = convertedTime
+        trackSeekSlider.value = Float(currentTime)
+    }
+    
     func playSpotify(uri: String) {
-        
         spotifyStreamingController.playSpotifyURI(uri, startingWith: 0, startingWithPosition: 0) {
             error in
             if error != nil {
                 print(error!.localizedDescription)
-                return
             }
         }
     }
@@ -134,9 +146,19 @@ class ACViewController: UIViewController {
             }
         }
     }
-    
 
-    
-    
+}// End ACViewController
 
+extension TimeInterval {
+    func toMM_SS() -> String {
+        let interval = self
+        let componentFormatter = DateComponentsFormatter()
+        
+        componentFormatter.unitsStyle = .positional
+        componentFormatter.zeroFormattingBehavior = .pad
+        componentFormatter.allowedUnits = [.minute, .second]
+        return componentFormatter.string(from: interval) ?? ""
+    }
 }
+
+
