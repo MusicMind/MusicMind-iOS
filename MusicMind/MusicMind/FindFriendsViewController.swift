@@ -16,3 +16,7 @@ class FindFriendsViewController: UIViewController {
     }
     
 }
+
+// Add button statuses
+// Add
+// Checked

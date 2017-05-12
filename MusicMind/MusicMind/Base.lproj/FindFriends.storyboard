@@ -25,11 +25,29 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-vj-S9P">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aQj-Sa-9fc">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQj-Sa-9fc" id="7Ic-Tj-Csv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XTj-7W-ytS" firstAttribute="top" secondItem="WFp-KN-1Xx" secondAttribute="bottom" id="2Cc-jg-a9a"/>
+                            <constraint firstItem="SxJ-vj-S9P" firstAttribute="top" secondItem="XTj-7W-ytS" secondAttribute="bottom" id="Nf8-Pg-bVd"/>
+                            <constraint firstItem="SxJ-vj-S9P" firstAttribute="leading" secondItem="XTj-7W-ytS" secondAttribute="leading" id="dQU-QS-SKV"/>
+                            <constraint firstItem="SxJ-vj-S9P" firstAttribute="trailing" secondItem="XTj-7W-ytS" secondAttribute="trailing" id="dd8-Pb-ZCf"/>
                             <constraint firstItem="XTj-7W-ytS" firstAttribute="width" secondItem="kmk-JV-Yc2" secondAttribute="width" id="jHN-gb-CNB"/>
+                            <constraint firstItem="SxJ-vj-S9P" firstAttribute="bottom" secondItem="9gW-u6-AfR" secondAttribute="top" id="lsv-vi-cTA"/>
                             <constraint firstItem="XTj-7W-ytS" firstAttribute="centerX" secondItem="kmk-JV-Yc2" secondAttribute="centerX" id="pQY-8V-CMB"/>
                         </constraints>
                     </view>
