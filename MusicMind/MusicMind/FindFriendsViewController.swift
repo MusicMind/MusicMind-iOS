@@ -22,6 +22,8 @@ class FindFriendsViewController: UIViewController {
         
         // Set delegates
         searchBar.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
 }
@@ -30,6 +32,26 @@ extension FindFriendsViewController: UISearchBarDelegate {
     
 }
 
-// Add button statuses
-// Add
-// Checked
+extension FindFriendsViewController: UITableViewDelegate {
+    
+}
+
+extension FindFriendsViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        //  Statuses
+        // Add
+        // Checked
+  
+        return cell
+    }
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+}
+
