@@ -21,6 +21,8 @@
 		DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F851E661BB20050E719 /* LogIn.storyboard */; };
 		DE429F891E661BB20050E719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE429F881E661BB20050E719 /* Assets.xcassets */; };
 		DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */; };
+		DE43C2481EC62A8B0094C950 /* FindFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE43C2461EC62A8B0094C950 /* FindFriends.storyboard */; };
+		DE43C24A1EC62ABF0094C950 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE43C2491EC62ABF0094C950 /* FindFriendsViewController.swift */; };
 		DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */; };
 		DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */; };
@@ -73,6 +75,8 @@
 		DE429F881E661BB20050E719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE429F8B1E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE429F8D1E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE43C2471EC62A8B0094C950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FindFriends.storyboard; sourceTree = "<group>"; };
+		DE43C2491EC62ABF0094C950 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConvertable.swift; sourceTree = "<group>"; };
 		DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifier.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 		DE429F801E661BB20050E719 /* MusicMind */ = {
 			isa = PBXGroup;
 			children = (
+				DE43C2431EC629950094C950 /* Find Friends */,
 				0F3DCBB41E6E227300AADAB8 /* Protocols */,
 				DE487E051E8D6A3C0025B514 /* Extensions */,
 				DE85666A1EC3BE4400B2409D /* Models */,
@@ -238,6 +243,15 @@
 				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
 			);
 			path = MusicMind;
+			sourceTree = "<group>";
+		};
+		DE43C2431EC629950094C950 /* Find Friends */ = {
+			isa = PBXGroup;
+			children = (
+				DE43C2461EC62A8B0094C950 /* FindFriends.storyboard */,
+				DE43C2491EC62ABF0094C950 /* FindFriendsViewController.swift */,
+			);
+			name = "Find Friends";
 			sourceTree = "<group>";
 		};
 		DE487E051E8D6A3C0025B514 /* Extensions */ = {
@@ -393,6 +407,7 @@
 				0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */,
 				DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */,
 				DE860DEC1E93618900393B03 /* Welcome.storyboard in Resources */,
+				DE43C2481EC62A8B0094C950 /* FindFriends.storyboard in Resources */,
 				DE429F891E661BB20050E719 /* Assets.xcassets in Resources */,
 				DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */,
 				0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */,
@@ -470,6 +485,7 @@
 				DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */,
 				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,
 				DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */,
+				DE43C24A1EC62ABF0094C950 /* FindFriendsViewController.swift in Sources */,
 				DEB4FDD71EC52115001458CE /* BirthdayViewController.swift in Sources */,
 				DE85E5C61EB127C7005FFEB9 /* UserSettingsViewController.swift in Sources */,
 				DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */,
@@ -528,6 +544,14 @@
 				DE429F8B1E661BB20050E719 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DE43C2461EC62A8B0094C950 /* FindFriends.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE43C2471EC62A8B0094C950 /* Base */,
+			);
+			name = FindFriends.storyboard;
 			sourceTree = "<group>";
 		};
 		DE85E5C21EB1279E005FFEB9 /* UserSettings.storyboard */ = {
