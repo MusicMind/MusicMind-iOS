@@ -19,7 +19,7 @@ class UserSettingsViewController: UITableViewController {
         let vc = storyboard.instantiateInitialViewController()
         
         if let vc = vc {
-            self.present(vc, animated: true, completion: nil)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
