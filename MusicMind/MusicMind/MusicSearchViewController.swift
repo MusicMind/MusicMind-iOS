@@ -172,23 +172,6 @@ extension MusicSearchViewController: UITextViewDelegate {
     
 }
 
-//// Setting
-//
-//let defaults = UserDefaults.standard
-//defaults.set("Some String Value", forKey: defaultsKeys.keyOne)
-//defaults.set("Another String Value", forKey: defaultsKeys.keyTwo)
-//
-//// Getting
-//
-//let defaults = UserDefaults.standard
-//if let stringOne = defaults.string(forKey: defaultsKeys.keyOne) {
-//    print(stringOne) // Some String Value
-//}
-//if let stringTwo = defaults.string(forKey: defaultsKeys.keyTwo) {
-//    print(stringTwo) // Another String Value
-//}
-
-
 // MARK: - Table view delegates
 
 extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
