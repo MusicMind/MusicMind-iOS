@@ -32,9 +32,20 @@ extension FindFriendsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // Perform search
         
-        let usersRef = FIRDatabase.database().reference().child("users")
+        let ref = FIRDatabase.database().reference()
         
-//        usersRef.queryOrderedByKey().
+        ref.child("users").queryOrdered(byChild: "firstName").queryStarting(atValue: searchText).queryEnding(atValue: searchText+"\u{f8ff}").observe(.value, with: { snapshot in
+            
+            print(snapshot.childrenCount)
+            
+            let enumerator = snapshot.children
+            
+            while let u = enumerator.nextObject() as? FIRDataSnapshot {
+                let user = User(withSnapshot: u)
+                
+                print(user.asDictionary)
+            }
+        })
         
     }
     
