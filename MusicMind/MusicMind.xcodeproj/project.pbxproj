@@ -23,6 +23,7 @@
 		DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */; };
 		DE43C2481EC62A8B0094C950 /* FindFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE43C2461EC62A8B0094C950 /* FindFriends.storyboard */; };
 		DE43C24A1EC62ABF0094C950 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE43C2491EC62ABF0094C950 /* FindFriendsViewController.swift */; };
+		DE45AA081EC68DDF0033B52B /* Firebase db maintenance functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE45AA071EC68DDF0033B52B /* Firebase db maintenance functions.swift */; };
 		DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
 		DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */; };
 		DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */; };
@@ -77,6 +78,7 @@
 		DE429F8D1E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE43C2471EC62A8B0094C950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FindFriends.storyboard; sourceTree = "<group>"; };
 		DE43C2491EC62ABF0094C950 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
+		DE45AA071EC68DDF0033B52B /* Firebase db maintenance functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase db maintenance functions.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConvertable.swift; sourceTree = "<group>"; };
 		DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifier.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				DE85666A1EC3BE4400B2409D /* Models */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
+				DE45AA071EC68DDF0033B52B /* Firebase db maintenance functions.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
 				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
 				DE6494251E7CE670003D92D0 /* Log in */,
@@ -472,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE45AA081EC68DDF0033B52B /* Firebase db maintenance functions.swift in Sources */,
 				DEB4FDE51EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift in Sources */,
 				DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				DEB4FDDB1EC52132001458CE /* EmailPasswordViewController.swift in Sources */,
