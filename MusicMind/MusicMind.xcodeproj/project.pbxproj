@@ -321,8 +321,6 @@
 				DE783F431EAFC4FF0007877A /* Platform.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				0F1DE2591E9327C60032A49A /* User.swift */,
-				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
-				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
 				8487F6C01EC26836007119A9 /* Audio Controls */,
 				DE6494251E7CE670003D92D0 /* Log in */,
@@ -377,7 +375,6 @@
 		DE85666A1EC3BE4400B2409D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE85666B1EC3BE5D00B2409D /* Post.swift */,
 			);
 			name = Models;
