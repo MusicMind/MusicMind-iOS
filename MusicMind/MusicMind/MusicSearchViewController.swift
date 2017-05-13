@@ -23,15 +23,18 @@ struct track {
 var currentTrackDetails: track!
 var currentTracksInQueue = [track]()
 
-private let refreshControl = UIRefreshControl()
 
 class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
     var backgroundImage = UIImage()
+    var currentSearchWords: String = ""
+    var scrollToRefreshCount = 10
+    var spotifyTableView = UITableView()
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
@@ -40,7 +43,7 @@ class MusicSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        spotifyTableView = tableView
         // Setup gesture recognizer
         let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(MusicSearchViewController.edgeGestureAction(sender:)))
         edgeGesture.edges = UIRectEdge.right
@@ -136,8 +139,10 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         currentTracksInQueue.removeAll()
+        scrollToRefreshCount = 10
         let keywords = searchBar.text
         let finalKeywords = keywords?.replacingOccurrences(of: " ", with: "+")
+        currentSearchWords = finalKeywords!
         let searchURL = "https://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track&limit=10"
         callAlamo(url: searchURL)
     }
@@ -189,7 +194,7 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
             print(error)
         }
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let songTitle = currentTracksInQueue[indexPath.row].songTitle
@@ -206,7 +211,6 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
     }
     
   
-    // Number of sections and rows
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -214,7 +218,6 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         return currentTracksInQueue.count
     }
     
-    // Populate table with search results
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -228,6 +231,17 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         mainImage.image = currentTracksInQueue[indexPath.row].largeAlbumImage
 
         return cell
+    }
+   
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
+        {
+            print("Scrolled toEnd")
+            let searchURL = "https://api.spotify.com/v1/search?q=\(currentSearchWords)&type=track&limit=10&offset=\(scrollToRefreshCount)"
+            callAlamo(url: searchURL)
+            tableView.reloadData()
+            scrollToRefreshCount += 10
+        }
     }
 
 }
