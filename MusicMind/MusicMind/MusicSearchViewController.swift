@@ -20,6 +20,7 @@ struct track {
 
 var currentTrackDetails: track!
 
+
 class MusicSearchViewController: UIViewController {
     
     var searchResults = [String: Any]()
@@ -192,7 +193,7 @@ extension MusicSearchViewController: UITextViewDelegate {
 // MARK: - Table view delegates
 
 extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource {
- 
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let tracks = self.searchResults["tracks"] as? [String: Any] {
             if let items = tracks["items"] as? [[String: Any]] {
@@ -219,7 +220,6 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
             }
         }
     }
-    
   
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -250,7 +250,7 @@ extension MusicSearchViewController: UITableViewDelegate, UITableViewDataSource 
                     }
                     
                     if let image = album["images"] as? [[String: Any]] {
-                        let smallImage = image[2]
+                        let smallImage = image[1]
                         let urlString = smallImage["url"] as? String
                         
                         if let url  = NSURL(string: urlString!){
