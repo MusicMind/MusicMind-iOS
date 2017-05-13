@@ -112,7 +112,7 @@ class ACViewController: UIViewController {
     
     func spotifySeekForward() {
         let currentPosition = spotifyStreamingController.playbackState.position
-        spotifyStreamingController.seek(to: currentPosition + 1) {
+        spotifyStreamingController.seek(to: currentPosition + 3) {
             error in
             if error != nil {
                 print(error!.localizedDescription)
@@ -127,7 +127,7 @@ class ACViewController: UIViewController {
     
     func spotifySeekRewind() {
         let currentPosition = spotifyStreamingController.playbackState.position
-        spotifyStreamingController.seek(to: currentPosition - 1) {
+        spotifyStreamingController.seek(to: currentPosition - 3) {
             error in
             if error != nil {
                 print(error!.localizedDescription)
