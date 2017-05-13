@@ -25,8 +25,8 @@ class ACViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImageBlurred.image = currentTrackDetails.albumImage
-        albumImage.image = currentTrackDetails.albumImage
+        backgroundImageBlurred.image = currentTrackDetails.largeAlbumImage
+        albumImage.image = currentTrackDetails.largeAlbumImage
         songTitle.text = currentTrackDetails.songTitle
         artistName.text = currentTrackDetails.artist
         albumName.text = currentTrackDetails.albumName
