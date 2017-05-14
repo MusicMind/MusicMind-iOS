@@ -65,7 +65,7 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
     func appendToCache (_ message: Message) {
         message.status = 2
         messages.append(message)
-        conversations[0].messages = messages
+        conversations[0].addToMessages(message)
         numMes = numMes+1
         conversations[0].messageNum = Int16(numMes)
         conversations[0].timeStamp = message.timeStamp
@@ -78,8 +78,8 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
     func cacheReadStatus () {
         for row in 0...messages.count-1 {
             messages[row].status = 2
+            (conversations[0].messages[row]).status = 2
         }
-        conversations[0].messages = messages
         
         save()
     }
@@ -102,10 +102,27 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
         // Set the predicate on the fetch request
         fetchRequest.predicate = predicate
         
+        
+        
         if let fetchResults = (try? self.managedObjectContext.fetch(fetchRequest)) as? [Conversation] {
             self.conversations = fetchResults
         }
         
+        if conversations.count == 0 {
+            let newconv = Conversation(context: managedObjectContext)
+            
+            newconv.conversationID = 121
+            newconv.messageNum = 0
+            newconv.partnerID = "Test"
+            newconv.partnerName = "Test"
+            newconv.timeStamp = Int64(Date().timeIntervalSinceReferenceDate*1000)
+            
+            save()
+            
+            self.conversations = [newconv]
+            
+
+        }
     }
     
     
@@ -181,10 +198,14 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
             let messageDate = Int64(Date().timeIntervalSinceReferenceDate*1000)
             let messageStatus = 2
             let messageSender = ownID
-            let messageConvID = Int(conversations[0].conversationID)
             let messageID = 0
             
-            let message = Message(text: messageFormText, timeStamp: messageDate, status: Int32(messageStatus), sender: messageSender!, messageID: Int64(messageID))
+            let message = Message(context: managedObjectContext)
+            message.text = messageFormText
+            message.timeStamp = messageDate
+            message.status = Int16(messageStatus)
+            message.sender = messageSender!
+            message.messageID = Int64(messageID)
             
             // ********************************************* Send Message through Network ****************************
             

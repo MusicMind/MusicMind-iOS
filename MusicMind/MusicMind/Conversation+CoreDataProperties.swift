@@ -21,8 +21,8 @@ extension Conversation {
     @NSManaged public var timeStamp: Int64
     @NSManaged public var messageNum: Int16
     @NSManaged public var conversationID: Int64
-    @NSManaged public var messageIDs: NSSet?
-    @NSManaged public var messages: NSSet?
+    @NSManaged public var messageIDs: [MessageIDs]
+    @NSManaged public var messages: [Message]
 
 }
 

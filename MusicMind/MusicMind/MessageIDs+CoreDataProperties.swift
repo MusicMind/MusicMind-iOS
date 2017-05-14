@@ -17,5 +17,6 @@ extension MessageIDs {
     }
 
     @NSManaged public var messageID: Int64
+    @NSManaged public var conversation: Conversation?
 
 }

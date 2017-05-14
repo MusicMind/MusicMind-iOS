@@ -19,10 +19,11 @@
     </entity>
     <entity name="MessageIDs" representedClassName="MessageIDs" syncable="YES">
         <attribute name="messageID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="conversation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Conversation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Message" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="Conversation" positionX="-54" positionY="-9" width="128" height="150"/>
-        <element name="MessageIDs" positionX="-36" positionY="54" width="128" height="60"/>
+        <element name="Message" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="MessageIDs" positionX="-36" positionY="54" width="128" height="75"/>
     </elements>
 </model>
