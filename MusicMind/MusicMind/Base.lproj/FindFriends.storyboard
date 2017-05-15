@@ -38,30 +38,36 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wsk-XY-OIh">
-                                                    <rect key="frame" x="8" y="5" width="55" height="55"/>
+                                                    <rect key="frame" x="18" y="10" width="45" height="45"/>
+                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="JGY-GG-LWi"/>
-                                                        <constraint firstAttribute="height" constant="55" id="MT0-kc-mvA"/>
+                                                        <constraint firstAttribute="width" constant="45" id="JGY-GG-LWi"/>
+                                                        <constraint firstAttribute="height" constant="45" id="MT0-kc-mvA"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbl-bx-ico">
-                                                    <rect key="frame" x="71" y="5" width="88.5" height="55"/>
+                                                    <rect key="frame" x="75" y="10" width="88.5" height="45"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-cE-kRv">
-                                                    <rect key="frame" x="328" y="17.5" width="30" height="30"/>
+                                                    <rect key="frame" x="327" y="17.5" width="30" height="30"/>
                                                     <state key="normal" title="Add"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gbl-bx-ico" firstAttribute="centerY" secondItem="7Ic-Tj-Csv" secondAttribute="centerY" id="0De-70-zUv"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Uhk-cE-kRv" secondAttribute="trailing" constant="9" id="2dN-sU-rY1"/>
-                                                <constraint firstItem="gbl-bx-ico" firstAttribute="leading" secondItem="wsk-XY-OIh" secondAttribute="trailing" constant="8" id="2qS-7U-LLR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Uhk-cE-kRv" secondAttribute="trailing" constant="10" id="2dN-sU-rY1"/>
+                                                <constraint firstItem="gbl-bx-ico" firstAttribute="leading" secondItem="wsk-XY-OIh" secondAttribute="trailing" constant="12" id="2qS-7U-LLR"/>
                                                 <constraint firstItem="wsk-XY-OIh" firstAttribute="centerY" secondItem="7Ic-Tj-Csv" secondAttribute="centerY" id="38a-KC-qbO"/>
                                                 <constraint firstItem="gbl-bx-ico" firstAttribute="height" secondItem="wsk-XY-OIh" secondAttribute="height" id="Bmj-Xf-NSV"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="wsk-XY-OIh" secondAttribute="leading" id="awS-3B-tcA"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="wsk-XY-OIh" secondAttribute="leading" constant="-10" id="awS-3B-tcA"/>
                                                 <constraint firstItem="Uhk-cE-kRv" firstAttribute="centerY" secondItem="7Ic-Tj-Csv" secondAttribute="centerY" id="dOE-4i-Bog"/>
                                             </constraints>
                                         </tableViewCellContentView>
