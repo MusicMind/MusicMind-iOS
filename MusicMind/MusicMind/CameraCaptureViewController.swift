@@ -36,7 +36,6 @@ final class CameraCaptureViewController: UIViewController {
     var frontCameraInput: AVCaptureDeviceInput?
     var microphoneAudioDevice: AVCaptureDevice?
     var microphoneAudioInput: AVCaptureDeviceInput?
-    
 
     
     // MARK: - View Controller Lifecycle
