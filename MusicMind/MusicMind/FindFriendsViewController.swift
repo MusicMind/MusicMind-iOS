@@ -24,6 +24,15 @@ class FindFriendsViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // TEMP TEST DATA:
+        let johnDoeRef = FIRDatabase.database().reference().child("users/VIyKDq9RzGgcRq9vZ50NnRW1nps2")
+        
+        johnDoeRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
+            let user = User(withSnapshot: snapshot)
+            
+            self.results?.append(user)
+        }
     }
     
     func searchForUserByName(withString: String) {
