@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ACViewController: UIViewController {
+class SpotifyPlayerViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageBlurred: UIImageView!
     @IBOutlet weak var songTitle: UILabel!
@@ -21,24 +21,40 @@ class ACViewController: UIViewController {
     @IBOutlet weak var trackSeekSlider: UISlider!
     
     var timer: Timer!
+    var pageIndex: Int = 0
+    
+    var bckImage: UIImage!
+    var albumImagelrg: UIImage!
+    var artist: String!
+    var sngTitle: String!
+    var album: String!
+    var duration: Int!
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImageBlurred.image = currentTrackDetails.largeAlbumImage
-        albumImage.image = currentTrackDetails.largeAlbumImage
-        songTitle.text = currentTrackDetails.songTitle
-        artistName.text = currentTrackDetails.artist
-        albumName.text = currentTrackDetails.albumName
+        backgroundImageBlurred.image = bckImage
+        albumImage.image = albumImagelrg
+        songTitle.text = sngTitle
+        artistName.text = artist
+        albumName.text = album
+        let durationSeconds = duration / 1000
+        let durationInterval = TimeInterval(durationSeconds)
+        maxValueLabel.text = durationInterval.toMM_SS()
+        self.trackSeekSlider.minimumValue = 0.00
+        self.trackSeekSlider.maximumValue = Float(durationInterval)
+        self.maxValueLabel.text = durationInterval.toMM_SS()
+        
         
         playPauseButton.setTitle("Pause", for: .normal)
+
+        if currentTrackDetails == nil {
+            currentTrackDetails = currentTracksInQueue[0]
+        }
         
-        trackSeekSlider.minimumValue = 0.00
-        trackSeekSlider.maximumValue = Float((spotifyStreamingController.metadata.currentTrack?.duration)!)
-        
-        let trackLength = TimeInterval((spotifyStreamingController.metadata.currentTrack?.duration)!)
-        let convertedTrackLength = trackLength.toMM_SS()
-        maxValueLabel.text = convertedTrackLength
+      
 
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
     }
@@ -55,6 +71,7 @@ class ACViewController: UIViewController {
         trackSeekSlider.value = Float(currentTime)
     }
     
+
     func playSpotify(uri: String) {
         spotifyStreamingController.playSpotifyURI(uri, startingWith: 0, startingWithPosition: 0) {
             error in
@@ -146,6 +163,7 @@ class ACViewController: UIViewController {
             }
         }
     }
+    
 
 }// End ACViewController
 

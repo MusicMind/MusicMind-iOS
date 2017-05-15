@@ -18,6 +18,7 @@ struct track {
     let smallAlbumImage: UIImage!
     let albumName: String!
     let uri: String!
+    let duration: Int!
 }
 
 var currentTrackDetails: track!
@@ -169,6 +170,9 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
                         let item = items[i] as! [String : Any]
                         let songTitle = item["name"] as! String
                         let trackURI = item["uri"] as? String
+                        let duration = item["duration_ms"] as? Int
+                        print("vjdsanvkfjldnavlkdfnakvfdavbdfjks")
+                        print(duration)
                         if let album = item["album"] as? [String : AnyObject] {
                             let albumName = album["name"] as? String
                             if let artist = album["artists"] as? [[String: Any]] {
@@ -182,7 +186,7 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
                                     let smallImageURL = URL(string:smallImage["url"] as! String)
                                     let smallImageData = NSData(contentsOf: smallImageURL!)
                                     let smallAlbumImage = UIImage(data: smallImageData! as Data)
-                                    currentTracksInQueue.append(track.init(artist: artistName, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: trackURI))
+                                    currentTracksInQueue.append(track.init(artist: artistName, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: trackURI, duration: duration))
                                       self.tableView.reloadData()
                                 }
                             }
@@ -203,11 +207,18 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         let uri = currentTracksInQueue[indexPath.row].uri
         let smallAlbumImage = currentTracksInQueue[indexPath.row].smallAlbumImage
         let albumName = currentTracksInQueue[indexPath.row].albumName
+        let duration = currentTracksInQueue[indexPath.row].duration
         
-        currentTrackDetails = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri)
+        let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
+
         
-        let ACView = ACViewController()
-        ACView.playSpotify(uri: uri!)
+        currentTrackDetails = newTrack
+        let spotifyPlayer = SpotifyPlayerViewController()
+        spotifyPlayer.playSpotify(uri: uri!)
+//        spotifyPlayer.loadTrackStartEndValues()
+        let pvc = PagingViewController()
+        pvc.slideToPage(index: indexPath.row, completion: nil)
+        
     }
     
   
