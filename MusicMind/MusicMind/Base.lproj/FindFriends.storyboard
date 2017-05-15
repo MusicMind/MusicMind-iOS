@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="65" id="aQj-Sa-9fc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="65" id="aQj-Sa-9fc" customClass="FindFriendsTableViewCell" customModule="MusicMind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQj-Sa-9fc" id="7Ic-Tj-Csv">
@@ -44,12 +44,30 @@
                                                         <constraint firstAttribute="height" constant="55" id="MT0-kc-mvA"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbl-bx-ico">
+                                                    <rect key="frame" x="71" y="5" width="88.5" height="55"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-cE-kRv">
+                                                    <rect key="frame" x="328" y="17" width="30" height="30"/>
+                                                    <state key="normal" title="Add"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="gbl-bx-ico" firstAttribute="centerY" secondItem="7Ic-Tj-Csv" secondAttribute="centerY" id="0De-70-zUv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Uhk-cE-kRv" secondAttribute="trailing" constant="9" id="2dN-sU-rY1"/>
+                                                <constraint firstItem="gbl-bx-ico" firstAttribute="leading" secondItem="wsk-XY-OIh" secondAttribute="trailing" constant="8" id="2qS-7U-LLR"/>
                                                 <constraint firstItem="wsk-XY-OIh" firstAttribute="centerY" secondItem="7Ic-Tj-Csv" secondAttribute="centerY" id="38a-KC-qbO"/>
+                                                <constraint firstItem="gbl-bx-ico" firstAttribute="height" secondItem="wsk-XY-OIh" secondAttribute="height" id="Bmj-Xf-NSV"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="wsk-XY-OIh" secondAttribute="leading" id="awS-3B-tcA"/>
+                                                <constraint firstItem="Uhk-cE-kRv" firstAttribute="centerY" secondItem="7Ic-Tj-Csv" secondAttribute="centerY" id="dOE-4i-Bog"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="profileImage" destination="wsk-XY-OIh" id="58y-tH-ggE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
