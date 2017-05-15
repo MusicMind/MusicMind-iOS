@@ -12,7 +12,7 @@
         <!--Messenger View Controller-->
         <scene sceneID="E43-lq-GkU">
             <objects>
-                <viewController id="7I8-tx-otB" customClass="MessengerViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessengerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7I8-tx-otB" customClass="MessengerViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A20-YE-vWS"/>
                         <viewControllerLayoutGuide type="bottom" id="eVf-bv-MMs"/>

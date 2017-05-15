@@ -10,6 +10,7 @@
 import UIKit
 import Foundation
 import CoreData
+import Firebase
 
 class MessengerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
@@ -26,22 +27,34 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
     
     let cellID = ["IncomingCell", "OutgoingCell"]
     
-    var messages: [Message]! = []
+    private var messages: [Message]! = []
     var conversations = [Conversation]()
     
     var convID : Int64!
     
     
-    var messagesDisplayed = 0
-    let ownID: String! = UserDefaults.standard.string(forKey: "userID")
+    private var messagesDisplayed = 0
+    private let ownID: String! = FIRAuth.auth()?.currentUser!.uid
     var numMes: Int! = 0
-    var timer : Timer?
+    private var timer : Timer?
     
     
     
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
+    
+    // Networking
+    private let convPath = "conversations/" + (FIRAuth.auth()?.currentUser?.uid)!
+    private let mesPath = "messages/" + "Test" // CONV ID **********************************
+    private var conversationsRef : FIRDatabaseReference?
+    private var messagesRef : FIRDatabaseReference?
+    
+    
+    
+    
+    
+    // Core data
     
     
     
@@ -137,6 +150,10 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         
         
+        conversationsRef = FIRDatabase.database().reference(withPath: convPath)
+        messagesRef = FIRDatabase.database().reference(withPath: mesPath)
+        
+        
         messagesList.backgroundColor = UIColor.clear
         messagesList.tableFooterView = UIView(frame: CGRect.zero)
         messagesList.estimatedRowHeight = 72
@@ -151,12 +168,45 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
         loadMessages()
         
         
+        messagesRef!.observe(.value, with: { snapshot in
+            
+            var newMessages: [MessageBuffer] = []
+            
+            for mes in snapshot.children {
+                
+                let message = MessageBuffer(snapshot: mes as! FIRDataSnapshot)
+                
+                if message.timeStamp > self.conversations[0].timeStamp {
+                    newMessages.append(message)
+                }
+                
+            }
+            
+            for mes in newMessages {
+                let newMes = Message(context: self.managedObjectContext)
+                newMes.text = mes.text
+                newMes.timeStamp = mes.timeStamp
+                newMes.status = mes.status
+                newMes.sender = mes.sender
+                newMes.messageID = mes.messageID
+
+                
+                self.appendToCache(newMes)
+            }
+            
+            self.messagesList.reloadData()
+            
+        })
+        
+        
+        
         partnerLabel.text = conversations[0].partnerName
         
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(MessengerViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MessengerViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         
         
         // Reload the table
@@ -207,7 +257,16 @@ class MessengerViewController: UIViewController, UITableViewDataSource, UITableV
             message.sender = messageSender!
             message.messageID = Int64(messageID)
             
-            // ********************************************* Send Message through Network ****************************
+            // Send Message to Firebase
+            
+            let newMessageRef = self.messagesRef!.child(String(messageID))
+            newMessageRef.setValue(message.toJSON())
+            
+            let partnerMessageRef = self.messagesRef!.child(String(messageID))
+            partnerMessageRef.setValue(message.toJSON())
+            
+            ///////////////////////////
+            
             
             messageForm.text = ""
             MessageFormChanged(messageForm)

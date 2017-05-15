@@ -8,8 +8,12 @@
 
 import Foundation
 import CoreData
+import Firebase
 
 @objc(Message)
 public class Message: NSManagedObject {
 
+    
+    
+    
 }

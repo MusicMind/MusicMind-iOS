@@ -32,6 +32,7 @@
 		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
 		13B8212CFD3774E4DC2E8009 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
+		7011EAB51ECA2343000A6E72 /* MessageBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7011EAB41ECA2343000A6E72 /* MessageBuffer.swift */; };
 		70532CC31EC10EB100966567 /* MusicMind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70532CC11EC10EB100966567 /* MusicMind.xcdatamodeld */; };
 		70532CFF1EC11CD500966567 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70532CF91EC11CD500966567 /* Message+CoreDataClass.swift */; };
 		70532D001EC11CD500966567 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70532CFA1EC11CD500966567 /* Message+CoreDataProperties.swift */; };
@@ -137,6 +138,7 @@
 		30608B570D6B30E9CE895F60 /* Pods-MusicMind-MusicMindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind-MusicMindUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind-MusicMindUITests/Pods-MusicMind-MusicMindUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		30F09403DC710C15E979D2C8 /* Pods-MusicMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMindTests/Pods-MusicMindTests.release.xcconfig"; sourceTree = "<group>"; };
 		43C3ADAD2F7337DFBD1894BF /* Pods-MusicMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMindTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMindTests/Pods-MusicMindTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7011EAB41ECA2343000A6E72 /* MessageBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBuffer.swift; sourceTree = "<group>"; };
 		70532CC21EC10EB100966567 /* MusicMind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusicMind.xcdatamodel; sourceTree = "<group>"; };
 		70532CF91EC11CD500966567 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataClass.swift"; sourceTree = "<group>"; };
 		70532CFA1EC11CD500966567 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				70532CF91EC11CD500966567 /* Message+CoreDataClass.swift */,
 				70532CFA1EC11CD500966567 /* Message+CoreDataProperties.swift */,
+				7011EAB41ECA2343000A6E72 /* MessageBuffer.swift */,
 				70532CFB1EC11CD500966567 /* Conversation+CoreDataClass.swift */,
 				70532CFC1EC11CD500966567 /* Conversation+CoreDataProperties.swift */,
 				70532CFD1EC11CD500966567 /* MessageIDs+CoreDataClass.swift */,
@@ -840,6 +843,7 @@
 				0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */,
 				0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */,
 				0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */,
+				7011EAB51ECA2343000A6E72 /* MessageBuffer.swift in Sources */,
 				DE357AC31E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DEBB98A51EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift in Sources */,
 				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
