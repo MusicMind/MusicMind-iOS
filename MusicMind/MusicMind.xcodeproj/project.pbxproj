@@ -14,6 +14,10 @@
 		0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */; };
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
 		57061852101C244C0B5DE468 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
+		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
+		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
+		3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
+		8487F6C71EC40D47007119A9 /* ACViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6C61EC40D47007119A9 /* ACViewController.swift */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
 		DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE007F601EAEA17300966F55 /* SendToFriendView.xib */; };
 		DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */; };
@@ -62,6 +66,7 @@
 		0FF4B6291E8AD8D700EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8487F6C61EC40D47007119A9 /* ACViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACViewController.swift; sourceTree = "<group>"; };
 		86E1998C1E7B64070071F50C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MusicMind-Bridging-Header.h"; sourceTree = "<group>"; };
 		9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +120,7 @@
 				0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */,
 				DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */,
 				0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */,
-				57061852101C244C0B5DE468 /* Pods_MusicMind.framework in Frameworks */,
+				3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +181,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8487F6C01EC26836007119A9 /* Audio Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Audio Controls";
+			sourceTree = "<group>";
+		};
 		AFEDE517BD9FE9008E5C98F7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,8 +233,9 @@
 				DE85666A1EC3BE4400B2409D /* Models */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
+				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
-				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
+				8487F6C01EC26836007119A9 /* Audio Controls */,
 				DE6494251E7CE670003D92D0 /* Log in */,
 				DE860DDC1E935F6D00393B03 /* Forgot password */,
 				0FD0256F1E6B4BD500E59E95 /* Camera capture */,
@@ -264,7 +277,6 @@
 		DE85666A1EC3BE4400B2409D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE85666B1EC3BE5D00B2409D /* Post.swift */,
 			);
 			name = Models;
@@ -283,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */,
+				8487F6C61EC40D47007119A9 /* ACViewController.swift */,
 				DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */,
 			);
 			name = "Music search";
@@ -291,6 +304,7 @@
 		DE860DDB1E935F1B00393B03 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				0FF4B6251E8AD7F300EEAE8C /* Sign Up */,
 				DE860DEA1E93618900393B03 /* Welcome.storyboard */,
 				DE860DE61E93617700393B03 /* WelcomeViewController.swift */,
 			);
@@ -466,6 +480,10 @@
 				DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */,
 				DEB4FDE11EC5219F001458CE /* EmojiCollectionViewCell.swift in Sources */,
 				DEB4FDE31EC521B2001458CE /* VideoContainerView.swift in Sources */,
+				8487F6C71EC40D47007119A9 /* ACViewController.swift in Sources */,
+				DEA2A7A21E946B0700D78E23 /* CameraCaptureViewController.swift in Sources */,
+				0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */,
+				0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */,
 				DE85666C1EC3BE5D00B2409D /* Post.swift in Sources */,
 				DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */,
 				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,

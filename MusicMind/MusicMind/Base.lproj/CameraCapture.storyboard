@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vS2-12-OvP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vS2-12-OvP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,12 +39,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn" userLabel="Music Search Button">
                                 <rect key="frame" x="29" y="87" width="35" height="35"/>
-                                <state key="normal" title="Music Search" image="Music Search Icon"/>
+                                <state key="normal" title="Music Search" image="Spotify_Icon_RGB_Green"/>
                                 <connections>
                                     <segue destination="Gop-j7-Dp8" kind="presentation" identifier="showMusicSearchViewContoller" modalTransitionStyle="flipHorizontal" id="Cw2-3Y-gyY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC" userLabel="Select from library Button">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC" userLabel="Select from library Button">
                                 <rect key="frame" x="37" y="567" width="35" height="35"/>
                                 <state key="normal" title="Select from library" image="Select from library">
                                     <color key="titleColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -64,7 +64,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-AV-6EJ" userLabel="User Settings Button">
                                 <rect key="frame" x="169.5" y="87" width="35" height="35"/>
-                                <state key="normal" title="User Settings" image="User Settings Icon"/>
+                                <state key="normal" title="User Settings" image="cool-180"/>
                                 <connections>
                                     <segue destination="ZSr-vH-Eox" kind="show" id="qGC-Oh-hIL"/>
                                 </connections>
@@ -143,8 +143,8 @@
     </scenes>
     <resources>
         <image name="Camera Flip Icon" width="110" height="110"/>
-        <image name="Music Search Icon" width="110" height="110"/>
         <image name="Select from library" width="110" height="110"/>
-        <image name="User Settings Icon" width="110" height="110"/>
+        <image name="Spotify_Icon_RGB_Green" width="709" height="709"/>
+        <image name="cool-180" width="180" height="180"/>
     </resources>
 </document>
