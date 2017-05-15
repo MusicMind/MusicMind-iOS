@@ -11,6 +11,7 @@ import Firebase
 
 class FindFriendsViewController: UIViewController {
     
+    var results: [User]?
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,9 +26,8 @@ class FindFriendsViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    func searchForUserByName(withString: String) -> [User]? {
+    func searchForUserByName(withString: String) {
         
-        var results: [User]?
         let usersRef = FIRDatabase.database().reference().child("users")
             
         usersRef.queryOrdered(byChild: "firstName")
@@ -39,12 +39,9 @@ class FindFriendsViewController: UIViewController {
             while let userSnapshot = children.nextObject() as? FIRDataSnapshot {
                 let user = User(withSnapshot: userSnapshot)
                 
-                results?.append(user)
+                self.results?.append(user)
             }
         })
-        
-        
-        return results
     }
     
 }
@@ -52,13 +49,9 @@ class FindFriendsViewController: UIViewController {
 extension FindFriendsViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         if !searchText.isEmpty {
-            let searchResults = searchForUserByName(withString: searchText)
+            searchForUserByName(withString: searchText)
         }
-        
-        
-        // display search results
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
