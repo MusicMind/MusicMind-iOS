@@ -53,10 +53,11 @@ extension FindFriendsViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        let searchResults = searchForUserByName(withString: searchText)
-    
-        print(searchResults)
-       
+        if !searchText.isEmpty {
+            let searchResults = searchForUserByName(withString: searchText)
+        }
+        
+        
         // display search results
     }
     
