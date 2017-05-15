@@ -81,17 +81,29 @@ extension FindFriendsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FindFriendsTableViewCell
         
         if let results = results {
-//            let user = 
+            let user = results[0]
             
+            var name = "No name"
+
+            if let firstName = user.firstName {
+                name = firstName
+            }
+            
+            if let lastName = user.lastName {
+                name.append(" \(lastName)")
+            }
+            
+            cell.nameLabel.text = name
+            
+            if let profilePhotoUrl = user.profilePhoto {
+                
+                URLSession.shared.dataTask(with: profilePhotoUrl) { (data: Data?, response: URLResponse?, error: Error?) in
+                    //
+                }.resume()
+            }
+
         }
         
-        cell.nameLabel.text = "test"
-//        cell.nameLabel = "\() \()"
-        
-        //  Statuses
-        // Add
-        // Checked
-  
         return cell
     }
     
