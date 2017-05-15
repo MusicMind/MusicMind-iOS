@@ -13,9 +13,7 @@
 		0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */; };
 		0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */; };
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
-		57061852101C244C0B5DE468 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
-		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
-		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
+		0FF4B62E1E8C4BF400EEAE8C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
 		8487F6C71EC40D47007119A9 /* ACViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6C61EC40D47007119A9 /* ACViewController.swift */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
@@ -240,7 +238,6 @@
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				DE45AA071EC68DDF0033B52B /* Firebase db maintenance functions.swift */,
-				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
 				8487F6C01EC26836007119A9 /* Audio Controls */,
 				DE6494251E7CE670003D92D0 /* Log in */,
@@ -295,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				DE85666B1EC3BE5D00B2409D /* Post.swift */,
+				0F1DE2591E9327C60032A49A /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -500,9 +498,7 @@
 				DEB4FDE11EC5219F001458CE /* EmojiCollectionViewCell.swift in Sources */,
 				DEB4FDE31EC521B2001458CE /* VideoContainerView.swift in Sources */,
 				8487F6C71EC40D47007119A9 /* ACViewController.swift in Sources */,
-				DEA2A7A21E946B0700D78E23 /* CameraCaptureViewController.swift in Sources */,
-				0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */,
-				0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */,
+				0FF4B62E1E8C4BF400EEAE8C /* (null) in Sources */,
 				DE85666C1EC3BE5D00B2409D /* Post.swift in Sources */,
 				DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */,
 				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,
