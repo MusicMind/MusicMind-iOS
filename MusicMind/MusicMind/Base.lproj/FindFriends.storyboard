@@ -51,7 +51,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-cE-kRv">
-                                                    <rect key="frame" x="328" y="17" width="30" height="30"/>
+                                                    <rect key="frame" x="328" y="17.5" width="30" height="30"/>
                                                     <state key="normal" title="Add"/>
                                                 </button>
                                             </subviews>
