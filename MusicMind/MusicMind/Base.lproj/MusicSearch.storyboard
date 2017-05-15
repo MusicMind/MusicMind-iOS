@@ -56,12 +56,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eca-cW-7jG">
-                                                    <rect key="frame" x="16" y="8" width="351" height="84"/>
+                                                    <rect key="frame" x="16" y="8" width="156.5" height="84"/>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RC8-yc-VT7">
-                                                    <rect key="frame" x="8" y="8" width="359" height="84"/>
+                                                    <rect key="frame" x="8" y="8" width="164.5" height="84"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="R6S-sh-cNl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="84"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="164.5" height="84"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ffQ-jG-ras">
@@ -80,10 +80,10 @@
                                                     <blurEffect style="dark"/>
                                                 </visualEffectView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J6Y-GW-CxZ">
-                                                    <rect key="frame" x="107" y="13" width="243" height="74"/>
+                                                    <rect key="frame" x="107" y="13" width="48.5" height="74"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="van-ks-GCy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="243" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="243" id="bNq-VZ-Ebp"/>
                                                             </constraints>
@@ -92,7 +92,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIg-DC-E1C">
-                                                            <rect key="frame" x="0.0" y="28" width="243" height="46"/>
+                                                            <rect key="frame" x="0.0" y="28" width="48.5" height="46"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="46" id="EaO-Nd-Mg7"/>
                                                             </constraints>
