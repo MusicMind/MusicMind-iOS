@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="65" id="aQj-Sa-9fc" customClass="FindFriendsTableViewCell" customModule="MusicMind" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="friendCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="65" id="aQj-Sa-9fc" customClass="FindFriendsTableViewCell" customModule="MusicMind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQj-Sa-9fc" id="7Ic-Tj-Csv">
@@ -53,9 +53,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-cE-kRv">
                                                     <rect key="frame" x="328" y="17" width="30" height="30"/>
                                                     <state key="normal" title="Add"/>
-                                                    <connections>
-                                                        <action selector="addFriend:" destination="aQj-Sa-9fc" eventType="touchUpInside" id="Lk4-Ue-A8g"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -69,7 +66,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="addButton" destination="Uhk-cE-kRv" id="0Ud-zU-r3Q"/>
                                             <outlet property="nameLabel" destination="gbl-bx-ico" id="8Q4-qR-OGr"/>
                                             <outlet property="profileImage" destination="wsk-XY-OIh" id="58y-tH-ggE"/>
                                         </connections>

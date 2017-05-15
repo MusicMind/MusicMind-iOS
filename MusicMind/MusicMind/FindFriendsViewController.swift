@@ -31,7 +31,10 @@ class FindFriendsViewController: UIViewController {
         johnDoeRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             let user = User(withSnapshot: snapshot)
             
-            self.results?.append(user)
+//            self.results?.append(user)
+            self.results = [user]
+            
+            self.tableView.reloadData()
         }
     }
     
@@ -63,7 +66,7 @@ extension FindFriendsViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //
+        // TODO: search
     }
 
 }
@@ -75,7 +78,15 @@ extension FindFriendsViewController: UITableViewDelegate {
 extension FindFriendsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FindFriendsTableViewCell
+        
+        if let results = results {
+//            let user = 
+            
+        }
+        
+        cell.nameLabel.text = "test"
+//        cell.nameLabel = "\() \()"
         
         //  Statuses
         // Add
@@ -86,7 +97,7 @@ extension FindFriendsViewController: UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return results?.count ?? 0
     }
     
 }
