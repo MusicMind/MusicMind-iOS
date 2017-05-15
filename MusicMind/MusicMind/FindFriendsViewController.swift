@@ -25,16 +25,12 @@ class FindFriendsViewController: UIViewController {
         tableView.dataSource = self
     }
     
-}
-
-extension FindFriendsViewController: UISearchBarDelegate {
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // Perform search
+    func searchForUserByName(withString: String) -> [User]? {
         
+        var results: [User]?
         let ref = FIRDatabase.database().reference()
         
-        ref.child("users").queryOrdered(byChild: "firstName").queryStarting(atValue: searchText).queryEnding(atValue: searchText+"\u{f8ff}").observe(.value, with: { snapshot in
+        ref.child("users").queryOrdered(byChild: "firstName").queryStarting(atValue: withString).queryEnding(atValue: withString+"\u{f8ff}").observe(.value, with: { snapshot in
             
             print(snapshot.childrenCount)
             
@@ -43,10 +39,25 @@ extension FindFriendsViewController: UISearchBarDelegate {
             while let u = enumerator.nextObject() as? FIRDataSnapshot {
                 let user = User(withSnapshot: u)
                 
-                print(user.asDictionary)
+                results?.append(user)
             }
         })
         
+        
+        return results
+    }
+    
+}
+
+extension FindFriendsViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        let searchResults = searchForUserByName(withString: searchText)
+        
+        print(searchResults)
+       
+        // display search results
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

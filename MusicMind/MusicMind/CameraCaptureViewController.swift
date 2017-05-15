@@ -44,6 +44,12 @@ final class CameraCaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //////////// TESTING - DELETE ME /////////////////////
+        
+        iterateThroughEveryUser()
+        
+        //////////////////////////////////////////////////////
+        
         // Setup gesture recognizer
         let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
         edgeGesture.edges = UIRectEdge.left
