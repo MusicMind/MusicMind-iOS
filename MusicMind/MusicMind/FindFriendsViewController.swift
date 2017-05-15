@@ -27,7 +27,6 @@ class FindFriendsViewController: UIViewController {
     }
     
     func searchForUserByName(withString: String) {
-        
         let usersRef = FIRDatabase.database().reference().child("users")
             
         usersRef.queryOrdered(byChild: "firstName")
