@@ -147,7 +147,7 @@ extension FindFriendsViewController: UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count
+        return results.count - 1
     }
     
 }
