@@ -26,38 +26,42 @@ class FindFriendsViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    func searchForUserByName(withString: String) {
+    func userIdsForAllUsersWithNamesMatching(searchString: String) -> [String] {
+        var searchResults = [String]()
         let searchableNamesRef = FIRDatabase.database().reference().child("searchableNames")
         
         searchableNamesRef.queryOrderedByKey()
-            .queryStarting(atValue: withString.lowercased())
-            .queryEnding(atValue: withString.lowercased()+"\u{f8ff}")
+            .queryStarting(atValue: searchString.lowercased())
+            .queryEnding(atValue: searchString.lowercased()+"\u{f8ff}")
             .observeSingleEvent(of: .value, with: { snapshot in
-        
                 
-            let children = snapshot.children
-            
-            self.results = []
-
-            while let child = children.nextObject() as? FIRDataSnapshot {
+                let children = snapshot.children
                 
-                if let x = child.value as? String {
-                    print(x)
+                while let child = children.nextObject() as? FIRDataSnapshot {
+                    if let id = child.value as? String {
+                        searchResults.append(id)
+                    }
                 }
-                
-                
-//                guard let a = child.value as? [String: String] else {
-//                    return
-//                }
-//                
-//                print(a)
-//                
-////                let user = User(withSnapshot: child)
-////                
-////                self.results.append(user)
-////                self.tableView.reloadData()
-            }
         })
+        
+        return searchResults
+    }
+    
+    func searchForUserByName(withString: String) {
+        let userIdsToFetch = userIdsForAllUsersWithNamesMatching(searchString: withString)
+        
+        self.results = []
+        
+        for id in userIdsToFetch {
+            let userRef = FIRDatabase.database().reference().child("users/\(id)")
+            
+            userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                let user = User(withSnapshot: snapshot)
+                
+                self.results.append(user)
+                self.tableView.reloadData()
+            })
+        }
     }
     
 }
