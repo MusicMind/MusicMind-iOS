@@ -51,7 +51,10 @@ class FindFriendsViewController: UIViewController {
 extension FindFriendsViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if !searchText.isEmpty {
+        if searchText.isEmpty {
+            results = []
+            tableView.reloadData()
+        } else {
             searchForUserByName(withString: searchText)
         }
     }
