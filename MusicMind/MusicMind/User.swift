@@ -11,7 +11,6 @@ import Firebase
 
 struct User {
  
-//    var firebaseAuthUser: FIRUser?
     var id: String?
     var email: String?
     var firstName: String?
