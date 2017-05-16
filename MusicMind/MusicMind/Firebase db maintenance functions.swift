@@ -15,42 +15,34 @@ import Firebase
 /// Generate searchableName value
 /// Add to "searchableName" table
 
-func iterateThroughEveryUser() {
-    
-    
-    
-    let searchNames: [String: String]
-    
+func fetchUsersAndGenerateSearchNames(completionHandler: @escaping (_ searchableNames: [String: String]) -> ()) {
+    var searchNames = [String: String]() // [name: id]
     let usersRef = FIRDatabase.database().reference().child("users")
     
     usersRef.observe(.value) { (snapshot: FIRDataSnapshot) in
-        
-        
         let children = snapshot.children
         
         while let child = children.nextObject() as? FIRDataSnapshot {
             let user = User(withSnapshot: child)
-            
-            // create a SearchFriendResult
 
             if let id = user.id {
-                
+                var name = ""
+
                 if let firstName = user.firstName {
-                    
+                    name = firstName
                 }
                 
                 if let lastName = user.lastName {
-                    
+                    name = name.appending(lastName)
                 }
                 
-                
-//                searchNames[""] = id
+                if !name.isEmpty {
+                    searchNames[name] = id
+                }
             }
-        
-            
-            print(user.asDictionary)
         }
+    
+        completionHandler(searchNames)
     }
 }
-
 
