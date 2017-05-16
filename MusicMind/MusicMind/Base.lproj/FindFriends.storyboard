@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="friendCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="65" id="aQj-Sa-9fc" customClass="FindFriendsTableViewCell" customModule="MusicMind" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="friendCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="65" id="aQj-Sa-9fc" customClass="FindFriendsTableViewCell" customModule="MusicMind" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQj-Sa-9fc" id="7Ic-Tj-Csv">
