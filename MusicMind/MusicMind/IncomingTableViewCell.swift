@@ -16,7 +16,7 @@ class IncomingTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layoutIfNeeded()
-        layer.cornerRadius = 10;
+        messageView.layer.cornerRadius = 15;
     }
 
     

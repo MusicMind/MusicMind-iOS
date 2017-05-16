@@ -17,6 +17,7 @@ extension Message {
         return NSFetchRequest<Message>(entityName: "Message");
     }
 
+    @NSManaged public var type: Int16
     @NSManaged public var text: String?
     @NSManaged public var timeStamp: Int64
     @NSManaged public var status: Int16     // 0 raw received, 1 received and acked, 2 recieved and read
@@ -29,6 +30,7 @@ extension Message {
     
     func toJSON() -> Any {
         return [
+            "type": self.type,
             "text": self.text ?? "",
             "timeStamp": self.timeStamp,
             "status": self.status,
