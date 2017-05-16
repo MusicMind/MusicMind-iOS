@@ -89,7 +89,7 @@ extension FindFriendsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FindFriendsTableViewCell
         
-        let user = results[0]
+        let user = results[indexPath.row]
         
         var name = "No name"
 
