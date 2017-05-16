@@ -29,11 +29,11 @@ func fetchUsersAndGenerateSearchNames(completionHandler: @escaping (_ searchable
                 var name = ""
 
                 if let firstName = user.firstName {
-                    name = firstName
+                    name = firstName.lowercased()
                 }
                 
                 if let lastName = user.lastName {
-                    name = name.appending(lastName)
+                    name = name.appending(" \(lastName)").lowercased()
                 }
                 
                 if !name.isEmpty {

@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import RecordButton
 import MobileCoreServices
+import Firebase
 
 fileprivate enum CurrentCamera {
     case front
@@ -51,8 +52,13 @@ final class CameraCaptureViewController: UIViewController {
         
         
         fetchUsersAndGenerateSearchNames { (searchNames: [String : String]) in
-            print(searchNames)
+            let ref = FIRDatabase.database().reference().child("searchableNames")
+            
+            ref.updateChildValues(searchNames)
         }
+        
+
+        
         
         
         /////////////////////////////
