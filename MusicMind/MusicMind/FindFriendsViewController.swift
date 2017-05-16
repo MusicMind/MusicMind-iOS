@@ -71,6 +71,12 @@ extension FindFriendsViewController: UISearchBarDelegate {
 
 }
 
+extension FindFriendsViewController: AddButtonDelegate {
+    func addButtonTapped(at index: Int) {
+        ////////////
+    }
+}
+
 extension FindFriendsViewController: UITableViewDelegate {
     
 }
@@ -107,6 +113,9 @@ extension FindFriendsViewController: UITableViewDataSource {
                 }.resume()
             }
         }
+        
+        cell.index = indexPath.row
+        cell.delegate = self
         
         return cell
     }
