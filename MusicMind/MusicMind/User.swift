@@ -47,8 +47,6 @@ extension User: FirebaseConvertable {
     init(withSnapshot snapshot: FIRDataSnapshot) {
         self.init()
         
-//        firebaseAuthUser = FIRAuth.auth()?.currentUser
-//        id = firebaseAuthUser?.uid
         id = snapshot.key
         
         if let userData = snapshot.value as? [String: Any] {

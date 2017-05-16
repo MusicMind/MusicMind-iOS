@@ -34,6 +34,8 @@ class FindFriendsViewController: UIViewController {
             .queryEnding(atValue: withString+"\u{f8ff}")
             .observeSingleEvent(of: .value, with: { snapshot in
             let children = snapshot.children
+                
+            self.results = []
             
             while let userSnapshot = children.nextObject() as? FIRDataSnapshot {
                 let user = User(withSnapshot: userSnapshot)
@@ -70,7 +72,7 @@ extension FindFriendsViewController: AddButtonDelegate {
         
         userFriendsRef.updateChildValues([friendId : true]) { (error: Error?, ref: FIRDatabaseReference) in
             if let error = error {
-                print("There was an issue adding friend")
+                print(error.localizedDescription)
             } else {
                 print("Friend added")
             }
