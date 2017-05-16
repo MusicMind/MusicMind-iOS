@@ -46,6 +46,3 @@ func fetchUsersAndGenerateSearchNames(completionHandler: @escaping (_ searchable
         completionHandler(searchNames)
     }
 }
-
-
-

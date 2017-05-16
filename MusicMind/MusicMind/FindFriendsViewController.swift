@@ -27,21 +27,35 @@ class FindFriendsViewController: UIViewController {
     }
     
     func searchForUserByName(withString: String) {
-        let usersRef = FIRDatabase.database().reference().child("users")
-
-        usersRef.queryOrdered(byChild: "firstName")
-            .queryStarting(atValue: withString)
-            .queryEnding(atValue: withString+"\u{f8ff}")
+        let searchableNamesRef = FIRDatabase.database().reference().child("searchableNames")
+        
+        searchableNamesRef.queryOrderedByKey()
+            .queryStarting(atValue: withString.lowercased())
+            .queryEnding(atValue: withString.lowercased()+"\u{f8ff}")
             .observeSingleEvent(of: .value, with: { snapshot in
+        
+                
             let children = snapshot.children
-                
-            self.results = []
             
-            while let userSnapshot = children.nextObject() as? FIRDataSnapshot {
-                let user = User(withSnapshot: userSnapshot)
+            self.results = []
+
+            while let child = children.nextObject() as? FIRDataSnapshot {
                 
-                self.results.append(user)
-                self.tableView.reloadData()
+                if let x = child.value as? String {
+                    print(x)
+                }
+                
+                
+//                guard let a = child.value as? [String: String] else {
+//                    return
+//                }
+//                
+//                print(a)
+//                
+////                let user = User(withSnapshot: child)
+////                
+////                self.results.append(user)
+////                self.tableView.reloadData()
             }
         })
     }
