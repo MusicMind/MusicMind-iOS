@@ -96,7 +96,6 @@ extension FindFriendsViewController: UITableViewDataSource {
             cell.nameLabel.text = name
             
             if let profilePhotoUrl = user.profilePhoto {
-                
                 URLSession.shared.dataTask(with: profilePhotoUrl) { (data: Data?, response: URLResponse?, error: Error?) in
                     if let data = data {
                         let image = UIImage(data: data)
