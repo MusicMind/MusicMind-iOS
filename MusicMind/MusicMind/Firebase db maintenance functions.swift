@@ -9,13 +9,14 @@
 import Foundation
 import Firebase
 
-/// Goal: To have "searchableNames" a lookup table of String 1->* UserID values
-/// Names must be lowercase, and concatenated first and last name
-/// Go through every user in the "users" table
-/// Generate searchableName value
-/// Add to "searchableName" table
-
 func fetchUsersAndGenerateSearchNames(completionHandler: @escaping (_ searchableNames: [String: String]) -> ()) {
+    /// How to use:
+    /// fetchUsersAndGenerateSearchNames { (searchNames: [String : String]) in
+    ///     let ref = FIRDatabase.database().reference().child("searchableNames")
+    ///
+    ///     ref.updateChildValues(searchNames)
+    /// }
+    
     var searchNames = [String: String]() // [name: id]
     let usersRef = FIRDatabase.database().reference().child("users")
     
@@ -46,10 +47,5 @@ func fetchUsersAndGenerateSearchNames(completionHandler: @escaping (_ searchable
     }
 }
 
-//How to use:
-//fetchUsersAndGenerateSearchNames { (searchNames: [String : String]) in
-//    let ref = FIRDatabase.database().reference().child("searchableNames")
-//    
-//    ref.updateChildValues(searchNames)
-//}
+
 
