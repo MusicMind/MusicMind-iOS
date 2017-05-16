@@ -44,31 +44,6 @@ final class CameraCaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
-        
-        ///////////// TESTING ///////
-        
-        
-        fetchUsersAndGenerateSearchNames { (searchNames: [String : String]) in
-            let ref = FIRDatabase.database().reference().child("searchableNames")
-            
-            ref.updateChildValues(searchNames)
-        }
-        
-
-        
-        
-        
-        /////////////////////////////
-        
-        
-        
-        
-        
-        
-        
         // Setup gesture recognizer
         let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
         edgeGesture.edges = UIRectEdge.left

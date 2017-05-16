@@ -46,3 +46,10 @@ func fetchUsersAndGenerateSearchNames(completionHandler: @escaping (_ searchable
     }
 }
 
+//How to use:
+//fetchUsersAndGenerateSearchNames { (searchNames: [String : String]) in
+//    let ref = FIRDatabase.database().reference().child("searchableNames")
+//    
+//    ref.updateChildValues(searchNames)
+//}
+
