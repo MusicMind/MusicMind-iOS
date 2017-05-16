@@ -24,34 +24,37 @@ class FindFriendsViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // TEMP TEST DATA:
-        let johnDoeRef = FIRDatabase.database().reference().child("users/VIyKDq9RzGgcRq9vZ50NnRW1nps2")
-        
-        johnDoeRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
-            let user = User(withSnapshot: snapshot)
-            
-            self.results.append(user)
-            
-            self.tableView.reloadData()
-        }
+
+////////////////////////////////////////
+//        // TEMP TEST DATA:
+//        let johnDoeRef = FIRDatabase.database().reference().child("users/VIyKDq9RzGgcRq9vZ50NnRW1nps2")
+//        
+//        johnDoeRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
+//            let user = User(withSnapshot: snapshot)
+//            
+//            self.results.append(user)
+//            
+//            self.tableView.reloadData()
+//        }
+///////////////////////////////////////
     }
     
     func searchForUserByName(withString: String) {
-//        let usersRef = FIRDatabase.database().reference().child("users")
-//            
-//        usersRef.queryOrdered(byChild: "firstName")
-//            .queryStarting(atValue: withString)
-//            .queryEnding(atValue: withString+"\u{f8ff}")
-//            .observeSingleEvent(of: .value, with: { snapshot in
-//            let children = snapshot.children
-//            
-//            while let userSnapshot = children.nextObject() as? FIRDataSnapshot {
-//                let user = User(withSnapshot: userSnapshot)
-//                
-//                self.results?.append(user)
-//            }
-//        })
+        let usersRef = FIRDatabase.database().reference().child("users")
+
+        usersRef.queryOrdered(byChild: "firstName")
+            .queryStarting(atValue: withString)
+            .queryEnding(atValue: withString+"\u{f8ff}")
+            .observeSingleEvent(of: .value, with: { snapshot in
+            let children = snapshot.children
+            
+            while let userSnapshot = children.nextObject() as? FIRDataSnapshot {
+                let user = User(withSnapshot: userSnapshot)
+                
+                self.results.append(user)
+                self.tableView.reloadData()
+            }
+        })
     }
     
 }
@@ -72,7 +75,19 @@ extension FindFriendsViewController: UISearchBarDelegate {
 
 extension FindFriendsViewController: AddButtonDelegate {
     func addButtonTapped(at index: Int) {
-        ////////////
+        
+        guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let friendId = results[index].id else { return }
+        
+        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
+        
+        userFriendsRef.updateChildValues([friendId : true]) { (error: Error?, ref: FIRDatabaseReference) in
+            if let error = error {
+                print("There was an issue adding friend")
+            } else {
+                print("Friend added")
+            }
+        }
     }
 }
 
