@@ -26,41 +26,40 @@ class FindFriendsViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    func userIdsForAllUsersWithNamesMatching(searchString: String) -> [String] {
-        var searchResults = [String]()
+    func userIdsForAllUsersWithNamesMatching(searchString: String, completionHandler: @escaping (_ ids: [String]) -> ())  {
         let searchableNamesRef = FIRDatabase.database().reference().child("searchableNames")
         
         searchableNamesRef.queryOrderedByKey()
             .queryStarting(atValue: searchString.lowercased())
             .queryEnding(atValue: searchString.lowercased()+"\u{f8ff}")
             .observeSingleEvent(of: .value, with: { snapshot in
-                
                 let children = snapshot.children
+                var searchResults = [String]()
                 
                 while let child = children.nextObject() as? FIRDataSnapshot {
                     if let id = child.value as? String {
                         searchResults.append(id)
                     }
                 }
+                
+                completionHandler(searchResults)
         })
-        
-        return searchResults
     }
     
     func searchForUserByName(withString: String) {
-        let userIdsToFetch = userIdsForAllUsersWithNamesMatching(searchString: withString)
-        
-        self.results = []
-        
-        for id in userIdsToFetch {
-            let userRef = FIRDatabase.database().reference().child("users/\(id)")
+        userIdsForAllUsersWithNamesMatching(searchString: withString) { (userIdsToFetch: [String]) in
+            self.results = []
             
-            userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-                let user = User(withSnapshot: snapshot)
+            for id in userIdsToFetch {
+                let userRef = FIRDatabase.database().reference().child("users/\(id)")
                 
-                self.results.append(user)
-                self.tableView.reloadData()
-            })
+                userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                    let user = User(withSnapshot: snapshot)
+                    
+                    self.results.append(user)
+                    self.tableView.reloadData()
+                })
+            }
         }
     }
     
