@@ -30,7 +30,6 @@
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		8487F6C71EC40D47007119A9 /* SpotifyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6C61EC40D47007119A9 /* SpotifyPlayerViewController.swift */; };
 		8487F6CF1EC7F2AA007119A9 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6CE1EC7F2AA007119A9 /* PagingViewController.swift */; };
-		8487F6F11ECBAD75007119A9 /* UserPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6F01ECBAD75007119A9 /* UserPlaylistViewController.swift */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
 		DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE007F601EAEA17300966F55 /* SendToFriendView.xib */; };
 		DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */; };
@@ -109,7 +108,6 @@
 		76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind_MusicMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8487F6C61EC40D47007119A9 /* SpotifyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayerViewController.swift; sourceTree = "<group>"; };
 		8487F6CE1EC7F2AA007119A9 /* PagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
-		8487F6F01ECBAD75007119A9 /* UserPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPlaylistViewController.swift; sourceTree = "<group>"; };
 		86E1998C1E7B64070071F50C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MusicMind-Bridging-Header.h"; sourceTree = "<group>"; };
 		9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
@@ -385,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */,
-				8487F6F01ECBAD75007119A9 /* UserPlaylistViewController.swift */,
 				8487F6CE1EC7F2AA007119A9 /* PagingViewController.swift */,
 				8487F6C61EC40D47007119A9 /* SpotifyPlayerViewController.swift */,
 				DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */,
@@ -704,7 +701,6 @@
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
-				8487F6F11ECBAD75007119A9 /* UserPlaylistViewController.swift in Sources */,
 				DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
