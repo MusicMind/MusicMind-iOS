@@ -7,32 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014F9A2BB40C2B10F7891568 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */; };
 		0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */; };
 		0F1DE25A1E9327C60032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
+		0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */; };
+		0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */; };
+		0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */; };
+		0F58F2691EAE833B00DC04EA /* AVVideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58F2681EAE833B00DC04EA /* AVVideoExporter.swift */; };
+		0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */; };
 		0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */; };
+		0FF4B61B1E83946100EEAE8C /* PostProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */; };
+		0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */; };
+		0FF4B61D1E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6181E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift */; };
+		0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */; };
+		0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */; };
 		0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */; };
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
-		57061852101C244C0B5DE468 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
 		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
 		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
-<<<<<<< HEAD
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
 		8487F6C71EC40D47007119A9 /* SpotifyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6C61EC40D47007119A9 /* SpotifyPlayerViewController.swift */; };
 		8487F6CF1EC7F2AA007119A9 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6CE1EC7F2AA007119A9 /* PagingViewController.swift */; };
 		8487F6F11ECBAD75007119A9 /* UserPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6F01ECBAD75007119A9 /* UserPlaylistViewController.swift */; };
-=======
-		3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
-		8487F6C71EC40D47007119A9 /* ACViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6C61EC40D47007119A9 /* ACViewController.swift */; };
->>>>>>> Develop
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
 		DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE007F601EAEA17300966F55 /* SendToFriendView.xib */; };
 		DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */; };
+		DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */; };
+		DE1471F81E7CBF3D000C45E6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
+		DE357AC31E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE357AC21E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift */; };
 		DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F811E661BB20050E719 /* AppDelegate.swift */; };
 		DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F851E661BB20050E719 /* LogIn.storyboard */; };
 		DE429F891E661BB20050E719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE429F881E661BB20050E719 /* Assets.xcassets */; };
 		DE429F8C1E661BB20050E719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE429F8A1E661BB20050E719 /* LaunchScreen.storyboard */; };
+		DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE429F961E661BB20050E719 /* MusicMindTests.swift */; };
+		DE438A691EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */; };
+		DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */; };
 		DE49052E1E6A3E4E00F65C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */; };
+		DE503AD91E94368B00124BFA /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
+		DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; };
+		DE783F441EAFC4FF0007877A /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE783F431EAFC4FF0007877A /* Platform.swift */; };
 		DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */; };
 		DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */; };
 		DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */; };
@@ -46,32 +61,46 @@
 		DE860DF11E93626D00393B03 /* MusicSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */; };
 		DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */; };
 		DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8EE3AF1E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift */; };
-		DEB4FDD11EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD01EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift */; };
-		DEB4FDD31EC520A5001458CE /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD21EC520A5001458CE /* CameraCaptureViewController.swift */; };
-		DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD41EC520ED001458CE /* SendToFriendViewController.swift */; };
-		DEB4FDD71EC52115001458CE /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD61EC52115001458CE /* BirthdayViewController.swift */; };
-		DEB4FDDB1EC52132001458CE /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDDA1EC52132001458CE /* EmailPasswordViewController.swift */; };
-		DEB4FDDD1EC52140001458CE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDDC1EC52140001458CE /* NameViewController.swift */; };
-		DEB4FDDF1EC52190001458CE /* AVVideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDDE1EC52190001458CE /* AVVideoExporter.swift */; };
-		DEB4FDE11EC5219F001458CE /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDE01EC5219F001458CE /* EmojiCollectionViewCell.swift */; };
-		DEB4FDE31EC521B2001458CE /* VideoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDE21EC521B2001458CE /* VideoContainerView.swift */; };
-		DEB4FDE51EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDE41EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift */; };
-		DEB4FDE71EC521CF001458CE /* PostProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDE61EC521CF001458CE /* PostProcessingViewController.swift */; };
+		DEA2A7A21E946B0700D78E23 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */; };
 		DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */; };
+		DEBB98A51EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBB98A41EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC96E261E957BCD00660262 /* LogInViewController.swift */; };
 		DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
+		DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */; };
+		DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */; };
 		DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DE429F931E661BB20050E719 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE429F761E661BB20050E719 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE429F7D1E661BB20050E719;
+			remoteInfo = MusicMind;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
+		0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailPasswordViewController.swift; path = SignUp/EmailPasswordViewController.swift; sourceTree = "<group>"; };
 		0F1DE2591E9327C60032A49A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APPLCameraViewController.swift; path = CameraViewController/APPLCameraViewController.swift; sourceTree = "<group>"; };
+		0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = CameraViewController/View/PreviewView.swift; sourceTree = "<group>"; };
+		0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = Protocols/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
+		0F58F2681EAE833B00DC04EA /* AVVideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVVideoExporter.swift; path = Stickers/AVVideoExporter.swift; sourceTree = "<group>"; };
+		0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APPLCameraViewControllerDelegate.swift; path = Protocols/APPLCameraViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0FD025711E6B4D2C00E59E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CameraCapture.storyboard; sourceTree = "<group>"; };
+		0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostProcessingViewController.swift; path = Stickers/PostProcessingViewController.swift; sourceTree = "<group>"; };
+		0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiCollectionViewCell.swift; path = Stickers/EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		0FF4B6181E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PostProcessingViewController + collectionViewHelper.swift"; path = "Stickers/PostProcessingViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
+		0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoContainerView.swift; path = Stickers/VideoContainerView.swift; sourceTree = "<group>"; };
+		0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPickerViewController.swift; path = Stickers/VideoPickerViewController.swift; sourceTree = "<group>"; };
 		0FF4B6211E8394E600EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PostProcessing.storyboard; sourceTree = "<group>"; };
 		0FF4B6291E8AD8D700EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameViewController.swift; path = SignUp/NameViewController.swift; sourceTree = "<group>"; };
 		0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BirthdayViewController.swift; path = SignUp/BirthdayViewController.swift; sourceTree = "<group>"; };
 		2E998B4E494A2D660BB680CF /* Pods_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,23 +111,24 @@
 		8487F6F01ECBAD75007119A9 /* UserPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPlaylistViewController.swift; sourceTree = "<group>"; };
 		86E1998C1E7B64070071F50C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MusicMind-Bridging-Header.h"; sourceTree = "<group>"; };
-=======
-		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
-		320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8487F6C61EC40D47007119A9 /* ACViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACViewController.swift; sourceTree = "<group>"; };
-		86E1998C1E7B64070071F50C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MusicMind-Bridging-Header.h"; sourceTree = "<group>"; };
-		9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
->>>>>>> Develop
 		DE007F601EAEA17300966F55 /* SendToFriendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendToFriendView.xib; sourceTree = "<group>"; };
 		DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+setTextWhileKeepingAttributes.swift"; sourceTree = "<group>"; };
+		DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendToFriendViewController.swift; path = SendToFriend/SendToFriendViewController.swift; sourceTree = "<group>"; };
+		DE357AC21E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationCodeEntryViewController.swift; sourceTree = "<group>"; };
 		DE429F7E1E661BB20050E719 /* MusicMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE429F811E661BB20050E719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE429F861E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
 		DE429F881E661BB20050E719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE429F8B1E661BB20050E719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE429F8D1E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE429F921E661BB20050E719 /* MusicMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE429F961E661BB20050E719 /* MusicMindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMindTests.swift; sourceTree = "<group>"; };
+		DE429F981E661BB20050E719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigateLeftTransitionInteractionController.swift; sourceTree = "<group>"; };
+		DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+setBackgroundColor.swift"; sourceTree = "<group>"; };
 		DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllerTests.swift; sourceTree = "<group>"; };
+		DE783F431EAFC4FF0007877A /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConvertable.swift; sourceTree = "<group>"; };
 		DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerifier.swift; sourceTree = "<group>"; };
 		DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -113,26 +143,16 @@
 		DE860DF01E93626D00393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MusicSearch.storyboard; sourceTree = "<group>"; };
 		DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
 		DE8EE3AF1E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIewController+setupNavigationBarWithTheme.swift"; sourceTree = "<group>"; };
-		DEB4FDD01EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+isRunningOnSimulator.swift"; sourceTree = "<group>"; };
-		DEB4FDD21EC520A5001458CE /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
-		DEB4FDD41EC520ED001458CE /* SendToFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendToFriendViewController.swift; sourceTree = "<group>"; };
-		DEB4FDD61EC52115001458CE /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
-		DEB4FDDA1EC52132001458CE /* EmailPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPasswordViewController.swift; sourceTree = "<group>"; };
-		DEB4FDDC1EC52140001458CE /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
-		DEB4FDDE1EC52190001458CE /* AVVideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVVideoExporter.swift; sourceTree = "<group>"; };
-		DEB4FDE01EC5219F001458CE /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
-		DEB4FDE21EC521B2001458CE /* VideoContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContainerView.swift; sourceTree = "<group>"; };
-		DEB4FDE41EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PostProcessingViewController + collectionViewHelper.swift"; sourceTree = "<group>"; };
-		DEB4FDE61EC521CF001458CE /* PostProcessingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProcessingViewController.swift; sourceTree = "<group>"; };
+		DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraCaptureViewController.swift; path = CameraViewController/CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageColored.swift"; sourceTree = "<group>"; };
+		DEBB98A41EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigateLeftInteractiveAnimator.swift; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEC96E261E957BCD00660262 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
+		DEF5E4E51E8C2CC200FF9E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/SMS Validation.storyboard"; sourceTree = "<group>"; };
+		DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberEntryViewController.swift; sourceTree = "<group>"; };
 		DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadActivity.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-=======
->>>>>>> Develop
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +164,18 @@
 				0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */,
 				DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */,
 				0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */,
-				3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */,
+				2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE429F8F1E661BB20050E719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE503ADB1E94368E00124BFA /* SpotifyAuthentication.framework in Frameworks */,
+				DE1471F81E7CBF3D000C45E6 /* Pods_MusicMind.framework in Frameworks */,
+				DE503AD91E94368B00124BFA /* SpotifyAudioPlayback.framework in Frameworks */,
+				014F9A2BB40C2B10F7891568 /* Pods_MusicMind_MusicMindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +185,8 @@
 		0F3DCBB41E6E227300AADAB8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				0F3DCBC21E6E289500AADAB8 /* PhotoCaptureDelegate.swift */,
+				0F5908A71E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift */,
 				DE7983AA1EC3723B002F2120 /* FirebaseConvertable.swift */,
 			);
 			name = Protocols;
@@ -163,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */,
-				DEB4FDD21EC520A5001458CE /* CameraCaptureViewController.swift */,
+				DEA2A7A11E946B0700D78E23 /* CameraCaptureViewController.swift */,
 			);
 			name = "Camera capture";
 			sourceTree = "<group>";
@@ -171,12 +204,12 @@
 		0FF4B6151E83930000EEAE8C /* Post processing */ = {
 			isa = PBXGroup;
 			children = (
-				DEB4FDDE1EC52190001458CE /* AVVideoExporter.swift */,
+				0F58F2681EAE833B00DC04EA /* AVVideoExporter.swift */,
 				0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */,
-				DEB4FDE61EC521CF001458CE /* PostProcessingViewController.swift */,
-				DEB4FDE01EC5219F001458CE /* EmojiCollectionViewCell.swift */,
-				DEB4FDE41EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift */,
-				DEB4FDE21EC521B2001458CE /* VideoContainerView.swift */,
+				0FF4B6161E83946100EEAE8C /* PostProcessingViewController.swift */,
+				0FF4B6171E83946100EEAE8C /* EmojiCollectionViewCell.swift */,
+				0FF4B6181E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift */,
+				0FF4B6191E83946100EEAE8C /* VideoContainerView.swift */,
 			);
 			name = "Post processing";
 			sourceTree = "<group>";
@@ -186,9 +219,9 @@
 			children = (
 				DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */,
 				0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */,
-				DEB4FDDC1EC52140001458CE /* NameViewController.swift */,
-				DEB4FDD61EC52115001458CE /* BirthdayViewController.swift */,
-				DEB4FDDA1EC52132001458CE /* EmailPasswordViewController.swift */,
+				0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */,
+				0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */,
+				0F1DBBB81E949BB3007CCA52 /* EmailPasswordViewController.swift */,
 			);
 			name = "Sign Up";
 			sourceTree = "<group>";
@@ -200,7 +233,11 @@
 				0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */,
 				0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */,
 				86E1998C1E7B64070071F50C /* AVFoundation.framework */,
-				320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */,
+				F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */,
+				2E998B4E494A2D660BB680CF /* Pods_MusicMindTests.framework */,
+				097E9FE24DC076E4B018C521 /* Pods_MusicMindUITests.framework */,
+				76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */,
+				73B61F615E231AD98737EC03 /* Pods_MusicMind_MusicMindUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,11 +252,6 @@
 		AFEDE517BD9FE9008E5C98F7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-=======
-				9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */,
-				1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */,
->>>>>>> Develop
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -228,16 +260,26 @@
 			isa = PBXGroup;
 			children = (
 				DE007F601EAEA17300966F55 /* SendToFriendView.xib */,
-				DEB4FDD41EC520ED001458CE /* SendToFriendViewController.swift */,
+				DE09EC6B1E7CDFA9005B237A /* SendToFriendViewController.swift */,
 				DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */,
 			);
 			name = "Send to friend";
+			sourceTree = "<group>";
+		};
+		DE379D5D1E9D479B003C921F /* Old CameraCapture stuff */ = {
+			isa = PBXGroup;
+			children = (
+				0F3DCBC01E6E286F00AADAB8 /* PreviewView.swift */,
+				0F3DCBBE1E6E284F00AADAB8 /* APPLCameraViewController.swift */,
+			);
+			name = "Old CameraCapture stuff";
 			sourceTree = "<group>";
 		};
 		DE429F751E661BB20050E719 = {
 			isa = PBXGroup;
 			children = (
 				DE429F801E661BB20050E719 /* MusicMind */,
+				DE429F951E661BB20050E719 /* MusicMindTests */,
 				DE429F7F1E661BB20050E719 /* Products */,
 				AFEDE517BD9FE9008E5C98F7 /* Pods */,
 				6411FC252D5E1FC5BDF80FA6 /* Frameworks */,
@@ -248,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				DE429F7E1E661BB20050E719 /* MusicMind.app */,
+				DE429F921E661BB20050E719 /* MusicMindTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +302,7 @@
 				DE487E051E8D6A3C0025B514 /* Extensions */,
 				DE85666A1EC3BE4400B2409D /* Models */,
 				DE429F811E661BB20050E719 /* AppDelegate.swift */,
+				DE783F431EAFC4FF0007877A /* Platform.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
@@ -276,15 +320,26 @@
 				DE429F8D1E661BB20050E719 /* Info.plist */,
 				DE49052D1E6A3E4E00F65C2B /* GoogleService-Info.plist */,
 				86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */,
+				DE860DF81E9363C200393B03 /* Old or not in use */,
 			);
 			path = MusicMind;
+			sourceTree = "<group>";
+		};
+		DE429F951E661BB20050E719 /* MusicMindTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE503AD71E94349200124BFA /* WelcomeViewControllerTests.swift */,
+				DE429F961E661BB20050E719 /* MusicMindTests.swift */,
+				DE429F981E661BB20050E719 /* Info.plist */,
+			);
+			path = MusicMindTests;
 			sourceTree = "<group>";
 		};
 		DE487E051E8D6A3C0025B514 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */,
-				DEB4FDD01EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift */,
+				DE487E011E8D6A350025B514 /* UIButton+setBackgroundColor.swift */,
 				DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */,
 				DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
 				DE8EE3AF1E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift */,
@@ -349,6 +404,28 @@
 			name = "Forgot password";
 			sourceTree = "<group>";
 		};
+		DE860DF81E9363C200393B03 /* Old or not in use */ = {
+			isa = PBXGroup;
+			children = (
+				0FF4B61A1E83946100EEAE8C /* VideoPickerViewController.swift */,
+				DE438A681EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift */,
+				DEBB98A41EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift */,
+				DE379D5D1E9D479B003C921F /* Old CameraCapture stuff */,
+				DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */,
+			);
+			name = "Old or not in use";
+			sourceTree = "<group>";
+		};
+		DEF5E4E31E8C2C9500FF9E37 /* SMS Validation */ = {
+			isa = PBXGroup;
+			children = (
+				DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */,
+				DE357AC21E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift */,
+				DEF5E4E91E8C384200FF9E37 /* NumberEntryViewController.swift */,
+			);
+			name = "SMS Validation";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,6 +448,27 @@
 			productName = MusicMind;
 			productReference = DE429F7E1E661BB20050E719 /* MusicMind.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DE429F911E661BB20050E719 /* MusicMindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE429FA91E661BB20050E719 /* Build configuration list for PBXNativeTarget "MusicMindTests" */;
+			buildPhases = (
+				F58848CE2D7B823D92431A83 /* [CP] Check Pods Manifest.lock */,
+				DE429F8E1E661BB20050E719 /* Sources */,
+				DE429F8F1E661BB20050E719 /* Frameworks */,
+				DE429F901E661BB20050E719 /* Resources */,
+				410E9F71B73C35F75BA5905D /* [CP] Embed Pods Frameworks */,
+				EBAFFFAB912402C4E919F8E9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE429F941E661BB20050E719 /* PBXTargetDependency */,
+			);
+			name = MusicMindTests;
+			productName = MusicMindTests;
+			productReference = DE429F921E661BB20050E719 /* MusicMindTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -405,6 +503,12 @@
 							};
 						};
 					};
+					DE429F911E661BB20050E719 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DE429F7D1E661BB20050E719;
+					};
 				};
 			};
 			buildConfigurationList = DE429F791E661BB20050E719 /* Build configuration list for PBXProject "MusicMind" */;
@@ -421,6 +525,7 @@
 			projectRoot = "";
 			targets = (
 				DE429F7D1E661BB20050E719 /* MusicMind */,
+				DE429F911E661BB20050E719 /* MusicMindTests */,
 			);
 		};
 /* End PBXProject section */
@@ -441,7 +546,15 @@
 				0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */,
 				DE860DF11E93626D00393B03 /* MusicSearch.storyboard in Resources */,
 				DE85E5C41EB1279E005FFEB9 /* UserSettings.storyboard in Resources */,
+				DEF5E4E61E8C2CC200FF9E37 /* SMS Validation.storyboard in Resources */,
 				DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE429F901E661BB20050E719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +574,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		410E9F71B73C35F75BA5905D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind-MusicMindTests/Pods-MusicMind-MusicMindTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4A1E3411F726C065A61656CF /* [CP] Copy Pods Resources */ = {
@@ -493,7 +621,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< HEAD
 		EBAFFFAB912402C4E919F8E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,8 +651,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-=======
->>>>>>> Develop
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -533,51 +658,66 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEB4FDE51EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift in Sources */,
 				DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */,
-				DEB4FDDB1EC52132001458CE /* EmailPasswordViewController.swift in Sources */,
+				0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */,
+				0FF4B61D1E83946100EEAE8C /* PostProcessingViewController + collectionViewHelper.swift in Sources */,
 				DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */,
 				DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */,
 				DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */,
+				DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */,
-<<<<<<< HEAD
 				8487F6C71EC40D47007119A9 /* SpotifyPlayerViewController.swift in Sources */,
-=======
-				DEB4FDE11EC5219F001458CE /* EmojiCollectionViewCell.swift in Sources */,
-				DEB4FDE31EC521B2001458CE /* VideoContainerView.swift in Sources */,
-				8487F6C71EC40D47007119A9 /* ACViewController.swift in Sources */,
->>>>>>> Develop
 				DEA2A7A21E946B0700D78E23 /* CameraCaptureViewController.swift in Sources */,
+				0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */,
 				0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */,
 				0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */,
+				DE357AC31E8C7A3D003ACF2E /* ValidationCodeEntryViewController.swift in Sources */,
 				DE85666C1EC3BE5D00B2409D /* Post.swift in Sources */,
-				DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */,
+				DEBB98A51EA04EBE00C050D5 /* NavigateLeftInteractiveAnimator.swift in Sources */,
 				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,
+				0F3DCBC11E6E286F00AADAB8 /* PreviewView.swift in Sources */,
 				DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */,
-				DEB4FDD71EC52115001458CE /* BirthdayViewController.swift in Sources */,
 				DE85E5C61EB127C7005FFEB9 /* UserSettingsViewController.swift in Sources */,
+				0FF4B61B1E83946100EEAE8C /* PostProcessingViewController.swift in Sources */,
 				DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */,
+				DE783F441EAFC4FF0007877A /* Platform.swift in Sources */,
+				0F3DCBBF1E6E284F00AADAB8 /* APPLCameraViewController.swift in Sources */,
+				0F5908A81E6F5B9D00520B9C /* APPLCameraViewControllerDelegate.swift in Sources */,
 				DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */,
-				DEB4FDD11EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift in Sources */,
+				0FF4B61E1E83946100EEAE8C /* VideoContainerView.swift in Sources */,
+				0FF4B61C1E83946100EEAE8C /* EmojiCollectionViewCell.swift in Sources */,
+				0F58F2691EAE833B00DC04EA /* AVVideoExporter.swift in Sources */,
+				DE438A691EA1986F007E20CB /* NavigateLeftTransitionInteractionController.swift in Sources */,
+				DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
 				8487F6CF1EC7F2AA007119A9 /* PagingViewController.swift in Sources */,
-=======
->>>>>>> Develop
 				DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
-				DEB4FDDD1EC52140001458CE /* NameViewController.swift in Sources */,
-				DEB4FDD31EC520A5001458CE /* CameraCaptureViewController.swift in Sources */,
-				DEB4FDE71EC521CF001458CE /* PostProcessingViewController.swift in Sources */,
+				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
 				8487F6F11ECBAD75007119A9 /* UserPlaylistViewController.swift in Sources */,
 				DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */,
-				DEB4FDDF1EC52190001458CE /* AVVideoExporter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE429F8E1E661BB20050E719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE429F971E661BB20050E719 /* MusicMindTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE429F941E661BB20050E719 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE429F7D1E661BB20050E719 /* MusicMind */;
+			targetProxy = DE429F931E661BB20050E719 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */ = {
@@ -650,6 +790,14 @@
 				DE860DF01E93626D00393B03 /* Base */,
 			);
 			name = MusicSearch.storyboard;
+			sourceTree = "<group>";
+		};
+		DEF5E4E41E8C2CC200FF9E37 /* SMS Validation.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEF5E4E51E8C2CC200FF9E37 /* Base */,
+			);
+			name = "SMS Validation.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -799,7 +947,6 @@
 			};
 			name = Release;
 		};
-<<<<<<< HEAD
 		DE429FAA1E661BB20050E719 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -836,8 +983,6 @@
 			};
 			name = Release;
 		};
-=======
->>>>>>> Develop
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -855,6 +1000,15 @@
 			buildConfigurations = (
 				DE429FA71E661BB20050E719 /* Debug */,
 				DE429FA81E661BB20050E719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE429FA91E661BB20050E719 /* Build configuration list for PBXNativeTarget "MusicMindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE429FAA1E661BB20050E719 /* Debug */,
+				DE429FAB1E661BB20050E719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

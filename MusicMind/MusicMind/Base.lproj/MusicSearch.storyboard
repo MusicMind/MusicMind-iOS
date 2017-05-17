@@ -25,11 +25,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="NfI-b7-sAm">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.078977633249999998" green="0.0029550784850000001" blue="0.045231684930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
-                                    <navigationItem title="Choose Your Track" id="uzp-De-5QU">
+                                    <navigationItem title="Music Search" id="uzp-De-5QU">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="BT5-JH-cDV"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="fK0-Dl-Cpy">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fK0-Dl-Cpy">
                                             <color key="tintColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="done:" destination="ivA-93-9DO" id="42d-61-7EB"/>
@@ -38,9 +38,9 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" placeholder="Name of song or artist" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-3h-diC">
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Name of song or artist" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-3h-diC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.3733938769035533" green="0.23187723416899339" blue="0.3000131459089016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XtJ-FD-c3o">
@@ -56,12 +56,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eca-cW-7jG">
-                                                    <rect key="frame" x="16" y="8" width="156.5" height="84"/>
+                                                    <rect key="frame" x="16" y="8" width="351" height="84"/>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RC8-yc-VT7">
-                                                    <rect key="frame" x="8" y="8" width="164.5" height="84"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="84"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="R6S-sh-cNl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="164.5" height="84"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="84"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ffQ-jG-ras">
@@ -80,10 +80,10 @@
                                                     <blurEffect style="dark"/>
                                                 </visualEffectView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J6Y-GW-CxZ">
-                                                    <rect key="frame" x="107" y="13" width="48.5" height="74"/>
+                                                    <rect key="frame" x="107" y="13" width="243" height="74"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="van-ks-GCy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="243" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="243" id="bNq-VZ-Ebp"/>
                                                             </constraints>
@@ -92,7 +92,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIg-DC-E1C">
-                                                            <rect key="frame" x="0.0" y="28" width="48.5" height="46"/>
+                                                            <rect key="frame" x="0.0" y="28" width="243" height="46"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="46" id="EaO-Nd-Mg7"/>
                                                             </constraints>
@@ -123,15 +123,14 @@
                                                 <constraint firstItem="J6Y-GW-CxZ" firstAttribute="top" secondItem="AUr-YK-i3A" secondAttribute="topMargin" constant="5" id="vYs-kU-oDP"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.37339387689999998" green="0.2318772342" blue="0.3000131459" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-es-H1p">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="pause" id="pxK-VJ-ofD">
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <barButtonItem title="Audio Controls" id="pxK-VJ-ofD">
                                         <connections>
                                             <segue destination="DGk-hN-l8N" kind="popoverPresentation" popoverAnchorBarButtonItem="pxK-VJ-ofD" id="0q1-cP-p4R">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -151,14 +150,9 @@
                                         </button>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spotify_Icon_RGB_Green" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vmk-M5-7rz">
-                                <rect key="frame" x="16" y="32" width="21" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.078977633249999998" green="0.0029550784850000001" blue="0.045231684930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="XtJ-FD-c3o" firstAttribute="top" secondItem="hbf-3h-diC" secondAttribute="bottom" id="16b-yH-sVs"/>
                             <constraint firstItem="hbf-3h-diC" firstAttribute="top" secondItem="NfI-b7-sAm" secondAttribute="bottom" id="Cnt-UF-L40"/>
@@ -217,7 +211,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="619"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-<<<<<<< HEAD
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="INn-qz-X03">
                                                     <rect key="frame" x="62" y="8" width="219" height="220"/>
                                                 </imageView>
@@ -241,87 +234,32 @@
                                                             <state key="normal" title="&lt;&lt;&lt;---">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
-=======
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INn-qz-X03">
-                                                    <rect key="frame" x="72" y="36" width="190" height="190"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="190" id="pK2-yP-Yml"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="V9a-O2-PlA">
-                                                    <rect key="frame" x="0.0" y="234" width="343" height="62"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1O-6w-LmW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="28"/>
-                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piM-NL-c0S">
-                                                            <rect key="frame" x="0.0" y="41" width="343" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="p7G-Je-f68"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="7cF-Uo-adu">
-                                                    <rect key="frame" x="62" y="310" width="218" height="30"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvT-MK-Zi9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <state key="normal" title="&lt;&lt;&lt;---"/>
->>>>>>> Develop
                                                             <connections>
                                                                 <action selector="rewind:" destination="bVc-mh-ge2" eventType="touchUpInside" id="3wa-P9-IWN"/>
                                                             </connections>
                                                         </button>
-<<<<<<< HEAD
                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVh-0f-F6M">
                                                             <rect key="frame" x="93" y="0.0" width="30" height="30"/>
                                                             <state key="normal" title="Play">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
-=======
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVh-0f-F6M">
-                                                            <rect key="frame" x="94" y="0.0" width="30" height="30"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <state key="normal" title="Play"/>
->>>>>>> Develop
                                                             <connections>
                                                                 <action selector="playPauseAction:" destination="bVc-mh-ge2" eventType="touchUpInside" id="M7Y-qe-veE"/>
                                                             </connections>
                                                         </button>
-<<<<<<< HEAD
                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv5-Ua-tvj">
                                                             <rect key="frame" x="168" y="0.0" width="49" height="30"/>
                                                             <state key="normal" title="---&gt;&gt;&gt;">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
-=======
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv5-Ua-tvj">
-                                                            <rect key="frame" x="169" y="0.0" width="49" height="30"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <state key="normal" title="---&gt;&gt;&gt;"/>
->>>>>>> Develop
                                                             <connections>
                                                                 <action selector="fastForward:" destination="bVc-mh-ge2" eventType="touchUpInside" id="URd-sA-EEK"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-<<<<<<< HEAD
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sYe-PV-d3b">
                                                     <rect key="frame" x="6" y="454" width="330" height="31"/>
-=======
-                                                <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sYe-PV-d3b">
-                                                    <rect key="frame" x="6" y="361" width="331" height="31"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
->>>>>>> Develop
                                                     <connections>
                                                         <action selector="spotifyVolume:" destination="bVc-mh-ge2" eventType="valueChanged" id="7EE-DQ-LgQ"/>
                                                     </connections>
@@ -339,18 +277,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhb-9U-ZdM">
-<<<<<<< HEAD
                                                     <rect key="frame" x="59" y="529" width="224" height="31"/>
-=======
-                                                    <rect key="frame" x="59" y="493" width="225" height="31"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
->>>>>>> Develop
                                                     <connections>
                                                         <action selector="trackSeek:" destination="bVc-mh-ge2" eventType="touchUpInside" id="Ygy-te-ir6"/>
                                                         <action selector="trackSeekStart:" destination="bVc-mh-ge2" eventType="touchDown" id="L6I-v8-k1t"/>
                                                     </connections>
                                                 </slider>
-<<<<<<< HEAD
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="V9a-O2-PlA">
                                                     <rect key="frame" x="0.0" y="262" width="343" height="95"/>
                                                     <subviews>
@@ -377,32 +309,6 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-=======
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spotify_Logo_RGB_White" translatesAutoresizingMaskIntoConstraints="NO" id="bbO-0B-Jbm">
-                                                    <rect key="frame" x="8" y="589" width="73" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zz-Dy-N5Z">
-                                                    <rect key="frame" x="0.0" y="8" width="343" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAf-Gr-kXG">
-                                                    <rect key="frame" x="89" y="589" width="246" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="uI1-dc-1dL"/>
-                                                        <constraint firstAttribute="width" constant="136" id="zss-le-JhR"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Close">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="closeWindow:" destination="bVc-mh-ge2" eventType="touchUpInside" id="Tms-dn-uh1"/>
-                                                    </connections>
-                                                </button>
->>>>>>> Develop
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vAf-Gr-kXG" firstAttribute="bottom" secondItem="MXm-l0-9a7" secondAttribute="bottomMargin" id="4tk-kp-j68"/>
@@ -602,8 +508,4 @@
             <point key="canvasLocation" x="6140" y="1200"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Spotify_Icon_RGB_Green" width="709" height="709"/>
-        <image name="Spotify_Logo_RGB_White" width="2362" height="708"/>
-    </resources>
 </document>
