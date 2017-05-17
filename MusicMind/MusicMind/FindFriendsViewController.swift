@@ -123,6 +123,21 @@ extension FindFriendsViewController: UITableViewDataSource {
         
         let user = results[indexPath.row]
         
+        // Check if this user is already a friend
+        if let currentUserId = FIRAuth.auth()?.currentUser?.uid, let friendId = user.id {
+            let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)/\(friendId)")
+            
+            userFriendsRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                if let isFriend = snapshot.value as? Bool {
+                    if isFriend {
+                        print("Is already a friend.")
+                    } else {
+                        print("Is not a friend yet.")
+                    }
+                }
+            })
+        }
+        
         var name = "No name"
 
         if let firstName = user.firstName {
