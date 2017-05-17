@@ -83,24 +83,24 @@ extension FindFriendsViewController: AddButtonDelegate {
         
         let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
         
-        if cell.alreadyAdded {
-            userFriendsRef.updateChildValues([friendId : false]) { (error: Error?, ref: FIRDatabaseReference) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    print("Friend added")
-                    cell.alreadyAdded = true
-                }
-            }
-        } else {
+        if cell.isAlreadyFriend {
             userFriendsRef.child(friendId).removeValue(completionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
-                    print("Friend added")
-                    cell.alreadyAdded = true
+                    print("Friend removed")
+                    cell.isAlreadyFriend = false
                 }
             })
+        } else {
+            userFriendsRef.updateChildValues([friendId : true]) { (error: Error?, ref: FIRDatabaseReference) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("Friend added")
+                    cell.isAlreadyFriend = true
+                }
+            }
         }
     }
 }
@@ -137,14 +137,11 @@ extension FindFriendsViewController: UITableViewDataSource {
         if let currentUserId = FIRAuth.auth()?.currentUser?.uid, let friendId = user.id {
             let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)/\(friendId)")
             
+            cell.isAlreadyFriend = false
+            
             userFriendsRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-                if let isFriend = snapshot.value as? Bool {
-                    if isFriend {
-                        print("Is already a friend.")
-                    } else {
-                        print("Is not a friend yet.")
-                    }
-                }
+                print("Is already a friend.")
+                cell.isAlreadyFriend = true
             })
         }
         

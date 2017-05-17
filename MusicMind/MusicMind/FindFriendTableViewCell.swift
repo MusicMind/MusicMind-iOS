@@ -12,9 +12,9 @@ class FindFriendsTableViewCell: UITableViewCell {
     
     var indexPath: IndexPath?
     var delegate: AddButtonDelegate?
-    var alreadyAdded: Bool = false {
+    var isAlreadyFriend: Bool = false {
         didSet {
-            if alreadyAdded {
+            if isAlreadyFriend {
                 addButton.titleLabel?.text = "Remove"
             } else {
                 addButton.titleLabel?.text = "Add"
