@@ -171,8 +171,6 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
                         let songTitle = item["name"] as! String
                         let trackURI = item["uri"] as? String
                         let duration = item["duration_ms"] as? Int
-                        print("vjdsanvkfjldnavlkdfnakvfdavbdfjks")
-                        print(duration)
                         if let album = item["album"] as? [String : AnyObject] {
                             let albumName = album["name"] as? String
                             if let artist = album["artists"] as? [[String: Any]] {
