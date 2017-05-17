@@ -16,13 +16,10 @@ class FindFriendsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        // Setups
         setupNavigationBar(theme: .light)
         hideKeyboardWhenTappedAround()
         
-        // Set delegates
         searchBar.delegate = self
-        tableView.delegate = self
         tableView.dataSource = self
     }
     
@@ -75,10 +72,6 @@ extension FindFriendsViewController: UISearchBarDelegate {
             searchForUserByName(withString: searchText)
         }
     }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        // TODO: search
-    }
 
 }
 
@@ -87,40 +80,36 @@ extension FindFriendsViewController: AddButtonDelegate {
         
         guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
         guard let friendId = results[indexPath.row].id else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
         
         let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
         
-        userFriendsRef.updateChildValues([friendId : true]) { (error: Error?, ref: FIRDatabaseReference) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                
-                if let cell = self.tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell {
+        if cell.alreadyAdded {
+            userFriendsRef.updateChildValues([friendId : false]) { (error: Error?, ref: FIRDatabaseReference) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("Friend added")
                     cell.alreadyAdded = true
                 }
-                
-                print("Friend added")
-                
             }
+        } else {
+            userFriendsRef.child(friendId).removeValue(completionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("Friend added")
+                    cell.alreadyAdded = true
+                }
+            })
         }
     }
-}
-
-extension FindFriendsViewController: UITableViewDelegate {
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            print("delete")
-//        }
-//    }
-    
 }
 
 extension FindFriendsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FindFriendsTableViewCell
-        
         let user = results[indexPath.row]
         
         // Check if this user is already a friend
@@ -138,17 +127,10 @@ extension FindFriendsViewController: UITableViewDataSource {
             })
         }
         
-        var name = "No name"
-
-        if let firstName = user.firstName {
-            name = firstName
-        }
-        
-        if let lastName = user.lastName {
-            name.append(" \(lastName)")
-        }
-        
-        cell.nameLabel.text = name
+        var fullName = ""
+        if let firstName = user.firstName { fullName = firstName }
+        if let lastName = user.lastName { fullName.append(" \(lastName)") }
+        cell.nameLabel.text = fullName
         
         if let profilePhotoUrl = user.profilePhoto {
             URLSession.shared.dataTask(with: profilePhotoUrl) { (data: Data?, response: URLResponse?, error: Error?) in
