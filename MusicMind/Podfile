@@ -1,13 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
 target 'MusicMind' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Firebase/Core', '~> 3.16.0'
-  pod 'Firebase/Auth', '~> 3.16.0'
-  pod 'Firebase/Storage', '~> 3.16.0'
-  pod 'Firebase/Database', '~> 3.16.0'
+  # Pods for MusicMind
+
+  pod 'Firebase/Core', '~> 3.15.0'
+  pod 'Firebase/Auth', '~> 3.15.0'
+  pod 'Firebase/Storage', '~> 3.15.0'
+  pod 'Firebase/Database', '~> 3.15.0'
   pod 'Alamofire'
-  #  pod 'SinchVerification-Swift'
+  pod 'SinchVerification-Swift'
   pod 'RecordButton', :git => 'https://github.com/felipericieri/RecordButton.git'
+
+  target 'MusicMindTests' do
+      inherit! :complete
+  end
   
 end
