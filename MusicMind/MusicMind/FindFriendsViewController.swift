@@ -11,7 +11,7 @@ import Firebase
 
 class FindFriendsViewController: UIViewController {
     
-    var results = [User]()
+    var results = [(user: User, isAlreadyFriend: Bool)]()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -53,7 +53,20 @@ class FindFriendsViewController: UIViewController {
                 userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
                     let user = User(withSnapshot: snapshot)
                     
-                    self.results.append(user)
+                    //// Check if user is already friend ////////////////////////////////
+                    //        // Check if this user is already a friend
+                    //        if let currentUserId = FIRAuth.auth()?.currentUser?.uid, let friendId = user.id {
+                    //            let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)/\(friendId)")
+                    //
+                    //            cell.isAlreadyFriend = false
+                    //
+                    //            userFriendsRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                    //                cell.isAlreadyFriend = true
+                    //            })
+                    //        }
+                    /////////////////////////////////////////////////////////////////////
+                    
+                    self.results.append((user: user, isAlreadyFriend: true))
                     self.tableView.reloadData()
                 })
             }
@@ -78,7 +91,7 @@ extension FindFriendsViewController: UISearchBarDelegate {
 extension FindFriendsViewController: AddButtonDelegate {
     func addButtonTapped(at indexPath: IndexPath) {
         guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
-        guard let friendId = results[indexPath.row].id else { return }
+        guard let friendId = results[indexPath.row].user.id else { return }
         guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
         
         let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
@@ -109,7 +122,7 @@ extension FindFriendsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FindFriendsTableViewCell
-        let user = results[indexPath.row]
+        let user = results[indexPath.row].user
         var fullName = ""
         
         if let firstName = user.firstName { fullName = firstName }
@@ -132,18 +145,7 @@ extension FindFriendsViewController: UITableViewDataSource {
         cell.indexPath = indexPath
         cell.delegate = self
         cell.nameLabel.text = fullName
-        
-        // Check if this user is already a friend
-        if let currentUserId = FIRAuth.auth()?.currentUser?.uid, let friendId = user.id {
-            let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)/\(friendId)")
-            
-            cell.isAlreadyFriend = false
-            
-            userFriendsRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-                print("Is already a friend.")
-                cell.isAlreadyFriend = true
-            })
-        }
+        cell.isAlreadyFriend = results[indexPath.row].isAlreadyFriend
         
         return cell
     }
