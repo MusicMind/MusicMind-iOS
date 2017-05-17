@@ -139,6 +139,8 @@ extension FindFriendsViewController: UITableViewDataSource {
                     }
                 }
             }.resume()
+        } else {
+            cell.profileImage.image = nil
         }
         
         cell.index = indexPath.row
