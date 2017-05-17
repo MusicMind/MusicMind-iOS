@@ -9,5 +9,5 @@
 import Foundation
 
 protocol AddButtonDelegate {
-    func addButtonTapped(at index: Int)
+    func addButtonTapped(at indexPath: IndexPath)
 }

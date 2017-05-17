@@ -83,10 +83,10 @@ extension FindFriendsViewController: UISearchBarDelegate {
 }
 
 extension FindFriendsViewController: AddButtonDelegate {
-    func addButtonTapped(at index: Int) {
+    func addButtonTapped(at indexPath: IndexPath) {
         
         guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
-        guard let friendId = results[index].id else { return }
+        guard let friendId = results[indexPath.row].id else { return }
         
         let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
         
@@ -94,7 +94,13 @@ extension FindFriendsViewController: AddButtonDelegate {
             if let error = error {
                 print(error.localizedDescription)
             } else {
+                
+                if let cell = self.tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell {
+                    cell.alreadyAdded = true
+                }
+                
                 print("Friend added")
+                
             }
         }
     }
@@ -143,7 +149,7 @@ extension FindFriendsViewController: UITableViewDataSource {
             cell.profileImage.image = nil
         }
         
-        cell.index = indexPath.row
+        cell.indexPath = indexPath
         cell.delegate = self
         
         return cell

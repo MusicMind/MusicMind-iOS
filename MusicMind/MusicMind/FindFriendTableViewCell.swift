@@ -10,8 +10,17 @@ import UIKit
 
 class FindFriendsTableViewCell: UITableViewCell {
     
-    var index: Int?
+    var indexPath: IndexPath?
     var delegate: AddButtonDelegate?
+    var alreadyAdded: Bool = false {
+        didSet {
+            if alreadyAdded {
+                addButton.titleLabel?.text = "Remove"
+            } else {
+                addButton.titleLabel?.text = "Add"
+            }
+        }
+    }
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
@@ -20,11 +29,11 @@ class FindFriendsTableViewCell: UITableViewCell {
         guard let delegate = delegate else {
             return
         }
-        guard let index = index else {
+        guard let indexPath = indexPath else {
             return
         }
         
-        delegate.addButtonTapped(at: index)
+        delegate.addButtonTapped(at: indexPath)
     }
     
 }
