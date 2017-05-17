@@ -28,8 +28,7 @@
 		0FF4B62C1E8B352000EEAE8C /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62B1E8B352000EEAE8C /* NameViewController.swift */; };
 		0FF4B62E1E8C4BF400EEAE8C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B62D1E8C4BF400EEAE8C /* BirthdayViewController.swift */; };
 		2B1D88D6FBD477C10DD6F0F6 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86A28A2CD55C6EBF0E2CF12 /* Pods_MusicMind.framework */; };
-		8487F6C71EC40D47007119A9 /* SpotifyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6C61EC40D47007119A9 /* SpotifyPlayerViewController.swift */; };
-		8487F6CF1EC7F2AA007119A9 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6CE1EC7F2AA007119A9 /* PagingViewController.swift */; };
+		8487F6C71EC40D47007119A9 /* ACViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487F6C61EC40D47007119A9 /* ACViewController.swift */; };
 		86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E1998C1E7B64070071F50C /* AVFoundation.framework */; };
 		DE007F611EAEA17300966F55 /* SendToFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE007F601EAEA17300966F55 /* SendToFriendView.xib */; };
 		DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE007F641EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift */; };
@@ -111,8 +110,7 @@
 		73B61F615E231AD98737EC03 /* Pods_MusicMind_MusicMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind_MusicMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A801209C5980442F387DC8 /* Pods_MusicMind_MusicMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind_MusicMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EF3CD0EE3B408C321A5E5E /* Pods-MusicMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMindUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMindUITests/Pods-MusicMindUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8487F6C61EC40D47007119A9 /* SpotifyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayerViewController.swift; sourceTree = "<group>"; };
-		8487F6CE1EC7F2AA007119A9 /* PagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
+		8487F6C61EC40D47007119A9 /* ACViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACViewController.swift; sourceTree = "<group>"; };
 		86E1998C1E7B64070071F50C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		86E199981E7CCB7C0071F50C /* MusicMind-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MusicMind-Bridging-Header.h"; sourceTree = "<group>"; };
 		9127CA30E0CA410CF4297E83 /* Pods-MusicMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.debug.xcconfig"; sourceTree = "<group>"; };
@@ -323,6 +321,8 @@
 				DE783F431EAFC4FF0007877A /* Platform.swift */,
 				DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */,
 				0F1DE2591E9327C60032A49A /* User.swift */,
+				0F1DE2641E9491260032A49A /* FirebaseDataService.swift */,
+				0F1DE2621E9429600032A49A /* UserLoginCredentials.swift */,
 				DE860DDB1E935F1B00393B03 /* Welcome */,
 				8487F6C01EC26836007119A9 /* Audio Controls */,
 				DE6494251E7CE670003D92D0 /* Log in */,
@@ -377,6 +377,7 @@
 		DE85666A1EC3BE4400B2409D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0F1DE2591E9327C60032A49A /* User.swift */,
 				DE85666B1EC3BE5D00B2409D /* Post.swift */,
 			);
 			name = Models;
@@ -395,8 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				DE860DEF1E93626D00393B03 /* MusicSearch.storyboard */,
-				8487F6CE1EC7F2AA007119A9 /* PagingViewController.swift */,
-				8487F6C61EC40D47007119A9 /* SpotifyPlayerViewController.swift */,
+				8487F6C61EC40D47007119A9 /* ACViewController.swift */,
 				DE860DF41E93630C00393B03 /* MusicSearchViewController.swift */,
 			);
 			name = "Music search";
@@ -590,7 +590,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		410E9F71B73C35F75BA5905D /* [CP] Embed Pods Frameworks */ = {
@@ -665,7 +665,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -683,7 +683,7 @@
 				DE860DF51E93630C00393B03 /* MusicSearchViewController.swift in Sources */,
 				DEF5E4EA1E8C384200FF9E37 /* NumberEntryViewController.swift in Sources */,
 				DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */,
-				8487F6C71EC40D47007119A9 /* SpotifyPlayerViewController.swift in Sources */,
+				8487F6C71EC40D47007119A9 /* ACViewController.swift in Sources */,
 				DEA2A7A21E946B0700D78E23 /* CameraCaptureViewController.swift in Sources */,
 				0F3DCBC31E6E289500AADAB8 /* PhotoCaptureDelegate.swift in Sources */,
 				0F1DBBB91E949BB3007CCA52 /* EmailPasswordViewController.swift in Sources */,
@@ -708,7 +708,6 @@
 				DE487E021E8D6A350025B514 /* UIButton+setBackgroundColor.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,
 				DE09EC6C1E7CDFA9005B237A /* SendToFriendViewController.swift in Sources */,
-				8487F6CF1EC7F2AA007119A9 /* PagingViewController.swift in Sources */,
 				DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				0FF4B61F1E83946100EEAE8C /* VideoPickerViewController.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
