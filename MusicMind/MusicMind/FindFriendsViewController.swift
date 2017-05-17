@@ -102,6 +102,12 @@ extension FindFriendsViewController: AddButtonDelegate {
 
 extension FindFriendsViewController: UITableViewDelegate {
     
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            print("delete")
+//        }
+//    }
+    
 }
 
 extension FindFriendsViewController: UITableViewDataSource {
@@ -147,7 +153,7 @@ extension FindFriendsViewController: UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count - 1
+        return results.count
     }
     
 }
