@@ -12,15 +12,6 @@ class FindFriendsTableViewCell: UITableViewCell {
     
     var indexPath: IndexPath?
     var delegate: AddButtonDelegate?
-//    var isAlreadyFriend: Bool = false {
-//        didSet {
-//            if isAlreadyFriend {
-//                addButton.titleLabel?.text = "Remove"
-//            } else {
-//                addButton.titleLabel?.text = "Add"
-//            }
-//        }
-//    }
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
