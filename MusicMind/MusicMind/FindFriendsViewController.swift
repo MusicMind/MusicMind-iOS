@@ -54,24 +54,24 @@ class FindFriendsViewController: UIViewController {
                 userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
                     let user = User(withSnapshot: snapshot)
                     
-                    //// Check if user is already friend ////////////////////////////////
-                    //        // Check if this user is already a friend
-                    //        if let currentUserId = FIRAuth.auth()?.currentUser?.uid, let friendId = user.id {
-                    //            let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)/\(friendId)")
-                    //
-                    //            cell.isAlreadyFriend = false
-                    //
-                    //            userFriendsRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-                    //                cell.isAlreadyFriend = true
-                    //            })
-                    //        }
-                    /////////////////////////////////////////////////////////////////////
-                    
-                    DispatchQueue.main.async {
-                        self.results.append((user: user, isAlreadyFriend: false))
-                        self.tableView.reloadData()
+                    // Check if this user is already a friend
+                    if let currentUserId = FIRAuth.auth()?.currentUser?.uid, let friendId = user.id {
+                        let currentUsersFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
+                        
+                        currentUsersFriendsRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                            
+                            if let x = snapshot.value as? [String: Bool] {
+                                if x[friendId] == true {
+                                    self.results.append((user: user, isAlreadyFriend: true))
+                                    self.tableView.reloadData()
+                                } else {
+                                    self.results.append((user: user, isAlreadyFriend: false))
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        })
+                        
                     }
-                    
                 })
             }
         }
@@ -98,15 +98,16 @@ extension FindFriendsViewController: AddButtonDelegate {
         guard let friendId = results[indexPath.row].user.id else { return }
         guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
         
-        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")   
+        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
         
-        if results[indexPath.row].isAlreadyFriend {
+        var result = results[indexPath.row]
+        
+        if result.isAlreadyFriend {
             userFriendsRef.child(friendId).removeValue(completionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
-                    print("Friend removed")
-//                    cell.isAlreadyFriend = false
+                    result.isAlreadyFriend = false
                 }
             })
         } else {
@@ -114,11 +115,12 @@ extension FindFriendsViewController: AddButtonDelegate {
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
-                    print("Friend added")
-//                    cell.isAlreadyFriend = true
+                    result.isAlreadyFriend = true
                 }
             }
         }
+        
+        results[indexPath.row] = result
     }
 }
 
