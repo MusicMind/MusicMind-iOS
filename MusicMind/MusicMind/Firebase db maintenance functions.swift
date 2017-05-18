@@ -9,9 +9,9 @@
 import Foundation
 import Firebase
 
-func fetchUsersAndGenerateSearchNames(completionHandler: @escaping (_ searchableNames: [String: String]) -> ()) {
+func fetchUsersThenGenerateSearchNames(completionHandler: @escaping (_ searchableNames: [String: String]) -> ()) {
     /// How to use:
-    /// fetchUsersAndGenerateSearchNames { (searchNames: [String : String]) in
+    /// fetchUsersThenGenerateSearchNames { (searchNames: [String : String]) in
     ///     let ref = FIRDatabase.database().reference().child("searchableNames")
     ///
     ///     ref.updateChildValues(searchNames)
