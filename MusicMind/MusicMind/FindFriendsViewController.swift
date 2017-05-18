@@ -21,6 +21,7 @@ class FindFriendsViewController: UIViewController {
         
         searchBar.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func userIdsForAllUsersWithNamesMatching(searchString: String, completionHandler: @escaping (_ ids: [String]) -> ())  {
@@ -118,7 +119,7 @@ extension FindFriendsViewController: AddButtonDelegate {
     }
 }
 
-extension FindFriendsViewController: UITableViewDataSource {
+extension FindFriendsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FindFriendsTableViewCell
@@ -151,10 +152,9 @@ extension FindFriendsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(65)
+        return CGFloat(75)
     }
 
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
