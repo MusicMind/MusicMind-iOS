@@ -58,8 +58,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-cE-kRv">
-                                                    <rect key="frame" x="327" y="17.5" width="30" height="30"/>
-                                                    <state key="normal" title="Add"/>
+                                                    <rect key="frame" x="302" y="17.5" width="55" height="30"/>
+                                                    <state key="normal" title="Remove"/>
                                                     <connections>
                                                         <action selector="addFriend:" destination="aQj-Sa-9fc" eventType="touchUpInside" id="9dn-pV-FPY"/>
                                                     </connections>
