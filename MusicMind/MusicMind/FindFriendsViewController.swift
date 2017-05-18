@@ -67,8 +67,11 @@ class FindFriendsViewController: UIViewController {
                     //        }
                     /////////////////////////////////////////////////////////////////////
                     
-                    self.results.append((user: user, isAlreadyFriend: true))
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.results.append((user: user, isAlreadyFriend: false))
+                        self.tableView.reloadData()
+                    }
+                    
                 })
             }
         }
@@ -95,15 +98,15 @@ extension FindFriendsViewController: AddButtonDelegate {
         guard let friendId = results[indexPath.row].user.id else { return }
         guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
         
-        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
+        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")   
         
-        if cell.isAlreadyFriend {
+        if results[indexPath.row].isAlreadyFriend {
             userFriendsRef.child(friendId).removeValue(completionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
                     print("Friend removed")
-                    cell.isAlreadyFriend = false
+//                    cell.isAlreadyFriend = false
                 }
             })
         } else {
@@ -112,7 +115,7 @@ extension FindFriendsViewController: AddButtonDelegate {
                     print(error.localizedDescription)
                 } else {
                     print("Friend added")
-                    cell.isAlreadyFriend = true
+//                    cell.isAlreadyFriend = true
                 }
             }
         }
@@ -146,7 +149,12 @@ extension FindFriendsViewController: UITableViewDataSource, UITableViewDelegate 
         cell.indexPath = indexPath
         cell.delegate = self
         cell.nameLabel.text = fullName
-        cell.isAlreadyFriend = results[indexPath.row].isAlreadyFriend
+        
+        if results[indexPath.row].isAlreadyFriend {
+            cell.addButton.titleLabel?.text = "Remove"
+        } else {
+            cell.addButton.titleLabel?.text = "Add"
+        }
         
         return cell
     }
