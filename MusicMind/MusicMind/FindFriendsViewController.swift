@@ -11,7 +11,11 @@ import Firebase
 
 class FindFriendsViewController: UIViewController {
     
-    var results = [(user: User, isAlreadyFriend: Bool)]()
+    var results = [(user: User, isAlreadyFriend: Bool)]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -63,10 +67,10 @@ class FindFriendsViewController: UIViewController {
                             if let x = snapshot.value as? [String: Bool] {
                                 if x[friendId] == true {
                                     self.results.append((user: user, isAlreadyFriend: true))
-                                    self.tableView.reloadData()
+//                                    self.tableView.reloadData()
                                 } else {
                                     self.results.append((user: user, isAlreadyFriend: false))
-                                    self.tableView.reloadData()
+//                                    self.tableView.reloadData()
                                 }
                             }
                         })
@@ -84,7 +88,7 @@ extension FindFriendsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             results = []
-            tableView.reloadData()
+//            tableView.reloadData()
         } else {
             searchForUserByName(withString: searchText)
         }
