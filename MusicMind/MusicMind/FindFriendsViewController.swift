@@ -18,6 +18,7 @@ class FindFriendsViewController: UIViewController {
     }
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    var cellsByUser = [String: FindFriendsTableViewCell]()
     
     override func viewDidLoad() {
         setupNavigationBar(theme: .light)
@@ -26,6 +27,22 @@ class FindFriendsViewController: UIViewController {
         searchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let currentUserId = FIRAuth.auth()?.currentUser?.uid
+        
+        if let currentUserId = currentUserId {
+            let usersFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
+
+            usersFriendsRef.observe(.value, with: { (snapshot: FIRDataSnapshot) in
+                if let userFriends = snapshot.value as? [String: Bool] {
+                    print(userFriends)
+                    for (friendId, _) in userFriends {
+                        self.cellsByUser[friendId]?.addButton.titleLabel?.text = "test"
+                    }
+                }
+            })
+            
+        }
     }
     
     private func userIdsForAllUsersWithNamesMatching(searchString: String, completionHandler: @escaping (_ ids: [String]) -> ())  {
@@ -108,6 +125,9 @@ extension FindFriendsViewController: AddButtonDelegate {
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
+                    
+                    cell.addButton.titleLabel?.text = "Add"
+                    
                     result.isAlreadyFriend = false
                 }
             })
@@ -116,6 +136,9 @@ extension FindFriendsViewController: AddButtonDelegate {
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
+                    
+                    cell.addButton.titleLabel?.text = "Remove"
+
                     result.isAlreadyFriend = true
                 }
             }
@@ -131,6 +154,10 @@ extension FindFriendsViewController: UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FindFriendsTableViewCell
         let user = searchResults[indexPath.row].user
         var fullName = ""
+        
+        if let id = user.id {
+            cellsByUser[id] = cell
+        }
         
         if let firstName = user.firstName { fullName = firstName }
         if let lastName = user.lastName { fullName.append(" \(lastName)") }
