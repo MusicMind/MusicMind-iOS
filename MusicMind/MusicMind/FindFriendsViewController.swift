@@ -46,44 +46,39 @@ class FindFriendsViewController: UIViewController {
                     }
                 }
             })
-            
         }
     }
     
     fileprivate func searchForUserByName(withString: String) {
-        func userIdsForAllUsersWithNamesMatching(searchString: String, completionHandler: @escaping (_ ids: [String]) -> ())  {
-            let searchableNamesRef = FIRDatabase.database().reference().child("searchableNames")
-            
-            searchableNamesRef.queryOrderedByKey()
-                .queryStarting(atValue: searchString.lowercased())
-                .queryEnding(atValue: searchString.lowercased()+"\u{f8ff}")
-                .observeSingleEvent(of: .value, with: { snapshot in
-                    let children = snapshot.children
-                    var results = [String]()
-                    
-                    while let child = children.nextObject() as? FIRDataSnapshot {
-                        if let id = child.value as? String {
-                            results.append(id)
-                        }
-                    }
-                    
-                    completionHandler(results)
-                })
-        }
+        // Get user IDs for all users with names matching withString
+        let searchableNamesRef = FIRDatabase.database().reference().child("searchableNames")
         
-        userIdsForAllUsersWithNamesMatching(searchString: withString) { (userIdsToFetch: [String]) in
-            self.searchResults = []
-            
-            for id in userIdsToFetch {
-                let userRef = FIRDatabase.database().reference().child("users/\(id)")
+        searchableNamesRef.queryOrderedByKey()
+            .queryStarting(atValue: withString.lowercased())
+            .queryEnding(atValue: withString.lowercased()+"\u{f8ff}")
+            .observeSingleEvent(of: .value, with: { snapshot in
+                let children = snapshot.children
+                var results = [String]()
                 
-                userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-                    let user = User(withSnapshot: snapshot)
+                while let child = children.nextObject() as? FIRDataSnapshot {
+                    if let id = child.value as? String {
+                        results.append(id)
+                    }
+                }
+                
+                self.searchResults.removeAll()
+                
+                // Search
+                for id in results {
+                    let userRef = FIRDatabase.database().reference().child("users/\(id)")
                     
-                    self.searchResults.append(user)
-                })
-            }
-        }
+                    userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                        let user = User(withSnapshot: snapshot)
+                        
+                        self.searchResults.append(user)
+                    })
+                }
+        })
     }
     
 }
@@ -102,16 +97,18 @@ extension FindFriendsViewController: UISearchBarDelegate {
 
 extension FindFriendsViewController: AddButtonDelegate {
     func addButtonTapped(at indexPath: IndexPath) {
-//        guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
-//        guard let friendId = searchResults[indexPath.row].id else { return }
-//        guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
-//        
-//        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
-//        
+        guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let friendId = searchResults[indexPath.row].id else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
+        
+        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
+        
+        userFriendsRef.child(friendId).setValue(true)
+        
 //        var result = searchResults[indexPath.row]
-//        
-//        // Either add or remove friend from db list
-//        
+        
+        // Either add or remove friend from db list
+        
 //        searchResults[indexPath.row] = result
     }
 }
