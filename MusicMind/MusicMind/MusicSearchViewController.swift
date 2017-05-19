@@ -59,7 +59,7 @@ class MusicSearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         spotifyStreamingController.delegate = self
-
+        
     }
     
     deinit {
@@ -85,10 +85,8 @@ class MusicSearchViewController: UIViewController {
     // Spotify Alerts
     private func presentSpotifyLoginAlert() {
         let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
-        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in
             self.dismiss(animated: true, completion: nil)
-            
         }
         let login = UIAlertAction(title: "Go to Spotify", style: .default) { (alertAction) in
             if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
@@ -153,7 +151,7 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         }
       
     }
-    
+
     func callAlamo(url: String) {
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
@@ -209,14 +207,11 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         
         let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
 
-        
         currentTrackDetails = newTrack
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
-//        spotifyPlayer.loadTrackStartEndValues()
-        let pvc = PagingViewController()
-        pvc.slideToPage(index: indexPath.row, completion: nil)
-        
+//        let pvc = PagingViewController()
+//        pvc.slideToPage(index: indexPath.row, completion: nil)
     }
     
   
