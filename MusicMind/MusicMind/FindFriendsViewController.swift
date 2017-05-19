@@ -92,24 +92,6 @@ extension FindFriendsViewController: UISearchBarDelegate {
 
 }
 
-extension FindFriendsViewController: AddButtonDelegate {
-    func addButtonTapped(at indexPath: IndexPath) {
-        guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
-        guard let friendId = searchResults[indexPath.row].id else { return }
-        guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
-        
-        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
-        
-        userFriendsRef.child(friendId).setValue(true)
-        
-//        var result = searchResults[indexPath.row]
-        
-        // Either add or remove friend from db list
-        
-//        searchResults[indexPath.row] = result
-    }
-}
-
 extension FindFriendsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -140,7 +122,6 @@ extension FindFriendsViewController: UITableViewDataSource, UITableViewDelegate 
         }
         
         cell.indexPath = indexPath
-        cell.delegate = self
         cell.nameLabel.text = fullName
         
         return cell

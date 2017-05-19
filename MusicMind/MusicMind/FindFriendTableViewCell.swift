@@ -11,20 +11,12 @@ import UIKit
 class FindFriendsTableViewCell: UITableViewCell {
     
     var indexPath: IndexPath?
-    var delegate: AddButtonDelegate?
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     
     @IBAction func addFriend(_ sender: Any) {
-        guard let delegate = delegate else {
-            return
-        }
-        guard let indexPath = indexPath else {
-            return
-        }
-        
-        delegate.addButtonTapped(at: indexPath)
+       
     }
     
 }

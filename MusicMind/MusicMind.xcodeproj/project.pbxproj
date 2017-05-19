@@ -57,7 +57,6 @@
 		DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
 		DEC26CA41ECA566300E16DE8 /* FindFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC26CA31ECA566300E16DE8 /* FindFriendTableViewCell.swift */; };
-		DEC26CA61ECA7A5F00E16DE8 /* AddButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC26CA51ECA7A5F00E16DE8 /* AddButtonDelegate.swift */; };
 		DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC96E261E957BCD00660262 /* LogInViewController.swift */; };
 		DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
 		DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */; };
@@ -119,7 +118,6 @@
 		DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageColored.swift"; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		DEC26CA31ECA566300E16DE8 /* FindFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendTableViewCell.swift; sourceTree = "<group>"; };
-		DEC26CA51ECA7A5F00E16DE8 /* AddButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonDelegate.swift; sourceTree = "<group>"; };
 		DEC96E261E957BCD00660262 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
 		DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadActivity.swift; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 				DE43C2461EC62A8B0094C950 /* FindFriends.storyboard */,
 				DEC26CA31ECA566300E16DE8 /* FindFriendTableViewCell.swift */,
 				DE43C2491EC62ABF0094C950 /* FindFriendsViewController.swift */,
-				DEC26CA51ECA7A5F00E16DE8 /* AddButtonDelegate.swift */,
 			);
 			name = "Find Friends";
 			sourceTree = "<group>";
@@ -506,7 +503,6 @@
 				DEB4FDE51EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift in Sources */,
 				DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				DEB4FDDB1EC52132001458CE /* EmailPasswordViewController.swift in Sources */,
-				DEC26CA61ECA7A5F00E16DE8 /* AddButtonDelegate.swift in Sources */,
 				DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */,
 				84BBFA311ECD25F100C1E132 /* MusicSearchViewController.swift in Sources */,
 				DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */,
