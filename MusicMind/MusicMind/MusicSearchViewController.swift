@@ -164,6 +164,7 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
             var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
             if let tracks = readableJSON["tracks"] as? [String : AnyObject]{
                 if let items = tracks["items"] as? NSArray {
+                    currentTracksInQueue.removeAll()
                     for i in 0..<items.count  {
                         let item = items[i] as! [String : Any]
                         let songTitle = item["name"] as! String
@@ -208,10 +209,13 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
 
         currentTrackDetails = newTrack
+        print("Tracks In Queue  \(currentTracksInQueue.count)")
+        currentTracksInQueue.remove(at: indexPath.row)
+        currentTracksInQueue.insert(currentTrackDetails, at: 0)
+        print("Tracks In Queue  \(currentTracksInQueue.count)")
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
-//        let pvc = PagingViewController()
-//        pvc.slideToPage(index: indexPath.row, completion: nil)
+
     }
     
   

@@ -185,7 +185,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DGk-hN-l8N" customClass="PagingViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kT-cZ-dFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5423" y="1943"/>
+            <point key="canvasLocation" x="5422" y="1956"/>
         </scene>
         <!--Spotify Player View Controller-->
         <scene sceneID="C3x-rc-NlS">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Tb-FT-dd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6170" y="1943"/>
+            <point key="canvasLocation" x="6167" y="1955"/>
         </scene>
         <!--User Playlist View Controller-->
         <scene sceneID="Det-pI-2WR">
@@ -492,7 +492,15 @@
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="3XX-pj-i7W">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items/>
+                                <items>
+                                    <barButtonItem title="Spotify Player" id="Ycp-aq-2IS">
+                                        <connections>
+                                            <segue destination="DGk-hN-l8N" kind="popoverPresentation" popoverAnchorBarButtonItem="Ycp-aq-2IS" id="hgz-WY-WN6">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.078977633249999998" green="0.0029550784850000001" blue="0.045231684930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -630,39 +638,47 @@
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="S9u-rg-Q39">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items/>
+                                <items>
+                                    <barButtonItem title="Spotify Player" id="Y69-Cb-Cg5">
+                                        <connections>
+                                            <segue destination="DGk-hN-l8N" kind="popoverPresentation" popoverAnchorBarButtonItem="Y69-Cb-Cg5" id="AUa-c3-DSE">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aiW-km-vzk">
+                                <rect key="frame" x="16" y="52" width="71" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="1kA-Rs-DAb"/>
+                                    <constraint firstAttribute="height" constant="72" id="IOB-r7-Ak1"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7u-So-9bS">
-                                <rect key="frame" x="104" y="44" width="255" height="72"/>
+                                <rect key="frame" x="104" y="52" width="255" height="72"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aiW-km-vzk">
-                                <rect key="frame" x="16" y="44" width="71" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="3E4-wa-4E0"/>
-                                    <constraint firstAttribute="height" constant="72" id="aHE-Kr-L2x"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.078977633249999998" green="0.0029550784850000001" blue="0.045231684930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="yHl-mP-f1H" firstAttribute="leading" secondItem="nKX-r1-nGs" secondAttribute="leading" id="3tE-vy-Ai5"/>
+                            <constraint firstItem="aiW-km-vzk" firstAttribute="leading" secondItem="nKX-r1-nGs" secondAttribute="leadingMargin" id="4mb-Jp-FFq"/>
                             <constraint firstItem="Hfw-Mf-p51" firstAttribute="leading" secondItem="yHl-mP-f1H" secondAttribute="leading" id="5sJ-GL-zMn"/>
                             <constraint firstItem="Hfw-Mf-p51" firstAttribute="leading" secondItem="S9u-rg-Q39" secondAttribute="leading" id="8pe-Cp-x50"/>
-                            <constraint firstItem="Hfw-Mf-p51" firstAttribute="top" secondItem="aiW-km-vzk" secondAttribute="bottom" constant="8" symbolic="YES" id="Aj2-hb-043"/>
-                            <constraint firstItem="D7u-So-9bS" firstAttribute="trailing" secondItem="nKX-r1-nGs" secondAttribute="trailingMargin" id="Jjx-Rw-puM"/>
+                            <constraint firstItem="aiW-km-vzk" firstAttribute="top" secondItem="yHl-mP-f1H" secondAttribute="bottom" constant="8" id="GMb-jG-Yzp"/>
+                            <constraint firstItem="aiW-km-vzk" firstAttribute="top" secondItem="D7u-So-9bS" secondAttribute="top" id="Hbs-rT-ibL"/>
+                            <constraint firstItem="aiW-km-vzk" firstAttribute="bottom" secondItem="D7u-So-9bS" secondAttribute="bottom" id="Hku-df-wdT"/>
                             <constraint firstItem="Hfw-Mf-p51" firstAttribute="trailing" secondItem="S9u-rg-Q39" secondAttribute="trailing" id="Jyk-iU-xBE"/>
-                            <constraint firstItem="aiW-km-vzk" firstAttribute="leading" secondItem="nKX-r1-nGs" secondAttribute="leadingMargin" id="Lyg-zs-YTT"/>
                             <constraint firstItem="Hfw-Mf-p51" firstAttribute="bottom" secondItem="S9u-rg-Q39" secondAttribute="top" id="N3U-iH-c4K"/>
-                            <constraint firstItem="aiW-km-vzk" firstAttribute="top" secondItem="yHl-mP-f1H" secondAttribute="bottom" id="S6v-1G-3iZ"/>
+                            <constraint firstItem="D7u-So-9bS" firstAttribute="trailing" secondItem="nKX-r1-nGs" secondAttribute="trailingMargin" id="Sik-G2-OTB"/>
                             <constraint firstItem="yHl-mP-f1H" firstAttribute="top" secondItem="nKX-r1-nGs" secondAttribute="top" id="Uga-h8-wz8"/>
                             <constraint firstItem="S9u-rg-Q39" firstAttribute="bottom" secondItem="xLS-QJ-L1Q" secondAttribute="top" id="WYH-tV-HVr"/>
-                            <constraint firstItem="D7u-So-9bS" firstAttribute="leading" secondItem="aiW-km-vzk" secondAttribute="trailing" constant="17" id="d7x-N7-XJ9"/>
-                            <constraint firstItem="Hfw-Mf-p51" firstAttribute="top" secondItem="D7u-So-9bS" secondAttribute="bottom" constant="8" symbolic="YES" id="ef8-40-oXC"/>
                             <constraint firstAttribute="trailing" secondItem="yHl-mP-f1H" secondAttribute="trailing" id="hWn-at-J2W"/>
-                            <constraint firstItem="aiW-km-vzk" firstAttribute="top" secondItem="D7u-So-9bS" secondAttribute="top" id="rQ5-SF-WfE"/>
+                            <constraint firstItem="Hfw-Mf-p51" firstAttribute="top" secondItem="aiW-km-vzk" secondAttribute="bottom" id="mqe-e9-xMU"/>
+                            <constraint firstItem="D7u-So-9bS" firstAttribute="leading" secondItem="aiW-km-vzk" secondAttribute="trailing" constant="17" id="oWY-XH-oZe"/>
                             <constraint firstItem="Hfw-Mf-p51" firstAttribute="trailing" secondItem="yHl-mP-f1H" secondAttribute="trailing" id="wFx-uv-jLy"/>
                         </constraints>
                     </view>
@@ -677,4 +693,7 @@
             <point key="canvasLocation" x="6972" y="1199.5502248875564"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="AUa-c3-DSE"/>
+    </inferredMetricsTieBreakers>
 </document>

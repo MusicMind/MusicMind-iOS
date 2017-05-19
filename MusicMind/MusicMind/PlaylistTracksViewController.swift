@@ -54,6 +54,7 @@ class PlaylistTracksViewController: UIViewController {
             var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
             let items = readableJSON["items"] as! NSArray
 //            print("Items          \(items)")
+            currentTracksInQueue.removeAll()
             for i in 0..<items.count {
                 let item = items[i] as! [String : Any]
                 if let addedBy = item["added_by"] as? [String : Any] {
@@ -69,7 +70,6 @@ class PlaylistTracksViewController: UIViewController {
                                 let songTitle = tracks["name"] as! String
                                 let trackURI = tracks["uri"] as? String
                                 let duration = tracks["duration_ms"] as? Int
-                                    print("SongTitle \(songTitle), trackURI: \(trackURI), duration  \(duration)")
                                 let albumName = album["name"] as! String
                                 if let images = album["images"] as? [[String : AnyObject]] {
                                     let largeImage = images[0]
@@ -137,6 +137,10 @@ extension PlaylistTracksViewController: UITableViewDelegate, UITableViewDataSour
         let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
         
         currentTrackDetails = newTrack
+        print("Tracks In Queue  \(currentTracksInQueue.count)")
+        currentTracksInQueue.remove(at: indexPath.row)
+        currentTracksInQueue.insert(currentTrackDetails, at: 0)
+        print("Tracks In Queue  \(currentTracksInQueue.count)")
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
     }
