@@ -29,7 +29,7 @@ class FindFriendsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        // Create a Firebase observer on the userFriends table which will continuously update the TableViewCells when a user is added or removed from the list
+        // Create a Firebase observer on the userFriends table which will update the TableView cells when a user is added or removed from the list
         if let currentUserId = FIRAuth.auth()?.currentUser?.uid {
             let usersFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
 
@@ -53,31 +53,28 @@ class FindFriendsViewController: UIViewController {
         // Get user IDs for all users with names matching withString
         let searchableNamesRef = FIRDatabase.database().reference().child("searchableNames")
         
-        searchableNamesRef.queryOrderedByKey()
-            .queryStarting(atValue: withString.lowercased())
-            .queryEnding(atValue: withString.lowercased()+"\u{f8ff}")
-            .observeSingleEvent(of: .value, with: { snapshot in
-                let children = snapshot.children
-                var results = [String]()
-                
-                while let child = children.nextObject() as? FIRDataSnapshot {
-                    if let id = child.value as? String {
-                        results.append(id)
-                    }
+        searchableNamesRef.queryOrderedByKey().queryStarting(atValue: withString.lowercased()).queryEnding(atValue: withString.lowercased()+"\u{f8ff}").observeSingleEvent(of: .value, with: { snapshot in
+            let children = snapshot.children
+            var results = [String]()
+            
+            while let child = children.nextObject() as? FIRDataSnapshot {
+                if let id = child.value as? String {
+                    results.append(id)
                 }
+            }
+            
+            self.searchResults.removeAll()
+            
+            // Search
+            for id in results {
+                let userRef = FIRDatabase.database().reference().child("users/\(id)")
                 
-                self.searchResults.removeAll()
-                
-                // Search
-                for id in results {
-                    let userRef = FIRDatabase.database().reference().child("users/\(id)")
+                userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                    let user = User(withSnapshot: snapshot)
                     
-                    userRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-                        let user = User(withSnapshot: snapshot)
-                        
-                        self.searchResults.append(user)
-                    })
-                }
+                    self.searchResults.append(user)
+                })
+            }
         })
     }
     
