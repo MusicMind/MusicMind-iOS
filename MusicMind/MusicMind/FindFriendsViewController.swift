@@ -45,27 +45,27 @@ class FindFriendsViewController: UIViewController {
         }
     }
     
-    private func userIdsForAllUsersWithNamesMatching(searchString: String, completionHandler: @escaping (_ ids: [String]) -> ())  {
-        let searchableNamesRef = FIRDatabase.database().reference().child("searchableNames")
-        
-        searchableNamesRef.queryOrderedByKey()
-            .queryStarting(atValue: searchString.lowercased())
-            .queryEnding(atValue: searchString.lowercased()+"\u{f8ff}")
-            .observeSingleEvent(of: .value, with: { snapshot in
-                let children = snapshot.children
-                var results = [String]()
-                
-                while let child = children.nextObject() as? FIRDataSnapshot {
-                    if let id = child.value as? String {
-                        results.append(id)
-                    }
-                }
-                
-                completionHandler(results)
-        })
-    }
-    
     fileprivate func searchForUserByName(withString: String) {
+        func userIdsForAllUsersWithNamesMatching(searchString: String, completionHandler: @escaping (_ ids: [String]) -> ())  {
+            let searchableNamesRef = FIRDatabase.database().reference().child("searchableNames")
+            
+            searchableNamesRef.queryOrderedByKey()
+                .queryStarting(atValue: searchString.lowercased())
+                .queryEnding(atValue: searchString.lowercased()+"\u{f8ff}")
+                .observeSingleEvent(of: .value, with: { snapshot in
+                    let children = snapshot.children
+                    var results = [String]()
+                    
+                    while let child = children.nextObject() as? FIRDataSnapshot {
+                        if let id = child.value as? String {
+                            results.append(id)
+                        }
+                    }
+                    
+                    completionHandler(results)
+                })
+        }
+        
         userIdsForAllUsersWithNamesMatching(searchString: withString) { (userIdsToFetch: [String]) in
             self.searchResults = []
             
@@ -97,17 +97,17 @@ extension FindFriendsViewController: UISearchBarDelegate {
 
 extension FindFriendsViewController: AddButtonDelegate {
     func addButtonTapped(at indexPath: IndexPath) {
-        guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
-        guard let friendId = searchResults[indexPath.row].id else { return }
-        guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
-        
-        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
-        
-        var result = searchResults[indexPath.row]
-        
-        // Either add or remove friend from db list
-        
-        searchResults[indexPath.row] = result
+//        guard let currentUserId = FIRAuth.auth()?.currentUser?.uid else { return }
+//        guard let friendId = searchResults[indexPath.row].id else { return }
+//        guard let cell = tableView.cellForRow(at: indexPath) as? FindFriendsTableViewCell else { return }
+//        
+//        let userFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
+//        
+//        var result = searchResults[indexPath.row]
+//        
+//        // Either add or remove friend from db list
+//        
+//        searchResults[indexPath.row] = result
     }
 }
 
