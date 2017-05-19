@@ -56,7 +56,7 @@
 		DEB4FDE71EC521CF001458CE /* PostProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDE61EC521CF001458CE /* PostProcessingViewController.swift */; };
 		DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */; };
 		DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */; };
-		DEC26CA41ECA566300E16DE8 /* FindFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC26CA31ECA566300E16DE8 /* FindFriendTableViewCell.swift */; };
+		DEC26CA41ECA566300E16DE8 /* FriendSearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC26CA31ECA566300E16DE8 /* FriendSearchResultController.swift */; };
 		DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC96E261E957BCD00660262 /* LogInViewController.swift */; };
 		DECB97741E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
 		DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */; };
@@ -117,7 +117,7 @@
 		DEB4FDE61EC521CF001458CE /* PostProcessingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProcessingViewController.swift; sourceTree = "<group>"; };
 		DEBA57FA1E945FCE00AF40EF /* UIImage+imageColored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+imageColored.swift"; sourceTree = "<group>"; };
 		DEBF26EB1E7DA1A100CB13E1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		DEC26CA31ECA566300E16DE8 /* FindFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendTableViewCell.swift; sourceTree = "<group>"; };
+		DEC26CA31ECA566300E16DE8 /* FriendSearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchResultController.swift; sourceTree = "<group>"; };
 		DEC96E261E957BCD00660262 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		DECB97731E98487B005DAB64 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
 		DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadActivity.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				DE43C2461EC62A8B0094C950 /* FindFriends.storyboard */,
-				DEC26CA31ECA566300E16DE8 /* FindFriendTableViewCell.swift */,
+				DEC26CA31ECA566300E16DE8 /* FriendSearchResultController.swift */,
 				DE43C2491EC62ABF0094C950 /* FindFriendsViewController.swift */,
 			);
 			name = "Find Friends";
@@ -520,7 +520,7 @@
 				DEB4FDD71EC52115001458CE /* BirthdayViewController.swift in Sources */,
 				DE85E5C61EB127C7005FFEB9 /* UserSettingsViewController.swift in Sources */,
 				DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */,
-				DEC26CA41ECA566300E16DE8 /* FindFriendTableViewCell.swift in Sources */,
+				DEC26CA41ECA566300E16DE8 /* FriendSearchResultController.swift in Sources */,
 				DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */,
 				DEB4FDD11EC50A0C001458CE /* UIApplication+isRunningOnSimulator.swift in Sources */,
 				DE429F821E661BB20050E719 /* AppDelegate.swift in Sources */,

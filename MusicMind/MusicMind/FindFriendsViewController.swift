@@ -13,7 +13,7 @@ class FindFriendsViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    var cellsByUser = [String: FindFriendsTableViewCell]()
+    var cellsByUser = [String: FriendSearchResultController]()
     var searchResults = [User]() {
         didSet {
             cellsByUser.removeAll()
@@ -95,7 +95,7 @@ extension FindFriendsViewController: UISearchBarDelegate {
 extension FindFriendsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FindFriendsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! FriendSearchResultController
         let user = searchResults[indexPath.row]
         var fullName = ""
         

@@ -1,5 +1,5 @@
 //
-//  FindFriendTableViewCell.swift
+//  FriendSearchResultController.swift
 //  MusicMind
 //
 //  Created by Wesley Van der Klomp on 5/15/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FindFriendsTableViewCell: UITableViewCell {
+class FriendSearchResultController: UITableViewCell {
     
     var indexPath: IndexPath?
     @IBOutlet weak var profileImage: UIImageView!
