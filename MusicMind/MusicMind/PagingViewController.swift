@@ -18,52 +18,9 @@ class PagingViewController: UIPageViewController, UIPageViewControllerDataSource
         self.dataSource = self
         self.delegate = self
         self.setViewControllers([getViewControllerAtIndex(0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
-        
     }
    
-        
-        func goToNextPage(){
-            guard let currentViewController = self.viewControllers?.first else { return }
-            guard let nextViewController = dataSource?.pageViewController( self, viewControllerAfter: currentViewController ) else { return }
-            setViewControllers([nextViewController], direction: .forward, animated: false, completion: nil)
-        }
-        
-        
-        func goToPreviousPage(){
-            guard let currentViewController = self.viewControllers?.first else { return }
-            guard let previousViewController = dataSource?.pageViewController( self, viewControllerBefore: currentViewController ) else { return }
-            setViewControllers([previousViewController], direction: .reverse, animated: false, completion: nil)
-        }
-    
-    
-    
-    func slideToPage(index: Int, completion: (() -> Void)?) {
-//        print("In Slide To Page    \(index)")
-//        var ctrl = currentController() as! SpotifyPlayerViewController
-//        var tempIndex = ctrl.pageIndex
-//          print(tempIndex)
-//        if tempIndex > index {
-//            print("in Temp Index > index")
-//            for i in tempIndex..<currentTracksInQueue.count {
-//                goToNextPage()
-//                if tempIndex == index {
-//                    break
-//                }
-//            }
-//            
-//        }
-//        else if tempIndex < index {
-//            for i in tempIndex..<currentTracksInQueue.count {
-//                goToPreviousPage()
-//                if tempIndex == index {
-//                    break
-//                }
-//            }
-//        }
-    }
-    
-
-    // MARK:- UIPageViewControllerDataSource Methods
+        // MARK:- UIPageViewControllerDataSource Methods
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {

@@ -13,8 +13,14 @@ struct playlist {
     let name: String!
     let trackCount: String!
     let largeImage: UIImage!
+    let id: String!
 }
 
+struct spotifyUser {
+    let id: String!
+}
+
+var currentSpotifyUser: spotifyUser!
 var userPlaylists = [playlist]()
 var playlistTableView = UITableView()
 
@@ -29,21 +35,46 @@ class UserPlaylistViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        getUserInfo()
+        getUserPlaylists()
+        getSpotifyUserInfo()
     }
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func getSpotifyUserInfo() {
+        Alamofire.request("https://api.spotify.com/v1/me", headers: ["Authorization": "Bearer " + spotifyAuth.session.accessToken]).responseJSON(completionHandler: {
+            response in
+            self.setCurrentSpotifyUser(JSONData: response.data!)
+        })
+    }
+    
+    func setCurrentSpotifyUser(JSONData: Data) {
+        do {
+            var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
+            let id = readableJSON["id"]
+            let user = spotifyUser.init(id: id as! String)
+            currentSpotifyUser = user
+        } catch {
+            print(error)
+        }
+    }
+
     
 }
 
 extension UserPlaylistViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func getUserInfo() {
+    
+    func getUserPlaylists() {
         Alamofire.request("https://api.spotify.com/v1/me/playlists", headers: ["Authorization": "Bearer " + spotifyAuth.session.accessToken]).responseJSON(completionHandler: {
             response in
-            self.parseUserInfo(JSONData: response.data!)
+            self.parseUserPlaylists(JSONData: response.data!)
         })
     }
     
-    func parseUserInfo(JSONData: Data) {
+    func parseUserPlaylists(JSONData: Data) {
         do {
             var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
             //                print(readableJSON)
@@ -51,6 +82,7 @@ extension UserPlaylistViewController: UITableViewDelegate, UITableViewDataSource
                 for i in 0..<items.count  {
                     let item = items[i] as! [String : Any]
                     let name = item["name"] as! String
+                    let id = item["id"] as! String
                     let tracks = item["tracks"] as! [String : Any]
                     let trackCountInt = tracks["total"] as! Int
                     let trackCount = String(trackCountInt)
@@ -59,7 +91,7 @@ extension UserPlaylistViewController: UITableViewDelegate, UITableViewDataSource
                         let largeImageURL = URL(string:largeImage["url"] as! String)
                         let largeImageData = NSData(contentsOf: largeImageURL!)
                         let LargePlaylistImage = UIImage(data: largeImageData! as Data)
-                        let newPlaylist = playlist.init(name: name , trackCount: trackCount, largeImage: LargePlaylistImage)
+                        let newPlaylist = playlist.init(name: name , trackCount: trackCount, largeImage: LargePlaylistImage, id: id)
                         userPlaylists.append(newPlaylist)
                     }
                     self.tableView.reloadData()
@@ -99,49 +131,21 @@ extension UserPlaylistViewController: UITableViewDelegate, UITableViewDataSource
     }
 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "playlistTracks" {
+            
+            let vc = segue.destination
+                as! PlaylistTracksViewController
+            let myIndexPath = self.tableView.indexPathForSelectedRow!
+            let row = myIndexPath.row
+            vc.playlistName = userPlaylists[row].name
+            vc.playlistTrackCount = userPlaylists[row].trackCount
+            vc.playlistImage = userPlaylists[row].largeImage
+            vc.backgroundImage = userPlaylists[row].largeImage
+            vc.playlistId = userPlaylists[row].id
+        }
     }
-    */
 
 }
