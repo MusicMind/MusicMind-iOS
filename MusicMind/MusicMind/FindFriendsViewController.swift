@@ -16,6 +16,7 @@ class FindFriendsViewController: UIViewController {
     var cellsByUser = [String: FindFriendsTableViewCell]()
     var searchResults = [User]() {
         didSet {
+            cellsByUser.removeAll()
             self.tableView.reloadData()
         }
     }
@@ -28,16 +29,20 @@ class FindFriendsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        let currentUserId = FIRAuth.auth()?.currentUser?.uid
-        
-        if let currentUserId = currentUserId {
+        // Create a Firebase observer on the userFriends table which will continuously update the TableViewCells when a user is added or removed from the list
+        if let currentUserId = FIRAuth.auth()?.currentUser?.uid {
             let usersFriendsRef = FIRDatabase.database().reference().child("userFriends/\(currentUserId)")
 
             usersFriendsRef.observe(.value, with: { (snapshot: FIRDataSnapshot) in
-                if let userFriends = snapshot.value as? [String: Bool] {
-                    print(userFriends)
-                    for (friendId, _) in userFriends {
-                        self.cellsByUser[friendId]?.addButton.titleLabel?.text = "test"
+                if let friends = snapshot.value as? [String: Bool] {
+                    for (cellUserId, cell) in self.cellsByUser {
+                        for (friendId, _) in friends {
+                            if cellUserId == friendId {
+                                cell.addButton.titleLabel?.text = "AAA"
+                            } else {
+                                cell.addButton.titleLabel?.text = "BBB"
+                            }
+                        }
                     }
                 }
             })
@@ -118,6 +123,7 @@ extension FindFriendsViewController: UITableViewDataSource, UITableViewDelegate 
         let user = searchResults[indexPath.row]
         var fullName = ""
         
+        // Assemble a Dictionary of user id Strings with references to their respective TableViewCells
         if let id = user.id {
             cellsByUser[id] = cell
         }
