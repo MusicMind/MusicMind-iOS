@@ -15,6 +15,20 @@
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
 		0FF4B62E1E8C4BF400EEAE8C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
+		666A2FE21ED2B938007F3827 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666A2FE11ED2B938007F3827 /* Alamofire.framework */; };
+		666A2FE31ED2B975007F3827 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666A2FE11ED2B938007F3827 /* Alamofire.framework */; };
+		666A2FE41ED2B975007F3827 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 666A2FE11ED2B938007F3827 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66FB5ED31ED35BA600A111B9 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED01ED35BA600A111B9 /* GoogleToolboxForMac.framework */; };
+		66FB5ED41ED35BA600A111B9 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED11ED35BA600A111B9 /* GTMSessionFetcher.framework */; };
+		66FB5ED51ED35BA600A111B9 /* RecordButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED21ED35BA600A111B9 /* RecordButton.framework */; };
+		66FB5ED61ED35BC300A111B9 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED01ED35BA600A111B9 /* GoogleToolboxForMac.framework */; };
+		66FB5ED71ED35BC300A111B9 /* GoogleToolboxForMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED01ED35BA600A111B9 /* GoogleToolboxForMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66FB5ED81ED35BC300A111B9 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED11ED35BA600A111B9 /* GTMSessionFetcher.framework */; };
+		66FB5ED91ED35BC300A111B9 /* GTMSessionFetcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED11ED35BA600A111B9 /* GTMSessionFetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66FB5EDA1ED35BC300A111B9 /* RecordButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED21ED35BA600A111B9 /* RecordButton.framework */; };
+		66FB5EDB1ED35BC300A111B9 /* RecordButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66FB5ED21ED35BA600A111B9 /* RecordButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66FB5EDC1ED35BC300A111B9 /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
+		66FB5EDD1ED35BC300A111B9 /* Pods_MusicMind.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84BBFA2E1ECD25CC00C1E132 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFA2C1ECD25CC00C1E132 /* PagingViewController.swift */; };
 		84BBFA2F1ECD25CC00C1E132 /* SpotifyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFA2D1ECD25CC00C1E132 /* SpotifyPlayerViewController.swift */; };
 		84BBFA311ECD25F100C1E132 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFA301ECD25F100C1E132 /* MusicSearchViewController.swift */; };
@@ -58,6 +72,34 @@
 		DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFE4FA1EAAC61800273C02 /* UploadActivity.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		666A2FDA1ED2B7F6007F3827 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		666A2FE51ED2B975007F3827 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				666A2FE41ED2B975007F3827 /* Alamofire.framework in Embed Frameworks */,
+				66FB5EDB1ED35BC300A111B9 /* RecordButton.framework in Embed Frameworks */,
+				66FB5EDD1ED35BC300A111B9 /* Pods_MusicMind.framework in Embed Frameworks */,
+				66FB5ED91ED35BC300A111B9 /* GTMSessionFetcher.framework in Embed Frameworks */,
+				66FB5ED71ED35BC300A111B9 /* GoogleToolboxForMac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
@@ -67,6 +109,10 @@
 		0FF4B6291E8AD8D700EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		666A2FE11ED2B938007F3827 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/MusicMind-gjblvhueiufwazcuoikskyoqygwv/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		66FB5ED01ED35BA600A111B9 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../Library/Developer/Xcode/DerivedData/MusicMind-gjblvhueiufwazcuoikskyoqygwv/Build/Products/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
+		66FB5ED11ED35BA600A111B9 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = "../../Library/Developer/Xcode/DerivedData/MusicMind-gjblvhueiufwazcuoikskyoqygwv/Build/Products/Debug-iphoneos/GTMSessionFetcher/GTMSessionFetcher.framework"; sourceTree = "<group>"; };
+		66FB5ED21ED35BA600A111B9 /* RecordButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RecordButton.framework; path = "../../Library/Developer/Xcode/DerivedData/MusicMind-gjblvhueiufwazcuoikskyoqygwv/Build/Products/Debug-iphoneos/RecordButton/RecordButton.framework"; sourceTree = "<group>"; };
 		84BBFA2C1ECD25CC00C1E132 /* PagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
 		84BBFA2D1ECD25CC00C1E132 /* SpotifyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayerViewController.swift; sourceTree = "<group>"; };
 		84BBFA301ECD25F100C1E132 /* MusicSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
@@ -120,10 +166,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66FB5ED31ED35BA600A111B9 /* GoogleToolboxForMac.framework in Frameworks */,
+				66FB5ED41ED35BA600A111B9 /* GTMSessionFetcher.framework in Frameworks */,
+				66FB5ED51ED35BA600A111B9 /* RecordButton.framework in Frameworks */,
+				666A2FE21ED2B938007F3827 /* Alamofire.framework in Frameworks */,
+				66FB5EDA1ED35BC300A111B9 /* RecordButton.framework in Frameworks */,
+				66FB5ED81ED35BC300A111B9 /* GTMSessionFetcher.framework in Frameworks */,
 				86E1998D1E7B64070071F50C /* AVFoundation.framework in Frameworks */,
+				66FB5ED61ED35BC300A111B9 /* GoogleToolboxForMac.framework in Frameworks */,
 				0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */,
 				DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */,
+				666A2FE31ED2B975007F3827 /* Alamofire.framework in Frameworks */,
 				0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */,
+				66FB5EDC1ED35BC300A111B9 /* Pods_MusicMind.framework in Frameworks */,
 				3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +231,10 @@
 		6411FC252D5E1FC5BDF80FA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66FB5ED01ED35BA600A111B9 /* GoogleToolboxForMac.framework */,
+				66FB5ED11ED35BA600A111B9 /* GTMSessionFetcher.framework */,
+				66FB5ED21ED35BA600A111B9 /* RecordButton.framework */,
+				666A2FE11ED2B938007F3827 /* Alamofire.framework */,
 				DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */,
 				0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */,
 				0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */,
@@ -335,11 +394,13 @@
 			buildConfigurationList = DE429FA61E661BB20050E719 /* Build configuration list for PBXNativeTarget "MusicMind" */;
 			buildPhases = (
 				23A58EE0A24960AE6A7EEC7F /* [CP] Check Pods Manifest.lock */,
+				666A2FDA1ED2B7F6007F3827 /* Copy Files */,
 				DE429F7A1E661BB20050E719 /* Sources */,
 				DE429F7B1E661BB20050E719 /* Frameworks */,
 				DE429F7C1E661BB20050E719 /* Resources */,
 				7ED480D80AE958FCF03EBD3A /* [CP] Embed Pods Frameworks */,
 				4A1E3411F726C065A61656CF /* [CP] Copy Pods Resources */,
+				666A2FE51ED2B975007F3827 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -438,12 +499,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4A1E3411F726C065A61656CF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -451,14 +512,13 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		7ED480D80AE958FCF03EBD3A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -466,10 +526,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -725,6 +784,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MusicMind/MusicMind-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
