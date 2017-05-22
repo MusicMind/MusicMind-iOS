@@ -15,6 +15,7 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     var user: User?
     
     override func viewDidLoad() {
@@ -23,7 +24,7 @@ class EmailPasswordViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordConfirmationTextField.delegate = self
-        
+        continueButton.isHidden = true;
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -31,6 +32,27 @@ class EmailPasswordViewController: UIViewController {
         createNewUser()
     }
     
+    @IBAction func textChanged(_ sender: Any) {
+        if emailTextField.text == nil || passwordTextField.text == nil || passwordConfirmationTextField.text == nil {
+            continueButton.isHidden = true
+            continueButton.isEnabled = false
+            return
+        }
+        if passwordTextField.text != passwordConfirmationTextField.text || passwordTextField.text == "" || passwordConfirmationTextField.text == "" {
+            continueButton.isHidden = true
+            continueButton.isEnabled = false
+            return
+        }
+        EmailVerifier.isValid(email: emailTextField.text!, completion: { valid in
+            if valid {
+                continueButton.isEnabled = true
+                continueButton.isHidden = false
+            } else {
+                continueButton.isEnabled = false
+                continueButton.isHidden = true
+            }
+        })
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
