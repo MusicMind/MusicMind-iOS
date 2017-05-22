@@ -35,20 +35,23 @@ class EmailPasswordViewController: UIViewController {
     @IBAction func textChanged(_ sender: Any) {
         if emailTextField.text == nil || passwordTextField.text == nil || passwordConfirmationTextField.text == nil {
             continueButton.isHidden = true
-            return
-        }
-        let emailFormat = "([A-Za-z0-9])+@([a-z0-9])+\\.([a-z])+"
-        let regex = try! NSRegularExpression(pattern: emailFormat, options: [])
-        if regex.matches(in: emailTextField.text!, options: [], range: NSRange(location: 0, length: emailTextField.text!.characters.count)).isEmpty {
-            continueButton.isHidden = true
+            continueButton.isEnabled = false
             return
         }
         if passwordTextField.text != passwordConfirmationTextField.text || passwordTextField.text == "" || passwordConfirmationTextField.text == "" {
             continueButton.isHidden = true
+            continueButton.isEnabled = false
             return
         }
-        continueButton.isHidden = false
-        self.hideKeyboardWhenTappedAround();
+        EmailVerifier.isValid(email: emailTextField.text!, completion: { valid in
+            if valid {
+                continueButton.isEnabled = true
+                continueButton.isHidden = false
+            } else {
+                continueButton.isEnabled = false
+                continueButton.isHidden = true
+            }
+        })
     }
     
     // MARK: - Navigation
