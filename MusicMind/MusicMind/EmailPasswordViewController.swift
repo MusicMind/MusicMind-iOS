@@ -48,6 +48,7 @@ class EmailPasswordViewController: UIViewController {
             return
         }
         continueButton.isHidden = false
+        self.hideKeyboardWhenTappedAround();
     }
     
     // MARK: - Navigation
