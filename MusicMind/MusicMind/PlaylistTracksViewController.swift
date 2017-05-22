@@ -100,10 +100,9 @@ extension PlaylistTracksViewController: UITableViewDelegate, UITableViewDataSour
         let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
         
         currentTrackDetails = newTrack
-        print("Tracks In Queue  \(currentTracksInQueue.count)")
-        currentTracksInQueue.remove(at: indexPath.row)
-        currentTracksInQueue.insert(currentTrackDetails, at: 0)
-        print("Tracks In Queue  \(currentTracksInQueue.count)")
+        playerQueue = currentTracksInQueue
+        playerQueue.remove(at: indexPath.row)
+        playerQueue.insert(currentTrackDetails, at: 0)
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
     }

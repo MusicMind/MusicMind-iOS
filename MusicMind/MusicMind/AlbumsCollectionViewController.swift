@@ -15,6 +15,7 @@ class AlbumsCollectionViewController: UIViewController {
     
     var search = String()
     let ssh = SpotifySearchHelpers()
+    var scrollToRefreshCount = 6
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -23,10 +24,10 @@ class AlbumsCollectionViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        searchAlbum()
+        albumList.removeAll()
+        let searchURL = "https://api.spotify.com/v1/search?q=\(self.search)&type=album&limit=6"
+        searchAlbum(url: searchURL)
         print("AlbumList      \(albumList.count)")
-        collectionView.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -43,9 +44,8 @@ class AlbumsCollectionViewController: UIViewController {
 
 extension AlbumsCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func searchAlbum() {
-        let searchURL = "https://api.spotify.com/v1/search?q=\(self.search)&type=album"
-        Alamofire.request(searchURL).responseJSON(completionHandler: {
+    func searchAlbum(url: String) {
+        Alamofire.request(url).responseJSON(completionHandler: {
             response in
             self.parseAlbumData(JSONData: response.data!)
         })
@@ -108,6 +108,18 @@ extension AlbumsCollectionViewController: UICollectionViewDelegate, UICollection
         
         return cell
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
+        {
+            print("Scrolled toEnd")
+             let searchURL = "https://api.spotify.com/v1/search?q=\(search)&type=album&limit=6&offset=\(scrollToRefreshCount)"
+            searchAlbum(url: searchURL)
+            collectionView.reloadData()
+            scrollToRefreshCount += 6
+        }
+    }
+
     
     // MARK: UICollectionViewDelegate
     

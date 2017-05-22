@@ -150,6 +150,7 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         currentTracksInQueue.removeAll()
+        albumList.removeAll()
         scrollToRefreshCount = 10
         let keywords = searchBar.text
         let finalKeywords = keywords?.replacingOccurrences(of: " ", with: "+")
