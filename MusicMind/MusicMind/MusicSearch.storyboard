@@ -1058,7 +1058,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="XwN-M3-f5D">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="back:" destination="Ah0-bm-ruA" id="ebf-nN-Zrp"/>
+                                                <action selector="back:" destination="Ah0-bm-ruA" id="5ZP-wh-e1j"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1108,7 +1108,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="7ql-oC-WSZ">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Spotify Player" id="8EW-dz-kHm"/>
+                                    <barButtonItem title="Spotify Player" id="8EW-dz-kHm">
+                                        <connections>
+                                            <segue destination="DGk-hN-l8N" kind="show" id="x56-Gd-H7a"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cly-hU-V9T">
@@ -1169,7 +1173,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0q1-cP-p4R"/>
         <segue reference="wqq-Dq-dIt"/>
+        <segue reference="x56-Gd-H7a"/>
     </inferredMetricsTieBreakers>
 </document>
