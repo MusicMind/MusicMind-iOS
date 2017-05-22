@@ -15,6 +15,7 @@ class EmailPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     var user: User?
     
     override func viewDidLoad() {
@@ -23,7 +24,7 @@ class EmailPasswordViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordConfirmationTextField.delegate = self
-        
+        continueButton.isHidden = true;
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -31,6 +32,24 @@ class EmailPasswordViewController: UIViewController {
         createNewUser()
     }
     
+    @IBAction func textChanged(_ sender: Any) {
+        if emailTextField.text == nil || passwordTextField.text == nil || passwordConfirmationTextField.text == nil {
+            continueButton.isHidden = true
+            return
+        }
+        let emailFormat = "([A-Za-z0-9])+@([a-z0-9])+\\.([a-z])+"
+        let regex = try! NSRegularExpression(pattern: emailFormat, options: [])
+        if regex.matches(in: emailTextField.text!, options: [], range: NSRange(location: 0, length: emailTextField.text!.characters.count)).isEmpty {
+            continueButton.isHidden = true
+            return
+        }
+        if passwordTextField.text != passwordConfirmationTextField.text || passwordTextField.text == "" || passwordConfirmationTextField.text == "" {
+            continueButton.isHidden = true
+            return
+        }
+        continueButton.isHidden = false
+        self.hideKeyboardWhenTappedAround();
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

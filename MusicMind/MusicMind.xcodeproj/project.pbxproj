@@ -15,6 +15,7 @@
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
 		0FF4B62E1E8C4BF400EEAE8C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
+		66FB5EE11ED3803100A111B9 /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FB5EE01ED3803100A111B9 /* EmailPasswordViewController.swift */; };
 		84BBFA2E1ECD25CC00C1E132 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFA2C1ECD25CC00C1E132 /* PagingViewController.swift */; };
 		84BBFA2F1ECD25CC00C1E132 /* SpotifyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFA2D1ECD25CC00C1E132 /* SpotifyPlayerViewController.swift */; };
 		84BBFA311ECD25F100C1E132 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFA301ECD25F100C1E132 /* MusicSearchViewController.swift */; };
@@ -44,7 +45,6 @@
 		DEB4FDD31EC520A5001458CE /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD21EC520A5001458CE /* CameraCaptureViewController.swift */; };
 		DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD41EC520ED001458CE /* SendToFriendViewController.swift */; };
 		DEB4FDD71EC52115001458CE /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDD61EC52115001458CE /* BirthdayViewController.swift */; };
-		DEB4FDDB1EC52132001458CE /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDDA1EC52132001458CE /* EmailPasswordViewController.swift */; };
 		DEB4FDDD1EC52140001458CE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDDC1EC52140001458CE /* NameViewController.swift */; };
 		DEB4FDDF1EC52190001458CE /* AVVideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDDE1EC52190001458CE /* AVVideoExporter.swift */; };
 		DEB4FDE11EC5219F001458CE /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4FDE01EC5219F001458CE /* EmojiCollectionViewCell.swift */; };
@@ -67,6 +67,7 @@
 		0FF4B6291E8AD8D700EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66FB5EE01ED3803100A111B9 /* EmailPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPasswordViewController.swift; sourceTree = "<group>"; };
 		84BBFA2C1ECD25CC00C1E132 /* PagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
 		84BBFA2D1ECD25CC00C1E132 /* SpotifyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlayerViewController.swift; sourceTree = "<group>"; };
 		84BBFA301ECD25F100C1E132 /* MusicSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 		DEB4FDD21EC520A5001458CE /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		DEB4FDD41EC520ED001458CE /* SendToFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendToFriendViewController.swift; sourceTree = "<group>"; };
 		DEB4FDD61EC52115001458CE /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
-		DEB4FDDA1EC52132001458CE /* EmailPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPasswordViewController.swift; sourceTree = "<group>"; };
 		DEB4FDDC1EC52140001458CE /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		DEB4FDDE1EC52190001458CE /* AVVideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVVideoExporter.swift; sourceTree = "<group>"; };
 		DEB4FDE01EC5219F001458CE /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 				0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */,
 				DEB4FDDC1EC52140001458CE /* NameViewController.swift */,
 				DEB4FDD61EC52115001458CE /* BirthdayViewController.swift */,
-				DEB4FDDA1EC52132001458CE /* EmailPasswordViewController.swift */,
+				66FB5EE01ED3803100A111B9 /* EmailPasswordViewController.swift */,
 			);
 			name = "Sign Up";
 			sourceTree = "<group>";
@@ -480,7 +480,7 @@
 			files = (
 				DEB4FDE51EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift in Sources */,
 				DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */,
-				DEB4FDDB1EC52132001458CE /* EmailPasswordViewController.swift in Sources */,
+				66FB5EE11ED3803100A111B9 /* EmailPasswordViewController.swift in Sources */,
 				DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */,
 				84BBFA311ECD25F100C1E132 /* MusicSearchViewController.swift in Sources */,
 				DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */,
