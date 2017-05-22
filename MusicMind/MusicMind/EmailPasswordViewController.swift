@@ -50,7 +50,6 @@ class EmailPasswordViewController: UIViewController {
         continueButton.isHidden = false
     }
     
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
