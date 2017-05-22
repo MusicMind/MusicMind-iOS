@@ -1,90 +1,89 @@
 //
-//  PlaylistTracksViewController.swift
+//  AlbumTracksViewController.swift
 //  MusicMind
 //
-//  Created by Rich Ruais on 5/18/17.
+//  Created by Rich Ruais on 5/21/17.
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
 
 import UIKit
+
+import UIKit
 import Alamofire
 
-var playlistTracksTableView = UITableView()
+var albumTracksTableView = UITableView()
 
-class PlaylistTracksViewController: UIViewController {
+class AlbumTracksViewController: UIViewController {
     
-    var playlistName = String()
-    var playlistTrackCount = String()
-    var playlistImage = UIImage()
-    var backgroundImage = UIImage()
-    var playlistId = String()
     let ssh = SpotifySearchHelpers()
+    var currentAlbumDetails: album!
     
-    @IBOutlet weak var playlistImageView: UIImageView!
-    @IBOutlet weak var playlistNameLabel: UILabel!
+    @IBOutlet weak var albumImageView: UIImageView!
+    @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-  
+    @IBOutlet weak var artistNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        playlistTracksTableView = tableView
+        albumTracksTableView = tableView
         tableView.delegate = self
         tableView.dataSource = self
-        
-        playlistImageView.image = playlistImage
-        playlistNameLabel.text = playlistName
-        let playlistTracksUrl = "https://api.spotify.com/v1/users/\(currentSpotifyUser.id!)/playlists/\(playlistId)/tracks"
-        print("URL*************************        \(playlistTracksUrl)")
-        getPlaylistTracks(url: playlistTracksUrl)
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.black
+        albumImageView.image = currentAlbumDetails.largeImage
+        albumNameLabel.text = currentAlbumDetails.name
+        artistNameLabel.text = currentAlbumDetails.artistName
+        let albumTracksUrl = "https://api.spotify.com/v1/albums/\(currentAlbumDetails.id!)/tracks"
+        getAlbumTracks(url: albumTracksUrl)
     }
     
     @IBAction func back(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
-    func getPlaylistTracks(url: String) {
+    func getAlbumTracks(url: String) {
         Alamofire.request(url, headers: ["Authorization": "Bearer " + spotifyAuth.session.accessToken]).responseJSON(completionHandler: {
             response in
-            self.parseUserPlaylistTracks(JSONData: response.data!)
+            self.parseAlbumTracks(JSONData: response.data!)
         })
     }
     
-    func parseUserPlaylistTracks(JSONData: Data) {
-        let tempArr = ssh.parseUserPlaylistTracks(JSONData: JSONData)
+    func parseAlbumTracks(JSONData: Data) {
+        currentTracksInQueue.removeAll()
+        var tempArr = ssh.parseAlbumTrackData(JSONData: JSONData)
         for i in 0..<tempArr.count {
+            tempArr[i].largeAlbumImage = currentAlbumDetails.largeImage
+            tempArr[i].smallAlbumImage = currentAlbumDetails.smallImage
+            tempArr[i].albumName = currentAlbumDetails.name
             currentTracksInQueue.append(tempArr[i])
         }
         self.tableView.reloadData()
     }
-
     
-   
+    
+    
 } // End Class
 
-extension PlaylistTracksViewController: UITableViewDelegate, UITableViewDataSource {
+extension AlbumTracksViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Table view data source
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentTracksInQueue.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playlistTrackCell", for: indexPath)
-        let songLabel = cell.viewWithTag(2) as! UILabel
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let songLabel = cell.viewWithTag(4) as! UILabel
         songLabel.text = currentTracksInQueue[indexPath.row].songTitle
-        let artistLabel = cell.viewWithTag(1) as! UILabel
-        artistLabel.text = currentTracksInQueue[indexPath.row].artist
-        let backgroundImage = cell.viewWithTag(4) as! UIImageView
-        backgroundImage.image = currentTracksInQueue[indexPath.row].largeAlbumImage
-        let mainImage = cell.viewWithTag(3) as! UIImageView
-        mainImage.image = currentTracksInQueue[indexPath.row].largeAlbumImage
-
+        let artistAlbumLabel = cell.viewWithTag(3) as! UILabel
+        artistAlbumLabel.text = "\(currentTracksInQueue[indexPath.row].artist!) * \(currentTracksInQueue[indexPath.row].albumName!)"
         return cell
     }
     
@@ -107,6 +106,13 @@ extension PlaylistTracksViewController: UITableViewDelegate, UITableViewDataSour
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
     }
-
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 55
+        }
+        return 50
+    }
+    
+    
 }

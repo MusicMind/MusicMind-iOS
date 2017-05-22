@@ -10,7 +10,7 @@ import UIKit
 
 class PagingViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    var tracks = currentTracksInQueue
+    var tracks = playerQueue
     
     override func viewDidLoad() {
         super.viewDidLoad()

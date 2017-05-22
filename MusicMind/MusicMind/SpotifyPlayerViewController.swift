@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SpotifyPlayerViewController: UIViewController {
     
@@ -54,9 +55,9 @@ class SpotifyPlayerViewController: UIViewController {
             currentTrackDetails = currentTracksInQueue[0]
         }
         
-      
-
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+        if spotifyStreamingController.playbackState.isPlaying {
+            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+        }
     }
 
     @IBAction func closeWindow(_ sender: UIButton) {
@@ -73,6 +74,7 @@ class SpotifyPlayerViewController: UIViewController {
     
 
     func playSpotify(uri: String) {
+        
         spotifyStreamingController.playSpotifyURI(uri, startingWith: 0, startingWithPosition: 0) {
             error in
             if error != nil {

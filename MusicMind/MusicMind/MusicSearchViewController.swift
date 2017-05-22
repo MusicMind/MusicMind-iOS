@@ -12,18 +12,27 @@ import AVKit
 import AVFoundation
 
 struct track {
-    let artist: String!
-    let songTitle: String!
-    let largeAlbumImage: UIImage!
-    let smallAlbumImage: UIImage!
-    let albumName: String!
-    let uri: String!
-    let duration: Int!
+    var artist: String!
+    var songTitle: String!
+    var largeAlbumImage: UIImage!
+    var smallAlbumImage: UIImage!
+    var albumName: String!
+    var uri: String!
+    var duration: Int!
+}
+
+struct album {
+    let name: String!
+    let smallImage: UIImage!
+    let largeImage: UIImage!
+    let artistName: String!
+    let id: String!
 }
 
 var currentTrackDetails: track!
 var currentTracksInQueue = [track]()
-
+var playerQueue = [track]()
+var albumList = [album]()
 
 class MusicSearchViewController: UIViewController {
     
@@ -32,9 +41,12 @@ class MusicSearchViewController: UIViewController {
     var currentSearchWords: String = ""
     var scrollToRefreshCount = 10
     var spotifyTableView = UITableView()
+    let ssh = SpotifySearchHelpers()
+    var currentAlbumDetails: album!
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+  
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
@@ -58,8 +70,9 @@ class MusicSearchViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.black
         spotifyStreamingController.delegate = self
-        
     }
     
     deinit {
@@ -135,15 +148,16 @@ extension MusicSearchViewController: UITextViewDelegate {
 
 extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
-
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         currentTracksInQueue.removeAll()
         scrollToRefreshCount = 10
         let keywords = searchBar.text
         let finalKeywords = keywords?.replacingOccurrences(of: " ", with: "+")
         currentSearchWords = finalKeywords!
-        let searchURL = "https://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track&limit=10"
-        callAlamo(url: searchURL)
+        let searchTrackURL = "https://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track&limit=4"
+        let searchAlbumURL = "https://api.spotify.com/v1/search?q=\(self.currentSearchWords)&type=album&limit=4"
+        searchTrack(url: searchTrackURL)
+        searchAlbum(url: searchAlbumURL)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -152,104 +166,185 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
       
     }
 
-    func callAlamo(url: String) {
+    func searchTrack(url: String) {
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
-            self.parseData(JSONData: response.data!)
+            self.parseTrackData(JSONData: response.data!)
         })
     }
     
-    func parseData(JSONData : Data) {
-        do {
-            var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
-            if let tracks = readableJSON["tracks"] as? [String : AnyObject]{
-                if let items = tracks["items"] as? NSArray {
-                    currentTracksInQueue.removeAll()
-                    for i in 0..<items.count  {
-                        let item = items[i] as! [String : Any]
-                        let songTitle = item["name"] as! String
-                        let trackURI = item["uri"] as? String
-                        let duration = item["duration_ms"] as? Int
-                        if let album = item["album"] as? [String : AnyObject] {
-                            let albumName = album["name"] as? String
-                            if let artist = album["artists"] as? [[String: Any]] {
-                                let artistName = (artist[0]["name"] as? String)!
-                                if let images = album["images"] as? [[String : AnyObject]] {
-                                    let largeImage = images[0]
-                                    let largeImageURL = URL(string:largeImage["url"] as! String)
-                                    let largeImageData = NSData(contentsOf: largeImageURL!)
-                                    let largeAlbumImage = UIImage(data: largeImageData! as Data)
-                                    let smallImage = images[2]
-                                    let smallImageURL = URL(string:smallImage["url"] as! String)
-                                    let smallImageData = NSData(contentsOf: smallImageURL!)
-                                    let smallAlbumImage = UIImage(data: smallImageData! as Data)
-                                    currentTracksInQueue.append(track.init(artist: artistName, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: trackURI, duration: duration))
-                                      self.tableView.reloadData()
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        } catch {
-            print(error)
+    func parseTrackData(JSONData : Data) {
+        let tempArr = ssh.parseTrackData(JSONData: JSONData)
+        print(tempArr)
+        for i in 0..<tempArr.count {
+            currentTracksInQueue.append(tempArr[i])
         }
+        self.tableView.reloadData()
+    }
+    
+    func searchAlbum(url: String) {
+        Alamofire.request(url).responseJSON(completionHandler: {
+            response in
+            self.parseAlbumData(JSONData: response.data!)
+        })
+    }
+    
+    func parseAlbumData(JSONData: Data) {
+        let tempArr = ssh.parseAlbumData(JSONData: JSONData)
+        print(tempArr)
+        for i in 0..<tempArr.count {
+            albumList.append(tempArr[i])
+        }
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let songTitle = currentTracksInQueue[indexPath.row].songTitle
-        let artist = currentTracksInQueue[indexPath.row].artist
-        let largeAlbumImage = currentTracksInQueue[indexPath.row].largeAlbumImage
-        let uri = currentTracksInQueue[indexPath.row].uri
-        let smallAlbumImage = currentTracksInQueue[indexPath.row].smallAlbumImage
-        let albumName = currentTracksInQueue[indexPath.row].albumName
-        let duration = currentTracksInQueue[indexPath.row].duration
-        
-        let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
+        if indexPath.section == 0 {
+            if indexPath.row < currentTracksInQueue.count {
+                let songTitle = currentTracksInQueue[indexPath.row].songTitle
+                let artist = currentTracksInQueue[indexPath.row].artist
+                let largeAlbumImage = currentTracksInQueue[indexPath.row].largeAlbumImage
+                let uri = currentTracksInQueue[indexPath.row].uri
+                let smallAlbumImage = currentTracksInQueue[indexPath.row].smallAlbumImage
+                let albumName = currentTracksInQueue[indexPath.row].albumName
+                let duration = currentTracksInQueue[indexPath.row].duration
+            
+                let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
+                
+                currentTrackDetails = newTrack
+                playerQueue = currentTracksInQueue
+                playerQueue.remove(at: indexPath.row)
+                playerQueue.insert(currentTrackDetails, at: 0)
+                
+                let spotifyPlayer = SpotifyPlayerViewController()
+                spotifyPlayer.playSpotify(uri: uri!)
+                self.tableView.reloadData()
 
-        currentTrackDetails = newTrack
-        print("Tracks In Queue  \(currentTracksInQueue.count)")
-        currentTracksInQueue.remove(at: indexPath.row)
-        currentTracksInQueue.insert(currentTrackDetails, at: 0)
-        print("Tracks In Queue  \(currentTracksInQueue.count)")
-        let spotifyPlayer = SpotifyPlayerViewController()
-        spotifyPlayer.playSpotify(uri: uri!)
-
+            }
+        } else if indexPath.section == 1 {
+            self.performSegue(withIdentifier: "allSongsSegue", sender: indexPath);
+        } else if indexPath.section == 2 {
+            if indexPath.row < albumList.count {
+        }
+        } else if indexPath.section == 3 {
+             self.performSegue(withIdentifier: "allAlbumsSegue", sender: indexPath);
+        }
     }
     
-  
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 4
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let header = tableView.dequeueReusableCell(withIdentifier: "songsHeader")!
+            return header.contentView
+        } else if section == 2 {
+            let header = tableView.dequeueReusableCell(withIdentifier: "albumsHeader")!
+            return header.contentView
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 45
+        }
+        if section == 1 {
+            return 0.0001
+        }
+        if section == 2 {
+            return 45
+        }
+        if section == 3 {
+            return 0.0001
+        }
+            return 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentTracksInQueue.count
+        if section == 0 {
+            return currentTracksInQueue.count
+        }
+        if section == 1 {
+            return 1
+        }
+        if section == 2 {
+            return albumList.count
+        }
+        if section == 3 {
+            return 1
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let songLabel = cell.viewWithTag(4) as! UILabel
-        songLabel.text = currentTracksInQueue[indexPath.row].songTitle
-        let artistLabel = cell.viewWithTag(3) as! UILabel
-        artistLabel.text = currentTracksInQueue[indexPath.row].artist
-        let backgroundImage = cell.viewWithTag(1) as! UIImageView
-        backgroundImage.image = currentTracksInQueue[indexPath.row].largeAlbumImage
-        let mainImage = cell.viewWithTag(2) as! UIImageView
-        mainImage.image = currentTracksInQueue[indexPath.row].largeAlbumImage
-
-        return cell
+        if indexPath.section == 0 {
+            if indexPath.row < currentTracksInQueue.count {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                let songLabel = cell.viewWithTag(4) as! UILabel
+                songLabel.text = currentTracksInQueue[indexPath.row].songTitle
+                let artistAlbumLabel = cell.viewWithTag(3) as! UILabel
+                artistAlbumLabel.text = "\(currentTracksInQueue[indexPath.row].artist!) * \(currentTracksInQueue[indexPath.row].albumName!)"
+                return cell
+            }
+        }
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "viewAllSongs", for: indexPath)
+            return cell
+        }
+        if indexPath.section == 2 {
+            if indexPath.row < albumList.count {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "album", for: indexPath)
+                let albumImage = cell.viewWithTag(1) as! UIImageView
+                albumImage.image  = albumList[indexPath.row].smallImage
+                let artistName = cell.viewWithTag(2) as! UILabel
+                artistName.text = albumList[indexPath.row].artistName
+                let albumName = cell.viewWithTag(3) as! UILabel
+                albumName.text = albumList[indexPath.row].name
+                return cell
+            }
+        }
+        if indexPath.section == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "viewAllAlbums", for: indexPath)
+            return cell
+        }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            return cell
     }
-   
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
-        {
-            print("Scrolled toEnd")
-            let searchURL = "https://api.spotify.com/v1/search?q=\(currentSearchWords)&type=track&limit=10&offset=\(scrollToRefreshCount)"
-            callAlamo(url: searchURL)
-            tableView.reloadData()
-            scrollToRefreshCount += 10
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 55
+        }
+        if indexPath.section == 1 {
+            return 55
+        }
+        return 60
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "allSongsSegue" {
+            let vc = segue.destination
+                as! AllSongsViewController
+            vc.search = currentSearchWords
+        }
+        if segue.identifier == "allAlbumsSegue" {
+            let vc = segue.destination
+                as! AlbumsCollectionViewController
+            vc.search = currentSearchWords
+        }
+        if segue.identifier == "showAlbumTracks" {
+            let vc = segue.destination
+                as! AlbumTracksViewController
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            let name = albumList[indexPath.row].name
+            let smallImage = albumList[indexPath.row].smallImage
+            let largeImage = albumList[indexPath.row].largeImage
+            let artistName = albumList[indexPath.row].artistName
+            let id = albumList[indexPath.row].id
+            let newAlbum = album.init(name: name, smallImage: smallImage, largeImage: largeImage, artistName: artistName, id: id)
+            vc.currentAlbumDetails = newAlbum
         }
     }
-
 }
