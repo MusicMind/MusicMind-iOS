@@ -2,52 +2,34 @@
 //  UserSettingsViewController.swift
 //  MusicMind
 //
-//  Created by Wesley Van der Klomp on 4/26/17.
+//  Created by Adam Stafford on 23/05/17.
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class UserSettingsViewController: UITableViewController {
-   
-    private var user: User?
-    @IBOutlet weak var infoLabel: UILabel!
-    
-    @IBAction func signOut(_ sender: Any) {
-        do {
-            try FIRAuth.auth()?.signOut()
-            
-            let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
-            let welcomeViewController = storyboard.instantiateInitialViewController()
-            
-            UIApplication.shared.keyWindow?.rootViewController = welcomeViewController
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+class UserSettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let email = FIRAuth.auth()?.currentUser?.email {
-            infoLabel.text = "\nSigned in as \(email)\n\n\(prettyVersionNumber)"
-        } else {
-            infoLabel.text = "\(prettyVersionNumber)"
-        }
-        
-        let userRef = FIRDatabase.database().reference().child("users/\(FIRAuth.auth()!.currentUser!.uid)")
-        
-        userRef.observe(.value) { (snapshot: FIRDataSnapshot) in
-            self.user = User(withSnapshot: snapshot)
-            
-            if let dictionaryStringOfUser = self.user?.asDictionary.description {
-                print(dictionaryStringOfUser)
-            }
-        }
-        
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
-        setupNavigationBar(theme: .light)
+
+        // Do any additional setup after loading the view.
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
