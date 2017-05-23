@@ -2,7 +2,7 @@
 //  UserSettingsViewController.swift
 //  MusicMind
 //
-//  Created by Wesley Van der Klomp on 4/26/17.
+//  Created by Adam Stafford on 23/05/17.
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
 
@@ -39,7 +39,7 @@ class UserSettingsViewController: UITableViewController {
         }
         
         if let pict = FIRAuth.auth()?.currentUser?.photoURL {
-            profilePicture.image = UIImage.init(pict)
+            profilePicture.image = UIImage.init(named: pict.absoluteString)
         } else {
             profilePicture.image = UIImage.init(named: "cool-180.png")
         }
