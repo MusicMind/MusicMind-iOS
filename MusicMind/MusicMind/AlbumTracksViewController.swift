@@ -59,6 +59,7 @@ class AlbumTracksViewController: UIViewController {
             tempArr[i].albumName = currentAlbumDetails.name
             currentTracksInQueue.append(tempArr[i])
         }
+        playerQueue = currentTracksInQueue
         self.tableView.reloadData()
     }
     
@@ -99,10 +100,13 @@ extension AlbumTracksViewController: UITableViewDelegate, UITableViewDataSource 
         let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
         
         currentTrackDetails = newTrack
-        print("Tracks In Queue  \(currentTracksInQueue.count)")
-        currentTracksInQueue.remove(at: indexPath.row)
-        currentTracksInQueue.insert(currentTrackDetails, at: 0)
-        print("Tracks In Queue  \(currentTracksInQueue.count)")
+        var count = 0
+        for i in indexPath.row..<playerQueue.count {
+            let index = playerQueue[i]
+            playerQueue.remove(at: i)
+            playerQueue.insert(index, at: count)
+            count += 1
+        }
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
     }

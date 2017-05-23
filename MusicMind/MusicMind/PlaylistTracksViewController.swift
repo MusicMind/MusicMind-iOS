@@ -55,6 +55,7 @@ class PlaylistTracksViewController: UIViewController {
         for i in 0..<tempArr.count {
             currentTracksInQueue.append(tempArr[i])
         }
+        playerQueue = currentTracksInQueue
         self.tableView.reloadData()
     }
 
@@ -100,9 +101,13 @@ extension PlaylistTracksViewController: UITableViewDelegate, UITableViewDataSour
         let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
         
         currentTrackDetails = newTrack
-        playerQueue = currentTracksInQueue
-        playerQueue.remove(at: indexPath.row)
-        playerQueue.insert(currentTrackDetails, at: 0)
+        var count = 0
+        for i in indexPath.row..<playerQueue.count {
+            let index = playerQueue[i]
+            playerQueue.remove(at: i)
+            playerQueue.insert(index, at: count)
+            count += 1
+        }
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
     }

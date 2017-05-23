@@ -427,7 +427,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DGk-hN-l8N" customClass="PagingViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kT-cZ-dFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5001" y="1700"/>
+            <point key="canvasLocation" x="4434" y="1699"/>
         </scene>
         <!--Spotify Player View Controller-->
         <scene sceneID="C3x-rc-NlS">
@@ -619,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Tb-FT-dd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5645.6000000000004" y="1699.7001499250375"/>
+            <point key="canvasLocation" x="5079" y="1699"/>
         </scene>
         <!--User Playlist View Controller-->
         <scene sceneID="Det-pI-2WR">

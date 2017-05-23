@@ -73,6 +73,8 @@ class MusicSearchViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.black
         spotifyStreamingController.delegate = self
+        
+        
     }
     
     deinit {
@@ -180,6 +182,7 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         for i in 0..<tempArr.count {
             currentTracksInQueue.append(tempArr[i])
         }
+        playerQueue = currentTracksInQueue
         self.tableView.reloadData()
     }
     
@@ -211,16 +214,19 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
                 let duration = currentTracksInQueue[indexPath.row].duration
             
                 let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
-                
                 currentTrackDetails = newTrack
-                playerQueue = currentTracksInQueue
-                playerQueue.remove(at: indexPath.row)
-                playerQueue.insert(currentTrackDetails, at: 0)
                 
+                var count = 0
+                for i in indexPath.row..<playerQueue.count {
+                    let index = playerQueue[i]
+                    playerQueue.remove(at: i)
+                    playerQueue.insert(index, at: count)
+                    count += 1
+                }
                 let spotifyPlayer = SpotifyPlayerViewController()
                 spotifyPlayer.playSpotify(uri: uri!)
                 self.tableView.reloadData()
-
+ 
             }
         } else if indexPath.section == 1 {
             self.performSegue(withIdentifier: "allSongsSegue", sender: indexPath);

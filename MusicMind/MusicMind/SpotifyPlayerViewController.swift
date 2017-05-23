@@ -23,15 +23,12 @@ class SpotifyPlayerViewController: UIViewController {
     
     var timer: Timer!
     var pageIndex: Int = 0
-    
     var bckImage: UIImage!
     var albumImagelrg: UIImage!
     var artist: String!
     var sngTitle: String!
     var album: String!
     var duration: Int!
-    
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +52,10 @@ class SpotifyPlayerViewController: UIViewController {
             currentTrackDetails = currentTracksInQueue[0]
         }
         
-        if spotifyStreamingController.playbackState.isPlaying {
-            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+        if (spotifyStreamingController.playbackState != nil) {
+            if spotifyStreamingController.playbackState.isPlaying {
+                timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+            }
         }
     }
 
