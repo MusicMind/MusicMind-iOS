@@ -74,6 +74,14 @@ class MusicSearchViewController: UIViewController {
         tableView.backgroundColor = UIColor.black
         spotifyStreamingController.delegate = self
         
+        
+    }
+    
+    deinit {
+        spotifyStreamingController.delegate = nil
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if let session = spotifyAuth.session {
             if session.isValid() {
                 if spotifyStreamingController.loggedIn {
@@ -87,13 +95,7 @@ class MusicSearchViewController: UIViewController {
         } else {
             presentSpotifyLoginAlert()
         }
-    }
-    
-    deinit {
-        spotifyStreamingController.delegate = nil
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
         currentTracksInQueue.removeAll()
         playerQueue.removeAll()
         albumList.removeAll()
@@ -104,8 +106,8 @@ class MusicSearchViewController: UIViewController {
         if currentSearchWords == "" {
             self.tableView.tableHeaderView?.isHidden == true
         }
+
     }
-    
     
     // Spotify Alerts
     private func presentSpotifyLoginAlert() {
@@ -226,14 +228,9 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
             
                 let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
                 currentTrackDetails = newTrack
+        
+                playerQueue = syncPlayerQueue(arr: playerQueue, index: indexPath.row)
                 
-                var count = 0
-                for i in indexPath.row..<playerQueue.count {
-                    let index = playerQueue[i]
-                    playerQueue.remove(at: i)
-                    playerQueue.insert(index, at: count)
-                    count += 1
-                }
                 let spotifyPlayer = SpotifyPlayerViewController()
                 spotifyPlayer.playSpotify(uri: uri!)
                 self.tableView.reloadData()

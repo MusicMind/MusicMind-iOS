@@ -98,7 +98,7 @@ class PagingViewController: UIPageViewController, UIPageViewControllerDataSource
         
         if transitionCompleted {
             let index = currentControllerIndex()
-            currentTrackDetails = currentTracksInQueue[index]
+            currentTrackDetails = playerQueue[index]
             let spotifyPlayer = SpotifyPlayerViewController()
             spotifyPlayer.playSpotify(uri: currentTrackDetails.uri!)
         }

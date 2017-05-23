@@ -101,13 +101,9 @@ extension AlbumTracksViewController: UITableViewDelegate, UITableViewDataSource 
         let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
         
         currentTrackDetails = newTrack
-        var count = 0
-        for i in indexPath.row..<playerQueue.count {
-            let index = playerQueue[i]
-            playerQueue.remove(at: i)
-            playerQueue.insert(index, at: count)
-            count += 1
-        }
+        
+        playerQueue = syncPlayerQueue(arr: playerQueue, index: indexPath.row)
+        
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
     }

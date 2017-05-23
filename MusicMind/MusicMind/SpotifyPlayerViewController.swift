@@ -9,6 +9,18 @@
 import UIKit
 import Alamofire
 
+func syncPlayerQueue( arr: [track], index: Int) -> [track] {
+    var tempArr = arr
+    var count = 0
+    for i in index..<arr.count {
+        tempArr.remove(at: i)
+        tempArr.insert(arr[i], at: count)
+        count += 1
+    }
+    return tempArr
+}
+
+
 class SpotifyPlayerViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageBlurred: UIImageView!
