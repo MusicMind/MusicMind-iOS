@@ -52,6 +52,7 @@ class AlbumTracksViewController: UIViewController {
     
     func parseAlbumTracks(JSONData: Data) {
         currentTracksInQueue.removeAll()
+        playerQueue.removeAll()
         var tempArr = ssh.parseAlbumTrackData(JSONData: JSONData)
         for i in 0..<tempArr.count {
             tempArr[i].largeAlbumImage = currentAlbumDetails.largeImage

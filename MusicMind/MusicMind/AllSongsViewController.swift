@@ -46,6 +46,8 @@ extension AllSongsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func parseTrackData(JSONData : Data) {
+        currentTracksInQueue.removeAll()
+        playerQueue.removeAll()
         let tempArr = ssh.parseTrackData(JSONData: JSONData)
         print(tempArr)
         for i in 0..<tempArr.count {

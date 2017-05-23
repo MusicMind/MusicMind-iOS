@@ -51,6 +51,8 @@ class PlaylistTracksViewController: UIViewController {
     }
     
     func parseUserPlaylistTracks(JSONData: Data) {
+        currentTracksInQueue.removeAll()
+        playerQueue.removeAll()
         let tempArr = ssh.parseUserPlaylistTracks(JSONData: JSONData)
         for i in 0..<tempArr.count {
             currentTracksInQueue.append(tempArr[i])

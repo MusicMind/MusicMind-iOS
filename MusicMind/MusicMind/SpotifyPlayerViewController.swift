@@ -102,25 +102,27 @@ class SpotifyPlayerViewController: UIViewController {
     }
     
     func spotifyPlayPause() {
-        if spotifyStreamingController.playbackState.isPlaying == true {
-            spotifyStreamingController.setIsPlaying(false) {
-                error in
-                if error != nil {
-                    print(error!.localizedDescription)
-                    return
+        if (spotifyStreamingController.playbackState != nil) {
+            if spotifyStreamingController.playbackState.isPlaying == true {
+                spotifyStreamingController.setIsPlaying(false) {
+                    error in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        return
+                    }
                 }
-            }
-            playPauseButton.setTitle("Play", for: .normal)
-            
-        } else {
-            spotifyStreamingController.setIsPlaying(true) {
-                error in
-                if error != nil {
-                    print(error!.localizedDescription)
-                    return
+                playPauseButton.setTitle("Play", for: .normal)
+                
+            } else {
+                spotifyStreamingController.setIsPlaying(true) {
+                    error in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        return
+                    }
                 }
+                playPauseButton.setTitle("Pause", for: .normal)
             }
-            playPauseButton.setTitle("Pause", for: .normal)
         }
     }
     

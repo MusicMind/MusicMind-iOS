@@ -97,6 +97,7 @@ class MusicSearchViewController: UIViewController {
         }
     }
     
+    
     // Spotify Alerts
     private func presentSpotifyLoginAlert() {
         let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
@@ -152,6 +153,7 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         currentTracksInQueue.removeAll()
+        playerQueue.removeAll()
         albumList.removeAll()
         scrollToRefreshCount = 10
         let keywords = searchBar.text
