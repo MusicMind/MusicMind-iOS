@@ -74,14 +74,6 @@ class MusicSearchViewController: UIViewController {
         tableView.backgroundColor = UIColor.black
         spotifyStreamingController.delegate = self
         
-        
-    }
-    
-    deinit {
-        spotifyStreamingController.delegate = nil
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         if let session = spotifyAuth.session {
             if session.isValid() {
                 if spotifyStreamingController.loggedIn {
@@ -94,6 +86,23 @@ class MusicSearchViewController: UIViewController {
             }
         } else {
             presentSpotifyLoginAlert()
+        }
+    }
+    
+    deinit {
+        spotifyStreamingController.delegate = nil
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        currentTracksInQueue.removeAll()
+        playerQueue.removeAll()
+        albumList.removeAll()
+        let searchTrackURL = "https://api.spotify.com/v1/search?q=\(currentSearchWords)&type=track&limit=4"
+        let searchAlbumURL = "https://api.spotify.com/v1/search?q=\(currentSearchWords)&type=album&limit=4"
+        searchTrack(url: searchTrackURL)
+        searchAlbum(url: searchAlbumURL)
+        if currentSearchWords == "" {
+            self.tableView.tableHeaderView?.isHidden == true
         }
     }
     
