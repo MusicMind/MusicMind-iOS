@@ -74,10 +74,13 @@ class EmailPasswordViewController: UIViewController {
                     switch errorCode{
                     case .errorCodeInvalidEmail:
                         presentErrorWith(string: "Invalid Email")
+                        return
                     case .errorCodeWeakPassword:
                         presentErrorWith(string: "Password too weak")
+                        return
                     case .errorCodeEmailAlreadyInUse:
                         presentErrorWith(string: "Email already in use")
+                        return
                     default:
                         print(errorCode.rawValue)
                     }
@@ -91,7 +94,7 @@ class EmailPasswordViewController: UIViewController {
                 user.email = fbAuthUser?.email
                 user.dateCreated = Date()
                 user.id = fbAuthUser?.uid
-                
+        
                 let newUserRef = FIRDatabase.database().reference().child("users/\(user.id!)")
                 
                 newUserRef.setValue(user.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
