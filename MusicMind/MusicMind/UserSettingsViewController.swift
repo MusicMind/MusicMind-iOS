@@ -13,6 +13,8 @@ class UserSettingsViewController: UITableViewController {
    
     private var user: User?
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var changePictureButton: UIButton!
     
     @IBAction func signOut(_ sender: Any) {
         do {
@@ -36,6 +38,15 @@ class UserSettingsViewController: UITableViewController {
             infoLabel.text = "\(prettyVersionNumber)"
         }
         
+        if let pict = FIRAuth.auth()?.currentUser?.photoURL {
+            profilePicture.image = UIImage.init(pict)
+        } else {
+            profilePicture.image = UIImage.init(named: "cool-180.png")
+        }
+        
+        profilePicture.isUserInteractionEnabled = true
+    
+        
         let userRef = FIRDatabase.database().reference().child("users/\(FIRAuth.auth()!.currentUser!.uid)")
         
         userRef.observe(.value) { (snapshot: FIRDataSnapshot) in
@@ -49,5 +60,8 @@ class UserSettingsViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         setupNavigationBar(theme: .light)
+    }
+    func singleTouch(recognizer: UIGestureRecognizer) {
+        print("image clicked")
     }
 }
