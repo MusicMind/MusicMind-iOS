@@ -63,6 +63,38 @@ final class CameraCaptureViewController: UIViewController {
         setupNavigationBar(theme: .light)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let session = spotifyAuth.session {
+            if session.isValid() {
+                if spotifyStreamingController.loggedIn {
+                    print("Already loggedin to spotifyStreamingController")
+                } else {
+                    spotifyStreamingController.login(withAccessToken: session.accessToken)
+                }
+            } else {
+                presentSpotifyLoginAlert()
+            }
+        } else {
+            presentSpotifyLoginAlert()
+        }
+    }
+    
+    // Spotify Alerts
+    private func presentSpotifyLoginAlert() {
+        let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        let login = UIAlertAction(title: "Go to Spotify", style: .default) { (alertAction) in
+            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
+                UIApplication.shared.open(spotifyUrl, options: [:])
+            }
+        }
+        alert.addAction(cancel)
+        alert.addAction(login)
+        present(alert, animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }

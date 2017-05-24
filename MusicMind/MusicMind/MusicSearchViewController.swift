@@ -82,20 +82,6 @@ class MusicSearchViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let session = spotifyAuth.session {
-            if session.isValid() {
-                if spotifyStreamingController.loggedIn {
-                    print("Already loggedin to spotifyStreamingController")
-                } else {
-                    spotifyStreamingController.login(withAccessToken: session.accessToken)
-                }
-            } else {
-                presentSpotifyLoginAlert()
-            }
-        } else {
-            presentSpotifyLoginAlert()
-        }
-        
         currentTracksInQueue.removeAll()
         playerQueue.removeAll()
         albumList.removeAll()
@@ -103,27 +89,10 @@ class MusicSearchViewController: UIViewController {
         let searchAlbumURL = "https://api.spotify.com/v1/search?q=\(currentSearchWords)&type=album&limit=4"
         searchTrack(url: searchTrackURL)
         searchAlbum(url: searchAlbumURL)
-        if currentSearchWords == "" {
-            self.tableView.tableHeaderView?.isHidden == true
-        }
 
     }
     
-    // Spotify Alerts
-    private func presentSpotifyLoginAlert() {
-        let alert = UIAlertController(title: "Spotify Log In", message: "You need to login with your Spotify Premium account in order to play songs.", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in
-            self.dismiss(animated: true, completion: nil)
-        }
-        let login = UIAlertAction(title: "Go to Spotify", style: .default) { (alertAction) in
-            if let spotifyUrl = SPTAuth.defaultInstance().spotifyWebAuthenticationURL() {
-                UIApplication.shared.open(spotifyUrl, options: [:])
-            }
-        }
-        alert.addAction(cancel)
-        alert.addAction(login)
-        present(alert, animated: true, completion: nil)
-    }
+    
     
     @IBAction func done(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
