@@ -103,7 +103,7 @@ class PagingViewController: UIPageViewController, UIPageViewControllerDataSource
             spotifyPlayer.playSpotify(uri: currentTrackDetails.uri!)
         }
     }
-
+    
     
 }
 
