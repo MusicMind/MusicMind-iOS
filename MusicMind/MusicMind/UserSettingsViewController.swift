@@ -139,6 +139,18 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
                         })
                         
                     }
+                    self.user?.profilePhoto = downloadUrl
+                    let newUserRef = FIRDatabase.database().reference().child("users/\(self.user?.id!)")
+                    
+                    newUserRef.setValue(self.user?.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            print("Successfully pushed updated user to Firebase")
+                        }
+                    })
+                    print(FIRDatabase.database().reference().child("users/\(self.user?.id!)"))
+
                 } else {
                     print("There was an error: \(error!.localizedDescription)")
                 }
@@ -153,9 +165,18 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         }
     }
     
+    @IBAction func openPhotoTaker(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func changePicture(_ sender: Any) {
         let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = .camera
             imagePicker.delegate = self
             present(imagePicker, animated: true, completion: nil)
         }
