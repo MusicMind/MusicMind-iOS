@@ -9,8 +9,11 @@
 import UIKit
 import Firebase
 
-class UserSettingsViewController: UITableViewController {
+class UserSettingsViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
+    var localUrlOfVideo: URL?
+    private var uploadTask: FIRStorageUploadTask?
+    private var downloadURLString: String?
     private var user: User?
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
@@ -28,7 +31,29 @@ class UserSettingsViewController: UITableViewController {
             print(error.localizedDescription)
         }
     }
-
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let imageUrl          = info[UIImagePickerControllerReferenceURL] as? NSURL
+        let imageName         = imageUrl?.lastPathComponent
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let photoURL          = NSURL(fileURLWithPath: documentDirectory)
+        let localPath         = photoURL.appendingPathComponent(imageName!)
+        if !FileManager.default.fileExists(atPath: localPath!.path) {
+            do {
+                try UIImageJPEGRepresentation(image, 1.0)?.write(to: localPath!)
+                print("file saved")
+            }catch {
+                print("error saving file")
+            }
+        }
+        else {
+            print("file already exists")
+        }
+        localUrlOfVideo = localPath
+        self.dismiss(animated: true, completion: nil);
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +70,6 @@ class UserSettingsViewController: UITableViewController {
         }
         
         profilePicture.isUserInteractionEnabled = true
-    
         
         let userRef = FIRDatabase.database().reference().child("users/\(FIRAuth.auth()!.currentUser!.uid)")
         
@@ -61,7 +85,78 @@ class UserSettingsViewController: UITableViewController {
         
         setupNavigationBar(theme: .light)
     }
-    func singleTouch(recognizer: UIGestureRecognizer) {
-        print("image clicked")
+    
+    func attemptUpload() {
+        
+        //  Store Current Date
+        let currentDateTime = Date()
+        let time = String(currentDateTime.timeIntervalSinceReferenceDate)
+        
+        //  Store Naming Convention
+        let storageRef = FIRStorage.storage().reference(withPath: "photos/"+time+".mov")
+        let uploadMetadata = FIRStorageMetadata()
+        uploadMetadata.contentType = "image"
+        
+        if let localUrlOfVideo = localUrlOfVideo {
+            uploadTask = storageRef.putFile(localUrlOfVideo, metadata: uploadMetadata) { (metadata, error) in
+                if error == nil {
+                    let downloadUrl = metadata?.downloadURL()
+                    
+                    if let downloadUrl = downloadUrl {
+                        
+                        self.downloadURLString = downloadUrl.absoluteString
+                        
+                        
+                        // Create a post model and upload to firebase db
+                        var post = Post()
+                        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+                        post.authorId = uid
+                        post.dateTimeCreated = Date()
+                        post.videoDownloadUrl = downloadUrl
+                        
+                        let postRef = FIRDatabase.database().reference().child("posts").childByAutoId()
+                        
+                        postRef.setValue(post.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            } else {
+                                print("Successfully posted new post to firebase")
+                                
+                                // We also need to create a userPosts lookup table
+                                let userPostsRef = FIRDatabase.database().reference().child("userPosts/\(uid)")
+                                
+                                userPostsRef.updateChildValues([ref.key: true], withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                                    if let error = error {
+                                        print(error.localizedDescription)
+                                    } else {
+                                        print("pushed to userPosts")
+                                    }
+                                })
+                            }
+                        })
+                        
+                    }
+                } else {
+                    print("There was an error: \(error!.localizedDescription)")
+                }
+            }
+            
+            uploadTask?.observe(.progress) { [weak self] (snapshot) in
+                guard let strongSelf = self else { return }
+                
+                guard let progress = snapshot.progress else { return }
+                
+            }
+        }
+    }
+    
+    @IBAction func changePicture(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
 }
