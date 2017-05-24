@@ -11,7 +11,7 @@ import Firebase
 
 class UserSettingsViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
-    var localUrlOfVideo: URL?
+    var localUrlOfprofilePhoto: URL?
     private var uploadTask: FIRStorageUploadTask?
     private var downloadURLString: String?
     private var user: User?
@@ -32,27 +32,6 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let imageUrl          = info[UIImagePickerControllerReferenceURL] as? NSURL
-        let imageName         = imageUrl?.lastPathComponent
-        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        let photoURL          = NSURL(fileURLWithPath: documentDirectory)
-        let localPath         = photoURL.appendingPathComponent(imageName!)
-        if !FileManager.default.fileExists(atPath: localPath!.path) {
-            do {
-                try UIImageJPEGRepresentation(image, 1.0)?.write(to: localPath!)
-                print("file saved")
-            }catch {
-                print("error saving file")
-            }
-        }
-        else {
-            print("file already exists")
-        }
-        localUrlOfVideo = localPath
-        self.dismiss(animated: true, completion: nil);
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,19 +65,19 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         setupNavigationBar(theme: .light)
     }
     
-    func attemptUpload() {
+    func attemptUpload(_ image: UIImage) {
         
         //  Store Current Date
         let currentDateTime = Date()
         let time = String(currentDateTime.timeIntervalSinceReferenceDate)
         
         //  Store Naming Convention
-        let storageRef = FIRStorage.storage().reference(withPath: "photos/"+time+".mov")
+        let storageRef = FIRStorage.storage().reference(withPath: "profilePhotos/beta"+time+".jpeg")
         let uploadMetadata = FIRStorageMetadata()
-        uploadMetadata.contentType = "image"
+        uploadMetadata.contentType = "image/jpeg"
         
-        if let localUrlOfVideo = localUrlOfVideo {
-            uploadTask = storageRef.putFile(localUrlOfVideo, metadata: uploadMetadata) { (metadata, error) in
+        if let localUrlOfprofilePhoto = localUrlOfprofilePhoto {
+            uploadTask = storageRef.putFile(localUrlOfprofilePhoto, metadata: uploadMetadata) { (metadata, error) in
                 if error == nil {
                     let downloadUrl = metadata?.downloadURL()
                     
@@ -108,28 +87,28 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
                         
                         
                         // Create a post model and upload to firebase db
-                        var post = Post()
+                        var post = ProfilePhoto()
                         guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
                         post.authorId = uid
                         post.dateTimeCreated = Date()
-                        post.videoDownloadUrl = downloadUrl
+                        post.profilePhotoDownloadUrl = downloadUrl
                         
-                        let postRef = FIRDatabase.database().reference().child("posts").childByAutoId()
+                        let postRef = FIRDatabase.database().reference().child("profilePhotos").childByAutoId()
                         
                         postRef.setValue(post.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                             if let error = error {
                                 print(error.localizedDescription)
                             } else {
-                                print("Successfully posted new post to firebase")
+                                print("Successfully posted new profilePhoto to firebase")
                                 
                                 // We also need to create a userPosts lookup table
-                                let userPostsRef = FIRDatabase.database().reference().child("userPosts/\(uid)")
+                                let userPostsRef = FIRDatabase.database().reference().child("profilePhotos/\(uid)")
                                 
                                 userPostsRef.updateChildValues([ref.key: true], withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                                     if let error = error {
                                         print(error.localizedDescription)
                                     } else {
-                                        print("pushed to userPosts")
+                                        print("pushed to profilePhotos")
                                     }
                                 })
                             }
@@ -142,21 +121,30 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
             }
             
             uploadTask?.observe(.progress) { [weak self] (snapshot) in
-                guard let strongSelf = self else { return }
+                guard self != nil else { return }
                 
-                guard let progress = snapshot.progress else { return }
+                guard snapshot.progress != nil else { return }
                 
             }
         }
     }
     
     @IBAction func changePicture(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            var imagePicker = UIImagePickerController()
-            imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
+        let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .camera
+            imagePicker.delegate = self
+            present(imagePicker, animated: true, completion: nil)
+        }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if image != nil {
+            profilePicture.image = image!
+            profilePicture.contentMode = .scaleAspectFit
+            
+            picker.dismiss(animated: true, completion: nil)
         }
     }
-}
+    }
+

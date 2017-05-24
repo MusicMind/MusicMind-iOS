@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C03000B1ED6154A00D8B1E4 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C03000A1ED6154A00D8B1E4 /* ProfilePhoto.swift */; };
 		0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0F1DE25A1E9327C60032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C03000A1ED6154A00D8B1E4 /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
 		0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		0F1DE2591E9327C60032A49A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				DE85666B1EC3BE5D00B2409D /* Post.swift */,
+				0C03000A1ED6154A00D8B1E4 /* ProfilePhoto.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				66FB5EE11ED3803100A111B9 /* EmailPasswordViewController.swift in Sources */,
 				DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */,
 				84BBFA311ECD25F100C1E132 /* MusicSearchViewController.swift in Sources */,
+				0C03000B1ED6154A00D8B1E4 /* ProfilePhoto.swift in Sources */,
 				DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */,
 				DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */,
 				DEB4FDE11EC5219F001458CE /* EmojiCollectionViewCell.swift in Sources */,
