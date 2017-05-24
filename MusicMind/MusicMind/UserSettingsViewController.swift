@@ -114,15 +114,12 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
                         
                         
                         // Create a post model and upload to firebase db
-                        var post = ProfilePhoto()
+                        let photoUrl = self.user?.profilePhoto
                         guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-                        post.authorId = uid
-                        post.dateTimeCreated = Date()
-                        post.profilePhotoDownloadUrl = downloadUrl
                         
                         let postRef = FIRDatabase.database().reference().child("profilePhotos").childByAutoId()
                         
-                        postRef.setValue(post.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                        postRef.setValue(photoUrl, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                             if let error = error {
                                 print(error.localizedDescription)
                             } else {
