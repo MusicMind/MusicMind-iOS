@@ -99,7 +99,7 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         let time = String(currentDateTime.timeIntervalSinceReferenceDate)
         
         //  Store Naming Convention
-        let storageRef = FIRStorage.storage().reference(withPath: "profilePhotos/beta"+time+".jpeg")
+        let storageRef = FIRStorage.storage().reference(withPath: "users/\(FIRAuth.auth()!.currentUser!.uid)"+"/profilePhotos/"+time+".jpeg")
         let uploadMetadata = FIRStorageMetadata()
         uploadMetadata.contentType = "image/jpeg"
         
