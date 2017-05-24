@@ -31,7 +31,34 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
             print(error.localizedDescription)
         }
     }
-    
+//    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+//        if image != nil {
+//            profilePicture.image = image
+//            profilePicture.contentMode = .scaleAspectFit
+//            let imageUrl          = info[UIImagePickerControllerReferenceURL] as? NSURL
+//            let imageName         = imageUrl?.lastPathComponent
+//            let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+//            let photoURL          = NSURL(fileURLWithPath: documentDirectory)
+//            let localPath         = photoURL.appendingPathComponent(imageName!)
+//        
+//        if !FileManager.default.fileExists(atPath: localPath!.path) {
+//            do {
+//                attemptUpload(image!)
+//                print("file saved")
+//            }catch {
+//                print("error saving file")
+//            }
+//        }
+//        else {
+//            print("file already exists")
+//        }
+//        localUrlOfprofilePhoto = localPath
+//        
+//        self.dismiss(animated: true, completion: nil);
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +92,7 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         setupNavigationBar(theme: .light)
     }
     
-    func attemptUpload(_ image: UIImage) {
+    func attemptUpload(_ image: NSData) {
         
         //  Store Current Date
         let currentDateTime = Date()
@@ -142,6 +169,9 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         if image != nil {
             profilePicture.image = image!
             profilePicture.contentMode = .scaleAspectFit
+            
+            let imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData?
+            attemptUpload(imageData!)
             
             picker.dismiss(animated: true, completion: nil)
         }
