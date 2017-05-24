@@ -25,6 +25,8 @@ var userPlaylists = [playlist]()
 var playlistTableView = UITableView()
 
 class UserPlaylistViewController: UIViewController {
+    
+    let ssh = SpotifySearchHelpers()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -75,32 +77,11 @@ extension UserPlaylistViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func parseUserPlaylists(JSONData: Data) {
-        do {
-            var readableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
-            //                print(readableJSON)
-            if let items = readableJSON["items"] as? NSArray {
-                for i in 0..<items.count  {
-                    let item = items[i] as! [String : Any]
-                    let name = item["name"] as! String
-                    let id = item["id"] as! String
-                    let tracks = item["tracks"] as! [String : Any]
-                    let trackCountInt = tracks["total"] as! Int
-                    let trackCount = String(trackCountInt)
-                    if let images = item["images"] as? [[String : AnyObject]] {
-                        let largeImage = images[0]
-                        let largeImageURL = URL(string:largeImage["url"] as! String)
-                        let largeImageData = NSData(contentsOf: largeImageURL!)
-                        let LargePlaylistImage = UIImage(data: largeImageData! as Data)
-                        let newPlaylist = playlist.init(name: name , trackCount: trackCount, largeImage: LargePlaylistImage, id: id)
-                        userPlaylists.append(newPlaylist)
-                    }
-                    self.tableView.reloadData()
-                }
-            }
-            
-        } catch {
-            print(error)
+        let tempArr = ssh.parseUserPlaylists(JSONData: JSONData)
+        for i in 0..<tempArr.count {
+            userPlaylists.append(tempArr[i])
         }
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -135,7 +116,6 @@ extension UserPlaylistViewController: UITableViewDelegate, UITableViewDataSource
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "playlistTracks" {
-            
             let vc = segue.destination
                 as! PlaylistTracksViewController
             let myIndexPath = self.tableView.indexPathForSelectedRow!
