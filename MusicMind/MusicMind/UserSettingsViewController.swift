@@ -76,6 +76,7 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
             let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/musicmind-9723f.appspot.com/o/profilePhotos%2Fplaceholder.png?alt=media&token=cee07892-57f7-45d4-84ee-95c4fbf4cb2a")
             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
             profilePicture.image = UIImage(data: data!)
+            profilePicture.contentMode = .scaleAspectFit
         }
         
         profilePicture.isUserInteractionEnabled = true
