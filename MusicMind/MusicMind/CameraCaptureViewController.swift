@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import RecordButton
 import MobileCoreServices
+import Firebase
 
 fileprivate enum CurrentCamera {
     case front
@@ -36,7 +37,6 @@ final class CameraCaptureViewController: UIViewController {
     var frontCameraInput: AVCaptureDeviceInput?
     var microphoneAudioDevice: AVCaptureDevice?
     var microphoneAudioInput: AVCaptureDeviceInput?
-    
 
     
     // MARK: - View Controller Lifecycle

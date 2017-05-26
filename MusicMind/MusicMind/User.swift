@@ -11,7 +11,6 @@ import Firebase
 
 struct User {
  
-    var firebaseAuthUser: FIRUser?
     var id: String?
     var email: String?
     var firstName: String?
@@ -47,8 +46,7 @@ extension User: FirebaseConvertable {
     init(withSnapshot snapshot: FIRDataSnapshot) {
         self.init()
         
-        firebaseAuthUser = FIRAuth.auth()?.currentUser
-        id = firebaseAuthUser?.uid
+        id = snapshot.key
         
         if let userData = snapshot.value as? [String: Any] {
             if let firstName = userData["firstName"] as? String { self.firstName = firstName }
