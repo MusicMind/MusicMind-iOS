@@ -1059,7 +1059,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="XwN-M3-f5D">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="back:" destination="Ah0-bm-ruA" id="5ZP-wh-e1j"/>
+                                                <action selector="back:" destination="Ah0-bm-ruA" id="fwa-c5-Cv0"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

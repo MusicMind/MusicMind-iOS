@@ -7,8 +7,6 @@
 //
 
 import UIKit
-
-import UIKit
 import Alamofire
 
 var albumTracksTableView = UITableView()
@@ -37,6 +35,7 @@ class AlbumTracksViewController: UIViewController {
         let albumTracksUrl = "https://api.spotify.com/v1/albums/\(currentAlbumDetails.id!)/tracks"
         getAlbumTracks(url: albumTracksUrl)
     }
+    
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

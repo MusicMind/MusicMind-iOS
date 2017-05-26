@@ -67,13 +67,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 } else if let session = session {
                     if session.isValid() {
                         spotifyAuth.session = session
+                    } else {
+                        spotifyAuth.renewSession(spotifyAuth.session, callback: {
+                            (error, session) in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            } else if let session = session {
+                                spotifyAuth.session = session
+                            }
+                        })
                     }
                 }
             })
-            
             return true
         }
-        
         return false
     }
 }

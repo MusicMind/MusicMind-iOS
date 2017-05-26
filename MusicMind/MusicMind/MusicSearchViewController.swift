@@ -73,12 +73,7 @@ class MusicSearchViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.black
         spotifyStreamingController.delegate = self
-        
-        
-    }
-    
-    deinit {
-        spotifyStreamingController.delegate = nil
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,9 +84,7 @@ class MusicSearchViewController: UIViewController {
         let searchAlbumURL = "https://api.spotify.com/v1/search?q=\(currentSearchWords)&type=album&limit=4"
         searchTrack(url: searchTrackURL)
         searchAlbum(url: searchAlbumURL)
-
     }
-    
     
     
     @IBAction func done(_ sender: Any) {
@@ -183,7 +176,7 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         }
         self.tableView.reloadData()
     }
-    
+     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if indexPath.row < currentTracksInQueue.count {
