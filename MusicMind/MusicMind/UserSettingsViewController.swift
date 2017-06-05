@@ -31,7 +31,7 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
             print(error.localizedDescription)
         }
     }
-//    
+  
 //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 //        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
 //        if image != nil {
@@ -68,18 +68,6 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         } else {
             infoLabel.text = "\(prettyVersionNumber)"
         }
-
-        
-        if let pict = FIRAuth.auth()?.currentUser?.photoURL {
-            profilePicture.image = UIImage.init(named: pict.absoluteString)
-        } else {
-            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/musicmind-9723f.appspot.com/o/profilePhotos%2Fplaceholder.png?alt=media&token=cee07892-57f7-45d4-84ee-95c4fbf4cb2a")
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            profilePicture.image = UIImage(data: data!)
-            profilePicture.contentMode = .scaleAspectFit
-        }
-        
-        profilePicture.isUserInteractionEnabled = true
         
         let userRef = FIRDatabase.database().reference().child("users/\(FIRAuth.auth()!.currentUser!.uid)")
         
@@ -90,6 +78,46 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
                 print(dictionaryStringOfUser)
             }
         }
+        let pict1 = FIRDatabase.database().reference().child("profilePhotos")
+        pict1.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            do {
+                print(snapshot)
+                let value = snapshot.childSnapshot(forPath: FIRAuth.auth()!.currentUser!.uid).value as? String
+                if (value == nil) {
+                    throw NSError.init()
+                }
+                if (!((try? Data(contentsOf: NSURL(string:value!)! as URL)) != nil)) {
+                    throw NSError.init()
+                }
+                let data = try? Data(contentsOf: NSURL(string:value!)! as URL)
+                self.profilePicture.image = UIImage(data: data!)
+                self.profilePicture.image = UIImage(data: data!)
+                self.profilePicture.contentMode = .scaleAspectFit
+            } catch {
+                let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/musicmind-9723f.appspot.com/o/profilePhotos%2Fplaceholder.png?alt=media&token=cee07892-57f7-45d4-84ee-95c4fbf4cb2a")
+                let data = try? Data(contentsOf: url!)
+                self.profilePicture.image = UIImage(data: data!)
+                self.profilePicture.contentMode = .scaleAspectFit
+            }
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/musicmind-9723f.appspot.com/o/profilePhotos%2Fplaceholder.png?alt=media&token=cee07892-57f7-45d4-84ee-95c4fbf4cb2a")
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            self.profilePicture.image = UIImage(data: data!)
+            self.profilePicture.contentMode = .scaleAspectFit
+        }
+        /*if let pict = pict1 {
+            profilePicture.image = UIImage.init(named: pict.absoluteString)
+        } else {
+            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/musicmind-9723f.appspot.com/o/profilePhotos%2Fplaceholder.png?alt=media&token=cee07892-57f7-45d4-84ee-95c4fbf4cb2a")
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            profilePicture.image = UIImage(data: data!)
+            profilePicture.contentMode = .scaleAspectFit
+        }*/
+        
+        profilePicture.isUserInteractionEnabled = true
         
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
@@ -101,28 +129,29 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         //  Store Current Date
         let currentDateTime = Date()
         let time = String(currentDateTime.timeIntervalSinceReferenceDate)
-        
         //  Store Naming Convention
-        let storageRef = FIRStorage.storage().reference(withPath: "users/\(FIRAuth.auth()!.currentUser!.uid)"+"/profilePhotos/"+time+".jpeg")
+        var storageRef = FIRStorage.storage().reference(withPath: "profilePhotos/"+time+".jpg")
+        if let uid1 = FIRAuth.auth()!.currentUser?.uid {
+            storageRef = FIRStorage.storage().reference(withPath: "profilePhotos/"+uid1+time+".jpg")
+        }
         let uploadMetadata = FIRStorageMetadata()
         uploadMetadata.contentType = "image/jpeg"
-        
-        if let localUrlOfprofilePhoto = localUrlOfprofilePhoto {
-            uploadTask = storageRef.putFile(localUrlOfprofilePhoto, metadata: uploadMetadata) { (metadata, error) in
+        if let localUrlOfprofilePhoto1 = localUrlOfprofilePhoto {
+            uploadTask = storageRef.put(image as Data, metadata: uploadMetadata) { (metadata, error) in
                 if error == nil {
                     let downloadUrl = metadata?.downloadURL()
                     
                     if let downloadUrl = downloadUrl {
                         
                         self.downloadURLString = downloadUrl.absoluteString
+                        self.user?.profilePhoto = downloadUrl
                         
                         
                         // Create a post model and upload to firebase db
-                        let photoUrl = self.user?.profilePhoto
+                        let photoUrl = self.downloadURLString
                         guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
                         
-                        let postRef = FIRDatabase.database().reference().child("profilePhotos").childByAutoId()
-                        
+                        let postRef = FIRDatabase.database().reference().child("profilePhotos/\(uid)")
                         postRef.setValue(photoUrl, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                             if let error = error {
                                 print(error.localizedDescription)
@@ -130,9 +159,9 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
                                 print("Successfully posted new profilePhoto to firebase")
                                 
                                 // We also need to create a userPosts lookup table
-                                let userPostsRef = FIRDatabase.database().reference().child("profilePhotos/\(uid)")
+                                let userPostsRef = FIRDatabase.database().reference().child("profilePhotos")
                                 
-                                userPostsRef.updateChildValues([ref.key: true], withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
+                                userPostsRef.updateChildValues([uid: self.downloadURLString], withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
                                     if let error = error {
                                         print(error.localizedDescription)
                                     } else {
@@ -142,19 +171,14 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
                             }
                         })
                         
+                    } else {
+                         print("There was an error: \(error!.localizedDescription)")
                     }
-                    self.user?.profilePhoto = downloadUrl
-                    let newUserRef = FIRDatabase.database().reference().child("users/\(self.user?.id!)")
                     
-                    newUserRef.setValue(self.user?.asDictionary, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
-                        if let error = error {
-                            print(error.localizedDescription)
-                        } else {
-                            print("Successfully pushed updated user to Firebase")
-                        }
-                    })
+                    print(downloadUrl?.absoluteString)
+                    self.user?.profilePhoto = downloadUrl
                     print(FIRDatabase.database().reference().child("users/\(self.user?.id!)"))
-
+                
                 } else {
                     print("There was an error: \(error!.localizedDescription)")
                 }
@@ -170,15 +194,12 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
     }
     
     @IBAction func openPhotoTaker(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            let imagePicker = UIImagePickerController()
+        let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
+            present(imagePicker, animated: true, completion: nil)
     }
-    
+
     @IBAction func changePicture(_ sender: Any) {
         let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -191,6 +212,7 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         if image != nil {
             profilePicture.image = image!
             profilePicture.contentMode = .scaleAspectFit
+            localUrlOfprofilePhoto = info[UIImagePickerControllerReferenceURL] as! URL
             
             let imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData?
             attemptUpload(imageData!)
