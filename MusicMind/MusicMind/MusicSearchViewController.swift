@@ -104,7 +104,7 @@ class MusicSearchViewController: UIViewController {
         searchTrack(url: searchTrackURL)
         searchAlbum(url: searchAlbumURL)
         if currentSearchWords == "" {
-            self.tableView.tableHeaderView?.isHidden == true
+            self.tableView.tableHeaderView?.isHidden = true
         }
 
     }
