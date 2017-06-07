@@ -212,8 +212,16 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         if image != nil {
             profilePicture.image = image!
             profilePicture.contentMode = .scaleAspectFit
-            localUrlOfprofilePhoto = info[UIImagePickerControllerReferenceURL] as! URL
-            
+            let l = info[UIImagePickerControllerReferenceURL] as? URL
+            if l != nil {
+                localUrlOfprofilePhoto = l
+            } else {
+                    if let data = UIImagePNGRepresentation(image!) {
+                        let filename = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("copy.png")
+                        try? data.write(to: NSURL(string: filename)! as URL)
+                        localUrlOfprofilePhoto = NSURL(string: filename)! as URL
+                    }
+            }
             let imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData?
             attemptUpload(imageData!)
             
