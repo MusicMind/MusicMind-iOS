@@ -15,6 +15,7 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
     private var uploadTask: FIRStorageUploadTask?
     private var downloadURLString: String?
     private var user: User?
+    var imageData: NSData!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var changePictureButton: UIButton!
@@ -94,11 +95,13 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
                 self.profilePicture.image = UIImage(data: data!)
                 self.profilePicture.image = UIImage(data: data!)
                 self.profilePicture.contentMode = .scaleAspectFit
+                self.profilePicture.clipsToBounds = true
             } catch {
                 let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/musicmind-9723f.appspot.com/o/profilePhotos%2Fplaceholder.png?alt=media&token=cee07892-57f7-45d4-84ee-95c4fbf4cb2a")
                 let data = try? Data(contentsOf: url!)
                 self.profilePicture.image = UIImage(data: data!)
                 self.profilePicture.contentMode = .scaleAspectFit
+                self.profilePicture.clipsToBounds = true
             }
             // ...
         }) { (error) in
@@ -107,6 +110,7 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
             self.profilePicture.image = UIImage(data: data!)
             self.profilePicture.contentMode = .scaleAspectFit
+            self.profilePicture.clipsToBounds = true
         }
         /*if let pict = pict1 {
             profilePicture.image = UIImage.init(named: pict.absoluteString)
@@ -124,75 +128,6 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
         setupNavigationBar(theme: .light)
     }
     
-    func attemptUpload(_ image: NSData) {
-        
-        //  Store Current Date
-        let currentDateTime = Date()
-        let time = String(currentDateTime.timeIntervalSinceReferenceDate)
-        //  Store Naming Convention
-        var storageRef = FIRStorage.storage().reference(withPath: "profilePhotos/"+time+".jpg")
-        if let uid1 = FIRAuth.auth()!.currentUser?.uid {
-            storageRef = FIRStorage.storage().reference(withPath: "profilePhotos/"+uid1+time+".jpg")
-        }
-        let uploadMetadata = FIRStorageMetadata()
-        uploadMetadata.contentType = "image/jpeg"
-        if let localUrlOfprofilePhoto1 = localUrlOfprofilePhoto {
-            uploadTask = storageRef.put(image as Data, metadata: uploadMetadata) { (metadata, error) in
-                if error == nil {
-                    let downloadUrl = metadata?.downloadURL()
-                    
-                    if let downloadUrl = downloadUrl {
-                        
-                        self.downloadURLString = downloadUrl.absoluteString
-                        self.user?.profilePhoto = downloadUrl
-                        
-                        
-                        // Create a post model and upload to firebase db
-                        let photoUrl = self.downloadURLString
-                        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-                        
-                        let postRef = FIRDatabase.database().reference().child("profilePhotos/\(uid)")
-                        postRef.setValue(photoUrl, withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
-                            if let error = error {
-                                print(error.localizedDescription)
-                            } else {
-                                print("Successfully posted new profilePhoto to firebase")
-                                
-                                // We also need to create a userPosts lookup table
-                                let userPostsRef = FIRDatabase.database().reference().child("profilePhotos")
-                                
-                                userPostsRef.updateChildValues([uid: self.downloadURLString], withCompletionBlock: { (error: Error?, ref: FIRDatabaseReference) in
-                                    if let error = error {
-                                        print(error.localizedDescription)
-                                    } else {
-                                        print("pushed to profilePhotos")
-                                    }
-                                })
-                            }
-                        })
-                        
-                    } else {
-                         print("There was an error: \(error!.localizedDescription)")
-                    }
-                    
-                    print(downloadUrl?.absoluteString)
-                    self.user?.profilePhoto = downloadUrl
-                    print(FIRDatabase.database().reference().child("users/\(self.user?.id!)"))
-                
-                } else {
-                    print("There was an error: \(error!.localizedDescription)")
-                }
-            }
-            
-            uploadTask?.observe(.progress) { [weak self] (snapshot) in
-                guard self != nil else { return }
-                
-                guard snapshot.progress != nil else { return }
-                
-            }
-        }
-    }
-    
     @IBAction func openPhotoTaker(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -208,25 +143,25 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         
-        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        var image = info[UIImagePickerControllerOriginalImage] as? UIImage
         if image != nil {
             profilePicture.image = image!
             profilePicture.contentMode = .scaleAspectFit
-            let l = info[UIImagePickerControllerReferenceURL] as? URL
-            if l != nil {
-                localUrlOfprofilePhoto = l
-            } else {
-                    if let data = UIImagePNGRepresentation(image!) {
-                        let filename = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("copy.png")
-                        try? data.write(to: NSURL(string: filename)! as URL)
-                        localUrlOfprofilePhoto = NSURL(string: filename)! as URL
-                    }
+            profilePicture.clipsToBounds = true
+            //image = image?.resize(width: 50)
+            if let data = UIImagePNGRepresentation(image!) {
+                let filename = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(String(Date().timeIntervalSinceReferenceDate)+(FIRAuth.auth()?.currentUser?.uid)!+".jpg")
+                try? data.write(to: NSURL(string: filename)! as URL)
+                localUrlOfprofilePhoto = NSURL(string: filename)! as URL
             }
-            let imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData?
-            attemptUpload(imageData!)
-            
+            self.imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData!
             picker.dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "upload", sender: self)
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! ProgressViewController
+        dest.localUrlOfprofilePhoto = localUrlOfprofilePhoto
+        dest.imageData = self.imageData
     }
-
+}

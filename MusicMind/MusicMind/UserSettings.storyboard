@@ -137,16 +137,97 @@
                             <outlet property="delegate" destination="254-1z-MR1" id="J6m-Nv-4Jz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="mhM-ST-dMe"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="changePictureButton" destination="bu6-IU-3P5" id="n9T-0Q-JuP"/>
                         <outlet property="infoLabel" destination="WTz-vz-Cos" id="u0p-a5-kgX"/>
                         <outlet property="profilePicture" destination="ymw-gg-SCg" id="dve-jH-woM"/>
+                        <segue destination="pgb-eH-dND" kind="show" identifier="upload" id="uP5-hd-JNL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCT-ws-3Zp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661.60000000000002" y="-338.68065967016497"/>
+            <point key="canvasLocation" x="2540" y="-338.68065967016497"/>
+        </scene>
+        <!--Progress View Controller-->
+        <scene sceneID="3Oe-Zk-aml">
+            <objects>
+                <viewController id="pgb-eH-dND" customClass="ProgressViewController" customModule="MusicMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Hi-Ct-pw7"/>
+                        <viewControllerLayoutGuide type="bottom" id="zVh-gr-kGq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gDC-vu-A3g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xPe-Js-irr">
+                                <rect key="frame" x="112" y="94" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uploading image ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW1-ih-xkG">
+                                <rect key="frame" x="112" y="119" width="150" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XY2-MD-CUq">
+                                <rect key="frame" x="83" y="192" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Yes"/>
+                                <connections>
+                                    <action selector="begin" destination="pgb-eH-dND" eventType="touchUpInside" id="T8z-2E-oeZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spp-zG-cGa">
+                                <rect key="frame" x="232" y="192" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="No"/>
+                                <connections>
+                                    <action selector="close" destination="pgb-eH-dND" eventType="touchUpInside" id="JBh-4N-yV8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you sure you want this image?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtX-f2-FUT">
+                                <rect key="frame" x="48" y="163" width="279" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancel" destination="spp-zG-cGa" id="QyQ-af-6ng"/>
+                        <outlet property="confirm" destination="XY2-MD-CUq" id="44p-e1-ovn"/>
+                        <outlet property="progressBar" destination="xPe-Js-irr" id="P31-nq-0QE"/>
+                        <outlet property="question" destination="dtX-f2-FUT" id="MvH-CY-MZs"/>
+                        <outlet property="text1" destination="IW1-ih-xkG" id="n5Q-S0-XKk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bx5-1d-pmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3349.5999999999999" y="-317.09145427286359"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0WX-BA-gGK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oZm-dx-mxf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q5I-fW-sFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="254-1z-MR1" kind="relationship" relationship="rootViewController" id="5Xu-Pu-FKf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6o-UN-mnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600.8" y="-338.68065967016497"/>
         </scene>
     </scenes>
 </document>

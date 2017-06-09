@@ -13,8 +13,9 @@
 		0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */; };
 		0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */; };
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
-		0FF4B62E1E8C4BF400EEAE8C /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		0FF4B62E1E8C4BF400EEAE8C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
+		664DE6E21EEA37FF00C96F52 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DE6E11EEA37FF00C96F52 /* ProgressViewController.swift */; };
 		66FB5EE11ED3803100A111B9 /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FB5EE01ED3803100A111B9 /* EmailPasswordViewController.swift */; };
 		66FB5EEF1ED4FEF200A111B9 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FB5EEE1ED4FEF200A111B9 /* UserSettings.storyboard */; };
 		84BBFA2E1ECD25CC00C1E132 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFA2C1ECD25CC00C1E132 /* PagingViewController.swift */; };
@@ -67,6 +68,7 @@
 		0FF4B6291E8AD8D700EEAE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignUp.storyboard; sourceTree = "<group>"; };
 		1C368AB4D0134F9551C2A828 /* Pods-MusicMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicMind.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicMind/Pods-MusicMind.release.xcconfig"; sourceTree = "<group>"; };
 		320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		664DE6E11EEA37FF00C96F52 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		66FB5EE01ED3803100A111B9 /* EmailPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPasswordViewController.swift; sourceTree = "<group>"; };
 		66FB5EEE1ED4FEF200A111B9 /* UserSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserSettings.storyboard; sourceTree = "<group>"; };
 		84BBFA2C1ECD25CC00C1E132 /* PagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				66FB5EEE1ED4FEF200A111B9 /* UserSettings.storyboard */,
+				664DE6E11EEA37FF00C96F52 /* ProgressViewController.swift */,
 				DE85E5C51EB127C7005FFEB9 /* UserSettingsViewController.swift */,
 			);
 			name = "User Settings";
@@ -481,13 +484,14 @@
 				DEB4FDE51EC521C2001458CE /* PostProcessingViewController + collectionViewHelper.swift in Sources */,
 				DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */,
 				66FB5EE11ED3803100A111B9 /* EmailPasswordViewController.swift in Sources */,
+				664DE6E21EEA37FF00C96F52 /* ProgressViewController.swift in Sources */,
 				DEFFE4FB1EAAC61800273C02 /* UploadActivity.swift in Sources */,
 				84BBFA311ECD25F100C1E132 /* MusicSearchViewController.swift in Sources */,
 				DEBA57FB1E945FCE00AF40EF /* UIImage+imageColored.swift in Sources */,
 				DE007F651EAEBCE600966F55 /* UILabel+setTextWhileKeepingAttributes.swift in Sources */,
 				DEB4FDE11EC5219F001458CE /* EmojiCollectionViewCell.swift in Sources */,
 				DEB4FDE31EC521B2001458CE /* VideoContainerView.swift in Sources */,
-				0FF4B62E1E8C4BF400EEAE8C /* BuildFile in Sources */,
+				0FF4B62E1E8C4BF400EEAE8C /* (null) in Sources */,
 				DE85666C1EC3BE5D00B2409D /* Post.swift in Sources */,
 				DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */,
 				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,
