@@ -154,7 +154,7 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
                 try? data.write(to: NSURL(string: filename)! as URL)
                 localUrlOfprofilePhoto = NSURL(string: filename)! as URL
             }
-            self.imageData = UIImageJPEGRepresentation(image!, 1.0) as NSData!
+            self.imageData = UIImageJPEGRepresentation(image!, 0.3) as NSData!
             picker.dismiss(animated: true, completion: nil)
             performSegue(withIdentifier: "upload", sender: self)
         }
