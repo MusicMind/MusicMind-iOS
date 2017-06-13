@@ -13,7 +13,7 @@
 		0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD025701E6B4D2C00E59E95 /* CameraCapture.storyboard */; };
 		0FF4B6221E8394E600EEAE8C /* PostProcessing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6201E8394E600EEAE8C /* PostProcessing.storyboard */; };
 		0FF4B62A1E8AD8D700EEAE8C /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF4B6281E8AD8D700EEAE8C /* SignUp.storyboard */; };
-		0FF4B62E1E8C4BF400EEAE8C /* (null) in Sources */ = {isa = PBXBuildFile; };
+		0FF4B62E1E8C4BF400EEAE8C /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		3EA051BEC4970E39F04DA16E /* Pods_MusicMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320EB626D7E604AC5A1B5A67 /* Pods_MusicMind.framework */; };
 		66FB5EE11ED3803100A111B9 /* EmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FB5EE01ED3803100A111B9 /* EmailPasswordViewController.swift */; };
 		84BBFA2E1ECD25CC00C1E132 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFA2C1ECD25CC00C1E132 /* PagingViewController.swift */; };
@@ -479,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4A1E3411F726C065A61656CF /* [CP] Copy Pods Resources */ = {
@@ -531,7 +531,7 @@
 				DEB4FDE31EC521B2001458CE /* VideoContainerView.swift in Sources */,
 				84BBFA3A1ED0F64A00C1E132 /* AllSongsViewController.swift in Sources */,
 				84BBFA3C1ED134E400C1E132 /* AlbumsCollectionViewController.swift in Sources */,
-				0FF4B62E1E8C4BF400EEAE8C /* (null) in Sources */,
+				0FF4B62E1E8C4BF400EEAE8C /* BuildFile in Sources */,
 				DE85666C1EC3BE5D00B2409D /* Post.swift in Sources */,
 				DEB4FDD51EC520ED001458CE /* SendToFriendViewController.swift in Sources */,
 				DE7983AB1EC3723B002F2120 /* FirebaseConvertable.swift in Sources */,
