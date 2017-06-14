@@ -23,6 +23,7 @@ final class CameraCaptureViewController: UIViewController {
     @IBOutlet private weak var libraryButton: UIButton!
     @IBOutlet private weak var recordButton: RecordButton!
     fileprivate let newMovieFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("movie.mov")
+    fileprivate let newPhotoFileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("photo.jpg")
     private var recordingProgressTimer: Timer?
     var recordingProgressFraction: CGFloat! = 0
     
@@ -37,7 +38,8 @@ final class CameraCaptureViewController: UIViewController {
     var frontCameraInput: AVCaptureDeviceInput?
     var microphoneAudioDevice: AVCaptureDevice?
     var microphoneAudioInput: AVCaptureDeviceInput?
-
+    
+    var photoCaptureOutput: AVCapturePhotoOutput?
     
     // MARK: - View Controller Lifecycle
     
@@ -53,10 +55,12 @@ final class CameraCaptureViewController: UIViewController {
         recordButton.buttonColor = .white
         recordButton.progressColor = .red
         recordButton.closeWhenFinished = false
-        recordButton.addTarget(self, action: #selector(self.startRecordingVideo), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(self.capturePhoto), for: .touchCancel)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchUpInside)
         recordButton.addTarget(self, action: #selector(self.stopRecordingVideo), for: UIControlEvents.touchDragExit)
         self.view.addSubview(recordButton)
+        
         
         // Other setups
         setupCaptureSession()
@@ -215,17 +219,25 @@ final class CameraCaptureViewController: UIViewController {
         
         if recordingProgressFraction >= 1 {
             stopRecordingVideo()
-        }
+            
+            // photo capture
+        } else if (cameraCaptureOutput?.isRecording==true){
+            let photoSettings = AVCapturePhotoSettings.init()
+            
+            photoCaptureOutput?.capturePhoto(with: photoSettings, delegate: photoCaptureOutput as! AVCapturePhotoCaptureDelegate)
+            
+            
+        } else {
         
     }
-    
+
+            // video capture
     func startRecordingVideo() {
         recordingProgressFraction = 0.0
         recordButton.setProgress(recordingProgressFraction)
-        
         cameraCaptureOutput?.startRecording(toOutputFileURL: newMovieFileUrl, recordingDelegate: self)
-        
         recordingProgressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.recordingInProgressUpdater), userInfo: nil, repeats: true)
+        }
     }
     
     func stopRecordingVideo() {
@@ -261,14 +273,22 @@ final class CameraCaptureViewController: UIViewController {
     }
     
 }
-extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
+
+    // Video & Photo Capture Delegate
+extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
+        navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
+    }
+    
+    func capturePhoto(_ captureOutput: AVCapturePhotoSettings!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
     }
 
 }
 
+
+    // Image Picker Delegate
 extension CameraCaptureViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
