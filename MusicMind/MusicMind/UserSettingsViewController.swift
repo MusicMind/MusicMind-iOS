@@ -20,6 +20,15 @@ class UserSettingsViewController: UITableViewController, UIImagePickerController
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var changePictureButton: UIButton!
     
+    @IBAction func goToFriendFriends(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "FindFriends", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        
+        if let vc = vc {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     @IBAction func signOut(_ sender: Any) {
         do {
             try FIRAuth.auth()?.signOut()

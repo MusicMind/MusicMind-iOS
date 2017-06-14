@@ -1,59 +1,53 @@
 //
-//  PlaylistTracksViewController.swift
+//  AllSongsViewController.swift
 //  MusicMind
 //
-//  Created by Rich Ruais on 5/18/17.
+//  Created by Rich Ruais on 5/20/17.
 //  Copyright © 2017 MusicMind. All rights reserved.
 //
+
 
 import UIKit
 import Alamofire
 
-var playlistTracksTableView = UITableView()
-
-class PlaylistTracksViewController: UIViewController {
+class AllSongsViewController: UIViewController {
     
-    var playlistName = String()
-    var playlistTrackCount = String()
-    var playlistImage = UIImage()
-    var backgroundImage = UIImage()
-    var playlistId = String()
+    var search = String()
+    var scrollToRefreshCount = 10
     let ssh = SpotifySearchHelpers()
     
-    @IBOutlet weak var playlistImageView: UIImageView!
-    @IBOutlet weak var playlistNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        playlistTracksTableView = tableView
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.black
         
-        playlistImageView.image = playlistImage
-        playlistNameLabel.text = playlistName
-        let playlistTracksUrl = "https://api.spotify.com/v1/users/\(currentSpotifyUser.id!)/playlists/\(playlistId)/tracks"
-        print("URL*************************        \(playlistTracksUrl)")
-        getPlaylistTracks(url: playlistTracksUrl)
+        let searchURL = "https://api.spotify.com/v1/search?q=\(search)&type=track&limit=10"
+        
+        searchTrack(url: searchURL)
     }
     
     @IBAction func back(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
+} // End Class
+
+extension AllSongsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func getPlaylistTracks(url: String) {
-        Alamofire.request(url, headers: ["Authorization": "Bearer " + spotifyAuth.session.accessToken]).responseJSON(completionHandler: {
+    func searchTrack(url: String) {
+        Alamofire.request(url).responseJSON(completionHandler: {
             response in
-            self.parseUserPlaylistTracks(JSONData: response.data!)
+            self.parseTrackData(JSONData: response.data!)
         })
     }
     
-    func parseUserPlaylistTracks(JSONData: Data) {
-        currentTracksInQueue.removeAll()
-        playerQueue.removeAll()
-        let tempArr = ssh.parseUserPlaylistTracks(JSONData: JSONData)
+    func parseTrackData(JSONData : Data) {
+        let tempArr = ssh.parseTrackData(JSONData: JSONData)
+        print(tempArr)
         for i in 0..<tempArr.count {
             currentTracksInQueue.append(tempArr[i])
         }
@@ -61,37 +55,28 @@ class PlaylistTracksViewController: UIViewController {
         self.tableView.reloadData()
     }
 
-    
-   
-} // End Class
-
-extension PlaylistTracksViewController: UITableViewDelegate, UITableViewDataSource {
-    
     // MARK: - Table view data source
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentTracksInQueue.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playlistTrackCell", for: indexPath)
-        let songLabel = cell.viewWithTag(2) as! UILabel
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let songLabel = cell.viewWithTag(4) as! UILabel
         songLabel.text = currentTracksInQueue[indexPath.row].songTitle
-        let artistLabel = cell.viewWithTag(1) as! UILabel
-        artistLabel.text = currentTracksInQueue[indexPath.row].artist
-        let backgroundImage = cell.viewWithTag(4) as! UIImageView
-        backgroundImage.image = currentTracksInQueue[indexPath.row].largeAlbumImage
-        let mainImage = cell.viewWithTag(3) as! UIImageView
-        mainImage.image = currentTracksInQueue[indexPath.row].largeAlbumImage
-
+        let artistAlbumLabel = cell.viewWithTag(3) as! UILabel
+        artistAlbumLabel.text = "\(currentTracksInQueue[indexPath.row].artist!) * \(currentTracksInQueue[indexPath.row].albumName!)"
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
         let songTitle = currentTracksInQueue[indexPath.row].songTitle
         let artist = currentTracksInQueue[indexPath.row].artist
         let largeAlbumImage = currentTracksInQueue[indexPath.row].largeAlbumImage
@@ -103,16 +88,27 @@ extension PlaylistTracksViewController: UITableViewDelegate, UITableViewDataSour
         let newTrack = track.init(artist: artist, songTitle: songTitle, largeAlbumImage: largeAlbumImage, smallAlbumImage: smallAlbumImage, albumName: albumName, uri: uri, duration: duration)
         
         currentTrackDetails = newTrack
-        
         playerQueue = syncPlayerQueue(arr: playerQueue, index: indexPath.row)
-        
         let spotifyPlayer = SpotifyPlayerViewController()
         spotifyPlayer.playSpotify(uri: uri!)
+
     }
-
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 55
+        }
+        return 55
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
+        {
+            print("Scrolled toEnd")
+            let searchURL = "https://api.spotify.com/v1/search?q=\(search)&type=track&limit=10&offset=\(scrollToRefreshCount)"
+            searchTrack(url: searchURL)
+            tableView.reloadData()
+            scrollToRefreshCount += 10
+        }
+    }
 }
-
-
-
-

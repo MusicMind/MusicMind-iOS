@@ -10,7 +10,7 @@ import UIKit
 
 class PagingViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    var tracks = currentTracksInQueue
+    var tracks = playerQueue
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,12 +98,12 @@ class PagingViewController: UIPageViewController, UIPageViewControllerDataSource
         
         if transitionCompleted {
             let index = currentControllerIndex()
-            currentTrackDetails = currentTracksInQueue[index]
+            currentTrackDetails = playerQueue[index]
             let spotifyPlayer = SpotifyPlayerViewController()
             spotifyPlayer.playSpotify(uri: currentTrackDetails.uri!)
         }
     }
-
+    
     
 }
 

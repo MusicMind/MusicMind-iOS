@@ -112,7 +112,6 @@ class EmailPasswordViewController: UIViewController {
             self.goToCameraCapture()
             
             if var user = self.user {
-                user.firebaseAuthUser = fbAuthUser
                 user.email = fbAuthUser?.email
                 user.dateCreated = Date()
                 user.id = fbAuthUser?.uid
