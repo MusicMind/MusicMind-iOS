@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7524041EF0F6C10066A829 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7524011EF0F6C10066A829 /* ProgressViewController.swift */; };
+		0C7524051EF0F6C10066A829 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C7524021EF0F6C10066A829 /* UserSettings.storyboard */; };
+		0C7524061EF0F6C10066A829 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7524031EF0F6C10066A829 /* UserSettingsViewController.swift */; };
 		0F0334B61E7919220089ADAD /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */; };
 		0F0334B71E7919220089ADAD /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0F1DE25A1E9327C60032A49A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1DE2591E9327C60032A49A /* User.swift */; };
@@ -41,8 +44,6 @@
 		DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CAF9C1E9EDAB800EA7286 /* EmailVerifier.swift */; };
 		DE7F3C8A1E8A01B10014B091 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */; };
 		DE85666C1EC3BE5D00B2409D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85666B1EC3BE5D00B2409D /* Post.swift */; };
-		DE85E5C41EB1279E005FFEB9 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE85E5C21EB1279E005FFEB9 /* UserSettings.storyboard */; };
-		DE85E5C61EB127C7005FFEB9 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85E5C51EB127C7005FFEB9 /* UserSettingsViewController.swift */; };
 		DE860DDE1E935FE800393B03 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */; };
 		DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE860DE11E93602400393B03 /* ForgotPassword.storyboard */; };
 		DE860DE71E93617700393B03 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE860DE61E93617700393B03 /* WelcomeViewController.swift */; };
@@ -67,6 +68,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C7524011EF0F6C10066A829 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		0C7524021EF0F6C10066A829 /* UserSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserSettings.storyboard; sourceTree = "<group>"; };
+		0C7524031EF0F6C10066A829 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		0F0334B41E7919220089ADAD /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		0F0334B51E7919220089ADAD /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		0F1DE2591E9327C60032A49A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -106,8 +110,6 @@
 		DE7F3C891E8A01B10014B091 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE7F3C8B1E8A01B10014B091 /* MusicMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicMind.entitlements; sourceTree = "<group>"; };
 		DE85666B1EC3BE5D00B2409D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		DE85E5C31EB1279E005FFEB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSettings.storyboard; sourceTree = "<group>"; };
-		DE85E5C51EB127C7005FFEB9 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		DE860DDD1E935FE800393B03 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		DE860DE21E93602400393B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ForgotPassword.storyboard; sourceTree = "<group>"; };
 		DE860DE61E93617700393B03 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -326,8 +328,9 @@
 		DE85E5C11EB1277A005FFEB9 /* User Settings */ = {
 			isa = PBXGroup;
 			children = (
-				DE85E5C21EB1279E005FFEB9 /* UserSettings.storyboard */,
-				DE85E5C51EB127C7005FFEB9 /* UserSettingsViewController.swift */,
+				0C7524011EF0F6C10066A829 /* ProgressViewController.swift */,
+				0C7524021EF0F6C10066A829 /* UserSettings.storyboard */,
+				0C7524031EF0F6C10066A829 /* UserSettingsViewController.swift */,
 			);
 			name = "User Settings";
 			sourceTree = "<group>";
@@ -458,8 +461,8 @@
 				DE429F891E661BB20050E719 /* Assets.xcassets in Resources */,
 				DE429F871E661BB20050E719 /* LogIn.storyboard in Resources */,
 				84BBFA331ECD266C00C1E132 /* MusicSearch.storyboard in Resources */,
+				0C7524051EF0F6C10066A829 /* UserSettings.storyboard in Resources */,
 				0FD025721E6B4D2C00E59E95 /* CameraCapture.storyboard in Resources */,
-				DE85E5C41EB1279E005FFEB9 /* UserSettings.storyboard in Resources */,
 				DE860DE31E93602400393B03 /* ForgotPassword.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,7 +543,6 @@
 				84BBFA371ECE6F6000C1E132 /* PlaylistTracksViewController.swift in Sources */,
 				84BBFA351ECD26CE00C1E132 /* UserPlaylistViewController.swift in Sources */,
 				DEB4FDD71EC52115001458CE /* BirthdayViewController.swift in Sources */,
-				DE85E5C61EB127C7005FFEB9 /* UserSettingsViewController.swift in Sources */,
 				DEC96E271E957BCD00660262 /* LogInViewController.swift in Sources */,
 				DEC26CA41ECA566300E16DE8 /* FriendSearchResultController.swift in Sources */,
 				DE7CAF9D1E9EDAB800EA7286 /* EmailVerifier.swift in Sources */,
@@ -550,11 +552,13 @@
 				84BBFA2F1ECD25CC00C1E132 /* SpotifyPlayerViewController.swift in Sources */,
 				84BBFA401ED260E900C1E132 /* AlbumTracksViewController.swift in Sources */,
 				DEB4FDDD1EC52140001458CE /* NameViewController.swift in Sources */,
+				0C7524041EF0F6C10066A829 /* ProgressViewController.swift in Sources */,
 				DEB4FDD31EC520A5001458CE /* CameraCaptureViewController.swift in Sources */,
 				84BBFA2E1ECD25CC00C1E132 /* PagingViewController.swift in Sources */,
 				DEB4FDE71EC521CF001458CE /* PostProcessingViewController.swift in Sources */,
 				84BBFA3E1ED17B7A00C1E132 /* SpotifySearchHelpers.swift in Sources */,
 				DEBF26EC1E7DA1A100CB13E1 /* Globals.swift in Sources */,
+				0C7524061EF0F6C10066A829 /* UserSettingsViewController.swift in Sources */,
 				0F1DE25A1E9327C60032A49A /* User.swift in Sources */,
 				DE8EE3B01E9D50EE002F5EDE /* UIVIewController+setupNavigationBarWithTheme.swift in Sources */,
 				DEB4FDDF1EC52190001458CE /* AVVideoExporter.swift in Sources */,
@@ -610,14 +614,6 @@
 				DE43C2471EC62A8B0094C950 /* Base */,
 			);
 			name = FindFriends.storyboard;
-			sourceTree = "<group>";
-		};
-		DE85E5C21EB1279E005FFEB9 /* UserSettings.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE85E5C31EB1279E005FFEB9 /* Base */,
-			);
-			name = UserSettings.storyboard;
 			sourceTree = "<group>";
 		};
 		DE860DE11E93602400393B03 /* ForgotPassword.storyboard */ = {
