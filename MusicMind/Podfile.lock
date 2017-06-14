@@ -39,7 +39,7 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
-  - GTMSessionFetcher/Core (1.1.9)
+  - GTMSessionFetcher/Core (1.1.10)
   - RecordButton (1.0.2)
 
 DEPENDENCIES:
@@ -69,9 +69,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   RecordButton: 8290de19cf5d92144ad4996eaff60994334e553b
 
 PODFILE CHECKSUM: f05792c3d8091630ac035d2e186145ec8a75d12a
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.2.1
