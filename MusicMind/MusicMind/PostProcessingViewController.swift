@@ -1,4 +1,4 @@
-//
+    //
 //  PostProcessingViewController.swift
 //  MusicMind
 //
@@ -22,25 +22,30 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     var videoPlayer: AVPlayer!
     var videoLoaded = false
     var isHidden = false
+    var image: UIImage!
 
-    let assets: [UIImage] = [#imageLiteral(resourceName: "guitar") ]
-  
+    let assets: [UIImage] = [#imageLiteral(resourceName: "guitar")]
+    
     var avVideoExporter: AVVideoExporter?
     var stickersAdded: [UIImageView] = []
     
     /// The url in which the Camera Capture save the video or photo it captures.
     /// If empty, image picker shows up.
     var localUrlOfOriginalVideo: URL?
+    var localUrlOfOriginalImage: UIImage?
+    var useImage: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        if let videoAssetURL = localUrlOfOriginalVideo{
+        if let videoAssetURL = localUrlOfOriginalVideo {
             startPlayingVideoWith(videoAssetURL)
             avVideoExporter = AVVideoExporter(url: videoAssetURL)
             videoLoaded =  true
+        } else if let imageURL = localUrlOfOriginalImage {
+            image = imageURL
         } else if videoLoaded == false {
             videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
         }

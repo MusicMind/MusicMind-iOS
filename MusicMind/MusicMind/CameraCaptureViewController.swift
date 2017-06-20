@@ -31,6 +31,7 @@ final class CameraCaptureViewController: UIViewController {
     let session = AVCaptureSession()
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     var cameraCaptureOutput: AVCaptureMovieFileOutput?
+    var cameraCapturePicture: AVCapturePhotoOutput?
     var backCameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) // default is always back camera
     var backCameraInput: AVCaptureDeviceInput?
     var frontCameraDevice: AVCaptureDevice?
@@ -158,7 +159,8 @@ final class CameraCaptureViewController: UIViewController {
 
         cameraCaptureOutput = AVCaptureMovieFileOutput()
         session.addOutput(cameraCaptureOutput)
-        
+        cameraCapturePicture = AVCapturePhotoOutput()
+        session.addOutput(cameraCapturePicture)
         setupPreviewLayer()
         
         session.startRunning()
@@ -229,12 +231,18 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func stopRecordingVideo() {
+        if cameraCaptureOutput!.recordedDuration.seconds < 1.0 {
+            let settings = AVCapturePhotoSettings()
+            cameraCapturePicture?.capturePhoto(with: settings, delegate: self)
+            session.removeOutput(cameraCaptureOutput)
+        } else {
+            session.removeOutput(cameraCapturePicture)
+        }
         if let cameraCaptureOutput = cameraCaptureOutput {
             if cameraCaptureOutput.isRecording {
                 cameraCaptureOutput.stopRecording()
             }
         }
-
         self.recordingProgressTimer?.invalidate()
         recordingProgressFraction = 0.0
         recordButton.setProgress(recordingProgressFraction)
@@ -246,25 +254,37 @@ final class CameraCaptureViewController: UIViewController {
     fileprivate func navigateToPostProcessingViewController(movieURL: URL) {
         let postProcessingViewController = UIStoryboard(name: "PostProcessing", bundle: nil).instantiateViewController(withIdentifier: "PostProcessingViewController") as! PostProcessingViewController
         
+        postProcessingViewController.useImage = false
         postProcessingViewController.localUrlOfOriginalVideo = movieURL
         
+        self.navigationController?.pushViewController(postProcessingViewController, animated: true)
+    }
+    
+    fileprivate func navigateToPostProcessingViewController(photo: UIImage) {
+    let postProcessingViewController = UIStoryboard(name: "PostProcessing", bundle: nil).instantiateViewController(withIdentifier: "PostProcessingViewController") as! PostProcessingViewController
+
+        postProcessingViewController.useImage = true
+        postProcessingViewController.localUrlOfOriginalImage = photo
         self.navigationController?.pushViewController(postProcessingViewController, animated: true)
     }
     
     @IBAction func presentSelectFromLibraryViewController(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
-        imagePicker.mediaTypes = [kUTTypeMovie as String]
+        imagePicker.mediaTypes = [kUTTypeMovie as String, kUTTypeImage as String]
         imagePicker.delegate = self
         
         present(imagePicker, animated: true, completion: nil)
     }
-    
 }
-extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate {
+extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
+    }
+    
+    func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+        navigateToPostProcessingViewController(photo: UIImage(data: AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer!, previewPhotoSampleBuffer: previewPhotoSampleBuffer)!)!)
     }
 
 }
