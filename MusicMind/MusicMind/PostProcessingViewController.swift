@@ -18,6 +18,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var recordedVideoView: VideoContainerView!
     @IBOutlet weak var assetsButton: UIButton!
     @IBOutlet weak var exportButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
 
     var videoPlayer: AVPlayer!
     var videoLoaded = false
@@ -36,6 +37,11 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     var useImage: Bool?
     
     override func viewDidLoad() {
+        if let v = self.navigationController?.viewControllers {
+            if v.count >= 2 && v[v.count - 2].classForCoder != CameraCaptureViewController.classForCoder() {
+                self.navigationController!.popViewController(animated: false)
+            }
+        }
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -44,14 +50,17 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
             startPlayingVideoWith(videoAssetURL)
             avVideoExporter = AVVideoExporter(url: videoAssetURL)
             videoLoaded =  true
+            imageView.isHidden = true
+            recordedVideoView.isHidden = false
         } else if let imageURL = localUrlOfOriginalImage {
-            image = imageURL
+            imageView.image = imageURL
+            imageView.isHidden = false
+            recordedVideoView.isHidden = true
         } else if videoLoaded == false {
             videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
         }
         
         setupNavigationBar(theme: .light)
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

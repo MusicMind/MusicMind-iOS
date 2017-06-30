@@ -42,7 +42,7 @@ extension PostProcessingViewController: UICollectionViewDelegate, UICollectionVi
         newImageView.isUserInteractionEnabled = true
         newImageView.frame.origin = self.view.center
 //        newImageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(detectPan(recognizer:))))
-         
+        
         self.avVideoExporter?.imageViews.append(newImageView)
         self.view.addSubview(newImageView)
         

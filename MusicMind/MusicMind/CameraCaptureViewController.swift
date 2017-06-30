@@ -32,12 +32,14 @@ final class CameraCaptureViewController: UIViewController {
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     var cameraCaptureOutput: AVCaptureMovieFileOutput?
     var cameraCapturePicture: AVCapturePhotoOutput?
+    var breakFromVideo: Bool?
     var backCameraDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) // default is always back camera
     var backCameraInput: AVCaptureDeviceInput?
     var frontCameraDevice: AVCaptureDevice?
     var frontCameraInput: AVCaptureDeviceInput?
     var microphoneAudioDevice: AVCaptureDevice?
     var microphoneAudioInput: AVCaptureDeviceInput?
+    var counter: Int?
 
     
     // MARK: - View Controller Lifecycle
@@ -223,6 +225,7 @@ final class CameraCaptureViewController: UIViewController {
     
     func startRecordingVideo() {
         recordingProgressFraction = 0.0
+        counter = 0
         recordButton.setProgress(recordingProgressFraction)
         
         cameraCaptureOutput?.startRecording(toOutputFileURL: newMovieFileUrl, recordingDelegate: self)
@@ -231,12 +234,18 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func stopRecordingVideo() {
+        /*if counter! > 0 {
+            return
+        }*/
+        counter! += 1
         if cameraCaptureOutput!.recordedDuration.seconds < 1.0 {
+            //session.removeOutput(cameraCaptureOutput)
             let settings = AVCapturePhotoSettings()
+            breakFromVideo = true
             cameraCapturePicture?.capturePhoto(with: settings, delegate: self)
-            session.removeOutput(cameraCaptureOutput)
         } else {
-            session.removeOutput(cameraCapturePicture)
+            //session.removeOutput(cameraCapturePicture)
+            breakFromVideo = false
         }
         if let cameraCaptureOutput = cameraCaptureOutput {
             if cameraCaptureOutput.isRecording {
@@ -256,6 +265,7 @@ final class CameraCaptureViewController: UIViewController {
         
         postProcessingViewController.useImage = false
         postProcessingViewController.localUrlOfOriginalVideo = movieURL
+        postProcessingViewController.localUrlOfOriginalImage = nil
         
         self.navigationController?.pushViewController(postProcessingViewController, animated: true)
     }
@@ -265,6 +275,8 @@ final class CameraCaptureViewController: UIViewController {
 
         postProcessingViewController.useImage = true
         postProcessingViewController.localUrlOfOriginalImage = photo
+        postProcessingViewController.localUrlOfOriginalVideo = nil
+        
         self.navigationController?.pushViewController(postProcessingViewController, animated: true)
     }
     
@@ -280,7 +292,9 @@ final class CameraCaptureViewController: UIViewController {
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
-        navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
+        if !breakFromVideo! {
+            navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
+        }
     }
     
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
