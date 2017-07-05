@@ -19,7 +19,7 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var assetsButton: UIButton!
     @IBOutlet weak var exportButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-
+    
     var videoPlayer: AVPlayer!
     var videoLoaded = false
     var isHidden = false
@@ -52,10 +52,14 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
             videoLoaded =  true
             imageView.isHidden = true
             recordedVideoView.isHidden = false
+            exportButton.isHidden = false
+            useImage = false
         } else if let imageURL = localUrlOfOriginalImage {
             imageView.image = imageURL
             imageView.isHidden = false
             recordedVideoView.isHidden = true
+            exportButton.isHidden = false
+            useImage = true
         } else if videoLoaded == false {
             videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
         }
@@ -156,7 +160,11 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func exportButtonPressed(_ sender: Any) {
-        self.avVideoExporter?.output()
+        if useImage! {
+            UIImageWriteToSavedPhotosAlbum(localUrlOfOriginalImage!, nil, nil, nil);
+        } else {
+            self.avVideoExporter?.output()
+        }
     }
 }
 

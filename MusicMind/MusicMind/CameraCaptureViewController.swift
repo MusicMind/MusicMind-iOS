@@ -237,7 +237,7 @@ final class CameraCaptureViewController: UIViewController {
         /*if counter! > 0 {
             return
         }*/
-        if cameraCaptureOutput!.recordedDuration.seconds < 1.0 {
+        if cameraCaptureOutput!.recordedDuration.seconds < 0.25 {
             //session.removeOutput(cameraCaptureOutput)
             let settings = AVCapturePhotoSettings()
             breakFromVideo = true
