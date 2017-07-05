@@ -1,4 +1,4 @@
-//
+    //
 //  PostProcessingViewController.swift
 //  MusicMind
 //
@@ -18,35 +18,53 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var recordedVideoView: VideoContainerView!
     @IBOutlet weak var assetsButton: UIButton!
     @IBOutlet weak var exportButton: UIButton!
-
+    @IBOutlet weak var imageView: UIImageView!
+    
     var videoPlayer: AVPlayer!
     var videoLoaded = false
     var isHidden = false
+    var image: UIImage!
 
-    let assets: [UIImage] = [#imageLiteral(resourceName: "guitar") ]
-  
+    let assets: [UIImage] = [#imageLiteral(resourceName: "guitar")]
+    
     var avVideoExporter: AVVideoExporter?
     var stickersAdded: [UIImageView] = []
     
     /// The url in which the Camera Capture save the video or photo it captures.
     /// If empty, image picker shows up.
     var localUrlOfOriginalVideo: URL?
+    var localUrlOfOriginalImage: UIImage?
+    var useImage: Bool?
     
     override func viewDidLoad() {
+        if let v = self.navigationController?.viewControllers {
+            if v.count >= 2 && v[v.count - 2].classForCoder != CameraCaptureViewController.classForCoder() {
+                self.navigationController!.popViewController(animated: false)
+            }
+        }
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        if let videoAssetURL = localUrlOfOriginalVideo{
+        if let videoAssetURL = localUrlOfOriginalVideo {
             startPlayingVideoWith(videoAssetURL)
             avVideoExporter = AVVideoExporter(url: videoAssetURL)
             videoLoaded =  true
+            imageView.isHidden = true
+            recordedVideoView.isHidden = false
+            exportButton.isHidden = false
+            useImage = false
+        } else if let imageURL = localUrlOfOriginalImage {
+            imageView.image = imageURL
+            imageView.isHidden = false
+            recordedVideoView.isHidden = true
+            exportButton.isHidden = false
+            useImage = true
         } else if videoLoaded == false {
             videoLoaded = self.startMediaBroswerFrom(viewController: self, using: self)
         }
         
         setupNavigationBar(theme: .light)
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -142,7 +160,11 @@ class PostProcessingViewController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func exportButtonPressed(_ sender: Any) {
-        self.avVideoExporter?.output()
+        if useImage! {
+            UIImageWriteToSavedPhotosAlbum(localUrlOfOriginalImage!, nil, nil, nil);
+        } else {
+            self.avVideoExporter?.output()
+        }
     }
 }
 
