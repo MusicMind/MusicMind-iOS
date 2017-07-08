@@ -40,6 +40,9 @@ final class CameraCaptureViewController: UIViewController {
     var microphoneAudioDevice: AVCaptureDevice?
     var microphoneAudioInput: AVCaptureDeviceInput?
     var counter: Int?
+    var counter1: Int?
+    var counter2: Int?
+    var duration: Double?
 
     
     // MARK: - View Controller Lifecycle
@@ -226,6 +229,9 @@ final class CameraCaptureViewController: UIViewController {
     func startRecordingVideo() {
         recordingProgressFraction = 0.0
         counter = 0
+        counter1 = 0
+        counter2 = 0
+        breakFromVideo = false
         recordButton.setProgress(recordingProgressFraction)
         
         cameraCaptureOutput?.startRecording(toOutputFileURL: newMovieFileUrl, recordingDelegate: self)
@@ -234,22 +240,26 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func stopRecordingVideo() {
-        /*if counter! > 0 {
-            return
-        }*/
-        if cameraCaptureOutput!.recordedDuration.seconds < 0.25 {
-            //session.removeOutput(cameraCaptureOutput)
-            let settings = AVCapturePhotoSettings()
-            breakFromVideo = true
-            cameraCapturePicture?.capturePhoto(with: settings, delegate: self)
-        } else {
-            //session.removeOutput(cameraCapturePicture)
-            breakFromVideo = false
+        if counter2 == 0 {
+            duration = cameraCaptureOutput!.recordedDuration.seconds
+            counter2! += 1
         }
+        print(cameraCaptureOutput!.recordedDuration.seconds)
         if let cameraCaptureOutput = cameraCaptureOutput {
             if cameraCaptureOutput.isRecording {
                 cameraCaptureOutput.stopRecording()
             }
+        }
+        if duration! < 0.50 && duration! > 0.0 {
+            //session.removeOutput(cameraCaptureOutput)
+            //if counter1! == 0 {
+                let settings = AVCapturePhotoSettings()
+                breakFromVideo = true
+                cameraCapturePicture?.capturePhoto(with: settings, delegate: self)
+            //}
+            //counter! += 1
+        } else {
+            //session.removeOutput(cameraCapturePicture)
         }
         self.recordingProgressTimer?.invalidate()
         recordingProgressFraction = 0.0
@@ -260,6 +270,10 @@ final class CameraCaptureViewController: UIViewController {
     // MARK: - Navigation
     
     fileprivate func navigateToPostProcessingViewController(movieURL: URL) {
+        print(breakFromVideo!)
+        if breakFromVideo! {
+            return
+        }
         let postProcessingViewController = UIStoryboard(name: "PostProcessing", bundle: nil).instantiateViewController(withIdentifier: "PostProcessingViewController") as! PostProcessingViewController
         
         postProcessingViewController.useImage = false
@@ -291,13 +305,20 @@ final class CameraCaptureViewController: UIViewController {
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
+        print(breakFromVideo)
         if !breakFromVideo! {
-            navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
+            if counter == 0 {
+                counter! += 1
+                navigateToPostProcessingViewController(movieURL: newMovieFileUrl)
+            }
         }
     }
     
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
-        navigateToPostProcessingViewController(photo: UIImage(data: AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer!, previewPhotoSampleBuffer: previewPhotoSampleBuffer)!)!)
+        if counter == 0 {
+            counter! += 1
+            navigateToPostProcessingViewController(photo: UIImage(data: AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer!, previewPhotoSampleBuffer: previewPhotoSampleBuffer)!)!)
+        }
     }
 
 }
