@@ -170,8 +170,8 @@ extension MusicSearchViewController: UISearchBarDelegate, UITableViewDelegate, U
         let keywords = searchBar.text
         let finalKeywords = keywords?.replacingOccurrences(of: " ", with: "+")
         currentSearchWords = finalKeywords!
-        let searchTrackURL = "https://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track&limit=4"
-        let searchAlbumURL = "https://api.spotify.com/v1/search?q=\(self.currentSearchWords)&type=album&limit=4"
+        let searchTrackURL = "http://api.spotify.com/v1/search?q=\(finalKeywords!)&type=track&limit=4"
+        let searchAlbumURL = "http://api.spotify.com/v1/search?q=\(self.currentSearchWords)&type=album&limit=4"
         searchTrack(url: searchTrackURL)
         searchAlbum(url: searchAlbumURL)
     }
