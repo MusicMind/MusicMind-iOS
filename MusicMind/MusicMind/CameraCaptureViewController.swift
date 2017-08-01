@@ -43,6 +43,8 @@ final class CameraCaptureViewController: UIViewController {
     var counter1: Int?
     var counter2: Int?
     var duration: Double?
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
 
     
     // MARK: - View Controller Lifecycle
@@ -65,8 +67,15 @@ final class CameraCaptureViewController: UIViewController {
         self.view.addSubview(recordButton)
         
         // Other setups
+
         setupCaptureSession()
-        
+        let sess = AVAudioSession.sharedInstance()
+        if sess.isOtherAudioPlaying {
+            _ = try? sess.setCategory(AVAudioSessionCategoryAmbient, with: .duckOthers)
+            _ = try? sess.setActive(true, with: [])
+        }
+        setupMicCaptureSession()
+
         setupNavigationBar(theme: .light)
     }
     
@@ -93,6 +102,13 @@ final class CameraCaptureViewController: UIViewController {
 //        }
 //    }
     
+    func configureDevice() {
+        if let device = captureDevice {
+            device.lockForConfiguration(nil)
+            device.focusMode = .Locked
+            device.unlockForConfiguration()
+        }
+    }
     // Get microphone devices
     func setupMicCaptureSession() {
         // Get microphone devices
