@@ -37,14 +37,14 @@
                                     <action selector="flipCamera:" destination="sBF-OT-sPe" eventType="touchUpInside" id="6SJ-sD-rBc"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn" userLabel="Music Search Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THY-bH-VVn" userLabel="Music Search Button">
                                 <rect key="frame" x="33" y="87" width="35" height="35"/>
                                 <state key="normal" title="Music Search" image="button:THY-bH-VVn:image"/>
                                 <connections>
                                     <segue destination="Gop-j7-Dp8" kind="presentation" identifier="showMusicSearchViewContoller" modalTransitionStyle="flipHorizontal" id="Cw2-3Y-gyY"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC" userLabel="Select from library Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-dK-thC" userLabel="Select from library Button">
                                 <rect key="frame" x="41" y="636" width="35" height="35"/>
                                 <state key="normal" title="Select from library" image="Select from library">
                                     <color key="titleColor" red="0.99886655810000002" green="0.99422043559999995" blue="0.96255975959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="width" constant="70" id="Sgp-WE-Rt8"/>
                                 </constraints>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-AV-6EJ" userLabel="User Settings Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-AV-6EJ" userLabel="User Settings Button">
                                 <rect key="frame" x="190" y="87" width="35" height="35"/>
                                 <state key="normal" title="User Settings" image="cool-180"/>
                                 <connections>

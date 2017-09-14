@@ -102,13 +102,13 @@ final class CameraCaptureViewController: UIViewController {
 //        }
 //    }
     
-    func configureDevice() {
-        if let device = captureDevice {
-            device.lockForConfiguration(nil)
-            device.focusMode = .Locked
-            device.unlockForConfiguration()
-        }
-    }
+//    func configureDevice() {
+//        if let device = AVCaptureDevice {
+//            device.lockForConfiguration(nil)
+//            device.focusMode = .Locked
+//            device.unlockForConfiguration()
+//        }
+//    }
     // Get microphone devices
     func setupMicCaptureSession() {
         // Get microphone devices
