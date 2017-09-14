@@ -43,6 +43,8 @@ final class CameraCaptureViewController: UIViewController {
     var counter1: Int?
     var counter2: Int?
     var duration: Double?
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
 
     
     // MARK: - View Controller Lifecycle
@@ -51,9 +53,9 @@ final class CameraCaptureViewController: UIViewController {
         super.viewDidLoad()
         
         // Setup gesture recognizer
-        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
-        edgeGesture.edges = UIRectEdge.left
-        view.addGestureRecognizer(edgeGesture)
+//        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(CameraCaptureViewController.edgeGestureAction(sender:)))
+//        edgeGesture.edges = UIRectEdge.left
+//        view.addGestureRecognizer(edgeGesture)
        
         // Setup record button
         recordButton.buttonColor = .white
@@ -65,7 +67,15 @@ final class CameraCaptureViewController: UIViewController {
         self.view.addSubview(recordButton)
         
         // Other setups
+
         setupCaptureSession()
+        let sess = AVAudioSession.sharedInstance()
+        if sess.isOtherAudioPlaying {
+            _ = try? sess.setCategory(AVAudioSessionCategoryAmbient, with: .duckOthers)
+            _ = try? sess.setActive(true, with: [])
+        }
+        setupMicCaptureSession()
+
         setupNavigationBar(theme: .light)
     }
     
@@ -77,48 +87,32 @@ final class CameraCaptureViewController: UIViewController {
         stopRecordingVideo()
     }
     
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
-        switch sender.state {
-        case .began:
-            performSegue(withIdentifier: "showMusicSearchViewContoller", sender: self)
-        default:
-            // pass down for the interaction controller to handle the rest of these cases
-           break
-        }
-    }
+//    func edgeGestureAction(sender: UIScreenEdgePanGestureRecognizer) {
+//        switch sender.state {
+//        case .began:
+//            performSegue(withIdentifier: "showMusicSearchViewContoller", sender: self)
+//        default:
+//            // pass down for the interaction controller to handle the rest of these cases
+//           break
+//        }
+//    }
     
-    
-    // MARK: - AV Capturing
-
-    func setupCaptureSession() {
-        session.sessionPreset = AVCaptureSessionPresetHigh
-        
-        // Get front camera device and inputs
-        let cameraDeviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
-        
-        let cameraDevices = cameraDeviceDiscoverySession?.devices
-        
-        if let unwrappedDevices = cameraDevices {
-            if !unwrappedDevices.isEmpty {
-                frontCameraDevice = unwrappedDevices[0]
-                
-                if frontCameraDevice != nil {
-                    do {
-                        frontCameraInput = try AVCaptureDeviceInput(device: frontCameraDevice)
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-            
-        }
-        
+//    func configureDevice() {
+//        if let device = AVCaptureDevice {
+//            device.lockForConfiguration(nil)
+//            device.focusMode = .Locked
+//            device.unlockForConfiguration()
+//        }
+//    }
+    // Get microphone devices
+    func setupMicCaptureSession() {
         // Get microphone devices
-
+        
         let microphoneDeviceDiscoberySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInMicrophone], mediaType: AVMediaTypeAudio, position: AVCaptureDevicePosition.unspecified)
         
         let microphoneDevices = microphoneDeviceDiscoberySession?.devices
@@ -140,6 +134,36 @@ final class CameraCaptureViewController: UIViewController {
                 }
             }
         }
+
+    }
+
+    
+    // MARK: - AV Capturing
+
+    func setupCaptureSession() {
+        session.sessionPreset = AVCaptureSessionPresetHigh
+        
+
+        // Get front camera device and inputs
+        let cameraDeviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
+        
+        let cameraDevices = cameraDeviceDiscoverySession?.devices
+        
+        if let unwrappedDevices = cameraDevices {
+            if !unwrappedDevices.isEmpty {
+                frontCameraDevice = unwrappedDevices[0]
+                
+                if frontCameraDevice != nil {
+                    do {
+                        frontCameraInput = try AVCaptureDeviceInput(device: frontCameraDevice)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        
+        }
+        
         
         // Get back camera input ready
         do {
@@ -180,6 +204,7 @@ final class CameraCaptureViewController: UIViewController {
             cameraPreviewLayer?.frame = cameraPreviewView.bounds
             cameraPreviewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
             
+
             cameraPreviewView.layer.addSublayer(cameraPreviewLayer!)
         }
     }
@@ -227,13 +252,14 @@ final class CameraCaptureViewController: UIViewController {
     }
     
     func startRecordingVideo() {
+        
         recordingProgressFraction = 0.0
         counter = 0
         counter1 = 0
         counter2 = 0
         breakFromVideo = false
         recordButton.setProgress(recordingProgressFraction)
-        
+        setupMicCaptureSession()
         cameraCaptureOutput?.startRecording(toOutputFileURL: newMovieFileUrl, recordingDelegate: self)
         
         recordingProgressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.recordingInProgressUpdater), userInfo: nil, repeats: true)
@@ -302,6 +328,101 @@ final class CameraCaptureViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
 }
+
+func rotateCameraImageToProperOrientation(imageSource : UIImage, maxResolution : CGFloat) -> UIImage {
+    
+    guard let imgRef = imageSource.cgImage else {
+        return imageSource
+    }
+    
+    let width = CGFloat(imgRef.width);
+    let height = CGFloat(imgRef.height);
+    
+    var bounds = CGRect(x: 0, y: 0, width: width, height: height)
+    
+    var scaleRatio : CGFloat = 1
+    if (width > maxResolution || height > maxResolution) {
+        
+        scaleRatio = min(maxResolution / bounds.size.width, maxResolution / bounds.size.height)
+        bounds.size.height = bounds.size.height * scaleRatio
+        bounds.size.width = bounds.size.width * scaleRatio
+    }
+    
+    var transform = CGAffineTransform.identity
+    let orient = imageSource.imageOrientation
+    let imageSize = CGSize(width: CGFloat(imgRef.width), height: CGFloat(imgRef.height))
+    
+    
+    switch(imageSource.imageOrientation) {
+    case .up :
+        transform = CGAffineTransform.identity
+        
+    case .upMirrored :
+        transform = CGAffineTransform(translationX: imageSize.width, y: 0.0)
+        transform = transform.scaledBy(x: -1.0, y: 1.0)
+        
+    case .down :
+        transform = CGAffineTransform(translationX: imageSize.width, y: imageSize.height)
+        transform = transform.rotated(by: CGFloat(M_PI))
+        
+    case .downMirrored :
+        transform = CGAffineTransform(translationX: 0.0, y: imageSize.height)
+        transform = transform.scaledBy(x: 1.0, y: -1.0)
+        
+    case .left :
+        let storedHeight = bounds.size.height
+        bounds.size.height = bounds.size.width
+        bounds.size.width = storedHeight
+        transform = CGAffineTransform(translationX: 0.0, y: imageSize.width)
+        transform = transform.rotated(by: 3.0 * CGFloat(M_PI) / 2.0)
+        
+    case .leftMirrored :
+        let storedHeight = bounds.size.height
+        bounds.size.height = bounds.size.width
+        bounds.size.width = storedHeight
+        transform = CGAffineTransform(translationX: imageSize.height, y: imageSize.width)
+        transform = transform.scaledBy(x: -1.0, y: 1.0)
+        transform = transform.rotated(by: 3.0 * CGFloat(M_PI) / 2.0)
+        
+    case .right :
+        let storedHeight = bounds.size.height
+        bounds.size.height = bounds.size.width
+        bounds.size.width = storedHeight
+        transform = CGAffineTransform(translationX: imageSize.height, y: 0.0)
+        transform = transform.rotated(by: CGFloat(M_PI) / 2.0)
+        
+    case .rightMirrored :
+        let storedHeight = bounds.size.height
+        bounds.size.height = bounds.size.width
+        bounds.size.width = storedHeight
+        transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        transform = transform.rotated(by: CGFloat(M_PI) / 2.0)
+    }
+    
+    UIGraphicsBeginImageContext(bounds.size)
+    guard let context = UIGraphicsGetCurrentContext() else {
+        return imageSource
+    }
+    
+    if orient == .right || orient == .left {
+        context.scaleBy(x: -scaleRatio, y: scaleRatio)
+        context.translateBy(x: -height, y: 0)
+    } else {
+        context.scaleBy(x: scaleRatio, y: -scaleRatio)
+        context.translateBy(x: 0, y: -height)
+    }
+    
+    context.concatenate(transform);
+    context.draw(imgRef, in: CGRect(x: 0, y: 0, width: width, height: height))
+    
+    guard let imageCopy = UIGraphicsGetImageFromCurrentImageContext() else {
+        return imageSource
+    }
+    UIGraphicsEndImageContext();
+    
+    return imageCopy;
+}
+
 extension CameraCaptureViewController: AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
